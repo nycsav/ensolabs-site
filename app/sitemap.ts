@@ -21,5 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...insightRoutes];
+  const caseStudyRoutes: MetadataRoute.Sitemap = [
+    'gore', 'heller', 'trading-terminal', 'enterprise-ai',
+  ].map((slug) => ({
+    url: `${SITE.origin}/work/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...insightRoutes];
 }
