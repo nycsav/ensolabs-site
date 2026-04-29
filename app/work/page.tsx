@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   description:
     'Enso Labs has delivered AI transformation projects for Fortune 500 organizations including production intelligence platforms, AI Centers of Excellence, and autonomous trading systems.',
   alternates: { canonical: '/work' },
+  openGraph: {
+    title: 'Our Work — Enso Labs | Gore, Heller, Trading Terminal',
+    description:
+      'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
+    url: '/work',
+  },
+  twitter: {
+    title: 'Our Work — Enso Labs | Gore, Heller, Trading Terminal',
+    description:
+      'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
+  },
 };
 
 export default function WorkPage() {

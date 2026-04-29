@@ -944,3 +944,41 @@ footer {
 
 /* The scroll-locked body should still let the menu scroll itself */
 body.menu-open { overflow: hidden; }
+
+/* ============================================================
+   SHARE BUTTONS — case studies + insight articles
+   ============================================================ */
+.share-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.share-label {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.08em;
+  margin-right: 12px;
+}
+.share-btn {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  color: var(--fg-2);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.share-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: color-mix(in oklab, var(--teal) 8%, transparent);
+}
+@media (max-width: 768px) {
+  .share-row { gap: 6px; }
+  .share-btn { padding: 7px 11px; font-size: 10.5px; }
+  .share-label { width: 100%; margin-bottom: 4px; }
+}

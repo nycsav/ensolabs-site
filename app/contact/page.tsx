@@ -16,6 +16,17 @@ export const metadata: Metadata = {
   description:
     'Get in touch with Enso Labs. Send a project brief, email the studio directly, or open a thread on LinkedIn. Response within 24 hours.',
   alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact Enso Labs | Get in Touch',
+    description:
+      'Start a project with Enso Labs. 31 Union Square West, NYC. Response within 24 hours.',
+    url: '/contact',
+  },
+  twitter: {
+    title: 'Contact Enso Labs | Get in Touch',
+    description:
+      'Start a project with Enso Labs. 31 Union Square West, NYC. Response within 24 hours.',
+  },
 };
 
 const FAQ = [

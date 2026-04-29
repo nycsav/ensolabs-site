@@ -114,7 +114,7 @@ export const professionalServiceSchema = (): JsonLd => ({
 
 export const localBusinessSchema = (): JsonLd => ({
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'ProfessionalService',
   '@id': url('/#localbusiness'),
   name: SITE.name,
   url: SITE.origin,
@@ -128,8 +128,29 @@ export const localBusinessSchema = (): JsonLd => ({
     postalCode: SITE.address.postalCode,
     addressCountry: SITE.address.country,
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    // 31 Union Square West, NYC
+    latitude: 40.7362,
+    longitude: -73.9903,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
   founder: { '@id': url('/#sav') },
-  priceRange: '$$$',
+  priceRange: '$$$$',
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'United States' },
+    { '@type': 'Place', name: 'Healthcare' },
+    { '@type': 'Place', name: 'Financial Services' },
+    { '@type': 'Place', name: 'B2B Technology' },
+    { '@type': 'Place', name: 'Advanced Manufacturing' },
+  ],
 });
 
 export const breadcrumbSchema = (

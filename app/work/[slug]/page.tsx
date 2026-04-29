@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
+import { ShareButtons } from '@/components/ShareButtons';
 import { breadcrumbSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
@@ -185,10 +186,6 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           .cs-outcome { background: var(--bg); padding: 24px; text-align: center; }
           .cs-outcome .num { font-family: var(--display); font-size: 28px; font-weight: 500; color: var(--teal); margin-bottom: 4px; }
           .cs-outcome .desc { font-family: var(--mono); font-size: 10px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; }
-          .cs-share { padding: 48px var(--pad); max-width: var(--max); margin: 0 auto; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-          .cs-share-label { font-family: var(--mono); font-size: 11px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; }
-          .cs-share a, .cs-share button { font-family: var(--mono); font-size: 12px; color: var(--fg-2); background: var(--bg-2); border: 1px solid var(--line); padding: 8px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; }
-          .cs-share a:hover, .cs-share button:hover { color: var(--teal); border-color: var(--teal); }
           .cs-cta { padding: 80px var(--pad); text-align: center; }
           .cs-cta p { font-size: 18px; color: var(--fg-2); margin-bottom: 24px; }
           @media (max-width: 768px) { .cs-meta-grid, .cs-outcomes { grid-template-columns: 1fr 1fr; } }
@@ -232,12 +229,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           </div>
         </section>
 
-        <div className="cs-share">
-          <span className="cs-share-label">Share this case study</span>
-          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(cs.title + ' — Enso Labs')}&url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">Twitter / X</a>
-          <a href={`mailto:?subject=${encodeURIComponent(cs.title + ' — Enso Labs Case Study')}&body=${encodeURIComponent('Check out this case study: ' + shareUrl)}`}>Email</a>
-        </div>
+        <ShareButtons path={`/work/${params.slug}`} title={`${cs.title} — Enso Labs`} />
 
         <section className="cs-cta">
           <p>Interested in results like these?</p>

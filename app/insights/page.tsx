@@ -9,6 +9,17 @@ export const metadata: Metadata = {
   description:
     'Technical and strategic essays from Sav Banerjee on AI transformation, agentic systems, and financial AI — pulled from production engagements at Gore, Heller, and the Enso Trading Terminal.',
   alternates: { canonical: '/insights' },
+  openGraph: {
+    title: 'Insights — Enso Labs | Notes from Shipping Production AI',
+    description:
+      'Essays from inside live engagements — what survives production, what fails, and the Strategy-to-Ship Framework.',
+    url: '/insights',
+  },
+  twitter: {
+    title: 'Insights — Enso Labs | Notes from Shipping Production AI',
+    description:
+      'Essays from inside live engagements — what survives production, what fails, and the Strategy-to-Ship Framework.',
+  },
 };
 
 const formatDate = (iso: string) =>

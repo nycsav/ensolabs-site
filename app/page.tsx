@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.tagline}`,
   description: SITE.description,
   alternates: { canonical: '/' },
+  openGraph: {
+    title: `${SITE.name} — Strategy to Ship. AI Transformation & Agentic Systems Studio`,
+    description:
+      'We architect AI strategy for Healthcare, Finance, and B2B Tech — then build the production systems that deliver it. NYC.',
+    url: SITE.origin,
+  },
+  twitter: {
+    title: `${SITE.name} — Strategy to Ship. AI Transformation & Agentic Systems Studio`,
+    description:
+      'We architect AI strategy for Healthcare, Finance, and B2B Tech — then build the production systems that deliver it. NYC.',
+  },
 };
 
 export default function HomePage() {

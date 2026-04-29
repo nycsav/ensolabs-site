@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   description:
     'Sav Banerjee is an AI transformation consultant and agentic systems builder with 15+ years of experience at Google, McCann, Publicis, RAPP, and Young & Rubicam, certified by Anthropic, Google, and OpenAI.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Enso Labs | Founded by Sav Banerjee',
+    description:
+      'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
+    url: '/about',
+  },
+  twitter: {
+    title: 'About Enso Labs | Founded by Sav Banerjee',
+    description:
+      'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
+  },
 };
 
 const TIMELINE = [

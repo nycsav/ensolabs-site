@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { JsonLd } from '@/components/JsonLd';
+import { ShareButtons } from '@/components/ShareButtons';
 import {
   articleSchema,
   breadcrumbSchema,
@@ -91,7 +92,9 @@ export default function InsightArticle({ params }: { params: Params }) {
           ))}
         </div>
 
-        <hr style={{ margin: '64px 0', border: 'none', borderTop: '1px solid var(--line)' }} />
+        <ShareButtons path={`/insights/${post.slug}`} title={`${post.title} — Enso Labs Insights`} />
+
+        <hr style={{ margin: '48px 0', border: 'none', borderTop: '1px solid var(--line)' }} />
 
         <p style={{ fontFamily: 'var(--mono)', fontSize: 13, color: 'var(--fg-3)', marginBottom: 16 }}>
           Want to scope an engagement around this?

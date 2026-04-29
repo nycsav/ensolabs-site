@@ -4,14 +4,54 @@ import { Arrow } from '@/components/Arrow';
 import { JsonLd } from '@/components/JsonLd';
 import {
   breadcrumbSchema,
+  faqSchema,
   professionalServiceSchema,
 } from '@/lib/schema';
+
+const SERVICES_FAQ = [
+  {
+    question: 'What is AI transformation consulting?',
+    answer:
+      'AI transformation consulting helps enterprises convert AI ambition into commercial outcomes. The work spans strategy and roadmapping, AI readiness and maturity assessments, executive workshops, business case and ROI modeling, change management, and responsible-AI governance — anchored on the Strategy-to-Ship Framework.',
+  },
+  {
+    question: 'What are agentic systems?',
+    answer:
+      'Agentic systems are production AI workflows where autonomous agents — built on LangGraph, CrewAI, the Claude API, and the Model Context Protocol — orchestrate tools, retrieve from RAG knowledge bases, and ship work end-to-end. Enso Labs builds them with eval harnesses, observability, and rollback baked in from day one.',
+  },
+  {
+    question: 'How long does a typical engagement take?',
+    answer:
+      '12–24 weeks for full Strategy-to-Ship engagements, with 2-week diagnostics available as a fixed-fee starting point.',
+  },
+  {
+    question: 'What industries do you work with?',
+    answer:
+      'Healthcare and Pharma, Financial Services, B2B Technology, and Advanced Manufacturing.',
+  },
+  {
+    question: 'What certifications does Enso Labs hold?',
+    answer:
+      'Anthropic (Claude Code), Google AI, OpenAI. Sav Banerjee is also a Perplexity AI Business Fellowship winner and member of Perplexity Business.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Services',
   description:
     'Enso Labs offers three integrated service tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
   alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Services — Enso Labs | AI Consulting, Agentic Systems, Financial AI',
+    description:
+      'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
+    url: '/services',
+  },
+  twitter: {
+    title: 'Services — Enso Labs | AI Consulting, Agentic Systems, Financial AI',
+    description:
+      'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
+  },
 };
 
 type Track = {
@@ -90,6 +130,7 @@ export default function ServicesPage() {
       <JsonLd
         schemas={[
           professionalServiceSchema(),
+          faqSchema(SERVICES_FAQ),
           breadcrumbSchema([
             { name: 'Home', href: '/' },
             { name: 'Services', href: '/services' },
@@ -244,6 +285,35 @@ export default function ServicesPage() {
               </ul>
               <div className="pkg-cta"><Link className="btn" href="/contact">Discuss terms <Arrow /></Link></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="05.5 FAQ">
+        <div className="shell">
+          <div className="section-head">
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;Common questions</span></div>
+            <div className="reveal" data-delay="1"><h2 className="h2">Five answers, asked often.</h2></div>
+          </div>
+
+          <div className="reveal" style={{ display: 'grid', gap: 0, borderTop: '1px solid var(--line)' }}>
+            {SERVICES_FAQ.map((qa, i) => (
+              <details
+                key={qa.question}
+                style={{
+                  borderBottom: i === SERVICES_FAQ.length - 1 ? 'none' : '1px solid var(--line)',
+                  padding: '28px 0',
+                }}
+              >
+                <summary style={{ cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 24, listStyle: 'none' }}>
+                  <span style={{ fontSize: 'clamp(20px, 2vw, 24px)', fontWeight: 500, letterSpacing: '-0.015em' }}>{qa.question}</span>
+                  <span className="mono-sm" style={{ color: 'var(--teal)' }}>+ open</span>
+                </summary>
+                <p style={{ marginTop: 18, color: 'var(--fg-2)', fontSize: 16, lineHeight: 1.65, maxWidth: '80ch' }}>
+                  {qa.answer}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
