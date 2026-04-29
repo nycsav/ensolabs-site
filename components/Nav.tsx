@@ -69,7 +69,7 @@ export function Nav() {
               className={`nav-cta${isActive('/contact') ? ' is-active' : ''}`}
             >
               <span className="dot" />
-              Book a Discovery Call
+              Get in Touch
             </Link>
           </div>
 
@@ -135,7 +135,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
             >
               <span className="dot" aria-hidden="true" />
-              Book a Discovery Call
+              Get in Touch
             </Link>
             <p className="mono-sm">
               <a href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>

@@ -76,7 +76,7 @@ export const INSIGHTS: Insight[] = [
     body: [
       'Most trading systems begin with the strategy: a signal, an indicator, an alpha. The risk layer arrives later, bolted on, and is the first thing to fail under stress.',
       'The Enso Trading Terminal was built backwards on purpose. The kill-switch came first. Risk caps were schemas, not config. Position sizing was a typed function with property tests, not a magic number in a YAML file.',
-      'The result is a system that can run unattended without me losing sleep. Strategy code can be wrong. Risk code cannot.',
+      'The result is a system that can run unattended without anyone losing sleep. Strategy code can be wrong. Risk code cannot.',
       'For client engagements building autonomous trading, the rule is the same: the risk surface is the architecture. Strategy is a plug-in.',
     ],
   },
@@ -108,16 +108,16 @@ export const INSIGHTS: Insight[] = [
     ],
   },
   {
-    slug: 'solo-studio-vs-50-person-consultancy',
-    title: 'A solo studio outperforms a 50-person consultancy on shipped systems.',
-    dek: 'Counterintuitive — and structural, not heroic. Six things change when the advisor and the builder are the same person.',
+    slug: 'principal-led-vs-50-person-consultancy',
+    title: 'A principal-led studio outperforms a 50-person consultancy on shipped systems.',
+    dek: 'Counterintuitive — and structural, not heroic. Six things change when the advisor and the build team work as one unit.',
     pillar: 'Consult',
     date: '2026-03-04',
     readingMinutes: 6,
     body: [
       'The pitch from a 50-person consultancy is depth of bench. The reality is hand-offs. Strategy decided in week 3 reaches engineering in week 9, refracted through three layers of partial context.',
       'A principal-led studio has structural advantages a large bench cannot replicate. Direct senior access — no account managers. Builder credibility — the advisor is also in the codebase. Dogfooding — the studio runs its own infrastructure. Speed — no approval chain. Selectivity — a fixed pipeline forces a yes to mean yes.',
-      'The constraint is also real: bandwidth. A solo studio runs a small handful of deep engagements at a time. That is the whole point — depth, not portfolio. If we are at capacity, we say so and offer a date.',
+      'The constraint is also real: bandwidth. A principal-led studio runs a small handful of deep engagements at a time. That is the whole point — depth, not portfolio. When the studio is at capacity, prospects hear so directly and get a future date.',
     ],
   },
 ];

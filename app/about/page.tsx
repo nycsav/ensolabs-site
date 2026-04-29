@@ -31,7 +31,7 @@ const ADVANTAGES = [
   { ix: '01', ti: 'Direct senior access', de: 'Every engagement is led by a senior advisor who also builds — no junior analysts running point. The person scoping your roadmap is in the codebase the next week.' },
   { ix: '02', ti: 'Builder credibility', de: 'The advisor and the build team work as one unit. Architecture decisions don’t get lost in translation between strategy and engineering.' },
   { ix: '03', ti: 'Dogfooding proof', de: 'Enso Labs runs its own agentic infrastructure: the Trading Terminal, automated lead gen, scheduled research, N8N workflows. We use what we sell.' },
-  { ix: '04', ti: 'Agency-trained', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO. I’ve sat across the room from your CFO, CMO, and General Counsel.' },
+  { ix: '04', ti: 'Agency-trained', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO. The studio has sat across the room from your CFO, CMO, and General Counsel.' },
   { ix: '05', ti: 'Speed', de: 'No bloated team, no approval chain. A scope decided on Monday is in a sprint on Tuesday. The 3-month time-to-first-value is structural.' },
   { ix: '06', ti: 'Selective', de: 'A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you’ve saved $200k.' },
 ];
@@ -134,29 +134,29 @@ export default function AboutPage() {
             </div>
             <div className="reveal bio" data-delay="1">
               <p>
-                I started in agency strategy. Fifteen years at <strong>Google, McCann, Publicis, RAPP, Young &amp; Rubicam, BBDO, and Rokkan</strong> — managing $150MM+ portfolios across finance, healthcare, and technology. AT&amp;T&rsquo;s &ldquo;It Can Wait&rdquo; — 5MM+ pledges. American Express social — 50% growth. Google+ launch strategy. The Citi Web3 work.
+                Sav started in agency strategy. Fifteen years at <strong>Google, McCann, Publicis, RAPP, Young &amp; Rubicam, BBDO, and Rokkan</strong> — managing $150MM+ portfolios across finance, healthcare, and technology. AT&amp;T&rsquo;s &ldquo;It Can Wait&rdquo; — 5MM+ pledges. American Express social — 50% growth. Google+ launch strategy. The Citi Web3 work.
               </p>
               <p>
-                Then in 2020 I started <strong>Enso Partners</strong> to do AI transformation advisory. The deck-only consulting model didn&rsquo;t survive contact with production. So I learned to ship: LangGraph, Claude API, MCP, RAG, Python. The first full Strategy-to-Ship engagement was the <strong>Gore M2 Intelligence Hub</strong> — eight LangGraph stages, encrypted dashboard, expert-knowledge framework, validated by their lead scientist.
+                In 2020 he founded <strong>Enso Partners</strong> to do AI transformation advisory. The deck-only consulting model didn&rsquo;t survive contact with production. So the practice learned to ship: LangGraph, Claude API, MCP, RAG, Python. The first full Strategy-to-Ship engagement was the <strong>Gore M2 Intelligence Hub</strong> — eight LangGraph stages, encrypted dashboard, expert-knowledge framework, validated by their lead scientist.
               </p>
               <p>
-                Today, Enso Labs is three things in one studio: <strong>consult, build, and ship</strong>. The Trading Terminal proves the model — we run autonomous signal intelligence, news-driven algos, and brokerage execution as a production product, not a demo.
+                Today, Enso Labs is three things in one studio: <strong>consult, build, and ship</strong>. The Trading Terminal proves the model — the studio runs autonomous signal intelligence, news-driven algos, and brokerage execution as a production product, not a demo.
               </p>
               <p>The advisor and the build team work as one unit. That&rsquo;s the whole bet.</p>
               <div className="hero-cta-row" style={{ marginTop: 24 }}>
                 <a className="btn" href="https://linkedin.com/in/savbanerjee" target="_blank" rel="noopener">LinkedIn</a>
                 <a className="btn" href="https://github.com/nycsav" target="_blank" rel="noopener">GitHub</a>
-                <Link className="btn btn-primary" href="/contact">Book a Discovery Call <Arrow /></Link>
+                <Link className="btn btn-primary" href="/contact">Get in Touch <Arrow /></Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section data-screen-label="03 Solo advantage">
+      <section data-screen-label="03 Studio advantage">
         <div className="shell">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="num">§ 02</span>&nbsp;The solo advantage</span></div>
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 02</span>&nbsp;The studio advantage</span></div>
             <div className="reveal" data-delay="1"><h2 className="h2">Why a principal-led studio outperforms a 50-person consultancy.</h2></div>
           </div>
 
@@ -244,9 +244,9 @@ export default function AboutPage() {
               Want to talk?<br /><em>Let&rsquo;s</em> <span className="accent">scope it.</span>
             </h2>
             <div style={{ display: 'grid', gap: 24 }}>
-              <p className="lede">Email goes to my inbox. Calls go on my calendar. No screening, no pre-qualification.</p>
+              <p className="lede">Email goes straight to Sav. Calls land on the studio calendar. No screening, no pre-qualification.</p>
               <div className="hero-cta-row">
-                <Link className="btn btn-primary" href="/contact">Book a Discovery Call <Arrow /></Link>
+                <Link className="btn btn-primary" href="/contact">Get in Touch <Arrow /></Link>
                 <a className="btn" href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
               </div>
             </div>

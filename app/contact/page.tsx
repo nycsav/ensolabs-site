@@ -14,13 +14,13 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Start an Enso Labs engagement. Book a Discovery Call, email Sav directly, or send a project brief. Response within 24 hours.',
+    'Get in touch with Enso Labs. Send a project brief, email the studio directly, or open a thread on LinkedIn. Response within 24 hours.',
   alternates: { canonical: '/contact' },
 };
 
 const FAQ = [
   {
-    question: 'Is this a solo shop or a team?',
+    question: 'How is Enso Labs structured?',
     answer:
       'Enso Labs is principal-led. Sav is the senior advisor on every engagement and is hands-on through delivery. A vetted specialist network — design, ops, niche engineering — scales with the work. Strategy and architecture are never subcontracted.',
   },
@@ -32,12 +32,12 @@ const FAQ = [
   {
     question: 'Do you work with regulated industries?',
     answer:
-      'Most of my work is in regulated industries: pharma (FDA / MLR / PRC), financial services, healthcare. Governance is built into every engagement, anchored on NIST AI RMF.',
+      'Most engagements are in regulated industries: pharma (FDA / MLR / PRC), financial services, healthcare. Governance is built into every engagement, anchored on NIST AI RMF.',
   },
   {
-    question: 'Can I just hire you to build, without consulting?',
+    question: 'Is build-only engagement an option?',
     answer:
-      'Yes. The Trading Terminal proves the build-only model. If you have a clearly-scoped agentic system you need shipped, send the brief.',
+      'Yes. The Trading Terminal proves the build-only model. If you have a clearly-scoped agentic system that needs shipping, send the brief.',
   },
   {
     question: 'Who owns the IP?',
@@ -47,7 +47,7 @@ const FAQ = [
   {
     question: 'How many clients do you take at once?',
     answer:
-      'A small handful of active deep engagements at a time. That’s the whole point — depth, not portfolio. If we’re at capacity, I’ll tell you and offer a date.',
+      'A small handful of active deep engagements at a time. That’s the whole point — depth, not portfolio. If the studio is at capacity, you’ll hear so directly with a future date.',
   },
 ];
 
@@ -93,17 +93,7 @@ export default function ContactPage() {
         .channel .body b { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
         .channel .body a { color: var(--teal); font-family: var(--mono); font-size: 13px; }
         .channel .body p { color: var(--fg-2); font-size: 14px; line-height: 1.5; }
-        .cal-mock { border: 1px solid var(--line); border-radius: 8px; background: var(--bg); overflow: hidden; font-family: var(--mono); }
-        .cal-head { padding: 14px 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-3); }
-        .cal-head b { color: var(--fg); font-weight: 500; }
-        .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--line); }
-        .cal-day { background: var(--bg); padding: 10px 8px; text-align: center; font-size: 11px; color: var(--fg-3); }
-        .cal-day.head { color: var(--fg-2); padding: 12px 8px; font-weight: 500; }
-        .cal-day.avail { color: var(--fg); border: 1px solid color-mix(in oklab, var(--teal) 50%, transparent); cursor: pointer; }
-        .cal-day.avail:hover { background: var(--teal); color: var(--bg); }
-        .cal-day.full { color: oklch(0.45 0.01 80); }
-        .cal-foot { padding: 12px 18px; font-size: 11px; color: var(--fg-3); display: flex; justify-content: space-between; border-top: 1px solid var(--line); }
-        .toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--teal); color: var(--bg); padding: 14px 22px; border-radius: 999px; font-family: var(--mono); font-size: 13px; font-weight: 500; box-shadow: 0 12px 40px rgba(0,0,0,0.4); opacity: 0; transition: opacity .3s, transform .3s; z-index: 100; pointer-events: none; display: flex; gap: 10px; align-items: center; }
+.toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--teal); color: var(--bg); padding: 14px 22px; border-radius: 999px; font-family: var(--mono); font-size: 13px; font-weight: 500; box-shadow: 0 12px 40px rgba(0,0,0,0.4); opacity: 0; transition: opacity .3s, transform .3s; z-index: 100; pointer-events: none; display: flex; gap: 10px; align-items: center; }
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
         details summary { cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; list-style: none; }
         details summary::-webkit-details-marker { display: none; }
@@ -121,7 +111,7 @@ export default function ContactPage() {
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Tell me about the system you&rsquo;re trying to ship. I read every brief personally and respond within 24 hours.
+              Tell us about the system you&rsquo;re trying to ship. We read every brief personally and respond within 24 hours.
               If we&rsquo;re a fit, we&rsquo;ll book a 30-minute call to scope a 2-week diagnostic.
             </p>
             <div className="reveal" data-delay="3">
@@ -152,7 +142,7 @@ export default function ContactPage() {
                     <div className="body">
                       <b>Email</b>
                       <a href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
-                      <p>Goes to my inbox. No CRM, no auto-responder.</p>
+                      <p>Reaches Sav directly. No CRM, no auto-responder.</p>
                     </div>
                   </div>
                   <div className="channel">
@@ -184,60 +174,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div>
-                  <h3>Pick a 30-min slot</h3>
-                  <div className="cal-mock">
-                    <div className="cal-head">
-                      <span><b>May 2026</b> · 30-minute intro</span>
-                      <span>America/New_York</span>
-                    </div>
-                    <div className="cal-grid">
-                      {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => (
-                        <div key={i} className="cal-day head">{d}</div>
-                      ))}
-                      <div className="cal-day full">28</div>
-                      <div className="cal-day full">29</div>
-                      <div className="cal-day avail">30</div>
-                      <div className="cal-day avail">1</div>
-                      <div className="cal-day full">2</div>
-                      <div className="cal-day"></div>
-                      <div className="cal-day"></div>
-
-                      <div className="cal-day avail">5</div>
-                      <div className="cal-day avail">6</div>
-                      <div className="cal-day full">7</div>
-                      <div className="cal-day avail">8</div>
-                      <div className="cal-day avail">9</div>
-                      <div className="cal-day"></div>
-                      <div className="cal-day"></div>
-
-                      <div className="cal-day full">12</div>
-                      <div className="cal-day avail">13</div>
-                      <div className="cal-day avail">14</div>
-                      <div className="cal-day avail">15</div>
-                      <div className="cal-day full">16</div>
-                      <div className="cal-day"></div>
-                      <div className="cal-day"></div>
-
-                      <div className="cal-day avail">19</div>
-                      <div className="cal-day avail">20</div>
-                      <div className="cal-day avail">21</div>
-                      <div className="cal-day full">22</div>
-                      <div className="cal-day avail">23</div>
-                      <div className="cal-day"></div>
-                      <div className="cal-day"></div>
-                    </div>
-                    <div className="cal-foot">
-                      <span><span style={{ color: 'var(--teal)' }}>●</span> available · <span style={{ color: 'oklch(0.45 0.01 80)' }}>●</span> full</span>
-                      <a href="https://cal.com/sav" target="_blank" rel="noopener" style={{ color: 'var(--teal)' }}>cal.com/sav →</a>
-                    </div>
-                  </div>
-                  <p className="mono-sm" style={{ marginTop: 14, color: 'var(--fg-3)', display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <a href="https://cal.com/sav" target="_blank" rel="noopener" className="kbd" style={{ textDecoration: 'none' }}>
-                      Schedule on Cal.com →
-                    </a>
-                  </p>
-                </div>
               </div>
             </div>
           </div>

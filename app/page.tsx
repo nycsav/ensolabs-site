@@ -483,7 +483,7 @@ export default function HomePage() {
               </p>
               <div className="hero-cta-row">
                 <Link className="btn btn-primary" href="/contact">
-                  Book a Discovery Call <Arrow />
+                  Get in Touch <Arrow />
                 </Link>
                 <a className="btn" href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
               </div>

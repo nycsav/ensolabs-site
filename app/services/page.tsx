@@ -257,7 +257,7 @@ export default function ServicesPage() {
             <div style={{ display: 'grid', gap: 24 }}>
               <p className="lede">Most engagements span two tracks. The Trading Terminal proves a principal-led studio can run consult, build, and ship simultaneously.</p>
               <div className="hero-cta-row">
-                <Link className="btn btn-primary" href="/contact">Book a Discovery Call <Arrow /></Link>
+                <Link className="btn btn-primary" href="/contact">Get in Touch <Arrow /></Link>
                 <Link className="btn" href="/work">See engagements</Link>
               </div>
             </div>

@@ -40,10 +40,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-default.png',
         width: 1200,
         height: 630,
         alt: `${SITE.name} — ${SITE.tagline}`,
+        type: 'image/png',
       },
     ],
   },
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
-    images: ['/opengraph-image'],
+    images: ['/og-default.png'],
   },
   robots: {
     index: true,

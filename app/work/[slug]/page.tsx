@@ -241,7 +241,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
         <section className="cs-cta">
           <p>Interested in results like these?</p>
-          <Link href="/contact" className="btn" style={{ display: 'inline-block' }}>Book a Discovery Call</Link>
+          <Link href="/contact" className="btn" style={{ display: 'inline-block' }}>Get in Touch</Link>
         </section>
       </main>
     </>
