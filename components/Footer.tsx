@@ -6,7 +6,10 @@ export function Footer() {
   return (
     <footer>
       <div className="shell">
-        <div className="foot-mark">ENSO LABS</div>
+        <div className="foot-mark">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/logo-white.svg" alt="Enso Labs" />
+        </div>
 
         <div className="foot-grid">
           <div className="foot-col">

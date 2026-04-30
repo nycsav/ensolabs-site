@@ -54,7 +54,7 @@ export default function InsightsIndex() {
             <span className="accent">production AI.</span>
           </h1>
           <p className="lede" style={{ marginTop: 32, maxWidth: '64ch' }}>
-            Essays from inside live engagements — what survives contact with production, what fails on the way there, and the operating principles behind the Strategy-to-Ship Framework.
+            <strong>Enso Labs Insights</strong> is the studio&rsquo;s editorial archive — essays from inside live engagements about what survives contact with production, what fails on the way there, and the operating principles behind the Strategy-to-Ship Framework.
           </p>
 
           <a

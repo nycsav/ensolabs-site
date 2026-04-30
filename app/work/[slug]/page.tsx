@@ -10,8 +10,11 @@ const CASES: Record<string, {
   title: string; client: string; sector: string; sectorTag: string;
   engagement: string; stack: string; delivered: string;
   headline: string; subtitle: string;
+  /** AEO definition-lead sentence rendered as the first body paragraph. */
+  definition: string;
   challenge: string; approach: string[]; outcomes: { label: string; value: string }[];
   metaDesc: string;
+  datePublished: string;
 }> = {
   gore: {
     title: 'Gore M2 Intelligence Hub',
@@ -21,6 +24,7 @@ const CASES: Record<string, {
     delivered: 'April 2026',
     headline: 'A market-radar that scientists trust.',
     subtitle: '8-stage LangGraph pipeline with AES-256-GCM encryption and expert-knowledge encoding.',
+    definition: 'The Gore M2 Intelligence Hub is a production-grade AI market-intelligence platform built by Enso Labs for W. L. Gore & Associates that surfaces auditable commercial signals from scientific literature, patents, and regulatory filings — replacing weeks of manual research with a single auditable pipeline.',
     challenge: 'Gore\'s Battery Insulation Division needed to surface emerging commercial opportunities from scientific literature, patents, and regulatory filings — replacing manual research processes that took weeks.',
     approach: [
       'Designed the "Gore Lens" — a 9-rule expert-knowledge encoding framework with toggleable relevance rules',
@@ -36,6 +40,7 @@ const CASES: Record<string, {
       { label: 'Encryption', value: 'AES-256-GCM' },
     ],
     metaDesc: 'How Enso Labs built an AI-powered market intelligence platform for W. L. Gore — 731 documents, 16 validated signals, AES-256-GCM encrypted dashboard.',
+    datePublished: '2026-04-15',
   },
   heller: {
     title: 'AI Center of Excellence — Pharma',
@@ -45,6 +50,7 @@ const CASES: Record<string, {
     delivered: '2022–Present',
     headline: 'AI that survives MLR review.',
     subtitle: '5 brand knowledge bases, 8 active automations, NIST + FDA/MLR/PRC compliant.',
+    definition: 'The Heller AI Center of Excellence is a NIST-compliant agentic AI program built by Enso Labs that integrates artificial intelligence across five pharma brand teams while preserving FDA, MLR, and PRC review — and compresses campaign launches from three months to two weeks.',
     challenge: 'A full-service pharma agency needed to integrate AI across 5 brand teams while maintaining FDA/MLR/PRC compliance — without disrupting active campaigns.',
     approach: [
       'Designed and launched AI Center of Excellence with NIST AI RMF governance',
@@ -60,6 +66,7 @@ const CASES: Record<string, {
       { label: 'Active automations', value: '8' },
     ],
     metaDesc: 'How Enso Labs built an AI Center of Excellence for a pharma agency — 83% faster campaign launches, 75% pilot-to-production, FDA/MLR compliant.',
+    datePublished: '2022-09-01',
   },
   'trading-terminal': {
     title: 'Enso Trading Terminal',
@@ -69,6 +76,7 @@ const CASES: Record<string, {
     delivered: '2025–Present',
     headline: 'We run what we sell.',
     subtitle: 'Autonomous signal intelligence and options trading platform — live in production.',
+    definition: 'The Enso Trading Terminal is an autonomous signal-intelligence and options-trading platform built and operated by Enso Labs that runs 24/7 across equities, options, and crypto/DeFi — proving the studio\'s agentic architecture under live market conditions.',
     challenge: 'Enso Labs needed to prove that our agentic architecture works in production under real market conditions — not just in client demos.',
     approach: [
       'Built autonomous signal intelligence platform with news-driven trading algorithms',
@@ -84,6 +92,7 @@ const CASES: Record<string, {
       { label: 'Uptime', value: '24/7 autonomous' },
     ],
     metaDesc: 'The Enso Trading Terminal — an autonomous signal intelligence and options trading platform built by Enso Labs, running live in production.',
+    datePublished: '2025-06-01',
   },
   'enterprise-ai': {
     title: 'Enterprise AI Enablement Programs',
@@ -93,6 +102,7 @@ const CASES: Record<string, {
     delivered: '2022–Present',
     headline: 'Cohorts that actually ship.',
     subtitle: '3-month time-to-first-value, 75% pilot-to-production conversion.',
+    definition: 'Enterprise AI Enablement is a cohort-based program from Enso Labs for executive teams that converts AI training into shipped production systems — averaging a 3-month time-to-first-value and 75% pilot-to-production conversion across finance, healthcare, and technology.',
     challenge: 'Enterprise teams invest in AI training but rarely ship anything to production. The gap between "workshop" and "deployed system" is where most AI initiatives die.',
     approach: [
       'Designed cohort-based enablement for 8–15 person executive teams',
@@ -108,6 +118,7 @@ const CASES: Record<string, {
       { label: 'Sectors', value: 'Finance · Health · Tech' },
     ],
     metaDesc: 'Enterprise AI enablement programs by Enso Labs — 3-month time-to-first-value, 75% pilot-to-production, cohort-based delivery.',
+    datePublished: '2022-09-01',
   },
 };
 
@@ -157,9 +168,22 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           '@type': 'Article',
           headline: cs.title,
           description: cs.metaDesc,
-          author: { '@type': 'Person', name: SITE.founder.name },
-          publisher: { '@type': 'Organization', name: SITE.name },
+          datePublished: cs.datePublished,
+          dateModified: cs.datePublished,
+          author: {
+            '@type': 'Person',
+            name: SITE.founder.name,
+            url: `${SITE.origin}/about`,
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: SITE.name,
+            url: SITE.origin,
+          },
+          mainEntityOfPage: { '@type': 'WebPage', '@id': shareUrl },
           url: shareUrl,
+          image: `${SITE.origin}/og-default.png`,
+          articleSection: cs.sectorTag,
         },
       ]} />
 
@@ -171,7 +195,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           .cs-tag { font-family: var(--mono); font-size: 11px; color: var(--teal); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
           .cs-h1 { font-family: var(--display); font-weight: 500; font-size: clamp(40px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.02em; margin-bottom: 16px; }
           .cs-h1 em { font-style: italic; color: var(--teal); }
-          .cs-sub { font-size: 18px; color: var(--fg-2); line-height: 1.5; max-width: 640px; margin-bottom: 48px; }
+          .cs-sub { font-size: 18px; color: var(--fg-2); line-height: 1.5; max-width: 640px; margin-bottom: 24px; }
+          .cs-definition { font-size: 17px; line-height: 1.6; color: var(--fg); max-width: 64ch; margin-bottom: 48px; padding: 18px 22px; border-left: 2px solid var(--teal); background: color-mix(in oklab, var(--teal) 6%, transparent); border-radius: 0 6px 6px 0; }
           .cs-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 64px; }
           .cs-meta-cell { background: var(--bg); padding: 16px 20px; }
           .cs-meta-cell .label { font-family: var(--mono); font-size: 10px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
@@ -196,6 +221,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <div className="cs-tag">{cs.sectorTag} · Case Study</div>
           <h1 className="cs-h1">{cs.title}. <em>{cs.headline}</em></h1>
           <p className="cs-sub">{cs.subtitle}</p>
+          <p className="cs-definition">{cs.definition}</p>
           <div className="cs-meta-grid">
             <div className="cs-meta-cell"><div className="label">Client</div><div className="val">{cs.client}</div></div>
             <div className="cs-meta-cell"><div className="label">Sector</div><div className="val">{cs.sector}</div></div>

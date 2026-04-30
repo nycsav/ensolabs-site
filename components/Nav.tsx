@@ -49,8 +49,8 @@ export function Nav() {
       <nav className="nav">
         <div className="nav-inner">
           <Link className="nav-brand" href="/" onClick={() => setOpen(false)}>
-            <span className="nav-mark" aria-hidden="true" />
-            <b>ENSO LABS</b>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/logo-white.svg" alt="Enso Labs" className="nav-logo" />
             <span>/ STRATEGY-TO-SHIP</span>
           </Link>
 
@@ -100,8 +100,8 @@ export function Nav() {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <Link className="nav-brand" href="/" onClick={() => setOpen(false)}>
-              <span className="nav-mark" aria-hidden="true" />
-              <b>ENSO LABS</b>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/logo-white.svg" alt="Enso Labs" className="nav-logo" />
             </Link>
             <button
               type="button"

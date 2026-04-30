@@ -65,22 +65,27 @@ export default function AboutPage() {
         .bio-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
         @media (max-width: 900px) { .bio-grid { grid-template-columns: 1fr; gap: 32px; } }
         .portrait {
-          aspect-ratio: 4 / 5;
-          background: var(--bg-2);
-          border: 1px solid var(--line);
-          border-radius: 8px;
           position: relative;
+          border-radius: 8px;
           overflow: hidden;
-          background-image:
-            repeating-linear-gradient(135deg, transparent 0 9px, color-mix(in oklab, var(--teal) 10%, transparent) 9px 10px),
-            linear-gradient(180deg, var(--bg-2), var(--bg-3));
+          border: 1px solid var(--line);
+          background: var(--bg-2);
+          max-width: 320px;
+          width: 100%;
         }
-        .portrait::after {
-          content: "[ portrait · sav banerjee ]";
-          position: absolute; left: 16px; bottom: 16px;
-          font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+        .portrait img {
+          display: block;
+          width: 100%;
+          height: auto;
+          filter: grayscale(20%);
         }
-        .portrait .corner { position: absolute; top: 16px; right: 16px; font-family: var(--mono); font-size: 11px; color: var(--teal); }
+        .portrait .corner {
+          position: absolute; top: 16px; right: 16px;
+          font-family: var(--mono); font-size: 11px; color: var(--teal);
+          background: color-mix(in oklab, var(--bg) 70%, transparent);
+          padding: 4px 8px; border-radius: 4px;
+          backdrop-filter: blur(6px);
+        }
         .bio p { font-size: 17px; line-height: 1.65; color: var(--fg-2); margin-bottom: 18px; }
         .bio p strong { color: var(--fg); font-weight: 500; }
         .timeline { display: grid; gap: 0; }
@@ -141,6 +146,8 @@ export default function AboutPage() {
 
           <div className="bio-grid">
             <div className="reveal portrait">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/sav-banerjee.jpg" alt="Sav Banerjee — Founder, Enso Labs" />
               <span className="corner">SB · NYC</span>
             </div>
             <div className="reveal bio" data-delay="1">
