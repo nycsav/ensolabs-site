@@ -835,16 +835,33 @@ footer {
   .nav-links { display: none; }
   .nav-inner { padding: 14px var(--pad); }
 
+  /* Nav — solid background, bright logo, hide tagline */
+  .nav {
+    background: rgba(13, 19, 33, 0.97) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+  .nav-brand span { display: none !important; }
+
   /* Hero — tighter padding, smaller h1 */
   .hero {
-    padding-top: clamp(96px, 22vw, 140px);
-    padding-bottom: clamp(48px, 10vw, 72px);
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
   }
+  .hero-meta {
+    gap: 12px !important;
+    margin-bottom: 32px !important;
+    font-size: 10px !important;
+  }
+  .hero-foot { margin-top: 40px !important; }
   .display { font-size: clamp(2.25rem, 8vw, 7rem); line-height: 1.02; }
 
-  /* Section padding tightens */
-  section { padding-top: 64px !important; padding-bottom: 64px !important; }
-  .section-head { margin-bottom: 40px !important; }
+  /* Global section spacing */
+  section { padding-top: 56px !important; padding-bottom: 56px !important; }
+  .section-head { margin-bottom: 36px !important; gap: 16px !important; }
+  .h2 { font-size: clamp(24px, 5vw, 32px) !important; }
+
+  /* Hide terminal on mobile */
+  .terminal { display: none !important; }
 
   /* All multi-column grids → single column at 768px */
   .pillars,
@@ -854,16 +871,18 @@ footer {
     grid-template-columns: 1fr !important;
   }
   .clients {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
   }
   .pillar {
-    min-height: auto;
+    padding: 28px 24px !important;
+    min-height: auto !important;
   }
+  .pillar ul { display: none !important; }
   .insight-card.featured { grid-template-columns: 1fr; padding: 28px 22px; }
   .case-row { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
   .case-row .case-no { font-size: 11px; }
   .case-row .case-title { font-size: 24px; line-height: 1.15; }
-  .case-row .case-desc, .case-row .case-tag { display: block; }
+  .case-row .case-desc, .case-row .case-tag { display: none !important; }
   .case-row .case-arrow { display: none; }
 
   /* Two-column hero foot / engage CTA / about bio etc — stack */
@@ -902,25 +921,23 @@ footer {
     height: auto !important;
   }
 
-  /* Terminal mock — wrap text on mobile instead of horizontal scroll */
-  .terminal {
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    font-size: 11px !important;
-  }
-  .terminal-body div { white-space: normal !important; word-break: break-word !important; }
-  .terminal-bar { font-size: 10.5px; }
+  /* Signal cards — show only 2 on mobile */
+  .s2n-grid > a:nth-child(n+3) { display: none !important; }
 
-  /* Methodology cards — reduce height on mobile */
+  /* Methodology cards — shorter on mobile */
   [data-screen-label="06 Methodology"] [style*="min-height"] {
     min-height: auto !important;
     padding: 24px 20px !important;
   }
+  [data-screen-label="06 Methodology"] p { font-size: 13px !important; }
 
-  /* CTA headline — smaller on mobile */
+  /* CTA — tighter on mobile */
+  [data-screen-label="08 CTA"] {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
   [data-screen-label="08 CTA"] .display {
-    font-size: clamp(32px, 8vw, 44px) !important;
+    font-size: clamp(28px, 7vw, 40px) !important;
   }
 
   /* Work-page dashboard mocks: let them scroll horizontally */
@@ -940,8 +957,8 @@ footer {
   .foot-mark img { height: 24px; }
   .foot-bottom { font-size: 11px; gap: 12px; }
 
-  /* Proof cells — tighter padding on mobile */
-  .proof-cell { padding: 20px 16px !important; min-height: 140px !important; }
+  /* Proof cells — tighter on mobile */
+  .proof-cell { padding: 20px 16px !important; min-height: 120px !important; }
 
   /* Buttons fit content, never overflow */
   .btn { padding: 14px 18px; font-size: 12.5px; }
@@ -1015,7 +1032,10 @@ body.menu-open { overflow: hidden; }
   display: block;
 }
 @media (max-width: 768px) {
-  .nav-logo { height: 32px; }
+  .nav-logo {
+    height: 36px !important;
+    filter: brightness(1.4) !important;
+  }
 }
 
 /* signal2noise iframe embed on /insights — taller on desktop, shorter on phones */
@@ -1026,6 +1046,5 @@ body.menu-open { overflow: hidden; }
 
 /* Small mobile — tighter grids */
 @media (max-width: 480px) {
-  .clients { grid-template-columns: repeat(2, 1fr) !important; }
-  .foot-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .foot-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
 }
