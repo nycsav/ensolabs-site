@@ -30,7 +30,8 @@ export const metadata: Metadata = {
   authors: [{ name: SITE.founder.name, url: SITE.founder.linkedin }],
   creator: SITE.founder.name,
   publisher: SITE.name,
-  alternates: { canonical: '/' },
+  // Explicitly absolute so Google never sees ambiguity vs. www. or ensopartners.co.
+  alternates: { canonical: SITE.origin },
   openGraph: {
     type: 'website',
     siteName: SITE.name,
