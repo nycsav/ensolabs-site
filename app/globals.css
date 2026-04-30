@@ -1003,7 +1003,7 @@ body.menu-open { overflow: hidden; }
   display: block;
 }
 @media (max-width: 768px) {
-  .nav-logo { height: 18px; }
+  .nav-logo { height: 28px; }
 }
 
 /* signal2noise iframe embed on /insights — taller on desktop, shorter on phones */
