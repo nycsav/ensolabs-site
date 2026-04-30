@@ -380,7 +380,7 @@ footer {
   align-items: flex-start;
 }
 .foot-mark img {
-  height: clamp(80px, 14vw, 160px);
+  height: 32px;
   width: auto;
   display: block;
   opacity: 0.95;
@@ -913,7 +913,7 @@ footer {
   /* Footer — single column */
   .foot-grid { grid-template-columns: 1fr !important; gap: 32px; }
   .foot-mark { margin-bottom: 16px; }
-  .foot-mark img { height: clamp(56px, 18vw, 96px); }
+  .foot-mark img { height: 24px; }
   .foot-bottom { font-size: 11px; gap: 12px; }
 
   /* Buttons fit content, never overflow */
@@ -983,12 +983,12 @@ body.menu-open { overflow: hidden; }
 
 /* Logo image — replaces the inline SVG mark used previously. */
 .nav-logo {
-  height: 40px;
+  height: 22px;
   width: auto;
   display: block;
 }
 @media (max-width: 768px) {
-  .nav-logo { height: 32px; }
+  .nav-logo { height: 18px; }
 }
 
 /* signal2noise iframe embed on /insights — taller on desktop, shorter on phones */
