@@ -983,7 +983,7 @@ body.menu-open { overflow: hidden; }
 
 /* Logo image — replaces the inline SVG mark used previously. */
 .nav-logo {
-  height: 28px;
+  height: 32px;
   width: auto;
   display: block;
 }

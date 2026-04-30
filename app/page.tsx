@@ -14,15 +14,18 @@ export const metadata: Metadata = {
   description: SITE.description,
   alternates: { canonical: '/' },
   openGraph: {
-    title: `${SITE.name} — Strategy to Ship. AI Transformation & Agentic Systems Studio`,
+    title: 'Enso Labs — Strategy to Ship',
     description:
-      'We architect AI strategy for Healthcare, Finance, and B2B Tech — then build the production systems that deliver it. NYC.',
+      'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
     url: SITE.origin,
+    images: [{ url: 'https://ensolabs.ai/og-default.png', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
   },
   twitter: {
-    title: `${SITE.name} — Strategy to Ship. AI Transformation & Agentic Systems Studio`,
+    card: 'summary_large_image',
+    title: 'Enso Labs — Strategy to Ship',
     description:
-      'We architect AI strategy for Healthcare, Finance, and B2B Tech — then build the production systems that deliver it. NYC.',
+      'AI transformation consultancy and agentic systems studio. NYC.',
+    images: ['https://ensolabs.ai/og-default.png'],
   },
 };
 
