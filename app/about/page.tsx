@@ -118,8 +118,8 @@ export default function AboutPage() {
             <span className="eyebrow"><span className="num">PAGE / 04</span>&nbsp;About</span>
           </div>
           <h1 className="display reveal" data-delay="1" style={{ fontSize: 'clamp(44px, 7.5vw, 104px)' }}>
-            The advisor<br />
-            <em>is the</em> <span className="accent">builder.</span>
+            The advisors<br />
+            <em>are the</em> <span className="accent">builders.</span>
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
