@@ -843,8 +843,8 @@ footer {
   .display { font-size: clamp(2.25rem, 8vw, 7rem); line-height: 1.02; }
 
   /* Section padding tightens */
-  section { padding: clamp(56px, 14vw, 96px) 0; }
-  .section-head { margin-bottom: 32px; }
+  section { padding-top: 64px !important; padding-bottom: 64px !important; }
+  .section-head { margin-bottom: 40px !important; }
 
   /* All multi-column grids → single column at 768px */
   .pillars,
@@ -902,14 +902,26 @@ footer {
     height: auto !important;
   }
 
-  /* Terminal mock — allow horizontal scroll on tiny screens */
+  /* Terminal mock — wrap text on mobile instead of horizontal scroll */
   .terminal {
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    font-size: 11px !important;
   }
-  .terminal-body { font-size: 11.5px; white-space: nowrap; }
+  .terminal-body div { white-space: normal !important; word-break: break-word !important; }
   .terminal-bar { font-size: 10.5px; }
+
+  /* Methodology cards — reduce height on mobile */
+  [data-screen-label="06 Methodology"] [style*="min-height"] {
+    min-height: auto !important;
+    padding: 24px 20px !important;
+  }
+
+  /* CTA headline — smaller on mobile */
+  [data-screen-label="08 CTA"] .display {
+    font-size: clamp(32px, 8vw, 44px) !important;
+  }
 
   /* Work-page dashboard mocks: let them scroll horizontally */
   .case-vis { padding: 16px; min-height: 0; }
@@ -929,7 +941,7 @@ footer {
   .foot-bottom { font-size: 11px; gap: 12px; }
 
   /* Proof cells — tighter padding on mobile */
-  .proof-cell { padding: 24px 16px; min-height: 140px; }
+  .proof-cell { padding: 20px 16px !important; min-height: 140px !important; }
 
   /* Buttons fit content, never overflow */
   .btn { padding: 14px 18px; font-size: 12.5px; }
@@ -1003,11 +1015,17 @@ body.menu-open { overflow: hidden; }
   display: block;
 }
 @media (max-width: 768px) {
-  .nav-logo { height: 28px; }
+  .nav-logo { height: 32px; }
 }
 
 /* signal2noise iframe embed on /insights — taller on desktop, shorter on phones */
 @media (max-width: 768px) {
   .s2n-iframe { height: 400px !important; }
   .s2n-embed { padding: 20px !important; }
+}
+
+/* Small mobile — tighter grids */
+@media (max-width: 480px) {
+  .clients { grid-template-columns: repeat(2, 1fr) !important; }
+  .foot-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
