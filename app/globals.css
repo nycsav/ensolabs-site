@@ -983,12 +983,12 @@ body.menu-open { overflow: hidden; }
 
 /* Logo image — replaces the inline SVG mark used previously. */
 .nav-logo {
-  height: 32px;
+  height: 40px;
   width: auto;
   display: block;
 }
 @media (max-width: 768px) {
-  .nav-logo { height: 24px; }
+  .nav-logo { height: 32px; }
 }
 
 /* signal2noise iframe embed on /insights — taller on desktop, shorter on phones */
