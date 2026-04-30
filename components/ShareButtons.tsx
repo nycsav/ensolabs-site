@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { track } from '@/lib/gtag';
 
 type Props = {
   /** Path-only URL (e.g. /work/gore). The full URL is built at click time
@@ -9,6 +10,8 @@ type Props = {
   /** Title used as the social share copy (LinkedIn, X, email subject). */
   title: string;
 };
+
+type ShareMethod = 'linkedin' | 'twitter' | 'email' | 'copy';
 
 export function ShareButtons({ path, title }: Props) {
   const [copied, setCopied] = useState(false);
@@ -22,10 +25,28 @@ export function ShareButtons({ path, title }: Props) {
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 
+  // Derive content_type + item_id from the path so the same component
+  // emits the right analytics on case studies AND insight articles.
+  const segments = path.split('/').filter(Boolean);
+  const contentType: 'case_study' | 'insight' | 'page' =
+    segments[0] === 'work' ? 'case_study'
+    : segments[0] === 'insights' ? 'insight'
+    : 'page';
+  const itemId = segments[segments.length - 1] || path;
+
+  const fireShare = (method: ShareMethod) => {
+    track('share', {
+      method,
+      content_type: contentType,
+      item_id: itemId,
+    });
+  };
+
   const onCopy = async () => {
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
+      fireShare('copy');
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // Some browsers block clipboard outside HTTPS — fall back silently.
@@ -45,6 +66,7 @@ export function ShareButtons({ path, title }: Props) {
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
         target="_blank"
         rel="noopener"
+        onClick={() => fireShare('linkedin')}
       >
         LINKEDIN
       </a>
@@ -54,6 +76,7 @@ export function ShareButtons({ path, title }: Props) {
         href={`https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
         target="_blank"
         rel="noopener"
+        onClick={() => fireShare('twitter')}
       >
         X / TWITTER
       </a>
@@ -61,6 +84,7 @@ export function ShareButtons({ path, title }: Props) {
       <a
         className="share-btn"
         href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
+        onClick={() => fireShare('email')}
       >
         EMAIL
       </a>

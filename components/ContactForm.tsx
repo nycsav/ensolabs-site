@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { Arrow } from './Arrow';
+import { track } from '@/lib/gtag';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -57,6 +58,10 @@ export function ContactForm() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data?.error || `Submit failed (${res.status})`);
       }
+      track('form_submit', {
+        event_category: 'lead_gen',
+        event_label: 'contact_form',
+      });
       setStatus('success');
       form.reset();
     } catch (err) {

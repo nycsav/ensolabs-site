@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
+import { S2NLink } from '@/components/S2NLink';
 import { blogSchema, breadcrumbSchema } from '@/lib/schema';
 import { INSIGHTS } from '@/lib/insights';
 
@@ -92,7 +93,7 @@ export default function InsightsIndex() {
                 <h2 style={{ fontFamily: 'var(--display)', fontSize: '24px', fontWeight: 500, marginBottom: '4px' }}>Live Intelligence</h2>
                 <p style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--fg-3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Powered by signal2noise · Updated daily</p>
               </div>
-              <a href="https://signals.ensolabs.ai" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--teal)', textDecoration: 'none' }}>Open full feed →</a>
+              <S2NLink href="https://signals.ensolabs.ai" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--teal)', textDecoration: 'none' }}>Open full feed →</S2NLink>
             </div>
             <iframe
               src="https://signals.ensolabs.ai"
