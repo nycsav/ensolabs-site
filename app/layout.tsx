@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { RevealMount } from '@/components/Reveal';
 import { ThemeMount } from '@/components/ThemeMount';
 import { JsonLd } from '@/components/JsonLd';
+import { Analytics } from '@/components/Analytics';
 import { orgSchema, personSchema, websiteSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
@@ -97,6 +98,7 @@ export default function RootLayout({
       </head>
       <body>
         <JsonLd schemas={[orgSchema(), personSchema(), websiteSchema()]} />
+        <Analytics />
         <RevealMount />
         <ThemeMount />
         <Nav />
