@@ -83,7 +83,7 @@ const CASES: Record<string, {
       'Integrated multi-agent research automation across equities, options, and crypto/DeFi',
       'Connected to live brokerage APIs (Alpaca, Public.com, Hyperliquid)',
       'Implemented strategy backtesting, options flow analysis, and order management',
-      'Running autonomously in production — the ultimate dogfooding proof',
+      'Running autonomously in production — the ultimate proof of our build practice',
     ],
     outcomes: [
       { label: 'Markets covered', value: 'Equities · Options · Crypto' },

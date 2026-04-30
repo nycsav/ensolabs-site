@@ -34,27 +34,18 @@ export const metadata: Metadata = {
   // Explicitly absolute so Google never sees ambiguity vs. www. or ensopartners.co.
   alternates: { canonical: SITE.origin },
   openGraph: {
+    title: 'Enso Labs — Strategy to Ship',
+    description: 'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
+    url: 'https://ensolabs.ai',
+    siteName: 'Enso Labs',
+    images: [{ url: 'https://ensolabs.ai/og-default.png', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
     type: 'website',
-    siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: SITE.description,
-    url: SITE.origin,
-    locale: 'en_US',
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: `${SITE.name} — ${SITE.tagline}`,
-        type: 'image/png',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: SITE.description,
-    images: ['/og-default.png'],
+    title: 'Enso Labs — Strategy to Ship',
+    description: 'AI transformation consultancy and agentic systems studio. NYC.',
+    images: ['https://ensolabs.ai/og-default.png'],
   },
   robots: {
     index: true,

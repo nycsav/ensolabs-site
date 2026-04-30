@@ -41,7 +41,7 @@ const TIMELINE = [
 const ADVANTAGES = [
   { ix: '01', ti: 'Direct senior access', de: 'Every engagement is led by a senior advisor who also builds — no junior analysts running point. The person scoping your roadmap is in the codebase the next week.' },
   { ix: '02', ti: 'Builder credibility', de: 'The advisor and the build team work as one unit. Architecture decisions don’t get lost in translation between strategy and engineering.' },
-  { ix: '03', ti: 'Dogfooding proof', de: 'Enso Labs runs its own agentic infrastructure: the Trading Terminal, automated lead gen, scheduled research, N8N workflows. We use what we sell.' },
+  { ix: '03', ti: 'Production proof', de: 'Enso Labs runs its own agentic infrastructure: the Trading Terminal, automated lead gen, scheduled research, N8N workflows. We run what we build.' },
   { ix: '04', ti: 'Agency-trained', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO. The studio has sat across the room from your CFO, CMO, and General Counsel.' },
   { ix: '05', ti: 'Speed', de: 'No bloated team, no approval chain. A scope decided on Monday is in a sprint on Tuesday. The 3-month time-to-first-value is structural.' },
   { ix: '06', ti: 'Selective', de: 'A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you’ve saved $200k.' },

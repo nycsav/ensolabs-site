@@ -143,9 +143,9 @@ export default function HomePage() {
                 Every engagement is led by a senior advisor who also builds. Our specialist network scales with the work — no bloated teams, no hand-offs.
               </p>
               <p style={{ fontSize: 18, color: 'var(--fg-2)', lineHeight: 1.6 }}>
-                We dogfood the same infrastructure we sell: the <b style={{ color: 'var(--fg)' }}>Enso Trading Terminal</b>
+                We run the same infrastructure we build for clients: the <b style={{ color: 'var(--fg)' }}>Enso Trading Terminal</b>
                 {' '}runs autonomous signal intelligence, multi-agent research, and brokerage execution in production —
-                twenty-four hours a day. We build what we sell.
+                twenty-four hours a day.
               </p>
               <div className="tag-row" style={{ marginTop: 8 }}>
                 <span className="tag teal">LangGraph</span>
@@ -293,8 +293,8 @@ export default function HomePage() {
               <div className="label">Years inside Google, McCann, Publicis, RAPP, Y&amp;R, BBDO</div>
             </div>
             <div className="proof-cell">
-              <div className="num">13<em>+</em></div>
-              <div className="label">Perplexity Computer production tasks shipped &amp; running</div>
+              <div className="num">20<em>+</em></div>
+              <div className="label">AI production systems shipped &amp; running</div>
             </div>
             <div className="proof-cell">
               <div className="num">100<em>%</em></div>
@@ -371,28 +371,28 @@ export default function HomePage() {
           </div>
 
           <div role="list" style={{ borderTop: '1px solid var(--line)' }}>
-            <Link className="case-row reveal" href="/work#gore" role="listitem">
+            <Link className="case-row reveal" href="/work/gore" role="listitem">
               <span className="case-no">CS / 01</span>
               <span className="case-title">Gore M2 Intelligence Hub</span>
               <span className="case-desc">8-stage LangGraph pipeline, AES-256-GCM encrypted dashboard, &ldquo;Gore Lens&rdquo; expert-knowledge framework — go/no-go milestone delivered April 2026.</span>
               <span className="case-tag">W. L. Gore × BoI<br />Materials</span>
               <span className="case-arrow">→</span>
             </Link>
-            <Link className="case-row reveal" href="/work#heller" role="listitem">
+            <Link className="case-row reveal" href="/work/heller" role="listitem">
               <span className="case-no">CS / 02</span>
               <span className="case-title">AI Center of Excellence — Pharma</span>
               <span className="case-desc">5 brand knowledge bases, 8 active automations, NIST + FDA/MLR/PRC compliant. 83% faster campaign launches, 35% time savings.</span>
               <span className="case-tag">Heller Agency<br />Healthcare</span>
               <span className="case-arrow">→</span>
             </Link>
-            <Link className="case-row reveal" href="/work#terminal" role="listitem">
+            <Link className="case-row reveal" href="/work/trading-terminal" role="listitem">
               <span className="case-no">CS / 03</span>
               <span className="case-title">Enso Trading Terminal</span>
               <span className="case-desc">Autonomous signal intelligence and options trading platform. News-driven algos, multi-agent research, Alpaca + Public + Hyperliquid integration.</span>
               <span className="case-tag">Enso Labs<br />FinTech</span>
               <span className="case-arrow">→</span>
             </Link>
-            <Link className="case-row reveal" href="/work#enablement" role="listitem">
+            <Link className="case-row reveal" href="/work/enterprise-ai" role="listitem">
               <span className="case-no">CS / 04</span>
               <span className="case-title">Enterprise AI Enablement Programs</span>
               <span className="case-desc">Cohort-based enablement across finance, healthcare, and tech. 3-month time-to-first-value, 75% pilot-to-production.</span>
