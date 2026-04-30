@@ -990,3 +990,9 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 768px) {
   .nav-logo { height: 24px; }
 }
+
+/* signal2noise iframe embed on /insights — taller on desktop, shorter on phones */
+@media (max-width: 768px) {
+  .s2n-iframe { height: 400px !important; }
+  .s2n-embed { padding: 20px !important; }
+}

@@ -54,6 +54,10 @@ export function Footer() {
             Built &amp; shipped in NYC · <NycClock /> ET
           </span>
         </div>
+
+        <p style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--fg-3)', marginTop: '12px' }}>
+          Designed with Claude Design · Built with Claude Code · Intelligence by signal2noise · Human-in-the-loop: Sav Banerjee
+        </p>
       </div>
     </footer>
   );

@@ -86,6 +86,23 @@ export default function InsightsIndex() {
 
       <section style={{ paddingTop: 0, paddingBottom: 'clamp(80px, 10vw, 140px)', borderTop: 'none' }}>
         <div className="shell">
+          <section className="s2n-embed" style={{ marginBottom: '64px', padding: '32px', border: '1px solid var(--line)', borderRadius: '12px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
+              <div>
+                <h2 style={{ fontFamily: 'var(--display)', fontSize: '24px', fontWeight: 500, marginBottom: '4px' }}>Live Intelligence</h2>
+                <p style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--fg-3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Powered by signal2noise · Updated daily</p>
+              </div>
+              <a href="https://signals.ensolabs.ai" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--teal)', textDecoration: 'none' }}>Open full feed →</a>
+            </div>
+            <iframe
+              src="https://signals.ensolabs.ai"
+              className="s2n-iframe"
+              style={{ width: '100%', height: '500px', border: 'none', borderRadius: '8px' }}
+              title="signal2noise — Daily AI Intelligence"
+              loading="lazy"
+            />
+          </section>
+
           <div className="insights-grid">
             <Link href={`/insights/${featured.slug}`} className="insight-card featured">
               <div>
