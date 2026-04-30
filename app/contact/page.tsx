@@ -104,7 +104,7 @@ export default function ContactPage() {
         .channel .body b { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
         .channel .body a { color: var(--teal); font-family: var(--mono); font-size: 13px; }
         .channel .body p { color: var(--fg-2); font-size: 14px; line-height: 1.5; }
-.toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--teal); color: var(--bg); padding: 14px 22px; border-radius: 999px; font-family: var(--mono); font-size: 13px; font-weight: 500; box-shadow: 0 12px 40px rgba(0,0,0,0.4); opacity: 0; transition: opacity .3s, transform .3s; z-index: 100; pointer-events: none; display: flex; gap: 10px; align-items: center; }
+.toast { position: fixed; bottom: max(32px, env(safe-area-inset-bottom, 32px)); left: 50%; transform: translateX(-50%) translateY(60px); background: var(--teal); color: var(--bg); padding: 14px 22px; border-radius: 999px; font-family: var(--mono); font-size: 13px; font-weight: 500; box-shadow: 0 12px 40px rgba(0,0,0,0.4); opacity: 0; transition: opacity .3s, transform .3s; z-index: 100; pointer-events: none; display: flex; gap: 10px; align-items: center; max-width: calc(100vw - 32px); }
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
         details summary { cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; list-style: none; }
         details summary::-webkit-details-marker { display: none; }

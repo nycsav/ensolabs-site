@@ -849,10 +849,15 @@ footer {
   /* All multi-column grids → single column at 768px */
   .pillars,
   .proof,
-  .clients,
   .insights-grid,
   .s2n-grid {
     grid-template-columns: 1fr !important;
+  }
+  .clients {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .pillar {
+    min-height: auto;
   }
   .insight-card.featured { grid-template-columns: 1fr; padding: 28px 22px; }
   .case-row { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
@@ -880,6 +885,7 @@ footer {
   [style*="grid-template-columns: 1fr 1fr"],
   [style*="grid-template-columns:1fr 1fr"] {
     grid-template-columns: 1fr !important;
+    gap: 24px !important;
   }
   /* Methodology / proof inline grids using repeat */
   [style*="grid-template-columns: repeat(4"],
@@ -888,6 +894,12 @@ footer {
   [style*="grid-template-columns:1.1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 1px !important;
+  }
+
+  /* Fixed-height case study visuals clip stacked content */
+  [style*="height: 380"],
+  [style*="height:380"] {
+    height: auto !important;
   }
 
   /* Terminal mock — allow horizontal scroll on tiny screens */
@@ -915,6 +927,9 @@ footer {
   .foot-mark { margin-bottom: 16px; }
   .foot-mark img { height: 24px; }
   .foot-bottom { font-size: 11px; gap: 12px; }
+
+  /* Proof cells — tighter padding on mobile */
+  .proof-cell { padding: 24px 16px; min-height: 140px; }
 
   /* Buttons fit content, never overflow */
   .btn { padding: 14px 18px; font-size: 12.5px; }
