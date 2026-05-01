@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     description:
       'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
     url: SITE.origin,
-    images: [{ url: 'https://ensolabs.ai/og-default.png?v=2', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enso Labs — Strategy to Ship',
     description:
       'AI transformation consultancy and agentic systems studio. NYC.',
-    images: ['https://ensolabs.ai/og-default.png?v=2'],
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 
