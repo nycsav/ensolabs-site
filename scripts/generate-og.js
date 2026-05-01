@@ -16,7 +16,8 @@ const fs = require('fs');
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
         width: 1200px; height: 630px;
-        background: linear-gradient(135deg, #0d1321 0%, #111827 50%, #0d1321 100%);
+        background: linear-gradient(135deg, #1a2332 0%, #1e2d3f 50%, #1a2332 100%);
+        border: 2px solid rgba(255,255,255,0.15);
         font-family: 'Inter Tight', -apple-system, sans-serif;
         display: flex; flex-direction: column; justify-content: space-between;
         padding: 60px 80px;
@@ -41,7 +42,7 @@ const fs = require('fs');
       .wordmark { color: #ffffff; font-size: 20px; font-weight: 600; letter-spacing: 2px; }
       .divider { width: 1px; height: 28px; background: rgba(255,255,255,0.3); }
       .middle { position: relative; z-index: 1; }
-      .headline { font-size: 80px; font-weight: 600; color: #ffffff; line-height: 0.95; letter-spacing: -2px; }
+      .headline { font-size: 88px; font-weight: 700; color: #ffffff; line-height: 0.95; letter-spacing: -2px; }
       .headline em { font-style: italic; color: rgba(255,255,255,0.4); font-weight: 400; }
       .headline .teal { color: #5ce0d2; }
       .subtitle { font-size: 20px; color: rgba(255,255,255,0.5); margin-top: 24px; letter-spacing: 0.5px; }

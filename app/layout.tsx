@@ -38,14 +38,24 @@ export const metadata: Metadata = {
     description: 'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
     url: 'https://ensolabs.ai',
     siteName: 'Enso Labs',
-    images: [{ url: 'https://ensolabs.ai/og-default.png?v=2', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
+    images: [{
+      url: 'https://ensolabs.ai/og-default.png?v=3',
+      secureUrl: 'https://ensolabs.ai/og-default.png?v=3',
+      width: 1200,
+      height: 630,
+      type: 'image/png',
+      alt: 'Enso Labs — Strategy to Ship',
+    }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enso Labs — Strategy to Ship',
     description: 'AI transformation consultancy and agentic systems studio. NYC.',
-    images: ['https://ensolabs.ai/og-default.png?v=2'],
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
+  },
+  other: {
+    'thumbnail': 'https://ensolabs.ai/og-default.png?v=3',
   },
   icons: {
     icon: [
@@ -89,6 +99,7 @@ export default function RootLayout({
       <head>
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <link rel="image_src" href="https://ensolabs.ai/og-default.png?v=3" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
