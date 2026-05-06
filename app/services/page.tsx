@@ -34,6 +34,11 @@ const SERVICES_FAQ = [
     answer:
       'Anthropic (Claude Code), Google AI, OpenAI. Sav Banerjee is also a Perplexity AI Business Fellowship winner and member of Perplexity Business.',
   },
+  {
+    question: 'What financial AI agents can Enso Labs build?',
+    answer:
+      'We build production AI agents for trading, market intelligence, portfolio management, and financial analysis — using Claude\'s financial services infrastructure with MCP-connected brokerage APIs (Alpaca, Public.com, Interactive Brokers). Our Enso Trading Terminal has been running autonomously in production since 2025, predating Anthropic\'s formal financial services agent launch.',
+  },
 ];
 
 export const metadata: Metadata = {
@@ -108,18 +113,19 @@ const TRACKS: Track[] = [
     id: 'ship',
     num: 'TRACK / 03',
     pill: 'SHIP',
-    title: 'Financial AI & Trading Intelligence.',
-    lede: <>Production-grade trading infrastructure powered by the <b style={{ color: 'var(--fg)' }}>Enso Trading Terminal</b>. We run our own — and we&rsquo;ll build yours.</>,
+    title: 'Financial AI & Agentic Trading Systems.',
+    lede: <>We design and deploy AI agents for financial services — from autonomous trading systems to market intelligence platforms. Built on Claude&rsquo;s financial services infrastructure with MCP-connected brokerage APIs, real-time signal processing, and production-grade security.</>,
     tags: [
-      { label: 'Alpaca' }, { label: 'Public.com' }, { label: 'Hyperliquid' }, { label: 'altFINS' }, { label: 'AES-256-GCM' },
+      { label: 'Claude API', teal: true }, { label: 'MCP', teal: true }, { label: 'Alpaca' }, { label: 'Public.com' }, { label: 'Interactive Brokers' },
     ],
     deliverables: [
-      { ix: '13', ti: 'Signal Intelligence Platforms', de: 'News-driven signal pipelines, RWW (Real / Win / Worth) scoring, evidence-trail UX. Production-tested at Gore.', ta: '10–16 wk' },
-      { ix: '14', ti: 'Autonomous Trading Systems', de: 'Strategy engines, execution layer, risk caps, kill switches. Equities · options · crypto / DeFi.', ta: '12–20 wk' },
-      { ix: '15', ti: 'News-Driven Algorithms', de: 'Event detection, sentiment classification, signal-to-trade pipelines. Latency-aware where it matters.', ta: '6–10 wk' },
-      { ix: '16', ti: 'Options Flow & Strategy Lab', de: 'Options Lab with strategy testing, IV surfaces, flow analytics. Decision support, not black box.', ta: '6–12 wk' },
-      { ix: '17', ti: 'Crypto / DeFi Strategy Engine', de: 'Hyperliquid + altFINS integrated. Automated screening, position sizing, on-chain execution.', ta: '8–14 wk' },
-      { ix: '18', ti: 'Brokerage API Integration', de: 'Alpaca, Public.com, Hyperliquid — paper to live, with full compliance & audit trails.', ta: '3–6 wk' },
+      { ix: '13', ti: 'Autonomous Trading Agents', de: 'Claude + Alpaca/Public.com/Interactive Brokers. Strategy engines, execution layer, risk caps, kill switches.', ta: '12–20 wk' },
+      { ix: '14', ti: 'Market Intelligence Platforms', de: 'Real-time signal aggregation and synthesis. News-driven pipelines, RWW scoring, evidence-trail UX.', ta: '10–16 wk' },
+      { ix: '15', ti: 'MCP-Connected Brokerage Integration', de: 'Model Context Protocol for financial APIs. Paper to live, structured tool calls, typed surfaces.', ta: '3–6 wk' },
+      { ix: '16', ti: 'Options Flow Analysis & Strategy Backtesting', de: 'Options Lab with IV surfaces, flow analytics, strategy testing. Decision support, not black box.', ta: '6–12 wk' },
+      { ix: '17', ti: 'Crypto/DeFi Signal Engines', de: 'Multi-exchange, multi-agent. Automated screening, position sizing, on-chain execution.', ta: '8–14 wk' },
+      { ix: '18', ti: 'Financial Data Pipeline Architecture', de: 'End-to-end data pipelines for market data, alternative data, and financial analytics.', ta: '6–10 wk' },
+      { ix: '19', ti: 'Compliance-Ready Agent Deployment', de: 'Audit trails, encryption, access controls. Production-grade security for regulated environments.', ta: '4–8 wk' },
     ],
   },
 ];
@@ -293,7 +299,7 @@ export default function ServicesPage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;Common questions</span></div>
-            <div className="reveal" data-delay="1"><h2 className="h2">Five answers, asked often.</h2></div>
+            <div className="reveal" data-delay="1"><h2 className="h2">Six answers, asked often.</h2></div>
           </div>
 
           <div className="reveal" style={{ display: 'grid', gap: 0, borderTop: '1px solid var(--line)' }}>

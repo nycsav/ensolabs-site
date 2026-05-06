@@ -235,7 +235,7 @@ export default function HomePage() {
                 <span>P / 03</span><span className="tag">SHIP</span>
               </div>
               <h3>Financial AI &amp; Trading Intelligence</h3>
-              <p>Production trading infrastructure: signal intelligence, autonomous execution, news-driven algorithms, and crypto/DeFi strategy engines. We run them ourselves.</p>
+              <p>Production financial AI agents and autonomous trading systems. We build with the same Claude infrastructure that Goldman Sachs, Citi, and JPMorgan are now adopting — brokerage API integration, MCP-connected trading agents, and real-time signal intelligence. Anthropic Certified.</p>
               <ul>
                 <li>Enso Trading Terminal</li>
                 <li>News-driven trading algorithms</li>

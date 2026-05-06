@@ -3,7 +3,7 @@ export const SITE = {
   name: 'Enso Labs',
   tagline: 'Strategy to Ship.',
   description:
-    'Enso Labs is an AI transformation consultancy, agentic systems studio, and financial AI product lab that architects strategy and builds production systems for Healthcare, Finance, and B2B Tech.',
+    'Enso Labs is an AI transformation consultancy, agentic systems studio, and financial AI agent lab that architects strategy and builds production systems for Healthcare, Finance, and B2B Tech.',
   // Configurable via NEXT_PUBLIC_AVAILABILITY env var (e.g. "Q1 2027", "Booked through 2026").
   // Surfaced in the home hero, footer, and Cal.com mock.
   availability: process.env.NEXT_PUBLIC_AVAILABILITY || 'Q3–Q4 2026',

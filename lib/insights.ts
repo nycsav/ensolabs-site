@@ -120,6 +120,15 @@ export const INSIGHTS: Insight[] = [
       'The constraint is also real: bandwidth. A principal-led studio runs a small handful of deep engagements at a time. That is the whole point — depth, not portfolio. When the studio is at capacity, prospects hear so directly and get a future date.',
     ],
   },
+  {
+    slug: 'anthropic-financial-services-what-it-means',
+    title: 'Anthropic Just Launched 10 Financial AI Agents. We Built Ours Last Year.',
+    dek: 'Today Anthropic announced pre-built AI agents for banking and trading — pitchbook builders, credit memo drafters, statement auditors. Enso Labs has been shipping production financial agents since 2025. Here is what this means for the industry and why early movers have a structural advantage.',
+    pillar: 'Ship',
+    date: '2026-05-05',
+    readingMinutes: 4,
+    body: [],
+  },
 ];
 
 export const insightsByPillar = (pillar?: Pillar) =>

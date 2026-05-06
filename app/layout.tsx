@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE.origin },
   openGraph: {
     title: 'Enso Labs — Strategy to Ship',
-    description: 'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
+    description: 'AI transformation consultancy, agentic systems studio, and financial AI agent lab. NYC.',
     url: 'https://ensolabs.ai',
     siteName: 'Enso Labs',
     images: [{
