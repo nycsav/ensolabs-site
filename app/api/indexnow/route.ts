@@ -1,45 +1,34 @@
 import { NextResponse } from 'next/server';
 
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'ensolabs-indexnow-key';
-const HOST = 'ensolabs.ai';
-
-const URLS = [
-  '/',
-  '/services',
-  '/work',
-  '/work/gore',
-  '/work/heller',
-  '/work/trading-terminal',
-  '/work/enterprise-ai',
-  '/insights',
-  '/about',
-  '/contact',
-  '/built-with-ai',
-  '/industries/financial-services',
-  '/editorial-policy',
-];
+const KEY = 'ensolabs2026indexnow';
 
 export async function GET() {
-  const urlList = URLS.map((p) => `https://${HOST}${p}`);
+  const urls = [
+    '/',
+    '/services',
+    '/work',
+    '/about',
+    '/insights',
+    '/contact',
+    '/work/gore',
+    '/work/heller',
+    '/work/trading-terminal',
+    '/work/enterprise-ai',
+  ].map((p) => 'https://ensolabs.ai' + p);
 
   try {
     const res = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        host: HOST,
-        key: INDEXNOW_KEY,
-        urlList,
+        host: 'ensolabs.ai',
+        key: KEY,
+        keyLocation: 'https://ensolabs.ai/' + KEY + '.txt',
+        urlList: urls,
       }),
     });
-
-    return NextResponse.json({
-      status: res.status,
-      submitted: urlList.length,
-      urls: urlList,
-    });
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ status: res.status, submitted: urls.length });
+  } catch (e) {
+    return NextResponse.json({ error: String(e) }, { status: 500 });
   }
 }
