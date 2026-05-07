@@ -21,6 +21,7 @@ export const orgSchema = (): JsonLd => ({
     postalCode: SITE.address.postalCode,
     addressCountry: SITE.address.country,
   },
+  foundingDate: '2020',
   sameAs: [SITE.founder.linkedin, SITE.founder.github],
 });
 

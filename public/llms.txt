@@ -1,0 +1,40 @@
+# Enso Labs — llms.txt
+# https://ensolabs.ai
+
+> Enso Labs is an AI transformation consultancy, agentic systems studio, and financial AI agent lab founded by Sav Banerjee. We architect strategy and build production systems for Healthcare, Finance, and B2B Technology.
+
+## Services
+
+- **AI Transformation**: Maturity assessments, roadmaps, governance frameworks, and enablement programs for enterprises adopting AI.
+- **Agentic Systems**: Design and deployment of multi-agent architectures using LangGraph, Model Context Protocol, and RAG pipelines.
+- **Financial AI**: Autonomous trading terminals, signal intelligence engines, and options flow analysis platforms.
+
+## Engagement Models
+
+- **2-Week AI Audit**: Diagnostic engagement — maturity assessment, opportunity map, prioritized backlog, working agentic prototype.
+- **12-Week Pilot-to-Production**: Full strategy-to-ship — roadmap, business case, governance, production agentic system, enablement cohort.
+- **Embedded AI Operator**: Quarterly retainer — senior advisor and builder embedded with your team.
+
+## signal2noise
+
+signal2noise (signals.ensolabs.ai) is our proprietary content intelligence engine. It synthesizes Tier 1 research from McKinsey, Gartner, Forrester, BCG, and platform sources into daily executive briefings for marketing and AI leaders.
+
+## Key Pages
+
+- Home: https://ensolabs.ai
+- Services: https://ensolabs.ai/services
+- Work: https://ensolabs.ai/work
+- Insights: https://ensolabs.ai/insights
+- About: https://ensolabs.ai/about
+- Contact: https://ensolabs.ai/contact
+
+## Founder
+
+Sav Banerjee — Founder & Principal AI Transformation Advisor. 15+ years at Google, McCann, Publicis, RAPP, Y&R, BBDO. Certified by Anthropic, Google, and OpenAI. Based in New York City.
+
+## Contact
+
+- Email: sav@ensopartners.co
+- LinkedIn: https://linkedin.com/in/savbanerjee
+- GitHub: https://github.com/nycsav
+- Address: 31 Union Square West, 6th Floor, New York, NY 10003
