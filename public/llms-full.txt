@@ -47,6 +47,12 @@ Autonomous signal intelligence and options trading platform. News-driven trading
 ### Enterprise AI Enablement — https://ensolabs.ai/work/enterprise-ai
 Enterprise AI programs: 75% pilot-to-production rate.
 
+## Industry pillar: Financial Services — https://ensolabs.ai/industries/financial-services
+Production AI agents for banks, asset managers, insurers, and fintech, built on Claude with MCP-connected brokerage APIs (Alpaca, Public.com, Interactive Brokers). Same architecture in production at Goldman Sachs, JPMorgan, Citi, AIG, and Visa following Anthropic's May 2026 financial services launch. Risk caps live in the typed MCP tool, not the prompt — the kill-switch is the architecture. NYDFS 23 NYCRR 500 aware, SOC 2 path, SEC/FINRA recordkeeping for execution-bearing agents.
+
+## Editorial policy — https://ensolabs.ai/editorial-policy
+All content written and reviewed by Sav Banerjee. Sources include Anthropic/Google/OpenAI documentation, peer-reviewed research, regulator filings, and internal client work. Quarterly review cadence. Financial content is not investment advice.
+
 ## Built with AI (case study) — https://ensolabs.ai/built-with-ai
 How Enso Labs shipped ensolabs.ai in 24 hours using Claude Design (prototype), Claude Code (production), signal2noise (content intelligence), and Vercel (deploy). 6 main pages, 4 case studies, 71 JSON-LD schemas, dynamic OG images, MCP endpoint, AI-crawler-ready robots.
 
