@@ -9,6 +9,7 @@ const nextConfig = {
       // MCP discovery document lives at /api/mcp internally and is
       // exposed at the conventional /.well-known/mcp.json path.
       { source: '/.well-known/mcp.json', destination: '/api/mcp' },
+      { source: '/.well-known/security.txt', destination: '/api/security' },
     ];
   },
 };

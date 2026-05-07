@@ -266,16 +266,36 @@ export const blogSchema = (): JsonLd => ({
 export const articleSchema = (post: Insight): JsonLd => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': url(`/insights/${post.slug}`),
+  '@id': url(`/insights/${post.slug}#article`),
   headline: post.title,
   description: post.dek,
   datePublished: post.date,
   dateModified: post.date,
   author: { '@id': url('/#sav') },
+  reviewedBy: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': url(`/insights/${post.slug}`) },
+  mainEntityOfPage: { '@id': url(`/insights/${post.slug}`) },
   articleSection: post.pillar,
   wordCount: post.body.join(' ').split(/\s+/).length,
+});
+
+export const webPageSchema = (post: Insight): JsonLd => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': url(`/insights/${post.slug}`),
+  url: url(`/insights/${post.slug}`),
+  name: post.title,
+  description: post.dek,
+  inLanguage: 'en-US',
+  isPartOf: { '@id': url('/#website') },
+  primaryImageOfPage: undefined,
+  datePublished: post.date,
+  dateModified: post.date,
+  lastReviewed: post.date,
+  reviewedBy: { '@id': url('/#sav') },
+  about: { '@id': url('/#organization') },
+  author: { '@id': url('/#sav') },
+  publisher: { '@id': url('/#organization') },
 });
 
 export const contactPointSchema = (): JsonLd => ({

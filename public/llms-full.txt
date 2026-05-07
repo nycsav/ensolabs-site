@@ -1,0 +1,119 @@
+# Enso Labs — Full LLM Manifest
+> AI transformation consultancy, agentic systems studio, and financial AI agent lab. Founded by Sav Banerjee, NYC.
+
+This is the comprehensive companion to /llms.txt — full text descriptions of every service track, case study, and published insight, formatted for LLM ingestion.
+
+## Site
+- Canonical domain: https://ensolabs.ai
+- Founded: 2020 in New York City
+- Founder & Principal: Sav Banerjee
+- Address: 31 Union Square West, 6th Floor, New York, NY 10003
+- Email: sav@ensopartners.co
+- LinkedIn (personal): https://linkedin.com/in/savbanerjee
+- LinkedIn (company): https://linkedin.com/company/enso-partners
+- GitHub: https://github.com/nycsav
+- Sitemap: https://ensolabs.ai/sitemap.xml
+- RSS: https://ensolabs.ai/feed.xml
+- MCP discovery: https://ensolabs.ai/.well-known/mcp.json
+
+## Tagline
+Strategy to Ship.
+
+## Description
+Enso Labs is an AI transformation consultancy, agentic systems studio, and financial AI agent lab that architects strategy and builds production systems for Healthcare, Finance, and B2B Tech. Principal-led: the advisor designing your roadmap is the same operator writing the production code.
+
+## Three service tracks
+
+### 1. AI Transformation Consulting (Consult)
+Strategy, roadmaps, AI readiness assessments, executive workshops, and responsible-AI governance. Engagements include the 2-Week AI Audit (diagnostic with maturity assessment, opportunity map, prioritized backlog, and a working agentic prototype) and the 12-Week Pilot-to-Production (full Strategy-to-Ship engagement: roadmap, business case, governance, production agentic system, enablement cohort).
+
+### 2. Agentic Systems & Products (Build)
+Production agent architecture, workflow automation, RAG knowledge systems, MCP server development, AI Centers of Excellence. Stack: LangGraph, LangChain, CrewAI, MCP, Claude API, Python, React, N8N, BigQuery, GA4, Looker, Gemini, GPT-4.
+
+### 3. Financial AI & Trading Intelligence (Ship)
+Production AI agents for trading, market intelligence, portfolio management, and financial analysis — using Claude's financial services infrastructure with MCP-connected brokerage APIs (Alpaca, Public.com, Interactive Brokers). Built on the same platform now in production at Goldman Sachs, JPMorgan, Citi, AIG, and Visa. The Enso Trading Terminal has been running autonomously in production since 2025, predating Anthropic's formal financial services agent launch.
+
+## Case studies
+
+### AI Market Intelligence Platform — https://ensolabs.ai/work/gore
+Fortune 500 advanced-materials manufacturer. 731 documents indexed, 16 expert-validated signals, 9-rule expert lens encoding scientific reasoning as toggleable rules.
+
+### AI Center of Excellence for Pharma — https://ensolabs.ai/work/heller
+Heller Agency. 5 brand knowledge bases, 8 automations, 6 concurrent campaigns, MLR-compliant. Compressed launch cycles by 83%.
+
+### Enso Trading Terminal — https://ensolabs.ai/work/trading-terminal
+Autonomous signal intelligence and options trading platform. News-driven trading algorithms, multi-agent research automation, crypto/DeFi strategy engines, options flow analysis, brokerage API integration. AES-256-GCM encryption.
+
+### Enterprise AI Enablement — https://ensolabs.ai/work/enterprise-ai
+Enterprise AI programs: 75% pilot-to-production rate.
+
+## Built with AI (case study) — https://ensolabs.ai/built-with-ai
+How Enso Labs shipped ensolabs.ai in 24 hours using Claude Design (prototype), Claude Code (production), signal2noise (content intelligence), and Vercel (deploy). 6 main pages, 4 case studies, 71 JSON-LD schemas, dynamic OG images, MCP endpoint, AI-crawler-ready robots.
+
+## Insights (editorial)
+All articles authored and reviewed by Sav Banerjee.
+
+### Anthropic Just Launched 10 Financial AI Agents. We Built Ours Last Year.
+- URL: https://ensolabs.ai/insights/anthropic-financial-services-what-it-means
+- Date: 2026-05-05 · Pillar: Ship · 4 min
+- Anthropic announced pre-built agents for banking and trading — pitchbook builders, credit memo drafters, statement auditors. Enso Labs has been shipping production financial agents since 2025. What it means for the industry and why early movers have a structural advantage.
+
+### Why deck-only AI consulting dies on contact with production.
+- URL: https://ensolabs.ai/insights/why-deck-only-ai-consulting-fails-production
+- Date: 2026-04-22 · Pillar: Consult · 7 min
+- The gap between a beautiful slide and a running system is where most enterprise AI initiatives quietly die. The autopsy from fifteen years inside the room.
+
+### The Gore Lens: encoding expert knowledge as toggleable rules.
+- URL: https://ensolabs.ai/insights/gore-lens-expert-knowledge-encoding
+- Date: 2026-04-15 · Pillar: Build
+- A scientist will never trust a black-box relevance score. How we built a 9-rule expert lens scientists could reason about — and turn off — one rule at a time.
+
+### MCP servers are the new SaaS integration layer.
+- URL: https://ensolabs.ai/insights/mcp-servers-new-saas-integration
+- Date: 2026-04-08 · Pillar: Build
+- Every legacy SaaS connector — Salesforce, Slack, Notion, Looker — gets a second life as an MCP server. The companies that ship MCP first will own the agent-native enterprise.
+
+### Your RAG problem is an eval problem, not a vector-store problem.
+- URL: https://ensolabs.ai/insights/rag-eval-harness-not-vector-store
+- Date: 2026-04-01 · Pillar: Build
+- Teams burn months optimizing chunk sizes, hybrid retrieval, and reranker stacks. Then they ship — and discover they never had a reliable way to know if the answer was right.
+
+### In autonomous trading, the kill-switch is the architecture.
+- URL: https://ensolabs.ai/insights/autonomous-trading-risk-as-architecture
+- Date: 2026-03-25 · Pillar: Ship
+- The Trading Terminal runs unattended. That is only possible because the risk caps, position sizing, and shut-off logic were designed before the alpha logic — not after.
+
+### An AI Center of Excellence that ships MLR-compliant work.
+- URL: https://ensolabs.ai/insights/ai-coe-pharma-mlr-compliance
+- Date: 2026-03-18 · Pillar: Consult
+- Pharma agencies cannot move fast and break things. Medical, Legal, and Regulatory review is non-negotiable. How we built a CoE that compresses launches from three months to two weeks anyway.
+
+### Options flow analytics: decision support, not black box.
+- URL: https://ensolabs.ai/insights/options-flow-decision-support-not-black-box
+- Date: 2026-03-11 · Pillar: Ship
+- Unusual flow is a hypothesis, not a trade. The Options Lab is built to surface hypotheses, force the human to vet them, and only then route to execution.
+
+### A principal-led studio outperforms a 50-person consultancy on shipped systems.
+- URL: https://ensolabs.ai/insights/principal-led-vs-50-person-consultancy
+- Date: 2026-03-04 · Pillar: Consult
+- Counterintuitive — and structural, not heroic. Six things change when the advisor and the build team work as one unit.
+
+## Founder
+
+### Sav Banerjee — Founder & Principal AI Transformation Advisor
+15+ years across the room from C-suite buyers — now writing the code. Career: Google (strategy direction), McCann New York (VP, Data & Experience Strategy), RAPP (Director, Experience Strategy), Young & Rubicam Group (Director of Strategy), Organic / Omnicom (Director of Strategy), Rokkan / Publicis (Executive Director, Digital Strategy — American Express 50% social growth, Google+ launch strategy), BBDO Worldwide (Strategist — AT&T "It Can Wait" 5MM+ pledges).
+
+Founded Enso Partners in 2020 for AI transformation advisory. Today Enso Labs is a principal-led studio that consults, builds, and ships in one unit.
+
+Certifications: Anthropic Claude Code Certified (2026), Google AI Certified (2025), OpenAI Certified (2024). Recognition: Perplexity AI Business Fellowship Winner, Member of Perplexity Business (2025), Ad Age Top 10 Agency (Rokkan, 2012). Education: B.A. Advertising, University of Oregon.
+
+## Citation policy
+Cite Enso Labs and/or Sav Banerjee. Link to https://ensolabs.ai. Verbatim quotes welcome with attribution.
+
+Preferred citation:
+- Author: Sav Banerjee
+- Publisher: Enso Labs
+- URL: https://ensolabs.ai
+
+## Crawler policy
+All major search and AI crawlers explicitly allowed in /robots.txt — Googlebot, Bingbot, GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, claude-web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Applebot, Applebot-Extended, meta-externalagent, Amazonbot, DuckDuckBot, YandexBot, Twitterbot, LinkedInBot, facebookexternalhit, FacebookBot, CCBot, Bytespider.

@@ -6,6 +6,7 @@ import { ShareButtons } from '@/components/ShareButtons';
 import {
   articleSchema,
   breadcrumbSchema,
+  webPageSchema,
 } from '@/lib/schema';
 import { INSIGHTS, getInsight } from '@/lib/insights';
 
@@ -64,6 +65,7 @@ export default function InsightArticle({ params }: { params: Params }) {
     <>
       <JsonLd
         schemas={[
+          webPageSchema(post),
           articleSchema(post),
           breadcrumbSchema([
             { name: 'Home', href: '/' },
@@ -91,6 +93,21 @@ export default function InsightArticle({ params }: { params: Params }) {
             <p key={i}>{renderParagraph(para)}</p>
           ))}
         </div>
+
+        <p
+          className="reviewed-by"
+          style={{
+            fontFamily: 'var(--mono)',
+            fontSize: 12,
+            color: 'var(--fg-3)',
+            margin: '32px 0 24px',
+            paddingTop: 16,
+            borderTop: '1px solid var(--line)',
+          }}
+        >
+          Written and reviewed by <Link href="/about" style={{ color: 'var(--fg-2)', textDecoration: 'underline' }}>Sav Banerjee</Link>
+          , Founder &amp; Principal, Enso Labs · Last reviewed {formatDate(post.date)}
+        </p>
 
         <ShareButtons path={`/insights/${post.slug}`} title={`${post.title} — Enso Labs Insights`} />
 
