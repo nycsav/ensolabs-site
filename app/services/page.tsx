@@ -114,7 +114,7 @@ const TRACKS: Track[] = [
     num: 'TRACK / 03',
     pill: 'SHIP',
     title: 'Financial AI & Agentic Trading Systems.',
-    lede: <>We design and deploy AI agents for financial services — from autonomous trading systems to market intelligence platforms. Built on Claude&rsquo;s financial services infrastructure with MCP-connected brokerage APIs, real-time signal processing, and production-grade security.</>,
+    lede: <>We design and deploy AI agents for financial services — from autonomous trading systems to market intelligence platforms. Built on Claude&rsquo;s financial services infrastructure with MCP-connected brokerage APIs, real-time signal processing, and production-grade security. The same platform now in production at Goldman Sachs, JPMorgan, Citi, AIG, and Visa.</>,
     tags: [
       { label: 'Claude API', teal: true }, { label: 'MCP', teal: true }, { label: 'Alpaca' }, { label: 'Public.com' }, { label: 'Interactive Brokers' },
     ],

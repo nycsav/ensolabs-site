@@ -127,7 +127,16 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Ship',
     date: '2026-05-05',
     readingMinutes: 4,
-    body: [],
+    body: [
+      'Anthropic just did three things that will reshape financial services AI:',
+      'They launched 10 pre-built AI agents for banking — pitchbook builders, credit memo drafters, KYC automators, statement auditors, and compliance reviewers.',
+      'They debuted Claude Opus 4.7 — their most capable model for financial work, leading the Vals AI Finance Agent benchmark.',
+      'They formed a $1.5B joint venture with Blackstone, Goldman Sachs, and Hellman and Friedman to embed Claude engineers directly inside mid-market companies.',
+      'At Enso Labs, we have been running production financial AI agents on this exact architecture — Claude plus MCP plus brokerage APIs — since 2025. Our Enso Trading Terminal connects Claude to live brokerage APIs, processes real-time market signals, and executes autonomous trading strategies around the clock.',
+      'The gap between announcing AI agents and shipping them in production is where 93 percent of enterprise AI programs die. That gap is not a technology problem. It is a Strategy-to-Ship problem.',
+      'Three implications for enterprise buyers: MCP will become the standard integration layer for financial AI within 18 months. The consulting industry will split into firms that advise on AI and firms that ship AI. And mid-market companies will have access to AI implementation at a scale previously reserved for top-20 banks.',
+      'The firms that built production financial agents before this week have a structural advantage. They already know what works, what fails, and what compliance requires.',
+    ],
   },
 ];
 
