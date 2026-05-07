@@ -3,6 +3,23 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'ensopartners.co' }],
+        destination: 'https://ensolabs.ai/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.ensopartners.co' }],
+        destination: 'https://ensolabs.ai/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       // App Router ignores folders that start with a dot, so the
