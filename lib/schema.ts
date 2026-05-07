@@ -10,9 +10,8 @@ export const orgSchema = (): JsonLd => ({
   name: SITE.name,
   url: SITE.origin,
   description: SITE.description,
-  slogan: SITE.tagline,
+  slogan: 'Strategy to Ship',
   email: SITE.founder.email,
-  founder: { '@id': url('/#sav') },
   address: {
     '@type': 'PostalAddress',
     streetAddress: SITE.address.street,
@@ -21,7 +20,54 @@ export const orgSchema = (): JsonLd => ({
     postalCode: SITE.address.postalCode,
     addressCountry: SITE.address.country,
   },
-  sameAs: [SITE.founder.linkedin, SITE.founder.github],
+  sameAs: [
+    'https://linkedin.com/in/savbanerjee',
+    'https://github.com/nycsav',
+    'https://linkedin.com/company/enso-partners',
+    'https://signals.ensolabs.ai',
+  ],
+  foundingDate: '2020',
+  foundingLocation: {
+    '@type': 'Place',
+    name: 'New York, NY',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'New York',
+      addressRegion: 'NY',
+      postalCode: '10003',
+      addressCountry: 'US',
+    },
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Sav Banerjee',
+    url: 'https://ensolabs.ai/about',
+    jobTitle: 'Founder & Principal',
+    sameAs: [
+      'https://linkedin.com/in/savbanerjee',
+      'https://github.com/nycsav',
+    ],
+  },
+  knowsAbout: [
+    'AI Transformation',
+    'Agentic Systems',
+    'Financial AI Agents',
+    'Model Context Protocol',
+    'Claude API',
+    'LangGraph',
+    'Enterprise AI Advisory',
+    'Healthcare AI',
+    'Pharma AI',
+  ],
+  numberOfEmployees: {
+    '@type': 'QuantitativeValue',
+    value: 1,
+  },
+  brand: {
+    '@type': 'Brand',
+    name: 'Enso Labs',
+    slogan: 'Strategy to Ship',
+  },
 });
 
 export const personSchema = (): JsonLd => ({
@@ -40,21 +86,36 @@ export const personSchema = (): JsonLd => ({
   knowsAbout: [
     'AI Transformation Strategy',
     'Agentic AI Architecture',
-    'LangGraph',
+    'Financial AI Agents',
     'Model Context Protocol',
-    'Retrieval-Augmented Generation',
+    'Claude API',
+    'Enterprise AI Advisory',
+    'Healthcare AI',
     'Multi-Agent Orchestration',
-    'Financial Signal Intelligence',
-    'Autonomous Trading Systems',
-    'Responsible AI Governance',
   ],
   hasCredential: [
-    { '@type': 'EducationalOccupationalCredential', name: 'Anthropic Claude Code Certified' },
-    { '@type': 'EducationalOccupationalCredential', name: 'Google AI Certified' },
-    { '@type': 'EducationalOccupationalCredential', name: 'OpenAI Certified' },
-    { '@type': 'EducationalOccupationalCredential', name: 'Perplexity AI Business Fellowship Winner' },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Claude Certified Architect',
+      credentialCategory: 'Professional Certification',
+      recognizedBy: { '@type': 'Organization', name: 'Anthropic' },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Google Gemini Professional Certificate',
+      recognizedBy: { '@type': 'Organization', name: 'Google' },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Perplexity AI Business Fellowship',
+      recognizedBy: { '@type': 'Organization', name: 'Perplexity AI' },
+    },
   ],
-  sameAs: [SITE.founder.linkedin, SITE.founder.github],
+  sameAs: [
+    'https://linkedin.com/in/savbanerjee',
+    'https://github.com/nycsav',
+    'https://ensolabs.ai',
+  ],
 });
 
 export const websiteSchema = (): JsonLd => ({

@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.origin}/about`,    lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${SITE.origin}/insights`, lastModified: now, changeFrequency: 'weekly',   priority: 0.9 },
     { url: `${SITE.origin}/contact`,  lastModified: now, changeFrequency: 'monthly',  priority: 0.7 },
+    { url: `${SITE.origin}/built-with-ai`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];
 
   const insightRoutes: MetadataRoute.Sitemap = INSIGHTS.map((p) => ({
