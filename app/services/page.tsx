@@ -51,11 +51,14 @@ export const metadata: Metadata = {
     description:
       'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
     url: '/services',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs Services — AI Consulting, Agentic Systems, Financial AI' }],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Services — Enso Labs | AI Consulting, Agentic Systems, Financial AI',
     description:
       'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 

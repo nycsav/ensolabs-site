@@ -15,11 +15,14 @@ export const metadata: Metadata = {
     description:
       'Essays from inside live engagements — what survives production, what fails, and the Strategy-to-Ship Framework.',
     url: '/insights',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs Insights — Notes from Shipping Production AI' }],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Insights — Enso Labs | Notes from Shipping Production AI',
     description:
       'Essays from inside live engagements — what survives production, what fails, and the Strategy-to-Ship Framework.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 

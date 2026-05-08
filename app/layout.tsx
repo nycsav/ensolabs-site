@@ -23,7 +23,7 @@ const THEME_INIT_SCRIPT = `
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.origin),
   title: {
-    default: `${SITE.name} — ${SITE.tagline}`,
+    default: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio | NYC',
     template: `%s — ${SITE.name}`,
   },
   description: SITE.description,
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   // Explicitly absolute so Google never sees ambiguity vs. www. or ensopartners.co.
   alternates: { canonical: SITE.origin },
   openGraph: {
-    title: 'Enso Labs — Strategy to Ship',
-    description: 'AI transformation consultancy, agentic systems studio, and financial AI agent lab. NYC.',
+    title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio | NYC',
+    description: 'AI transformation consultancy, agentic systems studio, and financial AI agent lab. Principal-led AI consulting for Healthcare, Finance, and B2B Tech. NYC.',
     url: 'https://ensolabs.ai',
     siteName: 'Enso Labs',
     images: [{

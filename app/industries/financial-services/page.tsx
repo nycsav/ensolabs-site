@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     description:
       'Production financial AI agents for banks, asset managers, and fintech. Claude + MCP + brokerage API integration.',
     url: '/industries/financial-services',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'AI Agents for Financial Services — Enso Labs' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agents for Financial Services — Enso Labs',
+    description:
+      'Production financial AI agents for banks, asset managers, and fintech. Claude + MCP + brokerage API integration.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 

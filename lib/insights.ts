@@ -126,8 +126,15 @@ export const INSIGHTS: Insight[] = [
     dek: 'Today Anthropic announced pre-built AI agents for banking and trading — pitchbook builders, credit memo drafters, statement auditors. Enso Labs has been shipping production financial agents since 2025. Here is what this means for the industry and why early movers have a structural advantage.',
     pillar: 'Ship',
     date: '2026-05-05',
-    readingMinutes: 4,
-    body: [],
+    readingMinutes: 6,
+    body: [
+      'On May 5, 2026, Anthropic announced ten pre-built AI agents for financial services — pitchbook builders, credit memo drafters, portfolio summarizers, statement auditors. The announcement validates what we have been building at Enso Labs since 2025: production financial AI agents are not a research project. They are an operational layer.',
+      'The Enso Trading Terminal has been running autonomously in production for over a year — news-driven trading algorithms, multi-agent research automation, options flow analysis, brokerage API integration via MCP. When Anthropic says Claude can now draft credit memos and audit financial statements, we hear confirmation of a thesis we have already shipped against: **the same reasoning engine that writes prose can manage risk, parse filings, and route orders.**',
+      'What makes the Anthropic launch significant is not the agents themselves — it is the infrastructure underneath. Claude\'s financial services stack now includes MCP-connected brokerage APIs, compliance-aware reasoning, and audit-trail generation built into the model layer. This collapses the integration burden. A year ago, building a compliant trading agent meant wiring together four vendors. Now it means configuring one.',
+      'The implication for enterprises: the window to build proprietary financial AI agents — and own the operational advantage — is compressing. The pre-built agents will commoditize the basics (memo drafting, statement reconciliation, portfolio summarization). The moat is in what you build on top: custom signal intelligence, firm-specific risk models, compliance layers tuned to your regulatory surface.',
+      'Early movers have a structural advantage. The firms that shipped financial agents in 2025 — including our own terminal — have twelve months of production data, eval harnesses, and operational muscle that a cold start in 2026 cannot replicate. The question is no longer whether to build financial AI agents. It is whether you want to be the firm that built early or the firm that bought late.',
+      'We build these systems. If you are a bank, asset manager, or fintech evaluating Claude\'s financial services stack, we can show you what a production deployment looks like — because we have been running one.',
+    ],
   },
 ];
 

@@ -18,11 +18,14 @@ export const metadata: Metadata = {
     description:
       'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
     url: '/about',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'About Enso Labs — Founded by Sav Banerjee' }],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'About Enso Labs | Founded by Sav Banerjee',
     description:
       'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 
