@@ -129,3 +129,45 @@ git add -A && git commit -m "description" && git push origin master
 - Deployment: Vercel (auto-deploy from GitHub)
 - DNS: GoDaddy
 - Analytics: GA4
+
+## Session Log — May 7-8, 2026
+### Completed
+- Google Search Console verified for ensolabs.ai
+- Sitemap submitted: https://ensolabs.ai/sitemap.xml (22 URLs)
+- Old Wix URL removals requested for www.ensolabs.ai/*
+- Home page indexing requested in GSC
+- IndexNow submitted (13 URLs, 202 Accepted)
+- Old Wix ensolabs.ai site unpublished
+- Old Wix ensopartners.co site unpublished
+- Vercel redirect configured: ensopartners.co → ensolabs.ai (308)
+- All 13 pages live (including built-with-ai, financial-services, editorial-policy)
+- All 12 SEO files live (llms.txt, security.txt, IndexNow, MCP endpoint, etc.)
+- Entity disambiguation schemas (foundingDate 2020, sameAs, knowsAbout)
+- OG image branded and working in iMessage/social sharing
+- GA4 connected (G-5N15QMQ962)
+- GitHub portfolio — 5 public repos with professional READMEs
+- Resume updated (Sav_Banerjee_Resume_2026_FINAL.docx in Google Drive)
+- Perplexity job tracker master prompt saved to Google Drive
+### Pending (immediate)
+- Renew ensolabs.ai domain at GoDaddy (expires June 5, 2026)
+- LinkedIn profile update (copy ready in Google Drive)
+- signal2noise SEO fixes (PlannerAPI repo)
+### Pending (this week via Cowork)
+- Add OAI-SearchBot, DuckDuckBot, YandexBot, LinkedInBot, Amazonbot to robots.ts
+- Create /services/agentic-ai-consulting page
+- Create /services/claude-agent-development page
+- Create /locations/new-york page
+- Create /about/sav-banerjee deep bio page
+- Create /comparisons/boutique-vs-big-4 page
+- Fix signal2noise canonical URLs, OG image, robots.txt, sitemap
+## Two Workflows
+### Workflow 1: ensolabs.ai Website
+- Daily/weekly content, SEO, AEO, GEO updates via Cowork
+- Major features via Claude Code
+- Analytics review Monday mornings
+- New insight articles 2-4x per month
+### Workflow 2: signal2noise Content Engine
+- Daily signal generation (signals.ensolabs.ai)
+- Content flows to: ensolabs.ai/insights, LinkedIn (Mon/Wed/Fri), newsletter
+- Repo: ~/Projects/PlannerAPI
+- Deploy: firebase deploy --only hosting (NOT auto-deploy)
