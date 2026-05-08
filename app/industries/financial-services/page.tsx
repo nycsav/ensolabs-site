@@ -56,6 +56,16 @@ const FAQS = [
     answer:
       'A production financial AI agent engagement with Enso Labs starts with a 2-week AI Audit ($15K–$25K) to map opportunities and build a working prototype. A full 12-week Pilot-to-Production engagement ($75K–$150K) delivers a production system with governance, compliance layers, and team enablement. Ongoing embedded support is available as a quarterly retainer.',
   },
+  {
+    question: 'Is Enso Labs a Claude Partner Network member?',
+    answer:
+      'Enso Labs is Claude-certified and Anthropic-credentialed, with production Claude deployments running since 2025 — including the Enso Trading Terminal, MCP brokerage integrations, and multi-agent financial research systems. We have been building on Claude\'s financial services infrastructure before the formal partner network launched.',
+  },
+  {
+    question: 'What is MCP and why does it matter for trading?',
+    answer:
+      'The Model Context Protocol (MCP) is a standardized way for AI agents to connect to external systems through typed tool definitions. For trading, MCP servers wrap brokerage APIs (Alpaca, Interactive Brokers, Schwab) so that Claude can check positions, submit orders, and monitor fills as part of its reasoning loop — with full audit trails and pre-trade risk controls.',
+  },
 ];
 
 export default function FinancialServicesPage() {
@@ -338,6 +348,60 @@ export default function FinancialServicesPage() {
             not replace human accountability. Every agent has a named human
             operator who is responsible for its behavior.
           </p>
+        </div>
+      </section>
+
+      {/* ── Claude Partner Network ── */}
+      <section className="section">
+        <h2>Claude Partner Network &amp; Enterprise Readiness</h2>
+        <div className="prose">
+          <p>
+            Anthropic&rsquo;s $100 million Claude Partner Network is designed to
+            accelerate enterprise Claude deployments through certified
+            implementation partners. Enso Labs brings something the Big 4
+            partners cannot: production financial AI systems that have been
+            running since 2025.
+          </p>
+          <p>
+            We are Claude-certified, Anthropic-credentialed, and operating
+            Claude-powered production infrastructure across trading, market
+            intelligence, and compliance. When we advise on architecture, we are
+            describing systems we operate — not systems we theorize about.
+          </p>
+          <p>
+            For financial institutions evaluating Claude implementation partners,
+            the question is simple: <strong>show me the system you shipped.</strong>{' '}
+            That is the only credential that matters.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Related Insights ── */}
+      <section className="section">
+        <h2>Related Insights</h2>
+        <div className="prose">
+          <ul>
+            <li>
+              <Link href="/insights/mcp-brokerage-trading-model-context-protocol">
+                MCP for Brokerage: How Model Context Protocol Is Connecting AI to Trading
+              </Link>
+            </li>
+            <li>
+              <Link href="/insights/anthropic-financial-services-what-it-means">
+                Anthropic Just Launched 10 Financial AI Agents. We Built Ours Last Year.
+              </Link>
+            </li>
+            <li>
+              <Link href="/insights/claude-partner-network-boutique-implementation">
+                Why Boutique Firms Are the Right Claude Implementation Partner
+              </Link>
+            </li>
+            <li>
+              <Link href="/insights/autonomous-trading-risk-as-architecture">
+                In Autonomous Trading, the Kill-Switch Is the Architecture
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

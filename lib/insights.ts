@@ -136,6 +136,38 @@ export const INSIGHTS: Insight[] = [
       'We build these systems. If you are a bank, asset manager, or fintech evaluating Claude\'s financial services stack, we can show you what a production deployment looks like — because we have been running one.',
     ],
   },
+  {
+    slug: 'mcp-brokerage-trading-model-context-protocol',
+    title: 'MCP for Brokerage: How Model Context Protocol Is Connecting AI to Trading.',
+    dek: 'Every brokerage API — Alpaca, Interactive Brokers, Schwab, TradeStation — is becoming an MCP server. This is the integration pattern that makes autonomous financial AI agents practical.',
+    pillar: 'Build',
+    date: '2026-05-08',
+    readingMinutes: 8,
+    body: [
+      'The Model Context Protocol is the most consequential piece of AI infrastructure that almost no one in financial services is talking about. MCP is a standardized way for AI agents — Claude, Gemini, GPT — to invoke external tools with typed inputs and structured outputs. For trading, that means a single agent can check positions, submit orders, retrieve account data, and monitor fills as part of its reasoning loop.',
+      'Before MCP, connecting an AI agent to a brokerage meant building a bespoke integration for every API. Alpaca REST endpoints, Interactive Brokers TWS, Schwab\'s OAuth2 flow, TradeStation\'s streaming WebSocket — each required custom auth, custom error handling, and custom response parsing. The result was fragile plumbing that broke every time a vendor updated their API.',
+      'MCP collapses this. An MCP server wraps a brokerage API into a typed tool surface — function name, input schema, output schema — that any MCP-compatible agent can invoke natively. The agent does not need to know whether it is talking to Alpaca or Interactive Brokers. It calls `submit_order` with a typed payload and gets a typed response. The integration complexity lives in the server, not the agent.',
+      'The architecture looks like this: the AI agent runs a reasoning loop — read breaking news, analyze the options chain, check the restricted list, calculate position sizing. When it decides to act, it calls an MCP tool. The MCP server validates the request against pre-trade risk controls (position limits, notional limits, order rate limits), then forwards it to the brokerage API. Every tool call is logged with inputs, outputs, timestamps, and the full reasoning context. That is the audit trail.',
+      'We have been running this pattern in production since 2025. The Enso Trading Terminal connects to Alpaca, Public.com, and crypto exchanges via MCP servers that we built and maintain. The agent reads a news article about an FDA approval, checks the options chain for the relevant ticker, verifies risk limits, calculates sizing, and submits — all in one agentic loop. The entire flow is logged and reviewable.',
+      'The practical implication for financial institutions: **MCP is the new SaaS integration layer for finance.** Every brokerage, market data provider, and compliance system should be evaluating how to publish an MCP surface. The firms that ship MCP servers first will own the distribution layer for the next generation of AI-native trading infrastructure. We build these servers. They are usually two- to six-week engagements.',
+    ],
+  },
+  {
+    slug: 'claude-partner-network-boutique-implementation',
+    title: 'Why Boutique Firms Are the Right Claude Implementation Partner.',
+    dek: 'Anthropic launched a $100M Claude Partner Network. Accenture, Deloitte, and PwC are in. But for production agentic systems, the structural advantages belong to boutique operators who build what they advise.',
+    pillar: 'Consult',
+    date: '2026-05-07',
+    readingMinutes: 7,
+    body: [
+      'Anthropic\'s Claude Partner Network — backed by $100 million in funding — is designed to accelerate enterprise Claude deployments through certified implementation partners. The launch partners include the usual suspects: Accenture, Deloitte, PwC, McKinsey, BCG. The pitch is depth of bench and global reach.',
+      'The reality is different. Enterprise Claude deployments are not ERP migrations. They are not lift-and-shift projects that benefit from armies of consultants following a playbook. Agentic AI systems require the person who designed the architecture to also debug the eval harness at 2am. They require the advisor to be in the codebase. The hand-off model that works for SAP does not work for Claude.',
+      'Boutique firms have structural advantages in this market. **First: direct senior access.** No account managers, no project coordinators, no layers between the client and the person who understands the system. The principal who scopes the engagement is the same person who writes the MCP server and tunes the eval suite. **Second: builder credibility.** The studio runs its own production AI infrastructure — the Enso Trading Terminal, signal2noise, MCP servers in live environments. When we advise on architecture, we are describing systems we operate.',
+      '**Third: speed.** A 50-person consultancy needs three weeks to staff a project. A boutique deploys a working prototype in the same three weeks. **Fourth: dogfooding.** We use Claude to build our own products, run our own analytics, and manage our own operations. Every recommendation we make has been tested on ourselves first.',
+      'The Claude Partner Network is good for the ecosystem. It validates enterprise demand and creates a certification layer that helps buyers evaluate partners. But certification is a floor, not a ceiling. The partners who will win production deployments are the ones who can point to shipped systems — not the ones with the largest partner tier.',
+      'Enso Labs is a principal-led AI transformation studio. We are Claude-certified, Anthropic-credentialed, and running Claude-powered production systems across financial services, healthcare, and B2B technology. If you are evaluating Claude implementation partners, ask one question: **show me the system you shipped.** That is the only credential that matters.',
+    ],
+  },
 ];
 
 export const insightsByPillar = (pillar?: Pillar) =>

@@ -327,6 +327,26 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section data-screen-label="05.75 Claude Managed Services">
+        <div className="shell">
+          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start', borderTop: '1px solid var(--line)', paddingTop: 'clamp(48px,6vw,80px)' }}>
+            <div>
+              <span className="eyebrow"><span className="num">§ 04.5</span>&nbsp;Spotlight</span>
+              <h2 className="h2" style={{ marginTop: 16 }}>Claude Managed Services</h2>
+            </div>
+            <div style={{ display: 'grid', gap: 16 }}>
+              <p className="lede">
+                End-to-end Claude implementation and operational support — from MCP server development to multi-agent deployment to compliance-ready governance. Certified Anthropic partner with shipped production systems.
+              </p>
+              <div className="hero-cta-row">
+                <Link className="btn btn-primary" href="/services/claude-managed-services">Learn More <Arrow /></Link>
+                <Link className="btn" href="/industries/financial-services">Financial AI →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section data-screen-label="06 CTA">
         <div className="shell">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
