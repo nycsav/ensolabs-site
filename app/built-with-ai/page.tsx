@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
       'Claude Chat for strategy. Claude Design for prototyping. Claude Code for production. Vercel for deployment. One day.',
     url: '/built-with-ai',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Built with AI — Enso Labs' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Built with AI — How We Shipped a Production Site in 24 Hours',
+    description:
+      'Claude Chat for strategy. Claude Design for prototyping. Claude Code for production. Vercel for deployment. One day.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 

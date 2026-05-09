@@ -18,11 +18,14 @@ export const metadata: Metadata = {
     description:
       'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
     url: '/work',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Case Studies & Engagements' }],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Our Work — Enso Labs | Gore, Heller, Trading Terminal',
     description:
       'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 
