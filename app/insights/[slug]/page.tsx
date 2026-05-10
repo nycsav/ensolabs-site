@@ -32,16 +32,8 @@ export async function generateMetadata({
       type: 'article',
       title: post.title,
       description: post.dek,
-      url: `/insights/${post.slug}`,
       publishedTime: post.date,
       authors: ['Sav Banerjee'],
-      images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.dek,
-      images: ['https://ensolabs.ai/og-default.png?v=3'],
     },
   };
 }

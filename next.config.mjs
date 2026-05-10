@@ -7,12 +7,6 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.ensolabs.ai' }],
-        destination: 'https://ensolabs.ai/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
         has: [{ type: 'host', value: 'ensopartners.co' }],
         destination: 'https://ensolabs.ai/:path*',
         permanent: true,

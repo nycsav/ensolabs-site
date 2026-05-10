@@ -12,14 +12,6 @@ export const metadata: Metadata = {
     description:
       'How Enso Labs sources, reviews, and publishes content across ensolabs.ai and signal2noise.',
     url: '/editorial-policy',
-    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Editorial Policy — Enso Labs' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Editorial Policy — Enso Labs',
-    description:
-      'How Enso Labs sources, reviews, and publishes content across ensolabs.ai and signal2noise.',
-    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 
