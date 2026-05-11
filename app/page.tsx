@@ -88,7 +88,7 @@ export default function HomePage() {
       <div className="ticker" aria-hidden="true">
         <div className="ticker-track">
           <span>
-            W. L. Gore &amp; Associates <span className="dot" />
+            Fortune 500 Manufacturer <span className="dot" />
             Citi <span className="dot" />
             JPMorgan Chase <span className="dot" />
             American Express <span className="dot" />
@@ -103,7 +103,7 @@ export default function HomePage() {
             Omnicom <span className="dot" />
           </span>
           <span aria-hidden="true">
-            W. L. Gore &amp; Associates <span className="dot" />
+            Fortune 500 Manufacturer <span className="dot" />
             Citi <span className="dot" />
             JPMorgan Chase <span className="dot" />
             American Express <span className="dot" />
@@ -169,7 +169,7 @@ export default function HomePage() {
                 <span style={{ marginLeft: 'auto', color: 'var(--teal)' }}>● online</span>
               </div>
               <div className="terminal-body">
-                <div><span className="prompt">$</span> <span className="out">enso run --pipeline gore-m2 --rules on</span></div>
+                <div><span className="prompt">$</span> <span className="out">enso run --pipeline market-intel --rules on</span></div>
                 <div className="comment">› init 8-stage LangGraph pipeline …</div>
                 <div className="comment">› fetchers: 4 parallel · ReAct agents: 3</div>
                 <div>  <span className="out">documents</span>      <span className="amber">731</span></div>
@@ -265,7 +265,7 @@ export default function HomePage() {
             <div className="reveal" data-delay="1">
               <h2 className="h2">Numbers that survived production.</h2>
               <p className="lede" style={{ marginTop: 24 }}>
-                Pulled from live engagements at Gore, Heller, and the Enso Trading Terminal. No vanity metrics.
+                Pulled from live enterprise engagements and the Enso Trading Terminal. No vanity metrics.
               </p>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function HomePage() {
             </div>
             <div className="proof-cell">
               <div className="num">731</div>
-              <div className="label">Documents processed in a single Gore M2 pipeline run</div>
+              <div className="label">Documents processed in a single intelligence pipeline run</div>
             </div>
             <div className="proof-cell">
               <div className="num">15<em>+</em></div>
@@ -376,9 +376,9 @@ export default function HomePage() {
           <div role="list" style={{ borderTop: '1px solid var(--line)' }}>
             <Link className="case-row reveal" href="/work/gore" role="listitem">
               <span className="case-no">CS / 01</span>
-              <span className="case-title">Gore M2 Intelligence Hub</span>
-              <span className="case-desc">8-stage LangGraph pipeline, AES-256-GCM encrypted dashboard, &ldquo;Gore Lens&rdquo; expert-knowledge framework — go/no-go milestone delivered April 2026.</span>
-              <span className="case-tag">W. L. Gore × BoI<br />Materials</span>
+              <span className="case-title">AI Market Intelligence Platform</span>
+              <span className="case-desc">8-stage LangGraph pipeline, AES-256-GCM encrypted dashboard, expert-knowledge encoding framework — go/no-go milestone delivered April 2026.</span>
+              <span className="case-tag">Fortune 500 Manufacturer<br />Materials</span>
               <span className="case-arrow">→</span>
             </Link>
             <Link className="case-row reveal" href="/work/heller" role="listitem">
@@ -469,7 +469,7 @@ export default function HomePage() {
           </div>
 
           <div className="clients reveal">
-            {['W. L. Gore', 'Citi', 'JPMorgan', 'Amex', 'Google', 'Microsoft', 'T-Mobile', 'McCann', 'Publicis', 'RAPP', 'Y&R', 'BBDO', 'Heller', 'Rokkan'].map((c) => (
+            {['Fortune 500 Manufacturer', 'Citi', 'JPMorgan', 'Amex', 'Google', 'Microsoft', 'T-Mobile', 'McCann', 'Publicis', 'RAPP', 'Y&R', 'BBDO', 'Heller', 'Rokkan'].map((c) => (
               <div key={c} className="client">{c}</div>
             ))}
           </div>

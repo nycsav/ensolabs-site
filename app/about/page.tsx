@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const TIMELINE = [
-  { yr: '2020 → present', role: 'Enso Partners + Labs', sub: 'Founder & Principal AI Transformation Advisor', det: 'Enterprise AI advisory + agentic build practice. Clients: Gore, Citi, JPMorgan, AmEx, Google, Microsoft, T-Mobile.', tag: 'CURRENT' },
+  { yr: '2020 → present', role: 'Enso Partners + Labs', sub: 'Founder & Principal AI Transformation Advisor', det: 'Enterprise AI advisory + agentic build practice. Clients: Fortune 500 manufacturers, Citi, JPMorgan, AmEx, Google, Microsoft, T-Mobile.', tag: 'CURRENT' },
   { yr: '2022 → present', role: 'Heller Agency', sub: 'AI Solutions & Deployment Consultant', det: 'AI Center of Excellence for full-service pharma. 5 brand KBs · 8 automations · 6 concurrent campaigns.', tag: 'ACTIVE' },
   { yr: 'Freelance', role: 'McCann New York', sub: 'VP, Data & Experience Strategy', det: 'Healthcare CX including XDEMVY ophthalmology campaign.', tag: 'VP' },
   { yr: '—', role: 'RAPP', sub: 'Director, Experience Strategy', det: 'CRM, SEO, SEM across retail, e-commerce, finance, healthcare.', tag: 'DIR' },
@@ -158,7 +158,7 @@ export default function AboutPage() {
                 Sav started in agency strategy. Fifteen years at <strong>Google, McCann, Publicis, RAPP, Young &amp; Rubicam, BBDO, and Rokkan</strong> — managing $150MM+ portfolios across finance, healthcare, and technology. AT&amp;T&rsquo;s &ldquo;It Can Wait&rdquo; — 5MM+ pledges. American Express social — 50% growth. Google+ launch strategy. The Citi Web3 work.
               </p>
               <p>
-                In 2020 he founded <strong>Enso Partners</strong> to do AI transformation advisory. The deck-only consulting model didn&rsquo;t survive contact with production. So the practice learned to ship: LangGraph, Claude API, MCP, RAG, Python. The first full Strategy-to-Ship engagement was the <strong>Gore M2 Intelligence Hub</strong> — eight LangGraph stages, encrypted dashboard, expert-knowledge framework, validated by their lead scientist.
+                In 2020 he founded <strong>Enso Partners</strong> to do AI transformation advisory. The deck-only consulting model didn&rsquo;t survive contact with production. So the practice learned to ship: LangGraph, Claude API, MCP, RAG, Python. The first full Strategy-to-Ship engagement was an <strong>AI Market Intelligence Hub</strong> for a Fortune 500 manufacturer — eight LangGraph stages, encrypted dashboard, expert-knowledge framework, validated by their lead scientist.
               </p>
               <p>
                 Today, Enso Labs is three things in one studio: <strong>consult, build, and ship</strong>. The Trading Terminal proves the model — the studio runs autonomous signal intelligence, news-driven algos, and brokerage execution as a production product, not a demo.

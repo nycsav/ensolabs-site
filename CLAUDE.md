@@ -153,7 +153,7 @@ git add -A && git commit -m "description" && git push origin master
 - LinkedIn profile update (copy ready in Google Drive)
 - signal2noise SEO fixes (PlannerAPI repo)
 ### Pending (this week via Cowork)
-- Add OAI-SearchBot, DuckDuckBot, YandexBot, LinkedInBot, Amazonbot to robots.ts
+- ~~Add OAI-SearchBot, DuckDuckBot, YandexBot, LinkedInBot, Amazonbot to robots.ts~~ ✅ Already done
 - Create /services/agentic-ai-consulting page
 - Create /services/claude-agent-development page
 - Create /locations/new-york page

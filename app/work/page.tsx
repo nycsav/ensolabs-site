@@ -14,15 +14,18 @@ export const metadata: Metadata = {
     'Enso Labs has delivered AI transformation projects for Fortune 500 organizations including production intelligence platforms, AI Centers of Excellence, and autonomous trading systems.',
   alternates: { canonical: '/work' },
   openGraph: {
-    title: 'Our Work — Enso Labs | Gore, Heller, Trading Terminal',
+    title: 'Our Work — Enso Labs | AI Intelligence, Pharma CoE, Trading Terminal',
     description:
       'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
     url: '/work',
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Case Studies & Engagements' }],
   },
   twitter: {
-    title: 'Our Work — Enso Labs | Gore, Heller, Trading Terminal',
+    card: 'summary_large_image',
+    title: 'Our Work — Enso Labs | AI Intelligence, Pharma CoE, Trading Terminal',
     description:
       'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
+    images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 
@@ -97,7 +100,7 @@ export default function WorkPage() {
             </p>
             <div className="reveal" data-delay="3">
               <div className="mono-sm" style={{ display: 'grid', gap: 6 }}>
-                <a href="#gore">↳ CS / 01 &nbsp; Gore M2 Intelligence Hub</a>
+                <a href="#gore">↳ CS / 01 &nbsp; AI Market Intelligence Platform</a>
                 <a href="#heller">↳ CS / 02 &nbsp; Heller AI Center of Excellence</a>
                 <a href="#terminal">↳ CS / 03 &nbsp; Enso Trading Terminal</a>
                 <a href="#enablement">↳ CS / 04 &nbsp; Enterprise AI Enablement</a>
