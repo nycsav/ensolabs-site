@@ -1,0 +1,140 @@
+{
+  "name": "Sav Banerjee",
+  "location": "New York, NY",
+  "email": "sav@ensopartners.co",
+  "phone": "415-828-5282",
+  "linkedin": "linkedin.com/in/savbanerjee",
+  "websites": ["ensolabs.ai", "github.com/nycsav"],
+  "current_title": "Founder & Principal, AI Transformation",
+  "current_company": "Enso Labs",
+  "years_experience": "15+",
+  "education": {
+    "degree": "B.A. Advertising",
+    "school": "University of Oregon"
+  },
+  "certifications": [
+    { "name": "Claude Certified Architect (CCA)", "org": "Anthropic", "year": 2026 },
+    { "name": "Anthropic Financial Services Briefing — Invited Attendee", "org": "Anthropic", "date": "May 2026" },
+    { "name": "Google Gemini Professional Certificate", "org": "Google", "year": 2026 },
+    { "name": "Perplexity AI Business Fellowship Winner", "org": "Perplexity", "year": 2025 },
+    { "name": "CrewAI Multi-Agent Systems", "org": "CrewAI", "year": 2025 },
+    { "name": "Google AI Essentials", "org": "Google", "year": 2025 }
+  ],
+  "verified_metrics": {
+    "pilot_to_production_rate": "75%",
+    "campaign_timeline_reduction": "83% (3 months → 2 weeks)",
+    "time_to_first_value": "3-month average",
+    "portfolio_managed": "$150MM+",
+    "revenue_growth": "150%+",
+    "documents_processed": "731 in single pipeline run",
+    "signals_surfaced": "16 novel commercial signals",
+    "pharma_time_savings": "35%",
+    "reporting_speed": "65% faster"
+  },
+  "portfolio_urls": {
+    "studio": "ensolabs.ai",
+    "trading_terminal": "ensolabs.ai/work/trading-terminal",
+    "healthcare": "ensolabs.ai/work/heller",
+    "enterprise_ai": "ensolabs.ai/work/enterprise-ai",
+    "content_engine": "signals.ensolabs.ai",
+    "github": "github.com/nycsav"
+  },
+  "public_clients": [
+    "Goldman Sachs", "Citi", "JPMorgan Chase", "American Express",
+    "Google", "Microsoft", "T-Mobile",
+    "Pfizer", "Eli Lilly",
+    "Johnson & Johnson"
+  ],
+  "confidential_clients": {
+    "Gore": "Global Materials Manufacturer"
+  },
+  "experience": [
+    {
+      "title": "Founder & Principal, AI Transformation",
+      "company": "Enso Labs",
+      "location": "New York, NY",
+      "dates": "2020 — Present",
+      "bullets": [
+        "Architected financial AI trading terminal on Claude + MCP, delivering real-time market intelligence agents to production",
+        "Achieved 75% pilot-to-production conversion rate across enterprise AI engagements, with 3-month average time-to-first-value",
+        "Built AI market intelligence pipeline processing 731 documents in a single run, surfacing 16 novel commercial signals validated by lead scientist for a Fortune 500 manufacturer",
+        "Delivered 83% reduction in campaign launch timelines (3 months to 2 weeks) through agentic workflow automation",
+        "Designed enterprise AI enablement programs generating 150%+ revenue growth for Fortune 500 clients",
+        "Managed $150MM+ portfolio across Fortune 500 clients including Citi, JPMorgan Chase, American Express, Google, Microsoft, and Pfizer",
+        "Developed production MCP server architecture and multi-agent orchestration systems deployed to live environments"
+      ]
+    },
+    {
+      "title": "AI Solutions & Deployment Consultant",
+      "company": "Heller Agency",
+      "location": "New York, NY",
+      "dates": "2022 — Present",
+      "bullets": [
+        "Architected AI Center of Excellence framework adopted across agency operations, standardizing LLM evaluation, prompt engineering, and deployment practices",
+        "Delivered 35% time savings across pharma agency workflows through AI-augmented production systems",
+        "Built 65% faster reporting via analytics pipeline architecture integrating AI-driven data processing",
+        "Guided Eli Lilly and Pfizer engagement teams on responsible AI deployment and regulatory compliance"
+      ]
+    },
+    {
+      "title": "Senior Director — Strategy & Intelligence",
+      "company": "Omnicom / DDB",
+      "location": "New York, NY",
+      "dates": null,
+      "bullets": [
+        "Led strategic intelligence practice across T-Mobile, Microsoft, and Johnson & Johnson accounts",
+        "Directed cross-functional teams of 15+ strategists, analysts, and technologists",
+        "Established data-driven planning methodologies adopted as agency standard"
+      ]
+    },
+    {
+      "title": "Vice President — Strategy",
+      "company": "McCann NY",
+      "location": "New York, NY",
+      "dates": null,
+      "bullets": [
+        "Drove strategic planning for Citi, American Express, and Microsoft engagements",
+        "Managed multi-million dollar client portfolios with C-suite stakeholder relationships",
+        "Led new business pitches contributing to agency revenue growth"
+      ]
+    },
+    {
+      "title": "Vice President — Strategy",
+      "company": "RAPP NY",
+      "location": "New York, NY",
+      "dates": null,
+      "bullets": [
+        "Directed CRM and data strategy for financial services and healthcare clients",
+        "Built predictive analytics capabilities within the strategy practice"
+      ]
+    },
+    {
+      "title": "Planning Director",
+      "company": "VML / Y&R",
+      "location": "New York, NY",
+      "dates": null,
+      "bullets": [
+        "Led strategic planning across Google, JPMorgan Chase, and enterprise technology accounts"
+      ]
+    },
+    {
+      "title": "Director — Digital Strategy",
+      "company": "BBDO / Organic",
+      "location": "New York, NY",
+      "dates": null,
+      "bullets": [
+        "Directed digital transformation strategy for Fortune 500 clients"
+      ]
+    },
+    {
+      "title": "Executive Director — Strategy",
+      "company": "Rokkan / Publicis",
+      "location": "New York, NY",
+      "dates": null,
+      "bullets": [
+        "Led integrated strategy practice across financial services and technology verticals"
+      ]
+    }
+  ],
+  "exclude_companies": ["Perplexity"]
+}
