@@ -9,9 +9,9 @@ import {
 } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Work',
+  title: 'AI Transformation Case Studies | Production Systems Shipped',
   description:
-    'Enso Labs has delivered AI transformation projects for Fortune 500 organizations including production intelligence platforms, AI Centers of Excellence, and autonomous trading systems.',
+    'Enso Labs has delivered AI transformation for Fortune 500 organizations: production intelligence platforms, AI Centers of Excellence, and autonomous trading systems. Principal-led, NYC.',
   alternates: { canonical: '/work' },
   openGraph: {
     title: 'Our Work — Enso Labs | AI Intelligence, Pharma CoE, Trading Terminal',
@@ -90,7 +90,7 @@ export default function WorkPage() {
             <span className="eyebrow"><span className="num">PAGE / 03</span>&nbsp;Work</span>
           </div>
           <h1 className="display reveal" data-delay="1" style={{ fontSize: 'clamp(44px, 7.5vw, 104px)' }}>
-            Strategy <em>shipped</em>.<br />
+            AI Transformation <em>shipped</em>.<br />
             <span className="accent">Production-grade.</span>
           </h1>
           <div className="hero-foot">

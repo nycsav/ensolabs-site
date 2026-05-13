@@ -147,11 +147,12 @@ export const localBusinessSchema = (): JsonLd => ({
   priceRange: '$$$$',
   areaServed: [
     { '@type': 'AdministrativeArea', name: 'United States' },
-    { '@type': 'Place', name: 'Healthcare' },
-    { '@type': 'Place', name: 'Financial Services' },
-    { '@type': 'Place', name: 'B2B Technology' },
-    { '@type': 'Place', name: 'Advanced Manufacturing' },
+    { '@type': 'City', name: 'New York' },
   ],
+  audience: {
+    '@type': 'Audience',
+    audienceType: ['Healthcare', 'Financial Services', 'B2B Technology', 'Advanced Manufacturing'],
+  },
 });
 
 export const breadcrumbSchema = (

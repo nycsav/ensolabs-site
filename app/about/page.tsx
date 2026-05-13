@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Arrow } from '@/components/Arrow';
 import { JsonLd } from '@/components/JsonLd';
@@ -9,9 +10,9 @@ import {
 } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Sav Banerjee | AI Transformation Consultant & Agentic Systems Builder',
   description:
-    'Sav Banerjee is an AI transformation consultant and agentic systems builder with 15+ years of experience at Google, McCann, Publicis, RAPP, and Young & Rubicam, certified by Anthropic, Google, and OpenAI.',
+    'Sav Banerjee is a principal AI transformation consultant and agentic systems builder with 15+ years at Google, McCann, Publicis, RAPP, and Young & Rubicam. Certified by Anthropic, Google, and OpenAI. NYC.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Enso Labs | Founded by Sav Banerjee',
@@ -121,8 +122,8 @@ export default function AboutPage() {
             <span className="eyebrow"><span className="num">PAGE / 04</span>&nbsp;About</span>
           </div>
           <h1 className="display reveal" data-delay="1" style={{ fontSize: 'clamp(44px, 7.5vw, 104px)' }}>
-            The advisors<br />
-            <em>are the</em> <span className="accent">builders.</span>
+            Sav Banerjee—<br />
+            <em>AI advisor</em> <span className="accent">who builds.</span>
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
@@ -149,8 +150,7 @@ export default function AboutPage() {
 
           <div className="bio-grid">
             <div className="reveal portrait">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/sav-banerjee.jpg" alt="Sav Banerjee — Founder, Enso Labs" />
+              <Image src="/images/sav-banerjee.jpg" alt="Sav Banerjee — Founder, Enso Labs" width={320} height={420} priority />
               <span className="corner">SB · NYC</span>
             </div>
             <div className="reveal bio" data-delay="1">
@@ -164,6 +164,12 @@ export default function AboutPage() {
                 Today, Enso Labs is three things in one studio: <strong>consult, build, and ship</strong>. The Trading Terminal proves the model — the studio runs autonomous signal intelligence, news-driven algos, and brokerage execution as a production product, not a demo.
               </p>
               <p>The advisor and the build team work as one unit. That&rsquo;s the whole bet.</p>
+              <p style={{ fontSize: 15, color: 'var(--fg-3)', marginTop: 8 }}>
+                More on the practice:{' '}
+                <Link href="/insights/why-deck-only-ai-consulting-fails-production" style={{ color: 'var(--teal)' }}>why deck-only consulting fails</Link>
+                {' '}·{' '}
+                <Link href="/insights/principal-led-vs-50-person-consultancy" style={{ color: 'var(--teal)' }}>principal-led vs. 50-person consultancy</Link>.
+              </p>
               <div className="hero-cta-row" style={{ marginTop: 24 }}>
                 <a className="btn" href="https://linkedin.com/in/savbanerjee" target="_blank" rel="noopener">LinkedIn</a>
                 <a className="btn" href="https://github.com/nycsav" target="_blank" rel="noopener">GitHub</a>
