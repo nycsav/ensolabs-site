@@ -1,0 +1,13 @@
+{
+  "name": "Enso Labs",
+  "short_name": "Enso Labs",
+  "description": "AI Transformation & Agentic Systems Studio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1321",
+  "theme_color": "#0d1321",
+  "icons": [
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

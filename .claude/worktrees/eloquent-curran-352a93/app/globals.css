@@ -624,8 +624,9 @@ footer {
 .article-og-hero {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--line);
   margin-bottom: 48px;
@@ -998,13 +999,6 @@ footer {
   .article-shell h1 { font-size: clamp(34px, 8vw, 56px); }
   .article-shell .dek { font-size: 18px; }
   .article-shell .body p { font-size: 17px; }
-
-  /* Hero OG image — ensure full image visible on mobile */
-  .article-og-hero {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
 
   /* Ticker — narrow gaps */
   .ticker-track { gap: 28px; font-size: 12px; }

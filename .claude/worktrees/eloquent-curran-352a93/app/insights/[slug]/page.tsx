@@ -94,11 +94,12 @@ export default function InsightArticle({ params }: { params: Params }) {
         <h1>{post.title}</h1>
         <p className="dek">{post.dek}</p>
 
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`/og/og-${post.slug}.png`}
           alt={post.title}
           className="article-og-hero"
+          width={1200}
+          height={630}
         />
 
         <div className="body">
