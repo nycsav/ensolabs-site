@@ -74,7 +74,7 @@ git add -A && git commit -m "description" && git push origin master
 - robots.ts allows: GPTBot, ClaudeBot, PerplexityBot, Applebot, Google-Extended, meta-externalagent
 - MCP endpoint at /.well-known/mcp.json
 - RSS feed at /feed.xml
-- Sitemap at /sitemap.xml (18 URLs)
+- Sitemap at /sitemap.xml (25 URLs)
 - FAQ schema on /services and /contact
 - LocalBusiness schema on /contact (geo: 40.7362, -73.9903)
 
