@@ -35,13 +35,13 @@ export async function generateMetadata({
       url: `/insights/${post.slug}`,
       publishedTime: post.date,
       authors: ['Sav Banerjee'],
-      images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
+      images: [{ url: `https://ensolabs.ai/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.dek,
-      images: ['https://ensolabs.ai/og-default.png?v=3'],
+      images: [`https://ensolabs.ai/og/og-${post.slug}.png`],
     },
   };
 }
@@ -93,6 +93,14 @@ export default function InsightArticle({ params }: { params: Params }) {
 
         <h1>{post.title}</h1>
         <p className="dek">{post.dek}</p>
+
+        <img
+          src={`/og/og-${post.slug}.png`}
+          alt={post.title}
+          className="article-og-hero"
+          width={1200}
+          height={630}
+        />
 
         <div className="body">
           {post.body.map((para, i) => (

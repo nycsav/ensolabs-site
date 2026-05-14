@@ -110,7 +110,13 @@ export default function InsightsIndex() {
           <div className="insights-grid">
             <Link href={`/insights/${featured.slug}`} className="insight-card featured">
               <div>
-                <div className="meta">
+                <img
+                  src={`/og/og-${featured.slug}.png`}
+                  alt={featured.title}
+                  className="insight-card-og"
+                  loading="eager"
+                />
+                <div className="meta" style={{ marginTop: 20 }}>
                   <span className="pillar">{featured.pillar}</span>
                   <span>{formatDate(featured.date)}</span>
                   <span>{featured.readingMinutes} min read</span>
@@ -129,6 +135,12 @@ export default function InsightsIndex() {
 
             {rest.map((post) => (
               <Link key={post.slug} href={`/insights/${post.slug}`} className="insight-card">
+                <img
+                  src={`/og/og-${post.slug}.png`}
+                  alt={post.title}
+                  className="insight-card-og"
+                  loading="lazy"
+                />
                 <div className="meta">
                   <span className="pillar">{post.pillar}</span>
                   <span>{formatDate(post.date)}</span>

@@ -565,6 +565,20 @@ footer {
 }
 .insight-card .foot .read { color: var(--teal); }
 
+/* OG card image inside insight cards */
+.insight-card-og {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  transition: opacity .2s ease;
+}
+.insight-card:hover .insight-card-og { opacity: .85; }
+.insight-card.featured .insight-card-og {
+  border-radius: 8px;
+}
+
 /* Featured (first) card spans full width */
 .insight-card.featured {
   grid-column: 1 / -1;
@@ -605,7 +619,15 @@ footer {
   line-height: 1.45;
   color: var(--fg-2);
   max-width: 60ch;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
+}
+.article-og-hero {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  margin-bottom: 48px;
 }
 .article-shell .body p {
   font-size: 18px;
