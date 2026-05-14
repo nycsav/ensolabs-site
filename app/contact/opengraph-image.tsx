@@ -100,7 +100,7 @@ export default function OGImage() {
             marginBottom: '28px',
           }}
         >
-          Let's{' '}
+          Let&apos;s{' '}
           <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>scope</span>
           {' '}it.
         </div>
@@ -114,7 +114,7 @@ export default function OGImage() {
             marginBottom: '24px',
           }}
         >
-          Tell us what you're building. We'll respond within one business day.
+          Tell us what you&apos;re building. We&apos;ll respond within one business day.
         </div>
         <div style={{ display: 'flex', gap: '32px' }}>
           {['hello@ensolabs.ai', 'Response: <24h', 'New York, NY'].map((detail, i) => (
