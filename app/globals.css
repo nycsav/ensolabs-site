@@ -624,13 +624,9 @@ footer {
 .article-og-hero {
   display: block;
   width: 100%;
-  height: auto;
-<<<<<<< HEAD
   max-width: 100%;
+  height: auto;
   object-fit: contain;
-=======
-  display: block;
->>>>>>> 56ecb70 (fix: prevent hero image truncation on mobile article pages)
   border-radius: 8px;
   border: 1px solid var(--line);
   margin-bottom: 48px;
