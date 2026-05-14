@@ -22,7 +22,6 @@ export default function OGImage() {
           fontFamily: '"Inter", sans-serif',
         }}
       >
-        {/* Teal glow */}
         <div
           style={{
             position: 'absolute',
@@ -35,7 +34,6 @@ export default function OGImage() {
             filter: 'blur(20px)',
           }}
         />
-        {/* Page counter */}
         <div
           style={{
             position: 'absolute',
@@ -48,9 +46,8 @@ export default function OGImage() {
             textTransform: 'uppercase',
           }}
         >
-          ABOUT / 04
+          ABOUT / 03
         </div>
-        {/* Enso mark */}
         <div
           style={{
             position: 'absolute',
@@ -93,7 +90,6 @@ export default function OGImage() {
             ENSO LABS
           </span>
         </div>
-        {/* Headline */}
         <div
           style={{
             fontSize: '80px',
@@ -104,30 +100,38 @@ export default function OGImage() {
             marginBottom: '28px',
           }}
         >
-          An AI advisor{' '}
+          AI advisor{' '}
           <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>who</span>
           {' '}builds.
         </div>
-        {/* Credential strip */}
         <div
           style={{
-            display: 'flex',
-            gap: '32px',
-            fontFamily: 'monospace',
-            fontSize: '13px',
-            color: 'oklch(0.55 0.012 80)',
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            marginBottom: '0px',
+            fontSize: '22px',
+            color: 'oklch(0.78 0.008 80)',
+            lineHeight: 1.45,
+            maxWidth: '700px',
+            fontWeight: 400,
+            marginBottom: '24px',
           }}
         >
-          <span>15+ Yrs Experience</span>
-          <span style={{ color: 'oklch(0.32 0.018 250)' }}>—</span>
-          <span>AI Strategy</span>
-          <span style={{ color: 'oklch(0.32 0.018 250)' }}>—</span>
-          <span>New York</span>
+          15+ years in digital advertising, CX strategy, and growth — now building AI systems that ship.
         </div>
-        {/* Bottom divider */}
+        <div style={{ display: 'flex', gap: '32px' }}>
+          {['New York', 'Solopreneur', 'Enso Labs + Enso Partners'].map((cred, i) => (
+            <span
+              key={i}
+              style={{
+                fontFamily: 'monospace',
+                fontSize: '12px',
+                color: 'oklch(0.55 0.012 80)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              {cred}
+            </span>
+          ))}
+        </div>
         <div
           style={{
             position: 'absolute',

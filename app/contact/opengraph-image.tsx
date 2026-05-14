@@ -22,7 +22,6 @@ export default function OGImage() {
           fontFamily: '"Inter", sans-serif',
         }}
       >
-        {/* Teal glow */}
         <div
           style={{
             position: 'absolute',
@@ -35,7 +34,6 @@ export default function OGImage() {
             filter: 'blur(20px)',
           }}
         />
-        {/* Page counter */}
         <div
           style={{
             position: 'absolute',
@@ -48,9 +46,8 @@ export default function OGImage() {
             textTransform: 'uppercase',
           }}
         >
-          CONTACT / 05
+          CONTACT / 04
         </div>
-        {/* Enso mark */}
         <div
           style={{
             position: 'absolute',
@@ -93,7 +90,6 @@ export default function OGImage() {
             ENSO LABS
           </span>
         </div>
-        {/* Headline */}
         <div
           style={{
             fontSize: '80px',
@@ -104,27 +100,38 @@ export default function OGImage() {
             marginBottom: '28px',
           }}
         >
-          Let&apos;s{' '}
+          Let's{' '}
           <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>scope</span>
           {' '}it.
         </div>
-        {/* Detail strip */}
         <div
           style={{
-            display: 'flex',
-            gap: '32px',
-            fontFamily: 'monospace',
-            fontSize: '13px',
-            color: 'oklch(0.55 0.012 80)',
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
+            fontSize: '22px',
+            color: 'oklch(0.78 0.008 80)',
+            lineHeight: 1.45,
+            maxWidth: '640px',
+            fontWeight: 400,
+            marginBottom: '24px',
           }}
         >
-          <span>hello@ensolabs.ai</span>
-          <span style={{ color: 'oklch(0.32 0.018 250)' }}>—</span>
-          <span>Response within 24h</span>
+          Tell us what you're building. We'll respond within one business day.
         </div>
-        {/* Bottom divider */}
+        <div style={{ display: 'flex', gap: '32px' }}>
+          {['hello@ensolabs.ai', 'Response: <24h', 'New York, NY'].map((detail, i) => (
+            <span
+              key={i}
+              style={{
+                fontFamily: 'monospace',
+                fontSize: '12px',
+                color: 'oklch(0.55 0.012 80)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+              }}
+            >
+              {detail}
+            </span>
+          ))}
+        </div>
         <div
           style={{
             position: 'absolute',

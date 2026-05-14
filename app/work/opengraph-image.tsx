@@ -22,7 +22,6 @@ export default function OGImage() {
           fontFamily: '"Inter", sans-serif',
         }}
       >
-        {/* Teal glow */}
         <div
           style={{
             position: 'absolute',
@@ -35,7 +34,6 @@ export default function OGImage() {
             filter: 'blur(20px)',
           }}
         />
-        {/* Page counter */}
         <div
           style={{
             position: 'absolute',
@@ -48,9 +46,8 @@ export default function OGImage() {
             textTransform: 'uppercase',
           }}
         >
-          WORK / 03
+          WORK / 02
         </div>
-        {/* Enso mark */}
         <div
           style={{
             position: 'absolute',
@@ -93,7 +90,6 @@ export default function OGImage() {
             ENSO LABS
           </span>
         </div>
-        {/* Headline */}
         <div
           style={{
             fontSize: '80px',
@@ -101,60 +97,37 @@ export default function OGImage() {
             letterSpacing: '-0.025em',
             lineHeight: 0.98,
             color: 'oklch(0.96 0.005 80)',
-            marginBottom: '36px',
+            marginBottom: '32px',
           }}
         >
           Selected{' '}
-          <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>work.</span>
+          <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>Work.</span>
         </div>
-        {/* Case study rows */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1px',
-            background: 'oklch(0.32 0.018 250)',
-          }}
-        >
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           {[
-            { num: 'CS/01', title: 'AI Ops Infrastructure' },
-            { num: 'CS/02', title: 'Growth Automation' },
-          ].map((cs) => (
-            <div
-              key={cs.num}
-              style={{
-                background: 'oklch(0.22 0.018 250)',
-                padding: '16px 24px',
-                display: 'flex',
-                gap: '32px',
-                alignItems: 'center',
-              }}
-            >
+            'AI Automation — Pharma Insights Platform',
+            'Growth Intelligence — D2C Revenue Engine',
+            'Agent Build — CX Automation Stack',
+            'Strategy — Enterprise AI Roadmap',
+          ].map((item, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <span
                 style={{
                   fontFamily: 'monospace',
                   fontSize: '11px',
-                  color: 'oklch(0.55 0.012 80)',
-                  letterSpacing: '0.04em',
-                  minWidth: '48px',
+                  color: 'oklch(0.82 0.13 195)',
+                  letterSpacing: '0.08em',
+                  minWidth: '28px',
                 }}
               >
-                {cs.num}
+                CS/{String(i + 1).padStart(2, '0')}
               </span>
-              <span
-                style={{
-                  fontSize: '18px',
-                  fontWeight: 500,
-                  letterSpacing: '-0.015em',
-                  color: 'oklch(0.96 0.005 80)',
-                }}
-              >
-                {cs.title}
+              <span style={{ fontSize: '17px', color: 'oklch(0.78 0.008 80)', fontWeight: 400 }}>
+                {item}
               </span>
             </div>
           ))}
         </div>
-        {/* Bottom divider */}
         <div
           style={{
             position: 'absolute',

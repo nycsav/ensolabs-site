@@ -22,7 +22,6 @@ export default function OGImage() {
           fontFamily: '"Inter", sans-serif',
         }}
       >
-        {/* Teal glow */}
         <div
           style={{
             position: 'absolute',
@@ -35,7 +34,6 @@ export default function OGImage() {
             filter: 'blur(20px)',
           }}
         />
-        {/* Page counter */}
         <div
           style={{
             position: 'absolute',
@@ -48,9 +46,8 @@ export default function OGImage() {
             textTransform: 'uppercase',
           }}
         >
-          SERVICES / 02
+          SERVICES / 01
         </div>
-        {/* Enso mark */}
         <div
           style={{
             position: 'absolute',
@@ -93,66 +90,58 @@ export default function OGImage() {
             ENSO LABS
           </span>
         </div>
-        {/* Headline */}
         <div
           style={{
-            fontSize: '72px',
+            fontSize: '80px',
             fontWeight: 500,
             letterSpacing: '-0.025em',
             lineHeight: 0.98,
             color: 'oklch(0.96 0.005 80)',
-            marginBottom: '36px',
+            marginBottom: '32px',
           }}
         >
-          Three tracks.{' '}
-          <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>One</span>
-          {' '}outcome.
+          Consult.{' '}
+          <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>Build.</span>
+          {' '}Ship.
         </div>
-        {/* Track cards */}
-        <div
-          style={{
-            display: 'flex',
-            gap: '1px',
-            background: 'oklch(0.32 0.018 250)',
-          }}
-        >
-          {['Consult', 'Build', 'Ship'].map((track, i) => (
+        <div style={{ display: 'flex', gap: '24px' }}>
+          {['AI Strategy & Roadmap', 'Product & Agent Build', 'Rapid Deployment'].map((label, i) => (
             <div
-              key={track}
+              key={i}
               style={{
                 flex: 1,
-                background: 'oklch(0.22 0.018 250)',
-                padding: '20px 24px',
+                border: '1px solid oklch(0.32 0.018 250)',
+                borderRadius: '8px',
+                padding: '16px 20px',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '8px',
               }}
             >
-              <div
+              <span
                 style={{
                   fontFamily: 'monospace',
                   fontSize: '11px',
                   color: 'oklch(0.82 0.13 195)',
-                  letterSpacing: '0.06em',
+                  letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                 }}
               >
                 0{i + 1}
-              </div>
-              <div
+              </span>
+              <span
                 style={{
-                  fontSize: '22px',
+                  fontSize: '16px',
                   fontWeight: 500,
-                  letterSpacing: '-0.015em',
                   color: 'oklch(0.96 0.005 80)',
+                  lineHeight: 1.3,
                 }}
               >
-                {track}
-              </div>
+                {label}
+              </span>
             </div>
           ))}
         </div>
-        {/* Bottom divider */}
         <div
           style={{
             position: 'absolute',
