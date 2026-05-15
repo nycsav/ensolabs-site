@@ -12,7 +12,7 @@ import {
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact Enso Labs | AI Consulting Studio NYC',
   description:
     'Get in touch with Enso Labs. Send a project brief, email the studio directly, or open a thread on LinkedIn. Response within 24 hours.',
   alternates: { canonical: '/contact' },

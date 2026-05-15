@@ -10,7 +10,7 @@ import {
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio | NYC',
+  title: 'Enso Labs — AI Transformation Studio NYC',
   description: SITE.description,
   alternates: { canonical: '/' },
   openGraph: {

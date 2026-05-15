@@ -23,6 +23,12 @@ const nextConfig = {
         destination: 'https://ensolabs.ai/:path*',
         permanent: true,
       },
+      // /industries/ directory redirect → financial services (only active industry page)
+      {
+        source: '/industries',
+        destination: '/industries/financial-services',
+        permanent: false,
+      },
     ];
   },
 
