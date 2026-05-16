@@ -8,5 +8,36 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .vercel
-*-social.png
 .claude/worktrees/
+
+# Personal / job search files — never track in website repo
+Sav_Banerjee_*
+*_CoverLetter.*
+*_Resume.*
+LinkedIn_Complete_*
+*Brand_Update*
+SEO-AUDIT-*
+
+# Media files that don't belong in web deploy
+*.mp3
+*.wav
+*-social.png
+og-example-*.png
+og-insight-*.png
+linkedin-logo-*.png
+
+# Working drafts & temp files
+DEPLOY.md
+HACKATHON-*.txt
+notion-hackathon-prep.md
+anthropic-finserv-*
+design-philosophy.md
+finance-content-strategy.md
+
+# signal2noise working files (belong in PlannerAPI repo)
+signal2noise/
+signal2noise-*
+briefs/
+
+# Hackathon project (has its own repo)
+signal2noise-notion-hackathon/
