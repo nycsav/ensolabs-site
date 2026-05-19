@@ -6,15 +6,15 @@ import { blogSchema, breadcrumbSchema } from '@/lib/schema';
 import { INSIGHTS } from '@/lib/insights';
 
 export const metadata: Metadata = {
-  title: 'Insights',
+  title: 'AI Transformation Insights | Essays from Production Engagements',
   description:
-    'Technical and strategic essays from Sav Banerjee on AI transformation, agentic systems, and financial AI — pulled from production engagements at Gore, Heller, and the Enso Trading Terminal.',
-  alternates: { canonical: '/insights' },
+    'Technical and strategic essays from Sav Banerjee on AI transformation, agentic systems, and financial AI — pulled from production engagements at Fortune 500 manufacturers, pharma agencies, and the Enso Trading Terminal.',
+  alternates: { canonical: 'https://ensolabs.ai/insights' },
   openGraph: {
     title: 'Insights — Enso Labs | Notes from Shipping Production AI',
     description:
       'Essays from inside live engagements — what survives production, what fails, and the Strategy-to-Ship Framework.',
-    url: '/insights',
+    url: 'https://ensolabs.ai/insights',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs Insights — Notes from Shipping Production AI' }],
   },
   twitter: {

@@ -5,20 +5,39 @@ import { Arrow } from '@/components/Arrow';
 import { JsonLd } from '@/components/JsonLd';
 import {
   breadcrumbSchema,
+  faqSchema,
   orgSchema,
   personSchema,
 } from '@/lib/schema';
+
+const ABOUT_FAQ = [
+  {
+    question: 'Who is Sav Banerjee?',
+    answer:
+      'Sav Banerjee is the founder and principal of Enso Labs, an AI transformation studio in New York City. He has 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO, and is certified by Anthropic (Claude Code), Google AI, and OpenAI. He is also a Perplexity AI Business Fellowship winner.',
+  },
+  {
+    question: 'What is Sav Banerjee\'s background?',
+    answer:
+      'Sav started in agency strategy, managing $150MM+ portfolios across finance, healthcare, and technology at firms including Google, McCann, Publicis, RAPP, Y&R, BBDO, and Rokkan. In 2020 he founded Enso Partners to combine AI strategy advisory with production agentic systems development — the same operator who designs the system also ships it.',
+  },
+  {
+    question: 'Is Sav Banerjee available for full-time or contract roles?',
+    answer:
+      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles including Head of AI, VP AI Strategy, Director of AI Products, and Principal AI Consultant positions. Contact sav@ensopartners.co for availability.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'About Sav Banerjee | AI Transformation Consultant & Agentic Systems Builder',
   description:
     'Sav Banerjee is a principal AI transformation consultant and agentic systems builder with 15+ years at Google, McCann, Publicis, RAPP, and Young & Rubicam. Certified by Anthropic, Google, and OpenAI. NYC.',
-  alternates: { canonical: '/about' },
+  alternates: { canonical: 'https://ensolabs.ai/about' },
   openGraph: {
     title: 'About Enso Labs | Founded by Sav Banerjee',
     description:
       'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
-    url: '/about',
+    url: 'https://ensolabs.ai/about',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'About Enso Labs — Founded by Sav Banerjee' }],
   },
   twitter: {
@@ -58,6 +77,7 @@ export default function AboutPage() {
         schemas={[
           personSchema(),
           orgSchema(),
+          faqSchema(ABOUT_FAQ),
           breadcrumbSchema([
             { name: 'Home', href: '/' },
             { name: 'About', href: '/about' },
@@ -135,6 +155,7 @@ export default function AboutPage() {
                 <div>↳ Founder &amp; Principal · Enso Labs</div>
                 <div>↳ Manhattan, NYC</div>
                 <div>↳ Perplexity AI Business Fellowship Winner</div>
+                <div>↳ Available for contract and full-time engagements</div>
               </div>
             </div>
           </div>

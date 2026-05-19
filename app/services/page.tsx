@@ -45,12 +45,12 @@ export const metadata: Metadata = {
   title: 'AI Consulting Services: Transformation, Agentic Systems & Financial AI',
   description:
     'Enso Labs offers three integrated service tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence. Principal-led, fixed-fee, NYC.',
-  alternates: { canonical: '/services' },
+  alternates: { canonical: 'https://ensolabs.ai/services' },
   openGraph: {
     title: 'Services — Enso Labs | AI Consulting, Agentic Systems, Financial AI',
     description:
       'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
-    url: '/services',
+    url: 'https://ensolabs.ai/services',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs Services — AI Consulting, Agentic Systems, Financial AI' }],
   },
   twitter: {

@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: 'AI Transformation Case Studies | Production Systems Shipped',
   description:
     'Enso Labs has delivered AI transformation for Fortune 500 organizations: production intelligence platforms, AI Centers of Excellence, and autonomous trading systems. Principal-led, NYC.',
-  alternates: { canonical: '/work' },
+  alternates: { canonical: 'https://ensolabs.ai/work' },
   openGraph: {
     title: 'Our Work — Enso Labs | AI Intelligence, Pharma CoE, Trading Terminal',
     description:
       'Case studies from live engagements: AI intelligence platforms, pharma AI centers of excellence, and autonomous trading systems.',
-    url: '/work',
+    url: 'https://ensolabs.ai/work',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Case Studies & Engagements' }],
   },
   twitter: {
