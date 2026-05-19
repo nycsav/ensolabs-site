@@ -33,6 +33,24 @@ notion-hackathon-prep.md
 anthropic-finserv-*
 design-philosophy.md
 finance-content-strategy.md
+GROWTH-*.md
+linkedin-posts-*.md
+
+# Debug / draft images
+public/images/_debug_*
+public/images/linkedin-final-*
+public/images/linkedin-v4*
+public/images/linkedin-logo-design-philosophy.md
+public/images/linkedin-logo-option-*
+public/images/linkedin-logo-v2-*
+public/images/linkedin-logo-v3-*
+
+# Scripts not for production
+scripts/perplexity-*.py
+scripts/setup-perplexity-*.sh
+
+# Nested project repos
+notion-career-agent/
 
 # signal2noise working files (belong in PlannerAPI repo)
 signal2noise/

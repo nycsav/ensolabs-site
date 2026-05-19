@@ -48,7 +48,7 @@ flowchart TD
     A --> H["/industries/financial-services\nFinancial AI Vertical"]
     A --> I["/editorial-policy\nContent Policy"]
     B --> B1["/services/claude-managed-services\nClaude Managed Services"]
-    C --> C1["/work/gore\nAI Market Intelligence"]
+    C --> C1["/work/gore\nAI Market Intelligence\n(Fortune 500 Manufacturer)"]
     C --> C2["/work/heller\nAI Center of Excellence"]
     C --> C3["/work/trading-terminal\nEnso Trading Terminal"]
     C --> C4["/work/enterprise-ai\nEnterprise AI Enablement"]

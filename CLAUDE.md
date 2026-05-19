@@ -28,7 +28,7 @@ git add -A && git commit -m "description" && git push origin master
 - app/services/claude-managed-services/page.tsx — Claude Managed Services offering
 - app/work/page.tsx — Work overview (4 case study cards)
 - app/work/[slug]/page.tsx — Individual case studies with Article schema + ShareButtons
-  - /work/gore — AI Market Intelligence Platform (CONFIDENTIAL client name)
+  - /work/gore — AI Market Intelligence Platform (Fortune 500 manufacturer — CONFIDENTIAL, never name the client)
   - /work/heller — AI Center of Excellence for Pharma
   - /work/trading-terminal — Enso Trading Terminal
   - /work/enterprise-ai — Enterprise AI Enablement
@@ -70,7 +70,7 @@ git add -A && git commit -m "description" && git push origin master
 - Sav Banerjee in third person on About page
 - "Get in Touch" CTA (not "Book a Discovery Call" or "Book intro call")
 - Three pillars: AI Transformation | Agentic Systems | Financial AI
-- No client names without explicit approval (Gore engagement is CONFIDENTIAL — use "Global Materials Manufacturer" or "Fortune 500 manufacturer")
+- No client names without explicit approval (the /work/gore case study client is CONFIDENTIAL — always use "Global Materials Manufacturer" or "Fortune 500 manufacturer", never the actual company name)
 - signal2noise is always lowercase, no spaces
 - "Powered by Enso Labs" on all signal2noise references
 - Canonical domains: ensolabs.ai (never www.ensolabs.ai or ensopartners.co)
