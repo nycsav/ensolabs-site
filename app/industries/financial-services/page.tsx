@@ -10,7 +10,7 @@ import {
 } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'AI Agents for Financial Services',
+  title: 'AI Agents for Financial Services | Enso Labs',
   description:
     'Production financial AI agents for banks, asset managers, and fintech. Claude + MCP + brokerage API integration. Enso Labs builds autonomous trading systems and market intelligence platforms.',
   alternates: { canonical: '/industries/financial-services' },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'AI Agents for Financial Services — Enso Labs',
     description:
       'Production financial AI agents for banks, asset managers, and fintech. Claude + MCP + brokerage API integration.',
-    url: '/industries/financial-services',
+    url: 'https://ensolabs.ai/industries/financial-services',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'AI Agents for Financial Services — Enso Labs' }],
   },
   twitter: {

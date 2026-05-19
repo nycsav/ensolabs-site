@@ -25,6 +25,7 @@ git add -A && git commit -m "description" && git push origin master
 ## Pages
 - app/page.tsx — Home (hero, 3 pillars, proof metrics, signal2noise feed, methodology, clients, CTA)
 - app/services/page.tsx — Services (3 tracks + 6 FAQs with schema)
+- app/services/claude-managed-services/page.tsx — Claude Managed Services offering
 - app/work/page.tsx — Work overview (4 case study cards)
 - app/work/[slug]/page.tsx — Individual case studies with Article schema + ShareButtons
   - /work/gore — AI Market Intelligence Platform (CONFIDENTIAL client name)
@@ -32,9 +33,12 @@ git add -A && git commit -m "description" && git push origin master
   - /work/trading-terminal — Enso Trading Terminal
   - /work/enterprise-ai — Enterprise AI Enablement
 - app/insights/page.tsx — Insights (LIGHT/WARM theme) + signal2noise embed + articles
-- app/insights/[slug]/page.tsx — Individual insight articles
+- app/insights/[slug]/page.tsx — Individual insight articles (11 articles)
+- app/industries/financial-services/page.tsx — Financial Services vertical page
 - app/about/page.tsx — Studio story + Sav bio (third person) + headshot
 - app/contact/page.tsx — Contact form + address + social links
+- app/built-with-ai/page.tsx — 24-hour build case study
+- app/editorial-policy/page.tsx — Editorial and content policy
 
 ## Components
 - components/Nav.tsx — Navigation with hamburger mobile menu (client component)
@@ -43,9 +47,15 @@ git add -A && git commit -m "description" && git push origin master
 - components/ShareButtons.tsx — Copy link, LinkedIn, Twitter/X, Email sharing
 - components/Analytics.tsx — GA4 with event tracking (client component)
 - components/JsonLd.tsx — JSON-LD schema renderer
+- components/NycClock.tsx — Real-time NYC clock display
+- components/Arrow.tsx — Animated arrow/chevron element
+- components/ThemeMount.tsx — Theme initialization on mount
+- components/Reveal.tsx — Scroll-triggered reveal animations
+- components/OgFrame.tsx — OG image frame component
+- components/S2NLink.tsx — signal2noise link/embed component
 
 ## Key Libraries
-- lib/schema.ts — All JSON-LD builders (Organization, Person, ProfessionalService, Product, FAQ, LocalBusiness, Article, Breadcrumb, WebSite)
+- lib/schema.ts — All JSON-LD builders (Organization, Person, ProfessionalService, Product, FAQ, LocalBusiness, Article, Breadcrumb, WebSite, ContactPoint, Blog)
 - lib/insights.ts — Insight articles data array (add new articles here)
 - lib/site.ts — Site constants, metadata defaults, canonical URLs
 
@@ -140,7 +150,7 @@ git add -A && git commit -m "description" && git push origin master
 - Old Wix ensolabs.ai site unpublished
 - Old Wix ensopartners.co site unpublished
 - Vercel redirect configured: ensopartners.co → ensolabs.ai (308)
-- All 13 pages live (including built-with-ai, financial-services, editorial-policy)
+- All 15 pages live (including built-with-ai, financial-services, editorial-policy, claude-managed-services)
 - All 12 SEO files live (llms.txt, security.txt, IndexNow, MCP endpoint, etc.)
 - Entity disambiguation schemas (foundingDate 2020, sameAs, knowsAbout)
 - OG image branded and working in iMessage/social sharing
@@ -152,14 +162,25 @@ git add -A && git commit -m "description" && git push origin master
 - Renew ensolabs.ai domain at GoDaddy (expires June 5, 2026)
 - LinkedIn profile update (copy ready in Google Drive)
 - signal2noise SEO fixes (PlannerAPI repo)
-### Pending (this week via Cowork)
-- ~~Add OAI-SearchBot, DuckDuckBot, YandexBot, LinkedInBot, Amazonbot to robots.ts~~ ✅ Already done
+### Pending (backlog — not yet started)
 - Create /services/agentic-ai-consulting page
 - Create /services/claude-agent-development page
 - Create /locations/new-york page
 - Create /about/sav-banerjee deep bio page
 - Create /comparisons/boutique-vs-big-4 page
 - Fix signal2noise canonical URLs, OG image, robots.txt, sitemap
+
+## Session Log — May 16, 2026
+### Completed
+- Notion Developer Platform Hackathon prep (May 16-17, Notion HQ SF)
+- signal2noise-notion-hackathon repo created (github.com/nycsav/signal2noise-notion-hackathon)
+- askSignal2Noise agent tool built for Notion Workers (Perplexity + Claude pipeline)
+- ensolabs-site .gitignore cleaned — resumes, cover letters, personal files excluded
+- Notion workspace updated — signal2noise HQ page polished with architecture, links, status
+- CLAUDE.md synced — added missing pages, components, libraries
+### Active
+- Notion Hackathon build (May 16-17): porting signal2noise to Notion Developer Platform
+- Worker deployment: askSignal2Noise tool + database sync pending first successful deploy
 ## Two Workflows
 ### Workflow 1: ensolabs.ai Website
 - Daily/weekly content, SEO, AEO, GEO updates via Cowork

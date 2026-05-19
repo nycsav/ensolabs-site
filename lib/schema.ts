@@ -22,7 +22,12 @@ export const orgSchema = (): JsonLd => ({
     addressCountry: SITE.address.country,
   },
   foundingDate: '2020',
-  sameAs: [SITE.founder.linkedin, SITE.founder.github],
+  sameAs: [
+    SITE.founder.linkedin,
+    SITE.founder.github,
+    'https://www.crunchbase.com/person/sav-banerjee',
+    'https://www.linkedin.com/company/enso-partners',
+  ],
 });
 
 export const personSchema = (): JsonLd => ({
@@ -55,7 +60,11 @@ export const personSchema = (): JsonLd => ({
     { '@type': 'EducationalOccupationalCredential', name: 'OpenAI Certified' },
     { '@type': 'EducationalOccupationalCredential', name: 'Perplexity AI Business Fellowship Winner' },
   ],
-  sameAs: [SITE.founder.linkedin, SITE.founder.github],
+  sameAs: [
+    SITE.founder.linkedin,
+    SITE.founder.github,
+    'https://www.crunchbase.com/person/sav-banerjee',
+  ],
 });
 
 export const websiteSchema = (): JsonLd => ({

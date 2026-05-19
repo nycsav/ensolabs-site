@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: 'Contact Enso Labs | Get in Touch',
     description:
       'Start a project with Enso Labs. 31 Union Square West, NYC. Response within 24 hours.',
-    url: '/contact',
+    url: 'https://ensolabs.ai/contact',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Contact Enso Labs — Get in Touch' }],
   },
   twitter: {

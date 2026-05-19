@@ -45,7 +45,10 @@ flowchart TD
     A --> E["/about\nFounder & Studio"]
     A --> F["/contact\nFormspree Form"]
     A --> G["/built-with-ai\n24hr Build Case Study"]
-    C --> C1["/work/gore\nGore M2 Intelligence Hub"]
+    A --> H["/industries/financial-services\nFinancial AI Vertical"]
+    A --> I["/editorial-policy\nContent Policy"]
+    B --> B1["/services/claude-managed-services\nClaude Managed Services"]
+    C --> C1["/work/gore\nAI Market Intelligence"]
     C --> C2["/work/heller\nAI Center of Excellence"]
     C --> C3["/work/trading-terminal\nEnso Trading Terminal"]
     C --> C4["/work/enterprise-ai\nEnterprise AI Enablement"]
@@ -107,10 +110,13 @@ This repo is proof that AI-native delivery is production-ready today.
 ensolabs-site/
 ├── app/                    # Next.js 14 App Router pages
 │   ├── page.tsx            # Home — hero, pillars, proof metrics, methodology
-│   ├── services/           # AI transformation service tracks + Claude Managed Services
+│   ├── services/           # AI transformation service tracks
+│   │   └── claude-managed-services/  # Claude Managed Services offering
 │   ├── work/[slug]/        # Dynamic case study pages (4 engagements)
-│   ├── insights/[slug]/    # Dynamic insight articles (11+ essays)
+│   ├── insights/[slug]/    # Dynamic insight articles (11 essays)
 │   ├── industries/         # Financial services vertical page
+│   ├── built-with-ai/      # 24-hour AI build case study
+│   ├── editorial-policy/   # Content and editorial policy
 │   ├── about/              # Studio story + founder bio
 │   └── contact/            # Formspree-connected contact form
 ├── components/             # Nav, Footer, ContactForm, ShareButtons, Analytics
@@ -125,7 +131,7 @@ ensolabs-site/
 
 | Client | Outcome |
 |--------|---------|
-| **Gore** | M2 Intelligence Hub — 731 documents indexed, 16 live signals, AES-256-GCM encryption |
+| **Fortune 500 Manufacturer** | AI Market Intelligence Platform — 731 documents indexed, 16 live signals, AES-256-GCM encryption |
 | **Heller** | AI Center of Excellence — 83% faster campaign launches, FDA/MLR compliant pipeline |
 | **Enterprise AI** | AI enablement program — 75% pilot-to-production conversion rate |
 | **Enso Trading Terminal** | Autonomous signal intelligence + options trading platform |

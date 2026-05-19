@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: SITE.description,
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Enso Labs — Strategy to Ship',
+    title: 'Enso Labs — AI Transformation Studio NYC',
     description:
       'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
     url: SITE.origin,
