@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { ShareButtons } from '@/components/ShareButtons';
-import { breadcrumbSchema } from '@/lib/schema';
+import { breadcrumbSchema, faqSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
 const CASES: Record<string, {
@@ -124,6 +124,57 @@ const CASES: Record<string, {
   },
 };
 
+const CASE_FAQS: Record<string, { question: string; answer: string }[]> = {
+  gore: [
+    {
+      question: 'What is the Gore M2 Intelligence Hub?',
+      answer:
+        'The Gore M2 Intelligence Hub is a production-grade AI market-intelligence platform built by Enso Labs for W. L. Gore & Associates. It uses an 8-stage LangGraph pipeline with 4 parallel fetchers and ReAct agents to surface auditable commercial signals from scientific literature, patents, and regulatory filings — processing 731 documents and surfacing 16 validated market developments.',
+    },
+    {
+      question: 'How does the Gore Lens expert-knowledge encoding work?',
+      answer:
+        'The Gore Lens is a 9-rule expert-knowledge encoding framework where each rule represents a domain-specific relevance criterion defined by Gore scientists. Rules are toggleable, allowing scientists to tune signal sensitivity by market vertical. The system encodes expert judgment into the AI pipeline so that relevance ranking reflects scientific priorities rather than generic keyword matching.',
+    },
+  ],
+  heller: [
+    {
+      question: 'What is an AI Center of Excellence for pharma?',
+      answer:
+        'An AI Center of Excellence (CoE) for pharma is an organizational capability that integrates AI tools and workflows across brand teams while maintaining regulatory compliance — including FDA, MLR (Medical Legal Regulatory), and PRC review standards. Enso Labs built the Heller AI CoE with NIST AI RMF governance, 5 brand knowledge bases, and 8 active automations that compressed campaign launches from 3 months to 2 weeks.',
+    },
+    {
+      question: 'How does Enso Labs maintain FDA/MLR compliance in AI workflows?',
+      answer:
+        'Enso Labs designs AI workflows with compliance built in from day one — using RAG retrieval grounded in FDA-approved brand knowledge bases, audit trails for every AI-generated output, human-in-the-loop checkpoints before regulatory submission, and NIST AI Risk Management Framework governance. The Heller engagement achieved 75% pilot-to-production conversion with zero compliance incidents.',
+    },
+  ],
+  'trading-terminal': [
+    {
+      question: 'What is the Enso Trading Terminal?',
+      answer:
+        'The Enso Trading Terminal is an autonomous signal-intelligence and options-trading platform built and operated by Enso Labs. It runs 24/7 across equities, options, and crypto/DeFi markets with MCP-connected brokerage APIs (Alpaca, Public.com, Hyperliquid), news-driven trading algorithms, multi-agent research automation, and options flow analysis. It is live in production with real capital.',
+    },
+    {
+      question: 'Why does Enso Labs run its own trading terminal?',
+      answer:
+        'Enso Labs operates the Trading Terminal as proof that our agentic architecture works under real market conditions — not just in client demos. Running production systems with real capital forces engineering discipline that consulting-only firms never develop: latency optimization, failure recovery, risk management, and 24/7 uptime. When we advise clients on agentic systems, we describe architectures we operate ourselves.',
+    },
+  ],
+  'enterprise-ai': [
+    {
+      question: 'What is enterprise AI enablement?',
+      answer:
+        'Enterprise AI enablement is a cohort-based program that converts AI training into shipped production systems. Unlike traditional AI workshops that end with slides, Enso Labs enablement cohorts of 8–15 executives leave with working artifacts — prompt libraries, agent configurations, and production prototypes. The program averages a 3-month time-to-first-value and 75% pilot-to-production conversion across finance, healthcare, and technology.',
+    },
+    {
+      question: 'How is Enso Labs enablement different from typical AI training?',
+      answer:
+        'Typical AI training teaches concepts. Enso Labs enablement ships systems. Every cohort builds against real data using production tools (Claude, Gemini, GPT-4, MCP, N8N), with the principal advisor hands-on throughout. The result is a working AI capability — not just awareness — with reusable prompt libraries, agent templates, and an AI maturity scorecard that tracks adoption over time.',
+    },
+  ],
+};
+
 const SLUGS = Object.keys(CASES);
 
 export function generateStaticParams() {
@@ -158,6 +209,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   if (!cs) notFound();
 
   const shareUrl = `${SITE.origin}/work/${params.slug}`;
+  const faqs = CASE_FAQS[params.slug] || [];
 
   return (
     <>
@@ -189,6 +241,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           image: `${SITE.origin}/og-default.png`,
           articleSection: cs.sectorTag,
         },
+        ...(faqs.length > 0 ? [faqSchema(faqs)] : []),
       ]} />
 
       <main>
@@ -258,6 +311,42 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             ))}
           </div>
         </section>
+
+        {/* ── Citation-Bait Quick Reference ── */}
+        <section className="cs-section" style={{ borderTop: '1px solid var(--line)' }}>
+          <h2>Quick Reference</h2>
+          <style>{`
+            .cs-qr { display: grid; grid-template-columns: 140px 1fr; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; font-size: 14px; }
+            .cs-qr dt { padding: 12px 16px; background: color-mix(in oklab, var(--teal) 6%, transparent); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+            .cs-qr dd { padding: 12px 16px; color: var(--fg-2); border-bottom: 1px solid var(--line); margin: 0; display: flex; align-items: center; }
+            .cs-qr dt:last-of-type, .cs-qr dd:last-of-type { border-bottom: none; }
+            @media (max-width: 600px) { .cs-qr { grid-template-columns: 1fr; } .cs-qr dt { border-bottom: none; padding-bottom: 4px; } }
+          `}</style>
+          <dl className="cs-qr">
+            <dt>Project</dt><dd>{cs.title}</dd>
+            <dt>Client</dt><dd>{cs.client}</dd>
+            <dt>Sector</dt><dd>{cs.sector}</dd>
+            <dt>Engagement</dt><dd>{cs.engagement}</dd>
+            <dt>Stack</dt><dd>{cs.stack}</dd>
+            <dt>Delivered</dt><dd>{cs.delivered}</dd>
+            <dt>Studio</dt><dd>Enso Labs — ensolabs.ai</dd>
+          </dl>
+        </section>
+
+        {/* ── FAQ ── */}
+        {faqs.length > 0 && (
+          <section className="cs-section" style={{ borderTop: '1px solid var(--line)' }}>
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-list">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="faq-item">
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
 
         <ShareButtons path={`/work/${params.slug}`} title={`${cs.title} — Enso Labs`} />
 

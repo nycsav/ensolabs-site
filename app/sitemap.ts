@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.origin}/editorial-policy`,              lastModified: now, changeFrequency: 'yearly',  priority: 0.4 },
     { url: `${SITE.origin}/industries/financial-services`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE.origin}/services/claude-managed-services`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE.origin}/services/agentic-ai-consulting`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   const insightRoutes: MetadataRoute.Sitemap = INSIGHTS.map((p) => ({
