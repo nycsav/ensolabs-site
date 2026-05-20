@@ -10,9 +10,9 @@ import {
 } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Claude Managed Services & Implementation Partner',
+  title: 'Claude Managed Services & Cloud AI Implementation Partner NYC',
   description:
-    'Production Claude implementation and managed services for enterprises. Certified Anthropic partner with deployed Claude agents in financial services, healthcare, and B2B tech. NYC-based, principal-led.',
+    'Production Claude implementation and cloud managed services for enterprises. Certified Anthropic partner delivering enterprise AI consulting, MCP servers, and agentic systems in financial services, healthcare, and B2B tech. NYC-based AI architect, principal-led.',
   alternates: { canonical: 'https://ensolabs.ai/services/claude-managed-services' },
   openGraph: {
     title: 'Claude Managed Services — Enso Labs | Certified Anthropic Implementation Partner',

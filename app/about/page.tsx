@@ -14,37 +14,37 @@ const ABOUT_FAQ = [
   {
     question: 'Who is Sav Banerjee?',
     answer:
-      'Sav Banerjee is the founder and principal of Enso Labs, an AI transformation studio in New York City. He has 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO, and is certified by Anthropic (Claude Code), Google AI, and OpenAI. He is also a Perplexity AI Business Fellowship winner.',
+      'Sav Banerjee is an AI strategy consultant in NYC and the founder of Enso Labs, an AI transformation consulting firm in New York City. He is an AI architect and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity AI Business Fellowship winner.',
   },
   {
     question: 'What is Sav Banerjee\'s background?',
     answer:
-      'Sav started in agency strategy, managing $150MM+ portfolios across finance, healthcare, and technology at firms including Google, McCann, Publicis, RAPP, Y&R, BBDO, and Rokkan. In 2020 he founded Enso Partners to combine AI strategy advisory with production agentic systems development — the same operator who designs the system also ships it.',
+      'Sav started in advertising strategy, managing $150MM+ portfolios across finance, healthcare, and technology at agencies including Google, McCann, Publicis, RAPP, Y&R, BBDO, and Rokkan. His advertising background includes AI-powered campaign strategy, data-driven media planning, CRM automation, and digital transformation for Fortune 500 brands. In 2020 he founded Enso Partners to combine AI strategy advisory with production agentic systems development — the same operator who designs the system also ships it.',
   },
   {
-    question: 'Is Sav Banerjee available for full-time or contract roles?',
+    question: 'Is Sav Banerjee available for Head of AI or VP AI Strategy roles?',
     answer:
-      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles including Head of AI, VP AI Strategy, Director of AI Products, and Principal AI Consultant positions. Contact sav@ensopartners.co for availability.',
+      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles including Head of AI, VP AI Strategy, Chief AI Officer (CAIO), Director of AI Products, and Principal AI Consultant positions. His background as an AI architect and AI transformation leader combines technical depth (Python, LangGraph, Claude API, MCP) with C-suite advisory experience. Contact sav@ensopartners.co for availability.',
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'About Sav Banerjee | AI Transformation Consultant & Agentic Systems Builder',
+  title: 'Sav Banerjee | AI Strategy Consultant NYC — AI Transformation Leader & Architect',
   description:
-    'Sav Banerjee is a principal AI transformation consultant and agentic systems builder with 15+ years at Google, McCann, Publicis, RAPP, and Young & Rubicam. Certified by Anthropic, Google, and OpenAI. NYC.',
+    'Sav Banerjee is an AI strategy consultant in NYC and AI transformation leader with 15+ years at Google, McCann, Publicis, RAPP, and BBDO. AI architect certified by Anthropic, Google, and OpenAI. Available for Head of AI and VP AI Strategy roles.',
   alternates: { canonical: 'https://ensolabs.ai/about' },
   openGraph: {
-    title: 'About Enso Labs | Founded by Sav Banerjee',
+    title: 'Sav Banerjee — AI Strategy Consultant NYC | AI Transformation Leader',
     description:
-      'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
+      'AI strategy consultant in New York. 15+ years at Google, McCann, Publicis, BBDO. AI architect certified by Anthropic, Google, OpenAI. Head of AI candidate.',
     url: 'https://ensolabs.ai/about',
-    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'About Enso Labs — Founded by Sav Banerjee' }],
+    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Sav Banerjee — AI Strategy Consultant NYC' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Enso Labs | Founded by Sav Banerjee',
+    title: 'Sav Banerjee — AI Strategy Consultant NYC | AI Transformation Leader',
     description:
-      'A principal-led AI transformation studio. 15+ years at Google, McCann, Publicis. Certified by Anthropic, Google, OpenAI.',
+      'AI strategy consultant in New York. 15+ years at Google, McCann, Publicis, BBDO. AI architect certified by Anthropic, Google, OpenAI. Head of AI candidate.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -65,7 +65,7 @@ const ADVANTAGES = [
   { ix: '01', ti: 'Direct senior access', de: 'Every engagement is led by a senior advisor who also builds — no junior analysts running point. The person scoping your roadmap is in the codebase the next week.' },
   { ix: '02', ti: 'Builder credibility', de: 'The advisor and the build team work as one unit. Architecture decisions don’t get lost in translation between strategy and engineering.' },
   { ix: '03', ti: 'Production proof', de: 'Enso Labs runs its own agentic infrastructure: the Trading Terminal, automated lead gen, scheduled research, N8N workflows. We run what we build.' },
-  { ix: '04', ti: 'Agency-trained', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO. The studio has sat across the room from your CFO, CMO, and General Counsel.' },
+  { ix: '04', ti: 'Agency-trained in AI advertising', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO — managing AI advertising strategy, marketing automation, and data-driven campaigns for Fortune 500 brands. The studio has sat across the room from your CFO, CMO, and General Counsel.' },
   { ix: '05', ti: 'Speed', de: 'No bloated team, no approval chain. A scope decided on Monday is in a sprint on Tuesday. The 3-month time-to-first-value is structural.' },
   { ix: '06', ti: 'Selective', de: 'A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you’ve saved $200k.' },
 ];
@@ -147,8 +147,8 @@ export default function AboutPage() {
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              <b style={{ color: 'var(--fg)' }}>Sav Banerjee</b> is an AI transformation consultant and agentic systems builder with 15+ years
-              of experience at Google, McCann, Publicis, RAPP, and Young &amp; Rubicam — certified by Anthropic, Google, and OpenAI.
+              <b style={{ color: 'var(--fg)' }}>Sav Banerjee</b> is an AI strategy consultant and AI transformation leader with 15+ years
+              in advertising and technology at Google, McCann, Publicis, RAPP, BBDO, and Young &amp; Rubicam — an AI architect certified by Anthropic, Google, and OpenAI.
             </p>
             <div className="reveal" data-delay="3">
               <div className="mono-sm" style={{ display: 'grid', gap: 8 }}>
@@ -279,7 +279,7 @@ export default function AboutPage() {
             <div className="divider-label"><span>STACK</span></div>
             <div className="tag-row">
               {['LangGraph','LangChain','CrewAI','MCP','Claude API'].map((t) => <span key={t} className="tag teal">{t}</span>)}
-              {['Python','React','N8N','BigQuery','GA4','Looker','Gemini','GPT-4','Alpaca MCP','Coupler.io','Perplexity Computer','Hyperliquid','altFINS'].map((t) => <span key={t} className="tag">{t}</span>)}
+              {['Python','React','N8N','BigQuery','GA4','Looker','Gemini','GPT-4','Alpaca MCP','Coupler.io','Perplexity Computer','Hyperliquid','altFINS','SEO/SEM','CRM Automation','Marketing AI'].map((t) => <span key={t} className="tag">{t}</span>)}
             </div>
           </div>
         </div>

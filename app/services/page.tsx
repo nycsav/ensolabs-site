@@ -12,7 +12,7 @@ const SERVICES_FAQ = [
   {
     question: 'What is AI transformation consulting?',
     answer:
-      'AI transformation consulting helps enterprises convert AI ambition into commercial outcomes. The work spans strategy and roadmapping, AI readiness and maturity assessments, executive workshops, business case and ROI modeling, change management, and responsible-AI governance — anchored on the Strategy-to-Ship Framework.',
+      'AI transformation consulting is an enterprise AI consulting engagement that helps organizations convert AI ambition into commercial outcomes. The work spans AI strategy and roadmapping, AI readiness and maturity assessments, executive workshops, business case and ROI modeling, change management, and responsible-AI governance — anchored on the Strategy-to-Ship Framework. Enso Labs is an AI consulting firm in New York that delivers these engagements principal-led.',
   },
   {
     question: 'What are agentic systems?',
@@ -35,6 +35,11 @@ const SERVICES_FAQ = [
       'Anthropic (Claude Code), Google AI, OpenAI. Sav Banerjee is also a Perplexity AI Business Fellowship winner and member of Perplexity Business.',
   },
   {
+    question: 'Does Enso Labs offer cloud managed services?',
+    answer:
+      'Yes. Enso Labs provides cloud managed services for AI infrastructure — including deployment, monitoring, and operational support for production agentic systems, MCP servers, RAG pipelines, and Claude API integrations. Our cloud managed services cover architecture design, CI/CD pipelines, observability, and compliance layers across AWS, GCP, and Vercel environments.',
+  },
+  {
     question: 'What financial AI agents can Enso Labs build?',
     answer:
       'We build production AI agents for trading, market intelligence, portfolio management, and financial analysis — using Claude\'s financial services infrastructure with MCP-connected brokerage APIs (Alpaca, Public.com, Interactive Brokers). Our Enso Trading Terminal has been running autonomously in production since 2025, predating Anthropic\'s formal financial services agent launch.',
@@ -42,22 +47,22 @@ const SERVICES_FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: 'AI Consulting Services: Transformation, Agentic Systems & Financial AI',
+  title: 'Enterprise AI Consulting Services NYC | AI Transformation & Agentic Systems',
   description:
-    'Enso Labs offers three integrated service tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence. Principal-led, fixed-fee, NYC.',
+    'Enso Labs is an enterprise AI consulting firm in New York offering AI transformation consulting, agentic systems development, cloud managed services, and financial AI. Principal-led, fixed-fee engagements.',
   alternates: { canonical: 'https://ensolabs.ai/services' },
   openGraph: {
-    title: 'Services — Enso Labs | AI Consulting, Agentic Systems, Financial AI',
+    title: 'Enterprise AI Consulting Services — Enso Labs | NYC AI Consulting Firm',
     description:
-      'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
+      'Enterprise AI consulting firm in New York. AI transformation, agentic systems, cloud managed services, and financial AI — principal-led, fixed-fee.',
     url: 'https://ensolabs.ai/services',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs Services — AI Consulting, Agentic Systems, Financial AI' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services — Enso Labs | AI Consulting, Agentic Systems, Financial AI',
+    title: 'Enterprise AI Consulting Services — Enso Labs | NYC AI Consulting Firm',
     description:
-      'Three integrated tracks: AI Transformation Consulting, Agentic Systems & Products, and Financial AI & Trading Intelligence.',
+      'Enterprise AI consulting firm in New York. AI transformation, agentic systems, cloud managed services, and financial AI — principal-led, fixed-fee.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -81,7 +86,7 @@ const TRACKS: Track[] = [
     title: 'AI Transformation Consulting.',
     lede: <>Strategy, roadmaps, and governance for executive teams turning AI ambition into commercial growth. Built around the <b style={{ color: 'var(--fg)' }}>Strategy-to-Ship Framework</b>.</>,
     tags: [
-      { label: 'Strategy' }, { label: 'Roadmapping' }, { label: 'Workshops' }, { label: 'ROI modeling' }, { label: 'Governance' },
+      { label: 'Strategy' }, { label: 'Roadmapping' }, { label: 'Workshops' }, { label: 'ROI modeling' }, { label: 'Governance' }, { label: 'AI Advertising' },
     ],
     deliverables: [
       { ix: '01', ti: 'AI Strategy & Roadmapping', de: '12-month commercial AI roadmap rooted in business case, sized by ROI, and sequenced for pilot-to-production conversion.', ta: '6–10 wk' },
@@ -183,9 +188,9 @@ export default function ServicesPage() {
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs offers three integrated service tracks: <b style={{ color: 'var(--fg)' }}>AI Transformation Consulting</b>,
+              Enso Labs is an enterprise AI consulting firm offering three integrated service tracks: <b style={{ color: 'var(--fg)' }}>AI Transformation Consulting</b>,
               {' '}<b style={{ color: 'var(--fg)' }}>Agentic Systems &amp; Products</b>, and <b style={{ color: 'var(--fg)' }}>Financial AI &amp; Trading Intelligence</b>.
-              Pick one, or run them as a single program.
+              Pick one, or run them as a single program. Based in New York City.
             </p>
             <div className="reveal" data-delay="3">
               <div className="mono-sm" style={{ display: 'grid', gap: 8, color: 'var(--fg-2)' }}>
@@ -340,7 +345,9 @@ export default function ServicesPage() {
               </p>
               <div className="hero-cta-row">
                 <Link className="btn btn-primary" href="/services/claude-managed-services">Learn More <Arrow /></Link>
+                <Link className="btn" href="/services/agentic-ai-consulting">Agentic AI →</Link>
                 <Link className="btn" href="/industries/financial-services">Financial AI →</Link>
+                <Link className="btn" href="/industries/healthcare">Healthcare AI →</Link>
               </div>
             </div>
           </div>
