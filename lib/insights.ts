@@ -12,6 +12,22 @@ export type Insight = {
 
 export const INSIGHTS: Insight[] = [
   {
+    slug: 'notion-hackathon-agent-distribution-problem',
+    title: 'We Built a Research Agent at Notion HQ. The Hardest Part Wasn\'t the AI.',
+    dek: 'At Notion\'s Developer Platform Hackathon, every team had access to the same models. The teams that won solved the distribution problem: getting intelligence to where people already work.',
+    pillar: 'Build',
+    date: '2026-05-19',
+    readingMinutes: 5,
+    body: [
+      'This weekend we were at Notion HQ in San Francisco for their Developer Platform Hackathon — two days of building on their new developer primitives with some of the sharpest agentic AI builders in the Bay Area. We shipped a research intelligence agent that syncs real-time market signals directly into Notion workspaces. No infrastructure to maintain, no separate dashboard to check. The intelligence just shows up where your team already works.',
+      'The surprise was not technical difficulty. The models are good enough. The APIs are clean. Notion\'s new platform removes the infrastructure barrier entirely — CLI plus your idea equals shipping. The surprise was how many teams hit the same wall we see in enterprise deployments: **the gap between "we have an AI tool" and "our team actually uses it" is a distribution problem, not a model problem.**',
+      'Every enterprise we work with has this pattern. They build a beautiful AI prototype. It works in a demo. Then adoption flatlines because the output lives in a separate tool, a separate tab, a separate workflow. The humans who are supposed to benefit from the intelligence never form the habit of checking it — because it is not where they already are.',
+      'The teams at the hackathon that built the most compelling projects all solved this the same way: they put the output inside the tool the user already had open. Not "go check the AI dashboard." Not "here\'s a link to the results." The intelligence appears in the workspace, in context, at the moment it is useful.',
+      'This is the thesis behind signal2noise — our daily AI market intelligence platform at signals.ensolabs.ai. We do not ask people to check another tool. We deliver signals where they already work. The Notion integration we built this weekend is the next step: the same intelligence, delivered directly into workspace pages your team reads every morning.',
+      'The pattern generalizes beyond Notion. For any enterprise AI deployment, the adoption question is not "is the model good enough?" It is "does the output show up where the human already is?" If the answer is no, adoption will fail regardless of model quality. **Distribution is the product.**',
+    ],
+  },
+  {
     slug: 'why-deck-only-ai-consulting-fails-production',
     title: 'Why deck-only AI consulting dies on contact with production.',
     dek: 'The gap between a beautiful slide and a running system is where most enterprise AI initiatives quietly die. Here\'s the autopsy from fifteen years inside the room.',
