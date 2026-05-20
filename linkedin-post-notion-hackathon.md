@@ -1,29 +1,29 @@
-# LinkedIn Post — Notion Hackathon (May 19, 2026)
+# LinkedIn Post — Notion Hackathon Career Agent (May 19, 2026)
 
 ## Post Copy
 
-This weekend we were at Notion HQ for their Developer Platform Hackathon. We shipped a research intelligence agent that syncs market signals directly into Notion workspaces.
+This weekend at Notion HQ we built a career intelligence agent in 24 hours — 5 tools, 487 lines of TypeScript, a full pipeline from job scanning to AI-tailored resumes.
 
-The surprise wasn't technical. The models are good enough. The APIs are clean.
+The architecture:
 
-The surprise was how many teams hit the same wall we see in every enterprise AI deployment: the gap between "we have an AI tool" and "our team actually uses it."
+→ scanJobs: parses LinkedIn notifications, scores every role 0-100 against your profile using Claude
+→ tailorResume: generates ATS-optimized resume + cover letter matched to specific listings
+→ configureAgent: copilot, autopilot, or autonomous mode — you set your risk tolerance
+→ Source-tier ranking: a Tier 1 referral at 60 match score beats a Tier 5 cold apply at 85
 
-That's not a model problem. It's a distribution problem.
+We used two Claude models deliberately. Haiku for speed-sensitive scoring. Sonnet for high-stakes resume generation. Match model capability to task criticality.
 
-Every enterprise we work with has this pattern — they build a beautiful prototype, it works in a demo, then adoption flatlines because the output lives in a separate tool nobody checks.
+The whole thing runs on Notion Workers — no servers, no infra, deployed from a CLI. This is the same pattern we apply to every enterprise AI engagement at Enso Labs: decompose the workflow, insert AI where it creates the most leverage, keep humans in the loop where judgment matters.
 
-The teams that built the most compelling projects at the hackathon all solved this the same way: put the intelligence where the user already is. Not "go check the AI dashboard." The output appears in context, at the moment it's useful.
+GitHub: github.com/nycsav/notion-career-agent
+Full writeup: ensolabs.ai/insights/notion-hackathon-agent-distribution-problem
 
-Distribution is the product.
-
-Full writeup → ensolabs.ai/insights/notion-hackathon-agent-distribution-problem
-
-#AI #AgenticAI #EnterpriseAI #NotionAPI #AIAdoption
+#AI #AgenticAI #NotionAPI #ClaudeAI #CareerTech #EnterpriseAI
 
 ## Link to Include
 https://ensolabs.ai/insights/notion-hackathon-agent-distribution-problem
 
 ## Photos to Attach
 - Notion Hackathon photos (from camera roll)
-- Workato / AI House photos
-- LangChain event photos
+- Building at Notion HQ / team photos
+- Architecture diagram (optional — can screenshot from GitHub README)
