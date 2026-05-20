@@ -18,13 +18,13 @@ const CASES: Record<string, {
 }> = {
   gore: {
     title: 'Gore M2 Intelligence Hub',
-    client: 'W. L. Gore & Associates × Board of Innovation',
+    client: 'Fortune 500 Manufacturer × Board of Innovation',
     sector: 'Advanced Materials / Manufacturing', sectorTag: 'Materials',
     engagement: 'Strategy → Build → Ship', stack: 'LangGraph · Python · Claude · MCP',
     delivered: 'April 2026',
     headline: 'A market-radar that scientists trust.',
     subtitle: '8-stage LangGraph pipeline with AES-256-GCM encryption and expert-knowledge encoding.',
-    definition: 'The Gore M2 Intelligence Hub is a production-grade AI market-intelligence platform built by Enso Labs for W. L. Gore & Associates that surfaces auditable commercial signals from scientific literature, patents, and regulatory filings — replacing weeks of manual research with a single auditable pipeline.',
+    definition: 'The Gore M2 Intelligence Hub is a production-grade AI market-intelligence platform built by Enso Labs for a Fortune 500 manufacturer that surfaces auditable commercial signals from scientific literature, patents, and regulatory filings — replacing weeks of manual research with a single auditable pipeline.',
     challenge: 'Gore\'s Battery Insulation Division needed to surface emerging commercial opportunities from scientific literature, patents, and regulatory filings — replacing manual research processes that took weeks.',
     approach: [
       'Designed the "Gore Lens" — a 9-rule expert-knowledge encoding framework with toggleable relevance rules',
@@ -39,7 +39,7 @@ const CASES: Record<string, {
       { label: 'Signals surfaced', value: '16' },
       { label: 'Encryption', value: 'AES-256-GCM' },
     ],
-    metaDesc: 'How Enso Labs built an AI-powered market intelligence platform for W. L. Gore — 731 documents, 16 validated signals, AES-256-GCM encrypted dashboard.',
+    metaDesc: 'How Enso Labs built an AI-powered market intelligence platform for a Fortune 500 manufacturer — 731 documents, 16 validated signals, AES-256-GCM encrypted dashboard.',
     datePublished: '2026-04-15',
   },
   heller: {
@@ -129,7 +129,7 @@ const CASE_FAQS: Record<string, { question: string; answer: string }[]> = {
     {
       question: 'What is the Gore M2 Intelligence Hub?',
       answer:
-        'The Gore M2 Intelligence Hub is a production-grade AI market-intelligence platform built by Enso Labs for W. L. Gore & Associates. It uses an 8-stage LangGraph pipeline with 4 parallel fetchers and ReAct agents to surface auditable commercial signals from scientific literature, patents, and regulatory filings — processing 731 documents and surfacing 16 validated market developments.',
+        'The Gore M2 Intelligence Hub is a production-grade AI market-intelligence platform built by Enso Labs for a Fortune 500 manufacturer. It uses an 8-stage LangGraph pipeline with 4 parallel fetchers and ReAct agents to surface auditable commercial signals from scientific literature, patents, and regulatory filings — processing 731 documents and surfacing 16 validated market developments.',
     },
     {
       question: 'How does the Gore Lens expert-knowledge encoding work?',
@@ -187,7 +187,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `${cs.title} — Case Study`,
     description: cs.metaDesc,
-    alternates: { canonical: `/work/${params.slug}` },
+    alternates: { canonical: `${SITE.origin}/work/${params.slug}` },
     openGraph: {
       title: `${cs.title} — Enso Labs Case Study`,
       description: cs.metaDesc,
@@ -225,7 +225,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           headline: cs.title,
           description: cs.metaDesc,
           datePublished: cs.datePublished,
-          dateModified: cs.datePublished,
+          dateModified: '2026-05-20',
           author: {
             '@type': 'Person',
             name: SITE.founder.name,

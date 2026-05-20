@@ -116,7 +116,7 @@ export default function WorkPage() {
           <div className="case-head reveal">
             <div className="case-meta">
               <span className="eyebrow no-line"><span className="num">CASE / 01</span></span>
-              <div className="row"><span>Client</span><span>W. L. Gore × Board of Innovation</span></div>
+              <div className="row"><span>Client</span><span>Fortune 500 Manufacturer × Board of Innovation</span></div>
               <div className="row"><span>Sector</span><span>Advanced Materials</span></div>
               <div className="row"><span>Engagement</span><span>Strategy → Build → Ship</span></div>
               <div className="row"><span>Stack</span><span>LangGraph · Python · Claude · MCP</span></div>

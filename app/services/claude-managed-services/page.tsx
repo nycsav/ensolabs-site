@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Claude Managed Services & Implementation Partner',
   description:
     'Production Claude implementation and managed services for enterprises. Certified Anthropic partner with deployed Claude agents in financial services, healthcare, and B2B tech. NYC-based, principal-led.',
-  alternates: { canonical: '/services/claude-managed-services' },
+  alternates: { canonical: 'https://ensolabs.ai/services/claude-managed-services' },
   openGraph: {
     title: 'Claude Managed Services — Enso Labs | Certified Anthropic Implementation Partner',
     description:
       'Production Claude implementation for enterprises. MCP servers, agentic systems, eval harnesses, and compliance layers — deployed by a principal-led studio with shipped systems.',
-    url: '/services/claude-managed-services',
+    url: 'https://ensolabs.ai/services/claude-managed-services',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Claude Managed Services — Enso Labs' }],
   },
   twitter: {
