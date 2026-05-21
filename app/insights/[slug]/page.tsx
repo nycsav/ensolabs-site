@@ -53,12 +53,18 @@ const formatDate = (iso: string) =>
     day: 'numeric',
   });
 
-// Simple inline markdown — supports **bold** and [links](url).
-const renderInline = (text: string) => {
+// Simple inline markdown — supports **bold**, [links](url), and **[bold links](url)**.
+const renderInline = (text: string): React.ReactNode[] => {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>;
+      const inner = part.slice(2, -2);
+      // Check if the bold content contains a link
+      const innerLink = inner.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (innerLink) {
+        return <strong key={i}><a href={innerLink[2]} target="_blank" rel="noopener noreferrer">{innerLink[1]}</a></strong>;
+      }
+      return <strong key={i}>{inner}</strong>;
     }
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
