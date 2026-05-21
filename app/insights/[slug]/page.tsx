@@ -53,24 +53,26 @@ const formatDate = (iso: string) =>
     day: 'numeric',
   });
 
-// Simple inline markdown — supports **bold**, [links](url), and **[bold links](url)**.
-const renderInline = (text: string): React.ReactNode[] => {
-  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
+// Inline markdown — supports **bold**, [links](url), and **text with [links](url) inside**.
+const parseInlineLinks = (text: string, keyPrefix: string = ''): React.ReactNode[] => {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      const inner = part.slice(2, -2);
-      // Check if the bold content contains a link
-      const innerLink = inner.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-      if (innerLink) {
-        return <strong key={i}><a href={innerLink[2]} target="_blank" rel="noopener noreferrer">{innerLink[1]}</a></strong>;
-      }
-      return <strong key={i}>{inner}</strong>;
-    }
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
-      return <a key={i} href={linkMatch[2]} target="_blank" rel="noopener noreferrer">{linkMatch[1]}</a>;
+      return <a key={`${keyPrefix}${i}`} href={linkMatch[2]} target="_blank" rel="noopener noreferrer">{linkMatch[1]}</a>;
     }
-    return <span key={i}>{part}</span>;
+    return <span key={`${keyPrefix}${i}`}>{part}</span>;
+  });
+};
+
+const renderInline = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.flatMap((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const inner = part.slice(2, -2);
+      return [<strong key={`b${i}`}>{parseInlineLinks(inner, `b${i}-`)}</strong>];
+    }
+    return parseInlineLinks(part, `${i}-`);
   });
 };
 
