@@ -126,6 +126,13 @@ export default function InsightsIndex() {
               <div>
                 <div className="ti">{featured.title}</div>
                 <p className="dek" style={{ marginTop: 16 }}>{featured.dek}</p>
+                {featured.tags.length > 0 && (
+                  <div className="insight-tags" style={{ marginTop: 12 }}>
+                    {featured.tags.slice(0, 5).map((tag) => (
+                      <span key={tag} className="article-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
                 <div className="foot" style={{ marginTop: 28 }}>
                   <span>SAV BANERJEE</span>
                   <span className="read">Read essay →</span>
@@ -147,6 +154,13 @@ export default function InsightsIndex() {
                 </div>
                 <div className="ti">{post.title}</div>
                 <p className="dek">{post.dek}</p>
+                {post.tags.length > 0 && (
+                  <div className="insight-tags">
+                    {post.tags.slice(0, 4).map((tag) => (
+                      <span key={tag} className="article-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
                 <div className="foot">
                   <span>{post.readingMinutes} min read</span>
                   <span className="read">Read →</span>

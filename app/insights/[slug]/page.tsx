@@ -27,6 +27,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.dek,
+    keywords: post.tags,
     alternates: { canonical: `/insights/${post.slug}` },
     openGraph: {
       type: 'article',
@@ -35,6 +36,7 @@ export async function generateMetadata({
       url: `/insights/${post.slug}`,
       publishedTime: post.date,
       authors: ['Sav Banerjee'],
+      tags: post.tags,
       images: [{ url: `https://ensolabs.ai/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
     },
     twitter: {
@@ -126,6 +128,14 @@ export default function InsightArticle({ params }: { params: Params }) {
 
         <h1>{post.title}</h1>
         <p className="dek">{post.dek}</p>
+
+        {post.tags.length > 0 && (
+          <div className="article-tags">
+            {post.tags.map((tag) => (
+              <span key={tag} className="article-tag">{tag}</span>
+            ))}
+          </div>
+        )}
 
         <div className="body">
           {post.body.map((block, i) => renderBlock(block, i))}

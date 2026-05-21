@@ -628,7 +628,23 @@ footer {
   line-height: 1.45;
   color: var(--fg-2);
   max-width: 60ch;
+  margin-bottom: 24px;
+}
+.article-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
   margin-bottom: 40px;
+}
+.article-tag {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--fg-3);
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.insight-tags {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  margin-top: 8px;
 }
 .article-og-hero {
   display: block;

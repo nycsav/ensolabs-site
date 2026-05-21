@@ -7,6 +7,7 @@ export type Insight = {
   pillar: Pillar;
   date: string; // ISO
   readingMinutes: number;
+  tags: string[];
   body: string[]; // paragraphs (Markdown-ish, kept simple for placeholders)
 };
 
@@ -18,6 +19,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     date: '2026-05-19',
     readingMinutes: 8,
+    tags: ['AI Agents', 'Notion', 'Notion Workers', 'MCP', 'Claude', 'Open Source', 'Hackathon', 'TypeScript', 'Career Intelligence', 'Agentic Systems', 'Anthropic', 'Developer Platform'],
     body: [
       'On May 13, Notion [launched a developer platform](https://www.notion.com/releases/2026-05-13) that turns every workspace into an AI agent hub — Workers for custom code, MCP for data access, an Agent SDK for external integrations, and a CLI for deployment. [TechCrunch called it](https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/) a move that positions Notion as an orchestration layer where people and agents collaborate across tools and databases. Three days later, we were at Notion HQ in San Francisco for their first-ever Developer Platform Hackathon.',
       'We shipped a career intelligence agent in 24 hours — five Notion Worker tools, 487 lines of TypeScript, a full pipeline from job scanning to AI-tailored resume generation. **The project is open source and ready to fork.** [github.com/nycsav/notion-career-agent](https://github.com/nycsav/notion-career-agent)',
@@ -68,6 +70,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     date: '2026-04-22',
     readingMinutes: 7,
+    tags: ['AI Consulting', 'Strategy-to-Ship', 'Enterprise AI', 'Production AI', 'AI Transformation'],
     body: [
       'Most AI consultancies have a wildly successful first ninety days. The deck lands. The roadmap is celebrated. The exec sponsor commits. Then the engagement ends — and the system never ships.',
       'The reason is structural, not motivational. A deck-only consultancy hands off the architecture to an internal team that never participated in the design, then walks away from the production realities — eval harnesses, governance, latency budgets, hallucination guardrails — that determine whether the thing actually runs.',
@@ -82,6 +85,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     date: '2026-04-15',
     readingMinutes: 9,
+    tags: ['AI Agents', 'Expert Systems', 'MCP', 'Market Intelligence', 'Enterprise AI', 'Fortune 500'],
     body: [
       'The Gore M2 Intelligence Hub had one non-negotiable acceptance criterion: the lead scientist had to trust the relevance ranking. That meant no opaque embeddings-as-relevance, no LLM-as-judge with hidden criteria, no statistical magic.',
       'What worked: encoding the scientist\'s actual decision criteria as nine explicit, MCP-compatible rules. Temperature floor. Material class. Chemistry scope. PFAS sensitivity. Market size. Liability exposure. Recency. Novelty. The 200°C gap.',
@@ -96,6 +100,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     date: '2026-04-08',
     readingMinutes: 6,
+    tags: ['MCP', 'Model Context Protocol', 'SaaS', 'AI Agents', 'Enterprise Integration', 'Claude', 'Agentic Systems'],
     body: [
       'For two decades, enterprise software lived inside a tab. The unit of work was the screen. Integration meant Zapier, REST, or a poorly-maintained iPaaS connector.',
       'The Model Context Protocol changes the unit. The unit is now the tool call. An MCP server publishes a typed surface that any agent — Claude, Perplexity Computer, Gemini — can invoke autonomously, with structured input and structured output.',
@@ -110,6 +115,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     date: '2026-04-01',
     readingMinutes: 8,
+    tags: ['RAG', 'Eval Harness', 'LLM', 'Production AI', 'Vector Search', 'AI Architecture'],
     body: [
       'Most RAG systems we are asked to rescue have a sophisticated retrieval pipeline and a non-existent eval harness. The team can describe their reranker but cannot tell you the F1 on a held-out set of expert-graded answers.',
       'This is backwards. The eval harness is the spec. Without it, every change is a vibes-based experiment — chunk size up, chunk size down, embedding model swap, hybrid weight knob — with no way to know if you are getting better or worse.',
@@ -123,6 +129,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Ship',
     date: '2026-03-25',
     readingMinutes: 10,
+    tags: ['Financial AI', 'Trading', 'Autonomous Systems', 'Risk Architecture', 'Enso Trading Terminal', 'AI Agents'],
     body: [
       'Most trading systems begin with the strategy: a signal, an indicator, an alpha. The risk layer arrives later, bolted on, and is the first thing to fail under stress.',
       'The Enso Trading Terminal was built backwards on purpose. The kill-switch came first. Risk caps were schemas, not config. Position sizing was a typed function with property tests, not a magic number in a YAML file.',
@@ -137,6 +144,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     date: '2026-03-18',
     readingMinutes: 7,
+    tags: ['Pharma AI', 'AI Center of Excellence', 'Compliance', 'MLR', 'Healthcare AI', 'Enterprise AI', 'AI Transformation'],
     body: [
       'The standard objection to AI in pharma marketing is compliance. MLR/PRC review, FDA fair balance, brand voice tolerance — every shortcut breaks one of them.',
       'The Heller Center of Excellence was designed around the constraint, not despite it. RAG retrieval is grounded in five brand knowledge bases that already encode MLR-approved language. Pre-flight scans run on every draft. The compliance burden is automated, not bypassed.',
@@ -151,6 +159,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Ship',
     date: '2026-03-11',
     readingMinutes: 5,
+    tags: ['Financial AI', 'Options Trading', 'Decision Support', 'Human-in-the-Loop', 'Trading Terminal'],
     body: [
       'The marketing of "AI-powered options flow" usually implies an oracle — feed it tickers, get trades. That is exactly the model that loses money.',
       'The Options Lab is a decision-support tool. It surfaces unusual flow, sweeps, and blocks; cross-references against the news intelligence feed and the implied volatility surface; and presents the operator with a vetting checklist before any execution route is enabled.',
@@ -164,6 +173,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     date: '2026-03-04',
     readingMinutes: 6,
+    tags: ['AI Consulting', 'Boutique Studio', 'Strategy-to-Ship', 'Principal-Led', 'Enterprise AI'],
     body: [
       'The pitch from a 50-person consultancy is depth of bench. The reality is hand-offs. Strategy decided in week 3 reaches engineering in week 9, refracted through three layers of partial context.',
       'A principal-led studio has structural advantages a large bench cannot replicate. Direct senior access — no account managers. Builder credibility — the advisor is also in the codebase. Dogfooding — the studio runs its own infrastructure. Speed — no approval chain. Selectivity — a fixed pipeline forces a yes to mean yes.',
@@ -177,6 +187,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Ship',
     date: '2026-05-05',
     readingMinutes: 6,
+    tags: ['Financial AI', 'Anthropic', 'Claude', 'AI Agents', 'Trading', 'MCP', 'Enso Trading Terminal'],
     body: [
       'On May 5, 2026, Anthropic announced ten pre-built AI agents for financial services — pitchbook builders, credit memo drafters, portfolio summarizers, statement auditors. The announcement validates what we have been building at Enso Labs since 2025: production financial AI agents are not a research project. They are an operational layer.',
       'The Enso Trading Terminal has been running autonomously in production for over a year — news-driven trading algorithms, multi-agent research automation, options flow analysis, brokerage API integration via MCP. When Anthropic says Claude can now draft credit memos and audit financial statements, we hear confirmation of a thesis we have already shipped against: **the same reasoning engine that writes prose can manage risk, parse filings, and route orders.**',
@@ -193,6 +204,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     date: '2026-05-08',
     readingMinutes: 8,
+    tags: ['MCP', 'Model Context Protocol', 'Brokerage', 'Financial AI', 'Trading', 'AI Agents', 'Alpaca', 'Interactive Brokers'],
     body: [
       'The Model Context Protocol is the most consequential piece of AI infrastructure that almost no one in financial services is talking about. MCP is a standardized way for AI agents — Claude, Gemini, GPT — to invoke external tools with typed inputs and structured outputs. For trading, that means a single agent can check positions, submit orders, retrieve account data, and monitor fills as part of its reasoning loop.',
       'Before MCP, connecting an AI agent to a brokerage meant building a bespoke integration for every API. Alpaca REST endpoints, Interactive Brokers TWS, Schwab\'s OAuth2 flow, TradeStation\'s streaming WebSocket — each required custom auth, custom error handling, and custom response parsing. The result was fragile plumbing that broke every time a vendor updated their API.',
@@ -209,6 +221,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     date: '2026-05-07',
     readingMinutes: 7,
+    tags: ['Claude', 'Anthropic', 'AI Consulting', 'Partner Network', 'Boutique Studio', 'Enterprise AI', 'Agentic Systems'],
     body: [
       'Anthropic\'s Claude Partner Network — backed by $100 million in funding — is designed to accelerate enterprise Claude deployments through certified implementation partners. The launch partners include the usual suspects: Accenture, Deloitte, PwC, McKinsey, BCG. The pitch is depth of bench and global reach.',
       'The reality is different. Enterprise Claude deployments are not ERP migrations. They are not lift-and-shift projects that benefit from armies of consultants following a playbook. Agentic AI systems require the person who designed the architecture to also debug the eval harness at 2am. They require the advisor to be in the codebase. The hand-off model that works for SAP does not work for Claude.',
