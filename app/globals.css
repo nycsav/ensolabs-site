@@ -606,7 +606,15 @@ footer {
   text-transform: uppercase; letter-spacing: 0.06em;
   margin-bottom: 32px;
 }
-.article-shell .meta .pillar { color: var(--teal); }
+.article-shell .meta .pillar {
+  color: var(--teal);
+  min-height: unset;
+  padding: 0;
+  display: inline;
+  flex-direction: unset;
+  gap: 0;
+  background: none;
+}
 .article-shell h1 {
   font-family: var(--display);
   font-weight: 500;
