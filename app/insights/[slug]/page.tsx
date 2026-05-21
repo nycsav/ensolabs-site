@@ -53,15 +53,37 @@ const formatDate = (iso: string) =>
     day: 'numeric',
   });
 
-// Simple inline markdown — only supports **bold**.
-const renderParagraph = (text: string) => {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+// Simple inline markdown — supports **bold** and [links](url).
+const renderInline = (text: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
     }
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      return <a key={i} href={linkMatch[2]} target="_blank" rel="noopener noreferrer">{linkMatch[1]}</a>;
+    }
     return <span key={i}>{part}</span>;
   });
+};
+
+// Render a body block — headings, images, or paragraphs.
+const renderBlock = (block: string, i: number) => {
+  if (block.startsWith('## ')) {
+    return <h2 key={i}>{block.slice(3)}</h2>;
+  }
+  const imgMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+  if (imgMatch) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <figure key={i} className="article-figure">
+        <img src={imgMatch[2]} alt={imgMatch[1]} />
+        {imgMatch[1] && <figcaption>{imgMatch[1]}</figcaption>}
+      </figure>
+    );
+  }
+  return <p key={i}>{renderInline(block)}</p>;
 };
 
 export default function InsightArticle({ params }: { params: Params }) {
@@ -102,9 +124,7 @@ export default function InsightArticle({ params }: { params: Params }) {
         />
 
         <div className="body">
-          {post.body.map((para, i) => (
-            <p key={i}>{renderParagraph(para)}</p>
-          ))}
+          {post.body.map((block, i) => renderBlock(block, i))}
         </div>
 
         <ShareButtons path={`/insights/${post.slug}`} title={`${post.title} — Enso Labs Insights`} />

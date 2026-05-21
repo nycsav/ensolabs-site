@@ -638,6 +638,39 @@ footer {
   max-width: 64ch;
 }
 .article-shell .body p strong { font-weight: 500; }
+.article-shell .body h2 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 48px 0 16px;
+  color: var(--fg);
+  max-width: 64ch;
+}
+.article-shell .body p a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article-shell .body p a:hover { opacity: 0.8; }
+.article-figure {
+  margin: 36px 0;
+  max-width: 100%;
+}
+.article-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.article-figure figcaption {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg-3);
+  margin-top: 10px;
+  text-align: center;
+}
 .article-shell .body blockquote {
   border-left: 2px solid var(--teal);
   padding: 8px 0 8px 24px;
