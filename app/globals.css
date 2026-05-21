@@ -485,7 +485,8 @@ footer {
   border-bottom: 1px solid color-mix(in oklab, var(--line) 80%, transparent);
 }
 
-/* On the light /insights theme, the white SVG would disappear — invert it. */
+/* On the light /insights theme, white SVGs disappear — invert them. */
+.theme-light .nav-logo,
 .theme-light .foot-mark img {
   filter: invert(1) brightness(0.4);
 }
@@ -597,7 +598,7 @@ footer {
 .insight-card.featured .dek { font-size: 17px; max-width: 52ch; }
 
 /* Insights — article detail */
-.article-shell { max-width: 760px; margin: 0 auto; padding: clamp(120px, 14vw, 180px) var(--pad) clamp(80px, 10vw, 120px); }
+.article-shell { max-width: 760px; margin: 0 auto; padding: clamp(80px, 10vw, 120px) var(--pad) clamp(80px, 10vw, 120px); }
 .article-shell .meta {
   display: flex; gap: 16px; flex-wrap: wrap;
   font-family: var(--mono); font-size: 12px;
@@ -1027,7 +1028,7 @@ footer {
   .s2n-banner { grid-template-columns: 1fr; padding: 20px 22px; }
 
   /* Article body */
-  .article-shell { padding: clamp(96px, 22vw, 140px) var(--pad) 64px; }
+  .article-shell { padding: clamp(72px, 16vw, 96px) var(--pad) 64px; }
   .article-shell h1 { font-size: clamp(34px, 8vw, 56px); }
   .article-shell .dek { font-size: 18px; }
   .article-shell .body p { font-size: 17px; }
