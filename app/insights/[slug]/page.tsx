@@ -67,13 +67,16 @@ const parseInlineLinks = (text: string, keyPrefix: string = ''): React.ReactNode
 
 const renderInline = (text: string): React.ReactNode[] => {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.flatMap((part, i) => {
+  const nodes: React.ReactNode[] = [];
+  parts.forEach((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       const inner = part.slice(2, -2);
-      return [<strong key={`b${i}`}>{parseInlineLinks(inner, `b${i}-`)}</strong>];
+      nodes.push(<strong key={`b${i}`}>{parseInlineLinks(inner, `b${i}-`)}</strong>);
+    } else {
+      nodes.push(...parseInlineLinks(part, `${i}-`));
     }
-    return parseInlineLinks(part, `${i}-`);
   });
+  return nodes;
 };
 
 // Render a body block — headings, images, or paragraphs.
