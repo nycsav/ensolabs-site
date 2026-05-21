@@ -19,13 +19,13 @@ Three things we proved building on Notion Workers:
 
 This is the same pattern we apply at Enso Labs across every enterprise engagement: decompose the workflow, insert AI where it creates the most leverage, keep humans in the loop where judgment matters.
 
-Full writeup + architecture deep dive: ensolabs.ai/insights/notion-hackathon-agent-distribution-problem
+Full writeup + architecture deep dive: ensolabs.ai/insights/notion-career-agent-open-source-hackathon
 GitHub: github.com/nycsav/notion-career-agent
 
 #NotionAI #NotionDeveloperPlatform #NotionWorkers #AgenticAI #ClaudeAI #MCP #CareerTech #EnterpriseAI #SFAIWeek
 
 ## Link to Include
-https://ensolabs.ai/insights/notion-hackathon-agent-distribution-problem
+https://ensolabs.ai/insights/notion-career-agent-open-source-hackathon
 
 ## Photos to Attach
 - notion-hackathon-01.jpg — "Welcome hackers" sign (Anthropic, Vercel, OpenAI sponsors)

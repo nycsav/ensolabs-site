@@ -29,6 +29,12 @@ const nextConfig = {
         destination: '/industries/financial-services',
         permanent: false,
       },
+      // Old article slug → new slug (permanent)
+      {
+        source: '/insights/notion-hackathon-agent-distribution-problem',
+        destination: '/insights/notion-career-agent-open-source-hackathon',
+        permanent: true,
+      },
     ];
   },
 
