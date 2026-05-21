@@ -1,4 +1,5 @@
 import { SITE } from '@/lib/site';
+import { INSIGHTS } from '@/lib/insights';
 
 export const dynamic = 'force-static';
 
@@ -63,6 +64,17 @@ export function GET() {
         status: 'production',
       },
     ],
+    insights: INSIGHTS.map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      description: post.dek,
+      url: `${SITE.origin}/insights/${post.slug}`,
+      date: post.date,
+      pillar: post.pillar,
+      readingMinutes: post.readingMinutes,
+      tags: post.tags,
+      author: SITE.founder.name,
+    })),
     capabilities: {
       // No remote MCP server is exposed by this site itself.
       // We list discovery-level metadata only.
@@ -78,6 +90,18 @@ export function GET() {
           name: 'rss',
           uri: `${SITE.origin}/feed.xml`,
           mimeType: 'application/rss+xml',
+        },
+        {
+          name: 'llms-txt',
+          uri: `${SITE.origin}/llms.txt`,
+          mimeType: 'text/plain',
+          description: 'LLM-optimized summary of Enso Labs services, products, and articles.',
+        },
+        {
+          name: 'llms-full-txt',
+          uri: `${SITE.origin}/llms-full.txt`,
+          mimeType: 'text/plain',
+          description: 'Full article content and service descriptions for LLM indexing.',
         },
         {
           name: 'insights',

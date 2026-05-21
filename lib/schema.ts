@@ -241,6 +241,21 @@ export const articleSchema = (post: Insight): JsonLd => ({
   mainEntityOfPage: { '@type': 'WebPage', '@id': url(`/insights/${post.slug}`) },
   articleSection: post.pillar,
   wordCount: post.body.join(' ').split(/\s+/).length,
+  keywords: post.tags.join(', '),
+  about: post.tags.map((tag) => ({
+    '@type': 'Thing',
+    name: tag,
+  })),
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['article h1', 'article .dek', 'article .body p:first-of-type'],
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: `${SITE.origin}/og/og-${post.slug}.png`,
+    width: 1200,
+    height: 630,
+  },
 });
 
 export const contactPointSchema = (): JsonLd => ({

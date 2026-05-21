@@ -2,28 +2,53 @@
 > Enterprise AI consulting firm, agentic systems studio, and financial AI agent lab in New York City.
 
 ## About
-Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerjee in New York City. We deliver AI transformation consulting, agentic AI development, cloud managed services, and AI advertising strategy for Healthcare, Finance, Advertising, and B2B Technology — then build the production systems that deliver it.
+Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerjee in New York City. We deliver AI transformation consulting, agentic AI development, cloud managed services, and production AI systems for Healthcare, Finance, Advertising, and B2B Technology — then build the production systems that deliver it.
 
 ## Services
 - Enterprise AI Transformation Consulting (https://ensolabs.ai/services)
-- Agentic AI Consulting & AI Agent Development (https://ensolabs.ai/services/agentic-ai-consulting)
+- Agentic AI Consulting & AI Agent Development
 - Claude Managed Services & Cloud AI (https://ensolabs.ai/services/claude-managed-services)
-- Financial AI & Agentic Trading Systems
-- Healthcare AI & Pharma Compliance (https://ensolabs.ai/industries/healthcare)
+- Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
+- Healthcare AI & Pharma Compliance
 - AI Advertising & Marketing Automation
 
 ## Products
-- signal2noise (https://signals.ensolabs.ai): Daily AI intelligence
-- Enso Trading Terminal (https://ensolabs.ai/work/trading-terminal): Autonomous financial AI agents
+- signal2noise (https://signals.ensolabs.ai): Daily AI intelligence for marketing strategists, updated every weekday at 7am ET
+- Enso Trading Terminal (https://ensolabs.ai/work/trading-terminal): Autonomous financial AI agents, signal intelligence, options trading
 
 ## Case Studies
-- https://ensolabs.ai/work/gore — AI Market Intelligence Platform
-- https://ensolabs.ai/work/heller — AI Center of Excellence
-- https://ensolabs.ai/work/trading-terminal — Autonomous Trading
-- https://ensolabs.ai/work/enterprise-ai — Enterprise AI Programs
+- https://ensolabs.ai/work/gore — AI Market Intelligence Platform (Fortune 500 manufacturer)
+- https://ensolabs.ai/work/heller — AI Center of Excellence for Pharma
+- https://ensolabs.ai/work/trading-terminal — Autonomous Trading Terminal
+- https://ensolabs.ai/work/enterprise-ai — Enterprise AI Enablement Programs
+
+## Insights (12 articles)
+- https://ensolabs.ai/insights/notion-career-agent-open-source-hackathon — Notion Developer Platform Hackathon: Open-Source Career Agent [AI Agents, Notion, MCP, Claude, Open Source, Hackathon, TypeScript, Agentic Systems]
+- https://ensolabs.ai/insights/mcp-brokerage-trading-model-context-protocol — MCP for Brokerage: Connecting AI to Trading [MCP, Financial AI, Trading, Brokerage, Alpaca, Interactive Brokers]
+- https://ensolabs.ai/insights/claude-partner-network-boutique-implementation — Boutique Firms as Claude Implementation Partners [Claude, Anthropic, AI Consulting, Partner Network, Agentic Systems]
+- https://ensolabs.ai/insights/anthropic-financial-services-what-it-means — Anthropic's Financial AI Agents [Financial AI, Anthropic, Claude, Trading, MCP]
+- https://ensolabs.ai/insights/why-deck-only-ai-consulting-fails-production — Why Deck-Only AI Consulting Fails [AI Consulting, Strategy-to-Ship, Enterprise AI, Production AI]
+- https://ensolabs.ai/insights/gore-lens-expert-knowledge-encoding — Expert Knowledge as Toggleable Rules [AI Agents, Expert Systems, MCP, Market Intelligence]
+- https://ensolabs.ai/insights/mcp-servers-new-saas-integration — MCP Servers: The New SaaS Integration Layer [MCP, Model Context Protocol, SaaS, AI Agents, Enterprise Integration]
+- https://ensolabs.ai/insights/rag-eval-harness-not-vector-store — RAG Is an Eval Problem, Not a Vector-Store Problem [RAG, Eval Harness, LLM, Production AI]
+- https://ensolabs.ai/insights/autonomous-trading-risk-as-architecture — Risk as Architecture in Autonomous Trading [Financial AI, Trading, Autonomous Systems, Risk Architecture]
+- https://ensolabs.ai/insights/ai-coe-pharma-mlr-compliance — AI Center of Excellence for Pharma MLR Compliance [Pharma AI, AI CoE, Compliance, Healthcare AI]
+- https://ensolabs.ai/insights/options-flow-decision-support-not-black-box — Options Flow Analytics: Decision Support [Financial AI, Options Trading, Human-in-the-Loop]
+- https://ensolabs.ai/insights/principal-led-vs-50-person-consultancy — Principal-Led Studio vs. 50-Person Consultancy [AI Consulting, Boutique Studio, Strategy-to-Ship]
+
+## Key Topics & Tags
+AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop
+
+## Full Content
+For complete article text and detailed service descriptions, see: https://ensolabs.ai/llms-full.txt
 
 ## Contact
 - https://ensolabs.ai
 - sav@ensopartners.co
 - https://linkedin.com/in/savbanerjee
 - https://github.com/nycsav
+
+## Machine-Readable
+- Sitemap: https://ensolabs.ai/sitemap.xml
+- RSS: https://ensolabs.ai/feed.xml
+- MCP: https://ensolabs.ai/.well-known/mcp.json
