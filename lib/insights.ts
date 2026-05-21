@@ -20,7 +20,7 @@ export const INSIGHTS: Insight[] = [
     readingMinutes: 8,
     body: [
       'On May 13, Notion [launched a developer platform](https://www.notion.com/releases/2026-05-13) that turns every workspace into an AI agent hub — Workers for custom code, MCP for data access, an Agent SDK for external integrations, and a CLI for deployment. [TechCrunch called it](https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/) a move that positions Notion as an orchestration layer where people and agents collaborate across tools and databases. Three days later, we were at Notion HQ in San Francisco for their first-ever Developer Platform Hackathon.',
-      'We shipped a career intelligence agent in 24 hours — five Notion Worker tools, 487 lines of TypeScript, a full pipeline from job scanning to AI-tailored resume generation. **The project is open source and ready to fork: [github.com/nycsav/notion-career-agent](https://github.com/nycsav/notion-career-agent).**',
+      'We shipped a career intelligence agent in 24 hours — five Notion Worker tools, 487 lines of TypeScript, a full pipeline from job scanning to AI-tailored resume generation. **The project is open source and ready to fork.** [github.com/nycsav/notion-career-agent](https://github.com/nycsav/notion-career-agent)',
       '![Welcome hackers — Notion Developer Platform Hackathon, sponsored by Anthropic, Vercel, and OpenAI](/images/insights/notion-hackathon-01.jpg)',
       '## Notion\'s Developer Platform: What Launched and Why It Matters',
       'The [Notion Developer Platform](https://www.notion.com/product/developer-platform) is the biggest expansion of Notion\'s capabilities since the API launched in 2021. Over 1 million custom agents have already been built since Notion introduced AI agents in February 2026. The developer platform gives builders the primitives to go much further:',
@@ -54,7 +54,7 @@ export const INSIGHTS: Insight[] = [
       '**The design patterns transfer.** We have been running signal2noise on Firebase and Vercel for months. Porting its intelligence patterns (source-tier ranking, multi-model routing, structured output parsing) to Notion Workers took hours, not weeks. If you have built agentic systems on any modern runtime, you can build Notion AI agents.',
       '## Fork It, Ship It, Make It Yours',
       'The career agent is open source and ready to deploy. Fork the repo, plug in your own resume and career preferences, and you have a working career intelligence system inside your Notion workspace. The architecture patterns — multi-model routing, source-tier ranking, configurable automation levels — are designed to be portable to any domain.',
-      '**[Fork on GitHub →](https://github.com/nycsav/notion-career-agent)**',
+      '[Fork on GitHub →](https://github.com/nycsav/notion-career-agent)',
       '## What This Means for the Notion Ecosystem',
       'Notion\'s Developer Platform is the most significant expansion of a productivity tool into an AI agent runtime we have seen. With 1 million custom agents already built, Workers free through August, and partners like Anthropic and OpenAI backing the ecosystem, this is a genuine platform play — not a feature announcement.',
       'The workspace is the interface. The Worker is the runtime. Notion MCP is the data layer. For builders and enterprises evaluating where to ship their next AI agent, Notion just became a serious platform option.',
