@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Arrow } from '@/components/Arrow';
 import { JsonLd } from '@/components/JsonLd';
-import { articleSchema, breadcrumbSchema, orgSchema } from '@/lib/schema';
+import { articleSchema, breadcrumbSchema, faqSchema, orgSchema } from '@/lib/schema';
 import { SITE, url } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -26,6 +26,19 @@ export const metadata: Metadata = {
   },
 };
 
+const BUILT_WITH_AI_FAQS = [
+  {
+    question: 'How was ensolabs.ai built in 24 hours?',
+    answer:
+      'ensolabs.ai was built entirely with AI tools in a single 24-hour session — Claude Chat for strategy and research, Claude Design for visual prototyping, Claude Code for production engineering, and Vercel for auto-deployment. The same AI-native delivery process that Enso Labs uses for client engagements shipped a complete production site with 71 JSON-LD schemas, MCP endpoint, GA4 event tracking, and mobile responsive design.',
+  },
+  {
+    question: 'What AI tools did Enso Labs use to build ensolabs.ai?',
+    answer:
+      'Enso Labs used four AI tools: Claude Chat (Opus 4) for competitive analysis, content architecture, and SEO strategy; Claude Design for layout exploration, color system definition, and typography pairing; Claude Code for pair-programming the entire Next.js 14 codebase; and Vercel for auto-deployment from GitHub.',
+  },
+];
+
 const articleJsonLd = () => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -34,7 +47,7 @@ const articleJsonLd = () => ({
   description:
     'The story of building ensolabs.ai using Claude Chat, Claude Design, Claude Code, and Vercel.',
   datePublished: '2026-05-01',
-  dateModified: '2026-05-07',
+  dateModified: '2026-05-22',
   author: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
   mainEntityOfPage: { '@type': 'WebPage', '@id': url('/built-with-ai') },
@@ -51,6 +64,7 @@ export default function BuiltWithAiPage() {
             { name: 'Home', href: '/' },
             { name: 'Built with AI', href: '/built-with-ai' },
           ]),
+          faqSchema(BUILT_WITH_AI_FAQS),
         ]}
       />
 
@@ -68,10 +82,12 @@ export default function BuiltWithAiPage() {
         <div className="prose">
           <h2>The Stack</h2>
           <p>
-            ensolabs.ai was built entirely with AI tools — not as a stunt, but
-            because it&rsquo;s the fastest way to ship a production-quality
-            site. The same toolchain we use for client engagements built our own
-            studio presence.
+            Built with AI is a case study documenting how Enso Labs shipped
+            ensolabs.ai — a production Next.js 14 website with 71 JSON-LD
+            schemas, MCP endpoint, and GA4 event tracking — in 24 hours using
+            Claude Chat, Claude Design, Claude Code, and Vercel. The same
+            AI-native delivery process we use for client engagements built our
+            own studio presence.
           </p>
           <ul>
             <li>

@@ -235,7 +235,7 @@ export const articleSchema = (post: Insight): JsonLd => ({
   headline: post.title,
   description: post.dek,
   datePublished: post.date,
-  dateModified: post.date,
+  dateModified: post.dateModified || post.date,
   author: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
   mainEntityOfPage: { '@type': 'WebPage', '@id': url(`/insights/${post.slug}`) },

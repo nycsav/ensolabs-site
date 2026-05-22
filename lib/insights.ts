@@ -6,6 +6,7 @@ export type Insight = {
   dek: string;
   pillar: Pillar;
   date: string; // ISO
+  dateModified?: string; // ISO — defaults to `date` if omitted
   readingMinutes: number;
   tags: string[];
   body: string[]; // paragraphs (Markdown-ish, kept simple for placeholders)
@@ -128,6 +129,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'The Trading Terminal runs unattended. That is only possible because the risk caps, position sizing, and shut-off logic were designed before the alpha logic — not after.',
     pillar: 'Ship',
     date: '2026-03-25',
+    dateModified: '2026-05-22',
     readingMinutes: 10,
     tags: ['Financial AI', 'Trading', 'Autonomous Systems', 'Risk Architecture', 'Enso Trading Terminal', 'AI Agents'],
     body: [
@@ -143,6 +145,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Pharma agencies cannot move fast and break things. Medical, Legal, and Regulatory review is non-negotiable. Here\'s how we built a CoE that compresses launches from three months to two weeks anyway.',
     pillar: 'Consult',
     date: '2026-03-18',
+    dateModified: '2026-05-22',
     readingMinutes: 7,
     tags: ['Pharma AI', 'AI Center of Excellence', 'Compliance', 'MLR', 'Healthcare AI', 'Enterprise AI', 'AI Transformation'],
     body: [
@@ -158,6 +161,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Unusual flow is a hypothesis, not a trade. The Options Lab is built to surface hypotheses, force the human to vet them, and only then route to execution.',
     pillar: 'Ship',
     date: '2026-03-11',
+    dateModified: '2026-05-22',
     readingMinutes: 5,
     tags: ['Financial AI', 'Options Trading', 'Decision Support', 'Human-in-the-Loop', 'Trading Terminal'],
     body: [
@@ -172,6 +176,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Counterintuitive — and structural, not heroic. Six things change when the advisor and the build team work as one unit.',
     pillar: 'Consult',
     date: '2026-03-04',
+    dateModified: '2026-05-22',
     readingMinutes: 6,
     tags: ['AI Consulting', 'Boutique Studio', 'Strategy-to-Ship', 'Principal-Led', 'Enterprise AI'],
     body: [
