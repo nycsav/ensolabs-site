@@ -401,6 +401,11 @@ export default function FinancialServicesPage() {
                 In Autonomous Trading, the Kill-Switch Is the Architecture
               </Link>
             </li>
+            <li>
+              <Link href="/insights/options-flow-decision-support-not-black-box">
+                Options Flow Is Decision Support, Not a Black Box
+              </Link>
+            </li>
           </ul>
         </div>
       </section>
@@ -415,6 +420,23 @@ export default function FinancialServicesPage() {
               <p>{faq.answer}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* ── Other Industries ── */}
+      <section className="section">
+        <h2>Other Industries We Serve</h2>
+        <div className="prose">
+          <p>
+            The same principal-led, production-grade approach we bring to financial services applies across regulated industries. Enso Labs also builds AI systems for healthcare and pharmaceutical organizations — including MLR-compliant AI Centers of Excellence and FDA-ready agentic workflows.
+          </p>
+          <ul>
+            <li>
+              <Link href="/industries/healthcare">
+                Healthcare &amp; Pharma AI Consulting — MLR Compliance, AI Centers of Excellence <Arrow />
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 

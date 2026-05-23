@@ -189,7 +189,11 @@ export default function AboutPage() {
                 More on the practice:{' '}
                 <Link href="/insights/why-deck-only-ai-consulting-fails-production" style={{ color: 'var(--teal)' }}>why deck-only consulting fails</Link>
                 {' '}·{' '}
-                <Link href="/insights/principal-led-vs-50-person-consultancy" style={{ color: 'var(--teal)' }}>principal-led vs. 50-person consultancy</Link>.
+                <Link href="/insights/principal-led-vs-50-person-consultancy" style={{ color: 'var(--teal)' }}>principal-led vs. 50-person consultancy</Link>
+                {' '}·{' '}
+                <Link href="/insights/mcp-servers-new-saas-integration" style={{ color: 'var(--teal)' }}>MCP servers as the new SaaS integration</Link>
+                {' '}·{' '}
+                <Link href="/insights/notion-career-agent-open-source-hackathon" style={{ color: 'var(--teal)' }}>Notion hackathon: open-source career agent</Link>.
               </p>
               <div className="hero-cta-row" style={{ marginTop: 24 }}>
                 <a className="btn" href="https://linkedin.com/in/savbanerjee" target="_blank" rel="noopener">LinkedIn</a>
@@ -275,12 +279,36 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="reveal" style={{ marginTop: 64 }}>
+          <div className="reveal" style={{ marginTop: 32 }}>
+            <p style={{ fontFamily: 'var(--mono)', fontSize: 13, color: 'var(--fg-3)' }}>
+              This site was designed and shipped in 24 hours using the same AI-native workflow we use for client delivery.{' '}
+              <Link href="/built-with-ai" style={{ color: 'var(--teal)' }}>Read the full build story →</Link>
+            </p>
+          </div>
+
+          <div className="reveal" style={{ marginTop: 32 }}>
             <div className="divider-label"><span>STACK</span></div>
             <div className="tag-row">
               {['LangGraph','LangChain','CrewAI','MCP','Claude API'].map((t) => <span key={t} className="tag teal">{t}</span>)}
               {['Python','React','N8N','BigQuery','GA4','Looker','Gemini','GPT-4','Alpaca MCP','Coupler.io','Perplexity Computer','Hyperliquid','altFINS','SEO/SEM','CRM Automation','Marketing AI'].map((t) => <span key={t} className="tag">{t}</span>)}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-screen-label="05b FAQ">
+        <div className="shell">
+          <div className="section-head">
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;FAQ</span></div>
+            <div className="reveal" data-delay="1"><h2 className="h2">Frequently Asked Questions</h2></div>
+          </div>
+          <div className="faq-list reveal">
+            {ABOUT_FAQ.map((faq) => (
+              <details key={faq.question} className="faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

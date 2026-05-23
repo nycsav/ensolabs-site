@@ -211,6 +211,18 @@ export default function BuiltWithAiPage() {
         </div>
       </section>
 
+      <section className="section">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-list">
+          {BUILT_WITH_AI_FAQS.map((faq) => (
+            <details key={faq.question} className="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <section className="section cta-section">
         <h2>Want This for Your Organization?</h2>
         <p>

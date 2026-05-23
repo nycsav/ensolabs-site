@@ -200,6 +200,30 @@ export default function HealthcareAIPage() {
         </div>
       </section>
 
+      {/* Related Insights */}
+      <section className="section">
+        <h2>Related Insights</h2>
+        <div className="prose">
+          <ul>
+            <li>
+              <Link href="/insights/ai-coe-pharma-mlr-compliance">
+                Building an AI Center of Excellence for Pharma — MLR Compliance from Day One
+              </Link>
+            </li>
+            <li>
+              <Link href="/insights/rag-eval-harness-not-vector-store">
+                The RAG System That Matters Isn&rsquo;t the Vector Store — It&rsquo;s the Eval Harness
+              </Link>
+            </li>
+            <li>
+              <Link href="/insights/gore-lens-expert-knowledge-encoding">
+                The Gore Lens: Expert Knowledge Encoding for AI Market Intelligence
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="section">
         <h2>Frequently Asked Questions</h2>
@@ -210,6 +234,23 @@ export default function HealthcareAIPage() {
               <p>{faq.answer}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* Other Industries */}
+      <section className="section">
+        <h2>Other Industries We Serve</h2>
+        <div className="prose">
+          <p>
+            Enso Labs applies the same production-grade, compliance-first approach across regulated industries. We also build autonomous AI agents for financial services — including trading systems, market intelligence platforms, and MCP-connected brokerage integrations.
+          </p>
+          <ul>
+            <li>
+              <Link href="/industries/financial-services">
+                Financial Services AI — Autonomous Trading, Market Intelligence, MCP Brokerage <Arrow />
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 
