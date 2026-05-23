@@ -10,21 +10,22 @@ import {
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Enso Labs — AI Transformation Studio NYC',
-  description: SITE.description,
+  title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
+  description:
+    'Enso Labs is a principal-led AI transformation consulting firm and agentic systems studio in New York City, founded by Sav Banerjee. We deliver enterprise AI strategy, production agentic systems, and financial AI agents for Healthcare, Finance, and B2B Technology.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Enso Labs — AI Transformation Studio NYC',
+    title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
     description:
-      'AI transformation consultancy, agentic systems studio, and financial AI product lab. NYC.',
+      'Principal-led AI consulting firm in NYC. Enterprise AI strategy, agentic systems, and financial AI agents — from roadmap to production. Founded by Sav Banerjee.',
     url: SITE.origin,
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enso Labs — Strategy to Ship',
+    title: 'Enso Labs — AI Consulting & Agentic Systems Studio NYC',
     description:
-      'AI transformation consultancy and agentic systems studio. NYC.',
+      'Principal-led AI consulting firm in NYC. Enterprise AI strategy, agentic systems, and financial AI agents. Founded by Sav Banerjee.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -64,9 +65,9 @@ export default function HomePage() {
 
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs is an AI transformation consultancy, agentic systems studio, and financial AI product lab.
-              We architect AI strategy for Healthcare, Finance, and B2B Tech — then build the production systems
-              that deliver it.
+              Enso Labs is a principal-led AI transformation consulting firm, agentic systems studio, and financial AI
+              agent lab in New York City. Founded by Sav Banerjee, we architect enterprise AI strategy for Healthcare,
+              Finance, and B2B Tech — then build and ship the production systems that deliver it.
             </p>
             <div className="reveal" data-delay="3">
               <div className="hero-cta-row">

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE.origin },
   openGraph: {
     title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio | NYC',
-    description: 'AI transformation consultancy, agentic systems studio, and financial AI agent lab. Principal-led AI consulting for Healthcare, Finance, and B2B Tech. NYC.',
+    description: 'Principal-led AI transformation consulting firm and agentic systems studio in NYC, founded by Sav Banerjee. Enterprise AI strategy, production AI agents, and financial AI for Healthcare, Finance, and B2B Tech.',
     url: 'https://ensolabs.ai',
     siteName: 'Enso Labs',
     images: [{

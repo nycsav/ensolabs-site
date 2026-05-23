@@ -3,7 +3,7 @@ export const SITE = {
   name: 'Enso Labs',
   tagline: 'Strategy to Ship.',
   description:
-    'Enso Labs is an enterprise AI consulting firm, agentic systems studio, and financial AI agent lab in New York City. We deliver AI transformation consulting, cloud managed services, and production AI systems for Healthcare, Finance, Advertising, and B2B Technology.',
+    'Enso Labs is a principal-led AI transformation consulting firm, agentic systems studio, and financial AI agent lab in New York City, founded by Sav Banerjee. We deliver enterprise AI strategy, agentic systems, cloud managed services, and production AI agents for Healthcare, Finance, and B2B Technology.',
   // Configurable via NEXT_PUBLIC_AVAILABILITY env var (e.g. "Q1 2027", "Booked through 2026").
   // Surfaced in the home hero, footer, and Cal.com mock.
   availability: process.env.NEXT_PUBLIC_AVAILABILITY || 'Q3–Q4 2026',

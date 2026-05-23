@@ -66,6 +66,8 @@ export default function WorkPage() {
         .outcome .num { font-family: var(--display); font-size: clamp(32px, 3.5vw, 44px); font-weight: 400; letter-spacing:-0.02em; line-height: 1; }
         .outcome .num em { font-style:normal; color:var(--teal); font-size: 0.55em; vertical-align: super; margin-left: 2px; }
         .outcome .lbl { margin-top: 8px; font-family: var(--mono); font-size: 11px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.04em; }
+        .case-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; font-family: var(--mono); font-size: 13px; color: var(--teal); text-decoration: none; letter-spacing: 0.02em; transition: gap 0.2s; }
+        .case-link:hover { gap: 14px; }
         .dash { display: grid; grid-template-columns: 200px 1fr 240px; gap: 1px; background: var(--line); height: 380px; border:1px solid var(--line); border-radius: 10px; overflow: hidden; }
         .dash-col { background: var(--bg); padding: 18px; }
         .dash-col h5 { font-family: var(--mono); font-size: 11px; color:var(--fg-3); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px; font-weight:500; }
@@ -100,10 +102,10 @@ export default function WorkPage() {
             </p>
             <div className="reveal" data-delay="3">
               <div className="mono-sm" style={{ display: 'grid', gap: 6 }}>
-                <a href="#gore">↳ CS / 01 &nbsp; AI Market Intelligence Platform</a>
-                <a href="#heller">↳ CS / 02 &nbsp; Heller AI Center of Excellence</a>
-                <a href="#terminal">↳ CS / 03 &nbsp; Enso Trading Terminal</a>
-                <a href="#enablement">↳ CS / 04 &nbsp; Enterprise AI Enablement</a>
+                <Link href="/work/gore">↳ CS / 01 &nbsp; AI Market Intelligence Platform</Link>
+                <Link href="/work/heller">↳ CS / 02 &nbsp; Heller AI Center of Excellence</Link>
+                <Link href="/work/trading-terminal">↳ CS / 03 &nbsp; Enso Trading Terminal</Link>
+                <Link href="/work/enterprise-ai">↳ CS / 04 &nbsp; Enterprise AI Enablement</Link>
               </div>
             </div>
           </div>
@@ -204,6 +206,7 @@ export default function WorkPage() {
                   Novel signals validated by lead scientist. Measurably higher relevance with Gore Lens ON vs OFF. Go/no-go commercialization milestone delivered April 2026.
                 </em>
               </p>
+              <Link href="/work/gore" className="case-link">View case study <Arrow /></Link>
             </div>
           </div>
         </div>
@@ -285,6 +288,7 @@ export default function WorkPage() {
                 <div className="outcome"><div className="num">83<em>%</em></div><div className="lbl">Faster campaign launches · 3mo → 2wk</div></div>
                 <div className="outcome"><div className="num">35<em>%</em></div><div className="lbl">Time savings on weekly reporting</div></div>
               </div>
+              <Link href="/work/heller" className="case-link">View case study <Arrow /></Link>
             </div>
           </div>
         </div>
@@ -377,6 +381,7 @@ export default function WorkPage() {
                 <em style={{ fontStyle: 'italic' }}>Production trading infrastructure spanning equities, options, and crypto / DeFi.</em>
                 {' '}Demonstrates full-stack builder capability — strategy to deployed system, principal-led end to end.
               </p>
+              <Link href="/work/trading-terminal" className="case-link">View case study <Arrow /></Link>
             </div>
           </div>
         </div>
@@ -413,6 +418,7 @@ export default function WorkPage() {
               <p style={{ marginTop: 24 }}>
                 Legacy engagements include <strong>Citi</strong> (Web3/fintech strategy), <strong>AT&amp;T / BBDO</strong> (&ldquo;It Can Wait&rdquo; — 5MM+ pledges), <strong>American Express / Rokkan</strong> (50% social following increase), <strong>Google</strong> (Google+ launch strategy), and <strong>Jublia</strong> (omnichannel HCP/patient program).
               </p>
+              <Link href="/work/enterprise-ai" className="case-link">View case study <Arrow /></Link>
             </div>
           </div>
         </div>
