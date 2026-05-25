@@ -5,6 +5,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { NycClock } from '@/components/NycClock';
 import {
   breadcrumbSchema,
+  faqSchema,
   professionalServiceSchema,
 } from '@/lib/schema';
 import { SITE } from '@/lib/site';
@@ -30,12 +31,36 @@ export const metadata: Metadata = {
   },
 };
 
+const HOME_FAQS = [
+  {
+    question: 'What is Enso Labs?',
+    answer:
+      'Enso Labs is a principal-led AI transformation consulting firm, agentic systems studio, and financial AI agent lab based in New York City. Founded by Sav Banerjee, we architect enterprise AI strategy for Healthcare, Finance, and B2B Tech — then build and ship the production systems that deliver it. Every engagement is led by a senior advisor who also builds.',
+  },
+  {
+    question: 'Who is Sav Banerjee?',
+    answer:
+      'Sav Banerjee is the founder and principal AI transformation advisor at Enso Labs. He is a 15-year enterprise strategist turned agentic-systems builder, with experience across Google, McCann, Publicis, BBDO, and Y&R. He holds certifications from Anthropic, Google, and OpenAI, and is a Perplexity AI Business Fellowship winner. Sav is available for both consulting engagements and full-time AI leadership roles (Head of AI, VP AI Strategy, Director of AI Products).',
+  },
+  {
+    question: 'What does principal-led AI consulting mean?',
+    answer:
+      'Principal-led means the senior advisor who sells the engagement is also the person who builds and delivers it. At Enso Labs, there are no hand-offs to junior teams. Sav Banerjee leads every engagement from strategy through production deployment, supported by a vetted specialist network that scales with the work.',
+  },
+  {
+    question: 'How do I start a project with Enso Labs?',
+    answer:
+      'Start with a 2-week AI Audit — a fixed-fee diagnostic engagement that delivers a written roadmap, prioritized opportunity backlog, ROI model, governance gap-map, and a working agentic prototype against your real data. Send a brief through the contact form or email sav@ensopartners.co. Response within 24 hours.',
+  },
+];
+
 export default function HomePage() {
   return (
     <>
       <JsonLd
         schemas={[
           professionalServiceSchema(),
+          faqSchema(HOME_FAQS),
           breadcrumbSchema([{ name: 'Home', href: '/' }]),
         ]}
       />
