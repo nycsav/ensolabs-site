@@ -70,6 +70,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'The gap between a beautiful slide and a running system is where most enterprise AI initiatives quietly die. Here\'s the autopsy from fifteen years inside the room.',
     pillar: 'Consult',
     date: '2026-04-22',
+    dateModified: '2026-05-26',
     readingMinutes: 7,
     tags: ['AI Consulting', 'Strategy-to-Ship', 'Enterprise AI', 'Production AI', 'AI Transformation'],
     body: [
@@ -85,6 +86,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'A scientist will never trust a black-box relevance score. Here\'s how we built a 9-rule expert lens that scientists could reason about — and turn off — one rule at a time.',
     pillar: 'Build',
     date: '2026-04-15',
+    dateModified: '2026-05-26',
     readingMinutes: 9,
     tags: ['AI Agents', 'Expert Systems', 'MCP', 'Market Intelligence', 'Enterprise AI', 'Fortune 500'],
     body: [
@@ -100,6 +102,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Every legacy SaaS connector — Salesforce, Slack, Notion, Looker — gets a second life as an MCP server. The companies that ship MCP first will own the agent-native enterprise.',
     pillar: 'Build',
     date: '2026-04-08',
+    dateModified: '2026-05-26',
     readingMinutes: 6,
     tags: ['MCP', 'Model Context Protocol', 'SaaS', 'AI Agents', 'Enterprise Integration', 'Claude', 'Agentic Systems'],
     body: [
@@ -115,6 +118,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Teams burn months optimizing chunk sizes, hybrid retrieval, and reranker stacks. Then they ship — and discover they never had a reliable way to know if the answer was right.',
     pillar: 'Build',
     date: '2026-04-01',
+    dateModified: '2026-05-26',
     readingMinutes: 8,
     tags: ['RAG', 'Eval Harness', 'LLM', 'Production AI', 'Vector Search', 'AI Architecture'],
     body: [

@@ -4,9 +4,23 @@ import { Arrow } from '@/components/Arrow';
 import { JsonLd } from '@/components/JsonLd';
 import {
   breadcrumbSchema,
+  faqSchema,
   orgSchema,
   productSchema,
 } from '@/lib/schema';
+
+const WORK_FAQ = [
+  {
+    question: 'What kind of AI systems does Enso Labs build?',
+    answer:
+      'Enso Labs builds production-grade agentic AI systems — multi-agent orchestration with LangGraph, RAG knowledge systems, MCP server integrations, AI Centers of Excellence, and autonomous trading platforms. Every system ships with eval harnesses, observability, and compliance layers. Recent engagements include an AI Market Intelligence Hub for a Fortune 500 manufacturer, a pharma AI Center of Excellence, and the Enso Trading Terminal.',
+  },
+  {
+    question: 'Does Enso Labs have production AI case studies?',
+    answer:
+      'Yes. Enso Labs has four published case studies: (1) an AI Market Intelligence Platform for a Fortune 500 manufacturer with an 8-stage LangGraph pipeline, (2) an AI Center of Excellence for Heller Agency in pharma with 83% faster campaign launches, (3) the Enso Trading Terminal — a live autonomous trading system spanning equities, options, and crypto, and (4) Enterprise AI Enablement programs for Citi, JPMorgan, Google, Microsoft, and T-Mobile.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'AI Transformation Case Studies | Production Systems Shipped',
@@ -36,6 +50,7 @@ export default function WorkPage() {
         schemas={[
           orgSchema(),
           productSchema(),
+          faqSchema(WORK_FAQ),
           breadcrumbSchema([
             { name: 'Home', href: '/' },
             { name: 'Work', href: '/work' },
