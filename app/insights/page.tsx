@@ -98,13 +98,34 @@ export default function InsightsIndex() {
               </div>
               <S2NLink href="https://signals.ensolabs.ai" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--teal)', textDecoration: 'none' }}>Open full feed →</S2NLink>
             </div>
-            <iframe
-              src="https://signals.ensolabs.ai"
-              className="s2n-iframe"
-              style={{ width: '100%', height: '500px', border: 'none', borderRadius: '8px' }}
-              title="signal2noise — Daily AI Intelligence"
-              loading="lazy"
-            />
+            <div className="s2n-grid">
+              {[
+                { kind: 'AI SIGNAL', date: 'MAY 23', source: 'Anthropic', headline: 'Claude 4 Opus ships with extended thinking and 200K context — enterprise teams report 40% reduction in multi-step agent failures versus prior generation.' },
+                { kind: 'COMPETITIVE SIGNAL', date: 'MAY 22', source: 'Gartner', headline: 'Enterprise AI buying committees are consolidating around three vendors per portfolio — non-finalists lose 70% of pipeline within 90 days of decision.' },
+                { kind: 'MARKET SIGNAL', date: 'MAY 21', source: 'BCG', headline: 'Agentic workflows are replacing RPA in 41% of Fortune 500 ops budgets — first measurable line-item shift since 2019, with healthcare and finance leading adoption.' },
+                { kind: 'MEDIA SIGNAL', date: 'MAY 20', source: 'The Trade Desk', headline: 'AI-search referral traffic now exceeds organic Google for 12% of B2B sites tracked. AEO-optimized brands see 3.4× lift in AI assistant citations.' },
+              ].map((s) => (
+                <S2NLink
+                  key={s.headline}
+                  href="https://signals.ensolabs.ai"
+                  className="s2n-card"
+                  eventLabel="signal_card_click"
+                >
+                  <div className="s2n-meta">
+                    <span className="kind">{s.kind}</span>
+                    <span>{s.date}</span>
+                    <span>{s.source}</span>
+                  </div>
+                  <p className="s2n-headline">{s.headline}</p>
+                  <span className="s2n-arrow">→</span>
+                </S2NLink>
+              ))}
+            </div>
+            <div style={{ marginTop: '20px', textAlign: 'center' }}>
+              <S2NLink href="https://signals.ensolabs.ai" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--fg-3)', textDecoration: 'none' }} eventLabel="view_all_signals">
+                View all signals at signals.ensolabs.ai →
+              </S2NLink>
+            </div>
           </section>
 
           <div className="insights-grid">

@@ -12,7 +12,7 @@ export default function OGImage() {
         style={{
           width: '1200px',
           height: '630px',
-          background: 'oklch(0.18 0.015 250)',
+          background: '#0d1321',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
@@ -44,7 +44,7 @@ export default function OGImage() {
             fontFamily: 'monospace',
             fontSize: '12px',
             letterSpacing: '0.06em',
-            color: 'oklch(0.55 0.012 80)',
+            color: '#7e7c75',
             textTransform: 'uppercase',
           }}
         >
@@ -86,7 +86,7 @@ export default function OGImage() {
               fontFamily: 'monospace',
               fontSize: '13px',
               letterSpacing: '0.02em',
-              color: 'oklch(0.96 0.005 80)',
+              color: '#f5f4f0',
               fontWeight: 600,
             }}
           >
@@ -100,19 +100,19 @@ export default function OGImage() {
             fontWeight: 500,
             letterSpacing: '-0.025em',
             lineHeight: 0.98,
-            color: 'oklch(0.96 0.005 80)',
+            color: '#f5f4f0',
             marginBottom: '28px',
           }}
         >
           Strategy{' '}
-          <span style={{ color: 'oklch(0.82 0.13 195)', fontStyle: 'italic', fontWeight: 400 }}>to</span>
+          <span style={{ color: '#5ce0d2', fontStyle: 'italic', fontWeight: 400 }}>to</span>
           {' '}Ship.
         </div>
         {/* Lede */}
         <div
           style={{
             fontSize: '22px',
-            color: 'oklch(0.78 0.008 80)',
+            color: '#c5c2bc',
             lineHeight: 1.45,
             maxWidth: '640px',
             fontWeight: 400,
@@ -128,7 +128,7 @@ export default function OGImage() {
             left: '80px',
             right: '80px',
             height: '1px',
-            background: 'oklch(0.32 0.018 250)',
+            background: '#3a3d4a',
           }}
         />
         <div
@@ -138,7 +138,7 @@ export default function OGImage() {
             left: '80px',
             fontFamily: 'monospace',
             fontSize: '12px',
-            color: 'oklch(0.55 0.012 80)',
+            color: '#7e7c75',
             letterSpacing: '0.04em',
           }}
         >
