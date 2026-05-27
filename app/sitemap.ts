@@ -22,8 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const insightRoutes: MetadataRoute.Sitemap = INSIGHTS.map((p) => ({
     url: `${SITE.origin}/insights/${p.slug}`,
-    lastModified: new Date(p.date),
-    changeFrequency: 'yearly',
+    lastModified: new Date(p.dateModified || p.date),
+    changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 

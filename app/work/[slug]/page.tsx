@@ -194,6 +194,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       url: `${SITE.origin}/work/${params.slug}`,
       type: 'article',
       images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: `${cs.title} — Enso Labs Case Study` }],
+      authors: ['https://linkedin.com/in/savbanerjee'],
     },
     twitter: {
       card: 'summary_large_image',
@@ -225,7 +226,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           headline: cs.title,
           description: cs.metaDesc,
           datePublished: cs.datePublished,
-          dateModified: '2026-05-21',
+          dateModified: '2026-05-27',
           author: {
             '@type': 'Person',
             name: SITE.founder.name,
@@ -347,6 +348,27 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </div>
           </section>
         )}
+
+        {/* ── Related Work ── */}
+        <section className="cs-section" style={{ borderTop: '1px solid var(--line)' }}>
+          <h2>Related Work</h2>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '12px', maxWidth: '720px' }}>
+            {SLUGS.filter((s) => s !== params.slug).map((s) => (
+              <li key={s} style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
+                <span style={{ color: 'var(--teal)', fontFamily: 'var(--mono)', flexShrink: 0 }}>›</span>
+                <Link href={`/work/${s}`} style={{ color: 'var(--fg-2)', fontSize: '16px', lineHeight: '1.55' }}>
+                  {CASES[s].title} — {CASES[s].sectorTag}
+                </Link>
+              </li>
+            ))}
+            <li style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
+              <span style={{ color: 'var(--teal)', fontFamily: 'var(--mono)', flexShrink: 0 }}>›</span>
+              <Link href="/services" style={{ color: 'var(--fg-2)', fontSize: '16px', lineHeight: '1.55' }}>
+                View all service tracks →
+              </Link>
+            </li>
+          </ul>
+        </section>
 
         <ShareButtons path={`/work/${params.slug}`} title={`${cs.title} — Enso Labs`} />
 
