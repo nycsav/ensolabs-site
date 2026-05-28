@@ -270,6 +270,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Today Anthropic announced pre-built AI agents for banking and trading — pitchbook builders, credit memo drafters, statement auditors. Enso Labs has been shipping production financial agents since 2025. Here is what this means for the industry and why early movers have a structural advantage.',
     pillar: 'Ship',
     date: '2026-05-05',
+    dateModified: '2026-05-28',
     readingMinutes: 6,
     tags: ['Financial AI', 'Anthropic', 'Claude', 'AI Agents', 'Trading', 'MCP', 'Enso Trading Terminal'],
     body: [
@@ -287,6 +288,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Every brokerage API — Alpaca, Interactive Brokers, Schwab, TradeStation — is becoming an MCP server. This is the integration pattern that makes autonomous financial AI agents practical.',
     pillar: 'Build',
     date: '2026-05-08',
+    dateModified: '2026-05-28',
     readingMinutes: 8,
     tags: ['MCP', 'Model Context Protocol', 'Brokerage', 'Financial AI', 'Trading', 'AI Agents', 'Alpaca', 'Interactive Brokers'],
     body: [
@@ -304,6 +306,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Anthropic launched a $100M Claude Partner Network. Accenture, Deloitte, and PwC are in. But for production agentic systems, the structural advantages belong to boutique operators who build what they advise.',
     pillar: 'Consult',
     date: '2026-05-07',
+    dateModified: '2026-05-28',
     readingMinutes: 7,
     tags: ['Claude', 'Anthropic', 'AI Consulting', 'Partner Network', 'Boutique Studio', 'Enterprise AI', 'Agentic Systems'],
     body: [

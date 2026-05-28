@@ -226,7 +226,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           headline: cs.title,
           description: cs.metaDesc,
           datePublished: cs.datePublished,
-          dateModified: '2026-05-27',
+          dateModified: '2026-05-28',
           author: {
             '@type': 'Person',
             name: SITE.founder.name,
