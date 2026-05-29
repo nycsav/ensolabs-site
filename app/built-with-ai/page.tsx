@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Built with AI — How We Shipped a Production Site in 24 Hours',
   description:
     'The story of building ensolabs.ai using Claude Chat, Claude Design, Claude Code, and Vercel — from strategy to production in a single day.',
-  alternates: { canonical: '/built-with-ai' },
+  alternates: { canonical: 'https://ensolabs.ai/built-with-ai' },
   openGraph: {
     title: 'Built with AI — How We Shipped a Production Site in 24 Hours',
     description:
@@ -47,7 +47,7 @@ const articleJsonLd = () => ({
   description:
     'The story of building ensolabs.ai using Claude Chat, Claude Design, Claude Code, and Vercel.',
   datePublished: '2026-05-01',
-  dateModified: '2026-05-25',
+  dateModified: '2026-05-29',
   author: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
   mainEntityOfPage: { '@type': 'WebPage', '@id': url('/built-with-ai') },

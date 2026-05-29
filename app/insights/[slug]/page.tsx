@@ -6,8 +6,10 @@ import { ShareButtons } from '@/components/ShareButtons';
 import {
   articleSchema,
   breadcrumbSchema,
+  faqSchema,
 } from '@/lib/schema';
 import { INSIGHTS, getInsight } from '@/lib/insights';
+import { SITE } from '@/lib/site';
 
 export const dynamicParams = false;
 
@@ -28,16 +30,17 @@ export async function generateMetadata({
     title: post.title,
     description: post.dek,
     keywords: post.tags,
-    alternates: { canonical: `/insights/${post.slug}` },
+    alternates: { canonical: `${SITE.origin}/insights/${post.slug}` },
     openGraph: {
       type: 'article',
       title: post.title,
       description: post.dek,
-      url: `/insights/${post.slug}`,
+      url: `${SITE.origin}/insights/${post.slug}`,
       publishedTime: post.date,
-      authors: ['Sav Banerjee'],
+      modifiedTime: post.dateModified || post.date,
+      authors: ['https://linkedin.com/in/savbanerjee'],
       tags: post.tags,
-      images: [{ url: `https://ensolabs.ai/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
+      images: [{ url: `${SITE.origin}/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -113,6 +116,7 @@ export default function InsightArticle({ params }: { params: Params }) {
             { name: 'Insights', href: '/insights' },
             { name: post.title, href: `/insights/${post.slug}` },
           ]),
+          ...(post.faqs && post.faqs.length > 0 ? [faqSchema(post.faqs)] : []),
         ]}
       />
 
@@ -140,6 +144,20 @@ export default function InsightArticle({ params }: { params: Params }) {
         <div className="body">
           {post.body.map((block, i) => renderBlock(block, i))}
         </div>
+
+        {post.faqs && post.faqs.length > 0 && (
+          <section style={{ marginTop: 48 }}>
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-list">
+              {post.faqs.map((faq) => (
+                <details key={faq.question} className="faq-item">
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
 
         <ShareButtons path={`/insights/${post.slug}`} title={`${post.title} — Enso Labs Insights`} />
 
