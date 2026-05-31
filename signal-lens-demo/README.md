@@ -46,9 +46,31 @@ Next.js 14 (App Router) · React 18 · TypeScript. Self-contained — its own
 `package.json` and `node_modules`, runs on port 3100 so it never collides with
 the main site on 3000.
 
-## Live data (optional, not wired yet)
+## Live mode (Perplexity + Claude)
 
-This demo runs entirely on local sample data and needs **no API keys**. If you
-later want to enrich or replace the sample signals with live ones (e.g. a
-Perplexity + Claude pipeline like askSignal2Noise), that would be an added
-server-side layer reading keys from `.env.local`. See `.env.example`.
+Out of the box the demo runs on local sample data. Type a topic and hit **Fetch
+live signals** to run the real pipeline:
+
+1. **Perplexity** (`lib/pipeline.ts` → `sourceSignals`) sources recent,
+   web-grounded developments on the topic as structured JSON.
+2. **Claude** (`scoreSignals`) scores each sourced signal against all 9 lens
+   rules — using forced tool-use for schema-valid structured output — and
+   assigns each an expert `groundTruth` relevance. Defaults to `claude-opus-4-8`
+   (override with `SIGNAL_LENS_MODEL`).
+3. The scored signals flow into the exact same `Signal` shape as the sample data,
+   so the existing ranking, RWW scoring, and lift logic work unchanged.
+
+The work happens in the server-side API route `app/api/signals/route.ts`; keys
+never reach the browser.
+
+### Enable it
+
+```bash
+cp .env.example .env.local
+# paste your real PERPLEXITY_API_KEY and ANTHROPIC_API_KEY into .env.local
+npm run dev   # restart if it was already running
+```
+
+Without keys, the "Fetch live signals" button returns a clear message telling you
+to add them — nothing crashes. Optional overrides (`SIGNAL_LENS_MODEL`,
+`PERPLEXITY_MODEL`) are documented in `.env.example`.
