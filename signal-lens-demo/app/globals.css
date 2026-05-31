@@ -1,0 +1,212 @@
+/* Signal Lens demo — mirrors the ensolabs.ai OKLCH dark theme tokens. */
+:root {
+  --bg:        oklch(0.18 0.015 250);
+  --bg-2:      oklch(0.22 0.018 250);
+  --bg-3:      oklch(0.26 0.020 250);
+  --line:      oklch(0.32 0.018 250);
+  --line-2:    oklch(0.40 0.020 250);
+  --fg:        oklch(0.96 0.005 80);
+  --fg-2:      oklch(0.78 0.008 80);
+  --fg-3:      oklch(0.58 0.010 80);
+  --teal:      oklch(0.82 0.13 195);
+  --teal-dim:  oklch(0.55 0.10 195);
+  --amber:     oklch(0.82 0.13 70);
+  --amber-dim: oklch(0.55 0.10 70);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+/* ---- header ---- */
+.head { margin-bottom: 40px; }
+.eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 12px;
+}
+.head h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.head p {
+  margin-top: 14px;
+  max-width: 640px;
+  color: var(--fg-2);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* ---- dashboard grid ---- */
+.dash {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .dash { grid-template-columns: 1fr; }
+}
+
+.col {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+}
+.col h2 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.col h2 .count { color: var(--teal); font-family: 'JetBrains Mono', monospace; }
+
+/* ---- rule rows ---- */
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--fg);
+  transition: border-color 0.15s, background 0.15s;
+}
+.rule:hover { background: var(--bg-3); border-color: var(--line-2); }
+.rule .label { font-size: 14px; font-weight: 500; }
+.rule .blurb { font-size: 11.5px; color: var(--fg-3); margin-top: 2px; line-height: 1.35; }
+.rule .state {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.state.on     { color: var(--teal);  background: color-mix(in oklab, var(--teal) 16%, transparent); }
+.state.review { color: var(--amber); background: color-mix(in oklab, var(--amber) 16%, transparent); }
+.state.off    { color: var(--fg-3);  background: var(--bg-3); }
+.rule.is-off .label { color: var(--fg-3); }
+
+.hint {
+  font-size: 11.5px;
+  color: var(--fg-3);
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
+/* ---- signal cards ---- */
+.signal {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.signal:hover { border-color: var(--teal-dim); }
+.signal .tt { font-size: 14.5px; font-weight: 500; line-height: 1.3; }
+.signal .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  align-items: center;
+}
+.signal .rww { color: var(--teal); }
+.signal .src {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: var(--bg-3);
+}
+.bar {
+  margin-top: 10px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--bg-3);
+  overflow: hidden;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(to right, var(--teal-dim), var(--teal));
+  transition: width 0.4s ease;
+}
+.rank {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  margin-right: 8px;
+}
+
+/* ---- delta / lift panel ---- */
+.metric { margin-bottom: 22px; }
+.metric .big {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--teal);
+}
+.metric .lbl { font-size: 12px; color: var(--fg-3); margin-top: 4px; line-height: 1.4; }
+.tl {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-2);
+}
+.tl:last-child { border-bottom: 0; }
+.tl .v { color: var(--teal); }
+.tl .a { color: var(--amber); }
+
+.foot {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--fg-3);
+  letter-spacing: 0.04em;
+}
+.foot .teal { color: var(--teal); }
