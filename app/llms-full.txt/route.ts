@@ -43,7 +43,7 @@ The studio operates on a Strategy-to-Ship Framework: the same principal who desi
 - Embedded AI Operator: quarterly retainer with senior advisor embedded with client team
 
 ### Products
-- **signal2noise** (https://signals.ensolabs.ai): Daily AI intelligence for marketing strategists, updated every weekday at 7am ET
+- **signal2noise** (https://ensolabs.ai/insights): Daily AI market intelligence, scored and curated — published on the Enso Labs Insights page
 - **Enso Trading Terminal**: Autonomous signal intelligence and options trading platform built on Python, LangGraph, and AES-256-GCM
 
 ### Industries Served

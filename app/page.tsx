@@ -360,9 +360,7 @@ export default function HomePage() {
               <a
                 key={s.headline}
                 className="s2n-card"
-                href="https://signals.ensolabs.ai"
-                target="_blank"
-                rel="noopener"
+                href="/insights"
               >
                 <div className="s2n-meta">
                   <span className="kind">{s.kind}</span>
@@ -379,8 +377,8 @@ export default function HomePage() {
             <p className="mono-sm" style={{ color: 'var(--fg-3)' }}>
               ↳ Updated every weekday morning, ET
             </p>
-            <a className="btn btn-primary" href="https://signals.ensolabs.ai" target="_blank" rel="noopener">
-              Get daily signals → signals.ensolabs.ai
+            <a className="btn btn-primary" href="/insights">
+              Read daily signals → Insights
               <Arrow />
             </a>
           </div>

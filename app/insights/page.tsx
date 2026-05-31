@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
-import { S2NLink } from '@/components/S2NLink';
 import { blogSchema, breadcrumbSchema } from '@/lib/schema';
 import { INSIGHTS } from '@/lib/insights';
 
@@ -61,21 +60,6 @@ export default function InsightsIndex() {
             <strong>Enso Labs Insights</strong> is the studio&rsquo;s editorial archive — essays from inside live engagements about what survives contact with production, what fails on the way there, and the operating principles behind the Strategy-to-Ship Framework.
           </p>
 
-          <a
-            href="https://signals.ensolabs.ai"
-            target="_blank"
-            rel="noopener"
-            className="s2n-banner"
-            aria-label="Visit signal2noise"
-          >
-            <div>
-              <div className="label">▲ signal2noise · live product</div>
-              <div className="title">Daily AI intelligence for marketing strategists.</div>
-              <div className="sub">Powered by Enso Labs · updated every weekday at 7am ET</div>
-            </div>
-            <span className="go">signals.ensolabs.ai →</span>
-          </a>
-
           <div className="insights-filter" aria-label="Filter by pillar">
             <span className="pill is-active">All</span>
             <span className="pill">Consult</span>
@@ -96,7 +80,7 @@ export default function InsightsIndex() {
                 <h2 style={{ fontFamily: 'var(--display)', fontSize: '24px', fontWeight: 500, marginBottom: '4px' }}>Live Intelligence</h2>
                 <p style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--fg-3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Powered by Enso Labs · Updated daily</p>
               </div>
-              <S2NLink href="https://signals.ensolabs.ai" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--teal)', textDecoration: 'none' }}>Open full feed →</S2NLink>
+              <Link href="/feed.xml" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--teal)', textDecoration: 'none' }}>Subscribe via RSS →</Link>
             </div>
             <div className="s2n-grid">
               {[
@@ -105,26 +89,20 @@ export default function InsightsIndex() {
                 { kind: 'MARKET SIGNAL', date: 'MAY 21', source: 'BCG', headline: 'Agentic workflows are replacing RPA in 41% of Fortune 500 ops budgets — first measurable line-item shift since 2019, with healthcare and finance leading adoption.' },
                 { kind: 'MEDIA SIGNAL', date: 'MAY 20', source: 'The Trade Desk', headline: 'AI-search referral traffic now exceeds organic Google for 12% of B2B sites tracked. AEO-optimized brands see 3.4× lift in AI assistant citations.' },
               ].map((s) => (
-                <S2NLink
-                  key={s.headline}
-                  href="https://signals.ensolabs.ai"
-                  className="s2n-card"
-                  eventLabel="signal_card_click"
-                >
+                <div key={s.headline} className="s2n-card">
                   <div className="s2n-meta">
                     <span className="kind">{s.kind}</span>
                     <span>{s.date}</span>
                     <span>{s.source}</span>
                   </div>
                   <p className="s2n-headline">{s.headline}</p>
-                  <span className="s2n-arrow">→</span>
-                </S2NLink>
+                </div>
               ))}
             </div>
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
-              <S2NLink href="https://signals.ensolabs.ai" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--fg-3)', textDecoration: 'none' }} eventLabel="view_all_signals">
-                View all signals at signals.ensolabs.ai →
-              </S2NLink>
+              <Link href="/feed.xml" style={{ fontFamily: 'var(--mono)', fontSize: '12px', color: 'var(--fg-3)', textDecoration: 'none' }}>
+                Subscribe to the daily feed →
+              </Link>
             </div>
           </section>
 

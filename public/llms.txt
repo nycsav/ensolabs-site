@@ -13,7 +13,7 @@ Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerj
 - AI Advertising & Marketing Automation
 
 ## Products
-- signal2noise (https://signals.ensolabs.ai): Daily AI intelligence for marketing strategists, updated every weekday at 7am ET
+- signal2noise (https://ensolabs.ai/insights): Daily AI market intelligence, scored and curated — published on the Enso Labs Insights page
 - Enso Trading Terminal (https://ensolabs.ai/work/trading-terminal): Autonomous financial AI agents, signal intelligence, options trading
 
 ## Case Studies
