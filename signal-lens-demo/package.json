@@ -1,0 +1,27 @@
+{
+  "name": "signal-lens-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive demo of the Signal Lens — toggleable expert-knowledge relevance rules. Powered by Enso Labs.",
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.0",
+    "next": "^14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-next": "^14.2.35",
+    "typescript": "5.5.3"
+  }
+}
