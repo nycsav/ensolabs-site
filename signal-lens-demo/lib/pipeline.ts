@@ -261,7 +261,9 @@ export async function fetchLiveSignals(topic: string, count = 12): Promise<Signa
   if (missing.length > 0) {
     throw new PipelineError(
       'missing_keys',
-      `Missing API key(s): ${missing.join(', ')}. Add them to signal-lens-demo/.env.local.`
+      `Missing API key(s): ${missing.join(
+        ', '
+      )}. Set them in your Vercel project's Environment Variables (or locally in signal-lens-demo/.env.local), then redeploy / restart.`
     );
   }
   const raw = await sourceSignals(topic, count);

@@ -31,7 +31,7 @@ export async function POST(req: Request) {
         error: 'missing_keys',
         message: `Missing API key(s): ${missing.join(
           ', '
-        )}. Copy .env.example to .env.local and fill them in, then restart the dev server.`,
+        )}. Set them in your Vercel project's Environment Variables (or locally in signal-lens-demo/.env.local), then redeploy / restart.`,
       },
       { status: 503 }
     );
