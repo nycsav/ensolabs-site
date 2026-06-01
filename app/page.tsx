@@ -352,12 +352,12 @@ export default function HomePage() {
 
           <div className="reveal s2n-grid">
             {[
-              { kind: 'COMPETITIVE SIGNAL', date: 'APR 28', source: 'Gartner', headline: 'Enterprise AI buying committees consolidate around three vendors per portfolio — non-finalists lose 70% of pipeline.' },
-              { kind: 'AI SIGNAL',          date: 'APR 28', source: 'BCG',     headline: 'Agentic workflows replace RPA in 41% of Fortune 500 ops budgets — first measurable line-item shift since 2019.' },
-              { kind: 'MEDIA SIGNAL',       date: 'APR 27', source: 'The Trade Desk', headline: 'CTV ad recall up 22% when AI-personalized in flight; control groups flat. Implication: dynamic creative is now table stakes.' },
-              { kind: 'COMPETITIVE SIGNAL', date: 'APR 26', source: 'Forrester', headline: 'AI-search referral traffic now exceeds organic Google for 12% of B2B sites tracked. AEO-optimized brands see 3.4× lift.' },
+              { kind: 'AI SIGNAL',          date: 'MAY 31', source: 'LangChain',  headline: 'LangChain ships deep agents — a batteries-included harness that bundles sandbox, memory, skills, and human-in-the-loop into a single open-source library.' },
+              { kind: 'COMPETITIVE SIGNAL', date: 'MAY 29', source: 'Google',     headline: 'Google I/O 2026 ships Managed Agents API, Gemini Omni, Antigravity 2.0 — collapsing six weeks of agent harness engineering into a single API call.' },
+              { kind: 'AI SIGNAL',          date: 'MAY 28', source: 'Anthropic',  headline: 'Claude Partner Network launches with $100M commitment. Boutique implementation partners with production deployments gain enterprise access.' },
+              { kind: 'COMPETITIVE SIGNAL', date: 'MAY 26', source: 'Forrester',  headline: 'AI-search referral traffic now exceeds organic Google for 18% of B2B sites tracked. AEO-optimized brands see 3.4× lift vs. non-optimized peers.' },
             ].map((s) => (
-              <a
+              <Link
                 key={s.headline}
                 className="s2n-card"
                 href="/insights"
@@ -369,7 +369,7 @@ export default function HomePage() {
                 </div>
                 <p className="s2n-headline">{s.headline}</p>
                 <span className="s2n-arrow">→</span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -377,10 +377,10 @@ export default function HomePage() {
             <p className="mono-sm" style={{ color: 'var(--fg-3)' }}>
               ↳ Updated every weekday morning, ET
             </p>
-            <a className="btn btn-primary" href="/insights">
+            <Link className="btn btn-primary" href="/insights">
               Read daily signals → Insights
               <Arrow />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
