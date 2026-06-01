@@ -1,4 +1,4 @@
-import { RULES, RULE_MAP, DIMENSIONS, stateFactor } from './rules';
+import { RULES, DIMENSIONS, stateFactor } from './rules';
 import type { RuleId, RuleState, Dimension } from './rules';
 import type { Signal } from './data';
 
@@ -92,5 +92,3 @@ export function computeLift(
 export function activeRuleCount(ruleState: Record<RuleId, RuleState>): number {
   return RULES.filter((r) => ruleState[r.id] !== 'off').length;
 }
-
-export { RULE_MAP };
