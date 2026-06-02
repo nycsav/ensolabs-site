@@ -2,14 +2,28 @@
 
 import type { ScoredSignal } from '@/lib/scoring';
 
-export default function SignalList({ ranked }: { ranked: ScoredSignal[] }) {
+export default function SignalList({
+  ranked,
+  selectedId,
+  onSelect,
+}: {
+  ranked: ScoredSignal[];
+  selectedId?: string;
+  onSelect?: (id: string) => void;
+}) {
   return (
     <div className="col">
       <h2>
         Surfaced signals <span className="count">{ranked.length}</span>
       </h2>
       {ranked.map((item, i) => (
-        <div className="signal" key={item.signal.id}>
+        <button
+          type="button"
+          className={`signal ${item.signal.id === selectedId ? 'is-selected' : ''}`}
+          key={item.signal.id}
+          onClick={() => onSelect?.(item.signal.id)}
+          aria-pressed={item.signal.id === selectedId}
+        >
           <div className="tt">
             <span className="rank">{String(i + 1).padStart(2, '0')}</span>
             {item.signal.title}
@@ -25,8 +39,9 @@ export default function SignalList({ ranked }: { ranked: ScoredSignal[] }) {
           <div className="bar">
             <span style={{ width: `${Math.round(item.relevance * 100)}%` }} />
           </div>
-        </div>
+        </button>
       ))}
+      <p className="hint">Click a signal to inspect its RWW profile and rule contribution.</p>
     </div>
   );
 }
