@@ -12,7 +12,7 @@ const NYTW_FAQ = [
   {
     question: 'Where can you meet AI strategy consultants at NY Tech Week?',
     answer:
-      'Sav Banerjee, founder of Enso Labs (AI transformation consulting firm in NYC), is attending 40+ events during NY Tech Week 2026 including the Anthropic Founder Salon, OpenAI Builder Lounge, AI for Finance with Claude + Excel, Agents & APIs Demo Night, AI Tinkerers, and the a16z Speedrun AI Faire. Contact sav@ensopartners.co to meet.',
+      'Sav Banerjee, founder of Enso Labs (AI transformation consulting firm in NYC), is at NY Tech Week 2026. Confirmed events include the OpenAI Builder Lounge, AI Tinkerers Demo Day, 2x AI with Anthropic, Fin x Clay, the Marketing Engineer Meetup, Codex Lab, and the Arize Builders Meetup. Contact sav@ensopartners.co to meet.',
   },
   {
     question: 'What is Enso Labs?',
@@ -24,7 +24,7 @@ const NYTW_FAQ = [
 export const metadata: Metadata = {
   title: 'Enso Labs at NY Tech Week 2026 | AI Companies, Events & Schedule',
   description:
-    'Enso Labs — AI transformation studio and AI consulting firm in NYC — at New York Tech Week 2026. Full event schedule: Anthropic, OpenAI, a16z, AI agents, financial AI, and frontier AI strategy sessions. Find Sav Banerjee.',
+    'Enso Labs — AI transformation studio and AI consulting firm in NYC — at New York Tech Week 2026. Confirmed event schedule: OpenAI, Anthropic, Fin, AI agents, and financial AI sessions. Find Sav Banerjee.',
   keywords: [
     'New York Tech Week 2026', 'NY Tech Week AI', 'AI companies NYC',
     'AI consultancies New York', 'AI strategy NYC', 'AI agency New York',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Enso Labs at NY Tech Week 2026 — AI Strategy Studio NYC',
     description:
-      'Where to find Sav Banerjee and Enso Labs during NY Tech Week 2026. 40+ AI events: Anthropic, OpenAI, a16z, AI agents, financial AI.',
+      'Where to find Sav Banerjee and Enso Labs during NY Tech Week 2026 — confirmed AI events: OpenAI, Anthropic, Fin, AI agents, financial AI.',
     url: 'https://ensolabs.ai/nytw',
     type: 'website',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs at NY Tech Week 2026' }],
@@ -44,13 +44,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Enso Labs at NY Tech Week 2026 — AI Strategy Studio NYC',
     description:
-      'Where to find Sav Banerjee and Enso Labs during NY Tech Week 2026. 40+ AI events: Anthropic, OpenAI, a16z, AI agents, financial AI.',
+      'Where to find Sav Banerjee and Enso Labs during NY Tech Week 2026 — confirmed AI events: OpenAI, Anthropic, Fin, AI agents, financial AI.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
 
-type Ev = { d: string; t: string; n: string; v: string; star?: boolean; tag?: 'virtual' | 'online'; pending?: boolean };
+type Ev = { d: string; t: string; n: string; v: string; star?: boolean; tag?: 'virtual' | 'online' };
 
+// Confirmed / registered events only (approved RSVPs on Sav's calendar).
 const EVENTS: Ev[] = [
   // Mon Jun 1
   { d: '2026-06-01', t: 'all week', n: 'ElevenLabs NY Tech Week Pop-Up', v: '54 Crosby St' },
@@ -59,57 +60,27 @@ const EVENTS: Ev[] = [
   { d: '2026-06-01', t: 'Jun 1–7', n: 'Resilient Agents — Online Hackathon', v: 'Online', tag: 'online' },
   // Tue Jun 2
   { d: '2026-06-02', t: 'drop-in', n: 'Fin Labs New York (book a demo)', v: '18 E 50th St' },
-  { d: '2026-06-02', t: '9:00 AM', n: 'Mercury Vinyl House (drop-in, runs Jun 1–3)', v: "Port Sa'id, 88 King St, SoHo" },
-  { d: '2026-06-02', t: '9:00 AM', n: 'WeWork Coworking Day (drop-in)', v: 'Midtown' },
-  { d: '2026-06-02', t: '10:00 AM', n: "Vercel's AI Cafe (drop-in coworking)", v: '45 E 20th St, Flatiron' },
   { d: '2026-06-02', t: '12:00 PM', n: 'Using Parallel Agents to Work Faster in Replit', v: 'Virtual', tag: 'virtual' },
-  { d: '2026-06-02', t: '2:00 PM', n: 'Find Your AI Use Case', v: 'Virtual', tag: 'virtual' },
-  { d: '2026-06-02', t: '3:00 PM', n: 'Masters of Scale Live with IBM CEO Arvind Krishna', v: 'IBM, One Madison Ave, FL 2' },
-  { d: '2026-06-02', t: '3:00 PM', n: 'Build Agent-first Companies with Hyperagent', v: 'SECOND, 849 6th Ave' },
-  { d: '2026-06-02', t: '4:00 PM', n: "AI tech stack to Nasdaq: CFO's exit playbook", v: 'Nasdaq MarketSite, 151 W 43rd' },
-  { d: '2026-06-02', t: '4:00 PM', n: 'Building to Disrupt: AI in Enterprise and Fintech (HSBC + a16z)', v: 'Location TBA' },
+  { d: '2026-06-02', t: '2:00 PM', n: 'Find Your AI Use Case (Section)', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-02', t: '5:30 PM', n: 'Fin x Clay: Scaling CX in the AI Era', v: '18 E 50th St' },
-  { d: '2026-06-02', t: '5:30 PM', n: 'Agents & APIs Demo Night (Composio, Postman, Render, WorkOS, Zapier)', v: '56 Greene St, 4th Floor', star: true },
-  { d: '2026-06-02', t: '5:30 PM', n: 'taking AI to new heights (Datadog × Vercel rooftop)', v: 'NY Times Building, 620 8th Ave' },
   // Wed Jun 3
-  { d: '2026-06-03', t: '1:30 PM', n: 'Anthropic Founder Salon: Inside the AI-Native Era', v: 'Location TBA', star: true, pending: true },
-  { d: '2026-06-03', t: '2:00 PM', n: "The Non-Engineer's AI Playbook — MuleRun", v: '55 Broadway' },
   { d: '2026-06-03', t: '5:00 PM', n: 'First Wednesday #NYCTechWeek', v: 'NYC' },
-  { d: '2026-06-03', t: '5:00 PM', n: 'Pinecone Nexus AI Launch Party', v: '127 W 26th St' },
-  { d: '2026-06-03', t: '5:00 PM', n: 'AI Collective Demo Night', v: '888 Broadway, 4th Floor', pending: true },
-  { d: '2026-06-03', t: '5:30 PM', n: 'Camp AI: Agents at Work', v: 'NYC' },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI Tinkerers Demo Day (PostHog, Convex, Veris)', v: '598 Broadway, fl 11', star: true },
-  { d: '2026-06-03', t: '6:00 PM', n: 'AI-assisted setups with Activant & Stuut', v: '110 Greene St, Roofdeck' },
-  { d: '2026-06-03', t: '6:00 PM', n: 'AI builders night', v: 'The Ready Cantina, 112 E 11th' },
-  { d: '2026-06-03', t: '6:00 PM', n: 'Scale AI | Human in the Loop LIVE', v: 'Location TBA' },
   // Thu Jun 4
   { d: '2026-06-04', t: '11:30 AM', n: 'AI Agents: How To Keep Pace', v: '18 E 50th St' },
   { d: '2026-06-04', t: '12:00 PM', n: 'The AI Strategy Summit', v: 'Virtual', tag: 'virtual' },
-  { d: '2026-06-04', t: '12:00 PM', n: 'Two Live Builds: AI Trading Agents with Alpaca + Live Trading', v: 'Union Square Loft, 873 Broadway, Ste 408', pending: true },
   { d: '2026-06-04', t: '1:00 PM', n: "How Anthropic's Marketing Team Uses Claude Cowork", v: 'Virtual', tag: 'virtual' },
-  { d: '2026-06-04', t: '1:00 PM', n: 'Autonomously Improving Agent Swarms with W&B', v: 'Midtown' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Shipping AI-Powered GTM Workflows with Vercel', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Fin in Practice: The Path to Perfect CX', v: '18 E 50th St' },
   { d: '2026-06-04', t: '2:00 PM', n: 'OpenAI Builder Lounge', v: 'OpenAI HQ, 295 Lafayette St', star: true },
-  { d: '2026-06-04', t: '2:00 PM', n: 'Proof of Build: Lyzr agent hackathon', v: 'Location TBA', pending: true },
-  { d: '2026-06-04', t: '3:30 PM', n: 'AI for Finance: Building with Claude + Excel, MCP', v: 'Jay Conference Chelsea, 159 W 25th', star: true },
-  { d: '2026-06-04', t: '4:00 PM', n: 'Built in NYC: AI Edition', v: 'Location TBA' },
-  { d: '2026-06-04', t: '4:15 PM', n: 'The Future of Tech & Talent in NYC', v: 'IBM, One Madison Ave, FL 2' },
   { d: '2026-06-04', t: '5:30 PM', n: '2x AI: We Gave Everyone the Tools (Fin + Anthropic)', v: '18 E 50th St', star: true },
   { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way: AI Builds You Can Clone', v: 'Civic Hall, 124 E 14th St' },
-  // Fri Jun 5
-  { d: '2026-06-05', t: '11:00 AM', n: 'a16z Speedrun AI Faire', v: 'Location TBA', star: true },
-  { d: '2026-06-05', t: '3:00 PM', n: 'Vibe Code & Tea: build with Gemini', v: 'Cha & 51 Essex St', pending: true },
   // Sat Jun 6
   { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC' },
-  { d: '2026-06-06', t: '9:00 AM', n: 'Multimodal Hacks: build the interface for agents', v: 'Betaworks, 29 Little W 12th' },
-  // Sun Jun 7
-  { d: '2026-06-07', t: '9:30 AM', n: 'vibeFORWARD', v: 'M-2' },
   // Tue Jun 9
   { d: '2026-06-09', t: '1:00 PM', n: 'What Happens When AI Writes All the Code?', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St' },
   // Wed Jun 10
-  { d: '2026-06-10', t: '12:30 PM', n: 'AI Inference Hack Day', v: 'NYC' },
   { d: '2026-06-10', t: '5:30 PM', n: 'Codex Lab: New York', v: 'The Farm SoHo, 447 Broadway' },
   { d: '2026-06-10', t: '6:00 PM', n: 'Arize Builders Meetup', v: 'Betaworks', star: true },
 ];
@@ -138,7 +109,7 @@ export default function NytwPage() {
         Enso Labs at NY Tech Week 2026
       </h1>
       <p style={{ color: 'var(--fg-2)', fontSize: 17, maxWidth: 560, margin: '0 0 14px' }}>
-        Enso Labs is a principal-led <Link href="/services" style={{ color: 'var(--teal)' }}>AI transformation consulting firm</Link> based in NYC. I&rsquo;m Sav Banerjee, the founder — here&rsquo;s my full NY Tech Week schedule. If any of these overlap with yours, come say hi.
+        Enso Labs is a principal-led <Link href="/services" style={{ color: 'var(--teal)' }}>AI transformation consulting firm</Link> based in NYC. I&rsquo;m Sav Banerjee, the founder — here&rsquo;s my confirmed NY Tech Week schedule. If any of these overlap with yours, come say hi.
       </p>
       <p style={{ color: 'var(--fg-3)', fontSize: 14.5, borderLeft: '2px solid var(--teal-dim)', paddingLeft: 14, maxWidth: 560, margin: '0 0 22px' }}>
         We build production agentic systems and AI strategy for Fortune 500 companies — proven inside a <Link href="/work/gore" style={{ color: 'var(--teal)' }}>Fortune 500 manufacturer</Link> and a <Link href="/work/heller" style={{ color: 'var(--teal)' }}>pharma agency</Link>. Certified by Anthropic, Google AI, and OpenAI.
@@ -158,9 +129,9 @@ export default function NytwPage() {
       </div>
 
       <div style={{ background: 'var(--bg-2)', border: '1px solid var(--teal-dim)', borderRadius: 12, padding: '13px 16px', marginBottom: 4, fontSize: 14, color: 'var(--fg-2)' }}>
-        <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> Agents &amp; APIs Demo Night (Tue), Anthropic Founder Salon &amp; AI Tinkerers (Wed), AI for Finance w/ Claude + Excel and OpenAI Builder Lounge (Thu), a16z Speedrun AI Faire (Fri).
+        <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> AI Tinkerers Demo Day (Wed), the OpenAI Builder Lounge and 2x AI w/ Anthropic (Thu), and the Arize Builders Meetup (Jun 10).
       </div>
-      <p style={{ fontFamily: mono, fontSize: 11, color: 'var(--fg-3)', margin: '8px 0 0' }}>★ = best chance to meet · &ldquo;virtual&rdquo; = I&rsquo;m tuning in remotely · &ldquo;pending&rdquo; = awaiting approval</p>
+      <p style={{ fontFamily: mono, fontSize: 11, color: 'var(--fg-3)', margin: '8px 0 0' }}>★ = best chance to meet · &ldquo;virtual&rdquo; = I&rsquo;m tuning in remotely</p>
 
       {days.map((d) => (
         <section key={d}>
@@ -177,11 +148,6 @@ export default function NytwPage() {
                   {e.tag && (
                     <span style={{ fontFamily: mono, fontSize: 10, color: 'var(--fg-3)', border: '1px solid var(--line-2)', borderRadius: 999, padding: '1px 7px', marginLeft: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                       {e.tag}
-                    </span>
-                  )}
-                  {e.pending && (
-                    <span style={{ fontFamily: mono, fontSize: 10, color: 'var(--fg-3)', border: '1px dashed var(--line-2)', borderRadius: 999, padding: '1px 7px', marginLeft: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                      pending
                     </span>
                   )}
                 </div>
