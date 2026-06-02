@@ -1,0 +1,1148 @@
+<!-- ⚠️ DEPRECATED / RETIRED — do not edit.
+     The canonical NY Tech Week tracker is now app/nytw/page.tsx → https://ensolabs.ai/nytw,
+     auto-synced every 4h by the nytw-event-scanner task (confirmed-only, Luma + Partiful).
+     This file is kept for history only. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NY Tech Week 2026 — Enso Labs</title>
+<meta name="description" content="Sav Banerjee's curated NY Tech Week 2026 schedule. June 1–7, NYC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f8f6f0;
+    --bg-card: #ffffff;
+    --bg-pending: #faf8f4;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --text-light: #999;
+    --border: #e8e5dd;
+    --border-pending: #d4d0c8;
+    --accent-teal: #1D9E75;
+    --accent-blue: #378ADD;
+    --accent-purple: #534AB7;
+    --accent-gray: #9a9590;
+    --score-10: #534AB7;
+    --score-9: #534AB7;
+    --score-8: #378ADD;
+    --score-7: #1D9E75;
+    --score-6: #9a9590;
+    --score-5: #b8b3ac;
+    --highlight-bg: rgba(83, 74, 183, 0.06);
+    --pending-stripe: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 4px,
+      rgba(0,0,0,0.02) 4px,
+      rgba(0,0,0,0.02) 8px
+    );
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+    --radius: 10px;
+  }
+
+  body {
+    font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+
+  /* ── Header ── */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  /* ── Stats Strip ── */
+  .stats {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 18px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    min-width: 100px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .stat--purple .stat-number { color: var(--accent-purple); }
+  .stat--blue .stat-number { color: var(--accent-blue); }
+  .stat--teal .stat-number { color: var(--accent-teal); }
+  .stat--gray .stat-number { color: var(--text-muted); }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Day Sections ── */
+  .day {
+    margin-top: 40px;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    padding: 8px 0;
+    z-index: 10;
+  }
+
+  .day-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .day-date {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .day-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── Event Cards ── */
+  .event {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s ease;
+    position: relative;
+  }
+
+  .event:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .event--nonneg {
+    border-left: 3px solid var(--accent-purple);
+    background: var(--highlight-bg);
+  }
+
+  .event--pending {
+    border-style: dashed;
+    background: var(--bg-pending);
+    opacity: 0.85;
+  }
+
+  .event--pending .event-name::before {
+    content: "PENDING ";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #c4943a;
+    font-weight: 600;
+    vertical-align: middle;
+    background: rgba(196, 148, 58, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 6px;
+  }
+
+  .event-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .event-name {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    flex: 1;
+  }
+
+  .score-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .score-10, .score-9 { background: var(--score-9); }
+  .score-8 { background: var(--score-8); }
+  .score-7 { background: var(--score-7); }
+  .score-6 { background: var(--score-6); }
+  .score-5 { background: var(--score-5); }
+
+  .event-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+
+  .event-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .event-meta .icon {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  .enso-play {
+    font-size: 12px;
+    color: var(--accent-teal);
+    font-weight: 500;
+    background: rgba(29, 158, 117, 0.06);
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .enso-play::before {
+    content: "▸ ";
+    font-size: 10px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .tag--nonneg {
+    background: rgba(83, 74, 183, 0.1);
+    color: var(--accent-purple);
+    font-weight: 600;
+  }
+
+  .tag--virtual {
+    background: rgba(0,0,0,0.05);
+    color: var(--text-muted);
+  }
+
+  .tag--online {
+    background: rgba(55, 138, 221, 0.1);
+    color: var(--accent-blue);
+  }
+
+  /* ── Overflow Section ── */
+  .overflow-header {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+  }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  .footer-text a {
+    color: var(--accent-teal);
+    text-decoration: none;
+  }
+
+  .footer-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 12px;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 480px) {
+    .container { padding: 20px 14px 48px; }
+    h1 { font-size: 22px; }
+    .stats { gap: 8px; }
+    .stat { padding: 8px 12px; min-width: 80px; }
+    .stat-number { font-size: 20px; }
+    .event { padding: 14px 14px; }
+    .event-name { font-size: 14px; }
+    .score-badge { width: 26px; height: 26px; font-size: 11px; }
+    .day-badge { font-size: 9px; padding: 5px 10px; }
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { background: white; }
+    .day-header { position: static; }
+    .event { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="logo-line">Enso Labs</div>
+    <h1>NY Tech Week 2026</h1>
+    <p class="subtitle">June 1–7 · New York City · Sav Banerjee</p>
+
+    <div class="stats">
+      <div class="stat stat--gray">
+        <div class="stat-number">42</div>
+        <div class="stat-label">Events</div>
+      </div>
+      <div class="stat stat--purple">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Non-Negotiable</div>
+      </div>
+      <div class="stat stat--blue">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Pending</div>
+      </div>
+      <div class="stat stat--teal">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Days</div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div>9–10 Must-attend</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-blue)"></div>8 High-value</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-teal)"></div>7 Strong</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-gray)"></div>6 &amp; below</div>
+      <div class="legend-item"><div class="legend-dot" style="background:transparent; border: 1.5px dashed var(--border-pending)"></div>Pending</div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- MONDAY JUNE 1                           -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Mon</span>
+      <span class="day-date">June 1</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- Resilient Agents -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Resilient Agents Online Hackathon<span class="tag tag--online">All Week</span></div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🌐</span> Online · TrueFoundry + AWS Bedrock</span>
+      </div>
+      <div class="enso-play">Background build — deploy Signal Lens on Bedrock for builder cred</div>
+    </div>
+
+    <!-- ElevenLabs -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">ElevenLabs PopUp<span class="tag tag--online">All Week</span></div>
+        <div class="score-badge score-5">5</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">📍</span> 54 Crosby St, SoHo</span>
+        <span><span class="icon">🎫</span> Drop-in</span>
+      </div>
+      <div class="enso-play">Drop-in networking — explore voice-AI integration for Signal Lens</div>
+    </div>
+
+    <!-- ERA Demo Showcase -->
+    <div class="event event--nonneg">
+      <div class="event-top">
+        <div class="event-name">ERA / Remarkable Ventures Demo Showcase<span class="tag tag--nonneg">Non-Negotiable</span></div>
+        <div class="score-badge score-9">9</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 3:00–4:30 PM</span>
+        <span><span class="icon">📍</span> Fenwick & West, 902 Broadway</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Demo Signal Lens live — investors + enterprise buyers in the room</div>
+    </div>
+
+    <!-- Frontier Agentic GTM -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Frontier Agentic GTM Night</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 6:30–8:30 PM</span>
+        <span><span class="icon">📍</span> 136 Crosby St, SoHo</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Pitch signal2noise to GTM operators — agentic distribution angle</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- TUESDAY JUNE 2                          -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Tue</span>
+      <span class="day-date">June 2</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- Mercury Vinyl House -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Mercury Vinyl House</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 9 AM–3 PM</span>
+        <span><span class="icon">📍</span> Port Sa'id, 88 King St, SoHo</span>
+        <span><span class="icon">🎫</span> Partiful</span>
+      </div>
+      <div class="enso-play">Morning drop-in coworking — casual founder networking</div>
+    </div>
+
+    <!-- Vercel AI Cafe -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Vercel's AI Cafe</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 9 AM</span>
+        <span><span class="icon">📍</span> 45 E 20th St</span>
+        <span><span class="icon">🎫</span> Partiful</span>
+      </div>
+      <div class="enso-play">Drop-in workspace — connect with Vercel team on deployment stack</div>
+    </div>
+
+    <!-- WeWork -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">WeWork Coworking Day</div>
+        <div class="score-badge score-5">5</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 9 AM–5 PM</span>
+        <span><span class="icon">📍</span> Midtown</span>
+        <span><span class="icon">🎫</span> Partiful</span>
+      </div>
+      <div class="enso-play">Backup coworking spot — low priority unless nearby</div>
+    </div>
+
+    <!-- Masters of Scale -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Masters of Scale Live with IBM CEO Arvind Krishna</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 3 PM</span>
+        <span><span class="icon">📍</span> IBM One Madison Ave</span>
+      </div>
+      <div class="enso-play">Enterprise scale insights — position Enso Labs as enterprise-grade AI partner</div>
+    </div>
+
+    <!-- Build Agent-first -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Build Agent-first Companies with Hyperagent</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 3 PM</span>
+        <span><span class="icon">📍</span> SECOND, 849 6th Ave</span>
+      </div>
+      <div class="enso-play">Agent-first = Enso thesis — validate positioning with builder community</div>
+    </div>
+
+    <!-- CFO Exit Playbook -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">AI Tech Stack to Nasdaq: CFO's Exit Playbook</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 4 PM</span>
+        <span><span class="icon">📍</span> Nasdaq Marketsite, 151 W 43rd St</span>
+      </div>
+      <div class="enso-play">Fintech angle — Financial AI pillar positioning for CFO audience</div>
+    </div>
+
+    <!-- Building to Disrupt -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Building to Disrupt: AI in Enterprise and Fintech</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 4 PM</span>
+        <span><span class="icon">📍</span> Location pending</span>
+      </div>
+      <div class="enso-play">Enterprise + Fintech crossover — pitch dual-pillar Enso Labs story</div>
+    </div>
+
+    <!-- Fin x Clay -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Fin × Clay: Scaling CX in the AI Era</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5:30–9 PM</span>
+        <span><span class="icon">📍</span> 18 E 50th St</span>
+        <span><span class="icon">🎫</span> Luma + Partiful</span>
+      </div>
+      <div class="enso-play">Pitch signal2noise to CX leaders — intelligence layer for customer ops</div>
+    </div>
+
+    <!-- Taking AI to new heights -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Taking AI to New Heights</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5:30 PM</span>
+        <span><span class="icon">📍</span> NY Times Building, 620 8th Ave</span>
+      </div>
+      <div class="enso-play">General networking — media-adjacent venue, content distribution angle</div>
+    </div>
+
+    <!-- Agents & APIs Demo Night -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Agents & APIs Demo Night</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5:30 PM</span>
+        <span><span class="icon">📍</span> 56 Greene St, 4th Floor</span>
+      </div>
+      <div class="enso-play">Demo Signal Lens agent architecture — MCP + multi-agent pipeline</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- WEDNESDAY JUNE 3                        -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Wed</span>
+      <span class="day-date">June 3</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- Anthropic Founder Salon -->
+    <div class="event event--pending">
+      <div class="event-top">
+        <div class="event-name">Anthropic Founder Salon: Inside the AI-Native Era</div>
+        <div class="score-badge score-10">10</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 1:30 PM</span>
+        <span><span class="icon">📍</span> Location pending</span>
+      </div>
+      <div class="enso-play">HIGHEST VALUE — direct Anthropic partnership conversation, Claude ecosystem</div>
+    </div>
+
+    <!-- MuleRun -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">The Non-Engineer's AI Playbook — MuleRun</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 2 PM</span>
+        <span><span class="icon">📍</span> 55 Broadway</span>
+        <span><span class="icon">🎫</span> Partiful</span>
+      </div>
+      <div class="enso-play">Non-technical buyer audience — position Enso as the bridge from strategy to build</div>
+    </div>
+
+    <!-- First Wednesday -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">First Wednesday</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5–7 PM</span>
+        <span><span class="icon">📍</span> Mason Jar NYC</span>
+        <span><span class="icon">🎫</span> Luma · David Berkowitz</span>
+      </div>
+      <div class="enso-play">Pitch signal2noise to agency/brand crowd — content intelligence angle</div>
+    </div>
+
+    <!-- Pinecone Nexus -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Pinecone Nexus Launch</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5–7 PM</span>
+        <span><span class="icon">📍</span> 127 W 26th St, Chelsea</span>
+        <span><span class="icon">🎫</span> Partiful</span>
+      </div>
+      <div class="enso-play">RAG = Signal Lens core infra — explore Pinecone integration, partner angle</div>
+    </div>
+
+    <!-- AI Collective Demo Night -->
+    <div class="event event--pending">
+      <div class="event-top">
+        <div class="event-name">AI Collective Demo Night</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5 PM</span>
+        <span><span class="icon">📍</span> 888 Broadway, 4th Floor</span>
+      </div>
+      <div class="enso-play">Community builder visibility — submit Signal Lens for demo slot</div>
+    </div>
+
+    <!-- Camp AI -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Camp AI: Agents at Work</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5:30 PM</span>
+      </div>
+      <div class="enso-play">Agent deployment stories — share Fortune 500 manufacturer case study</div>
+    </div>
+
+    <!-- AI Tinkerers -->
+    <div class="event event--nonneg">
+      <div class="event-top">
+        <div class="event-name">AI Tinkerers Demo Day<span class="tag tag--nonneg">Non-Negotiable</span></div>
+        <div class="score-badge score-9">9</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 6–9 PM</span>
+        <span><span class="icon">📍</span> 598 Broadway, NoHo</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Submit Signal Lens demo — builder audience, high visibility, potential viral moment</div>
+    </div>
+
+    <!-- Activant & Stuut -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">AI-Assisted Setups with Activant & Stuut</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 6 PM</span>
+        <span><span class="icon">📍</span> 110 Greene St, Roofdeck</span>
+      </div>
+      <div class="enso-play">VC + AI intersection — explore investment / partnership conversations</div>
+    </div>
+
+    <!-- AI builders night -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">AI Builders Night</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 6 PM</span>
+        <span><span class="icon">📍</span> The Ready Cantina, 112 E 11th St</span>
+      </div>
+      <div class="enso-play">Casual builder networking — backup if other evening events thin out</div>
+    </div>
+
+    <!-- Scale AI -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Scale AI | Human in the Loop LIVE</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 6 PM</span>
+        <span><span class="icon">📍</span> Location pending</span>
+      </div>
+      <div class="enso-play">Trust-by-design thesis — Enso's human-in-the-loop approach to agentic systems</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- THURSDAY JUNE 4                         -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Thu</span>
+      <span class="day-date">June 4</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- Fin/Intercom -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">AI Agents: How To Keep Pace (Fin/Intercom)</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 11:30 AM–1:30 PM</span>
+        <span><span class="icon">📍</span> 18 E 50th St</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">CX agent landscape intel — understand Intercom's Fin positioning vs. custom agents</div>
+    </div>
+
+    <!-- AI Strategy Summit -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">AI Strategy Summit<span class="tag tag--virtual">Virtual</span></div>
+        <div class="score-badge score-5">5</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 12–4 PM</span>
+        <span><span class="icon">🌐</span> Zoom</span>
+      </div>
+      <div class="enso-play">Background listening — strategy-level content for LinkedIn posts</div>
+    </div>
+
+    <!-- Claude Cowork Webinar -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Anthropic: Claude Cowork Webinar<span class="tag tag--virtual">Virtual</span></div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 1–2 PM</span>
+        <span><span class="icon">🌐</span> Virtual</span>
+      </div>
+      <div class="enso-play">Claude ecosystem intel — stay ahead on Cowork capabilities for client work</div>
+    </div>
+
+    <!-- W&B Agent Swarms -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Autonomously Improving Agent Swarms with W&B</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 1 PM</span>
+        <span><span class="icon">📍</span> Midtown</span>
+      </div>
+      <div class="enso-play">Agent evaluation infra — integrate W&B observability into Signal Lens pipeline</div>
+    </div>
+
+    <!-- Fin in Practice -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Fin in Practice: Path to Perfect CX</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 2 PM</span>
+        <span><span class="icon">📍</span> 18 E 50th St</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">CX deep-dive continuation — skip if schedule is tight</div>
+    </div>
+
+    <!-- OpenAI Builder Lounge -->
+    <div class="event event--pending">
+      <div class="event-top">
+        <div class="event-name">OpenAI Builder Lounge</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 2–5:30 PM</span>
+        <span><span class="icon">📍</span> Puck Building</span>
+        <span><span class="icon">🎫</span> Partiful</span>
+      </div>
+      <div class="enso-play">Codex + AMA — multi-model positioning, show Claude-primary + OpenAI-aware</div>
+    </div>
+
+    <!-- Lyzr Hackathon -->
+    <div class="event event--pending">
+      <div class="event-top">
+        <div class="event-name">Proof of Build: Lyzr Agent Hackathon</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 2 PM</span>
+        <span><span class="icon">📍</span> Location pending</span>
+      </div>
+      <div class="enso-play">Builder cred hackathon — deploy a lightweight Signal Lens demo agent</div>
+    </div>
+
+    <!-- AI for Finance -->
+    <div class="event event--nonneg">
+      <div class="event-top">
+        <div class="event-name">AI for Finance: Building with Claude + Excel, MCP<span class="tag tag--nonneg">Non-Negotiable</span></div>
+        <div class="score-badge score-9">9</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 3:30 PM</span>
+        <span><span class="icon">📍</span> Jay Conference Chelsea, 159 W 25th St</span>
+      </div>
+      <div class="enso-play">EXACT Enso stack — demo Signal Lens + Claude + MCP for finance workflows</div>
+    </div>
+
+    <!-- Built in NYC -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Built in NYC: AI Edition</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 4 PM</span>
+        <span><span class="icon">📍</span> Location pending</span>
+      </div>
+      <div class="enso-play">NYC builder scene — Enso Labs is a NYC-native studio, community cred</div>
+    </div>
+
+    <!-- Future of Tech & Talent -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Future of Tech & Talent in NYC</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 4:15 PM</span>
+        <span><span class="icon">📍</span> IBM One Madison Ave</span>
+      </div>
+      <div class="enso-play">Talent landscape intel — hiring trends for AI roles + Enso team growth</div>
+    </div>
+
+    <!-- 2x AI with Anthropic -->
+    <div class="event event--nonneg">
+      <div class="event-top">
+        <div class="event-name">2x AI with Anthropic<span class="tag tag--nonneg">Non-Negotiable</span></div>
+        <div class="score-badge score-9">9</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 5:30–9 PM</span>
+        <span><span class="icon">📍</span> 18 E 50th St</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">#1 event of the week — deepen Anthropic partnership, Claude ecosystem alignment</div>
+    </div>
+
+    <!-- No Forking Way -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">No Forking Way<span class="tag tag--virtual" style="background:rgba(200,50,50,0.08);color:#b44">Skip</span></div>
+        <div class="score-badge score-6">—</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 6–9 PM</span>
+        <span><span class="icon">📍</span> Civic Hall</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Skip — conflicts with 2x AI with Anthropic</div>
+    </div>
+
+    <!-- Vercel GTM -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Shipping AI-Powered GTM with Vercel<span class="tag tag--virtual">Virtual</span></div>
+        <div class="score-badge score-5">5</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 2 PM</span>
+        <span><span class="icon">🌐</span> Virtual</span>
+      </div>
+      <div class="enso-play">Background listen — Vercel GTM patterns for ensolabs.ai deployment</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- FRIDAY JUNE 5                           -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Fri</span>
+      <span class="day-date">June 5</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- a16z Speedrun -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">a16z Speedrun AI Faire</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 11 AM</span>
+        <span><span class="icon">📍</span> Location pending</span>
+      </div>
+      <div class="enso-play">a16z network connector — position Enso Labs for portfolio company partnerships</div>
+    </div>
+
+    <!-- Vibe Code & Tea -->
+    <div class="event event--pending">
+      <div class="event-top">
+        <div class="event-name">Vibe Code & Tea: Build with Gemini</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 3 PM</span>
+        <span><span class="icon">📍</span> Cha & 51 Essex St</span>
+      </div>
+      <div class="enso-play">Google credits opportunity — multi-model depth, Gemini as secondary layer</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- SATURDAY JUNE 6                         -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Sat</span>
+      <span class="day-date">June 6</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- Profound Hackathon -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Profound Marketing Engineering Hackathon</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 9 AM–6 PM</span>
+        <span><span class="icon">✅</span> Accepted</span>
+      </div>
+      <div class="enso-play">Builder cred — build a marketing-intelligence agent with Signal Lens core</div>
+    </div>
+
+    <!-- Multimodal Hacks -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Multimodal Hacks: Build Interface for Agents</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 9 AM</span>
+        <span><span class="icon">📍</span> Betaworks, 29 Little W 12th St</span>
+      </div>
+      <div class="enso-play">Conflicts with Profound — attend only if Profound wraps early or pivots</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- SUNDAY JUNE 7                           -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day">
+    <div class="day-header">
+      <span class="day-badge">Sun</span>
+      <span class="day-date">June 7</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- vibeFORWARD -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">vibeFORWARD: M-2</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> 9:30 AM</span>
+      </div>
+      <div class="enso-play">Cool-down day — casual vibe-coding community, low-stakes networking</div>
+    </div>
+
+    <!-- Resilient Agents Deadline -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Resilient Agents Hackathon — Submission Deadline</div>
+        <div class="score-badge score-6">6</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">⏰</span> Final deadline</span>
+        <span><span class="icon">🌐</span> Online</span>
+      </div>
+      <div class="enso-play">Submit whatever was built during the week — Bedrock deployment bonus</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- OVERFLOW WEEK                           -->
+  <!-- ════════════════════════════════════════ -->
+  <section class="day overflow-header">
+    <div class="day-header">
+      <span class="day-badge" style="background: var(--accent-teal);">Overflow</span>
+      <span class="day-date">June 9–10</span>
+      <span class="day-line"></span>
+    </div>
+
+    <!-- Marketing Engineer Meetup -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Marketing Engineer Meetup</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> Jun 9 · 6–9 PM</span>
+        <span><span class="icon">📍</span> WorkOS, 56 Greene St</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Marketing-engineer crossover — signal2noise as content intelligence tool</div>
+    </div>
+
+    <!-- Codex Lab -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Codex Lab: New York</div>
+        <div class="score-badge score-7">7</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> Jun 10 · 5:30–8 PM</span>
+        <span><span class="icon">📍</span> Farm SoHo, 447 Broadway</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Builder cred — hands-on Codex session, multi-model awareness</div>
+    </div>
+
+    <!-- Arize Builders -->
+    <div class="event">
+      <div class="event-top">
+        <div class="event-name">Arize Builders Meetup</div>
+        <div class="score-badge score-8">8</div>
+      </div>
+      <div class="event-meta">
+        <span><span class="icon">🕒</span> Jun 10 · 6–9 PM</span>
+        <span><span class="icon">📍</span> Betaworks, 29 Little W 12th St</span>
+        <span><span class="icon">🎫</span> Luma</span>
+      </div>
+      <div class="enso-play">Agent eval infrastructure — Arize for Signal Lens observability layer</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-text">
+      Curated by <a href="https://ensolabs.ai" target="_blank" rel="noopener">Enso Labs</a> · <a href="https://ensolabs.ai" target="_blank" rel="noopener">ensolabs.ai</a><br>
+      Updated June 1, 2026
+    </p>
+    <p class="footer-brand">Demo, don't pitch.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
