@@ -65,6 +65,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-02', t: '5:30 PM', n: 'Fin x Clay: Scaling CX in the AI Era', v: '18 E 50th St' },
   // Wed Jun 3
   { d: '2026-06-03', t: '5:00 PM', n: 'First Wednesday #NYCTechWeek', v: 'NYC' },
+  { d: '2026-06-03', t: '5:00 PM', n: 'Pinecone Nexus AI Launch Party', v: '127 W 26th St', star: true },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI Tinkerers Demo Day (PostHog, Convex, Veris)', v: '598 Broadway, fl 11', star: true },
   // Thu Jun 4
   { d: '2026-06-04', t: '11:30 AM', n: 'AI Agents: How To Keep Pace', v: '18 E 50th St' },
