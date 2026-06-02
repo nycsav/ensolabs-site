@@ -55,8 +55,8 @@ type Ev = { d: string; t: string; n: string; v: string; star?: boolean; tag?: 'v
 const EVENTS: Ev[] = [
   // Mon Jun 1
   { d: '2026-06-01', t: 'all week', n: 'ElevenLabs NY Tech Week Pop-Up', v: '54 Crosby St' },
-  { d: '2026-06-01', t: '3:00 PM', n: 'ERA / Remarkable Agentic AI Demo Showcase', v: 'Fenwick & West, 902 Broadway' },
-  { d: '2026-06-01', t: '6:30 PM', n: 'Frontier Agentic GTM Night', v: '136 Crosby St' },
+  { d: '2026-06-01', t: '3:00 PM', n: 'ERA / Remarkable Agentic AI Demo Showcase', v: 'Fenwick & West, 902 Broadway', star: true },
+  { d: '2026-06-01', t: '6:30 PM', n: 'Frontier Agentic GTM Night', v: '136 Crosby St', star: true },
   { d: '2026-06-01', t: 'Jun 1–7', n: 'Resilient Agents — Online Hackathon', v: 'Online', tag: 'online' },
   // Tue Jun 2
   { d: '2026-06-02', t: 'drop-in', n: 'Mercury Vinyl House (runs Jun 1–3)', v: "Port Sa'id, 88 King St, SoHo" },
@@ -65,40 +65,43 @@ const EVENTS: Ev[] = [
   { d: '2026-06-02', t: '10:00 AM', n: "Vercel's AI Cafe (coworking)", v: '45 E 20th St, Flatiron' },
   { d: '2026-06-02', t: '12:00 PM', n: 'Using Parallel Agents to Work Faster in Replit', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-02', t: '2:00 PM', n: 'Find Your AI Use Case (Section)', v: 'Virtual', tag: 'virtual' },
-  { d: '2026-06-02', t: '3:00 PM', n: 'Masters of Scale Live w/ IBM CEO Arvind Krishna', v: 'IBM, One Madison Ave' },
+  { d: '2026-06-02', t: '3:00 PM', n: 'Build Agent-first Companies with Hyperagent', v: 'SECOND, 849 6th Ave' },
+  { d: '2026-06-02', t: '3:00 PM', n: 'Masters of Scale Live w/ IBM CEO Arvind Krishna', v: 'IBM, One Madison Ave', star: true },
   { d: '2026-06-02', t: '4:00 PM', n: "AI Stack to Nasdaq: The Modern CFO's Exit Playbook", v: 'Nasdaq MarketSite, 151 W 43rd' },
-  { d: '2026-06-02', t: '5:30 PM', n: 'Fin x Clay: Scaling CX in the AI Era', v: '18 E 50th St' },
+  { d: '2026-06-02', t: '5:30 PM', n: 'Fin x Clay: Scaling CX in the AI Era', v: '18 E 50th St', star: true },
   { d: '2026-06-02', t: '5:30 PM', n: 'Agents & APIs Demo Night (WorkOS, Postman, Render, Composio)', v: '56 Greene St, 4th fl', star: true },
   { d: '2026-06-02', t: '5:30 PM', n: 'Datadog × Vercel: Taking AI to New Heights (rooftop)', v: 'NY Times Building, 620 8th Ave' },
   { d: '2026-06-02', t: '6:30 PM', n: 'Stan x Verci: Happy Hour & Stanley Beta Reveal', v: '45 E 20th St, Flatiron' },
   // Wed Jun 3
+  { d: '2026-06-03', t: '10:00 AM', n: "Build AI Agent Workflows That Stick: Vercel's Blueprint", v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-03', t: '2:00 PM', n: "The Non-Engineer's AI Playbook — MuleRun", v: '55 Broadway' },
-  { d: '2026-06-03', t: '5:00 PM', n: 'First Wednesday #NYCTechWeek', v: 'NYC' },
   { d: '2026-06-03', t: '5:00 PM', n: 'Pinecone Nexus AI Launch Party', v: '127 W 26th St', star: true },
-  { d: '2026-06-03', t: '5:30 PM', n: 'Camp AI: Agents at Work', v: 'NYC' },
+  { d: '2026-06-03', t: '5:30 PM', n: 'Camp AI: Agents at Work', v: 'Datadog HQ, 620 8th Ave' },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI Tinkerers Demo Day (PostHog, Convex, Veris)', v: '598 Broadway, fl 11', star: true },
+  { d: '2026-06-03', t: '6:00 PM', n: 'AI-Assisted Setups ft. Activant & Stuut', v: 'Activant Capital, 110 Greene St' },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI Builders Night', v: 'The Ready Cantina, 112 E 11th' },
+  { d: '2026-06-03', t: '6:00 PM', n: 'Managing in an AI-Native Company: Live Podcast', v: '121 E 27th St, Ste 207' },
   // Thu Jun 4
   { d: '2026-06-04', t: '11:30 AM', n: 'AI Agents: How To Keep Pace', v: '18 E 50th St' },
-  { d: '2026-06-04', t: '12:00 PM', n: 'The AI Strategy Summit', v: 'Virtual', tag: 'virtual' },
-  { d: '2026-06-04', t: '1:00 PM', n: 'Autonomously Improving Agent Swarms with W&B', v: 'Midtown' },
+  { d: '2026-06-04', t: '1:00 PM', n: 'Autonomously Improving Agent Swarms with W&B', v: 'The Bench, 49 Elizabeth St' },
   { d: '2026-06-04', t: '1:00 PM', n: "How Anthropic's Marketing Team Uses Claude Cowork", v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Shipping AI-Powered GTM Workflows with Vercel', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Fin in Practice: The Path to Perfect CX', v: '18 E 50th St' },
   { d: '2026-06-04', t: '2:00 PM', n: 'OpenAI Builder Lounge', v: 'OpenAI HQ, 295 Lafayette St', star: true },
+  { d: '2026-06-04', t: '3:30 PM', n: 'AI for Finance: Building with Claude + Excel & MCP', v: 'Jay Conference Chelsea, 159 W 25th' },
   { d: '2026-06-04', t: '4:15 PM', n: 'The Future of Tech & Talent in NYC', v: 'IBM, One Madison Ave' },
   { d: '2026-06-04', t: '5:30 PM', n: '2x AI: We Gave Everyone the Tools (Fin + Anthropic)', v: '18 E 50th St', star: true },
   { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way: AI Builds You Can Clone', v: 'Civic Hall, 124 E 14th St' },
   // Sat Jun 6
-  { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC' },
+  { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC', star: true },
+  { d: '2026-06-06', t: '9:00 AM', n: 'Multimodal Hacks: Build the Interface for Agents', v: 'Betaworks Studios, 29 Little W 12th' },
   // Sun Jun 7
   { d: '2026-06-07', t: '9:30 AM', n: 'vibeFORWARD: M-2', v: 'NYC' },
   // Tue Jun 9
-  { d: '2026-06-09', t: '1:00 PM', n: 'What Happens When AI Writes All the Code?', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St' },
   // Wed Jun 10
   { d: '2026-06-10', t: '5:30 PM', n: 'Codex Lab: New York', v: 'The Farm SoHo, 447 Broadway' },
-  { d: '2026-06-10', t: '6:00 PM', n: 'Arize Builders Meetup', v: 'Betaworks', star: true },
+  { d: '2026-06-10', t: '6:00 PM', n: 'Arize Builders Meetup', v: 'Betaworks, 29 Little W 12th St', star: true },
 ];
 
 const dayLabel = (iso: string) =>
@@ -145,7 +148,7 @@ export default function NytwPage() {
       </div>
 
       <div style={{ background: 'var(--bg-2)', border: '1px solid var(--teal-dim)', borderRadius: 12, padding: '13px 16px', marginBottom: 4, fontSize: 14, color: 'var(--fg-2)' }}>
-        <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> AI Tinkerers Demo Day (Wed), the OpenAI Builder Lounge and 2x AI w/ Anthropic (Thu), and the Arize Builders Meetup (Jun 10).
+        <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> the OpenAI Builder Lounge (Thu), Fin x Clay and Masters of Scale w/ IBM CEO (Tue), Frontier Agentic GTM Night (Mon), and AI Tinkerers Demo Day (Wed).
       </div>
       <p style={{ fontFamily: mono, fontSize: 11, color: 'var(--fg-3)', margin: '8px 0 0' }}>★ = best chance to meet · &ldquo;virtual&rdquo; = I&rsquo;m tuning in remotely</p>
 
