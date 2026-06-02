@@ -120,7 +120,7 @@ export const INSIGHTS: Insight[] = [
       '![SHACK15 at the San Francisco Ferry Building — venue for the Cerebral Valley × Google I/O Hackathon](/images/insights/google-io-hackathon-01.jpg)',
       '## What Comes Next',
       'Cerebral Valley\'s next stop is Paris in July — the [RAISE Summit](https://raisesummit.com/) on July 4 and 5, followed by the Machina Hackathon on July 6. Google also announced the [Build with Gemini XPRIZE](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google) on the keynote stage: $2 million in prizes for 90 days of building real businesses on Gemini. The agent ecosystem is no longer a single venue. It is a global circuit running quarterly, and the builders who win it twice are about to define the next twelve months.',
-      'Part 2 of this series covers the I/O after-hours circuit — two nights with Google DeepMind in San Francisco where the strategic signal lived between the demos. If you are a Fortune 500 leader deciding what to do with Omni, Antigravity, and the new Managed Agents API, this is the question Enso Labs is built to answer with you. [Get in touch](/contact).',
+      'Part 2 of this series covers the I/O after-hours circuit — two nights with Google DeepMind in San Francisco where the strategic signal lived between the demos. If you are a Fortune 500 leader deciding what to do with Omni, Antigravity, and the new Managed Agents API, this is the question Enso Labs is built to answer with you. Explore our [AI transformation services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -171,7 +171,7 @@ export const INSIGHTS: Insight[] = [
       'Three product cycles to watch over the next two quarters. **Antigravity 2.5** — the multi-agent orchestration is shipping fast enough that another release inside calendar 2026 is realistic; the next version will likely formalize agent-to-agent communication primitives that did not make 2.0. **Omni 2** — DeepMind\'s roadmap on world models is more ambitious than what shipped on Monday; the interactive use cases (robotics simulation, real-time physics) are a bigger story than video generation. **The [Build with Gemini XPRIZE](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google)** — Google\'s $2 million, 90-day hackathon competition announced on the I/O stage closes in Q3, and the winning projects will define what a "production agentic business" looks like at Google scale.',
       '## For C-Suite Leaders Reading This',
       'If you have not already initiated a Google Cloud relationship conversation around the I/O 2026 stack, the next thirty days are the moment. Google\'s GTM team is in full follow-up motion right now — I received outreach from Google Cloud titled "From Next \'26 to Production: Let\'s connect" within forty-eight hours of returning from San Francisco. The combination of Managed Agents (commodity), Antigravity 2.0 (differentiation), and Omni (long bet) is the exact mix that warrants a structured Q3 evaluation against your existing Anthropic and OpenAI footprints.',
-      'Part 1 of this series covers the Cerebral Valley × Google I/O Hackathon and features 3rd-place winner Yves Hughes. [Read Part 1 →](/insights/google-io-hackathon-managed-agents-omni-antigravity). If you are mapping a Q3 AI transformation roadmap and want a partner-tier read on Google\'s new stack — and where Anthropic and OpenAI fit alongside it — this is what Enso Labs is built to help you do. [Get in touch](/contact).',
+      'Part 1 of this series covers the Cerebral Valley × Google I/O Hackathon and features 3rd-place winner Yves Hughes. [Read Part 1 →](/insights/google-io-hackathon-managed-agents-omni-antigravity). If you are mapping a Q3 AI transformation roadmap and want a partner-tier read on Google\'s new stack — and where Anthropic and OpenAI fit alongside it — explore our [AI transformation services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -180,6 +180,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Three days after Notion unveiled Workers, MCP, and an Agent SDK, we were at their first hackathon in San Francisco — building a career intelligence agent that anyone can fork and deploy today.',
     pillar: 'Build',
     date: '2026-05-19',
+    dateModified: '2026-06-02',
     readingMinutes: 8,
     tags: ['AI Agents', 'Notion', 'Notion Workers', 'MCP', 'Claude', 'Open Source', 'Hackathon', 'TypeScript', 'Career Intelligence', 'Agentic Systems', 'Anthropic', 'Developer Platform'],
     body: [
