@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
 type Ev = { d: string; t: string; n: string; v: string; star?: boolean; tag?: 'virtual' | 'online' };
 
-// Confirmed / registered events only (approved RSVPs on Sav's calendar).
+// Confirmed only — cross-checked across Luma (approved) + Partiful (GOING / ON THE LIST) + direct host confirmations.
 const EVENTS: Ev[] = [
   // Mon Jun 1
   { d: '2026-06-01', t: 'all week', n: 'ElevenLabs NY Tech Week Pop-Up', v: '54 Crosby St' },
@@ -59,25 +59,39 @@ const EVENTS: Ev[] = [
   { d: '2026-06-01', t: '6:30 PM', n: 'Frontier Agentic GTM Night', v: '136 Crosby St' },
   { d: '2026-06-01', t: 'Jun 1–7', n: 'Resilient Agents — Online Hackathon', v: 'Online', tag: 'online' },
   // Tue Jun 2
+  { d: '2026-06-02', t: 'drop-in', n: 'Mercury Vinyl House (runs Jun 1–3)', v: "Port Sa'id, 88 King St, SoHo" },
   { d: '2026-06-02', t: 'drop-in', n: 'Fin Labs New York (book a demo)', v: '18 E 50th St' },
+  { d: '2026-06-02', t: '9:00 AM', n: 'WeWork Coworking Day', v: 'Midtown' },
+  { d: '2026-06-02', t: '10:00 AM', n: "Vercel's AI Cafe (coworking)", v: '45 E 20th St, Flatiron' },
   { d: '2026-06-02', t: '12:00 PM', n: 'Using Parallel Agents to Work Faster in Replit', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-02', t: '2:00 PM', n: 'Find Your AI Use Case (Section)', v: 'Virtual', tag: 'virtual' },
+  { d: '2026-06-02', t: '3:00 PM', n: 'Masters of Scale Live w/ IBM CEO Arvind Krishna', v: 'IBM, One Madison Ave' },
+  { d: '2026-06-02', t: '4:00 PM', n: "AI Stack to Nasdaq: The Modern CFO's Exit Playbook", v: 'Nasdaq MarketSite, 151 W 43rd' },
   { d: '2026-06-02', t: '5:30 PM', n: 'Fin x Clay: Scaling CX in the AI Era', v: '18 E 50th St' },
+  { d: '2026-06-02', t: '5:30 PM', n: 'Agents & APIs Demo Night (WorkOS, Postman, Render, Composio)', v: '56 Greene St, 4th fl', star: true },
+  { d: '2026-06-02', t: '5:30 PM', n: 'Datadog × Vercel: Taking AI to New Heights (rooftop)', v: 'NY Times Building, 620 8th Ave' },
   // Wed Jun 3
+  { d: '2026-06-03', t: '2:00 PM', n: "The Non-Engineer's AI Playbook — MuleRun", v: '55 Broadway' },
   { d: '2026-06-03', t: '5:00 PM', n: 'First Wednesday #NYCTechWeek', v: 'NYC' },
   { d: '2026-06-03', t: '5:00 PM', n: 'Pinecone Nexus AI Launch Party', v: '127 W 26th St', star: true },
+  { d: '2026-06-03', t: '5:30 PM', n: 'Camp AI: Agents at Work', v: 'NYC' },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI Tinkerers Demo Day (PostHog, Convex, Veris)', v: '598 Broadway, fl 11', star: true },
+  { d: '2026-06-03', t: '6:00 PM', n: 'AI Builders Night', v: 'The Ready Cantina, 112 E 11th' },
   // Thu Jun 4
   { d: '2026-06-04', t: '11:30 AM', n: 'AI Agents: How To Keep Pace', v: '18 E 50th St' },
   { d: '2026-06-04', t: '12:00 PM', n: 'The AI Strategy Summit', v: 'Virtual', tag: 'virtual' },
+  { d: '2026-06-04', t: '1:00 PM', n: 'Autonomously Improving Agent Swarms with W&B', v: 'Midtown' },
   { d: '2026-06-04', t: '1:00 PM', n: "How Anthropic's Marketing Team Uses Claude Cowork", v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Shipping AI-Powered GTM Workflows with Vercel', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Fin in Practice: The Path to Perfect CX', v: '18 E 50th St' },
   { d: '2026-06-04', t: '2:00 PM', n: 'OpenAI Builder Lounge', v: 'OpenAI HQ, 295 Lafayette St', star: true },
+  { d: '2026-06-04', t: '4:15 PM', n: 'The Future of Tech & Talent in NYC', v: 'IBM, One Madison Ave' },
   { d: '2026-06-04', t: '5:30 PM', n: '2x AI: We Gave Everyone the Tools (Fin + Anthropic)', v: '18 E 50th St', star: true },
   { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way: AI Builds You Can Clone', v: 'Civic Hall, 124 E 14th St' },
   // Sat Jun 6
   { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC' },
+  // Sun Jun 7
+  { d: '2026-06-07', t: '9:30 AM', n: 'vibeFORWARD: M-2', v: 'NYC' },
   // Tue Jun 9
   { d: '2026-06-09', t: '1:00 PM', n: 'What Happens When AI Writes All the Code?', v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St' },
