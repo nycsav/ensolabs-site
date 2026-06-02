@@ -70,6 +70,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-02', t: '5:30 PM', n: 'Fin x Clay: Scaling CX in the AI Era', v: '18 E 50th St' },
   { d: '2026-06-02', t: '5:30 PM', n: 'Agents & APIs Demo Night (WorkOS, Postman, Render, Composio)', v: '56 Greene St, 4th fl', star: true },
   { d: '2026-06-02', t: '5:30 PM', n: 'Datadog × Vercel: Taking AI to New Heights (rooftop)', v: 'NY Times Building, 620 8th Ave' },
+  { d: '2026-06-02', t: '6:30 PM', n: 'Stan x Verci: Happy Hour & Stanley Beta Reveal', v: '45 E 20th St, Flatiron' },
   // Wed Jun 3
   { d: '2026-06-03', t: '2:00 PM', n: "The Non-Engineer's AI Playbook — MuleRun", v: '55 Broadway' },
   { d: '2026-06-03', t: '5:00 PM', n: 'First Wednesday #NYCTechWeek', v: 'NYC' },
