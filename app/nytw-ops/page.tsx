@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 };
 
-type Ev = { d: string; t: string; n: string; v: string; score: number; why: string; status?: 'waitlist' | 'pending' };
+type Ev = { d: string; t: string; n: string; v: string; score: number; why: string; status?: 'waitlist' | 'pending' | 'confirmed'; link?: string };
 
 const EVENTS: Ev[] = [
   // all week
@@ -33,8 +33,9 @@ const EVENTS: Ev[] = [
   { d: '2026-06-04', t: '2:00 PM', n: 'Shipping GTM Workflows w/ Vercel · virtual', v: 'Virtual', score: 4, why: 'Vercel GTM webinar — learning.' },
   { d: '2026-06-04', t: '3:30 PM', n: 'AI for Finance: Claude + Excel + MCP', v: 'Jay Conference, 159 W 25th', score: 9, why: '⭐ Your exact stack & FS wedge — highest-signal FS room.', status: 'waitlist' },
   { d: '2026-06-04', t: '4:15 PM', n: 'The Future of Tech & Talent in NYC (IBM)', v: 'IBM, One Madison Ave', score: 6, why: 'Talent/startup panel — ecosystem networking.' },
-  { d: '2026-06-04', t: '5:30 PM', n: '2x AI w/ Anthropic (Fin)', v: '18 E 50th St', score: 9, why: 'Claude-ecosystem room — Anthropic + Fin on stage; CCS + Managed Services.' },
-  { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way', v: 'Civic Hall, 124 E 14th St', score: 5, why: 'Overlaps 2x AI — skip unless you bail on Fin.' },
+  { d: '2026-06-04', t: '5:30 PM', n: '2x AI w/ Anthropic (Fin)', v: '18 E 50th St', score: 9, why: 'Claude-ecosystem room — Anthropic + Fin on stage. ⚠️ Now CONFLICTS w/ Omakase VIP dinner — see note; skip in favor of dinner.' },
+  { d: '2026-06-04', t: '6:00 PM', n: 'NYTW Omakase Dinner — Auth0 & MongoDB (VIP)', v: '26 W 23rd St, 5th fl', score: 8, why: 'Invite-only seated founders dinner. MongoDB Atlas vector = Signal Lens RAG layer; Auth0 = agent identity. Rare high-trust room — your Thu evening anchor.', status: 'confirmed', link: 'https://nyc.aitinkerers.org/p/nytw-omakase-dinner-with-auth0' },
+  { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way', v: 'Civic Hall, 124 E 14th St', score: 5, why: 'Overlaps the VIP dinner — skip.' },
   // Fri Jun 5
   { d: '2026-06-05', t: '11:00 AM', n: 'a16z Speedrun AI Faire', v: 'NYC', score: 8, why: 'a16z Speedrun community — investor + founder density.', status: 'waitlist' },
   { d: '2026-06-05', t: '3:00 PM', n: 'Vibe Code & Tea: build with Gemini', v: 'Cha, 51 Essex St', score: 4, why: 'Casual build session.', status: 'pending' },
@@ -81,6 +82,11 @@ export default function NytwOps() {
                 📍 {e.v}{e.status ? ` · ${e.status.toUpperCase()}` : ''}
               </div>
               <div style={{ fontSize: 12.5, color: '#cfd6df', marginTop: 6 }}>{e.why}</div>
+              {e.link ? (
+                <a href={e.link} target="_blank" rel="noreferrer" style={{ fontFamily: mono, fontSize: 11, color: '#5ce0d2', marginTop: 6, display: 'inline-block', textDecoration: 'none' }}>
+                  → event page
+                </a>
+              ) : null}
             </div>
           ))}
         </section>

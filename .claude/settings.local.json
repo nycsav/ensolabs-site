@@ -1,9 +1,6 @@
 {
   "permissions": {
     "allow": [
-      "Bash(curl -s https://signals.ensolabs.ai)",
-      "Bash(curl -sIL https://signals.ensolabs.ai)",
-      "Read(//Users/savbanerjee/Projects/PlannerAPI/**)",
       "Bash(npx tsc *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
