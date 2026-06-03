@@ -109,7 +109,9 @@ const dayLabel = (iso: string) =>
   new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
 export default function NytwPage() {
-  const days = Array.from(new Set(EVENTS.map((e) => e.d))).sort();
+  // Keep the public page current: only show today + upcoming days (drops elapsed days automatically on each deploy).
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+  const days = Array.from(new Set(EVENTS.map((e) => e.d))).filter((d) => d >= today).sort();
   const mono = 'var(--mono)';
   return (
     <main className="shell" style={{ paddingTop: 120, paddingBottom: 96, maxWidth: 720 }}>
