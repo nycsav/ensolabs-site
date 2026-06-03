@@ -4,7 +4,9 @@
 ---
 
 ## Overview
-Enso Labs is an AI transformation and agentic systems studio founded by Sav Banerjee. This project contains the studio website (ensolabs.ai) which connects to signal2noise (signals.ensolabs.ai) as the content intelligence engine.
+Enso Labs is an AI transformation and agentic systems studio founded by Sav Banerjee. This project contains the studio website (ensolabs.ai). signal2noise is the studio's news-intelligence engine, published natively on the Insights page (ensolabs.ai/insights) — NOT a separate site.
+
+> **DEPRECATED — DO NOT RESURRECT:** The standalone `signals.ensolabs.ai` domain, the PlannerAPI/Firebase deployment, and GA4 `G-CJ18GXXPMX` are permanently retired (May 2026). The news-intelligence engine lives only at ensolabs.ai/insights. Never link to, embed, or reference signals.ensolabs.ai anywhere.
 
 ## Quick Reference
 - **Framework:** Next.js 14, App Router, TypeScript
@@ -13,8 +15,7 @@ Enso Labs is an AI transformation and agentic systems studio founded by Sav Bane
 - **Domain:** ensolabs.ai
 - **GitHub:** nycsav/ensolabs-site
 - **GA4:** G-5N15QMQ962
-- **Signal2noise repo:** nycsav/PlannerAPI → signals.ensolabs.ai (Firebase)
-- **Signal2noise GA4:** G-CJ18GXXPMX
+- **signal2noise:** news-intelligence engine published on ensolabs.ai/insights (standalone signals.ensolabs.ai DEPRECATED — see Overview)
 
 ## Deploy
 ```bash
@@ -88,12 +89,10 @@ git add -A && git commit -m "description" && git push origin master
 - FAQ schema on /services and /contact
 - LocalBusiness schema on /contact (geo: 40.7362, -73.9903)
 
-## Signal2noise Integration
-- Embedded on /insights page via iframe (signals.ensolabs.ai)
-- Referenced on Home page in Live Intelligence section
-- signal2noise repo: ~/Projects/PlannerAPI
-- signal2noise deploy: cd ~/Projects/PlannerAPI && firebase deploy --only hosting
-- signal2noise GitHub push does NOT auto-deploy
+## signal2noise (news-intelligence engine)
+- Lives natively on the Insights page (app/insights/page.tsx) — "Live Intelligence" section + curated essays. NO external iframe, NO separate domain.
+- Referenced on Home page in the Live Intelligence section (links to /insights)
+- Standalone signals.ensolabs.ai + PlannerAPI/Firebase deployment are DEPRECATED and must not be referenced or redeployed
 
 ## Content Distribution Flow
 
@@ -112,13 +111,13 @@ git add -A && git commit -m "description" && git push origin master
 - GitHub: github.com/nycsav
 
 ## Analytics
-- GA4: G-5N15QMQ962 (ensolabs.ai)
-- GA4: G-CJ18GXXPMX (signals.ensolabs.ai)
+- GA4: G-5N15QMQ962 (ensolabs.ai — single property)
 - Vercel Analytics: enable in dashboard
 - Event tracking: form_submit, share clicks, signal2noise feed clicks
+- (G-CJ18GXXPMX for signals.ensolabs.ai is RETIRED)
 
 ## Weekly Maintenance Tasks
-- [ ] Verify signal2noise is publishing daily at signals.ensolabs.ai
+- [ ] Verify the signal2noise / Live Intelligence section on /insights is current
 - [ ] Check all pages load (6 main + 4 case studies + insights)
 - [ ] Review GA4 traffic for patterns
 - [ ] Draft 3 LinkedIn posts (Mon/Wed/Fri)
@@ -188,7 +187,6 @@ git add -A && git commit -m "description" && git push origin master
 - Analytics review Monday mornings
 - New insight articles 2-4x per month
 ### Workflow 2: signal2noise Content Engine
-- Daily signal generation (signals.ensolabs.ai)
+- Daily signal generation published on ensolabs.ai/insights (the engine's only home)
 - Content flows to: ensolabs.ai/insights, LinkedIn (Mon/Wed/Fri), newsletter
-- Repo: ~/Projects/PlannerAPI
-- Deploy: firebase deploy --only hosting (NOT auto-deploy)
+- No separate deploy — ships with the main site via Vercel auto-deploy
