@@ -132,9 +132,9 @@ export default function BuiltWithAiPage() {
               and Claude integrations.
             </li>
             <li>
-              <strong>signal2noise intelligence:</strong> The studio&rsquo;s
-              news-intelligence engine, published natively on the Insights page
-              (ensolabs.ai/insights) — daily AI market signals, scored and curated.
+              <strong>signal2noise integration:</strong> Live intelligence feed
+              embedded on the Insights page, pulling daily briefings from
+              signals.ensolabs.ai (our Firebase-hosted intelligence engine).
             </li>
             <li>
               <strong>Dynamic OG images:</strong> Edge-runtime generated Open

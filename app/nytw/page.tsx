@@ -76,6 +76,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-03', t: '10:00 AM', n: "Build AI Agent Workflows That Stick: Vercel's Blueprint", v: 'Virtual', tag: 'virtual' },
   { d: '2026-06-03', t: '2:00 PM', n: "The Non-Engineer's AI Playbook — MuleRun", v: '55 Broadway' },
   { d: '2026-06-03', t: '5:00 PM', n: 'Pinecone Nexus AI Launch Party', v: '127 W 26th St', star: true },
+  { d: '2026-06-03', t: '5:00 PM', n: 'AI Collective Demo Night', v: '888 Broadway, fl 4 (Atlassian)' },
   { d: '2026-06-03', t: '5:30 PM', n: 'Camp AI: Agents at Work', v: 'Datadog HQ, 620 8th Ave' },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI Tinkerers Demo Day (PostHog, Convex, Veris)', v: '598 Broadway, fl 11', star: true },
   { d: '2026-06-03', t: '6:00 PM', n: 'AI-Assisted Setups ft. Activant & Stuut', v: 'Activant Capital, 110 Greene St' },

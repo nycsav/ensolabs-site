@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Editorial standards for ensolabs.ai. All content is written and reviewed by Sav Banerjee, Founder & Principal of Enso Labs. Sources include Anthropic, Google, and OpenAI documentation, peer-reviewed research, and regulatory filings.',
   alternates: { canonical: 'https://ensolabs.ai/editorial-policy' },
-  other: { 'article:modified_time': '2026-06-03' },
+  other: { 'article:modified_time': '2026-05-28' },
   openGraph: {
     title: 'Editorial Policy — Enso Labs Content Standards',
     description:

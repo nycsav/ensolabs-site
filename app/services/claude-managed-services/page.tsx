@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       'Production Claude implementation for enterprises. MCP servers, agentic systems, eval harnesses — deployed by a studio with shipped systems.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
-  other: { 'article:modified_time': '2026-06-03' },
+  other: { 'article:modified_time': '2026-05-28' },
 };
 
 const FAQS = [
