@@ -59,3 +59,6 @@ briefs/
 
 # Hackathon project (has its own repo)
 signal2noise-notion-hackathon/
+
+# Working drafts (signal2noise + /seo-monitor reports) — never auto-deploy these
+drafts/
