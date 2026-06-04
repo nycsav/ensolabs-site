@@ -101,6 +101,7 @@ const EVENTS: Ev[] = [
   // Tue Jun 9
   { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St' },
   // Wed Jun 10
+  { d: '2026-06-10', t: '2:00 PM', n: 'Future-proof Your Business: AI Forecasts with BigQuery + Agents', v: 'Online', tag: 'virtual' },
   { d: '2026-06-10', t: '5:30 PM', n: 'Codex Lab: New York', v: 'The Farm SoHo, 447 Broadway' },
   { d: '2026-06-10', t: '6:00 PM', n: 'Arize Builders Meetup', v: 'Betaworks, 29 Little W 12th St', star: true },
 ];
@@ -151,7 +152,7 @@ export default function NytwPage() {
       </div>
 
       <div style={{ background: 'var(--bg-2)', border: '1px solid var(--teal-dim)', borderRadius: 12, padding: '13px 16px', marginBottom: 4, fontSize: 14, color: 'var(--fg-2)' }}>
-        <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> the OpenAI Builder Lounge (Thu), Fin x Clay and Masters of Scale w/ IBM CEO (Tue), Frontier Agentic GTM Night (Mon), and AI Tinkerers Demo Day (Wed).
+        <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> the OpenAI Builder Lounge and 2x AI with Fin + Anthropic (Thu), the Profound Marketing Engineering Hackathon (Sat), and the Arize Builders Meetup (Wed Jun 10).
       </div>
       <p style={{ fontFamily: mono, fontSize: 11, color: 'var(--fg-3)', margin: '8px 0 0' }}>★ = best chance to meet · &ldquo;virtual&rdquo; = I&rsquo;m tuning in remotely</p>
 
