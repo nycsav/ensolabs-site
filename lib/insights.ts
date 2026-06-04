@@ -129,7 +129,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'The Google I/O 2026 keynote announced Gemini Omni, Antigravity 2.0, the Managed Agents API, and Gemini 3.5 Flash. But the keynote is where the marketing lives. The after-hours is where the strategy gets decided. Two nights in San Francisco — Google for Startups × DeepMind on Tuesday, Cerebral Valley × DeepMind at Corgi Cafe on Friday. Part 2 of a two-part series.',
     pillar: 'Consult',
     date: '2026-05-26',
-    dateModified: '2026-05-29',
+    dateModified: '2026-06-04',
     readingMinutes: 7,
     tags: ['Google I/O', 'Google DeepMind', 'Cerebral Valley', 'AI Strategy', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Pomelli', 'Stitch', 'Fortune 500', 'AI Transformation', 'Thought Leadership'],
     faqs: [

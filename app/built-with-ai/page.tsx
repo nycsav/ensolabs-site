@@ -47,7 +47,7 @@ const articleJsonLd = () => ({
   description:
     'The story of building ensolabs.ai using Claude Chat, Claude Design, Claude Code, and Vercel.',
   datePublished: '2026-05-01',
-  dateModified: '2026-05-29',
+  dateModified: '2026-06-04',
   author: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
   mainEntityOfPage: { '@type': 'WebPage', '@id': url('/built-with-ai') },
@@ -70,7 +70,7 @@ export default function BuiltWithAiPage() {
 
       <section className="hero">
         <p className="label">Case Study</p>
-        <h1>Built with AI</h1>
+        <h1>Built with AI: How Enso Labs Shipped a Production AI Site in 24 Hours</h1>
         <p className="sub-head">
           How we shipped a production website — 71 JSON-LD schemas, MCP
           endpoint, signal2noise integration, dynamic OG images, GA4 event
