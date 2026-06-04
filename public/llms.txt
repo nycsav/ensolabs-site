@@ -9,6 +9,7 @@ Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerj
 - Agentic AI Consulting & AI Agent Development
 - Claude Managed Services & Cloud AI (https://ensolabs.ai/services/claude-managed-services)
 - Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
+- AI Strategy Consulting in New York City (https://ensolabs.ai/locations/new-york)
 - Healthcare AI & Pharma Compliance
 - AI Advertising & Marketing Automation
 
