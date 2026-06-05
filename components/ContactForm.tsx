@@ -77,7 +77,7 @@ export function ContactForm() {
       : undefined;
   const toastText =
     status === 'success'
-      ? 'Brief received. I’ll respond within 24h.'
+      ? 'Brief received. We’ll respond within 24h.'
       : errorMsg;
 
   return (

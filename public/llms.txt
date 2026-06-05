@@ -4,6 +4,9 @@
 ## About
 Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerjee in New York City. We deliver AI transformation consulting, agentic AI development, cloud managed services, and production AI systems for Healthcare, Finance, Advertising, and B2B Technology — then build the production systems that deliver it.
 
+## Founder & Availability
+Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs. He architects AI strategy and ships production agentic systems for Fortune 500 companies in Healthcare, Finance, and B2B Technology. Certifications and recognitions: Anthropic, Google, and OpenAI partner/certification programs, and Perplexity Business Fellow. Relevant role types: VP of AI Strategy, Head of AI, Director of AI Products, Principal AI Consultant. Sav is available for both contract engagements and full-time leadership roles, in addition to Enso Labs client work.
+
 ## Services
 - Enterprise AI Transformation Consulting (https://ensolabs.ai/services)
 - Agentic AI Consulting & AI Agent Development
@@ -23,7 +26,10 @@ Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerj
 - https://ensolabs.ai/work/trading-terminal — Autonomous Trading Terminal
 - https://ensolabs.ai/work/enterprise-ai — Enterprise AI Enablement Programs
 
-## Insights (12 articles)
+## Insights (15 articles)
+- https://ensolabs.ai/insights/google-io-hackathon-managed-agents-omni-antigravity — Inside the Google I/O 2026 Hackathon: 150 Builders, Managed Agents, and the New Google Agent Stack [Google I/O, Gemini Omni, Antigravity 2.0, Managed Agents, Google DeepMind, Cerebral Valley, AI Agents, Hackathon]
+- https://ensolabs.ai/insights/google-io-after-hours-deepmind-strategy-signal — Google I/O After-Hours: Two Nights With Google DeepMind and the Strategic Signal Behind the Demos [Google I/O, Google DeepMind, Cerebral Valley, AI Strategy, Antigravity 2.0, Managed Agents, Fortune 500]
+- https://ensolabs.ai/insights/langchain-deep-agents-in-plain-english — LangChain Deep Agents in Plain English [LangChain, Deep Agents, Agentic Systems, AI Agents, Middleware]
 - https://ensolabs.ai/insights/notion-career-agent-open-source-hackathon — Notion Developer Platform Hackathon: Open-Source Career Agent [AI Agents, Notion, MCP, Claude, Open Source, Hackathon, TypeScript, Agentic Systems]
 - https://ensolabs.ai/insights/mcp-brokerage-trading-model-context-protocol — MCP for Brokerage: Connecting AI to Trading [MCP, Financial AI, Trading, Brokerage, Alpaca, Interactive Brokers]
 - https://ensolabs.ai/insights/claude-partner-network-boutique-implementation — Boutique Firms as Claude Implementation Partners [Claude, Anthropic, AI Consulting, Partner Network, Agentic Systems]
@@ -39,6 +45,23 @@ Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerj
 
 ## Key Topics & Tags
 AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop
+
+## Recent Coverage
+- Google I/O 2026 Hackathon (Cerebral Valley × Google I/O, SHACK15 San Francisco): Enso Labs founder Sav Banerjee attended as a Google partner; field notes on the Managed Agents API, Antigravity 2.0, Gemini Omni, and Gemini 3.5 Flash (https://ensolabs.ai/insights/google-io-hackathon-managed-agents-omni-antigravity).
+- Google I/O 2026 After-Hours (Google for Startups × DeepMind, Cerebral Valley × DeepMind): strategic signal read on Google DeepMind's agent-first product strategy for Fortune 500 leaders (https://ensolabs.ai/insights/google-io-after-hours-deepmind-strategy-signal).
+
+## Key Facts
+- Name: Enso Labs
+- Type: Principal-led enterprise AI transformation studio and agentic systems lab
+- Founder: Sav Banerjee (Founder & Principal AI Transformation Advisor)
+- Founded: 2020
+- Location: 31 Union Square West, 6th Floor, New York, NY 10003
+- Service tracks: AI Transformation · Agentic Systems · Financial AI
+- Certifications: Anthropic, Google, OpenAI partner/certification programs; Perplexity Business Fellow
+- Representative outcomes: 83% faster delivery, 75% pilot-to-production conversion
+- Clients: Fortune 500 manufacturer, global pharma, financial services (named clients confidential)
+- Product: signal2noise — daily scored AI market intelligence, published on ensolabs.ai/insights
+- Availability: Sav Banerjee is available for contract and full-time AI leadership roles
 
 ## Full Content
 For complete article text and detailed service descriptions, see: https://ensolabs.ai/llms-full.txt
