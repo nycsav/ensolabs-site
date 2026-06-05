@@ -94,6 +94,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-04', t: '5:30 PM', n: '2x AI: We Gave Everyone the Tools (Fin + Anthropic)', v: '18 E 50th St', star: true },
   { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way: AI Builds You Can Clone', v: 'Civic Hall, 124 E 14th St' },
   // Fri Jun 5
+  { d: '2026-06-05', t: '9:00 AM', n: 'Baseten Inference Café for AI Engineers + Founders', v: 'Verci, 45 E 20th St' },
   { d: '2026-06-05', t: '5:00 PM', n: 'Lovable Build Session with Datadog & Firecrawl', v: 'Datadog, 620 8th Ave, 45th fl' },
   { d: '2026-06-05', t: '6:30 PM', n: 'AI/ML Engineer Craft Beer Crawl (Hop-field Networks)', v: 'London & Martin Co., 6 Stone St' },
   // Sat Jun 6
@@ -107,6 +108,10 @@ const EVENTS: Ev[] = [
   { d: '2026-06-10', t: '2:00 PM', n: 'Future-proof Your Business: AI Forecasts with BigQuery + Agents', v: 'Online', tag: 'virtual' },
   { d: '2026-06-10', t: '5:30 PM', n: 'Codex Lab: New York', v: 'The Farm SoHo, 447 Broadway' },
   { d: '2026-06-10', t: '6:00 PM', n: 'Arize Builders Meetup', v: 'Betaworks, 29 Little W 12th St', star: true },
+  // Thu Jun 11
+  { d: '2026-06-11', t: '10:30 AM', n: 'Link Learning Lab: Builders & Bankers (Chainlink)', v: 'Convene, 555 Broadway' },
+  // Fri Jun 12
+  { d: '2026-06-12', t: '12:00 PM', n: 'Notion Community Showcase', v: 'BrainStation, 136 Crosby St' },
 ];
 
 const dayLabel = (iso: string) =>
