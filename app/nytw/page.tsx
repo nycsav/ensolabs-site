@@ -91,6 +91,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-04', t: '2:00 PM', n: 'OpenAI Builder Lounge', v: 'OpenAI HQ, 295 Lafayette St', star: true },
   { d: '2026-06-04', t: '3:30 PM', n: 'AI for Finance: Building with Claude + Excel + MCP', v: 'Jay Conference Chelsea, 159 W 25th St', star: true },
   { d: '2026-06-04', t: '4:15 PM', n: 'The Future of Tech & Talent in NYC', v: 'IBM, One Madison Ave' },
+  { d: '2026-06-04', t: '4:30 PM', n: 'Claude Code Hackathon — Build an Agentic Team', v: '159 W 25th St, Chelsea' },
   { d: '2026-06-04', t: '5:30 PM', n: '2x AI: We Gave Everyone the Tools (Fin + Anthropic)', v: '18 E 50th St', star: true },
   { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way: AI Builds You Can Clone', v: 'Civic Hall, 124 E 14th St' },
   // Fri Jun 5
