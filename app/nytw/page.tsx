@@ -94,6 +94,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-04', t: '5:30 PM', n: '2x AI: We Gave Everyone the Tools (Fin + Anthropic)', v: '18 E 50th St', star: true },
   { d: '2026-06-04', t: '6:00 PM', n: 'No Forking Way: AI Builds You Can Clone', v: 'Civic Hall, 124 E 14th St' },
   // Fri Jun 5
+  { d: '2026-06-05', t: '5:00 PM', n: 'Lovable Build Session with Datadog & Firecrawl', v: 'Datadog, 620 8th Ave, 45th fl' },
   { d: '2026-06-05', t: '6:30 PM', n: 'AI/ML Engineer Craft Beer Crawl (Hop-field Networks)', v: 'London & Martin Co., 6 Stone St' },
   // Sat Jun 6
   { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC', star: true },
