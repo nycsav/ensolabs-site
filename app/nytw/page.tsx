@@ -98,6 +98,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-05', t: '9:00 AM', n: 'Baseten Inference Café for AI Engineers + Founders', v: 'Verci, 45 E 20th St' },
   { d: '2026-06-05', t: '5:00 PM', n: 'Lovable Build Session with Datadog & Firecrawl', v: 'Datadog, 620 8th Ave, 45th fl' },
   { d: '2026-06-05', t: '6:30 PM', n: 'AI/ML Engineer Craft Beer Crawl (Hop-field Networks)', v: 'London & Martin Co., 6 Stone St' },
+  { d: '2026-06-05', t: '6:30 PM', n: 'Run(way)time', v: 'LUME Studios, 393 Broadway' },
   // Sat Jun 6
   { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC', star: true },
   { d: '2026-06-06', t: '9:00 AM', n: 'Multimodal Hacks: Build the Interface for Agents', v: 'Betaworks, 29 Little W 12th St' },
