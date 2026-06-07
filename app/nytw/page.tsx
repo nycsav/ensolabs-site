@@ -100,10 +100,10 @@ const EVENTS: Ev[] = [
   { d: '2026-06-05', t: '6:30 PM', n: 'AI/ML Engineer Craft Beer Crawl (Hop-field Networks)', v: 'London & Martin Co., 6 Stone St' },
   { d: '2026-06-05', t: '6:30 PM', n: 'Run(way)time', v: 'LUME Studios, 393 Broadway' },
   // Sat Jun 6
-  { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC', star: true },
+  { d: '2026-06-06', t: '9:45 AM', n: 'Profound Marketing Engineering Hackathon', v: 'Profound HQ, 5-9 Union Sq West', star: true },
   { d: '2026-06-06', t: '9:00 AM', n: 'Multimodal Hacks: Build the Interface for Agents', v: 'Betaworks, 29 Little W 12th St' },
   // Sun Jun 7
-  { d: '2026-06-07', t: '9:30 AM', n: 'vibeFORWARD: M-2', v: 'NYC' },
+  { d: '2026-06-07', t: '9:30 AM', n: 'vibeFORWARD: M-2', v: 'McNally Amphitheater, 140 W 62nd St' },
   // Tue Jun 9
   { d: '2026-06-09', t: '9:00 AM', n: 'Monad Blitz NYC Hackathon @ ETHConf', v: '50 W 23rd St, 4th fl' },
   { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St' },
