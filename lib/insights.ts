@@ -75,9 +75,9 @@ export const INSIGHTS: Insight[] = [
     dek: 'Forty-eight hours after Google DeepMind shipped Gemini Omni, Antigravity 2.0, and the new Managed Agents API at I/O 2026, Cerebral Valley convened 150-plus builders at SHACK15 in San Francisco. I was in the room as a Google partner — not a competitor — to talk to builders, observe the new stack under load, and feature the work that will matter twelve months from now. Part 1 of a two-part series on Google I/O 2026.',
     pillar: 'Build',
     date: '2026-05-26',
-    dateModified: '2026-05-29',
+    dateModified: '2026-06-09',
     readingMinutes: 8,
-    tags: ['Google I/O', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Google DeepMind', 'Cerebral Valley', 'AI Agents', 'Hackathon', 'Agentic Systems', 'Gemini 3.5 Flash', 'Fortune 500', 'AI Strategy'],
+    tags: ['Google I/O', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Google DeepMind', 'Cerebral Valley', 'AI Agents', 'Hackathon', 'Agentic Systems', 'Gemini 3.5 Flash', 'Fortune 500', 'AI Strategy', 'AI Transformation', 'Enso Labs', 'Sav Banerjee'],
     faqs: [
       {
         question: 'What happened at the Google I/O 2026 hackathon?',
@@ -93,7 +93,7 @@ export const INSIGHTS: Insight[] = [
       },
     ],
     body: [
-      'My friend [Yves Hughes](https://www.linkedin.com/in/yvesjr/) just won 3rd place at the Google I/O Hackathon — and the bonus track for **Managed Agents**, the marquee Google announcement of I/O 2026. He beat more than 150 competing submissions over a single Saturday. I was in the room.',
+      'My friend [Yves Hughes](https://www.linkedin.com/in/yvesjr/) just won 3rd place at the Google I/O Hackathon — and the bonus track for **Managed Agents**, the marquee Google announcement of I/O 2026. He beat more than 150 competing submissions over a single Saturday. I was in the room, watching the new Google agent stack get stress-tested by the people building production AI agents on it — the exact signal Enso Labs tracks for our Fortune 500 clients.',
       'Forty-eight hours earlier, on May 19, Google DeepMind [announced Gemini Omni, Antigravity 2.0, the new Managed Agents API, and Gemini 3.5 Flash](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/) at the I/O 2026 keynote. By Saturday morning, Cerebral Valley had convened 150-plus builders at SHACK15 in San Francisco to be the first to ship on a stack that had not existed at the start of the work week. The fastest path from a Google product launch to a production implementation is now measured in hours, not quarters.',
       'I attended as a Google partner — not as a hackathon competitor. The job was to talk to builders, observe what they were trying to push the new APIs to do, and surface the work I expect to be referencing in Fortune 500 client conversations through the rest of 2026. Yves\' win is the first of those references. This article is the rest.',
       '![Google I/O Hackathon by Cerebral Valley — May 23, 2026, SHACK15 San Francisco](/images/insights/google-io-hackathon-06.jpg)',
@@ -120,7 +120,7 @@ export const INSIGHTS: Insight[] = [
       '![SHACK15 at the San Francisco Ferry Building — venue for the Cerebral Valley × Google I/O Hackathon](/images/insights/google-io-hackathon-01.jpg)',
       '## What Comes Next',
       'Cerebral Valley\'s next stop is Paris in July — the [RAISE Summit](https://raisesummit.com/) on July 4 and 5, followed by the Machina Hackathon on July 6. Google also announced the [Build with Gemini XPRIZE](https://www.xprize.org/news/xprize-launches-hackathon-with-2-million-prize-pool-backed-by-google) on the keynote stage: $2 million in prizes for 90 days of building real businesses on Gemini. The agent ecosystem is no longer a single venue. It is a global circuit running quarterly, and the builders who win it twice are about to define the next twelve months.',
-      'Part 2 of this series covers the I/O after-hours circuit — two nights with Google DeepMind in San Francisco where the strategic signal lived between the demos. If you are a Fortune 500 leader deciding what to do with Omni, Antigravity, and the new Managed Agents API, this is the question Enso Labs is built to answer with you. Explore our [AI transformation services](/services) or [get in touch](/contact).',
+      '[Part 2 of this series](/insights/google-io-after-hours-deepmind-strategy-signal) covers the I/O after-hours circuit — two nights with Google DeepMind in San Francisco where the strategic signal lived between the demos. If you are a Fortune 500 leader deciding what to do with Omni, Antigravity, and the new Managed Agents API, this is the question Enso Labs is built to answer with you. Explore our [AI transformation services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -129,9 +129,9 @@ export const INSIGHTS: Insight[] = [
     dek: 'The Google I/O 2026 keynote announced Gemini Omni, Antigravity 2.0, the Managed Agents API, and Gemini 3.5 Flash. But the keynote is where the marketing lives. The after-hours is where the strategy gets decided. Two nights in San Francisco — Google for Startups × DeepMind on Tuesday, Cerebral Valley × DeepMind at Corgi Cafe on Friday. Part 2 of a two-part series.',
     pillar: 'Consult',
     date: '2026-05-26',
-    dateModified: '2026-06-04',
+    dateModified: '2026-06-09',
     readingMinutes: 7,
-    tags: ['Google I/O', 'Google DeepMind', 'Cerebral Valley', 'AI Strategy', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Pomelli', 'Stitch', 'Fortune 500', 'AI Transformation', 'Thought Leadership'],
+    tags: ['Google I/O', 'Google DeepMind', 'Cerebral Valley', 'AI Strategy', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Pomelli', 'Stitch', 'Fortune 500', 'AI Transformation', 'Thought Leadership', 'AI Agents', 'Hackathon', 'Enso Labs', 'Sav Banerjee'],
     faqs: [
       {
         question: 'What strategic signals came from Google I/O 2026?',
@@ -147,7 +147,7 @@ export const INSIGHTS: Insight[] = [
       },
     ],
     body: [
-      'The Google I/O 2026 keynote announced Gemini Omni, Antigravity 2.0, the Managed Agents API, and Gemini 3.5 Flash. But the keynote is where the marketing lives. The after-hours is where the strategy gets decided.',
+      'The Google I/O 2026 keynote announced Gemini Omni, Antigravity 2.0, the Managed Agents API, and Gemini 3.5 Flash — a coherent stack for building production AI agents. But the keynote is where the marketing lives. The after-hours is where the strategy gets decided, and the after-hours is the room Enso Labs reports from.',
       'Over the same week, I attended two of those rooms — the official **Google for Startups × Google DeepMind** reception on Tuesday May 19, and the **Cerebral Valley × DeepMind** closeout at Corgi Cafe on Friday May 22. Two nights, two crowds, two different signals from the same launch. Part 2 of a two-part series on Google I/O 2026 — [Part 1 covers the Cerebral Valley × Google I/O Hackathon featuring 3rd-place winner Yves Hughes →](/insights/google-io-hackathon-managed-agents-omni-antigravity).',
       '![Google I/O After Hours — Googler check-in and Guest check-in, the official Google for Startups × DeepMind reception, San Francisco](/images/insights/google-io-afterhours-05.jpg)',
       '## Night One: Google for Startups × Google DeepMind, Tuesday May 19',

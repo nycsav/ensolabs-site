@@ -196,6 +196,7 @@ export default function AboutPage() {
                 <Link href="/insights/notion-career-agent-open-source-hackathon" style={{ color: 'var(--teal)' }}>Notion hackathon: open-source career agent</Link>.
               </p>
               <div className="hero-cta-row" style={{ marginTop: 24 }}>
+                <Link className="btn" href="/work">Selected Work</Link>
                 <a className="btn" href="https://linkedin.com/in/savbanerjee" target="_blank" rel="noopener">LinkedIn</a>
                 <a className="btn" href="https://github.com/nycsav" target="_blank" rel="noopener">GitHub</a>
                 <Link className="btn btn-primary" href="/contact">Get in Touch <Arrow /></Link>

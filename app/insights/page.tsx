@@ -84,10 +84,10 @@ export default function InsightsIndex() {
             </div>
             <div className="s2n-grid">
               {[
-                { kind: 'AI SIGNAL', date: 'MAY 23', source: 'Anthropic', headline: 'Claude 4 Opus ships with extended thinking and 200K context — enterprise teams report 40% reduction in multi-step agent failures versus prior generation.' },
-                { kind: 'COMPETITIVE SIGNAL', date: 'MAY 22', source: 'Gartner', headline: 'Enterprise AI buying committees are consolidating around three vendors per portfolio — non-finalists lose 70% of pipeline within 90 days of decision.' },
-                { kind: 'MARKET SIGNAL', date: 'MAY 21', source: 'BCG', headline: 'Agentic workflows are replacing RPA in 41% of Fortune 500 ops budgets — first measurable line-item shift since 2019, with healthcare and finance leading adoption.' },
-                { kind: 'MEDIA SIGNAL', date: 'MAY 20', source: 'The Trade Desk', headline: 'AI-search referral traffic now exceeds organic Google for 12% of B2B sites tracked. AEO-optimized brands see 3.4× lift in AI assistant citations.' },
+                { kind: 'AI SIGNAL', date: 'JUN 6', source: 'Google DeepMind', headline: 'The new Managed Agents API from Google DeepMind provisions a full agent — reasoning, tool use, sandboxed code execution — in a single call, collapsing weeks of custom harness engineering. Multi-agent orchestration is becoming the enterprise default.' },
+                { kind: 'STRATEGY SIGNAL', date: 'JUN 4', source: 'signal2noise', headline: 'Google I/O 2026 reads as an agent-first platform bet — Gemini Omni, Antigravity 2.0, and Managed Agents on Gemini 3.5 Flash. DeepMind now ships product, not just research papers.' },
+                { kind: 'FINANCIAL SIGNAL', date: 'JUN 2', source: 'Anthropic', headline: 'Pre-built financial agents — pitchbook builders, credit-memo drafters, statement auditors — commoditize the basics. The durable moat moves to firm-specific signal intelligence and risk models.' },
+                { kind: 'AEO SIGNAL', date: 'MAY 30', source: 'signal2noise', headline: 'Answer-engine optimization is compounding: brands structured for machine extraction win citations across ChatGPT, Perplexity, Claude, and Google AI Overviews as AI-search referral traffic climbs.' },
               ].map((s) => (
                 <div key={s.headline} className="s2n-card">
                   <div className="s2n-meta">
