@@ -714,6 +714,23 @@ footer {
 }
 .article-shell .back:hover { color: var(--teal); }
 
+/* Article tables (model comparison, routing policy) */
+.article-shell .body .article-table-wrap { overflow-x: auto; margin: 32px 0; max-width: 100%; }
+.article-shell .body table.article-table {
+  width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5;
+}
+.article-shell .body table.article-table th,
+.article-shell .body table.article-table td {
+  text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top;
+}
+.article-shell .body table.article-table thead th {
+  font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--fg-3); border-bottom: 1px solid var(--line-2); white-space: nowrap;
+}
+.article-shell .body table.article-table tbody tr:last-child td { border-bottom: none; }
+.article-shell .body table.article-table td strong { font-weight: 600; color: var(--fg); }
+.article-shell .body table.article-table a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
+
 /* ============================================================
    SIGNAL2NOISE — live intelligence cards on Home + Insights banner
    ============================================================ */

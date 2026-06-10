@@ -1,0 +1,91 @@
+/* ============================================================
+   Strategy to Ship — Design Tokens (v1)
+   A media publishing brand from Enso Labs.
+   Companion to /strategy-to-ship-design-system.md
+   ============================================================ */
+
+:root {
+  /* --- Color: warm editorial palette --- */
+  --sts-paper:      #F7F1E6;   /* primary reading ground (warm newsprint) */
+  --sts-paper-2:    #EEE5D3;   /* cards, insets, table fills */
+  --sts-ink:        #1E1813;   /* body text / dark ground */
+  --sts-ink-deep:   #16110B;   /* deepest ground for social/OG cards */
+  --sts-coral:      #F0512E;   /* THE signal — arrow, stamps, pull-quotes, CTAs */
+  --sts-amber:      #E0A23C;   /* secondary warm accent (signal2noise heritage) */
+  --sts-slate:      #79705F;   /* muted metadata / secondary text */
+  --sts-line:       #DDD2BC;   /* hairlines, dividers, borders */
+  --enso-teal:      #5CE0D2;   /* parent-brand link ONLY — "from Enso Labs", sparing */
+
+  /* on dark grounds */
+  --sts-paper-on-dark: #F3ECDD;
+  --sts-slate-on-dark: #9b8f78;
+  --sts-line-on-dark:  #2c2419;
+
+  /* --- Type --- */
+  --sts-serif: "Lora", Georgia, "Times New Roman", serif;        /* display / headlines — human, editorial */
+  --sts-sans:  "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* body / UI — shared w/ Enso */
+  --sts-mono:  "JetBrains Mono", ui-monospace, Menlo, monospace; /* metadata / the machine signal */
+
+  /* type scale (px) */
+  --sts-fs-kicker: 13px;   /* mono, uppercase, letter-spaced */
+  --sts-fs-body:   18px;
+  --sts-fs-dek:    22px;
+  --sts-fs-h3:     26px;
+  --sts-fs-h2:     34px;
+  --sts-fs-h1:     clamp(40px, 5.5vw, 68px);
+  --sts-lh-tight:  1.08;   /* serif headlines */
+  --sts-lh-body:   1.62;
+  --sts-ls-mono:   0.08em; /* mono letter-spacing */
+
+  /* --- Space / shape --- */
+  --sts-radius:    10px;
+  --sts-radius-sm: 7px;
+  --sts-pad:       clamp(20px, 4vw, 56px);
+  --sts-maxread:   64ch;
+}
+
+/* Light publishing theme (article + light OG) */
+.theme-sts {
+  background: var(--sts-paper);
+  color: var(--sts-ink);
+  font-family: var(--sts-sans);
+}
+
+/* Dark social/OG theme */
+.theme-sts-dark {
+  background: var(--sts-ink-deep);
+  color: var(--sts-paper-on-dark);
+  font-family: var(--sts-sans);
+}
+
+/* --- Signature primitives --- */
+.sts-kicker {
+  font-family: var(--sts-mono);
+  font-size: var(--sts-fs-kicker);
+  letter-spacing: var(--sts-ls-mono);
+  text-transform: uppercase;
+  color: var(--sts-slate);
+}
+.sts-headline {
+  font-family: var(--sts-serif);
+  font-weight: 600;
+  line-height: var(--sts-lh-tight);
+  letter-spacing: -0.01em;
+}
+.sts-arrow { color: var(--sts-coral); }   /* the → is always coral */
+
+/* The stamp motif — coral, inked, slightly rotated */
+.sts-stamp {
+  display: inline-block;
+  font-family: var(--sts-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sts-coral);
+  border: 2px solid var(--sts-coral);
+  border-radius: 6px;
+  padding: 5px 10px;
+  transform: rotate(-4deg);
+  opacity: 0.92;
+}

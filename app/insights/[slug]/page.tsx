@@ -99,6 +99,30 @@ const renderBlock = (block: string, i: number) => {
       </figure>
     );
   }
+  // Markdown pipe table: a multi-line block whose first line starts with '|'.
+  if (block.startsWith('|') && block.includes('\n')) {
+    const isSep = (r: string) => /^\|[\s:|-]+\|$/.test(r);
+    const toCells = (r: string) =>
+      r.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map((c) => c.trim());
+    const rows = block.split('\n').map((r) => r.trim()).filter(Boolean).filter((r) => !isSep(r));
+    if (rows.length > 1) {
+      const [header, ...bodyRows] = rows;
+      return (
+        <div key={i} className="article-table-wrap">
+          <table className="article-table">
+            <thead>
+              <tr>{toCells(header).map((c, j) => <th key={j}>{renderInline(c)}</th>)}</tr>
+            </thead>
+            <tbody>
+              {bodyRows.map((r, ri) => (
+                <tr key={ri}>{toCells(r).map((c, ci) => <td key={ci}>{renderInline(c)}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+  }
   return <p key={i}>{renderInline(block)}</p>;
 };
 
