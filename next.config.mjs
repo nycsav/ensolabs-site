@@ -35,6 +35,12 @@ const nextConfig = {
         destination: '/insights/notion-career-agent-open-source-hackathon',
         permanent: true,
       },
+      // Temporarily unpublished (archived for later re-publish) — avoid 404 + dead cross-links
+      {
+        source: '/insights/langchain-deep-agents-in-plain-english',
+        destination: '/insights',
+        permanent: false,
+      },
     ];
   },
 
