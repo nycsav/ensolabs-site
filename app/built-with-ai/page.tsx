@@ -47,7 +47,7 @@ const articleJsonLd = () => ({
   description:
     'The story of building ensolabs.ai using Claude Chat, Claude Design, Claude Code, and Vercel.',
   datePublished: '2026-05-01',
-  dateModified: '2026-06-04',
+  dateModified: '2026-06-11',
   author: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
   mainEntityOfPage: { '@type': 'WebPage', '@id': url('/built-with-ai') },
@@ -206,7 +206,11 @@ export default function BuiltWithAiPage() {
           <p>
             That&rsquo;s the thesis behind Enso Labs: AI doesn&rsquo;t replace
             senior judgment. It amplifies it. The human decides what to build
-            and why. The AI handles the volume, velocity, and consistency.
+            and why. The AI handles the volume, velocity, and consistency. It is
+            the same AI-native delivery model behind our{' '}
+            <Link href="/services">AI transformation services</Link> and the
+            production systems in our{' '}
+            <Link href="/work">case studies</Link>.
           </p>
         </div>
       </section>

@@ -35,6 +35,8 @@ export const personSchema = (): JsonLd => ({
   '@type': 'Person',
   '@id': url('/#sav'),
   name: SITE.founder.name,
+  description:
+    'Sav Banerjee is the founder and principal AI transformation advisor at Enso Labs, an AI-native studio in New York City that architects strategy and ships production agentic systems for Fortune 500 companies in finance, healthcare, and B2B tech. Currently available for select contract and full-time engagements, including Head of AI, VP AI Strategy, Director of AI Products, and Principal AI Consultant roles.',
   jobTitle: [
     SITE.founder.role,
     'Head of AI',
