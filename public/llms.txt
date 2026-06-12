@@ -29,7 +29,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 ## Insights (15 articles)
 - https://ensolabs.ai/insights/google-io-hackathon-managed-agents-omni-antigravity — Inside the Google I/O 2026 Hackathon: 150 Builders, Managed Agents, and the New Google Agent Stack [Google I/O, Gemini Omni, Antigravity 2.0, Managed Agents, Google DeepMind, Cerebral Valley, AI Agents, Hackathon]
 - https://ensolabs.ai/insights/google-io-after-hours-deepmind-strategy-signal — Google I/O After-Hours: Two Nights With Google DeepMind and the Strategic Signal Behind the Demos [Google I/O, Google DeepMind, Cerebral Valley, AI Strategy, Antigravity 2.0, Managed Agents, Fortune 500]
-- https://ensolabs.ai/insights/langchain-deep-agents-in-plain-english — LangChain Deep Agents in Plain English [LangChain, Deep Agents, Agentic Systems, AI Agents, Middleware]
+- https://ensolabs.ai/insights/frontier-ai-routing-us-financial-services — Codex 5.5 or Fable 5? Choosing the Right Frontier Model, Build by Build [Frontier Models, Fable 5, Claude Opus 4.8, GPT-5.5, Codex, Gemini, Model Routing, Forward-Deployed, Enterprise AI]
 - https://ensolabs.ai/insights/notion-career-agent-open-source-hackathon — Notion Developer Platform Hackathon: Open-Source Career Agent [AI Agents, Notion, MCP, Claude, Open Source, Hackathon, TypeScript, Agentic Systems]
 - https://ensolabs.ai/insights/mcp-brokerage-trading-model-context-protocol — MCP for Brokerage: Connecting AI to Trading [MCP, Financial AI, Trading, Brokerage, Alpaca, Interactive Brokers]
 - https://ensolabs.ai/insights/claude-partner-network-boutique-implementation — Boutique Firms as Claude Implementation Partners [Claude, Anthropic, AI Consulting, Partner Network, Agentic Systems]
