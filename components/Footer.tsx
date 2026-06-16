@@ -50,6 +50,19 @@ export function Footer() {
           </div>
         </div>
 
+        <div className="foot-affil">
+          <span className="foot-affil-label">Affiliations</span>
+          <a
+            href="https://www.ibm.com/partnerplus"
+            target="_blank"
+            rel="noopener"
+            aria-label="IBM Partner Plus — Registered Member"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/ibm-partner-plus.png" alt="IBM Partner Plus — Registered Member" />
+          </a>
+        </div>
+
         <div className="foot-bottom">
           <span>© 2026 Enso Labs. All systems owned by their respective operators.</span>
           <span>
