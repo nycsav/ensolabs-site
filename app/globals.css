@@ -393,9 +393,8 @@ footer {
   font-family: var(--mono); font-size: 11px; color: var(--fg-3);
   text-transform: uppercase; letter-spacing: 0.06em;
 }
-.foot-affil a { display: inline-flex; opacity: 0.95; transition: opacity .2s ease; }
-.foot-affil a:hover { opacity: 1; }
-.foot-affil img { height: 40px; width: auto; display: block; }
+.foot-affil a { color: var(--fg-2); font-size: 14px; transition: color .2s ease; }
+.foot-affil a:hover { color: var(--teal); }
 .foot-bottom {
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   font-family: var(--mono); font-size: 12px; color: var(--fg-3);
