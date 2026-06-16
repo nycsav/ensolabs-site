@@ -439,6 +439,34 @@ export default function WorkPage() {
         </div>
       </div>
 
+      <section data-screen-label="05.5 FAQ">
+        <div className="shell">
+          <div className="section-head">
+            <div><span className="eyebrow"><span className="num">§ 05</span>&nbsp;Common questions</span></div>
+            <div><h2 className="h2">What we build, and the proof.</h2></div>
+          </div>
+          <div style={{ display: 'grid', gap: 0, borderTop: '1px solid var(--line)' }}>
+            {WORK_FAQ.map((qa, i) => (
+              <details
+                key={qa.question}
+                style={{
+                  borderBottom: i === WORK_FAQ.length - 1 ? 'none' : '1px solid var(--line)',
+                  padding: '28px 0',
+                }}
+              >
+                <summary style={{ cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 24, listStyle: 'none' }}>
+                  <span style={{ fontSize: 'clamp(20px, 2vw, 24px)', fontWeight: 500, letterSpacing: '-0.015em' }}>{qa.question}</span>
+                  <span className="mono-sm" style={{ color: 'var(--teal)' }}>+ open</span>
+                </summary>
+                <p style={{ marginTop: 18, color: 'var(--fg-2)', fontSize: 16, lineHeight: 1.65, maxWidth: '80ch' }}>
+                  {qa.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section data-screen-label="06 CTA">
         <div className="shell">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
