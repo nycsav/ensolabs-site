@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Editorial Policy — Enso Labs Content Standards',
     description:
-      'How Enso Labs sources, reviews, and publishes content across ensolabs.ai and signal2noise.',
+      'How Enso Labs sources, reviews, and publishes content across ensolabs.ai and Strategy to Ship.',
     url: 'https://ensolabs.ai/editorial-policy',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Editorial Policy — Enso Labs' }],
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Editorial Policy — Enso Labs',
     description:
-      'How Enso Labs sources, reviews, and publishes content across ensolabs.ai and signal2noise.',
+      'How Enso Labs sources, reviews, and publishes content across ensolabs.ai and Strategy to Ship.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -34,12 +34,12 @@ const FAQS = [
   {
     question: 'What sources does Enso Labs use?',
     answer:
-      'Primary sources include official documentation from Anthropic, Google, and OpenAI, peer-reviewed academic research, regulatory filings (SEC, FDA/MLR), patent databases, and first-party data from Enso Labs production systems including the Enso Trading Terminal and signal2noise intelligence engine.',
+      'Primary sources include official documentation from Anthropic, Google, and OpenAI, peer-reviewed academic research, regulatory filings (SEC, FDA/MLR), patent databases, and first-party data from Enso Labs production systems including the Enso Trading Terminal and the Strategy to Ship intelligence engine.',
   },
   {
     question: 'How often is content reviewed and updated?',
     answer:
-      'All content is reviewed quarterly for accuracy and updated when the underlying technology, regulatory landscape, or market conditions change. Case studies are updated when new outcomes data becomes available. signal2noise publishes daily intelligence signals every weekday morning.',
+      'All content is reviewed quarterly for accuracy and updated when the underlying technology, regulatory landscape, or market conditions change. Case studies are updated when new outcomes data becomes available. Strategy to Ship publishes daily intelligence signals every weekday morning.',
   },
 ];
 
@@ -67,7 +67,7 @@ export default function EditorialPolicyPage() {
           <p>
             The Enso Labs editorial policy is the set of sourcing, review, and
             publication standards that govern all content on ensolabs.ai and
-            signal2noise. Every article, case study, and insight published by
+            Strategy to Ship. Every article, case study, and insight published by
             the studio is written and reviewed by Sav Banerjee, Founder &amp;
             Principal of Enso Labs — an Anthropic-certified, Google AI-certified,
             and OpenAI-certified practitioner with 15+ years of enterprise
@@ -77,7 +77,7 @@ export default function EditorialPolicyPage() {
             Primary sources include Anthropic, Google, and OpenAI documentation,
             peer-reviewed research, regulatory filings, and first-party data
             from our own production systems — including the Enso Trading Terminal
-            and the signal2noise daily intelligence engine. Content is reviewed
+            and the Strategy to Ship daily intelligence engine. Content is reviewed
             quarterly for accuracy and updated when the underlying technology or
             regulatory landscape shifts.
           </p>
@@ -89,7 +89,7 @@ export default function EditorialPolicyPage() {
           </p>
           <p>
             Financial content on this site — including references to the Enso
-            Trading Terminal and signal2noise market signals — is not investment
+            Trading Terminal and Strategy to Ship market signals — is not investment
             advice.
           </p>
           <p>

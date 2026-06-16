@@ -73,7 +73,7 @@ export default function BuiltWithAiPage() {
         <h1>Built with AI: How Enso Labs Shipped a Production AI Site in 24 Hours</h1>
         <p className="sub-head">
           How we shipped a production website — 71 JSON-LD schemas, MCP
-          endpoint, signal2noise integration, dynamic OG images, GA4 event
+          endpoint, Strategy to Ship integration, dynamic OG images, GA4 event
           tracking, and mobile responsive design — in 24 hours.
         </p>
       </section>
@@ -132,7 +132,7 @@ export default function BuiltWithAiPage() {
               and Claude integrations.
             </li>
             <li>
-              <strong>signal2noise intelligence:</strong> The studio&rsquo;s
+              <strong>Strategy to Ship intelligence:</strong> The studio&rsquo;s
               news-intelligence engine, published natively on the Insights page
               (ensolabs.ai/insights) — daily AI market signals, scored and curated.
             </li>
@@ -143,7 +143,7 @@ export default function BuiltWithAiPage() {
             </li>
             <li>
               <strong>GA4 event tracking:</strong> Form submissions, share
-              button clicks, signal2noise feed interactions, and page
+              button clicks, Strategy to Ship feed interactions, and page
               engagement — all tracked with custom events, not just pageviews.
             </li>
             <li>

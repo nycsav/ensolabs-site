@@ -28,6 +28,6 @@ That runs all three checks and writes a dated report to `drafts/seo-monitor/`. Y
 The daily morning SEO engine now also runs the voice lint each day and the entity-drift scout weekly (Fridays). So most weeks you just read the report. Run `/seo-monitor` manually any time you want a fresh check — e.g. after publishing a new article or updating LinkedIn.
 
 ## The rules it follows
-- Studio language is always "we", never "I" — except signal2noise insight articles, which are intentional first-person founder field notes (those are flagged for review, not corrected).
+- Studio language is always "we", never "I" — except Strategy to Ship insight articles, which are intentional first-person founder field notes (those are flagged for review, not corrected).
 - The Gore client stays confidential ("Fortune 500 manufacturer").
 - External profiles are yours to edit — the agent only drafts the text.

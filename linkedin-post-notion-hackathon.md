@@ -15,7 +15,7 @@ Three things we proved building on Notion Workers:
 
 1. Speed to deployment — zero to five deployed tools in under 24 hours. The Notion CLI and SDK handle the heavy lifting.
 2. Notion MCP changes the integration model — every job, resume, and status update stored as structured Notion pages, instantly accessible to any MCP-compatible agent.
-3. Design patterns transfer — we ported intelligence patterns from signal2noise (our market intelligence platform) to Notion Workers in hours, not weeks.
+3. Design patterns transfer — we ported intelligence patterns from Strategy to Ship (our market intelligence platform) to Notion Workers in hours, not weeks.
 
 This is the same pattern we apply at Enso Labs across every enterprise engagement: decompose the workflow, insert AI where it creates the most leverage, keep humans in the loop where judgment matters.
 

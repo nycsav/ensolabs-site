@@ -58,7 +58,7 @@ export function Footer() {
         </div>
 
         <p style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--fg-3)', marginTop: '12px' }}>
-          Designed with Claude Design · Built with Claude Code · Intelligence by signal2noise · Human-in-the-loop: Sav Banerjee
+          Designed with Claude Design · Built with Claude Code · Intelligence by Strategy <span style={{ color: '#F0512E' }}>→</span> Ship · Human-in-the-loop: Sav Banerjee
         </p>
       </div>
     </footer>

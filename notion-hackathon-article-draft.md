@@ -56,7 +56,7 @@ This is not about cost optimization. It is about matching model capability to ta
 
 ## Source-Tier Ranking: Not All Applications Are Equal
 
-We ported the source-tier ranking system from [signal2noise](https://signals.ensolabs.ai), our market intelligence platform, into the career agent. Every job is classified by acquisition channel: Tier 1 (direct referral, ~50% interview rate) through Tier 5 (cold apply, ~2%). This changes the agent's behavior — a Tier 1 referral with a 60 match score still gets priority over a Tier 5 cold apply at 85.
+We ported the source-tier ranking system from [Strategy to Ship](https://ensolabs.ai/insights), our market intelligence platform, into the career agent. Every job is classified by acquisition channel: Tier 1 (direct referral, ~50% interview rate) through Tier 5 (cold apply, ~2%). This changes the agent's behavior — a Tier 1 referral with a 60 match score still gets priority over a Tier 5 cold apply at 85.
 
 The system encodes what experienced job seekers already know intuitively: **who referred you matters more than how perfectly your resume matches.** Source-tier ranking is a general pattern — it applies equally to sales pipelines, content distribution, and investor outreach.
 
@@ -70,7 +70,7 @@ Three observations from shipping Notion AI agents in production during the hacka
 
 **Notion MCP changes the integration model.** With [Notion MCP](https://www.notion.com/product/developer-platform), any MCP-compatible AI assistant — Claude, Codex, your own agents — can read and write Notion data natively. The career agent stores every job, resume, and status update as structured Notion pages. That data is immediately accessible to any other Notion AI agent or MCP client without additional integration work.
 
-**The design patterns transfer.** We have been running signal2noise on Firebase and Vercel for months. Porting its intelligence patterns (source-tier ranking, multi-model routing, structured output parsing) to Notion Workers took hours, not weeks. If you have built agentic systems on any modern runtime, you can build Notion AI agents.
+**The design patterns transfer.** We have been running Strategy to Ship on Firebase and Vercel for months. Porting its intelligence patterns (source-tier ranking, multi-model routing, structured output parsing) to Notion Workers took hours, not weeks. If you have built agentic systems on any modern runtime, you can build Notion AI agents.
 
 ## Fork It, Ship It, Make It Yours
 

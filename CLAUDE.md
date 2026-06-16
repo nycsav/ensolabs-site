@@ -24,7 +24,7 @@ git add -A && git commit -m "description" && git push origin master
 ```
 
 ## Pages
-- app/page.tsx — Home (hero, 3 pillars, proof metrics, signal2noise feed, methodology, clients, CTA)
+- app/page.tsx — Home (hero, 3 pillars, proof metrics, Strategy to Ship feed, methodology, clients, CTA)
 - app/services/page.tsx — Services (3 tracks + 6 FAQs with schema)
 - app/services/claude-managed-services/page.tsx — Claude Managed Services offering
 - app/work/page.tsx — Work overview (4 case study cards)
@@ -33,7 +33,7 @@ git add -A && git commit -m "description" && git push origin master
   - /work/heller — AI Center of Excellence for Pharma
   - /work/trading-terminal — Enso Trading Terminal
   - /work/enterprise-ai — Enterprise AI Enablement
-- app/insights/page.tsx — Insights (LIGHT/WARM theme) + signal2noise embed + articles
+- app/insights/page.tsx — Insights (LIGHT/WARM theme) + Strategy to Ship embed + articles
 - app/insights/[slug]/page.tsx — Individual insight articles (11 articles)
 - app/industries/financial-services/page.tsx — Financial Services vertical page
 - app/about/page.tsx — Studio story + Sav bio (third person) + headshot
@@ -53,7 +53,7 @@ git add -A && git commit -m "description" && git push origin master
 - components/ThemeMount.tsx — Theme initialization on mount
 - components/Reveal.tsx — Scroll-triggered reveal animations
 - components/OgFrame.tsx — OG image frame component
-- components/S2NLink.tsx — signal2noise link/embed component
+- components/S2NLink.tsx — Strategy to Ship link/embed component
 
 ## Key Libraries
 - lib/schema.ts — All JSON-LD builders (Organization, Person, ProfessionalService, Product, FAQ, LocalBusiness, Article, Breadcrumb, WebSite, ContactPoint, Blog)
@@ -126,11 +126,11 @@ git add -A && git commit -m "description" && git push origin master
 ## Analytics
 - GA4: G-5N15QMQ962 (ensolabs.ai — single property)
 - Vercel Analytics: enable in dashboard
-- Event tracking: form_submit, share clicks, signal2noise feed clicks
+- Event tracking: form_submit, share clicks, Strategy to Ship feed clicks (GA event_category "Strategy to Ship")
 - (G-CJ18GXXPMX for signals.ensolabs.ai is RETIRED)
 
 ## Weekly Maintenance Tasks
-- [ ] Verify the signal2noise / Live Intelligence section on /insights is current
+- [ ] Verify the Strategy to Ship / Live Intelligence section on /insights is current
 - [ ] Check all pages load (6 main + 4 case studies + insights)
 - [ ] Review GA4 traffic for patterns
 - [ ] Draft 3 LinkedIn posts (Mon/Wed/Fri)
@@ -139,13 +139,13 @@ git add -A && git commit -m "description" && git push origin master
 - [ ] Check OG image previews when sharing links
 
 ## AI Attribution (footer)
-"Designed with Claude Design · Built with Claude Code · Intelligence by signal2noise · Human-in-the-loop: Sav Banerjee"
+"Designed with Claude Design · Built with Claude Code · Intelligence by Strategy → Ship · Human-in-the-loop: Sav Banerjee" (the → arrow renders in Ship Coral #F0512E)
 
 ## Built With
 - Strategy & Research: Claude Chat (Opus 4.6)
 - Visual Prototyping: Claude Design
 - Production Code: Claude Code
-- Content Intelligence: signal2noise (PlannerAPI)
+- Content Intelligence: Strategy to Ship (formerly signal2noise; PlannerAPI)
 - Browser Automation: Claude in Chrome
 - File Operations: Desktop Commander
 - Deployment: Vercel (auto-deploy from GitHub)
