@@ -385,6 +385,16 @@ footer {
   display: block;
   opacity: 0.95;
 }
+.foot-affil {
+  display: flex; align-items: center; gap: 18px;
+  margin-bottom: 40px; flex-wrap: wrap;
+}
+.foot-affil-label {
+  font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.foot-affil a { color: var(--fg-2); font-size: 14px; transition: color .2s ease; }
+.foot-affil a:hover { color: var(--teal); }
 .foot-bottom {
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   font-family: var(--mono); font-size: 12px; color: var(--fg-3);
