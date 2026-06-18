@@ -500,7 +500,7 @@ def og_claude_partner():
     <text x="645" y="210" font-family="monospace" font-size="12" fill="{TEAL}" opacity="0.8">$ show-me-the-system-you-shipped</text>
     <text x="645" y="235" font-family="monospace" font-size="11" fill="{OFF_WHITE}" opacity="0.4">Loading production deployment...</text>
     <text x="645" y="265" font-family="monospace" font-size="11" fill="{TEAL}" opacity="0.5">✓ Trading Terminal — 12mo uptime</text>
-    <text x="645" y="285" font-family="monospace" font-size="11" fill="{TEAL}" opacity="0.5">✓ signal2noise — daily since 2025</text>
+    <text x="645" y="285" font-family="monospace" font-size="11" fill="{TEAL}" opacity="0.5">✓ Strategy to Ship — daily since 2025</text>
     <text x="645" y="305" font-family="monospace" font-size="11" fill="{TEAL}" opacity="0.5">✓ MCP servers — 6 in production</text>
     <text x="645" y="335" font-family="monospace" font-size="11" fill="{AMBER}" opacity="0.6">The only credential that matters.</text>
     <rect x="645" y="350" width="8" height="16" fill="{TEAL}" opacity="0.6">

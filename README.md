@@ -31,7 +31,7 @@ This is not a landing page. It is a full studio presence with:
 - **MCP endpoint** for AI agent and LLM discoverability
 - **AEO/GEO optimization** for AI answer engine and generative search inclusion
 - **Dynamic OG image generation** for every case study and article
-- **Live signal2noise feed** embedded from [signals.ensolabs.ai](https://signals.ensolabs.ai)
+- **Live Strategy to Ship feed** published natively on the [Insights page](https://ensolabs.ai/insights)
 
 ---
 
@@ -52,7 +52,7 @@ flowchart TD
     C --> C2["/work/heller\nAI Center of Excellence"]
     C --> C3["/work/trading-terminal\nEnso Trading Terminal"]
     C --> C4["/work/enterprise-ai\nEnterprise AI Enablement"]
-    D --> D1["signal2noise\nLive Feed Embed"]
+    D --> D1["Strategy to Ship\nLive Intelligence"]
     D --> D2["11+ Long-form\nEssays"]
 ```
 
@@ -68,8 +68,8 @@ flowchart TD
 | **AEO optimization** | Definition-lead sentences on every page engineered for AI answer engine extraction |
 | **GEO optimization** | Structured for inclusion in Perplexity, ChatGPT, Gemini, and Claude-generated answers |
 | **RSS + sitemap** | Auto-generated from content data layer (25+ URLs) |
-| **GA4 event tracking** | Form submissions, share clicks, signal2noise feed interactions |
-| **signal2noise feed** | Live intelligence feed embedded from signals.ensolabs.ai |
+| **GA4 event tracking** | Form submissions, share clicks, Strategy to Ship feed interactions |
+| **Strategy to Ship feed** | Live intelligence published natively on /insights |
 | **Mobile responsive** | Full-screen nav overlay, fluid typography (OKLCH), card reflow across breakpoints |
 
 ---
@@ -85,7 +85,7 @@ flowchart TD
 | AEO / GEO | Definition-lead sentences, MCP endpoint, LLM crawler access via robots.txt |
 | Analytics | GA4, custom event tracking |
 | Forms | Formspree |
-| Intelligence | signal2noise — live AI signal feed |
+| Intelligence | Strategy to Ship — live AI signal feed |
 
 ---
 
@@ -98,7 +98,7 @@ This repo is proof that AI-native delivery is production-ready today.
 | Strategy & Research | Claude (Opus 4) | Competitive analysis, positioning, JSON-LD schema planning, SEO and AEO strategy |
 | Visual Prototyping | Claude Design | Layout, color system (OKLCH), typography, responsive breakpoints |
 | Production Code | Claude Code | Every line of Next.js, TypeScript, and CSS — pair-programmed to production |
-| Content Intelligence | signal2noise | Daily signals powering the Insights page |
+| Content Intelligence | Strategy to Ship | Daily signals powering the Insights page |
 | Browser Automation | Claude in Chrome | Vercel config, GSC verification, DNS management |
 | Deployment | Vercel | Auto-deploy from GitHub push |
 
@@ -154,6 +154,6 @@ Proprietary. All rights reserved by Enso Labs.
 ---
 
 <p align="center">
-  <strong>Designed with Claude Design · Built with Claude Code · Intelligence by signal2noise</strong><br/>
+  <strong>Designed with Claude Design · Built with Claude Code · Intelligence by Strategy to Ship</strong><br/>
   <sub>Human-in-the-loop: <a href="https://linkedin.com/in/savbanerjee">Sav Banerjee</a> · NYC</sub>
 </p>

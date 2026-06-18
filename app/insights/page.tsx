@@ -85,9 +85,9 @@ export default function InsightsIndex() {
             <div className="s2n-grid">
               {[
                 { kind: 'AI SIGNAL', date: 'JUN 6', source: 'Google DeepMind', headline: 'The new Managed Agents API from Google DeepMind provisions a full agent — reasoning, tool use, sandboxed code execution — in a single call, collapsing weeks of custom harness engineering. Multi-agent orchestration is becoming the enterprise default.' },
-                { kind: 'STRATEGY SIGNAL', date: 'JUN 4', source: 'signal2noise', headline: 'Google I/O 2026 reads as an agent-first platform bet — Gemini Omni, Antigravity 2.0, and Managed Agents on Gemini 3.5 Flash. DeepMind now ships product, not just research papers.' },
+                { kind: 'STRATEGY SIGNAL', date: 'JUN 4', source: 'Strategy to Ship', headline: 'Google I/O 2026 reads as an agent-first platform bet — Gemini Omni, Antigravity 2.0, and Managed Agents on Gemini 3.5 Flash. DeepMind now ships product, not just research papers.' },
                 { kind: 'FINANCIAL SIGNAL', date: 'JUN 2', source: 'Anthropic', headline: 'Pre-built financial agents — pitchbook builders, credit-memo drafters, statement auditors — commoditize the basics. The durable moat moves to firm-specific signal intelligence and risk models.' },
-                { kind: 'AEO SIGNAL', date: 'MAY 30', source: 'signal2noise', headline: 'Answer-engine optimization is compounding: brands structured for machine extraction win citations across ChatGPT, Perplexity, Claude, and Google AI Overviews as AI-search referral traffic climbs.' },
+                { kind: 'AEO SIGNAL', date: 'MAY 30', source: 'Strategy to Ship', headline: 'Answer-engine optimization is compounding: brands structured for machine extraction win citations across ChatGPT, Perplexity, Claude, and Google AI Overviews as AI-search referral traffic climbs.' },
               ].map((s) => (
                 <div key={s.headline} className="s2n-card">
                   <div className="s2n-meta">

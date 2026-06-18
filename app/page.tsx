@@ -333,7 +333,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* LIVE INTELLIGENCE — signal2noise */}
+      {/* LIVE INTELLIGENCE — Strategy to Ship */}
       <section data-screen-label="04.5 Live intelligence">
         <div className="shell">
           <div className="section-head">
@@ -342,7 +342,7 @@ export default function HomePage() {
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">
-                Live from <span className="accent">signal2noise</span>.
+                Live from Strategy <span style={{ color: '#F0512E' }}>→</span> Ship.
               </h2>
               <p className="lede" style={{ marginTop: 24 }}>
                 Daily AI intelligence for marketing strategists. Powered by Enso Labs.

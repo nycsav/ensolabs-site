@@ -16,7 +16,7 @@ const EVENTS: Ev[] = [
   { d: '2026-06-04', t: '11:30 AM', n: 'AI Agents: How To Keep Pace', v: '18 E 50th St', score: 6, why: "CX leaders adopting agents (Fin/Intercom orbit). Rec: open with the eval-gap wedge — 'how do you measure agent quality?' → Research Desk demo." },
   { d: '2026-06-04', t: '12:00 PM', n: 'AI Strategy Summit (Section) · virtual', v: 'Virtual', score: 5, why: 'Virtual exec summit — learning only, clashes with the OpenAI Lounge. Rec: skip live, catch the replay.' },
   { d: '2026-06-04', t: '1:00 PM', n: 'Autonomously Improving Agent Swarms (W&B)', v: 'The Bench, 49 Elizabeth St', score: 7, why: 'ON THE LIST. Agent-swarm + eval crowd. Rec: W&B Weave sits right next to Signal Lens scoring — pitch the eval-rubric-as-product angle to the hosts.', status: 'confirmed' },
-  { d: '2026-06-04', t: '1:00 PM', n: 'Anthropic Claude Cowork webinar · virtual', v: 'Virtual', score: 5, why: 'Virtual; useful for your own Cowork ops. Rec: mine it for a signal2noise post.' },
+  { d: '2026-06-04', t: '1:00 PM', n: 'Anthropic Claude Cowork webinar · virtual', v: 'Virtual', score: 5, why: 'Virtual; useful for your own Cowork ops. Rec: mine it for a Strategy to Ship post.' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Fin in Practice', v: '18 E 50th St', score: 6, why: 'CX practitioners mid-deployment — lower seniority than 2x AI tonight. Rec: skip if heading to OpenAI Lounge; same Fin orbit at 5:30.' },
   { d: '2026-06-04', t: '2:00 PM', n: 'OpenAI Builder Lounge', v: 'OpenAI HQ, 295 Lafayette St', score: 9, why: '⚠️ DOORS CLOSE 2:30 — arrive 2:00. Codex + OpenAI AMA + credits. Partiful mirror still says pending, but your Visitly pre-reg is the real ticket. Rec: walk in with Signal Lens running on Codex — that IS your "built with Codex" story; fire Cloud tasks live while you talk to staff.' },
   { d: '2026-06-04', t: '2:00 PM', n: 'Shipping GTM Workflows w/ Vercel · virtual', v: 'Virtual', score: 4, why: 'Vercel GTM webinar — virtual learning. Rec: skip, replay.' },
@@ -29,13 +29,13 @@ const EVENTS: Ev[] = [
   { d: '2026-06-05', t: '11:00 AM', n: 'a16z Speedrun AI Faire', v: 'NYC', score: 8, why: '★ a16z Speedrun community — best investor + founder density of the week, but you are WAITLISTED. Rec: push hard for approval; if in, this is your top VC-pipeline room.', status: 'waitlist' },
   { d: '2026-06-05', t: '3:00 PM', n: 'Vibe Code & Tea: build with Gemini', v: 'Cha, 51 Essex St', score: 4, why: 'Casual Gemini build session. Rec: optional — only if a real lead is going.', status: 'pending' },
   // Sat Jun 6
-  { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC', score: 8, why: "★ BUILD DAY — you're accepted (direct host). AEO/GEO is signal2noise's exact turf. Rec: ship a marketing-intel agent on the Signal Lens scaffold and write it up as a signal2noise case study." },
+  { d: '2026-06-06', t: '9:00 AM', n: 'Profound Marketing Engineering Hackathon', v: 'NYC', score: 8, why: "★ BUILD DAY — you're accepted (direct host). AEO/GEO is Strategy to Ship's exact turf. Rec: ship a marketing-intel agent on the Signal Lens scaffold and write it up as a Strategy to Ship case study." },
   { d: '2026-06-06', t: '9:00 AM', n: 'Multimodal Hacks: Interface for Agents', v: 'Betaworks, 29 Little W 12th', score: 6, why: 'Agent-interface hackathon — WAITLISTED and clashes with Profound. Rec: Profound wins; drop this.', status: 'waitlist' },
   { d: '2026-06-06', t: '7:00 PM', n: 'do you want the house tour?', v: '447 E 9th St', score: 2, why: '👍 Going — personal/social house party, not Enso pipeline. Rec: downtime, enjoy it.', status: 'confirmed' },
   // Sun Jun 7
   { d: '2026-06-07', t: '9:30 AM', n: 'vibeFORWARD: M-2', v: 'NYC', score: 5, why: '👍 Going. Builder showcase — casual. Rec: low-key reps; scout builders to feature on Insights.', status: 'confirmed' },
   // Tue Jun 9
-  { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St', score: 8, why: "★ Technical marketers + WorkOS / Bond AI hosts — signal2noise's exact audience. Rec: your warmest GTM-engineering pipeline room; lead with the signal2noise angle." },
+  { d: '2026-06-09', t: '6:00 PM', n: 'Marketing Engineer Meetup', v: 'WorkOS, 56 Greene St', score: 8, why: "★ Technical marketers + WorkOS / Bond AI hosts — Strategy to Ship's exact audience. Rec: your warmest GTM-engineering pipeline room; lead with the Strategy to Ship angle." },
   // Wed Jun 10
   { d: '2026-06-10', t: '2:00 PM', n: 'Build AI Forecasts w/ BigQuery + Agents · virtual', v: 'Virtual', score: 4, why: 'Google Cloud webinar — virtual learning. Rec: replay; mine for FS-forecasting content.' },
   { d: '2026-06-10', t: '5:30 PM', n: 'Codex Lab: New York', v: 'The Farm SoHo, 447 Broadway', score: 7, why: 'Hands-on AI-native eng, OpenAI partner — builder peers. Rec: continuity from the Builder Lounge; deepen the Codex story.' },

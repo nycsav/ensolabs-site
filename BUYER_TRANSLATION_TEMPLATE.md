@@ -1,7 +1,7 @@
-# Buyer-Translation Pull-Quote — Required for Every signal2noise Article
+# Buyer-Translation Pull-Quote — Required for Every Strategy to Ship Article
 
 ## The rule
-Every signal2noise article published to ensolabs.ai/insights must include a "What this means for a [BUYER PERSONA]" callout box, placed after the opening section and before the body.
+Every Strategy to Ship article published to ensolabs.ai/insights must include a "What this means for a [BUYER PERSONA]" callout box, placed after the opening section and before the body.
 
 ## Why
 Peer-engaging content ≠ pipeline. Without the buyer-translation step, articles read as founder/engineer commentary (interesting to other founders/engineers, useless to a Fortune 500 transformation leader). The pull-quote is the bridge from "what I saw" → "what this means for your $50M AI roadmap."
@@ -31,6 +31,6 @@ Peer-engaging content ≠ pipeline. Without the buyer-translation step, articles
 Until /lib/insights.ts schema supports a structured `buyerCallout` field, paste the markdown blockquote directly into the `body` array as the second item. Long-term: add a `buyerCallout: { persona, oneliner, ifThen, decisionToRevisit }` field and render via a styled `<aside>` component in /app/insights/[slug]/page.tsx.
 
 ## Where this goes in the pipeline
-signal2noise pick → article draft → **buyer-translation pull-quote (THIS STEP — non-negotiable)** → deploy → curl verify → Post Inspector pre-warm → LinkedIn.
+Strategy to Ship pick → article draft → **buyer-translation pull-quote (THIS STEP — non-negotiable)** → deploy → curl verify → Post Inspector pre-warm → LinkedIn.
 
 If the buyer translation can't be written in <5 minutes, the signal isn't ready for an article. Park it.

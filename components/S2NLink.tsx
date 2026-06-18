@@ -12,7 +12,7 @@ type Props = {
 };
 
 /**
- * Outbound link to signal2noise that fires a GA4 click event before
+ * Outbound link to Strategy to Ship that fires a GA4 click event before
  * navigation. Used inside server components (e.g. /insights) where
  * onClick handlers are not allowed.
  */
@@ -26,7 +26,7 @@ export function S2NLink({ href, children, className, style, eventLabel = 'open_f
       style={style}
       onClick={() =>
         track('click', {
-          event_category: 'signal2noise',
+          event_category: 'Strategy to Ship',
           event_label: eventLabel,
         })
       }

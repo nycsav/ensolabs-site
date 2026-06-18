@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'How is Enso Labs different from Big 4 Claude partners?',
     answer:
-      'Enso Labs is principal-led. The same senior advisor who scopes the engagement writes the MCP server and tunes the eval suite. There are no hand-offs, no account managers, and no layers between the client and the builder. We also run Claude-powered production systems ourselves — the Enso Trading Terminal, signal2noise, and MCP integrations — so every recommendation has been tested in our own infrastructure first.',
+      'Enso Labs is principal-led. The same senior advisor who scopes the engagement writes the MCP server and tunes the eval suite. There are no hand-offs, no account managers, and no layers between the client and the builder. We also run Claude-powered production systems ourselves — the Enso Trading Terminal, Strategy to Ship, and MCP integrations — so every recommendation has been tested in our own infrastructure first.',
   },
   {
     question: 'What Claude certifications does Enso Labs hold?',
@@ -168,7 +168,7 @@ export default function ClaudeManagedServicesPage() {
             </li>
             <li>
               <strong>Builder credibility:</strong> We run our own production
-              Claude infrastructure — the Enso Trading Terminal, signal2noise,
+              Claude infrastructure — the Enso Trading Terminal, Strategy to Ship,
               MCP servers in live environments. When we advise on architecture,
               we are describing systems we operate.
             </li>

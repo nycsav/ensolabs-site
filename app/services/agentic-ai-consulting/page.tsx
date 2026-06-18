@@ -174,7 +174,7 @@ export default function AgenticAIConsultingPage() {
               <Link href="/work/heller">Read the case study →</Link>
             </li>
             <li>
-              <strong>signal2noise:</strong> Autonomous signal intelligence
+              <strong>Strategy to Ship:</strong> Autonomous signal intelligence
               engine processing financial, AI, and technology signals daily —
               Claude-powered analysis with Perplexity-sourced research.{' '}
               <Link href="/insights">View on insights →</Link>

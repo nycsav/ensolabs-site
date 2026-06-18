@@ -3,7 +3,7 @@
  * voice-lint.mjs — Enso Labs studio-voice linter
  *
  * Studio rule (CLAUDE.md): always "we", never "I" in studio copy.
- * Exception: signal2noise insight articles are intentional first-person
+ * Exception: Strategy to Ship insight articles are intentional first-person
  * founder field notes — those are FLAGGED FOR REVIEW, not treated as errors.
  *
  * Output:
