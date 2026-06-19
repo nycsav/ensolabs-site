@@ -26,7 +26,8 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - https://ensolabs.ai/work/trading-terminal — Autonomous Trading Terminal
 - https://ensolabs.ai/work/enterprise-ai — Enterprise AI Enablement Programs
 
-## Insights (15 articles)
+## Insights (16 articles)
+- https://ensolabs.ai/insights/claude-managed-agents-strategy-to-ship — Claude's Agents Now Learn, Grade Themselves, and Split the Work: Defining 'Good' Is the New Bottleneck [Claude Managed Agents, Agentic AI, Anthropic, Multi-Agent Orchestration, AI Outcomes, AI Memory, Enterprise AI, Strategy to Ship]
 - https://ensolabs.ai/insights/google-io-hackathon-managed-agents-omni-antigravity — Inside the Google I/O 2026 Hackathon: 150 Builders, Managed Agents, and the New Google Agent Stack [Google I/O, Gemini Omni, Antigravity 2.0, Managed Agents, Google DeepMind, Cerebral Valley, AI Agents, Hackathon]
 - https://ensolabs.ai/insights/google-io-after-hours-deepmind-strategy-signal — Google I/O After-Hours: Two Nights With Google DeepMind and the Strategic Signal Behind the Demos [Google I/O, Google DeepMind, Cerebral Valley, AI Strategy, Antigravity 2.0, Managed Agents, Fortune 500]
 - https://ensolabs.ai/insights/frontier-ai-routing-us-financial-services — Codex 5.5 or Fable 5? Choosing the Right Frontier Model, Build by Build [Frontier Models, Fable 5, Claude Opus 4.8, GPT-5.5, Codex, Gemini, Model Routing, Forward-Deployed, Enterprise AI]
@@ -68,6 +69,8 @@ For complete article text and detailed service descriptions, see: https://ensola
 
 ## Contact
 - https://ensolabs.ai
+- https://ensolabs.ai/about
+- https://ensolabs.ai/contact
 - sav@ensopartners.co
 - https://linkedin.com/in/savbanerjee
 - https://github.com/nycsav
