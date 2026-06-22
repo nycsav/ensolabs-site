@@ -185,7 +185,7 @@ export default function NewYorkLocationPage() {
               </Link>
             </li>
             <li>
-              <Link href="/work/gore">
+              <Link href="/work/ai-market-intelligence">
                 Advanced Manufacturing — AI market-intelligence platform for a Fortune 500 manufacturer <Arrow />
               </Link>
             </li>

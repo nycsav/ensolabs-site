@@ -208,7 +208,7 @@ export default function ClaudeManagedServicesPage() {
               knowledge encoding system for a Fortune 500 manufacturer, with
               Claude-powered relevance ranking and scientist-in-the-loop trust
               architecture.{' '}
-              <Link href="/work/gore">Read the case study →</Link>
+              <Link href="/work/ai-market-intelligence">Read the case study →</Link>
             </li>
             <li>
               <strong>AI Center of Excellence (Pharma):</strong> MLR-compliant

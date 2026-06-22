@@ -13,7 +13,7 @@ export const OG_COLORS = {
 export const OG_SIZE = { width: 1200, height: 630 } as const;
 
 type Options = {
-  /** Top-left eyebrow (uppercase, monospaced look). e.g. "CASE STUDY · GORE" */
+  /** Top-left eyebrow (uppercase, monospaced look). e.g. "CASE STUDY · CLIENT" */
   eyebrow: string;
   /** Headline rendered large. */
   title: string;

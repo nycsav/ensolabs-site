@@ -6,7 +6,7 @@
 
 ```
 You are designing for STRATEGY TO SHIP — the media publishing brand of Enso Labs (ensolabs.ai/insights).
-It is the product formerly called signal2noise. It is a SEPARATE brand from Enso Labs the studio:
+It is Enso Labs' media publishing engine (rebranded June 2026). It is a SEPARATE brand from Enso Labs the studio:
 Enso = cool, structural, mission-control (navy #0d1321 + electric teal #5ce0d2, Inter Tight).
 Strategy to Ship = warm, editorial, human. "Where strategy becomes production." Media × advertising × AI. Modern, but human.
 
@@ -47,4 +47,4 @@ Acknowledge in one sentence that you've loaded the Strategy to Ship system, then
 - **Same standards every time:** paste the prompt → every session produces consistent OG/carousel/header output across LinkedIn, X, Substack, Medium, and the site.
 - **Steerable:** to evolve the brand, edit `tokens.css` + the brief once; everything regenerates from it.
 
-*Companion to `SIGNAL2NOISE_PIPELINE_2_0_KICKOFF.md` (the writing pipeline). This one is the design/branding pipeline.*
+*Companion to `STRATEGY TO SHIP_PIPELINE_2_0_KICKOFF.md` (the writing pipeline). This one is the design/branding pipeline.*

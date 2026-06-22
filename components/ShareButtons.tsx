@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { track } from '@/lib/gtag';
 
 type Props = {
-  /** Path-only URL (e.g. /work/gore). The full URL is built at click time
+  /** Path-only URL (e.g. /work/ai-market-intelligence). The full URL is built at click time
    *  using window.location.origin so this works on preview + custom domains. */
   path: string;
   /** Title used as the social share copy (LinkedIn, X, email subject). */

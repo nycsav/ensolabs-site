@@ -1,13 +1,13 @@
 # Strategy to Ship — Brand & Design System (v1)
 
 ### A media publishing brand from Enso Labs
-*Design brief and principles — June 2026. Supersedes the `signal2noise` brand. Companion to `design-philosophy.md` (Enso Labs "Systematic Resonance").*
+*Design brief and principles — June 2026. Supersedes the legacy brand. Companion to `design-philosophy.md` (Enso Labs "Systematic Resonance").*
 
 ---
 
 ## 0. What this is
 
-**Strategy to Ship** is the name and identity of Enso Labs' media publishing engine — the product previously developed as `signal2noise` / `PlannerAPI`. It is the system that turns raw inputs (frontier news + uploaded docs + financial data) into ranked signals, an insight, and platform-native stories, with a human at the approval gate.
+**Strategy to Ship** is the name and identity of Enso Labs' media publishing engine — the product previously developed as `PlannerAPI`. It is the system that turns raw inputs (frontier news + uploaded docs + financial data) into ranked signals, an insight, and platform-native stories, with a human at the approval gate.
 
 This document defines a **separate-but-related brand identity** for that product: its own name, logotype, type, color, imagery, voice, and format templates — endorsed by, but visually distinct from, Enso Labs. Enso Labs is the **studio** (cool, structural, mission-control). Strategy to Ship is the **publication** (warm, editorial, human). They are family; they are not the same brand.
 
@@ -44,7 +44,7 @@ Enso Labs is *Systematic Resonance* — mission control at midnight. Strategy to
 ## 3. Logotype
 
 - **Primary wordmark:** `Strategy → Ship` set in **Lora** (medium/semibold), with the **→ in Ship Coral**. The arrow is the only colored element — it is the signal.
-- **Lowercase handle:** `strategy → ship` — for social handles, URLs, casual placements (mirrors the old `signal2noise` lowercase ease).
+- **Lowercase handle:** `strategy → ship` — for social handles, URLs, casual placements (mirrors the old `Strategy to Ship` lowercase ease).
 - **Monogram:** **`S→S`** — a compact mark for avatars, favicons, stamps. The arrow stays coral.
 - **Endorsement lockup:** wordmark + a hairline + mono `FROM ENSO LABS`.
 - **Clear space & scale:** minimum height 18px for the wordmark; the monogram must survive 32px. The arrow's coral must never drop out — it is the recognition cue.
@@ -63,7 +63,7 @@ A warm, paper-and-ink editorial palette with one decisive accent. Distinct from 
 | **Ink** | `#1E1813` | Body text; the dark ground for cards/OG |
 | **Ink Deep** | `#16110B` | Deepest ground for social/OG cards |
 | **Ship Coral** | `#F0512E` | The signature signal — arrow, stamps, pull-quotes, CTAs, "today" |
-| **Ledger Amber** | `#E0A23C` | Secondary warm accent (heritage nod to signal2noise) |
+| **Ledger Amber** | `#E0A23C` | Secondary warm accent (heritage warm accent) |
 | **Slate** | `#79705F` | Muted metadata, secondary text |
 | **Line** | `#DDD2BC` | Hairlines, dividers, table borders |
 | **Enso Teal** | `#5CE0D2` | Parent-brand link only — *"from Enso Labs"*, used sparingly |
@@ -119,14 +119,14 @@ One DNA, every surface. Each template is specified in the style guide.
 
 ---
 
-## 9. Migration: signal2noise → Strategy to Ship (staged)
+## 9. Migration: Strategy to Ship → Strategy to Ship (staged)
 
 Do **not** sweep the codebase yet — lock the brand first, then migrate in order:
 
 1. **Lock** name, logotype, tokens (this doc + style guide). ← *we are here*
 2. **New assets:** OG templates, wordmark, favicon/monogram.
 3. **Code:** add `brand/strategy-to-ship/tokens.css`; introduce a `.theme-sts` (or fold into the existing `.theme-light` Insights theme).
-4. **Content/site:** rename `signal2noise` → `Strategy to Ship` in `lib/site.ts`, `/insights`, components, RSS, schema, `CLAUDE.md`. Keep the `signal2noise` 301 history; never resurrect `signals.ensolabs.ai`.
+4. **Content/site:** rename `Strategy to Ship` → `Strategy to Ship` in `lib/site.ts`, `/insights`, components, RSS, schema, `CLAUDE.md`. Keep the `Strategy to Ship` 301 history; never resurrect `signals.ensolabs.ai`.
 5. **Pipelines:** rename the editorial-engine + scheduled tasks; update the publishing brief.
 
 A tracked find-and-replace checklist ships with step 4 when you approve it.

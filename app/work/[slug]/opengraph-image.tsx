@@ -8,8 +8,8 @@ export const alt = 'Enso Labs Case Study';
 // Mirror of the static slugs in app/work/[slug]/page.tsx.
 // Keep these in sync — both files are tiny so the duplication is fine.
 const CASES: Record<string, { title: string; subtitle: string; sector: string }> = {
-  gore: {
-    title: 'Gore M2 Intelligence Hub',
+  'ai-market-intelligence': {
+    title: 'AI Market Intelligence Platform',
     subtitle: 'A market-radar that scientists trust.',
     sector: 'Materials',
   },

@@ -146,7 +146,7 @@ export default function NytwPage() {
         Enso Labs is a principal-led <Link href="/services" style={{ color: 'var(--teal)' }}>AI transformation consulting firm</Link> based in NYC. I&rsquo;m Sav Banerjee, the founder — here&rsquo;s my confirmed NY Tech Week schedule. If any of these overlap with yours, come say hi.
       </p>
       <p style={{ color: 'var(--fg-3)', fontSize: 14.5, borderLeft: '2px solid var(--teal-dim)', paddingLeft: 14, maxWidth: 560, margin: '0 0 22px' }}>
-        We build production agentic systems and AI strategy for Fortune 500 companies — proven inside a <Link href="/work/gore" style={{ color: 'var(--teal)' }}>Fortune 500 manufacturer</Link> and a <Link href="/work/heller" style={{ color: 'var(--teal)' }}>pharma agency</Link>. Certified by Anthropic, Google AI, and OpenAI.
+        We build production agentic systems and AI strategy for Fortune 500 companies — proven inside a <Link href="/work/ai-market-intelligence" style={{ color: 'var(--teal)' }}>Fortune 500 manufacturer</Link> and a <Link href="/work/heller" style={{ color: 'var(--teal)' }}>pharma agency</Link>. Certified by Anthropic, Google AI, and OpenAI.
       </p>
 
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 22 }}>

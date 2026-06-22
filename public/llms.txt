@@ -21,7 +21,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - Enso Trading Terminal (https://ensolabs.ai/work/trading-terminal): Autonomous financial AI agents, signal intelligence, options trading
 
 ## Case Studies
-- https://ensolabs.ai/work/gore — AI Market Intelligence Platform (Fortune 500 manufacturer)
+- https://ensolabs.ai/work/ai-market-intelligence — AI Market Intelligence Platform (Fortune 500 manufacturer)
 - https://ensolabs.ai/work/heller — AI Center of Excellence for Pharma
 - https://ensolabs.ai/work/trading-terminal — Autonomous Trading Terminal
 - https://ensolabs.ai/work/enterprise-ai — Enterprise AI Enablement Programs
@@ -36,7 +36,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - https://ensolabs.ai/insights/claude-partner-network-boutique-implementation — Boutique Firms as Claude Implementation Partners [Claude, Anthropic, AI Consulting, Partner Network, Agentic Systems]
 - https://ensolabs.ai/insights/anthropic-financial-services-what-it-means — Anthropic's Financial AI Agents [Financial AI, Anthropic, Claude, Trading, MCP]
 - https://ensolabs.ai/insights/why-deck-only-ai-consulting-fails-production — Why Deck-Only AI Consulting Fails [AI Consulting, Strategy-to-Ship, Enterprise AI, Production AI]
-- https://ensolabs.ai/insights/gore-lens-expert-knowledge-encoding — Expert Knowledge as Toggleable Rules [AI Agents, Expert Systems, MCP, Market Intelligence]
+- https://ensolabs.ai/insights/expert-lens-knowledge-encoding — Expert Knowledge as Toggleable Rules [AI Agents, Expert Systems, MCP, Market Intelligence]
 - https://ensolabs.ai/insights/mcp-servers-new-saas-integration — MCP Servers: The New SaaS Integration Layer [MCP, Model Context Protocol, SaaS, AI Agents, Enterprise Integration]
 - https://ensolabs.ai/insights/rag-eval-harness-not-vector-store — RAG Is an Eval Problem, Not a Vector-Store Problem [RAG, Eval Harness, LLM, Production AI]
 - https://ensolabs.ai/insights/autonomous-trading-risk-as-architecture — Risk as Architecture in Autonomous Trading [Financial AI, Trading, Autonomous Systems, Risk Architecture]

@@ -15,7 +15,7 @@ Enso Labs is an AI transformation and agentic systems studio founded by Sav Bane
 - **Domain:** ensolabs.ai
 - **GitHub:** nycsav/ensolabs-site
 - **GA4:** G-5N15QMQ962
-- **Strategy to Ship:** news-intelligence/publishing brand (formerly signal2noise) published on ensolabs.ai/insights (standalone signals.ensolabs.ai DEPRECATED — see Overview)
+- **Strategy to Ship:** news-intelligence/publishing brand published on ensolabs.ai/insights (standalone signals.ensolabs.ai DEPRECATED — see Overview)
 
 ## Deploy
 ```bash
@@ -74,7 +74,6 @@ git add -A && git commit -m "description" && git push origin master
 - No client names without explicit approval (the /work/gore case study client is CONFIDENTIAL — always use "Global Materials Manufacturer" or "Fortune 500 manufacturer", never the actual company name)
 - Strategy to Ship brand rules: wordmark is "Strategy → Ship" (Lora serif), monogram is "S→S", the arrow glyph → is ALWAYS Ship Coral #F0512E (never recolored), lowercase handle "strategy → ship" allowed for social/URLs
 - "Powered by Enso Labs" close on all Strategy to Ship content
-- signal2noise is the historical name (always lowercase) — do NOT use it in new customer-facing work
 - Canonical domains: ensolabs.ai (never www.ensolabs.ai or ensopartners.co)
 
 ## SEO / AEO / GEO
@@ -91,7 +90,7 @@ git add -A && git commit -m "description" && git push origin master
 - LocalBusiness schema on /contact (geo: 40.7362, -73.9903)
 
 ## Strategy to Ship (news-intelligence engine)
-- The studio's news-intelligence/publishing brand — **formerly signal2noise** (renamed June 2026 via Claude Design).
+- The studio's news-intelligence/publishing brand — renamed June 2026 via Claude Design.
 - Lives natively on the Insights page (app/insights/page.tsx) — "Live Intelligence" section + curated essays. NO external iframe, NO separate domain.
 - Referenced on Home page in the Live Intelligence section (links to /insights)
 - Standalone signals.ensolabs.ai + PlannerAPI/Firebase deployment are DEPRECATED and must not be referenced or redeployed
@@ -145,7 +144,7 @@ git add -A && git commit -m "description" && git push origin master
 - Strategy & Research: Claude Chat (Opus 4.6)
 - Visual Prototyping: Claude Design
 - Production Code: Claude Code
-- Content Intelligence: Strategy to Ship (formerly signal2noise; PlannerAPI)
+- Content Intelligence: Strategy to Ship (PlannerAPI)
 - Browser Automation: Claude in Chrome
 - File Operations: Desktop Commander
 - Deployment: Vercel (auto-deploy from GitHub)
@@ -173,14 +172,14 @@ git add -A && git commit -m "description" && git push origin master
 ### Pending (immediate)
 - Renew ensolabs.ai domain at GoDaddy (expires June 5, 2026)
 - LinkedIn profile update (copy ready in Google Drive)
-- signal2noise SEO fixes (PlannerAPI repo)
+- Strategy to Ship SEO fixes (PlannerAPI repo)
 ### Pending (backlog — not yet started)
 - Create /services/agentic-ai-consulting page
 - Create /services/claude-agent-development page
 - Create /locations/new-york page
 - Create /about/sav-banerjee deep bio page
 - Create /comparisons/boutique-vs-big-4 page
-- Fix signal2noise canonical URLs, OG image, robots.txt, sitemap
+- Fix Strategy to Ship canonical URLs, OG image, robots.txt, sitemap
 
 ## Session Log — May 16, 2026
 ### Completed
@@ -188,10 +187,10 @@ git add -A && git commit -m "description" && git push origin master
 - signal2noise-notion-hackathon repo created (github.com/nycsav/signal2noise-notion-hackathon)
 - askSignal2Noise agent tool built for Notion Workers (Perplexity + Claude pipeline)
 - ensolabs-site .gitignore cleaned — resumes, cover letters, personal files excluded
-- Notion workspace updated — signal2noise HQ page polished with architecture, links, status
+- Notion workspace updated — Strategy to Ship HQ page polished with architecture, links, status
 - CLAUDE.md synced — added missing pages, components, libraries
 ### Active
-- Notion Hackathon build (May 16-17): porting signal2noise to Notion Developer Platform
+- Notion Hackathon build (May 16-17): porting Strategy to Ship to Notion Developer Platform
 - Worker deployment: askSignal2Noise tool + database sync pending first successful deploy
 ## Two Workflows
 ### Workflow 1: ensolabs.ai Website
@@ -199,7 +198,7 @@ git add -A && git commit -m "description" && git push origin master
 - Major features via Claude Code
 - Analytics review Monday mornings
 - New insight articles 2-4x per month
-### Workflow 2: Strategy to Ship Content Engine (formerly signal2noise)
+### Workflow 2: Strategy to Ship Content Engine
 - Daily signal generation published on ensolabs.ai/insights (the engine's only home)
 - Content flows to: ensolabs.ai/insights, LinkedIn (Mon/Wed/Fri), newsletter
 - No separate deploy — ships with the main site via Vercel auto-deploy

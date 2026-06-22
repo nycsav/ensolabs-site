@@ -216,8 +216,8 @@ export default function HealthcareAIPage() {
               </Link>
             </li>
             <li>
-              <Link href="/insights/gore-lens-expert-knowledge-encoding">
-                The Gore Lens: Expert Knowledge Encoding for AI Market Intelligence
+              <Link href="/insights/expert-lens-knowledge-encoding">
+                The Expert Lens: Expert Knowledge Encoding for AI Market Intelligence
               </Link>
             </li>
           </ul>

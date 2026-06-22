@@ -361,7 +361,7 @@ export default function ServicesPage() {
             <div className="reveal" data-delay="1"><h2 className="h2">Related Insights</h2></div>
           </div>
           <div className="reveal" style={{ display: 'grid', gap: 8, fontFamily: 'var(--mono)', fontSize: 13 }}>
-            <Link href="/insights/gore-lens-expert-knowledge-encoding" style={{ color: 'var(--teal)' }}>↳ The Gore Lens: Expert Knowledge Encoding for AI Market Intelligence</Link>
+            <Link href="/insights/expert-lens-knowledge-encoding" style={{ color: 'var(--teal)' }}>↳ The Expert Lens: Expert Knowledge Encoding for AI Market Intelligence</Link>
             <Link href="/insights/mcp-servers-new-saas-integration" style={{ color: 'var(--teal)' }}>↳ MCP Servers Are the New SaaS Integration Layer</Link>
             <Link href="/insights/rag-eval-harness-not-vector-store" style={{ color: 'var(--teal)' }}>↳ The RAG System That Matters Isn&rsquo;t the Vector Store — It&rsquo;s the Eval Harness</Link>
             <Link href="/insights/why-deck-only-ai-consulting-fails-production" style={{ color: 'var(--teal)' }}>↳ Why Deck-Only AI Consulting Fails in Production</Link>

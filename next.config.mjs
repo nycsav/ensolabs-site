@@ -35,6 +35,17 @@ const nextConfig = {
         destination: '/insights/notion-career-agent-open-source-hackathon',
         permanent: true,
       },
+      // Client-confidentiality scrub: old "gore" slugs → renamed slugs (permanent)
+      {
+        source: '/work/gore',
+        destination: '/work/ai-market-intelligence',
+        permanent: true,
+      },
+      {
+        source: '/insights/gore-lens-expert-knowledge-encoding',
+        destination: '/insights/expert-lens-knowledge-encoding',
+        permanent: true,
+      },
       // Temporarily unpublished (archived for later re-publish) — avoid 404 + dead cross-links
       {
         source: '/insights/langchain-deep-agents-in-plain-english',

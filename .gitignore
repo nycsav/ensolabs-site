@@ -52,7 +52,7 @@ scripts/setup-perplexity-*.sh
 # Nested project repos
 notion-career-agent/
 
-# signal2noise working files (belong in PlannerAPI repo)
+# Legacy engine working files (belong in their own repos)
 signal2noise/
 signal2noise-*
 briefs/
@@ -60,7 +60,7 @@ briefs/
 # Hackathon project (has its own repo)
 signal2noise-notion-hackathon/
 
-# Working drafts (signal2noise + /seo-monitor reports) — never auto-deploy these
+# Working drafts (legacy engine + /seo-monitor reports) — never auto-deploy these
 drafts/
 
 # local deploy runbook (not for production)

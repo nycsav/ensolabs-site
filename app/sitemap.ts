@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const caseStudyRoutes: MetadataRoute.Sitemap = [
-    'gore', 'heller', 'trading-terminal', 'enterprise-ai',
+    'ai-market-intelligence', 'heller', 'trading-terminal', 'enterprise-ai',
   ].map((slug) => ({
     url: `${SITE.origin}/work/${slug}`,
     lastModified: now,

@@ -404,7 +404,7 @@ export default function HomePage() {
           </div>
 
           <div role="list" style={{ borderTop: '1px solid var(--line)' }}>
-            <Link className="case-row reveal" href="/work/gore" role="listitem">
+            <Link className="case-row reveal" href="/work/ai-market-intelligence" role="listitem">
               <span className="case-no">CS / 01</span>
               <span className="case-title">AI Market Intelligence Platform</span>
               <span className="case-desc">8-stage LangGraph pipeline, AES-256-GCM encrypted dashboard, expert-knowledge encoding framework — go/no-go milestone delivered April 2026.</span>

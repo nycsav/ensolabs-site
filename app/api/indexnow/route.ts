@@ -10,7 +10,7 @@ export async function GET() {
     '/about',
     '/insights',
     '/contact',
-    '/work/gore',
+    '/work/ai-market-intelligence',
     '/work/heller',
     '/work/trading-terminal',
     '/work/enterprise-ai',

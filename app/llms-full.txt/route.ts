@@ -70,7 +70,7 @@ AI solutions for banks, asset managers, and fintech: autonomous trading systems,
 ## Case Studies
 
 ### AI Market Intelligence Platform
-URL: ${SITE.origin}/work/gore
+URL: ${SITE.origin}/work/ai-market-intelligence
 Built an AI-powered market intelligence platform for a Fortune 500 manufacturer. Expert knowledge encoded as toggleable rules (the "Lens" system), MCP-compatible architecture, scientist-trusted relevance scoring.
 
 ### AI Center of Excellence for Pharma

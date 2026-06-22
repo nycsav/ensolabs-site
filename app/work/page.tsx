@@ -117,7 +117,7 @@ export default function WorkPage() {
             </p>
             <div className="reveal" data-delay="3">
               <div className="mono-sm" style={{ display: 'grid', gap: 6 }}>
-                <Link href="/work/gore">↳ CS / 01 &nbsp; AI Market Intelligence Platform</Link>
+                <Link href="/work/ai-market-intelligence">↳ CS / 01 &nbsp; AI Market Intelligence Platform</Link>
                 <Link href="/work/heller">↳ CS / 02 &nbsp; Heller AI Center of Excellence</Link>
                 <Link href="/work/trading-terminal">↳ CS / 03 &nbsp; Enso Trading Terminal</Link>
                 <Link href="/work/enterprise-ai">↳ CS / 04 &nbsp; Enterprise AI Enablement</Link>
@@ -127,9 +127,9 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* CASE 01 — GORE */}
-      <div className="shell" id="gore">
-        <div className="case" data-screen-label="02 Gore">
+      {/* CASE 01 — AI MARKET INTELLIGENCE */}
+      <div className="shell" id="ai-market-intelligence">
+        <div className="case" data-screen-label="02 Market Intelligence">
           <div className="case-head reveal">
             <div className="case-meta">
               <span className="eyebrow no-line"><span className="num">CASE / 01</span></span>
@@ -142,7 +142,7 @@ export default function WorkPage() {
             </div>
             <div>
               <h2 className="case-title">
-                Gore M2 Intelligence Hub.<br />
+                AI Market Intelligence Platform.<br />
                 <em style={{ fontStyle: 'italic', color: 'var(--fg-2)', fontWeight: 400 }}>A market-radar that scientists trust.</em>
               </h2>
             </div>
@@ -151,7 +151,7 @@ export default function WorkPage() {
           <div className="case-vis reveal">
             <div className="dash">
               <div className="dash-col">
-                <h5>Gore Lens · 9 rules</h5>
+                <h5>Expert Lens · 9 rules</h5>
                 <div className="dash-row"><span>Temp floor</span><span className="v">ON</span></div>
                 <div className="dash-row"><span>Material class</span><span className="v">ON</span></div>
                 <div className="dash-row"><span>Chemistry scope</span><span className="v">ON</span></div>
@@ -200,16 +200,16 @@ export default function WorkPage() {
           <div className="case-body reveal">
             <div>
               <h3>The brief</h3>
-              <p>Gore needed a defensible go/no-go signal on emerging high-temperature materials markets — fast, but auditable enough that lead scientists would actually trust the output.</p>
+              <p>The client needed a defensible go/no-go signal on emerging high-temperature materials markets — fast, but auditable enough that lead scientists would actually trust the output.</p>
             </div>
             <div>
               <h3>What we built</h3>
-              <p><strong>Gore M2 Intelligence Hub</strong> — a production-grade, AES-256-GCM encrypted research dashboard powered by an 8-stage LangGraph pipeline with 4 parallel fetchers and ReAct agents.</p>
+              <p><strong>AI Market Intelligence Platform</strong> — a production-grade, AES-256-GCM encrypted research dashboard powered by an 8-stage LangGraph pipeline with 4 parallel fetchers and ReAct agents.</p>
               <ul>
-                <li>Proprietary <strong>Gore Lens</strong> — expert-knowledge encoding framework with toggleable, MCP-compatible relevance rules</li>
+                <li>Proprietary <strong>Expert Lens</strong> — expert-knowledge encoding framework with toggleable, MCP-compatible relevance rules</li>
                 <li>Signal-card architecture with RWW (Real / Win / Worth) scoring and full evidence trails</li>
-                <li>9 configurable Gore Lens rules — temperature floor, material class, chemistry scope, PFAS sensitivity, market size, liability, recency, novelty, 200°C gap</li>
-                <li>CEEX integration with token mapping into Gore&rsquo;s internal scoring tools</li>
+                <li>9 configurable Expert Lens rules — temperature floor, material class, chemistry scope, PFAS sensitivity, market size, liability, recency, novelty, 200°C gap</li>
+                <li>CEEX integration with token mapping into the client&rsquo;s internal scoring tools</li>
               </ul>
               <h3 style={{ marginTop: 32 }}>Outcome</h3>
               <div className="outcome-grid">
@@ -219,10 +219,10 @@ export default function WorkPage() {
               </div>
               <p style={{ marginTop: 24 }}>
                 <em style={{ color: 'var(--fg-3)', fontStyle: 'italic' }}>
-                  Novel signals validated by lead scientist. Measurably higher relevance with Gore Lens ON vs OFF. Go/no-go commercialization milestone delivered April 2026.
+                  Novel signals validated by lead scientist. Measurably higher relevance with Expert Lens ON vs OFF. Go/no-go commercialization milestone delivered April 2026.
                 </em>
               </p>
-              <Link href="/work/gore" className="case-link">View case study <Arrow /></Link>
+              <Link href="/work/ai-market-intelligence" className="case-link">View case study <Arrow /></Link>
             </div>
           </div>
         </div>

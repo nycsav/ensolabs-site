@@ -274,8 +274,8 @@ export const INSIGHTS: Insight[] = [
     ],
   },
   {
-    slug: 'gore-lens-expert-knowledge-encoding',
-    title: 'The Gore Lens: encoding expert knowledge as toggleable rules.',
+    slug: 'expert-lens-knowledge-encoding',
+    title: 'The Expert Lens: encoding expert knowledge as toggleable rules.',
     dek: 'A scientist will never trust a black-box relevance score. Here\'s how we built a 9-rule expert lens that scientists could reason about — and turn off — one rule at a time.',
     pillar: 'Build',
     date: '2026-04-15',
@@ -283,7 +283,7 @@ export const INSIGHTS: Insight[] = [
     readingMinutes: 9,
     tags: ['AI Agents', 'Expert Systems', 'MCP', 'Market Intelligence', 'Enterprise AI', 'Fortune 500'],
     body: [
-      'The Gore M2 Intelligence Hub had one non-negotiable acceptance criterion: the lead scientist had to trust the relevance ranking. That meant no opaque embeddings-as-relevance, no LLM-as-judge with hidden criteria, no statistical magic.',
+      'The AI Market Intelligence Platform had one non-negotiable acceptance criterion: the lead scientist had to trust the relevance ranking. That meant no opaque embeddings-as-relevance, no LLM-as-judge with hidden criteria, no statistical magic.',
       'What worked: encoding the scientist\'s actual decision criteria as nine explicit, MCP-compatible rules. Temperature floor. Material class. Chemistry scope. PFAS sensitivity. Market size. Liability exposure. Recency. Novelty. The 200°C gap.',
       'Each rule is independently toggleable. The dashboard shows the score with the rule on and off. The scientist can A/B their own expertise against the system. That\'s where trust comes from — not from the score, but from the ability to interrogate it.',
       'The pattern generalizes: **wherever you need expert trust, encode the expert\'s heuristics explicitly, and make every one of them inspectable.**',

@@ -37,7 +37,7 @@ Everything inside the fenced block below is the prompt. Open a fresh Claude Desi
 You are designing the full MEDIA & CREATIVE brand system for STRATEGY TO SHIP — the
 news-intelligence and publishing powerhouse of Enso Labs. It publishes natively at
 ensolabs.ai/insights (the "Live Intelligence" section + long-form essays). It is the
-product FORMERLY called signal2noise; that name and the standalone domain
+product rebranded June 2026; the old name and the standalone domain
 signals.ensolabs.ai are DEPRECATED and RETIRED — never reference, link, or redeploy them.
 The brand was renamed and locked in June 2026 (the "Warm Signal" system). Your job is to
 EXTEND that locked kit into a complete media-brand system, not to reinvent it.
@@ -233,7 +233,7 @@ headlines and stats), not lorem ipsum. Label every artifact with its name + exac
   • Editorial-first on every surface (headline/idea leads; logo/tagline does not).
   • No emojis, no hype words, plain-English. Name the human-in-the-loop where a byline fits.
   • Never name a confidential client (e.g., the Fortune 500 manufacturer case study).
-  • Never reference signal2noise or signals.ensolabs.ai as live; treat them as retired.
+  • Never reference Strategy to Ship or signals.ensolabs.ai as live; treat them as retired.
   • Accessibility is a requirement, not a nice-to-have (see Output format → accessibility).
 
 # OUTPUT FORMAT
@@ -270,4 +270,4 @@ Acknowledge the load in one sentence, then begin with Workstream A.
 3. **Paste the fenced prompt block above** and let it run the six workstreams (A–F) in order.
 4. **Review at the gate.** Nothing ships, deploys, or launches automatically — approve the system, then place assets and export the handoff bundle into `brand/strategy-to-ship/`.
 
-*Companion files: `STRATEGY_TO_SHIP_DESIGN_KICKOFF.md` (the day-to-day asset loader) and `SIGNAL2NOISE_PIPELINE_2_0_KICKOFF.md` (the writing pipeline). This file is the **media-brand system build**.*
+*Companion files: `STRATEGY_TO_SHIP_DESIGN_KICKOFF.md` (the day-to-day asset loader) and `STRATEGY TO SHIP_PIPELINE_2_0_KICKOFF.md` (the writing pipeline). This file is the **media-brand system build**.*

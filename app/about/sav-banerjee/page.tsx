@@ -137,7 +137,7 @@ export default function SavBanerjeeBioPage() {
           </p>
           <ul>
             <li>
-              <Link href="/work/gore">
+              <Link href="/work/ai-market-intelligence">
                 AI Market Intelligence Platform for a Fortune 500 manufacturer — an eight-stage LangGraph pipeline validated by the client&rsquo;s lead scientist <Arrow />
               </Link>
             </li>

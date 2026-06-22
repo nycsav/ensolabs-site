@@ -135,7 +135,7 @@ Enable: Settings → General. Runs outside the VM sandbox — start with low-sta
 | mcp-infrastructure-health-check | Daily M–F 7:09 AM | Infra |
 | job-scan-morning | M–F 8:02 AM | Job Search |
 | ensolabs-seo-audit | M–F 9:10 AM | SEO |
-| signal2noise-intelligence | Mon/Wed/Fri 8 AM | Content |
+| Strategy to Ship-intelligence | Mon/Wed/Fri 8 AM | Content |
 | heller-daily-google-ads-optimizer | Mon/Wed/Fri 8:30 AM | Client (Heller) |
 | eligard-weekly-performance-digest | Monday 8:03 AM | Client (Heller) |
 | heller-deliverable-feedback-monitor | M–F 7 PM | Client (Heller) |
@@ -222,8 +222,8 @@ Gmail, Google Calendar, Slack, Notion, Google Drive, Vercel, Figma, Google Ads (
 
 **6. Self-Improving Skills Loop**
 - **Bible says:** After approval: 1) update the skill 2) save output to improved-examples/ 3) summarize changes.
-- **Enso status:** Skills exist but don't self-improve. The signal2noise-intelligence task runs the same prompt every time.
-- **Fix:** For the 3 highest-value skills (signal2noise-intelligence, job-scan-morning, ensolabs-seo-audit), add a feedback loop: when output is good, save it as an example; when output is bad, update the skill prompt.
+- **Enso status:** Skills exist but don't self-improve. The Strategy to Ship-intelligence task runs the same prompt every time.
+- **Fix:** For the 3 highest-value skills (Strategy to Ship-intelligence, job-scan-morning, ensolabs-seo-audit), add a feedback loop: when output is good, save it as an example; when output is bad, update the skill prompt.
 - **Impact:** Each run of a scheduled task becomes marginally better than the last. Compounds over months.
 
 **7. Deliberate Sub-Agent Patterns**
@@ -279,6 +279,6 @@ You leapfrogged into advanced automation (scheduled tasks, multi-connector orche
 | 3 | Delete 15+ genuinely retired scheduled tasks | 5 min | Low (hygiene) | This week |
 | 4 | Create `_os/brand-voice.md` from existing CLAUDE.md content rules | 30 min | High | This week |
 | 5 | Create `_os/templates/` with 3–4 golden templates | 1 hr | High | This sprint |
-| 6 | Add self-improving loop to signal2noise-intelligence | 30 min | High | This sprint |
+| 6 | Add self-improving loop to Strategy to Ship-intelligence | 30 min | High | This sprint |
 | 7 | Try deliberate parallel agents on next research task | 0 min (just prompt differently) | Medium | Next opportunity |
 | 8 | Test Dispatch during NYTW events | 5 min setup | Medium | This week |
