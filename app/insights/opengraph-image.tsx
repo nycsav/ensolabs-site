@@ -1,135 +1,105 @@
 import { ImageResponse } from 'next/og';
+import { stsOgFonts, STS } from '@/lib/og/fonts';
 
-export const runtime = 'edge';
-export const alt = 'Enso Labs — Insights';
+export const runtime = 'nodejs';
+export const alt = 'Strategy to Ship — Insights from Enso Labs';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OGImage() {
+export default async function OGImage() {
+  const fonts = await stsOgFonts();
+  const c = STS.color;
   return new ImageResponse(
     (
       <div
         style={{
           width: '1200px',
           height: '630px',
-          background: '#0d1321',
+          background: c.inkDeep,
+          color: c.paperOnDark,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
           padding: '72px 80px',
           position: 'relative',
           overflow: 'hidden',
-          fontFamily: '"Inter", sans-serif',
+          fontFamily: 'Inter Tight',
         }}
       >
         <div
           style={{
             position: 'absolute',
-            top: '-200px',
-            right: '-150px',
-            width: '700px',
-            height: '700px',
+            top: '-180px',
+            right: '-140px',
+            width: '620px',
+            height: '620px',
             borderRadius: '50%',
-            background: 'radial-gradient(closest-side, rgba(92,224,210,0.18) 0%, transparent 70%)',
-            filter: 'blur(20px)',
+            background: 'radial-gradient(closest-side, rgba(240,81,46,0.16) 0%, transparent 70%)',
           }}
         />
+        {/* kicker */}
         <div
           style={{
             position: 'absolute',
             top: '64px',
-            right: '80px',
-            fontFamily: 'monospace',
-            fontSize: '12px',
-            letterSpacing: '0.06em',
-            color: '#7e7c75',
-            textTransform: 'uppercase',
-          }}
-        >
-          INSIGHTS / 05
-        </div>
-        <div
-          style={{
-            position: 'absolute',
-            top: '60px',
             left: '80px',
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-          }}
-        >
-          <div
-            style={{
-              width: '28px',
-              height: '28px',
-              border: '1px solid #f5f4f0',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <div
-              style={{
-                width: '10px',
-                height: '10px',
-                borderRadius: '50%',
-                background: '#5ce0d2',
-              }}
-            />
-          </div>
-          <span
-            style={{
-              fontFamily: 'monospace',
-              fontSize: '13px',
-              letterSpacing: '0.02em',
-              color: '#f5f4f0',
-              fontWeight: 600,
-            }}
-          >
-            ENSO LABS
-          </span>
-        </div>
-        <div
-          style={{
-            fontSize: '80px',
+            fontFamily: 'JetBrains Mono',
+            fontSize: '13px',
             fontWeight: 500,
-            letterSpacing: '-0.025em',
-            lineHeight: 0.98,
-            color: '#f5f4f0',
-            marginBottom: '28px',
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            color: c.slateOnDark,
           }}
         >
-          Signal{' '}
-          <span style={{ color: '#5ce0d2', fontStyle: 'italic', fontWeight: 400 }}>to</span>
-          {' '}Noise.
+          <span style={{ width: '9px', height: '9px', background: c.coral, display: 'block' }} />
+          INSIGHTS · FROM ENSO LABS
         </div>
+        {/* headline — Lora */}
         <div
           style={{
-            fontSize: '22px',
-            color: '#c5c2bc',
-            lineHeight: 1.45,
-            maxWidth: '640px',
-            fontWeight: 400,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '18px',
+            fontFamily: 'Lora',
+            fontWeight: 600,
+            fontSize: '94px',
+            lineHeight: 1.0,
+            letterSpacing: '-0.02em',
+            color: c.paperOnDark,
             marginBottom: '24px',
           }}
         >
-          Practical AI strategy, automation patterns, and build notes from the field.
+          Strategy <span style={{ color: c.coral }}>→</span> Ship.
         </div>
-        <div style={{ display: 'flex', gap: '32px' }}>
-          {['AI Strategy', 'Automation', 'Agent Builds', 'Growth Systems'].map((pillar, i) => (
-            <span
-              key={i}
-              style={{
-                fontFamily: 'monospace',
-                fontSize: '12px',
-                color: '#7e7c75',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-              }}
-            >
-              {pillar}
-            </span>
+        {/* dek */}
+        <div
+          style={{
+            fontSize: '24px',
+            color: c.slateOnDark,
+            lineHeight: 1.4,
+            maxWidth: '720px',
+            marginBottom: '28px',
+          }}
+        >
+          Daily AI intelligence — scored, curated, and shipped for marketing strategists.
+        </div>
+        {/* lenses */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '32px',
+            fontFamily: 'JetBrains Mono',
+            fontSize: '12px',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: c.slateOnDark,
+          }}
+        >
+          {['Brand', 'Financial', 'Client', 'Signal'].map((p, i) => (
+            <span key={i}>{p}</span>
           ))}
         </div>
         <div
@@ -139,7 +109,7 @@ export default function OGImage() {
             left: '80px',
             right: '80px',
             height: '1px',
-            background: '#3a3d4a',
+            background: c.lineOnDark,
           }}
         />
         <div
@@ -147,16 +117,16 @@ export default function OGImage() {
             position: 'absolute',
             bottom: '28px',
             left: '80px',
-            fontFamily: 'monospace',
+            fontFamily: 'JetBrains Mono',
             fontSize: '12px',
-            color: '#7e7c75',
-            letterSpacing: '0.04em',
+            color: c.slateOnDark,
+            letterSpacing: '0.06em',
           }}
         >
           ensolabs.ai/insights
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts }
   );
 }

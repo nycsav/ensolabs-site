@@ -16,8 +16,8 @@ export function ThemeMount() {
   useEffect(() => {
     const isLight = pathname.startsWith('/insights');
     const root = document.documentElement;
-    if (isLight) root.classList.add('theme-light');
-    else root.classList.remove('theme-light');
+    if (isLight) root.classList.add('theme-light', 'theme-sts');
+    else root.classList.remove('theme-light', 'theme-sts');
   }, [pathname]);
   return null;
 }

@@ -1,6 +1,6 @@
 import { renderOg, OG_SIZE } from '@/components/OgFrame';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const size = OG_SIZE;
 export const contentType = 'image/png';
 export const alt = 'Enso Labs Case Study';

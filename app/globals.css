@@ -15,8 +15,8 @@
   --amber:     oklch(0.82 0.13 70);       /* warm amber */
   --amber-dim: oklch(0.55 0.10 70);
 
-  --display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --display: var(--font-inter-tight), "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --max: 1320px;
   --pad: clamp(20px, 4vw, 56px);
@@ -502,6 +502,32 @@ footer {
 }
 
 .theme-light ::selection { background: var(--teal); color: #f8f6f0; }
+
+/* ============================================================
+   Strategy to Ship — publication theme layer (on /insights, set with
+   .theme-light). Lora headlines + Ship-Coral accents; type + color pulled
+   from brand/strategy-to-ship/tokens.css (--sts-*). Mono meta + Inter Tight
+   body already hold from --mono/--display.
+   ============================================================ */
+.theme-sts {
+  --bg:   var(--sts-paper);
+  --bg-2: var(--sts-paper-2);
+  --line: var(--sts-line);
+}
+/* Editorial headlines → Lora */
+.theme-sts .display,
+.theme-sts .article-shell h1,
+.theme-sts .article-shell h2,
+.theme-sts .article-shell .body h2 {
+  font-family: var(--sts-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+/* Ship Coral — body links, the → arrow, primary CTA */
+.theme-sts .article-shell .body p a { color: var(--sts-coral); text-decoration-color: var(--sts-coral); }
+.theme-sts .article-shell .body p a:hover { color: var(--sts-coral); opacity: 0.78; }
+.theme-sts .btn-primary { background: var(--sts-coral); border-color: var(--sts-coral); color: #fff; }
+.theme-sts .btn-primary:hover { background: var(--sts-ink); border-color: var(--sts-ink); color: var(--sts-paper); }
 
 /* Insights — feed */
 .insights-hero { padding-top: clamp(140px, 16vw, 200px); padding-bottom: clamp(48px, 6vw, 80px); }

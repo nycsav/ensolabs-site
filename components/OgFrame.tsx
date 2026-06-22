@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
+import { stsOgFonts, STS } from '@/lib/og/fonts';
 
-// Hex equivalents of the OKLCH brand palette in globals.css.
+// Hex equivalents of the OKLCH studio palette in globals.css.
 // Satori (the renderer inside next/og) does not support oklch().
 export const OG_COLORS = {
   bg: '#0d1321',
@@ -12,6 +13,8 @@ export const OG_COLORS = {
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
 
+type Theme = 'studio' | 'publication';
+
 type Options = {
   /** Top-left eyebrow (uppercase, monospaced look). e.g. "CASE STUDY · CLIENT" */
   eyebrow: string;
@@ -21,13 +24,31 @@ type Options = {
   subtitle?: string;
   /** Bottom-left strap. e.g. "AI transformation · agentic systems · financial AI" */
   strap?: string;
+  /**
+   * 'studio' (default) = navy Enso studio card.
+   * 'publication' = warm Strategy to Ship card (ink ground, Lora headline, Ship Coral accent).
+   */
+  theme?: Theme;
 };
 
 /**
  * Shared OG image renderer for case-study and insight detail pages.
+ * Fonts are EMBEDDED (Lora · Inter Tight · JetBrains Mono) — no system fallback.
  * Returns a 1200x630 PNG via next/og's ImageResponse.
  */
-export function renderOg({ eyebrow, title, subtitle, strap }: Options) {
+export async function renderOg({ eyebrow, title, subtitle, strap, theme = 'studio' }: Options) {
+  const fonts = await stsOgFonts();
+  const pub = theme === 'publication';
+  const col = pub
+    ? {
+        bg: STS.color.inkDeep,
+        fg: STS.color.paperOnDark,
+        fg2: STS.color.slateOnDark,
+        fg3: STS.color.slateOnDark,
+        accent: STS.color.coral,
+      }
+    : { bg: OG_COLORS.bg, fg: OG_COLORS.fg, fg2: OG_COLORS.fg2, fg3: OG_COLORS.fg3, accent: OG_COLORS.teal };
+
   return new ImageResponse(
     (
       <div
@@ -37,36 +58,26 @@ export function renderOg({ eyebrow, title, subtitle, strap }: Options) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: OG_COLORS.bg,
-          color: OG_COLORS.fg,
+          background: col.bg,
+          color: col.fg,
           padding: '64px 84px',
-          fontFamily: 'sans-serif',
+          fontFamily: 'Inter Tight',
         }}
       >
         {/* Top — wordmark + eyebrow */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <div
-              style={{
-                width: 28,
-                height: 28,
-                borderRadius: 14,
-                border: `1.5px solid ${OG_COLORS.fg}`,
-              }}
-            />
-            <div style={{ fontSize: 22, letterSpacing: '0.04em', fontWeight: 600 }}>
-              ENSO LABS
-            </div>
-            <div style={{ fontSize: 16, color: OG_COLORS.fg3, marginLeft: 8 }}>
-              / STRATEGY-TO-SHIP
-            </div>
+            <div style={{ width: 28, height: 28, borderRadius: 14, border: `1.5px solid ${col.fg}` }} />
+            <div style={{ fontSize: 22, letterSpacing: '0.04em', fontWeight: 600 }}>ENSO LABS</div>
+            <div style={{ fontSize: 16, color: col.fg3, marginLeft: 8 }}>/ STRATEGY-TO-SHIP</div>
           </div>
           <div
             style={{
               fontSize: 16,
-              fontFamily: 'monospace',
+              fontFamily: 'JetBrains Mono',
+              fontWeight: 500,
               letterSpacing: '0.12em',
-              color: OG_COLORS.teal,
+              color: col.accent,
               textTransform: 'uppercase',
             }}
           >
@@ -78,9 +89,10 @@ export function renderOg({ eyebrow, title, subtitle, strap }: Options) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div
             style={{
-              fontSize: 70,
-              fontWeight: 500,
-              letterSpacing: '-0.025em',
+              fontSize: pub ? 64 : 70,
+              fontFamily: pub ? 'Lora' : 'Inter Tight',
+              fontWeight: pub ? 600 : 500,
+              letterSpacing: '-0.02em',
               lineHeight: 1.05,
               maxWidth: 1000,
             }}
@@ -91,7 +103,7 @@ export function renderOg({ eyebrow, title, subtitle, strap }: Options) {
             <div
               style={{
                 fontSize: 26,
-                color: OG_COLORS.fg2,
+                color: col.fg2,
                 fontStyle: 'italic',
                 fontWeight: 400,
                 maxWidth: 900,
@@ -108,8 +120,9 @@ export function renderOg({ eyebrow, title, subtitle, strap }: Options) {
           style={{
             display: 'flex',
             justifyContent: 'space-between',
+            fontFamily: 'JetBrains Mono',
             fontSize: 18,
-            color: OG_COLORS.fg3,
+            color: col.fg3,
             letterSpacing: '0.02em',
           }}
         >
@@ -118,6 +131,6 @@ export function renderOg({ eyebrow, title, subtitle, strap }: Options) {
         </div>
       </div>
     ),
-    { ...OG_SIZE },
+    { ...OG_SIZE, fonts },
   );
 }

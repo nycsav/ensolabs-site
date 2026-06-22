@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import '../brand/strategy-to-ship/tokens.css';
+import { Lora, Inter_Tight, JetBrains_Mono } from 'next/font/google';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { RevealMount } from '@/components/Reveal';
@@ -9,13 +11,37 @@ import { Analytics } from '@/components/Analytics';
 import { orgSchema, personSchema, websiteSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
+// Self-hosted brand fonts (no external Google request, no FOUT). Exposed as CSS
+// variables consumed by globals.css (--display/--mono) and the Strategy to Ship
+// publication tokens (tokens.css: --sts-serif/--sts-sans/--sts-mono).
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+  display: 'swap',
+});
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-inter-tight',
+  display: 'swap',
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
+
 // Inline pre-paint script — applies the light theme class to <html> before
 // the first paint on /insights pages. Synchronous; runs before any CSS or
 // React hydration, so there is no flash of dark theme.
 const THEME_INIT_SCRIPT = `
 (function(){try{
   if (location.pathname.startsWith('/insights')) {
-    document.documentElement.classList.add('theme-light');
+    document.documentElement.classList.add('theme-light', 'theme-sts');
   }
 }catch(e){}})();
 `;
@@ -95,18 +121,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${lora.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
       <head>
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link rel="image_src" href="https://ensolabs.ai/og-default.png?v=3" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
+        {/* Fonts are self-hosted via next/font (Lora · Inter Tight · JetBrains Mono) — no external <link>. */}
       </head>
       <body>
         <JsonLd schemas={[orgSchema(), personSchema(), websiteSchema()]} />
