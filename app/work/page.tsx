@@ -133,6 +133,7 @@ export default function WorkPage() {
           <div className="case-head reveal">
             <div className="case-meta">
               <span className="eyebrow no-line"><span className="num">CASE / 01</span></span>
+              <span className="shipped-stamp">Shipped · Apr 2026</span>
               <div className="row"><span>Client</span><span>Fortune 500 Manufacturer × Board of Innovation</span></div>
               <div className="row"><span>Sector</span><span>Advanced Materials</span></div>
               <div className="row"><span>Engagement</span><span>Strategy → Build → Ship</span></div>
@@ -233,6 +234,7 @@ export default function WorkPage() {
           <div className="case-head reveal">
             <div className="case-meta">
               <span className="eyebrow no-line"><span className="num">CASE / 02</span></span>
+              <span className="shipped-stamp">FDA/MLR compliant</span>
               <div className="row"><span>Client</span><span>Heller Agency</span></div>
               <div className="row"><span>Sector</span><span>Healthcare / Pharma</span></div>
               <div className="row"><span>Engagement</span><span>AI Center of Excellence</span></div>
@@ -315,6 +317,7 @@ export default function WorkPage() {
           <div className="case-head reveal">
             <div className="case-meta">
               <span className="eyebrow no-line"><span className="num">CASE / 03</span></span>
+              <span className="shipped-stamp">Live in production</span>
               <div className="row"><span>Client</span><span>Internal · Enso Labs</span></div>
               <div className="row"><span>Sector</span><span>Financial Services / FinTech</span></div>
               <div className="row"><span>Engagement</span><span>Product build &amp; operate</span></div>
@@ -408,6 +411,7 @@ export default function WorkPage() {
           <div className="case-head reveal">
             <div className="case-meta">
               <span className="eyebrow no-line"><span className="num">CASE / 04</span></span>
+              <span className="shipped-stamp">Shipped</span>
               <div className="row"><span>Clients</span><span>Citi · JPMorgan · Amex · Google · Microsoft · T-Mobile</span></div>
               <div className="row"><span>Sector</span><span>Cross-industry · Enterprise</span></div>
               <div className="row"><span>Engagement</span><span>Cohort enablement</span></div>
@@ -467,7 +471,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section data-screen-label="06 CTA">
+      <section className="cta-blue" data-screen-label="06 CTA">
         <div className="shell">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
             <h2 className="display" style={{ fontSize: 'clamp(40px, 6vw, 80px)' }}>

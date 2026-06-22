@@ -17,7 +17,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - AI Advertising & Marketing Automation
 
 ## Products
-- Strategy to Ship (https://ensolabs.ai/insights): Daily AI market intelligence, scored and curated — published on the Enso Labs Insights page (formerly signal2noise)
+- Strategy to Ship (https://ensolabs.ai/insights): Daily AI market intelligence, scored and curated — published on the Enso Labs Insights page
 - Enso Trading Terminal (https://ensolabs.ai/work/trading-terminal): Autonomous financial AI agents, signal intelligence, options trading
 
 ## Case Studies

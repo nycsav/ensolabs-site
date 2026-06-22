@@ -13,12 +13,12 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
   description:
-    'Enso Labs is a principal-led AI transformation consulting firm and agentic systems studio in New York City, founded by Sav Banerjee. We deliver enterprise AI strategy, production agentic systems, and financial AI agents for Healthcare, Finance, and B2B Technology.',
+    'Enso Labs is a principal-led AI transformation studio in NYC founded by Sav Banerjee. We turn strategy into production systems — AI consulting, agentic systems, and financial AI delivered as products — across advertising, marketing, and media, for healthcare, finance, B2B tech, and consumer.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
     description:
-      'Principal-led AI consulting firm in NYC. Enterprise AI strategy, agentic systems, and financial AI agents — from roadmap to production. Founded by Sav Banerjee.',
+      'Principal-led AI studio in NYC. Strategy turned into AI products — consulting, agentic systems, financial AI — across advertising, marketing & media for healthcare, finance, B2B tech, and consumer.',
     url: SITE.origin,
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Enso Labs — AI Consulting & Agentic Systems Studio NYC',
     description:
-      'Principal-led AI consulting firm in NYC. Enterprise AI strategy, agentic systems, and financial AI agents. Founded by Sav Banerjee.',
+      'Principal-led AI studio in NYC. Strategy → AI products: consulting, agentic systems, financial AI. Advertising, marketing & media for healthcare, finance, B2B tech, consumer.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -35,7 +35,7 @@ const HOME_FAQS = [
   {
     question: 'What is Enso Labs?',
     answer:
-      'Enso Labs is a principal-led AI transformation consulting firm, agentic systems studio, and financial AI agent lab based in New York City. Founded by Sav Banerjee, we architect enterprise AI strategy for Healthcare, Finance, and B2B Tech — then build and ship the production systems that deliver it. Every engagement is led by a senior advisor who also builds.',
+      'Enso Labs is a principal-led AI transformation studio based in New York City, founded by Sav Banerjee. We turn strategy into production systems — AI consulting, agentic systems, and financial AI delivered as products — across advertising, marketing, and media, for companies and agencies in Healthcare, Finance, B2B Tech, and Consumer. Every engagement is led by a senior advisor who also builds.',
   },
   {
     question: 'Who is Sav Banerjee?',
@@ -83,16 +83,16 @@ export default function HomePage() {
             <span>Perplexity Business Fellowship</span>
           </div>
 
-          <h1 className="display reveal" data-delay="1">
-            Strategy<br />
-            <em>to</em> <span className="accent">Ship.</span>
+          <h1 className="display hero-title">
+            <span className="w w1">Strategy</span><br />
+            <span className="w w2"><em>to</em></span> <span className="w w3 accent">Ship.</span>
           </h1>
 
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs is a principal-led AI transformation consulting firm, agentic systems studio, and financial AI
-              agent lab in New York City. Founded by Sav Banerjee, we architect enterprise AI strategy for Healthcare,
-              Finance, and B2B Tech — then build and ship the production systems that deliver it.
+              Enso Labs is an applied-AI studio for advertising, marketing, and media. We turn strategy into
+              production systems — services delivered as AI products — for companies and agencies across
+              healthcare, finance, B2B tech, and consumer.
             </p>
             <div className="reveal" data-delay="3">
               <div className="hero-cta-row">
@@ -106,6 +106,12 @@ export default function HomePage() {
                 ↳ 75% pilot-to-production · 3-month time-to-first-value
               </p>
             </div>
+          </div>
+
+          {/* sectors strip */}
+          <div className="hero-sectors reveal" data-delay="3">
+            <span className="lbl">SECTORS</span>&nbsp;&nbsp;
+            <span className="list">HEALTHCARE · FINANCE · B2B TECH · CONSUMER</span>
           </div>
         </div>
       </section>
@@ -226,7 +232,7 @@ export default function HomePage() {
 
         <div className="shell" style={{ paddingLeft: 0, paddingRight: 0, maxWidth: 'none' }}>
           <div className="pillars">
-            <div className="pillar reveal">
+            <div className="pillar reveal lens-amber">
               <div className="pillar-num">
                 <span>P / 01</span><span className="tag">CONSULT</span>
               </div>
@@ -241,7 +247,7 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="pillar reveal" data-delay="1">
+            <div className="pillar reveal lens-blue" data-delay="1">
               <div className="pillar-num">
                 <span>P / 02</span><span className="tag teal">BUILD</span>
               </div>
@@ -256,7 +262,7 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="pillar reveal" data-delay="2">
+            <div className="pillar reveal lens-coral" data-delay="2">
               <div className="pillar-num">
                 <span>P / 03</span><span className="tag">SHIP</span>
               </div>
@@ -297,7 +303,7 @@ export default function HomePage() {
           </div>
 
           <div className="proof reveal">
-            <div className="proof-cell">
+            <div className="proof-cell fill-coral">
               <div className="num">75<em>%</em></div>
               <div className="label">Pilot-to-production conversion across enterprise engagements</div>
             </div>
@@ -305,7 +311,7 @@ export default function HomePage() {
               <div className="num">3<em>mo</em></div>
               <div className="label">Average time-to-first-value, strategy through deployed system</div>
             </div>
-            <div className="proof-cell">
+            <div className="proof-cell fill-blue">
               <div className="num">83<em>%</em></div>
               <div className="label">Reduction in pharma campaign launch time · 3mo → 2wk</div>
             </div>
@@ -313,7 +319,7 @@ export default function HomePage() {
               <div className="num">$150<em>M+</em></div>
               <div className="label">Enterprise portfolios managed across finance, health &amp; tech</div>
             </div>
-            <div className="proof-cell">
+            <div className="proof-cell fill-amber">
               <div className="num">731</div>
               <div className="label">Documents processed in a single intelligence pipeline run</div>
             </div>
@@ -502,6 +508,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section
+        className="cta-blue"
         data-screen-label="08 CTA"
         style={{ paddingTop: 'clamp(120px, 14vw, 200px)', paddingBottom: 'clamp(120px, 14vw, 200px)' }}
       >

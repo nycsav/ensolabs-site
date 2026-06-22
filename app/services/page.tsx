@@ -196,7 +196,7 @@ export default function ServicesPage() {
               <div className="mono-sm" style={{ display: 'grid', gap: 8, color: 'var(--fg-2)' }}>
                 <div>↳ <span style={{ color: 'var(--fg-3)' }}>Avg. engagement</span>&nbsp; 12–24 weeks</div>
                 <div>↳ <span style={{ color: 'var(--fg-3)' }}>Cohort size</span>&nbsp; 8–15 leaders</div>
-                <div>↳ <span style={{ color: 'var(--fg-3)' }}>Sectors</span>&nbsp; Healthcare · Finance · B2B Tech · Mfg</div>
+                <div>↳ <span style={{ color: 'var(--fg-3)' }}>Sectors</span>&nbsp; Healthcare · Finance · B2B Tech · Consumer</div>
               </div>
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function ServicesPage() {
               </ul>
               <div className="pkg-cta"><Link className="btn" href="/contact">Start audit <Arrow /></Link></div>
             </div>
-            <div className="pkg" style={{ background: 'var(--bg-2)' }}>
+            <div className="pkg ground-coral">
               <div className="mono-sm" style={{ color: 'var(--teal)' }}>★ MOST COMMON</div>
               <h3 className="h3" style={{ fontWeight: 500 }}>12-Week Pilot-to-Production</h3>
               <div className="price">Strategy &nbsp;<span style={{ color: 'var(--fg-3)' }}>→</span>&nbsp; ship</div>
@@ -369,7 +369,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section data-screen-label="06 CTA">
+      <section className="cta-blue" data-screen-label="06 CTA">
         <div className="shell">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
             <h2 className="display" style={{ fontSize: 'clamp(40px, 6vw, 80px)' }}>

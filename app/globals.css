@@ -123,7 +123,7 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(48px, 8vw, 116px);
 }
 .display em { font-style: italic; font-weight: 400; color: var(--fg-2); }
-.display .accent { color: var(--teal); }
+.display .accent { color: #F0512E; }
 
 .h2 {
   font-family: var(--display);
@@ -742,7 +742,7 @@ footer {
 .article-shell .body table.article-table a { color: var(--teal); text-decoration: underline; text-underline-offset: 2px; }
 
 /* ============================================================
-   SIGNAL2NOISE — live intelligence cards on Home + Insights banner
+   STRATEGY TO SHIP — live intelligence cards on Home + Insights banner
    ============================================================ */
 .s2n-grid {
   display: grid;
@@ -1163,3 +1163,89 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 480px) {
   .foot-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
 }
+
+/* ====================================================================
+   Strategy-to-Ship design pass — coral + steel-blue, title animation
+   ==================================================================== */
+
+/* hero title — slow staggered rise (~4.5s to fully resolve) */
+.hero-title .w {
+  display: inline-block; opacity: 0; transform: translateY(48px); filter: blur(8px);
+  animation: heroRise 2.4s cubic-bezier(.16,.84,.3,1) forwards;
+}
+.hero-title .w1 { animation-delay: .4s; }
+.hero-title .w2 { animation-delay: 1.6s; }
+.hero-title .w3 { animation-delay: 2.15s; }
+@keyframes heroRise { to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .w { animation: none; opacity: 1; transform: none; filter: none; }
+}
+
+/* sectors strip */
+.hero-sectors {
+  margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em;
+}
+.hero-sectors .lbl { color: var(--teal); }
+.hero-sectors .list { color: var(--fg-2); }
+
+/* pillar lens grounds */
+.pillar.lens-amber { background: oklch(0.72 0.15 65); color: oklch(0.20 0.06 70); }
+.pillar.lens-blue  { background: oklch(0.52 0.09 250); color: #fff; }
+.pillar.lens-coral { background: oklch(0.64 0.19 33);  color: #fff; }
+.pillar.lens-amber:hover { background: oklch(0.69 0.15 65); }
+.pillar.lens-blue:hover  { background: oklch(0.49 0.09 250); }
+.pillar.lens-coral:hover { background: oklch(0.61 0.19 33); }
+.pillar[class*="lens-"] h3, .pillar[class*="lens-"] p { color: inherit; }
+.pillar[class*="lens-"] p { opacity: .9; }
+.pillar[class*="lens-"] .pillar-num,
+.pillar[class*="lens-"] .pillar-num .tag { color: inherit; opacity: .75; }
+.pillar[class*="lens-"] ul { color: inherit; border-top-color: rgba(255,255,255,.25); }
+.pillar.lens-amber ul { border-top-color: rgba(20,12,4,.25); }
+.pillar[class*="lens-"] ul li::before { background: currentColor; }
+
+/* proof color blocks */
+.proof-cell.fill-coral { background: #F0512E; }
+.proof-cell.fill-blue  { background: oklch(0.52 0.09 250); }
+.proof-cell.fill-amber { background: oklch(0.72 0.15 65); }
+.proof-cell.fill-coral .num, .proof-cell.fill-blue .num { color: #fff; }
+.proof-cell.fill-amber .num { color: oklch(0.20 0.06 70); }
+.proof-cell.fill-coral .num em, .proof-cell.fill-blue .num em { color: rgba(255,255,255,.72); }
+.proof-cell.fill-amber .num em { color: oklch(0.25 0.06 70 / .7); }
+.proof-cell.fill-coral .label, .proof-cell.fill-blue .label { color: rgba(255,255,255,.85); }
+.proof-cell.fill-amber .label { color: oklch(0.25 0.06 70 / .82); }
+
+/* steel-blue closing CTA */
+.cta-blue { background: oklch(0.52 0.09 250); }
+.cta-blue .h2, .cta-blue .display, .cta-blue .lede, .cta-blue p,
+.cta-blue .eyebrow, .cta-blue .mono-sm, .cta-blue .mono-sm span { color: #fff; }
+.cta-blue .eyebrow .num { color: rgba(255,255,255,.7); }
+.cta-blue em { color: rgba(255,255,255,.85); }
+.cta-blue .accent { color: #FF6B47; }
+.cta-blue .btn-primary { background: #fff; color: oklch(0.30 0.09 250); border-color: #fff; }
+.cta-blue .btn { border-color: rgba(255,255,255,.45); color: #fff; }
+.cta-blue .btn:hover { background: rgba(255,255,255,.12); }
+
+/* coral SHIPPED stamp (reusable on work case studies) */
+.shipped-stamp {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  color: #F0512E; border: 1.5px solid #F0512E; padding: 4px 10px; border-radius: 4px;
+  text-transform: uppercase; white-space: nowrap;
+}
+.shipped-stamp::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #F0512E; }
+
+/* generic brand grounds for cards on any page */
+.ground-coral { background:#F0512E !important; }
+.ground-blue  { background:oklch(0.52 0.09 250) !important; }
+.ground-amber { background:oklch(0.72 0.15 65) !important; }
+.ground-coral, .ground-coral h3, .ground-coral h4, .ground-coral p, .ground-coral li,
+.ground-coral .h3, .ground-coral .mono-sm,
+.ground-blue, .ground-blue h3, .ground-blue h4, .ground-blue p, .ground-blue li,
+.ground-blue .h3, .ground-blue .mono-sm { color:#fff !important; }
+.ground-amber, .ground-amber h3, .ground-amber h4, .ground-amber p, .ground-amber li,
+.ground-amber .h3, .ground-amber .mono-sm { color:oklch(0.20 0.06 70) !important; }
+.ground-coral ul, .ground-blue ul { border-top-color:rgba(255,255,255,.28) !important; }
+.ground-coral li::before, .ground-blue li::before { background:currentColor !important; }
+.ground-coral .btn-primary, .ground-blue .btn-primary { background:#fff !important; color:oklch(0.30 0.09 250) !important; border-color:#fff !important; }
+.ground-coral .btn, .ground-blue .btn { border-color:rgba(255,255,255,.5) !important; color:#fff !important; }

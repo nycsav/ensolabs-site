@@ -215,7 +215,7 @@ export default function AboutPage() {
 
           <div className="advantage reveal">
             {ADVANTAGES.map((a) => (
-              <div key={a.ix} className="adv">
+              <div key={a.ix} className={a.ix === '01' ? 'adv ground-blue' : 'adv'}>
                 <span className="ix">{a.ix}</span>
                 <div className="ti">{a.ti}</div>
                 <p className="de">{a.de}</p>
@@ -314,7 +314,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section data-screen-label="06 CTA">
+      <section className="cta-blue" data-screen-label="06 CTA">
         <div className="shell">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
             <h2 className="display" style={{ fontSize: 'clamp(40px, 6vw, 80px)' }}>

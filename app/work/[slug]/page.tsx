@@ -277,6 +277,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         <section className="cs-hero" style={{ maxWidth: 'var(--max)', margin: '0 auto', padding: 'clamp(120px, 16vw, 200px) var(--pad) 80px' }}>
           <Link href="/work" className="cs-back">← Back to Work</Link>
           <div className="cs-tag">{cs.sectorTag} · Case Study</div>
+          <div style={{ marginBottom: 18 }}><span className="shipped-stamp">Shipped · in production</span></div>
           <h1 className="cs-h1">{cs.title}. <em>{cs.headline}</em></h1>
           <p className="cs-sub">{cs.subtitle}</p>
           <p className="cs-definition">{cs.definition}</p>
@@ -372,7 +373,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
         <ShareButtons path={`/work/${params.slug}`} title={`${cs.title} — Enso Labs`} />
 
-        <section className="cs-cta">
+        <section className="cs-cta cta-blue">
           <p>Interested in results like these?</p>
           <Link href="/contact" className="btn" style={{ display: 'inline-block' }}>Get in Touch</Link>
         </section>
