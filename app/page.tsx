@@ -505,41 +505,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section
-        className="cta-blue"
-        data-screen-label="08 CTA"
-        style={{ paddingTop: 'clamp(120px, 14vw, 200px)', paddingBottom: 'clamp(120px, 14vw, 200px)' }}
-      >
-        <div className="shell">
-          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
-            <div>
-              <span className="eyebrow" style={{ marginBottom: 32, display: 'inline-flex' }}>
-                <span className="num">§ 08</span>&nbsp;Engage
-              </span>
-              <h2 className="display" style={{ fontSize: 'clamp(44px, 6vw, 88px)', marginTop: 24 }}>
-                Have a system<br />that needs <em>to</em> <span className="accent">ship?</span>
-              </h2>
-            </div>
-            <div style={{ display: 'grid', gap: 24 }}>
-              <p className="lede">
-                Two-week diagnostic, fixed-fee. You get a written roadmap and a working agentic prototype.
-              </p>
-              <div className="hero-cta-row">
-                <Link className="btn btn-primary" href="/contact">
-                  Get in Touch <Arrow />
-                </Link>
-                <a className="btn" href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
-              </div>
-              <div className="mono-sm" style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-                <span>↳ Response within 24h</span>
-                <span>↳ NDA on request</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

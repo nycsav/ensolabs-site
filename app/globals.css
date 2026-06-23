@@ -1275,3 +1275,7 @@ body.menu-open { overflow: hidden; }
 .ground-coral li::before, .ground-blue li::before { background:currentColor !important; }
 .ground-coral .btn-primary, .ground-blue .btn-primary { background:#fff !important; color:oklch(0.30 0.09 250) !important; border-color:#fff !important; }
 .ground-coral .btn, .ground-blue .btn { border-color:rgba(255,255,255,.5) !important; color:#fff !important; }
+/* keep the → arrow visible on the white primary button over blue/coral grounds */
+.cta-blue .btn-primary svg, .cta-blue .btn-primary .arrow,
+.ground-blue .btn-primary svg, .ground-blue .btn-primary .arrow,
+.ground-coral .btn-primary svg, .ground-coral .btn-primary .arrow { color: oklch(0.30 0.09 250); }
