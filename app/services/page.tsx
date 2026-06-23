@@ -196,7 +196,7 @@ export default function ServicesPage() {
               <div className="mono-sm" style={{ display: 'grid', gap: 8, color: 'var(--fg-2)' }}>
                 <div>↳ <span style={{ color: 'var(--fg-3)' }}>Avg. engagement</span>&nbsp; 12–24 weeks</div>
                 <div>↳ <span style={{ color: 'var(--fg-3)' }}>Cohort size</span>&nbsp; 8–15 leaders</div>
-                <div>↳ <span style={{ color: 'var(--fg-3)' }}>Sectors</span>&nbsp; Healthcare · Finance · B2B Tech · Consumer</div>
+                <div>↳ <span style={{ color: 'var(--fg-3)' }}>Sectors</span>&nbsp; Healthcare · Finance · Manufacturing / Industrial · Media · B2B Tech · Consumer</div>
               </div>
             </div>
           </div>

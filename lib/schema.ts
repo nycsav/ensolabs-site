@@ -116,6 +116,8 @@ export const professionalServiceSchema = (): JsonLd => ({
     'Agentic Systems Development',
     'Financial AI & Trading Intelligence',
     'AI for Advertising, Marketing & Media',
+    'Custom AI Product Development',
+    'Decision & Signal Intelligence',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -178,7 +180,7 @@ export const localBusinessSchema = (): JsonLd => ({
   ],
   audience: {
     '@type': 'Audience',
-    audienceType: ['Healthcare', 'Financial Services', 'B2B Technology', 'Advanced Manufacturing', 'Consumer', 'Advertising, Marketing & Media'],
+    audienceType: ['Healthcare', 'Financial Services', 'B2B Technology', 'Advanced Manufacturing', 'Manufacturing', 'Industrial', 'Consumer', 'Advertising, Marketing & Media'],
   },
 });
 

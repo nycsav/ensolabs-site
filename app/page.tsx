@@ -13,12 +13,12 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
   description:
-    'Enso Labs is a principal-led AI transformation studio in NYC founded by Sav Banerjee. We turn strategy into production systems — AI consulting, agentic systems, and financial AI delivered as products — across advertising, marketing, and media, for healthcare, finance, B2B tech, and consumer.',
+    'Enso Labs is a principal-led applied-AI studio in NYC founded by Sav Banerjee. We turn strategy and research into shipped AI products — AI transformation, agentic systems, custom decision & signal intelligence, and financial AI — for companies across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Consumer.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
     description:
-      'Principal-led AI studio in NYC. Strategy turned into AI products — consulting, agentic systems, financial AI — across advertising, marketing & media for healthcare, finance, B2B tech, and consumer.',
+      'Principal-led applied-AI studio in NYC. Strategy and research turned into shipped AI products — agentic systems, custom decision & signal intelligence, financial AI — across healthcare, finance, manufacturing, media, B2B tech, and consumer.',
     url: SITE.origin,
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Enso Labs — AI Consulting & Agentic Systems Studio NYC',
     description:
-      'Principal-led AI studio in NYC. Strategy → AI products: consulting, agentic systems, financial AI. Advertising, marketing & media for healthcare, finance, B2B tech, consumer.',
+      'Principal-led applied-AI studio in NYC. Strategy + research → shipped AI products: agentic systems, decision & signal intelligence, financial AI. Healthcare, finance, manufacturing, media, B2B tech, consumer.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -35,7 +35,7 @@ const HOME_FAQS = [
   {
     question: 'What is Enso Labs?',
     answer:
-      'Enso Labs is a principal-led AI transformation studio based in New York City, founded by Sav Banerjee. We turn strategy into production systems — AI consulting, agentic systems, and financial AI delivered as products — across advertising, marketing, and media, for companies and agencies in Healthcare, Finance, B2B Tech, and Consumer. Every engagement is led by a senior advisor who also builds.',
+      'Enso Labs is a principal-led applied-AI studio based in New York City, founded by Sav Banerjee. We build custom AI products that turn disparate data into decision intelligence — from stakeholder research to shipped system. The work spans AI transformation, agentic workflows, custom decision and signal intelligence, and financial AI, for companies across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Consumer. Every engagement is led by a senior advisor who also builds.',
   },
   {
     question: 'Who is Sav Banerjee?',
@@ -90,9 +90,9 @@ export default function HomePage() {
 
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs is an applied-AI studio for advertising, marketing, and media. We turn strategy into
-              production systems — services delivered as AI products — for companies and agencies across
-              healthcare, finance, B2B tech, and consumer.
+              Enso Labs builds custom AI products that turn disparate data into decision intelligence. From
+              stakeholder research to shipped system — for companies across healthcare, finance, manufacturing,
+              media, and B2B tech.
             </p>
             <div className="reveal" data-delay="3">
               <div className="hero-cta-row">
@@ -103,7 +103,7 @@ export default function HomePage() {
                 <Link className="btn" href="/work">See the work</Link>
               </div>
               <p className="mono-sm" style={{ marginTop: 18 }}>
-                ↳ 75% pilot-to-production · 3-month time-to-first-value
+                ↳ decision intelligence, shipped as products
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function HomePage() {
           {/* sectors strip */}
           <div className="hero-sectors reveal" data-delay="3">
             <span className="lbl">SECTORS</span>&nbsp;&nbsp;
-            <span className="list">HEALTHCARE · FINANCE · B2B TECH · CONSUMER</span>
+            <span className="list">HEALTHCARE · FINANCE · MANUFACTURING · MEDIA · B2B TECH · CONSUMER</span>
           </div>
         </div>
       </section>
@@ -237,7 +237,7 @@ export default function HomePage() {
                 <span>P / 01</span><span className="tag">CONSULT</span>
               </div>
               <h3>AI Transformation Consulting</h3>
-              <p>Strategy, roadmaps, AI readiness assessments, executive workshops, and responsible-AI governance for healthcare, finance, and B2B tech enterprises.</p>
+              <p>It starts with research — stakeholder interviews, data and workflow audits, AI-readiness assessment — to frame the decision the system must make and the roadmap to get there, across healthcare, finance, manufacturing, media, and B2B tech.</p>
               <ul>
                 <li>Strategy &amp; roadmapping</li>
                 <li>AI readiness &amp; maturity audits</li>
@@ -252,7 +252,7 @@ export default function HomePage() {
                 <span>P / 02</span><span className="tag teal">BUILD</span>
               </div>
               <h3>Agentic Systems &amp; Products</h3>
-              <p>Production agent architecture, workflow automation, custom AI products, and AI Centers of Excellence — shipped end-to-end by a principal-led team.</p>
+              <p>Then we build the custom AI product — agent architecture, RAG, MCP integrations, and workflow automation — engineered against your real data and shipped end-to-end by a principal-led team.</p>
               <ul>
                 <li>Agent architecture · LangGraph / CrewAI</li>
                 <li>Workflow automation · N8N / Claude API</li>
@@ -267,7 +267,7 @@ export default function HomePage() {
                 <span>P / 03</span><span className="tag">SHIP</span>
               </div>
               <h3>Financial AI &amp; Trading Intelligence</h3>
-              <p>Production financial AI agents and autonomous trading systems. We build with the same Claude infrastructure that Goldman Sachs, Citi, and JPMorgan are now adopting — brokerage API integration, MCP-connected trading agents, and real-time signal intelligence. Anthropic Certified.</p>
+              <p>The shipped intelligence system, running in production — financial AI agents, autonomous trading, and real-time signal intelligence, built on the same Claude infrastructure that Goldman Sachs, Citi, and JPMorgan now adopt. Brokerage API integration and MCP-connected agents. Anthropic Certified.</p>
               <ul>
                 <li>Enso Trading Terminal</li>
                 <li>News-driven trading algorithms</li>
@@ -502,6 +502,21 @@ export default function HomePage() {
             {['Fortune 500 Manufacturer', 'Citi', 'JPMorgan', 'Amex', 'Google', 'Microsoft', 'T-Mobile', 'McCann', 'Publicis', 'RAPP', 'Y&R', 'BBDO', 'Heller', 'Rokkan'].map((c) => (
               <div key={c} className="client">{c}</div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* closing CTA — minimal, normal dark ground */}
+      <section style={{ paddingTop: 'clamp(56px, 7vw, 96px)', paddingBottom: 'clamp(56px, 7vw, 96px)' }}>
+        <div className="shell">
+          <div className="reveal" style={{ display: 'flex', flexWrap: 'wrap', gap: 28, alignItems: 'center', justifyContent: 'space-between' }}>
+            <p className="lede" style={{ margin: 0 }}>Have a system that needs to ship? Let&apos;s talk.</p>
+            <div className="hero-cta-row">
+              <Link className="btn btn-primary" href="/contact">
+                Get in Touch <Arrow />
+              </Link>
+              <a className="btn" href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
+            </div>
           </div>
         </div>
       </section>
