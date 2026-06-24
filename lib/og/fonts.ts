@@ -16,7 +16,7 @@ export { STS };
 export type OgFont = {
   name: string;
   data: Buffer;
-  weight: 400 | 500 | 600;
+  weight: 400 | 500 | 600 | 700;
   style: 'normal';
 };
 
@@ -24,12 +24,17 @@ function load(file: string): Buffer {
   return readFileSync(new URL(`./fonts/${file}`, import.meta.url));
 }
 
-/** Full Strategy to Ship publication set — Lora headlines + Inter Tight body + JetBrains Mono meta. */
+/**
+ * Full Strategy to Ship publication set — the locked brand faces:
+ * Space Mono 700 (masthead / OG headline + wordmark) + Lora 600 (legacy editorial
+ * headline, kept for on-site articles) + Inter Tight body + JetBrains Mono meta.
+ */
 export async function stsOgFonts(): Promise<OgFont[]> {
   return [
     { name: 'Inter Tight', data: load('InterTight-400.ttf'), weight: 400, style: 'normal' },
     { name: 'Inter Tight', data: load('InterTight-500.ttf'), weight: 500, style: 'normal' },
     { name: 'Inter Tight', data: load('InterTight-600.ttf'), weight: 600, style: 'normal' },
+    { name: 'Space Mono', data: load('SpaceMono-700.ttf'), weight: 700, style: 'normal' },
     { name: 'Lora', data: load('Lora-600.ttf'), weight: 600, style: 'normal' },
     { name: 'JetBrains Mono', data: load('JetBrainsMono-400.ttf'), weight: 400, style: 'normal' },
     { name: 'JetBrains Mono', data: load('JetBrainsMono-500.ttf'), weight: 500, style: 'normal' },

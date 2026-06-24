@@ -529,6 +529,70 @@ footer {
 .theme-sts .btn-primary { background: var(--sts-coral); border-color: var(--sts-coral); color: #fff; }
 .theme-sts .btn-primary:hover { background: var(--sts-ink); border-color: var(--sts-ink); color: var(--sts-paper); }
 
+/* ── Strategy to Ship — in-article editorial components ──────────────────────
+   Lens chip · stat callout · pull-quote · "what to do" checklist. Scoped to
+   .theme-sts article surfaces so other articles/pages are untouched.
+   Tokens from brand/strategy-to-ship/tokens.css; see docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md. */
+
+/* Lens chip — colored shape token + mono kicker, sits above the headline. */
+.theme-sts .article-shell .lens-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 14px 0 4px;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sts-slate);
+}
+.theme-sts .article-shell .lens-dot {
+  width: 9px; height: 9px; border-radius: 2px; /* Build = ■ square */
+  flex: none;
+}
+
+/* Stat callout — Space Mono coral figures + JetBrains Mono labels on paper-2. */
+.theme-sts .article-shell .stat-callout {
+  display: flex; flex-wrap: wrap; gap: 24px 56px;
+  margin: 32px 0;
+  padding: 28px 32px;
+  background: var(--sts-paper-2);
+  border: 1px solid var(--sts-line);
+  border-radius: 10px;
+}
+.theme-sts .article-shell .stat-item { display: flex; flex-direction: column; gap: 6px; }
+.theme-sts .article-shell .stat-figure {
+  font-family: var(--font-space-mono), "Space Mono", ui-monospace, monospace;
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1;
+  font-size: clamp(34px, 5vw, 46px);
+  color: var(--sts-coral);
+}
+.theme-sts .article-shell .stat-label {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.03em; line-height: 1.4;
+  color: var(--sts-slate); max-width: 30ch;
+}
+
+/* Pull-quote — coral left-rule, serif. */
+.theme-sts .article-shell .pull-quote {
+  margin: 36px 0; padding: 4px 0 4px 26px;
+  border-left: 4px solid var(--sts-coral);
+  font-family: var(--sts-serif); font-weight: 500;
+  font-size: clamp(22px, 3.2vw, 29px); line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--sts-ink);
+}
+
+/* "What to do" checklist — coral check + bolded imperative. */
+.theme-sts .article-shell .body .todo-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 16px 0;
+  border-top: 1px solid var(--sts-line);
+}
+.theme-sts .article-shell .body .todo-item + .todo-item { border-top: 1px solid var(--sts-line); }
+.theme-sts .article-shell .todo-check {
+  flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: 6px;
+  background: var(--sts-coral); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+}
+.theme-sts .article-shell .todo-text { flex: 1; }
+.theme-sts .article-shell .todo-text strong { color: var(--sts-ink); }
+
 /* Insights — feed */
 .insights-hero { padding-top: clamp(140px, 16vw, 200px); padding-bottom: clamp(48px, 6vw, 80px); }
 .insights-hero .display { font-size: clamp(48px, 7vw, 96px); }

@@ -1,4 +1,5 @@
 export type Pillar = 'Consult' | 'Build' | 'Ship';
+export type Lens = 'Build' | 'Brand' | 'Financial' | 'Client';
 
 export type Insight = {
   slug: string;
@@ -10,7 +11,11 @@ export type Insight = {
   readingMinutes: number;
   tags: string[];
   faqs?: { question: string; answer: string }[]; // optional FAQ schema for AEO
-  body: string[]; // paragraphs (Markdown-ish, kept simple for placeholders)
+  /** Optional editorial lens — drives the in-article lens chip + OG eyebrow. Opt-in per article. */
+  lens?: Lens;
+  /** Optional source credit (e.g. "Claude Managed Agents") — shown on the OG card footer. */
+  sourceCredit?: string;
+  body: string[]; // paragraphs (Markdown-ish: ## h2, **bold**, [links](url), > pull-quote, "- [ ] " checklist, "::stat" callout)
 };
 
 export const INSIGHTS: Insight[] = [
@@ -19,6 +24,8 @@ export const INSIGHTS: Insight[] = [
     title: "Claude's agents now learn, grade themselves, and split the work. The bottleneck moves to whoever can define 'good.'",
     dek: "Anthropic added dreaming, outcomes, and multiagent orchestration to Claude Managed Agents. Together they relocate the hard part of building an agent from writing the loop to defining what 'good' looks like — which is exactly the Strategy-to-Ship work we do.",
     pillar: 'Build',
+    lens: 'Build',
+    sourceCredit: 'Claude Managed Agents',
     date: '2026-06-18',
     readingMinutes: 6,
     tags: ["Claude Managed Agents", "Agentic AI", "Anthropic", "Multi-Agent Orchestration", "AI Outcomes", "AI Memory", "Enterprise AI", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
@@ -27,6 +34,7 @@ export const INSIGHTS: Insight[] = [
       "On May 6, 2026, Anthropic added [dreaming, outcomes, multiagent orchestration, and webhooks](https://claude.com/blog/new-in-claude-managed-agents) to Managed Agents. None of them are about making a single agent answer a single prompt better. All three are about the part that actually breaks in production: keeping an agent reliable, getting it to improve, and scaling it across work too large for one context window.",
       "## The signal",
       "**Outcomes** is the one most teams will feel first. You write a rubric describing what success looks like, and a separate grader model evaluates the agent's output in its own context window — so it isn't swayed by the agent's own reasoning. When the work falls short, the grader names what's wrong and the agent takes another pass, until it clears the bar, without a human reviewing every attempt. Anthropic reports up to a 10-point lift in task success over a standard prompting loop, with the biggest gains on the hardest problems, plus measurable jumps in file generation — Word and PowerPoint output improved 8.4% and 10.1% in their internal benchmarks.",
+      "::stat\n+10 pts | task-success lift over a standard prompting loop\n8.4% / 10.1% | Word / PowerPoint file-generation gains",
       "**Dreaming** (in research preview) is a scheduled process that reviews past sessions and memory stores, extracts patterns, and curates what the agent remembers — recurring mistakes, workflows that converge, preferences shared across a team — so agents get better between sessions, not just within one. Harvey, building long-form legal drafting on this stack, reported completion rates rising roughly six-fold once their agents could carry learnings forward.",
       "**Multiagent orchestration** lets a lead agent break a job into pieces and hand each to a specialist with its own model, prompt, and tools, all working in parallel on a shared filesystem and fully traceable in the Console. Netflix's platform team uses it to analyze build logs across thousands of applications in parallel; Spiral runs a lead agent on Haiku that delegates drafting to Opus subagents and grades every draft with outcomes; Wisedocs cut document review time in half while staying inside its own guidelines.",
       "## Why it matters",
@@ -35,12 +43,13 @@ export const INSIGHTS: Insight[] = [
       "## The Enso take",
       "This maps almost exactly onto work we already ship. For a Fortune 500 manufacturer, we built inspectable, toggleable expert rules because the scientists would not trust a black box — and an outcomes rubric is the same idea by another name: a written, auditable definition of \"good\" the system checks itself against, every time, without a human in the loop. For Heller's pharma AI Center of Excellence, the work that has to clear MLR and compliance review is precisely the exhaustive, detail-bound output outcomes was built for; Wisedocs is doing this for verification, and we do it for regulated pharma.",
       "In our own Enso Trading Terminal, the lead-and-specialist split — research, risk, execution, monitoring — is the multiagent pattern, with risk enforced by construction rather than requested by prompt. And Strategy to Ship, the engine that drafted this article, is a Claude-native self-improving routine; dreaming is the productized version of the retrospective we currently run by hand.",
+      "> The moat was never \"can you build an agent loop.\" It is whether you can define the rubric, design the memory, and lay out the topology.",
       "The throughline is the one we have argued since the start: the moat was never \"can you build an agent loop.\" It is whether you can define the rubric, design the memory, and lay out the topology for a specific domain. That is consulting and architecture work — Strategy-to-Ship — and it is exactly where fifteen years of structured delivery beats raw build speed.",
       "## What to do about it",
-      "**Write the rubric before the agent.** If you cannot state \"good\" as acceptance criteria, no model will reliably hit it. Begin every agent project with the grading spec, not the prompt.",
-      "**Treat memory as architecture, not a feature.** Decide up front what should persist, what dreaming should curate, and who reviews changes before they land — especially in regulated environments.",
-      "**Decompose before you parallelize.** Map which work is a lead-agent decision and which belongs to a specialist subagent. Most stalled agents are one over-stuffed agent doing four jobs badly.",
-      "**Build on the harness, not a single model.** Models change weekly and can be withdrawn; the runtime, rubrics, and memory you build around them are what compound.",
+      "- [ ] **Write the rubric before the agent.** If you cannot state \"good\" as acceptance criteria, no model will reliably hit it. Begin every agent project with the grading spec, not the prompt.",
+      "- [ ] **Treat memory as architecture, not a feature.** Decide up front what should persist, what dreaming should curate, and who reviews changes before they land — especially in regulated environments.",
+      "- [ ] **Decompose before you parallelize.** Map which work is a lead-agent decision and which belongs to a specialist subagent. Most stalled agents are one over-stuffed agent doing four jobs badly.",
+      "- [ ] **Build on the harness, not a single model.** Models change weekly and can be withdrawn; the runtime, rubrics, and memory you build around them are what compound.",
       "We are adding Managed Agent deployments to our Agentic Systems track — the self-improving, self-grading tier of what we build. If your pilots keep stalling just short of production, that gap is a rubric-and-architecture problem, and it is the work we do. [Get in Touch](/contact).",
       "**Powered by Enso Labs**",
     ],

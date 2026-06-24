@@ -84,10 +84,53 @@ const renderInline = (text: string): React.ReactNode[] => {
   return nodes;
 };
 
-// Render a body block — headings, images, or paragraphs.
+// Tint per editorial lens (brand-lock §6; "Build" reads slate per the publish brief).
+const LENS_TINT: Record<string, string> = {
+  Build: 'var(--sts-slate)',
+  Brand: 'var(--sts-amber)',
+  Financial: 'var(--sts-slate)',
+  Client: 'var(--sts-ink)',
+};
+
+// Render a body block — headings, images, editorial components, or paragraphs.
 const renderBlock = (block: string, i: number) => {
   if (block.startsWith('## ')) {
     return <h2 key={i}>{block.slice(3)}</h2>;
+  }
+  // Pull-quote — a line beginning with "> " (coral left-rule, serif).
+  if (block.startsWith('> ')) {
+    return (
+      <blockquote key={i} className="pull-quote">
+        {renderInline(block.slice(2))}
+      </blockquote>
+    );
+  }
+  // "WHAT TO DO" checklist item — a line beginning with "- [ ] ".
+  if (block.startsWith('- [ ] ')) {
+    return (
+      <div key={i} className="todo-item">
+        <span className="todo-check" aria-hidden="true">✓</span>
+        <div className="todo-text">{renderInline(block.slice(6))}</div>
+      </div>
+    );
+  }
+  // Stat callout — "::stat" then one "figure | label" pair per line.
+  if (block.startsWith('::stat')) {
+    const items = block
+      .split('\n')
+      .slice(1)
+      .map((line) => line.split('|').map((c) => c.trim()))
+      .filter((cells) => cells.length >= 2);
+    return (
+      <div key={i} className="stat-callout">
+        {items.map(([figure, label], j) => (
+          <div key={j} className="stat-item">
+            <div className="stat-figure">{figure}</div>
+            <div className="stat-label">{label}</div>
+          </div>
+        ))}
+      </div>
+    );
   }
   const imgMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
   if (imgMatch) {
@@ -146,6 +189,13 @@ export default function InsightArticle({ params }: { params: Params }) {
 
       <article className="article-shell">
         <Link href="/insights" className="back">← All insights</Link>
+
+        {post.lens && (
+          <div className="lens-chip">
+            <span className="lens-dot" style={{ background: LENS_TINT[post.lens] }} aria-hidden="true" />
+            The {post.lens} Lens
+          </div>
+        )}
 
         <div className="meta">
           <span className="pillar">{post.pillar}</span>

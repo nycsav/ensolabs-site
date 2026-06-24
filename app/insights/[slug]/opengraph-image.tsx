@@ -17,10 +17,11 @@ export default function Image({ params }: { params: { slug: string } }) {
     });
   }
   return renderOg({
-    eyebrow: `Insights · ${post.pillar}`,
+    eyebrow: post.lens ? `The ${post.lens} Lens` : `Insights · ${post.pillar}`,
     title: post.title,
     subtitle: post.dek.length > 110 ? `${post.dek.slice(0, 107)}…` : post.dek,
     strap: `ensolabs.ai · ${post.readingMinutes} min read`,
     theme: 'publication',
+    sourceCredit: post.sourceCredit,
   });
 }

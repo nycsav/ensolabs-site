@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import '../brand/strategy-to-ship/tokens.css';
 import { Lora, Inter_Tight, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { RevealMount } from '@/components/Reveal';
@@ -32,6 +33,14 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
+// Space Mono 700 — the locked Strategy to Ship masthead face. Used for stat-callout
+// figures on /insights articles (and embedded separately for OG cards in lib/og/fonts).
+const spaceMono = localFont({
+  src: '../lib/og/fonts/SpaceMono-700.ttf',
+  weight: '700',
+  variable: '--font-space-mono',
   display: 'swap',
 });
 
@@ -121,7 +130,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lora.variable} ${interTight.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${lora.variable} ${interTight.variable} ${jetbrainsMono.variable} ${spaceMono.variable}`}>
       <head>
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
