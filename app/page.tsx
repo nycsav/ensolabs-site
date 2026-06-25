@@ -499,7 +499,7 @@ export default function HomePage() {
           </div>
 
           <div className="clients reveal">
-            {['Fortune 500 Manufacturer', 'Citi', 'JPMorgan', 'Amex', 'Google', 'Microsoft', 'T-Mobile', 'McCann', 'Publicis', 'RAPP', 'Y&R', 'BBDO', 'Heller', 'Rokkan'].map((c) => (
+            {['Fortune 500 Manufacturer', 'Citi', 'JPMorgan Chase', 'American Express', 'Google', 'Microsoft', 'T-Mobile', 'McCann', 'Publicis', 'RAPP', 'Y&R', 'BBDO', 'Heller', 'Rokkan'].map((c) => (
               <div key={c} className="client">{c}</div>
             ))}
           </div>
