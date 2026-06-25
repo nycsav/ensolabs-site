@@ -31,6 +31,7 @@ export function Footer() {
             <Link href="/insights">Insights</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/locations/new-york">AI Consulting · NYC</Link>
             <Link href="/built-with-ai">Built with AI</Link>
             <Link href="/editorial-policy">Editorial Policy</Link>
           </div>
