@@ -56,7 +56,7 @@ const FAQS = [
   {
     question: 'Is Sav Banerjee available for Head of AI or VP AI Strategy roles?',
     answer:
-      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles, including Head of AI, VP of AI Strategy, Chief AI Officer (CAIO), Director of AI Products, and Principal AI Consultant positions. His background as an AI architect and AI transformation leader combines technical depth (Python, LangGraph, Claude API, MCP) with C-suite advisory experience across Fortune 500 brands. Contact sav@ensopartners.co for availability.',
+      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles, including Head of AI, VP of AI Strategy, Chief AI Officer (CAIO), Director of AI Products, and Principal AI Consultant positions. His background as an AI architect and AI transformation leader combines technical depth (Python, LangGraph, Claude API, MCP) with C-suite advisory experience across Fortune 500 brands. Contact sav@ensolabs.ai for availability.',
   },
   {
     question: 'Where is Sav Banerjee based?',
@@ -194,7 +194,7 @@ export default function SavBanerjeeBioPage() {
             strategy leadership through Enso Labs&rsquo;{' '}
             <Link href="/locations/new-york">NYC AI consulting practice</Link>.
             Inquiries — for engagements or roles — can be sent directly to
-            sav@ensopartners.co.
+            sav@ensolabs.ai.
           </p>
         </div>
         <Link href="/contact" className="cta">
@@ -259,7 +259,7 @@ export default function SavBanerjeeBioPage() {
             <dt><strong>Open to:</strong></dt>
             <dd>Head of AI · VP AI Strategy · Chief AI Officer · Director of AI Products · Principal AI Consultant — contract or full-time</dd>
             <dt><strong>Contact:</strong></dt>
-            <dd>sav@ensopartners.co · linkedin.com/in/savbanerjee · github.com/nycsav</dd>
+            <dd>sav@ensolabs.ai · linkedin.com/in/savbanerjee · github.com/nycsav</dd>
           </dl>
         </div>
       </section>

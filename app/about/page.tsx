@@ -24,7 +24,7 @@ const ABOUT_FAQ = [
   {
     question: 'Is Sav Banerjee available for Head of AI or VP AI Strategy roles?',
     answer:
-      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles including Head of AI, VP AI Strategy, Chief AI Officer (CAIO), Director of AI Products, and Principal AI Consultant positions. His background as an AI architect and AI transformation leader combines technical depth (Python, LangGraph, Claude API, MCP) with C-suite advisory experience. Contact sav@ensopartners.co for availability.',
+      'Yes. Sav Banerjee is available for both contract consulting engagements and full-time leadership roles including Head of AI, VP AI Strategy, Chief AI Officer (CAIO), Director of AI Products, and Principal AI Consultant positions. His background as an AI architect and AI transformation leader combines technical depth (Python, LangGraph, Claude API, MCP) with C-suite advisory experience. Contact sav@ensolabs.ai for availability.',
   },
 ];
 
@@ -324,7 +324,7 @@ export default function AboutPage() {
               <p className="lede">Email goes straight to Sav. Calls land on the studio calendar. No screening, no pre-qualification.</p>
               <div className="hero-cta-row">
                 <Link className="btn btn-primary" href="/contact">Get in Touch <Arrow /></Link>
-                <a className="btn" href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
+                <a className="btn" href="mailto:sav@ensolabs.ai">sav@ensolabs.ai</a>
               </div>
             </div>
           </div>

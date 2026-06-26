@@ -103,6 +103,25 @@ a { color: inherit; text-decoration: none; }
   background: var(--teal); box-shadow: 0 0 0 4px color-mix(in oklab, var(--teal) 25%, transparent);
 }
 
+/* social icons in nav */
+.nav-social {
+  display: inline-flex; align-items: center; gap: 16px;
+  margin-left: 2px; padding-left: 20px;
+  border-left: 1px solid var(--line-2);
+}
+.nav-social a {
+  color: var(--fg-3); display: inline-flex; align-items: center;
+  transition: color .18s ease, transform .18s ease;
+}
+.nav-social a:hover { color: var(--teal); transform: translateY(-1px); }
+
+.mobile-menu-social { display: flex; align-items: center; gap: 22px; margin-top: 20px; }
+.mobile-menu-social a {
+  color: var(--fg-2); display: inline-flex; align-items: center;
+  transition: color .18s ease;
+}
+.mobile-menu-social a:hover { color: var(--teal); }
+
 /* ========== type ========== */
 .eyebrow {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
@@ -505,23 +524,23 @@ footer {
 
 /* ============================================================
    Strategy to Ship — publication theme layer (on /insights, set with
-   .theme-light). Lora headlines + Ship-Coral accents; type + color pulled
-   from brand/strategy-to-ship/tokens.css (--sts-*). Mono meta + Inter Tight
-   body already hold from --mono/--display.
+   .theme-light). Space Mono 700 headlines + Ship-Coral accents; type + color
+   pulled from brand/strategy-to-ship/tokens.css (--sts-*). Mono meta + Inter
+   Tight body already hold from --mono/--display.
    ============================================================ */
 .theme-sts {
   --bg:   var(--sts-paper);
   --bg-2: var(--sts-paper-2);
   --line: var(--sts-line);
 }
-/* Editorial headlines → Lora */
+/* Editorial headlines → Space Mono 700 (brand lock §5) */
 .theme-sts .display,
 .theme-sts .article-shell h1,
 .theme-sts .article-shell h2,
 .theme-sts .article-shell .body h2 {
-  font-family: var(--sts-serif);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-family: var(--sts-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 /* Ship Coral — body links, the → arrow, primary CTA */
 .theme-sts .article-shell .body p a { color: var(--sts-coral); text-decoration-color: var(--sts-coral); }
@@ -568,12 +587,12 @@ footer {
   color: var(--sts-slate); max-width: 30ch;
 }
 
-/* Pull-quote — coral left-rule, serif. */
+/* Pull-quote — coral left-rule, Inter Tight italic (body face; the lock has no serif). */
 .theme-sts .article-shell .pull-quote {
   margin: 36px 0; padding: 4px 0 4px 26px;
   border-left: 4px solid var(--sts-coral);
-  font-family: var(--sts-serif); font-weight: 500;
-  font-size: clamp(22px, 3.2vw, 29px); line-height: 1.3; letter-spacing: -0.01em;
+  font-family: var(--sts-sans); font-weight: 500; font-style: italic;
+  font-size: clamp(22px, 3.2vw, 29px); line-height: 1.34; letter-spacing: -0.01em;
   color: var(--sts-ink);
 }
 
@@ -842,6 +861,46 @@ footer {
   border: 1px solid var(--line);
 }
 @media (max-width: 800px) { .s2n-grid { grid-template-columns: 1fr; } }
+
+/* Strategy to Ship — featured insight cards (home, above the fold) */
+.s2s-feature { padding-top: clamp(40px, 5vw, 60px); padding-bottom: clamp(8px, 2vw, 20px); }
+.s2s-feature-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 22px;
+}
+.s2s-feature-all { font-family: var(--mono); font-size: 12px; color: var(--fg-3); transition: color .18s ease; }
+.s2s-feature-all:hover { color: var(--teal); }
+.s2s-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 860px) { .s2s-feature-grid { grid-template-columns: 1fr; } }
+.s2s-card {
+  position: relative; display: flex; flex-direction: column; gap: 13px;
+  padding: 13px 13px 38px; border: 1px solid var(--line);
+  border-radius: 14px; background: var(--bg-2);
+  transition: border-color .2s ease, transform .2s ease, background .2s ease;
+}
+.s2s-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+.s2s-card:hover .s2s-card-arrow { transform: translateX(6px); color: var(--teal); }
+.s2s-card-img {
+  display: block; aspect-ratio: 1200 / 630; overflow: hidden;
+  border-radius: 9px; border: 1px solid var(--line); background: #0a0f18;
+}
+.s2s-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.s2s-card-meta {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.s2s-card-meta .kind { color: var(--teal); }
+.s2s-card-title {
+  font-family: var(--display); font-size: 16px; font-weight: 500;
+  line-height: 1.32; letter-spacing: -0.01em; color: var(--fg);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.s2s-card-arrow {
+  position: absolute; left: 14px; bottom: 14px;
+  font-family: var(--mono); color: var(--fg-3);
+  transition: transform .2s ease, color .2s ease;
+}
 
 .s2n-card {
   background: var(--bg);

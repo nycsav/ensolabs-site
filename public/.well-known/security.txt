@@ -1,3 +1,4 @@
+Contact: mailto:sav@ensolabs.ai
 Contact: mailto:sav@ensopartners.co
 Preferred-Languages: en
 Canonical: https://ensolabs.ai/.well-known/security.txt

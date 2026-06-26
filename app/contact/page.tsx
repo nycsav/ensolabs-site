@@ -155,6 +155,7 @@ export default function ContactPage() {
                     <span className="ix">01</span>
                     <div className="body">
                       <b>Email</b>
+                      <a href="mailto:sav@ensolabs.ai">sav@ensolabs.ai</a>
                       <a href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
                       <p>Reaches Sav directly. No CRM, no auto-responder.</p>
                     </div>

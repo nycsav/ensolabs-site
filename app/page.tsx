@@ -8,6 +8,7 @@ import {
   faqSchema,
   professionalServiceSchema,
 } from '@/lib/schema';
+import { INSIGHTS } from '@/lib/insights';
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -50,9 +51,16 @@ const HOME_FAQS = [
   {
     question: 'How do I start a project with Enso Labs?',
     answer:
-      'Start with a 2-week AI Audit — a fixed-fee diagnostic engagement that delivers a written roadmap, prioritized opportunity backlog, ROI model, governance gap-map, and a working agentic prototype against your real data. Send a brief through the contact form or email sav@ensopartners.co. Response within 24 hours.',
+      'Start with a 2-week AI Audit — a fixed-fee diagnostic engagement that delivers a written roadmap, prioritized opportunity backlog, ROI model, governance gap-map, and a working agentic prototype against your real data. Send a brief through the contact form or email sav@ensolabs.ai. Response within 24 hours.',
   },
 ];
+
+const LATEST = [...INSIGHTS]
+  .sort((a, b) => +new Date(b.date) - +new Date(a.date))
+  .slice(0, 3);
+
+const fmtDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
 export default function HomePage() {
   return (
@@ -112,6 +120,38 @@ export default function HomePage() {
           <div className="hero-sectors reveal" data-delay="3">
             <span className="lbl">SECTORS</span>&nbsp;&nbsp;
             <span className="list">HEALTHCARE · FINANCE · MANUFACTURING · MEDIA · B2B TECH · CONSUMER</span>
+          </div>
+        </div>
+      </section>
+
+      {/* LATEST FROM STRATEGY TO SHIP — featured above the fold */}
+      <section className="s2s-feature" aria-label="Latest from Strategy to Ship">
+        <div className="shell">
+          <div className="s2s-feature-head">
+            <span className="eyebrow">
+              Latest from Strategy&nbsp;<span aria-hidden="true" style={{ color: '#F0512E' }}>→</span>&nbsp;Ship
+            </span>
+            <Link className="s2s-feature-all" href="/insights">
+              All insights&nbsp;<span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="s2s-feature-grid">
+            {LATEST.map((p) => (
+              <Link key={p.slug} className="s2s-card" href={`/insights/${p.slug}`}>
+                <span className="s2s-card-img">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`/og/og-${p.slug}.png`} alt={p.title} loading="lazy" width={1200} height={630} />
+                </span>
+                <span className="s2s-card-meta">
+                  <span className="kind">{p.pillar}</span>
+                  <span>{fmtDate(p.date)}</span>
+                  <span>{p.readingMinutes} min</span>
+                </span>
+                <span className="s2s-card-title">{p.title}</span>
+                <span className="s2s-card-arrow" aria-hidden="true">→</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -515,7 +555,7 @@ export default function HomePage() {
               <Link className="btn btn-primary" href="/contact">
                 Get in Touch <Arrow />
               </Link>
-              <a className="btn" href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
+              <a className="btn" href="mailto:sav@ensolabs.ai">sav@ensolabs.ai</a>
             </div>
           </div>
         </div>

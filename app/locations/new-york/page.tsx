@@ -52,12 +52,12 @@ const FAQS = [
   {
     question: 'Is Enso Labs available for new AI engagements in 2026?',
     answer:
-      'Yes. Enso Labs is currently booking new AI transformation and agentic systems engagements for Q3–Q4 2026. The fastest way to start is a 2-week AI Audit, which most clients use to validate scope before committing to a full Pilot-to-Production engagement. Reach the studio at sav@ensopartners.co or through the contact page.',
+      'Yes. Enso Labs is currently booking new AI transformation and agentic systems engagements for Q3–Q4 2026. The fastest way to start is a 2-week AI Audit, which most clients use to validate scope before committing to a full Pilot-to-Production engagement. Reach the studio at sav@ensolabs.ai or through the contact page.',
   },
   {
     question: 'Is Sav Banerjee available for fractional or full-time AI leadership roles?',
     answer:
-      'Sav Banerjee, founder of Enso Labs, is open to select fractional and advisory AI leadership engagements — including Head of AI, VP of AI Strategy, Director of AI Products, and Principal AI Consultant mandates — alongside Enso Labs client work. Sav is a New York–based AI transformation leader with production experience in agentic systems, LangGraph, and MCP architecture. Inquiries can be sent to sav@ensopartners.co.',
+      'Sav Banerjee, founder of Enso Labs, is open to select fractional and advisory AI leadership engagements — including Head of AI, VP of AI Strategy, Director of AI Products, and Principal AI Consultant mandates — alongside Enso Labs client work. Sav is a New York–based AI transformation leader with production experience in agentic systems, LangGraph, and MCP architecture. Inquiries can be sent to sav@ensolabs.ai.',
   },
   {
     question: 'Where is Enso Labs located in New York?',
@@ -270,7 +270,7 @@ export default function NewYorkLocationPage() {
             <dt><strong>Engagements:</strong></dt>
             <dd>2-Week AI Audit ($15K–$25K) · 12-Week Pilot-to-Production ($75K–$150K) · Embedded retainer</dd>
             <dt><strong>Availability:</strong></dt>
-            <dd>Booking Q3–Q4 2026 · sav@ensopartners.co</dd>
+            <dd>Booking Q3–Q4 2026 · sav@ensolabs.ai</dd>
           </dl>
         </div>
       </section>

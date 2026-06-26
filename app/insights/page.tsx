@@ -181,7 +181,7 @@ export default function InsightsIndex() {
                 One essay every two weeks. No newsletter blast, no growth-hacked subject lines — just notes from the work.
               </p>
               <div className="hero-cta-row">
-                <a className="btn btn-primary" href="mailto:sav@ensopartners.co?subject=Subscribe%20to%20Insights">
+                <a className="btn btn-primary" href="mailto:sav@ensolabs.ai?subject=Subscribe%20to%20Insights">
                   Subscribe via email
                 </a>
                 <Link className="btn" href="/feed.xml">RSS feed</Link>

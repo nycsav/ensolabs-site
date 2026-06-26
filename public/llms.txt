@@ -71,6 +71,7 @@ For complete article text and detailed service descriptions, see: https://ensola
 - https://ensolabs.ai
 - https://ensolabs.ai/about
 - https://ensolabs.ai/contact
+- sav@ensolabs.ai
 - sav@ensopartners.co
 - https://linkedin.com/in/savbanerjee
 - https://github.com/nycsav

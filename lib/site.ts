@@ -12,9 +12,11 @@ export const SITE = {
   founder: {
     name: 'Sav Banerjee',
     role: 'Founder & Principal AI Transformation Advisor',
-    email: 'sav@ensopartners.co',
+    email: 'sav@ensolabs.ai', // primary, brand-facing (forwards to ensopartners.co)
+    emailAlt: 'sav@ensopartners.co', // secondary / Google Workspace backend
     linkedin: 'https://linkedin.com/in/savbanerjee',
     github: 'https://github.com/nycsav',
+    x: 'https://x.com/nycsav',
     education: 'B.A. Advertising, University of Oregon',
   },
   address: {

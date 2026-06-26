@@ -41,7 +41,7 @@ export function ContactForm() {
 
     if (!endpoint) {
       setStatus('error');
-      setErrorMsg('Form is not configured. Email sav@ensopartners.co directly.');
+      setErrorMsg('Form is not configured. Email sav@ensolabs.ai directly.');
       return;
     }
 
