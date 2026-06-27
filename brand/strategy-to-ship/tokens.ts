@@ -24,8 +24,8 @@ export const STS_COLOR = {
 } as const;
 
 export const STS_FONT = {
-  serif: 'Lora',          // display / headlines
-  sans: 'Inter Tight',    // body / UI
+  display: 'Space Mono', // display / headlines / wordmark — the locked mono voice (700), brand-lock §5
+  sans: 'Inter Tight',   // body / UI
   mono: 'JetBrains Mono', // metadata / the machine signal
 } as const;
 

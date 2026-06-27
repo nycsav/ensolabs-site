@@ -6,7 +6,7 @@ If any other file, the live site, or a past chat disagrees with this document, *
 fix the other thing. Do not re-derive these from memory or chat history ever again.
 
 > ⚠️ Known drift to correct (these do NOT match the lock and must be fixed):
-> - The live site OG generator (`components/OgFrame.tsx` in ensolabs-site) uses **Lora** + a ring circle. WRONG → should be Space Mono + swept ribbon.
+> - ~~The live site OG generator (`components/OgFrame.tsx`) used Lora + a ring.~~ **FIXED 2026-06-26** — `OgFrame.tsx`, the /insights theme (`app/globals.css`), the brand tokens (`tokens.css`/`tokens.ts`), `app/insights/opengraph-image.tsx`, and the footer now render Space Mono 700 + the swept ribbon (▸ small-format). Lora is fully removed from code.
 > - The `Content Engine.dc.html` (this project) used Lora + a "S→S" coral circle. WRONG → rebuild on the lock.
 
 ---
@@ -84,6 +84,10 @@ Wordmark inline example:
 Practitioner-editorial, advertising-sharp, AI-honest. First-person studio "we." Show the receipt (a
 number/system/shipped artifact). Name the human-in-the-loop. Close with **Powered by Enso Labs**.
 
+**Confidentiality (locked):** the client **Gore** must ALWAYS render as **"a Fortune 500 manufacturer"** in
+any public-facing asset, copy, or article — never the client name, never "Global Materials Manufacturer".
+(See §6: Client-lens field notes withhold names.)
+
 ## 9. ART DIRECTION
 Warm grade, deep contrast, paper-toned highlights; real practitioners in real rooms; decisive off-center
 crops; type-over-image welcome. **Never:** stock "AI", glowing brains, robots, neural-net clipart, fake
@@ -98,8 +102,10 @@ futuristic gradients.
 4. Fix the drift: rebuild `Content Engine.dc.html` on this lock; update live `OgFrame.tsx` to
    Space Mono + swept ribbon.
 
-## The ONE thing to confirm (live-site implication)
-The locked Brand System says **Space Mono** for headlines, but the **live website currently renders the
-publication in Lora**. Two readings: (a) Space Mono is canonical and the site drifted — fix the site; or
-(b) Lora was a deliberate later choice for on-site reading. **Confirm which**, and I'll align everything
-to one answer. Everything else above is unambiguous and locked.
+## RESOLVED (2026-06-26): Space Mono is canonical
+The open question — Space Mono vs Lora for headlines — is **settled: Space Mono is canonical; Lora was
+drift.** The site has been aligned: `components/OgFrame.tsx`, the /insights theme (`app/globals.css`), the
+brand tokens (`tokens.css`/`tokens.ts`), `app/insights/opengraph-image.tsx`, the global footer, and the
+Lora font plumbing in `app/layout.tsx` now use Space Mono 700 + the swept ribbon. Lora is no longer
+referenced in code. (Remaining "Lora" mentions live only in older narrative design docs — see the brand
+audit; they defer to this lock.)

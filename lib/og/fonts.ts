@@ -3,7 +3,7 @@
  *
  * The .ttf binaries in ./fonts are bundled and read at render time with
  * `fs.readFileSync(new URL(..., import.meta.url))` — so OG images render in the
- * real brand faces (Lora · Inter Tight · JetBrains Mono) with **no system fallback**
+ * real brand faces (Space Mono · Inter Tight · JetBrains Mono) with **no system fallback**
  * and **no runtime network fetch**. The `new URL(..., import.meta.url)` reference lets
  * Next file-trace the .ttf into the serverless bundle. Requires the `nodejs` runtime
  * (the routes declare it). Colors come from the single source: brand/strategy-to-ship/tokens.ts.
@@ -26,8 +26,8 @@ function load(file: string): Buffer {
 
 /**
  * Full Strategy to Ship publication set — the locked brand faces:
- * Space Mono 700 (masthead / OG headline + wordmark) + Lora 600 (legacy editorial
- * headline, kept for on-site articles) + Inter Tight body + JetBrains Mono meta.
+ * Space Mono 700 (masthead / OG headline + wordmark) + Inter Tight body +
+ * JetBrains Mono meta. No Lora — Space Mono is the canonical display face (brand lock §5).
  */
 export async function stsOgFonts(): Promise<OgFont[]> {
   return [
@@ -35,7 +35,6 @@ export async function stsOgFonts(): Promise<OgFont[]> {
     { name: 'Inter Tight', data: load('InterTight-500.ttf'), weight: 500, style: 'normal' },
     { name: 'Inter Tight', data: load('InterTight-600.ttf'), weight: 600, style: 'normal' },
     { name: 'Space Mono', data: load('SpaceMono-700.ttf'), weight: 700, style: 'normal' },
-    { name: 'Lora', data: load('Lora-600.ttf'), weight: 600, style: 'normal' },
     { name: 'JetBrains Mono', data: load('JetBrainsMono-400.ttf'), weight: 400, style: 'normal' },
     { name: 'JetBrains Mono', data: load('JetBrainsMono-500.ttf'), weight: 500, style: 'normal' },
   ];

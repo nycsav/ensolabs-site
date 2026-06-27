@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import '../brand/strategy-to-ship/tokens.css';
-import { Lora, Inter_Tight, JetBrains_Mono } from 'next/font/google';
+import { Inter_Tight, JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
@@ -14,14 +14,7 @@ import { SITE } from '@/lib/site';
 
 // Self-hosted brand fonts (no external Google request, no FOUT). Exposed as CSS
 // variables consumed by globals.css (--display/--mono) and the Strategy to Ship
-// publication tokens (tokens.css: --sts-serif/--sts-sans/--sts-mono).
-const lora = Lora({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-lora',
-  display: 'swap',
-});
+// publication tokens (tokens.css: --sts-display/--sts-sans/--sts-mono).
 const interTight = Inter_Tight({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
@@ -130,12 +123,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lora.variable} ${interTight.variable} ${jetbrainsMono.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${interTight.variable} ${jetbrainsMono.variable} ${spaceMono.variable}`}>
       <head>
         {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link rel="image_src" href="https://ensolabs.ai/og-default.png?v=3" />
-        {/* Fonts are self-hosted via next/font (Lora · Inter Tight · JetBrains Mono) — no external <link>. */}
+        {/* Fonts are self-hosted via next/font (Space Mono · Inter Tight · JetBrains Mono) — no external <link>. */}
       </head>
       <body>
         <JsonLd schemas={[orgSchema(), personSchema(), websiteSchema()]} />

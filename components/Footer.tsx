@@ -103,7 +103,7 @@ export function Footer() {
             <VercelMark /> Deployed on Vercel
           </span>
           <span aria-hidden="true">·</span>
-          <span>Intelligence by Strategy <span style={{ color: '#F0512E' }}>→</span> Ship</span>
+          <span>Intelligence by Strategy <span style={{ color: '#F0512E' }}>▸</span> Ship</span>
           <span aria-hidden="true">·</span>
           <span>Human-in-the-loop: Sav Banerjee</span>
         </div>

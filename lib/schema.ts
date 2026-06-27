@@ -257,7 +257,9 @@ export const articleSchema = (post: Insight): JsonLd => ({
   },
   image: {
     '@type': 'ImageObject',
-    url: `${SITE.origin}/og/og-${post.slug}.png`,
+    // The prerendered per-article OG card (stable URL, no build hash). Replaces the
+    // old hand-made /og/og-<slug>.png so structured-data + share images share one brand.
+    url: `${SITE.origin}/insights/${post.slug}/opengraph-image`,
     width: 1200,
     height: 630,
   },

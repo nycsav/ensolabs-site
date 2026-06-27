@@ -1,10 +1,21 @@
 import { renderOg, OG_SIZE } from '@/components/OgFrame';
-import { getInsight } from '@/lib/insights';
+import { INSIGHTS, getInsight } from '@/lib/insights';
 
 export const runtime = 'nodejs';
 export const size = OG_SIZE;
 export const contentType = 'image/png';
 export const alt = 'Enso Labs Insights';
+
+// Prerender one OG card per article at BUILD time (not on-demand). next/og's
+// runtime file reads (fonts + assets via `new URL(..., import.meta.url)`) are
+// unreliable inside Vercel's *dynamic* functions — the dynamic version 500'd in
+// production. Baking the PNG at build, when every file is on disk, is what the
+// working `/insights/opengraph-image` card already does. dynamicParams=false ⇒
+// only known slugs, matching the article page.
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return INSIGHTS.map((p) => ({ slug: p.slug }));
+}
 
 export default function Image({ params }: { params: { slug: string } }) {
   const post = getInsight(params.slug);

@@ -31,6 +31,10 @@ export async function generateMetadata({
     description: post.dek,
     keywords: post.tags,
     alternates: { canonical: `${SITE.origin}/insights/${post.slug}` },
+    // og:image + twitter:image are supplied automatically by the prerendered
+    // opengraph-image.tsx in this segment (one baked card per article). We no
+    // longer hard-code the static /og/og-<slug>.png — new articles get a brand
+    // card with zero manual PNG work. (X falls back to og:image for its card.)
     openGraph: {
       type: 'article',
       title: post.title,
@@ -40,13 +44,11 @@ export async function generateMetadata({
       modifiedTime: post.dateModified || post.date,
       authors: ['https://linkedin.com/in/savbanerjee'],
       tags: post.tags,
-      images: [{ url: `${SITE.origin}/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.dek,
-      images: [`https://ensolabs.ai/og/og-${post.slug}.png`],
     },
   };
 }

@@ -57,22 +57,26 @@ export default async function OGImage() {
           <span style={{ width: '9px', height: '9px', background: c.coral, display: 'block' }} />
           INSIGHTS · FROM ENSO LABS
         </div>
-        {/* headline — Lora */}
+        {/* headline — Space Mono 700 + coral swept ribbon (brand lock §1) */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '18px',
-            fontFamily: 'Lora',
-            fontWeight: 600,
-            fontSize: '94px',
+            gap: '20px',
+            fontFamily: 'Space Mono',
+            fontWeight: 700,
+            fontSize: '86px',
             lineHeight: 1.0,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.035em',
             color: c.paperOnDark,
             marginBottom: '24px',
           }}
         >
-          Strategy <span style={{ color: c.coral }}>→</span> Ship.
+          <span>Strategy</span>
+          <svg width="76" height="49" viewBox="0 0 50 32">
+            <path d="M6 23 C 18 21 28 14 38 4 C 35 15 36 23 39 28 C 29 24 17 23 6 23 Z" fill={c.coral} />
+          </svg>
+          <span>Ship.</span>
         </div>
         {/* dek */}
         <div

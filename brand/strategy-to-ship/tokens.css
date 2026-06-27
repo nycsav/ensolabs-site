@@ -22,7 +22,7 @@
   --sts-line-on-dark:  #2c2419;
 
   /* --- Type --- */
-  --sts-serif: var(--font-lora), "Lora", Georgia, "Times New Roman", serif;        /* display / headlines — human, editorial */
+  --sts-display: var(--font-space-mono), "Space Mono", ui-monospace, "JetBrains Mono", monospace; /* display / headlines / wordmark — the locked mono voice (Space Mono 700), brand-lock §5 */
   --sts-sans:  var(--font-inter-tight), "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* body / UI — shared w/ Enso */
   --sts-mono:  var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, Menlo, monospace; /* metadata / the machine signal */
 
@@ -33,7 +33,7 @@
   --sts-fs-h3:     26px;
   --sts-fs-h2:     34px;
   --sts-fs-h1:     clamp(40px, 5.5vw, 68px);
-  --sts-lh-tight:  1.08;   /* serif headlines */
+  --sts-lh-tight:  1.08;   /* display (Space Mono) headlines */
   --sts-lh-body:   1.62;
   --sts-ls-mono:   0.08em; /* mono letter-spacing */
 
@@ -67,12 +67,12 @@
   color: var(--sts-slate);
 }
 .sts-headline {
-  font-family: var(--sts-serif);
-  font-weight: 600;
+  font-family: var(--sts-display);
+  font-weight: 700;
   line-height: var(--sts-lh-tight);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 }
-.sts-arrow { color: var(--sts-coral); }   /* the → is always coral */
+.sts-ribbon { color: var(--sts-coral); }  /* the swept ribbon is always Ship Coral — never recolored */
 
 /* The stamp motif — coral, inked, slightly rotated */
 .sts-stamp {

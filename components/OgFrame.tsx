@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
 import { ImageResponse } from 'next/og';
 import { stsOgFonts, STS } from '@/lib/og/fonts';
+import { ensoLogoWhite, claudeIconPng } from '@/lib/og/assets';
 
 // Hex equivalents of the OKLCH studio palette in globals.css.
 // Satori (the renderer inside next/og) does not support oklch().
@@ -39,12 +39,9 @@ type Options = {
   sourceCredit?: string;
 };
 
-// Read a bundled asset as a base64 data URI for Satori <img>. `new URL(..., import.meta.url)`
-// lets Next file-trace the asset into the serverless function bundle (nodejs runtime).
-function dataUri(relPath: string, mime: string): string {
-  const buf = readFileSync(new URL(relPath, import.meta.url));
-  return `data:${mime};base64,${buf.toString('base64')}`;
-}
+// Asset data-URIs (Enso logo, Claude icon) come from lib/og/assets.ts — read via
+// `new URL('./assets/…', import.meta.url)` so Vercel traces them into the function bundle.
+// (Reading from public/ does NOT trace and 500'd the per-article route in production.)
 
 // The locked swept-ribbon mark — coral on light/paper, white on coral.
 // viewBox 0 0 50 32 (inline wordmark). See STRATEGY-TO-SHIP-BRAND-LOCK §1.
@@ -54,7 +51,7 @@ const RIBBON_TILE_PATH = 'M15 39 C 26 37 35 32 45 21 C 41 30 41 38 45 45 C 36 41
 
 /**
  * Shared OG image renderer for case-study and insight detail pages.
- * Fonts are EMBEDDED (Space Mono · Lora · Inter Tight · JetBrains Mono) — no system fallback.
+ * Fonts are EMBEDDED (Space Mono · Inter Tight · JetBrains Mono) — no system fallback.
  * Returns a 1200x630 PNG via next/og's ImageResponse.
  */
 export async function renderOg({ eyebrow, title, subtitle, strap, theme = 'studio', sourceCredit }: Options) {
@@ -70,8 +67,8 @@ export async function renderOg({ eyebrow, title, subtitle, strap, theme = 'studi
       }
     : { bg: OG_COLORS.bg, fg: OG_COLORS.fg, fg2: OG_COLORS.fg2, fg3: OG_COLORS.fg3, accent: OG_COLORS.teal };
 
-  const ensoLogo = pub ? dataUri('../public/images/logo-white.svg', 'image/svg+xml') : null;
-  const claudeIcon = pub && sourceCredit ? dataUri('../public/og/claude-icon.png', 'image/png') : null;
+  const ensoLogo = pub ? ensoLogoWhite() : null;
+  const claudeIcon = pub && sourceCredit ? claudeIconPng() : null;
 
   return new ImageResponse(
     (

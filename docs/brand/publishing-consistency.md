@@ -1,15 +1,14 @@
 # Strategy to Ship — Publishing Consistency (brand/color/font across every channel)
 
 How to guarantee that **every** Strategy to Ship output — blog posts on `ensolabs.ai/insights`, OG/social
-cards, LinkedIn carousels, X cards, newsletter — renders with the **same** locked brand (Ship Coral, Lora,
-Inter Tight, JetBrains Mono, the stamp motif). The principle: **one token source, imported everywhere — no
+cards, LinkedIn carousels, X cards, newsletter — renders with the **same** locked brand (Ship Coral, Space
+Mono, Inter Tight, JetBrains Mono, the swept-ribbon + stamp motifs). The principle: **one token source, imported everywhere — no
 hardcoded hexes or font names in any template.**
 
 ---
 
 ## 0. Lock the logo FIRST (blocks final assets)
-Pick one wordmark — **recommended: Lora + coral arrow `→`** (the repo's locked v1), monogram `S→S`. Until
-this is chosen, don't generate final OG/social masters. Everything below assumes it's locked.
+The wordmark is **locked** (docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md): **"Strategy [coral swept ribbon] Ship" in Space Mono 700** — the ribbon replaces "to" (NOT Lora, NOT a "→" arrow, NOT an "S→S" monogram). Small-format fallback: the ▸ glyph. Generate all OG/social masters against this lock.
 
 ## 1. Single source of truth — the token files
 Create/confirm these as the ONLY place brand values live:

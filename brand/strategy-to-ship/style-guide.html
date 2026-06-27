@@ -2,28 +2,28 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>Strategy to Ship — Brand & Design System</title>
 <link rel=preconnect href="https://fonts.googleapis.com"><link rel=preconnect href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
  --paper:#F7F1E6;--paper2:#EEE5D3;--ink:#1E1813;--inkdeep:#16110B;--coral:#F0512E;
  --amber:#E0A23C;--slate:#79705F;--line:#DDD2BC;--teal:#5CE0D2;
- --serif:'Lora',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;}
+ --display:'Space Mono',ui-monospace,monospace;--sans:'Inter Tight',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1000px;margin:0 auto;padding:56px 28px 120px}
 .kick{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
 .arrow{color:var(--coral)}
-h1{font-family:var(--serif);font-weight:600;font-size:60px;line-height:1.04;letter-spacing:-.01em;margin:10px 0 6px}
-h2{font-family:var(--serif);font-weight:600;font-size:30px;margin:0 0 4px}
+h1{font-family:var(--display);font-weight:600;font-size:60px;line-height:1.04;letter-spacing:-.01em;margin:10px 0 6px}
+h2{font-family:var(--display);font-weight:600;font-size:30px;margin:0 0 4px}
 .sec{border-top:1px solid var(--line);margin-top:56px;padding-top:30px}
 .sec>.kick{margin-bottom:18px;color:var(--coral)}
 p{max-width:62ch;margin:0 0 12px}
 .muted{color:var(--slate)}
-.lead{font-size:21px;font-family:var(--serif);line-height:1.4;max-width:60ch;color:var(--ink)}
+.lead{font-size:21px;font-family:var(--display);line-height:1.4;max-width:60ch;color:var(--ink)}
 /* logo */
-.wordmark{font-family:var(--serif);font-weight:600;font-size:50px;color:var(--ink)}
+.wordmark{font-family:var(--display);font-weight:700;letter-spacing:-.035em;font-size:50px;color:var(--ink);display:inline-flex;align-items:center;gap:.28em}
 .mono-lock{font-family:var(--mono);font-size:13px;color:var(--slate);letter-spacing:.08em}
-.monogram{font-family:var(--serif);font-weight:600;font-size:30px;border:1.5px solid var(--line);border-radius:10px;
+.monogram{font-family:var(--display);font-weight:600;font-size:30px;border:1.5px solid var(--line);border-radius:10px;
  width:78px;height:78px;display:flex;align-items:center;justify-content:center;background:var(--inkdeep);color:var(--paper)}
 .row{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
 /* color */
@@ -44,7 +44,7 @@ p{max-width:62ch;margin:0 0 12px}
 .imgwrap{border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative}
 .imgwrap img{display:block;width:100%;filter:saturate(.92) contrast(1.04) sepia(.06)}
 .imgwrap .cap{position:absolute;left:0;bottom:0;right:0;padding:18px 20px;background:linear-gradient(transparent,rgba(22,17,11,.82));}
-.imgwrap .cap .h{font-family:var(--serif);color:var(--paper);font-size:26px;font-weight:600}
+.imgwrap .cap .h{font-family:var(--display);color:var(--paper);font-size:26px;font-weight:600}
 /* formats */
 .ogimg{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -58,9 +58,9 @@ p{max-width:62ch;margin:0 0 12px}
 .card.dark{background:var(--inkdeep);color:var(--paper)}
 .card.paper{background:var(--paper);color:var(--ink)}
 .card .ck{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
-.card .ch{font-family:var(--serif);font-weight:600;line-height:1.06}
+.card .ch{font-family:var(--display);font-weight:600;line-height:1.06}
 .card .cf{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--slate);display:flex;justify-content:space-between;align-items:center}
-.card .cf b{font-family:var(--serif);font-weight:600;color:inherit}
+.card .cf b{font-family:var(--display);font-weight:600;color:inherit}
 .ratio-191{aspect-ratio:1200/630}
 .ratio-45{aspect-ratio:1080/1350}
 .ratio-11{aspect-ratio:1/1}
@@ -70,7 +70,7 @@ p{max-width:62ch;margin:0 0 12px}
 .checklist li{margin:6px 0 6px 2px;list-style:none;padding-left:22px;position:relative;max-width:58ch}
 .checklist li:before{content:'→';position:absolute;left:0;color:var(--coral);font-family:var(--mono)}
 .platform{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:#fff;margin-bottom:14px}
-.platform h3{font-family:var(--serif);font-size:20px;margin-bottom:4px}
+.platform h3{font-family:var(--display);font-size:20px;margin-bottom:4px}
 .platform .spec{font-family:var(--mono);font-size:11px;color:var(--slate);letter-spacing:.04em;margin-bottom:8px}
 .foot{border-top:1px solid var(--line);margin-top:64px;padding-top:24px;font-family:var(--mono);font-size:12px;color:var(--slate);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </style></head><body><div class=wrap>
@@ -78,14 +78,15 @@ p{max-width:62ch;margin:0 0 12px}
 <div class=kick>BRAND & DESIGN SYSTEM · v1 · FROM ENSO LABS</div>
 <h1>Strategy <span class="arrow">→</span> Ship</h1>
 <p class=lead>The media publishing brand of Enso Labs — where strategy becomes production. Media × advertising × AI. Modern, but human.</p>
-<p class=muted>This is the living visual guideline. It supersedes the legacy brand. Companion files: <span class=mono-lock>tokens.css</span> · <span class=mono-lock>strategy-to-ship-design-system.md</span></p>
+<p class=muted>This is the living visual guideline. It supersedes the legacy brand. Canonical lock: <span class=mono-lock>docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md</span> · tokens: <span class=mono-lock>tokens.css</span></p>
+<p class=muted style="margin-top:10px;padding:10px 14px;border-left:3px solid var(--coral);background:var(--paper2)"><b>Confidentiality (locked):</b> the client <b>Gore</b> must always render as <b>&quot;a Fortune 500 manufacturer&quot;</b> in any public-facing asset, copy, or article — never the client name.</p>
 
 <div class=sec><div class=kick>01 — Logotype</div>
 <div class=row style="gap:48px">
- <div><div class=wordmark>Strategy <span class="arrow">→</span> Ship</div><div class=mono-lock style="margin-top:6px">primary wordmark — Lora, arrow always coral</div></div>
- <div style="text-align:center"><div class=monogram>S<span class="arrow">→</span>S</div><div class=mono-lock style="margin-top:8px">monogram</div></div>
+ <div><div class=wordmark>Strategy<svg viewBox="0 0 50 32" style="height:.58em"><path d="M6 23 C 18 21 28 14 38 4 C 35 15 36 23 39 28 C 29 24 17 23 6 23 Z" fill="#F0512E"></path></svg>Ship</div><div class=mono-lock style="margin-top:6px">primary wordmark — Space Mono 700, coral swept ribbon replaces the word &quot;to&quot;</div></div>
+ <div style="text-align:center"><div style="width:60px;height:60px;border-radius:14px;background:#F0512E;display:inline-flex;align-items:center;justify-content:center"><svg viewBox="0 0 60 60" style="width:32px"><path d="M15 39 C 26 37 35 32 45 21 C 41 30 41 38 45 45 C 36 41 26 39 15 39 Z" fill="#fff"></path></svg></div><div class=mono-lock style="margin-top:8px">app icon — coral tile + white ribbon (not a letter monogram)</div></div>
 </div>
-<p class=muted style="margin-top:18px">Lowercase handle: <b>strategy <span class="arrow">→</span> ship</b>. Endorsement lockup pairs the wordmark with a hairline and <span class=mono-lock>FROM ENSO LABS</span>. Never set in a sans; never recolor the arrow; never lock up with Enso's chevron.</p>
+<p class=muted style="margin-top:18px">Lowercase handle: <b>strategy▸ship</b> (Space Mono; the ▸ is the small-format ribbon fallback). Endorsement lockup pairs the wordmark with a hairline and <span class=mono-lock>FROM ENSO LABS</span>. Always Space Mono 700; never Lora; never an arrow glyph or letter-pair monogram; never recolor the ribbon; never lock up with Enso's chevron.</p>
 </div>
 
 <div class=sec><div class=kick>02 — Color</div>
@@ -95,7 +96,7 @@ p{max-width:62ch;margin:0 0 12px}
 </div></div>
 
 <div class=sec><div class=kick>03 — Typography</div>
-<div class=type-row><div class=lab>Display — Lora (serif · human, editorial)</div><div style="font-family:var(--serif);font-weight:600;font-size:46px;line-height:1.05;margin-top:6px">The headline is the art.</div></div>
+<div class=type-row><div class=lab>Display — Space Mono 700 (a mono voice on a clean frame)</div><div style="font-family:var(--display);font-weight:700;letter-spacing:-.03em;font-size:46px;line-height:1.05;margin-top:6px">The headline is the art.</div></div>
 <div class=type-row><div class=lab>Body / UI — Inter Tight (shared with Enso)</div><div style="font-size:19px;margin-top:6px">Clear, modern, humanist. Carries the article body, captions, and interface — the connective tissue between the serif headline and the machine metadata.</div></div>
 <div class=type-row><div class=lab>Metadata / signal — JetBrains Mono (the machine voice)</div><div class=mono-lock style="font-size:15px;margin-top:8px;color:var(--ink)">KICKER · DATELINE · v5 · CONFIDENCE 0.92 · SOURCE</div></div>
 </div>
@@ -112,7 +113,7 @@ p{max-width:62ch;margin:0 0 12px}
 <div class=sec><div class=kick>05 — Devices</div>
 <div class=row style="gap:40px;align-items:center;margin-top:6px">
  <div><div class=stamp>SHIPPED · v5</div><div class=mono-lock style="margin-top:14px">the stamp — inked, coral, rotated −4°</div></div>
- <div style="font-family:var(--serif);font-size:40px">strategy <span class="arrow">→</span> ship<div class=mono-lock style="margin-top:6px">the arrow — strategy <i>to</i> ship</div></div>
+ <div style="font-family:var(--display);font-weight:700;letter-spacing:-.035em;font-size:40px;display:inline-flex;align-items:center;gap:.28em">strategy<svg viewBox="0 0 50 32" style="height:.58em"><path d="M6 23 C 18 21 28 14 38 4 C 35 15 36 23 39 28 C 29 24 17 23 6 23 Z" fill="#F0512E"></path></svg>ship<div class=mono-lock style="margin-top:6px">the swept ribbon — strategy <i>to</i> ship (replaces the word &quot;to&quot;; not an arrow glyph)</div></div>
  <div><span class=tag>v5</span> <span class=tag>LIVE</span> <span class=tag>DRAFT</span><div class=mono-lock style="margin-top:14px">version tags</div></div>
 </div></div>
 
@@ -161,7 +162,7 @@ p{max-width:62ch;margin:0 0 12px}
 
 <div class=sec><div class=kick>09 — Publishing standards (per platform)</div>
 <div class=platform><h3>LinkedIn — the lead surface</h3><div class=spec>CAROUSEL/DOC 1080×1350 · NATIVE, NEVER A LINK POST · ~6.6% ENG (HIGHEST)</div>
-<ul class=checklist><li>Lead with the carousel cover (Lora headline + stamp); one atomic idea per slide; close on a CTA slide.</li><li>Pre-warm the OG via LinkedIn Post Inspector before posting any article link.</li><li>M/W/F cadence; hook in the first line, no outbound link in body (drop it in comments).</li></ul></div>
+<ul class=checklist><li>Lead with the carousel cover (Space Mono headline + coral stamp); one atomic idea per slide; close on a CTA slide.</li><li>Pre-warm the OG via LinkedIn Post Inspector before posting any article link.</li><li>M/W/F cadence; hook in the first line, no outbound link in body (drop it in comments).</li></ul></div>
 <div class=platform><h3>X / Twitter</h3><div class=spec>CARD 500×280 (OG) · THREAD-NATIVE</div>
 <ul class=checklist><li>Open with the plain-English claim; one chart or stamp image per thread; link last.</li></ul></div>
 <div class=platform><h3>Substack & Medium</h3><div class=spec>HEADER 1200×400 · CANONICAL = ensolabs.ai/insights</div>

@@ -71,8 +71,8 @@ git add -A && git commit -m "description" && git push origin master
 - Sav Banerjee in third person on About page
 - "Get in Touch" CTA (not "Book a Discovery Call" or "Book intro call")
 - Three pillars: AI Transformation | Agentic Systems | Financial AI
-- No client names without explicit approval (the /work/gore case study client is CONFIDENTIAL — always use "Global Materials Manufacturer" or "Fortune 500 manufacturer", never the actual company name)
-- Strategy to Ship brand rules: wordmark is "Strategy → Ship" (Lora serif), monogram is "S→S", the arrow glyph → is ALWAYS Ship Coral #F0512E (never recolored), lowercase handle "strategy → ship" allowed for social/URLs
+- No client names without explicit approval. The /work/gore case-study client (Gore) is CONFIDENTIAL — in any public-facing asset, copy, or article it must ALWAYS render as "a Fortune 500 manufacturer" (the single canonical phrasing), never the actual company name and never "Global Materials Manufacturer".
+- Strategy to Ship brand rules (canonical: docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md): wordmark is "Strategy [coral swept ribbon] Ship" in Space Mono 700 — the coral swept ribbon replaces the word "to" (NOT Lora, NOT a "→" arrow, NOT an "S→S" monogram). Ship Coral #F0512E is the one signal (ribbon + stamps, ≤10% of any composition, never recolored, never a fill). Small-format fallback glyph: ▸ ("Strategy▸Ship"); lowercase handle "strategy▸ship" for social/URLs.
 - "Powered by Enso Labs" close on all Strategy to Ship content
 - Canonical domains: ensolabs.ai (never www.ensolabs.ai or ensopartners.co)
 
@@ -97,14 +97,14 @@ git add -A && git commit -m "description" && git push origin master
 - Note: "Strategy to Ship." is ALSO the Enso Labs studio tagline in lib/site.ts — the brand and the tagline intentionally share the name (tagline turned into a product).
 
 ### Strategy to Ship brand system (locked — read before designing)
-- Authoritative files (4 locked sources + kickoff prompt):
+- Canonical source (wins ALL conflicts): **docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md** (Space Mono 700 + swept ribbon; NOT Lora/arrow/S→S). Supporting/reference files (older narrative — defer to the lock on any disagreement):
   - STRATEGY_TO_SHIP_DESIGN_KICKOFF.md — paste-in design kickoff prompt
   - strategy-to-ship-design-system.md — brand brief + principles ("Warm Signal")
   - brand/strategy-to-ship/tokens.css — color/type/spacing tokens
   - brand/strategy-to-ship/style-guide.html — living visual guideline
   - brand/strategy-to-ship/wordmark.svg, og-dark.png, og-light.png — reference assets
-- Palette: Paper #F7F1E6 · Ink #1E1813 · Ship Coral #F0512E (THE signal — arrow, stamps, ~5-10% max) · Ledger Amber #E0A23C; Enso Teal #5CE0D2 ONLY for "from Enso Labs" links
-- Type: Lora (headlines) · Inter Tight (body/UI) · JetBrains Mono (kickers, datelines, version tags)
+- Palette: Paper #F7F1E6 · Ink #1E1813 · Ship Coral #F0512E (THE signal — swept ribbon, stamps, ≤10% max, never a fill) · Ledger Amber #E0A23C; Enso Teal #5CE0D2 ONLY for "from Enso Labs" links
+- Type: Space Mono 700 (headlines + wordmark) · Inter Tight (body/UI) · JetBrains Mono (kickers, datelines, version tags — uppercase, letter-spaced)
 
 ## Content Distribution Flow
 
@@ -138,7 +138,7 @@ git add -A && git commit -m "description" && git push origin master
 - [ ] Check OG image previews when sharing links
 
 ## AI Attribution (footer)
-"Designed with Claude Design · Built with Claude Code · Intelligence by Strategy → Ship · Human-in-the-loop: Sav Banerjee" (the → arrow renders in Ship Coral #F0512E)
+"Designed with Claude Design · Built with Claude Code · Intelligence by Strategy ▸ Ship · Human-in-the-loop: Sav Banerjee" (the ▸ ribbon-mark renders in Ship Coral #F0512E — never a "→" arrow)
 
 ## Built With
 - Strategy & Research: Claude Chat (Opus 4.6)
