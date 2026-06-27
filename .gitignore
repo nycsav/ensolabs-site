@@ -65,3 +65,4 @@ drafts/
 
 # local deploy runbook (not for production)
 deploy/
+out/

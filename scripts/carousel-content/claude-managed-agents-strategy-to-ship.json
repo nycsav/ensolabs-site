@@ -1,0 +1,50 @@
+{
+  "_note": "Carousel content contract. Phase 3's copy engine fills this from the canonical /insights article; for now it's hand-authored from the real piece. The renderer (scripts/render-carousel.js) turns it into a 1080x1350 LinkedIn document PDF. Studio voice 'we'; confidential client renders as 'a Fortune 500 manufacturer'; closes 'Powered by Enso Labs'.",
+  "slug": "claude-managed-agents-strategy-to-ship",
+  "kicker": "THE BUILD LENS",
+  "cover": {
+    "headline": "Claude's agents now grade themselves.",
+    "stamp": "SHIPPED"
+  },
+  "slides": [
+    {
+      "n": 2,
+      "heading": "The bottleneck moved.",
+      "body": "Anthropic added dreaming, outcomes, and multiagent orchestration to Claude Managed Agents. Together they relocate the hard part of building an agent from writing the loop to defining what 'good' looks like."
+    },
+    {
+      "n": 3,
+      "heading": "Outcomes: a written definition of good.",
+      "body": "You write a rubric; a separate grader model checks the agent's work in its own context and sends it back until it clears the bar. Up to a 10-point lift in task success over a standard prompting loop."
+    },
+    {
+      "n": 4,
+      "heading": "Dreaming: agents that improve between runs.",
+      "body": "A scheduled process reviews past sessions, extracts patterns, and curates what the agent remembers. Harvey reported completion rates rising roughly six-fold once agents carried learnings forward."
+    },
+    {
+      "n": 5,
+      "heading": "Orchestration: org design as software.",
+      "body": "A lead agent splits a job across specialists, each with its own model and tools, working in parallel on a shared filesystem. Netflix analyzes build logs across thousands of apps this way."
+    },
+    {
+      "n": 6,
+      "heading": "The moat was never the loop.",
+      "body": "It is whether you can define the rubric, design the memory, and lay out the topology for a specific domain. That is consulting and architecture work."
+    },
+    {
+      "n": 7,
+      "heading": "The Enso take.",
+      "body": "For a Fortune 500 manufacturer, we built inspectable, toggleable expert rules the scientists could trust. An outcomes rubric is the same idea: an auditable definition of 'good' the system checks itself against, every time."
+    },
+    {
+      "n": 8,
+      "heading": "Your move for Monday.",
+      "body": "Write the rubric before the agent. If you cannot state 'good' as acceptance criteria, no model will reliably hit it. Begin every agent project with the grading spec, not the prompt."
+    }
+  ],
+  "cta": {
+    "headline": "We add Managed Agent deployments to our Agentic Systems track.",
+    "subhead": "If your pilots keep stalling just short of production, that gap is a rubric-and-architecture problem."
+  }
+}
