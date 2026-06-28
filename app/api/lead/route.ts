@@ -45,6 +45,12 @@ type LeadInput = {
   message: string;
   source?: string;
   linkedin?: string;
+  // First-touch attribution from the client (lib/attribution.ts).
+  attribution?: string; // "linkedin / social / pilot-gap-post"
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  landing?: string; // first path the visitor landed on
   // honeypot — bots fill this, humans never see it
   website?: string;
 };
@@ -76,7 +82,22 @@ async function writeToNotion(lead: LeadInput): Promise<string | null> {
   if (!NOTION_TOKEN || !NOTION_DB_ID) return null;
 
   const intent = INTENT_MAP[(lead.service || '').toLowerCase()] || 'Other';
-  const source = lead.source && /linkedin/i.test(lead.source) ? 'LinkedIn' : 'Website';
+  // Prefer the captured first-touch source over the form's static "Website".
+  const utmSrc = (lead.utm_source || '').toLowerCase();
+  let source = 'Website';
+  if (/linkedin/i.test(lead.source || '') || /linkedin/.test(utmSrc)) source = 'LinkedIn';
+  else if (utmSrc && utmSrc !== 'direct' && utmSrc !== 'google' && utmSrc !== 'bing') {
+    // Any explicit campaign source that isn't plain organic/direct → treat as Outreach Reply
+    // only when it clearly came from a referral channel; otherwise keep Website.
+    if (lead.utm_medium === 'referral' || lead.utm_medium === 'ai_referral') source = 'Referral';
+  }
+
+  // Build a readable attribution footer appended to the Message so the channel
+  // is visible on the lead record without needing new Notion columns.
+  const attrBits: string[] = [];
+  if (lead.attribution) attrBits.push(`Channel: ${lead.attribution}`);
+  if (lead.landing) attrBits.push(`Landed on: ${lead.landing}`);
+  const attrFooter = attrBits.length ? `\n\n— attribution —\n${attrBits.join('\n')}` : '';
 
   const properties: Record<string, unknown> = {
     Name: { title: [{ text: { content: clip(lead.name, 200) } }] },
@@ -84,7 +105,7 @@ async function writeToNotion(lead: LeadInput): Promise<string | null> {
     Intent: { select: { name: intent } },
     Source: { select: { name: source } },
     Status: { status: { name: 'Not started' } },
-    Message: { rich_text: [{ text: { content: clip(lead.message) } }] },
+    Message: { rich_text: [{ text: { content: clip(lead.message + attrFooter) } }] },
   };
   if (lead.company) {
     properties.Company = { rich_text: [{ text: { content: clip(lead.company, 200) } }] };
@@ -214,6 +235,11 @@ export async function POST(req: Request) {
       message,
       source: String(body.source || '').trim() || undefined,
       linkedin: String(body.linkedin || '').trim() || undefined,
+      attribution: String(body.attribution || '').trim() || undefined,
+      utm_source: String(body.utm_source || '').trim() || undefined,
+      utm_medium: String(body.utm_medium || '').trim() || undefined,
+      utm_campaign: String(body.utm_campaign || '').trim() || undefined,
+      landing: String(body.landing || '').trim() || undefined,
     };
 
     // Notion is the system of record — if it fails, surface the error so the

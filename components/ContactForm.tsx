@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Arrow } from './Arrow';
 import { track } from '@/lib/gtag';
+import { getAttribution, attributionLabel } from '@/lib/attribution';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -19,6 +20,14 @@ const SERVICES = [
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState<string>('');
+  // Fire form_start only once, on the first interaction with any field.
+  const startedRef = useRef(false);
+
+  const onFirstInteract = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    track('form_start', { event_category: 'lead_gen', event_label: 'contact_form' });
+  };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,6 +46,7 @@ export function ContactForm() {
     setStatus('submitting');
     setErrorMsg('');
 
+    const attr = getAttribution();
     const payload = {
       name,
       email,
@@ -44,6 +54,13 @@ export function ContactForm() {
       service: String(fd.get('service') || '').trim(),
       message,
       source: 'Website',
+      // First-touch attribution — lets the lead record show which channel /
+      // campaign / post produced it (e.g. "linkedin / social / pilot-gap-post").
+      attribution: attr ? attributionLabel(attr) : '',
+      utm_source: attr?.source || '',
+      utm_medium: attr?.medium || '',
+      utm_campaign: attr?.campaign || '',
+      landing: attr?.landing || '',
       website: String(fd.get('website') || ''), // honeypot
     };
 
@@ -81,7 +98,7 @@ export function ContactForm() {
 
   return (
     <>
-      <form onSubmit={onSubmit} noValidate>
+      <form onSubmit={onSubmit} onFocusCapture={onFirstInteract} noValidate>
         <div className="field">
           <label htmlFor="name">
             Name <span className="req">required</span>
