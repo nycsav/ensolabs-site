@@ -21,6 +21,7 @@ const fs = require('fs');
 
 const ROOT = path.join(__dirname, '..');
 const FONT_DIR = path.join(ROOT, 'lib', 'og', 'fonts');
+const ASSET_DIR = path.join(ROOT, 'lib', 'og', 'assets');
 const OUT_DIR = path.join(ROOT, 'out', 'carousels');
 
 const W = 1080, H = 1350; // LinkedIn document / portrait carousel
@@ -44,6 +45,14 @@ function fontFace(family, file, weight) {
   return `@font-face{font-family:'${family}';font-weight:${weight};font-style:normal;`
     + `src:url(data:font/ttf;base64,${data}) format('truetype');font-display:block}`;
 }
+
+// Base64-embed a PNG asset so the renderer is offline/CI-identical (no base URL on setContent).
+function assetDataUri(file) {
+  return `data:image/png;base64,${fs.readFileSync(path.join(ASSET_DIR, file)).toString('base64')}`;
+}
+// The Claude mark — editorial/nominative use, INTERIOR (content) slides only, kept small so the
+// coral budget (<=10%) holds. The cover/CTA stay Strategy▸Ship + Enso only (no co-brand).
+const CLAUDE_MARK = assetDataUri('claude-icon.png');
 
 function ribbonSvg(h, fill) {
   return `<svg viewBox="0 0 50 32" style="height:${h};width:auto;vertical-align:middle">`
@@ -78,11 +87,30 @@ function coverSlide(d, total) {
 
 function contentSlide(s, idx, total) {
   return `<section class="slide content">
+    <img class="claude-mark" src="${CLAUDE_MARK}" alt="">
     <div class="num">${pad(s.n ?? idx)}</div>
     <div class="c-body">
       <h2 class="c-h">${s.heading}</h2>
       <p class="c-p">${s.body}</p>
     </div>
+    <div class="c-foot">
+      ${ribbonSvg('14px', C.coral)}
+      <span class="prog dark">${pad(idx)} / ${pad(total)}</span>
+    </div>
+  </section>`;
+}
+
+// SOURCES slide — attributions only, NEVER links (it's a public LinkedIn asset). Fed by d.sources.
+function sourcesSlide(d, idx, total) {
+  const items = (d.sources || []).map((s) =>
+    `<li><span class="src-name">${s.source}</span>`
+    + `<span class="src-claim">${s.claim}</span></li>`).join('');
+  return `<section class="slide sources">
+    <div class="s-head">
+      <div class="kicker"><span class="dot"></span>SOURCES</div>
+      <h2 class="s-h">Every number traces to a primary source.</h2>
+    </div>
+    <ul class="src-list">${items}</ul>
     <div class="c-foot">
       ${ribbonSvg('14px', C.coral)}
       <span class="prog dark">${pad(idx)} / ${pad(total)}</span>
@@ -110,7 +138,8 @@ function ctaSlide(d, total) {
 
 function buildHtml(d) {
   const slides = d.slides || [];
-  const total = 1 + slides.length + 1; // cover + content + CTA
+  const hasSources = Array.isArray(d.sources) && d.sources.length > 0;
+  const total = 1 + slides.length + (hasSources ? 1 : 0) + 1; // cover + content + [sources] + CTA
   const fonts = [
     fontFace('Space Mono', 'SpaceMono-700.ttf', 700),
     fontFace('Inter Tight', 'InterTight-400.ttf', 400),
@@ -121,7 +150,8 @@ function buildHtml(d) {
   ].join('');
 
   const parts = [coverSlide(d, total)];
-  slides.forEach((s, i) => parts.push(contentSlide(s, i + 2, total))); // content pages are 2..n-1
+  slides.forEach((s, i) => parts.push(contentSlide(s, i + 2, total))); // content pages are 2..k
+  if (hasSources) parts.push(sourcesSlide(d, slides.length + 2, total)); // sources is the penultimate slide
   parts.push(ctaSlide(d, total));
   const body = parts.join('');
 
@@ -168,6 +198,19 @@ function buildHtml(d) {
       color:${C.ink};max-width:30ch}
     .c-foot{display:flex;align-items:center;justify-content:space-between;
       border-top:1px solid ${C.line};padding-top:28px}
+    /* Claude mark — small, content slides only (nominative; keeps coral budget) */
+    .claude-mark{position:absolute;top:92px;right:92px;width:46px;height:46px;opacity:.92}
+
+    /* sources (paper ground) — attributions only, never links */
+    .sources{background:${C.paper}}
+    .s-head{display:flex;flex-direction:column;gap:24px}
+    .s-h{font-family:'Space Mono';font-weight:700;letter-spacing:-.03em;line-height:1.14;
+      font-size:46px;color:${C.ink};max-width:18ch}
+    .src-list{list-style:none;display:flex;flex-direction:column;gap:24px}
+    .src-list li{display:flex;flex-direction:column;gap:7px;border-left:3px solid ${C.coral};padding-left:22px}
+    .src-name{font-family:'JetBrains Mono';font-weight:500;font-size:21px;letter-spacing:.06em;
+      text-transform:uppercase;color:${C.ink}}
+    .src-claim{font-family:'Inter Tight';font-weight:400;font-size:27px;line-height:1.4;color:${C.slate}}
 
     /* CTA (ink-deep ground) */
     .cta{background:${C.inkDeep};color:${C.paperOnDark}}
@@ -215,7 +258,7 @@ async function main() {
   await page.screenshot({ path: pngPath, type: 'png', clip: { x: 0, y: 0, width: W, height: H } });
 
   await browser.close();
-  const slideCount = 1 + (d.slides || []).length + 1;
+  const slideCount = 1 + (d.slides || []).length + ((d.sources || []).length ? 1 : 0) + 1;
   console.log(`Wrote ${pdfPath} (${slideCount} slides, ${W}x${H})`);
   console.log(`Wrote ${pngPath} (cover preview)`);
 }
