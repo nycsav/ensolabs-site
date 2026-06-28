@@ -15,17 +15,17 @@
     {
       "n": 3,
       "heading": "Outcomes: a written definition of good.",
-      "body": "You write a rubric; a separate grader model checks the agent's work in its own context and sends it back until it clears the bar. Up to a 10-point lift in task success over a standard prompting loop."
+      "body": "You write a rubric; a separate grader model checks the agent's work in its own context and sends it back until it clears the bar — no human reviewing every attempt."
     },
     {
       "n": 4,
       "heading": "Dreaming: agents that improve between runs.",
-      "body": "A scheduled process reviews past sessions, extracts patterns, and curates what the agent remembers. Harvey reported completion rates rising roughly six-fold once agents carried learnings forward."
+      "body": "A scheduled process reviews past sessions, extracts patterns, and curates what the agent remembers — so it gets better between runs, not just within one."
     },
     {
       "n": 5,
       "heading": "Orchestration: org design as software.",
-      "body": "A lead agent splits a job across specialists, each with its own model and tools, working in parallel on a shared filesystem. Netflix analyzes build logs across thousands of apps this way."
+      "body": "A lead agent splits a job across specialists, each with its own model and tools, working in parallel on a shared filesystem. Org design becomes something you build, not just describe."
     },
     {
       "n": 6,
@@ -41,24 +41,6 @@
       "n": 8,
       "heading": "Your move for Monday.",
       "body": "Write the rubric before the agent. If you cannot state 'good' as acceptance criteria, no model will reliably hit it. Begin every agent project with the grading spec, not the prompt."
-    }
-  ],
-  "sources": [
-    {
-      "source": "Anthropic",
-      "claim": "Outcomes: up to +10pt task success; 8.4% / 10.1% Word / PowerPoint file-generation gains."
-    },
-    {
-      "source": "Harvey",
-      "claim": "Completion rates rose roughly six-fold once agents carried learnings forward."
-    },
-    {
-      "source": "Netflix",
-      "claim": "Analyzes build logs across thousands of applications in parallel."
-    },
-    {
-      "source": "Wisedocs",
-      "claim": "Cut document review time in half while staying inside its own guidelines."
     }
   ],
   "cta": {
