@@ -93,18 +93,26 @@ async function writeToNotion(lead: LeadInput): Promise<string | null> {
     properties['LinkedIn / URL'] = { url: lead.linkedin };
   }
 
-  const res = await fetch('https://api.notion.com/v1/pages', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${NOTION_TOKEN}`,
-      'Notion-Version': '2022-06-28',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      parent: { database_id: NOTION_DB_ID },
-      properties,
-    }),
-  });
+  async function createPage(parent: Record<string, string>, version: string) {
+    return fetch('https://api.notion.com/v1/pages', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${NOTION_TOKEN}`,
+        'Notion-Version': version,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ parent, properties }),
+    });
+  }
+
+  // Try the classic shape first (parent.database_id on 2022-06-28). If the ID
+  // is actually a data-source/collection ID, retry against the newer API which
+  // accepts parent.data_source_id.
+  let res = await createPage({ database_id: NOTION_DB_ID! }, '2022-06-28');
+  if (!res.ok && (res.status === 400 || res.status === 404)) {
+    const retry = await createPage({ data_source_id: NOTION_DB_ID! }, '2025-09-03');
+    if (retry.ok) res = retry;
+  }
 
   if (!res.ok) {
     const detail = await res.text().catch(() => '');
@@ -223,7 +231,10 @@ export async function POST(req: Request) {
 
     if (notionError && !SLACK_WEBHOOK_URL && !RESEND_API_KEY) {
       // Nothing captured the lead at all — report failure.
-      return NextResponse.json({ ok: false, error: 'Could not record submission.' }, { status: 502 });
+      // `debug` is only surfaced when LEAD_DEBUG=1 (set during QA, then unset).
+      const payload: Record<string, unknown> = { ok: false, error: 'Could not record submission.' };
+      if (process.env.LEAD_DEBUG === '1') payload.debug = notionError;
+      return NextResponse.json(payload, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
