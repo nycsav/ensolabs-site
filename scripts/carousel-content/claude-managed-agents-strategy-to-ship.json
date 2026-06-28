@@ -43,8 +43,26 @@
       "body": "Write the rubric before the agent. If you cannot state 'good' as acceptance criteria, no model will reliably hit it. Begin every agent project with the grading spec, not the prompt."
     }
   ],
+  "sources": [
+    {
+      "source": "Anthropic",
+      "claim": "Outcomes: up to +10pt task success; 8.4% / 10.1% Word / PowerPoint file-generation gains."
+    },
+    {
+      "source": "Harvey",
+      "claim": "Completion rates rose roughly six-fold once agents carried learnings forward."
+    },
+    {
+      "source": "Netflix",
+      "claim": "Analyzes build logs across thousands of applications in parallel."
+    },
+    {
+      "source": "Wisedocs",
+      "claim": "Cut document review time in half while staying inside its own guidelines."
+    }
+  ],
   "cta": {
-    "headline": "We add Managed Agent deployments to our Agentic Systems track.",
-    "subhead": "If your pilots keep stalling just short of production, that gap is a rubric-and-architecture problem."
+    "headline": "The moat was never the loop — it is defining 'good.'",
+    "subhead": "What is your move for Monday? Tell us in the comments — and follow The Build Lens."
   }
 }
