@@ -9,6 +9,9 @@ export const SITE = {
   availability: process.env.NEXT_PUBLIC_AVAILABILITY || 'Q3–Q4 2026',
   // Default Open Graph image — override per-page via metadata.openGraph.images
   ogImage: process.env.NEXT_PUBLIC_OG_IMAGE || '/og-default.png',
+  // Real booking link (Cal.com / Calendly). When unset, booking CTAs fall back
+  // to the /contact form. Set NEXT_PUBLIC_BOOKING_URL in Vercel to go live.
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '/contact',
   founder: {
     name: 'Sav Banerjee',
     role: 'Founder & Principal AI Transformation Advisor',

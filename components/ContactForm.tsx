@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Arrow } from './Arrow';
 import { track } from '@/lib/gtag';
 
@@ -12,18 +12,13 @@ const SERVICES = [
   { value: 'build', label: 'Agentic Systems & Products' },
   { value: 'ship', label: 'Financial AI & Trading Intelligence' },
   { value: 'workshop', label: 'Executive Workshop / Cohort' },
+  { value: 'contract', label: 'Contract / Fractional Role' },
   { value: 'other', label: 'Something else' },
 ];
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState<string>('');
-
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-  const endpoint = useMemo(
-    () => (formspreeId ? `https://formspree.io/f/${formspreeId}` : null),
-    [formspreeId],
-  );
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,23 +34,27 @@ export function ContactForm() {
       return;
     }
 
-    if (!endpoint) {
-      setStatus('error');
-      setErrorMsg('Form is not configured. Email sav@ensolabs.ai directly.');
-      return;
-    }
-
     setStatus('submitting');
     setErrorMsg('');
 
+    const payload = {
+      name,
+      email,
+      company: String(fd.get('company') || '').trim(),
+      service: String(fd.get('service') || '').trim(),
+      message,
+      source: 'Website',
+      website: String(fd.get('website') || ''), // honeypot
+    };
+
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch('/api/lead', {
         method: 'POST',
-        body: fd,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
       });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data?.ok === false) {
         throw new Error(data?.error || `Submit failed (${res.status})`);
       }
       track('form_submit', {
@@ -121,6 +120,12 @@ export function ContactForm() {
             placeholder="What system are you trying to ship? What's stuck? What's the deadline that matters?"
             required
           />
+        </div>
+
+        {/* Honeypot — hidden from humans, bots fill it. Do not remove. */}
+        <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: 'auto', width: 1, height: 1, overflow: 'hidden' }}>
+          <label htmlFor="website">Leave this field empty</label>
+          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
         </div>
 
         <div className="submit-row">

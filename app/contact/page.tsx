@@ -187,6 +187,16 @@ export default function ContactPage() {
                       <p style={{ marginTop: 6 }}>In-person available <NycClock /> ET / by appointment.</p>
                     </div>
                   </div>
+                  {SITE.bookingUrl.startsWith('http') && (
+                    <div className="channel">
+                      <span className="ix">05</span>
+                      <div className="body">
+                        <b>Book a call</b>
+                        <a href={SITE.bookingUrl} target="_blank" rel="noopener">Grab a 30-min slot →</a>
+                        <p>Skip the form. Pick a time that works — we&rsquo;ll come prepared.</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
               </div>
