@@ -2,6 +2,7 @@
   "_note": "Carousel content contract. Phase 3's copy engine fills this from the canonical /insights article; for now it's hand-authored from the real piece. The renderer (scripts/render-carousel.js) turns it into a 1080x1350 LinkedIn document PDF. Studio voice 'we'; confidential client renders as 'a Fortune 500 manufacturer'; closes 'Powered by Enso Labs'.",
   "slug": "claude-managed-agents-strategy-to-ship",
   "kicker": "THE BUILD LENS",
+  "sourceCredit": "Claude Managed Agents",
   "cover": {
     "headline": "Claude's agents now grade themselves.",
     "stamp": "SHIPPED"

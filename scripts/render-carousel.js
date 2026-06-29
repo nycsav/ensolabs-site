@@ -50,9 +50,17 @@ function fontFace(family, file, weight) {
 function assetDataUri(file) {
   return `data:image/png;base64,${fs.readFileSync(path.join(ASSET_DIR, file)).toString('base64')}`;
 }
-// The Claude mark — editorial/nominative use, INTERIOR (content) slides only, kept small so the
-// coral budget (<=10%) holds. The cover/CTA stay Strategy▸Ship + Enso only (no co-brand).
+// The Claude sunburst — the source credit ("ON CLAUDE MANAGED AGENTS"), shown in the brand bar.
 const CLAUDE_MARK = assetDataUri('claude-icon.png');
+
+// Enso Labs logo (teal chevron + wordmark). The file ships white-on-transparent (for dark grounds);
+// for paper slides we recolor the white wordmark to ink — the teal chevron is explicit and stays teal.
+const _ENSO_SVG = fs.readFileSync(path.join(ASSET_DIR, 'logo-white.svg'), 'utf8');
+const ensoLogo = (light) =>
+  'data:image/svg+xml;base64,'
+  + Buffer.from(light ? _ENSO_SVG.replace(/fill="#ffffff"/g, `fill="${C.ink}"`) : _ENSO_SVG).toString('base64');
+const ENSO_DARK = ensoLogo(false);  // white wordmark — ink-deep slides
+const ENSO_LIGHT = ensoLogo(true);  // ink wordmark — paper slides
 
 function ribbonSvg(h, fill) {
   return `<svg viewBox="0 0 50 32" style="height:${h};width:auto;vertical-align:middle">`
@@ -71,37 +79,48 @@ function wordmark(onDark) {
   </div>`;
 }
 
-function coverSlide(d, total) {
+// Universal footer brand bar (EVERY slide): Enso Labs logo + "ON [Claude] CLAUDE MANAGED AGENTS"
+// source credit (mirrors the article's OG card footer) + the slide progress.
+function brandBar(light, idx, total, credit) {
+  const meta = light ? C.slate : C.slateOnDark;
+  const ln = light ? C.line : C.lineOnDark;
+  return `<div class="brandbar" style="border-top-color:${ln}">
+    <div class="bb-left">
+      <img class="enso-logo" src="${light ? ENSO_LIGHT : ENSO_DARK}" alt="Enso Labs">
+      <span class="bb-hair" style="background:${ln}"></span>
+      <span class="bb-credit" style="color:${meta}">ON<img class="bb-claude" src="${CLAUDE_MARK}" alt="">${credit}</span>
+    </div>
+    <span class="prog${light ? ' dark' : ''}">${pad(idx)} / ${pad(total)}</span>
+  </div>`;
+}
+
+function coverSlide(d, total, credit) {
   return `<section class="slide cover">
     ${wordmark(true)}
     <div class="cover-body">
       <div class="kicker"><span class="dot"></span>${d.kicker || 'INSIGHTS'}</div>
       <h1 class="cover-h">${d.cover.headline}</h1>
     </div>
-    <div class="cover-foot">
-      ${d.cover.stamp ? `<span class="stamp">${d.cover.stamp}</span>` : '<span></span>'}
-      <span class="prog">01 / ${String(total).padStart(2, '0')}</span>
+    <div class="cover-end">
+      ${d.cover.stamp ? `<span class="stamp">${d.cover.stamp}</span>` : ''}
+      ${brandBar(false, 1, total, credit)}
     </div>
   </section>`;
 }
 
-function contentSlide(s, idx, total) {
+function contentSlide(s, idx, total, credit) {
   return `<section class="slide content">
-    <img class="claude-mark" src="${CLAUDE_MARK}" alt="">
     <div class="num">${pad(s.n ?? idx)}</div>
     <div class="c-body">
       <h2 class="c-h">${s.heading}</h2>
       <p class="c-p">${s.body}</p>
     </div>
-    <div class="c-foot">
-      ${ribbonSvg('14px', C.coral)}
-      <span class="prog dark">${pad(idx)} / ${pad(total)}</span>
-    </div>
+    ${brandBar(true, idx, total, credit)}
   </section>`;
 }
 
 // SOURCES slide — attributions only, NEVER links (it's a public LinkedIn asset). Fed by d.sources.
-function sourcesSlide(d, idx, total) {
+function sourcesSlide(d, idx, total, credit) {
   const items = (d.sources || []).map((s) =>
     `<li><span class="src-name">${s.source}</span>`
     + `<span class="src-claim">${s.claim}</span></li>`).join('');
@@ -111,16 +130,13 @@ function sourcesSlide(d, idx, total) {
       <h2 class="s-h">Every number traces to a primary source.</h2>
     </div>
     <ul class="src-list">${items}</ul>
-    <div class="c-foot">
-      ${ribbonSvg('14px', C.coral)}
-      <span class="prog dark">${pad(idx)} / ${pad(total)}</span>
-    </div>
+    ${brandBar(true, idx, total, credit)}
   </section>`;
 }
 
 // CTA slide — native engagement, NO external link (LinkedIn throttles outbound traffic). The
 // canonical ensolabs.ai/insights link lives on X / newsletter / Medium, never on the carousel.
-function ctaSlide(d, total) {
+function ctaSlide(d, total, credit) {
   const cta = d.cta || {};
   return `<section class="slide cta">
     ${wordmark(true)}
@@ -129,9 +145,9 @@ function ctaSlide(d, total) {
       <h2 class="cta-h">${cta.headline || "The bottleneck moved to whoever can define 'good.'"}</h2>
       <div class="cta-engage">${cta.subhead || 'What is your Monday move? Tell us in the comments — and follow The Build Lens.'}</div>
     </div>
-    <div class="cta-foot">
+    <div class="cta-end">
       <span class="powered">Powered by Enso Labs</span>
-      <span class="prog">${pad(total)} / ${pad(total)}</span>
+      ${brandBar(false, total, total, credit)}
     </div>
   </section>`;
 }
@@ -149,10 +165,11 @@ function buildHtml(d) {
     fontFace('JetBrains Mono', 'JetBrainsMono-500.ttf', 500),
   ].join('');
 
-  const parts = [coverSlide(d, total)];
-  slides.forEach((s, i) => parts.push(contentSlide(s, i + 2, total))); // content pages are 2..k
-  if (hasSources) parts.push(sourcesSlide(d, slides.length + 2, total)); // sources is the penultimate slide
-  parts.push(ctaSlide(d, total));
+  const credit = (d.sourceCredit || 'Claude Managed Agents').toUpperCase();
+  const parts = [coverSlide(d, total, credit)];
+  slides.forEach((s, i) => parts.push(contentSlide(s, i + 2, total, credit))); // content pages are 2..k
+  if (hasSources) parts.push(sourcesSlide(d, slides.length + 2, total, credit)); // penultimate slide
+  parts.push(ctaSlide(d, total, credit));
   const body = parts.join('');
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
@@ -198,8 +215,16 @@ function buildHtml(d) {
       color:${C.ink};max-width:30ch}
     .c-foot{display:flex;align-items:center;justify-content:space-between;
       border-top:1px solid ${C.line};padding-top:28px}
-    /* Claude mark — small, content slides only (nominative; keeps coral budget) */
-    .claude-mark{position:absolute;top:92px;right:92px;width:46px;height:46px;opacity:.92}
+    /* universal footer brand bar — Enso logo + "ON [Claude] CLAUDE MANAGED AGENTS" + progress */
+    .brandbar{display:flex;align-items:center;justify-content:space-between;width:100%;
+      border-top:1px solid ${C.line};padding-top:26px}
+    .bb-left{display:flex;align-items:center;gap:14px}
+    .enso-logo{height:22px;width:auto;display:block}
+    .bb-hair{width:1px;height:18px;display:inline-block}
+    .bb-credit{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono';
+      font-weight:500;font-size:13px;letter-spacing:.1em}
+    .bb-claude{height:20px;width:20px;display:inline-block}
+    .cover-end,.cta-end{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
 
     /* sources (paper ground) — attributions only, never links */
     .sources{background:${C.paper}}
