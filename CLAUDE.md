@@ -119,7 +119,7 @@ git add -A && git commit -m "description" && git push origin master
 - Address: 31 Union Square West, 6th Floor, New York, NY 10003
 - Email: sav@ensopartners.co
 - LinkedIn (personal): linkedin.com/in/savbanerjee
-- LinkedIn (company): linkedin.com/company/enso-partners
+- LinkedIn (company): linkedin.com/company/ensopartners-labs
 - GitHub: github.com/nycsav
 
 ## Analytics
