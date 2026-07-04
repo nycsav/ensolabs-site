@@ -26,7 +26,7 @@ export const orgSchema = (): JsonLd => ({
     SITE.founder.linkedin,
     SITE.founder.github,
     'https://www.crunchbase.com/person/sav-banerjee',
-    'https://www.linkedin.com/company/enso-partners',
+    'https://www.linkedin.com/company/ensopartners-labs',
   ],
 });
 

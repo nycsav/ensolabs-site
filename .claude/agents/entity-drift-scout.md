@@ -28,7 +28,7 @@ Compare everything you find against these. Anything that disagrees is "drift."
 
 ## Profiles to check (in priority order)
 1. Crunchbase — https://www.crunchbase.com/person/sav-banerjee
-2. LinkedIn — https://linkedin.com/in/savbanerjee (and company: linkedin.com/company/enso-partners)
+2. LinkedIn — https://linkedin.com/in/savbanerjee (and company: linkedin.com/company/ensopartners-labs)
 3. RocketReach, ZoomInfo, and any data-aggregator profiles that surface for "Sav Banerjee AI".
 4. Google Knowledge Panel / "Sav Banerjee AI strategy" SERP.
 

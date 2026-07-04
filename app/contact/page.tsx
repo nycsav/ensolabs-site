@@ -199,7 +199,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="side-follow">
-                  <a href="https://www.linkedin.com/company/enso-partners" target="_blank" rel="noopener">
+                  <a href="https://www.linkedin.com/company/ensopartners-labs" target="_blank" rel="noopener">
                     Follow Enso Labs on LinkedIn <span className="arw">→</span>
                   </a>
                 </div>
