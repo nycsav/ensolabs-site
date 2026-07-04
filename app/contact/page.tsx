@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { JsonLd } from '@/components/JsonLd';
 import { NycClock } from '@/components/NycClock';
 import { ContactForm } from '@/components/ContactForm';
+import { ContactHeroMedia } from '@/components/ContactHeroMedia';
 import {
   breadcrumbSchema,
   contactPointSchema,
@@ -14,12 +15,12 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact Enso Labs | AI Consulting Studio NYC',
   description:
-    'Get in touch with Enso Labs. Send a project brief, email the studio directly, or open a thread on LinkedIn. Response within 24 hours.',
+    'Get in touch with Enso Labs. Send a project brief, email the studio directly, or open a thread on LinkedIn.',
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact Enso Labs | Get in Touch',
     description:
-      'Start a project with Enso Labs. 31 Union Square West, NYC. Response within 24 hours.',
+      'Start a project with Enso Labs. 31 Union Square West, NYC.',
     url: 'https://ensolabs.ai/contact',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Contact Enso Labs — Get in Touch' }],
   },
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Enso Labs | Get in Touch',
     description:
-      'Start a project with Enso Labs. 31 Union Square West, NYC. Response within 24 hours.',
+      'Start a project with Enso Labs. 31 Union Square West, NYC.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -107,30 +108,28 @@ export default function ContactPage() {
         .channel .body b { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
         .channel .body a { color: var(--teal); font-family: var(--mono); font-size: 13px; }
         .channel .body p { color: var(--fg-2); font-size: 14px; line-height: 1.5; }
+        .side-follow { border-top: 1px solid var(--line); padding-top: 20px; }
+        .side-follow a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-3); text-decoration: none; }
+        .side-follow a .arw { color: var(--teal); }
 .toast { position: fixed; bottom: max(32px, env(safe-area-inset-bottom, 32px)); left: 50%; transform: translateX(-50%) translateY(60px); background: var(--teal); color: var(--bg); padding: 14px 22px; border-radius: 999px; font-family: var(--mono); font-size: 13px; font-weight: 500; box-shadow: 0 12px 40px rgba(0,0,0,0.4); opacity: 0; transition: opacity .3s, transform .3s; z-index: 100; pointer-events: none; display: flex; gap: 10px; align-items: center; max-width: calc(100vw - 32px); }
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
         details summary { cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; list-style: none; }
         details summary::-webkit-details-marker { display: none; }
       `}</style>
 
-      <section className="hero" data-screen-label="01 Contact hero" style={{ paddingBottom: 'clamp(48px,6vw,80px)' }}>
-        <div className="hero-glow" aria-hidden="true" />
+      {/* 01 — Contact hero as full-bleed NYC media band (Ken Burns still + dormant video swap) */}
+      <ContactHeroMedia />
+
+      {/* Intro lede + at-a-glance, preserved from the previous text hero */}
+      <section className="reveal" style={{ paddingTop: 'clamp(40px,5vw,64px)' }}>
         <div className="shell">
-          <div className="reveal" style={{ marginBottom: 36 }}>
-            <span className="eyebrow"><span className="num">PAGE / 06</span>&nbsp;Contact</span>
-          </div>
-          <h1 className="display reveal" data-delay="1" style={{ fontSize: 'clamp(44px, 7.5vw, 104px)' }}>
-            Let&rsquo;s <em>scope</em><br />
-            <span className="accent">something real.</span>
-          </h1>
           <div className="hero-foot">
-            <p className="lede reveal" data-delay="2">
-              Tell us about the system you&rsquo;re trying to ship. We read every brief personally and respond within 24 hours.
+            <p className="lede reveal" data-delay="1">
+              Tell us about the system you&rsquo;re trying to ship. We read every brief personally.
               If we&rsquo;re a fit, we&rsquo;ll book a 30-minute call to scope a 2-week diagnostic.
             </p>
-            <div className="reveal" data-delay="3">
+            <div className="reveal" data-delay="2">
               <div className="mono-sm" style={{ display: 'grid', gap: 8 }}>
-                <div>↳ <span style={{ color: 'var(--fg-2)' }}>Response</span> within 24h</div>
                 <div>↳ <span style={{ color: 'var(--fg-2)' }}>NDA</span> on request</div>
                 <div>↳ <span style={{ color: 'var(--fg-2)' }}>Currently</span> {SITE.availability}</div>
               </div>
@@ -164,7 +163,7 @@ export default function ContactPage() {
                     <span className="ix">02</span>
                     <div className="body">
                       <b>LinkedIn</b>
-                      <a href="https://linkedin.com/in/savbanerjee" target="_blank" rel="noopener">linkedin.com/in/savbanerjee</a>
+                      <a href="https://www.linkedin.com/in/savbanerjee/" target="_blank" rel="noopener">linkedin.com/in/savbanerjee</a>
                       <p>For warm intros &amp; connect requests.</p>
                     </div>
                   </div>
@@ -199,6 +198,11 @@ export default function ContactPage() {
                   )}
                 </div>
 
+                <div className="side-follow">
+                  <a href="https://www.linkedin.com/company/enso-partners" target="_blank" rel="noopener">
+                    Follow Enso Labs on LinkedIn <span className="arw">→</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
