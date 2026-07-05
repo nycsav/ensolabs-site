@@ -400,7 +400,7 @@ export default function HomePage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 05</span>&nbsp;Selected work</span>
+              <span className="eyebrow"><span className="num">§ 04</span>&nbsp;Selected work</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">Four engagements. Strategy &nbsp;<span style={{ color: 'var(--fg-3)' }}>→</span>&nbsp; ship.</h2>
@@ -445,7 +445,7 @@ export default function HomePage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 06</span>&nbsp;Methodology</span>
+              <span className="eyebrow"><span className="num">§ 05</span>&nbsp;Methodology</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">The Strategy-to-Ship Framework.</h2>
@@ -495,7 +495,7 @@ export default function HomePage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 07</span>&nbsp;Selected clients</span>
+              <span className="eyebrow"><span className="num">§ 06</span>&nbsp;Selected clients</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">15 years across the room from C-suite buyers.</h2>
