@@ -33,7 +33,7 @@ const formatDate = (iso: string) =>
   });
 
 export default function InsightsIndex() {
-  const [featured, ...rest] = INSIGHTS;
+  const [featured, ...rest] = [...INSIGHTS].sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
   return (
     <>

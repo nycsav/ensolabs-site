@@ -379,55 +379,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* LIVE INTELLIGENCE — Strategy to Ship */}
-      <section data-screen-label="04.5 Live intelligence">
+      {/* LIVE INTELLIGENCE — slim banner (was a duplicate 4-card Strategy→Ship grid) */}
+      <section data-screen-label="04.5 Live intelligence" style={{ paddingTop: 0 }}>
         <div className="shell">
-          <div className="section-head">
-            <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 04</span>&nbsp;Live intelligence</span>
+          <Link className="s2n-banner reveal" href="/insights">
+            <div>
+              <div className="label">Live Intelligence · Powered by Enso Labs</div>
+              <div className="title">
+                Daily AI signals, live from Strategy <span style={{ color: '#F0512E' }}>→</span> Ship.
+              </div>
+              <div className="sub">Competitive, AI &amp; financial signals for marketing strategists — updated every weekday, ET.</div>
             </div>
-            <div className="reveal" data-delay="1">
-              <h2 className="h2">
-                Live from Strategy <span style={{ color: '#F0512E' }}>→</span> Ship.
-              </h2>
-              <p className="lede" style={{ marginTop: 24 }}>
-                Daily AI intelligence for marketing strategists. Powered by Enso Labs.
-              </p>
-            </div>
-          </div>
-
-          <div className="reveal s2n-grid">
-            {[
-              { kind: 'AI SIGNAL',          date: 'MAY 31', source: 'LangChain',  headline: 'LangChain ships deep agents — a batteries-included harness that bundles sandbox, memory, skills, and human-in-the-loop into a single open-source library.' },
-              { kind: 'COMPETITIVE SIGNAL', date: 'MAY 29', source: 'Google',     headline: 'Google I/O 2026 ships Managed Agents API, Gemini Omni, Antigravity 2.0 — collapsing six weeks of agent harness engineering into a single API call.' },
-              { kind: 'AI SIGNAL',          date: 'MAY 28', source: 'Anthropic',  headline: 'Claude Partner Network launches with $100M commitment. Boutique implementation partners with production deployments gain enterprise access.' },
-              { kind: 'COMPETITIVE SIGNAL', date: 'MAY 26', source: 'Forrester',  headline: 'AI-search referral traffic now exceeds organic Google for 18% of B2B sites tracked. AEO-optimized brands see 3.4× lift vs. non-optimized peers.' },
-            ].map((s) => (
-              <Link
-                key={s.headline}
-                className="s2n-card"
-                href="/insights"
-              >
-                <div className="s2n-meta">
-                  <span className="kind">{s.kind}</span>
-                  <span>{s.date}</span>
-                  <span>{s.source}</span>
-                </div>
-                <p className="s2n-headline">{s.headline}</p>
-                <span className="s2n-arrow">→</span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="reveal" style={{ marginTop: 40, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-            <p className="mono-sm" style={{ color: 'var(--fg-3)' }}>
-              ↳ Updated every weekday morning, ET
-            </p>
-            <Link className="btn btn-primary" href="/insights">
-              Read daily signals → Insights
-              <Arrow />
-            </Link>
-          </div>
+            <span className="go">Read daily signals →</span>
+          </Link>
         </div>
       </section>
 
@@ -436,7 +400,7 @@ export default function HomePage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 05</span>&nbsp;Selected work</span>
+              <span className="eyebrow"><span className="num">§ 04</span>&nbsp;Selected work</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">Four engagements. Strategy &nbsp;<span style={{ color: 'var(--fg-3)' }}>→</span>&nbsp; ship.</h2>
@@ -481,7 +445,7 @@ export default function HomePage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 06</span>&nbsp;Methodology</span>
+              <span className="eyebrow"><span className="num">§ 05</span>&nbsp;Methodology</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">The Strategy-to-Ship Framework.</h2>
@@ -531,7 +495,7 @@ export default function HomePage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 07</span>&nbsp;Selected clients</span>
+              <span className="eyebrow"><span className="num">§ 06</span>&nbsp;Selected clients</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">15 years across the room from C-suite buyers.</h2>
