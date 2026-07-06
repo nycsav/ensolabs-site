@@ -11,6 +11,10 @@ import {
 import { INSIGHTS } from '@/lib/insights';
 import { SITE } from '@/lib/site';
 
+// ISR: revalidate the statically-generated homepage every 5 min so an edge-cached
+// copy can't serve stale HTML for hours after a content change.
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
   description:
@@ -88,6 +92,7 @@ export default function HomePage() {
             <span>
               Certified · <b>Anthropic</b> · <b>Google</b> · <b>OpenAI</b>
             </span>
+            <span>Perplexity Computer Implementation Partner</span>
           </div>
 
           <h1 className="display hero-title">
