@@ -45,6 +45,13 @@ no re-deriving branch/build/PR mechanics.
 - Recurring brand assets are committed under `public/` (stable paths), not fetched from
   expiring URLs. One-off assets are downloaded into `public/` by the handoff before editing.
 - Plain-English guide: `.claude/README-design-handoff.md`. New handoff template: `handoffs/_TEMPLATE.md`.
+- Definition of "live" = an EXTERNAL fetch is clean, not deploy-status. After any content
+  change, purge the CDN/edge cache for the changed route(s) and verify with
+  `curl -s https://ensolabs.ai<route>` (no browser, no auth). Confirm the raw HTML contains
+  the new copy and NOT the old. "Vercel READY" and "source is correct" are necessary but
+  NOT sufficient — statically-generated routes are edge-cached and a redeploy alone may not
+  purge them for outside visitors. Content routes that change should set a sane
+  `export const revalidate` (e.g. 300) so a stale edge copy self-heals within minutes.
 
 ## Deploy
 ```bash
