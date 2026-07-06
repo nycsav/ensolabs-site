@@ -85,6 +85,9 @@ export function Footer() {
           <a href="https://www.ibm.com/partnerplus" target="_blank" rel="noopener">
             IBM Partner Plus · Registered Member
           </a>
+          <a href="https://www.perplexity.ai/hub/computer-partners" target="_blank" rel="noopener">
+            Perplexity Computer Implementation Partner
+          </a>
         </div>
 
         <div className="foot-bottom">
