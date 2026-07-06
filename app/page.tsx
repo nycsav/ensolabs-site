@@ -507,6 +507,24 @@ export default function HomePage() {
               <div key={c} className="client">{c}</div>
             ))}
           </div>
+
+          <div className="reveal" style={{ marginTop: 'clamp(36px, 4.5vw, 60px)', paddingTop: 'clamp(24px, 3vw, 36px)', borderTop: '1px solid var(--line-2)' }}>
+            <span className="eyebrow no-line">Partnerships</span>
+            <p style={{ margin: '16px 0 8px', fontSize: 'clamp(19px, 2.1vw, 24px)', fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--fg)' }}>
+              Perplexity Computer Implementation Partner
+            </p>
+            <p className="lede" style={{ margin: '0 0 16px', maxWidth: '58ch' }}>
+              We help teams onboard, integrate, and get real value out of Perplexity Computer — faster, with a senior team that builds, not just advises.
+            </p>
+            <a
+              href="https://www.perplexity.ai/hub/computer-partners"
+              target="_blank"
+              rel="noopener"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--teal)', fontWeight: 500 }}
+            >
+              About the program <Arrow />
+            </a>
+          </div>
         </div>
       </section>
 
