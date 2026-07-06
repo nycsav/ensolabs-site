@@ -6,6 +6,7 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(npm run *)",
+      "Bash(bash .claude/scripts/ship-handoff.sh *)",
       "mcp__4fc90b52-ebf4-44f5-8092-dc47fe470484__deploy_to_vercel",
       "mcp__4fc90b52-ebf4-44f5-8092-dc47fe470484__get_deployment",
       "mcp__4fc90b52-ebf4-44f5-8092-dc47fe470484__web_fetch_vercel_url"
