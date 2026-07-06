@@ -8,6 +8,18 @@ Enso Labs is an AI transformation and agentic systems studio founded by Sav Bane
 
 > **DEPRECATED — DO NOT RESURRECT:** The standalone `signals.ensolabs.ai` domain, the PlannerAPI/Firebase deployment, and GA4 `G-CJ18GXXPMX` are permanently retired (May 2026). The news-intelligence engine lives only at ensolabs.ai/insights. Never link to, embed, or reference signals.ensolabs.ai anywhere.
 
+## Operating mode — how to work with Sav
+Sav is the creative director; the AI tools are the developers. Sav's time is scarce
+(frequent travel/events). Optimize for throughput.
+- Do NOT ask clarifying questions when a reasonable default exists. Decide, act, and
+  state the assumption in one line. Ask ONE pointed question only when a choice is truly
+  irreversible or the intent is genuinely ambiguous.
+- Always respond with the next actionable step, executed — not a plan handed back for approval.
+- Never push to master directly. Ship as a branch + PR. Routine content handoffs
+  auto-merge on a green Vercel check (a broken build never merges); config/brand-critical
+  diffs (`CLAUDE.md`, `.claude/`, `globals.css`, schema, `next.config`, `package.json`,
+  `vercel.json`) are held for Sav's review.
+
 ## Quick Reference
 - **Framework:** Next.js 14, App Router, TypeScript
 - **Styling:** Custom CSS (globals.css), OKLCH color system
@@ -16,6 +28,23 @@ Enso Labs is an AI transformation and agentic systems studio founded by Sav Bane
 - **GitHub:** nycsav/ensolabs-site
 - **GA4:** G-5N15QMQ962
 - **Strategy to Ship:** news-intelligence/publishing brand published on ensolabs.ai/insights (standalone signals.ensolabs.ai DEPRECATED — see Overview)
+
+## Design → Code Handoff (the one-line loop)
+Designs from Claude Design reach production via committed handoff files — no re-pasting,
+no re-deriving branch/build/PR mechanics.
+
+- Handoffs live in `handoffs/<slug>.md` (versioned). Executed ones move to `handoffs/shipped/`.
+- Run in Claude Code: `/ship-handoff <slug>` (or `/ship-handoff` for the newest handoff).
+  It branches `design/<slug>` off master, applies the spec, runs `npm run build`, pushes,
+  opens a PR, and **auto-merges on green** for routine handoffs (Vercel check passes →
+  GitHub squash-merges → live). Protected-path diffs are withheld for Sav's review.
+  Green-gated auto-merge is configured once via `AUTOMERGE-SETUP.md`.
+- Mechanics are codified in `.claude/scripts/ship-handoff.sh` (branch + PR; reuses the
+  sandbox-safe rules from `safe-deploy.sh`: no `git rm`, rename stale locks). `safe-deploy.sh`
+  still handles the daily SEO engine's direct-to-master pushes.
+- Recurring brand assets are committed under `public/` (stable paths), not fetched from
+  expiring URLs. One-off assets are downloaded into `public/` by the handoff before editing.
+- Plain-English guide: `.claude/README-design-handoff.md`. New handoff template: `handoffs/_TEMPLATE.md`.
 
 ## Deploy
 ```bash
