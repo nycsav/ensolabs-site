@@ -1,16 +1,18 @@
 ---
-description: Execute a Claude Design handoff end-to-end — branch off master, apply the handoff spec, npm run build, push, open a PR + Vercel preview. Never merges; Sav reviews and merges.
+description: Execute a Claude Design handoff end-to-end — branch off master, apply the handoff spec, npm run build, push, open a PR, and green-gated auto-merge (merges itself when Vercel passes). Config/brand-critical diffs are held for review.
 argument-hint: "[handoff slug, e.g. perplexity-partner] (default: newest file in handoffs/)"
 model: opus
 ---
 
 You are running the **Enso Labs Design → Code Handoff**. This turns a design produced in
-Claude Design into a reviewable production PR in one step, so Sav never re-explains the
-branch/build/PR mechanics. Handoff slug = `$ARGUMENTS` (default: the most recently
-modified file in `handoffs/`, ignoring `_TEMPLATE.md`).
+Claude Design into a live production change in one step, so Sav never re-explains the
+branch/build/PR mechanics and never has to click merge on routine work. Handoff slug =
+`$ARGUMENTS` (default: the most recently modified file in `handoffs/`, ignoring `_TEMPLATE.md`).
 
-Work autonomously. **Never push to master and never merge** — this flow is branch + PR +
-Vercel preview only. Sav reviews the preview and merges.
+Work autonomously. Never push to master directly — always branch + PR. Routine handoffs
+**auto-merge on green** (GitHub merges the moment the Vercel check passes; a failing build
+never merges). Diffs touching protected paths (`CLAUDE.md`, `.claude/`, `globals.css`,
+schema, `next.config`, `package.json`, `vercel.json`) are held for Sav's review.
 
 ## 1. Resolve the handoff
 - If `$ARGUMENTS` is empty, pick the newest `handoffs/*.md` except `_TEMPLATE.md`.
@@ -35,16 +37,19 @@ connector or `mv` — never `git rm` (the sandbox blocks unlink()).
 - `npx tsc --noEmit` if the change touches types.
 - Re-read the handoff's acceptance checklist and confirm each item.
 
-## 5. Ship as a PR (never merge)
+## 5. Ship (auto-merge on green)
 Run: `bash .claude/scripts/ship-handoff.sh ship <slug> "design: <short subject>"`
-This stages, commits (Co-Authored-By Claude), pushes the branch, and opens a PR. Vercel
-builds a preview from the branch automatically. Confirm the deployment reaches READY via
-the Vercel MCP and capture the preview URL.
+This stages, commits (Co-Authored-By Claude), pushes the branch, opens a PR, and enables
+green-gated auto-merge — UNLESS the diff touches protected paths (then it's held for review).
+GitHub merges automatically when the Vercel check passes; you do not wait on a human.
+- To force manual review on a specific run, append a 4th arg `review` or set `NO_AUTOMERGE=1`.
+- Confirm the Vercel deployment reaches READY via the Vercel MCP and capture the preview URL.
+  (If auto-merge fired, that same commit deploys to production once merged.)
 
 ## 6. Archive + report
 - Move the executed handoff to `handoffs/shipped/<slug>.md` (via fs/`mv`, then `git add -A`
   on the same branch) so `handoffs/` only holds pending work.
-- Summarize in chat, tight: branch name · files changed · build status · **Vercel preview
-  URL** · PR URL · the human-gated next step ("review preview → merge PR").
+- Summarize in chat, tight: branch · files changed · build status · **Vercel preview URL** ·
+  PR URL · and whether it **auto-merged** or is **held for review** (say which, and why if held).
 
 Do NOT pad with process narration. The PR and preview do the talking.

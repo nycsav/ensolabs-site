@@ -15,7 +15,10 @@ Sav is the creative director; the AI tools are the developers. Sav's time is sca
   state the assumption in one line. Ask ONE pointed question only when a choice is truly
   irreversible or the intent is genuinely ambiguous.
 - Always respond with the next actionable step, executed — not a plan handed back for approval.
-- Never auto-publish or auto-merge. Ship changes as a branch + PR + Vercel preview; Sav merges.
+- Never push to master directly. Ship as a branch + PR. Routine content handoffs
+  auto-merge on a green Vercel check (a broken build never merges); config/brand-critical
+  diffs (`CLAUDE.md`, `.claude/`, `globals.css`, schema, `next.config`, `package.json`,
+  `vercel.json`) are held for Sav's review.
 
 ## Quick Reference
 - **Framework:** Next.js 14, App Router, TypeScript
@@ -33,7 +36,9 @@ no re-deriving branch/build/PR mechanics.
 - Handoffs live in `handoffs/<slug>.md` (versioned). Executed ones move to `handoffs/shipped/`.
 - Run in Claude Code: `/ship-handoff <slug>` (or `/ship-handoff` for the newest handoff).
   It branches `design/<slug>` off master, applies the spec, runs `npm run build`, pushes,
-  and opens a PR + Vercel preview. It NEVER pushes to master and NEVER merges — Sav merges.
+  opens a PR, and **auto-merges on green** for routine handoffs (Vercel check passes →
+  GitHub squash-merges → live). Protected-path diffs are withheld for Sav's review.
+  Green-gated auto-merge is configured once via `AUTOMERGE-SETUP.md`.
 - Mechanics are codified in `.claude/scripts/ship-handoff.sh` (branch + PR; reuses the
   sandbox-safe rules from `safe-deploy.sh`: no `git rm`, rename stale locks). `safe-deploy.sh`
   still handles the daily SEO engine's direct-to-master pushes.

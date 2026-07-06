@@ -3,8 +3,17 @@
 #
 # Companion to safe-deploy.sh. safe-deploy pushes STRAIGHT to master (for the
 # daily SEO engine). THIS script is for Claude Design handoffs: it works on a
-# feature branch, pushes it, and opens a PR + Vercel preview. It NEVER touches
-# master directly and NEVER merges — Sav reviews the preview and merges.
+# feature branch, pushes it, opens a PR, and — for routine handoffs — enables
+# GitHub AUTO-MERGE so the PR merges itself the moment the Vercel check passes.
+# It never pushes to master directly and never force-merges past a failing check.
+#
+# Auto-merge posture (Sav is time-pressed and does not review routine PRs):
+#   * Green-gated: `gh pr merge --auto` queues the merge; GitHub merges ONLY when
+#     the required status check (Vercel) is green. A broken build never merges.
+#   * Protected-paths TRIPWIRE: if the diff touches agent-behavior / config /
+#     brand-critical files (see PROTECTED_PATHS), auto-merge is WITHHELD and the
+#     PR waits for Sav. Everything else flows hands-off.
+#   * Escape hatch: `NO_AUTOMERGE=1` env or a 4th arg of "review" forces manual.
 #
 # It reuses the same sandbox-safe rules safe-deploy.sh encodes:
 #   1. Never `git rm` (the sandbox blocks unlink()); delete via the filesystem
@@ -17,11 +26,16 @@
 #       -> fetches master, creates/switches to branch design/<slug> off origin/master.
 #          (Then Claude Code applies the handoff edits and runs `npm run build`.)
 #
-#   bash .claude/scripts/ship-handoff.sh ship  <slug> "commit subject"
-#       -> stages, commits, pushes the branch, opens a PR. Never merges.
+#   bash .claude/scripts/ship-handoff.sh ship  <slug> "commit subject" [review]
+#       -> stages, commits, pushes the branch, opens a PR, and enables green-gated
+#          auto-merge unless the tripwire fires or manual review is forced.
 
 set -uo pipefail
 cd "$(git rev-parse --show-toplevel)" || { echo "ship-handoff: not in a git repo"; exit 1; }
+
+# Files that must NEVER auto-merge — a human glances at these before they go live.
+# (Extended-regex, matched against paths in the branch diff vs origin/master.)
+PROTECTED_PATHS='^(CLAUDE\.md|\.claude/|app/globals\.css|next\.config\.|vercel\.json|package(-lock)?\.json|middleware\.|lib/schema|lib/.*schema)'
 
 MODE="${1:?ship-handoff: mode required — 'start' or 'ship'}"
 SLUG="${2:?ship-handoff: pass a handoff slug, e.g. perplexity-partner}"
@@ -65,17 +79,45 @@ case "$MODE" in
 
     git push -u origin "$BRANCH" || { echo "ship-handoff: push failed"; exit 1; }
 
-    # Open a PR (gh if available; else print the compare URL). NEVER merge.
-    if command -v gh >/dev/null 2>&1; then
-      gh pr create --base master --head "$BRANCH" --title "$MSG" \
-        --body "Automated design handoff for \`${SLUG}\` (handoffs/${SLUG}.md). Vercel builds a preview from this branch. Review the preview, then merge manually — do NOT auto-merge." \
-        2>/dev/null || echo "ship-handoff: open PR -> https://github.com/nycsav/ensolabs-site/compare/master...${BRANCH}?expand=1"
+    # Decide auto-merge eligibility BEFORE opening the PR.
+    CHANGED="$(git diff --name-only origin/master...HEAD)"
+    FORCE_REVIEW="${4:-}"
+    AUTOMERGE=1
+    REASON=""
+    if [ "${NO_AUTOMERGE:-0}" = "1" ] || [ "$FORCE_REVIEW" = "review" ]; then
+      AUTOMERGE=0; REASON="manual review forced"
+    elif echo "$CHANGED" | grep -Eq "$PROTECTED_PATHS"; then
+      AUTOMERGE=0; REASON="tripwire: diff touches protected paths"
+    fi
+
+    if [ "$AUTOMERGE" = "1" ]; then
+      PRBODY="Automated design handoff for \`${SLUG}\` (handoffs/${SLUG}.md). AUTO-MERGE is ON: GitHub merges this the moment the Vercel check passes. A failing build will NOT merge."
     else
-      echo "ship-handoff: open PR -> https://github.com/nycsav/ensolabs-site/compare/master...${BRANCH}?expand=1"
+      PRBODY="Automated design handoff for \`${SLUG}\` (handoffs/${SLUG}.md). AUTO-MERGE WITHHELD (${REASON}). Sav reviews the Vercel preview and merges manually."
+    fi
+
+    # Open the PR (gh if available; else print the compare URL).
+    if command -v gh >/dev/null 2>&1; then
+      gh pr create --base master --head "$BRANCH" --title "$MSG" --body "$PRBODY" 2>/dev/null \
+        || echo "ship-handoff: open PR -> https://github.com/nycsav/ensolabs-site/compare/master...${BRANCH}?expand=1"
+
+      if [ "$AUTOMERGE" = "1" ]; then
+        # Green-gated: merges ONLY when required checks pass. Requires repo
+        # 'Allow auto-merge' ON + a required status check (see AUTOMERGE-SETUP.md).
+        if gh pr merge "$BRANCH" --auto --squash --delete-branch 2>/dev/null; then
+          echo "ship-handoff: AUTO-MERGE enabled — merges when the Vercel check goes green."
+        else
+          echo "ship-handoff: could not enable auto-merge (is 'Allow auto-merge' + a required check configured?)."
+          echo "ship-handoff: PR is open for manual merge -> https://github.com/nycsav/ensolabs-site/pulls"
+        fi
+      else
+        echo "ship-handoff: AUTO-MERGE withheld (${REASON}). PR waits for Sav."
+      fi
+    else
+      echo "ship-handoff: gh not found. Open PR -> https://github.com/nycsav/ensolabs-site/compare/master...${BRANCH}?expand=1"
     fi
 
     echo "ship-handoff: branch pushed. Vercel builds a preview automatically."
-    echo "ship-handoff: confirm READY via Vercel MCP, review the preview, then merge the PR yourself."
     ;;
 
   *)
