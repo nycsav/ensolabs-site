@@ -88,7 +88,6 @@ export default function HomePage() {
             <span>
               Certified · <b>Anthropic</b> · <b>Google</b> · <b>OpenAI</b>
             </span>
-            <span>Perplexity Business Fellowship</span>
           </div>
 
           <h1 className="display hero-title">
@@ -510,11 +509,27 @@ export default function HomePage() {
 
           <div className="reveal" style={{ marginTop: 'clamp(36px, 4.5vw, 60px)', paddingTop: 'clamp(24px, 3vw, 36px)', borderTop: '1px solid var(--line-2)' }}>
             <span className="eyebrow no-line">Partnerships</span>
-            <p style={{ margin: '16px 0 8px', fontSize: 'clamp(19px, 2.1vw, 24px)', fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--fg)' }}>
-              Perplexity Computer Implementation Partner
+            <a
+              href="https://www.perplexity.ai/hub/computer-partners"
+              target="_blank"
+              rel="noopener"
+              aria-label="Perplexity Implementation Partners Program — Perplexity and Enso Labs"
+              style={{ display: 'block', marginTop: 16, borderRadius: 14, overflow: 'hidden', border: '1px solid var(--line-2)' }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/perplexity-enso-partnership.png"
+                alt="Perplexity Implementation Partners Program — Perplexity and Enso Labs"
+                width={1920}
+                height={1080}
+                style={{ display: 'block', width: '100%', height: 'auto' }}
+              />
+            </a>
+            <p style={{ margin: '18px 0 8px', fontSize: 'clamp(19px, 2.1vw, 24px)', fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--fg)' }}>
+              Enso Labs joins the Perplexity Implementation Partners Program
             </p>
-            <p className="lede" style={{ margin: '0 0 16px', maxWidth: '58ch' }}>
-              We help teams onboard, integrate, and get real value out of Perplexity Computer — faster, with a senior team that builds, not just advises.
+            <p className="lede" style={{ margin: '0 0 16px', maxWidth: '60ch' }}>
+              As a Perplexity Computer Implementation Partner, we help teams onboard, integrate, and get real value out of Perplexity Computer — faster, with a senior team that builds, not just advises.
             </p>
             <a
               href="https://www.perplexity.ai/hub/computer-partners"

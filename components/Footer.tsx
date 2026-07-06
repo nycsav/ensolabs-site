@@ -76,7 +76,6 @@ export function Footer() {
             <p>Anthropic · Claude Code</p>
             <p>Google AI</p>
             <p>OpenAI</p>
-            <p style={{ marginTop: 12, color: 'var(--teal)' }}>Perplexity Fellow</p>
           </div>
         </div>
 
