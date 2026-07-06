@@ -36,6 +36,14 @@ connector or `mv` — never `git rm` (the sandbox blocks unlink()).
 - `npm run build` — must succeed. Fix type/build errors before proceeding.
 - `npx tsc --noEmit` if the change touches types.
 - Re-read the handoff's acceptance checklist and confirm each item.
+- **Cache + external-render check (REQUIRED for content changes) — "live" = an external
+  curl is clean, NOT deploy-status.** After the change deploys, purge the CDN/edge cache for
+  the changed route(s) (a fresh production deploy; static content routes should set
+  `export const revalidate`), then run `curl -s https://ensolabs.ai<route>` for each changed
+  route and assert the NEW string is present and the OLD string absent, e.g.
+  `curl -s https://ensolabs.ai | grep -q "<new>" && ! curl -s https://ensolabs.ai | grep -qi "<old>" && echo EXTERNAL_OK || echo "STALE: edge still serving old HTML"`.
+  If the external curl is stale, the task is NOT done — purge and re-verify. Never report
+  "live" off deploy-status alone (the exact gap that shipped stale HTML on 2026-07-06).
 
 ## 5. Ship (auto-merge on green)
 Run: `bash .claude/scripts/ship-handoff.sh ship <slug> "design: <short subject>"`

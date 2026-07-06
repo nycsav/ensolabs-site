@@ -44,6 +44,11 @@ worse than deferring.
   `vercel.json`), in which case it's held for Sav. Append `review` / set `NO_AUTOMERGE=1`
   to force manual review on a risky run.
 - Confirm the Vercel deployment reaches READY via the Vercel MCP; capture the preview URL.
+- **External-render gate (REQUIRED) — "live" = an external curl is clean, NOT deploy-status.**
+  After deploy, purge the CDN/edge cache for the changed route(s) (static content routes set
+  `export const revalidate`), then `curl -s https://ensolabs.ai<route>` and assert the NEW
+  copy is present and the OLD copy absent. If stale, purge and re-verify — never report
+  "live" off deploy-status alone.
 - Move the handoff to `handoffs/shipped/<slug>.md` (fs/`mv`, then `git add -A` on the branch).
 
 ## 3. Report (tight)
