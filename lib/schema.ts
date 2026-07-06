@@ -75,7 +75,7 @@ export const personSchema = (): JsonLd => ({
     { '@type': 'EducationalOccupationalCredential', name: 'Anthropic Claude Code Certified' },
     { '@type': 'EducationalOccupationalCredential', name: 'Google AI Certified' },
     { '@type': 'EducationalOccupationalCredential', name: 'OpenAI Certified' },
-    { '@type': 'EducationalOccupationalCredential', name: 'Perplexity AI Business Fellowship Winner' },
+    { '@type': 'EducationalOccupationalCredential', name: 'Perplexity Computer Implementation Partner' },
   ],
   sameAs: [
     SITE.founder.linkedin,

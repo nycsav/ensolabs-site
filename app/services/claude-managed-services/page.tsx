@@ -45,7 +45,7 @@ const FAQS = [
   {
     question: 'What Claude certifications does Enso Labs hold?',
     answer:
-      'Enso Labs holds Anthropic Claude Code certification and is credentialed in Claude API, MCP server development, and agentic systems architecture. Sav Banerjee is also a Perplexity AI Business Fellowship winner and Google AI certified.',
+      'Enso Labs holds Anthropic Claude Code certification and is credentialed in Claude API, MCP server development, and agentic systems architecture. Sav Banerjee is also a Perplexity Computer Implementation Partner and Google AI certified.',
   },
   {
     question: 'What industries do you deploy Claude in?',

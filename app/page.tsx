@@ -45,7 +45,7 @@ const HOME_FAQS = [
   {
     question: 'Who is Sav Banerjee?',
     answer:
-      'Sav Banerjee is the founder and principal AI transformation advisor at Enso Labs. He is a 15-year enterprise strategist turned agentic-systems builder, with experience across Google, McCann, Publicis, BBDO, and Y&R. He holds certifications from Anthropic, Google, and OpenAI, and is a Perplexity AI Business Fellowship winner. Sav is available for both consulting engagements and full-time AI leadership roles (Head of AI, VP AI Strategy, Director of AI Products).',
+      'Sav Banerjee is the founder and principal AI transformation advisor at Enso Labs. He is a 15-year enterprise strategist turned agentic-systems builder, with experience across Google, McCann, Publicis, BBDO, and Y&R. He holds certifications from Anthropic, Google, and OpenAI, and is a Perplexity Computer Implementation Partner. Sav is available for both consulting engagements and full-time AI leadership roles (Head of AI, VP AI Strategy, Director of AI Products).',
   },
   {
     question: 'What does principal-led AI consulting mean?',
