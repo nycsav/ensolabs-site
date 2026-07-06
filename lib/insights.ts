@@ -20,6 +20,22 @@ export type Insight = {
 
 export const INSIGHTS: Insight[] = [
   {
+    slug: 'enso-labs-perplexity-implementation-partner',
+    title: 'Enso Labs joins the Perplexity Implementation Partners Program.',
+    dek: "We're now a Perplexity Computer Implementation Partner — helping teams onboard, integrate, and get real value out of Perplexity Computer, with a senior team that builds, not just advises.",
+    pillar: 'Build',
+    date: '2026-07-05',
+    readingMinutes: 2,
+    tags: ["Perplexity", "Perplexity Computer", "Implementation Partner", "Partnerships", "Enterprise AI", "AI Adoption", "Enso Labs", "Strategy to Ship", "Sav Banerjee"],
+    body: [
+      "Enso Labs is now a **Perplexity Computer Implementation Partner**, part of Perplexity's Implementation Partners Program.",
+      "For most teams, the gap with a powerful new AI surface isn't access — it's implementation. Which workflows to point it at first, how to wire it into the data and tools a team already uses, and how to know whether it's actually changing decisions.",
+      "That's the work we do. As an implementation partner, we help teams onboard, integrate, and get real value out of Perplexity Computer — faster, with a senior team that builds, not just advises. Same principle as everything else we ship: strategy through production, led by the person who also does the build.",
+      "If your team is putting Perplexity Computer to work and wants it doing real work rather than sitting in a tab, [get in touch](/contact). You can also read more [about the program](https://www.perplexity.ai/hub/computer-partners).",
+      "**Powered by Enso Labs**",
+    ],
+  },
+  {
     slug: 'claude-managed-agents-strategy-to-ship',
     title: "Claude's agents now learn, grade themselves, and split the work. The bottleneck moves to whoever can define 'good.'",
     dek: "Anthropic added dreaming, outcomes, and multiagent orchestration to Claude Managed Agents. Together they relocate the hard part of building an agent from writing the loop to defining what 'good' looks like — which is exactly the Strategy-to-Ship work we do.",
