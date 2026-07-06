@@ -51,7 +51,7 @@ const HOME_FAQS = [
   {
     question: 'How do I start a project with Enso Labs?',
     answer:
-      'Start with a 2-week AI Audit — a fixed-fee diagnostic engagement that delivers a written roadmap, prioritized opportunity backlog, ROI model, governance gap-map, and a working agentic prototype against your real data. Send a brief through the contact form or email sav@ensolabs.ai. Response within 24 hours.',
+      'Start with a 2-week AI Audit — a fixed-fee diagnostic engagement that delivers a written roadmap, prioritized opportunity backlog, ROI model, governance gap-map, and a working agentic prototype against your real data. Send a brief through the contact form or email sav@ensolabs.ai, and we respond personally.',
   },
 ];
 
