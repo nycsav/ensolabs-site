@@ -32,7 +32,7 @@ const SERVICES_FAQ = [
   {
     question: 'What certifications does Enso Labs hold?',
     answer:
-      'Anthropic (Claude Code), Google AI, OpenAI. Sav Banerjee is also a Perplexity AI Business Fellowship winner and member of Perplexity Business.',
+      'Anthropic (Claude Code), Google AI, OpenAI. Sav Banerjee is also a Perplexity Computer Implementation Partner.',
   },
   {
     question: 'Does Enso Labs offer cloud managed services?',

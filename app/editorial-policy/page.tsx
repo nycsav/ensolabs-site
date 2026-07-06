@@ -29,7 +29,7 @@ const FAQS = [
   {
     question: 'Who writes the content on ensolabs.ai?',
     answer:
-      'All content on ensolabs.ai — including case studies, insight articles, and service pages — is written and reviewed by Sav Banerjee, Founder & Principal of Enso Labs. Sav holds certifications from Anthropic, Google, and OpenAI, and is a Perplexity AI Business Fellowship winner with 15+ years of enterprise experience.',
+      'All content on ensolabs.ai — including case studies, insight articles, and service pages — is written and reviewed by Sav Banerjee, Founder & Principal of Enso Labs. Sav holds certifications from Anthropic, Google, and OpenAI, and is a Perplexity Computer Implementation Partner with 15+ years of enterprise experience.',
   },
   {
     question: 'What sources does Enso Labs use?',

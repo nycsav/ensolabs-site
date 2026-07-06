@@ -14,7 +14,7 @@ const ABOUT_FAQ = [
   {
     question: 'Who is Sav Banerjee?',
     answer:
-      'Sav Banerjee is an AI strategy consultant in NYC and the founder of Enso Labs, an AI transformation consulting firm in New York City. He is an AI architect and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity AI Business Fellowship winner.',
+      'Sav Banerjee is an AI strategy consultant in NYC and the founder of Enso Labs, an AI transformation consulting firm in New York City. He is an AI architect and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity Computer Implementation Partner.',
   },
   {
     question: 'What is Sav Banerjee\'s background?',
@@ -154,7 +154,7 @@ export default function AboutPage() {
               <div className="mono-sm" style={{ display: 'grid', gap: 8 }}>
                 <div>↳ Founder &amp; Principal · Enso Labs</div>
                 <div>↳ Manhattan, NYC</div>
-                <div>↳ Perplexity AI Business Fellowship Winner</div>
+                <div>↳ Perplexity Computer Implementation Partner</div>
                 <div>↳ Available for contract and full-time engagements</div>
               </div>
             </div>
@@ -266,8 +266,7 @@ export default function AboutPage() {
             <div className="cred">
               <h4>Recognition</h4>
               <ul>
-                <li><b>Perplexity AI Business Fellowship</b><span className="yr">winner</span></li>
-                <li><b>Member, Perplexity Business</b><span className="yr">2025</span></li>
+                <li><b>Perplexity Computer Implementation Partner</b><span className="yr">2026</span></li>
                 <li><b>Ad Age Top 10 Agency</b><span className="yr">Rokkan ’12</span></li>
               </ul>
             </div>

@@ -36,7 +36,7 @@ const FAQS = [
   {
     question: 'Who is Sav Banerjee?',
     answer:
-      'Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs, a principal-led AI transformation and agentic systems studio in New York City. He is an AI strategy consultant, AI architect, and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, BBDO, and Rokkan. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity AI Business Fellowship winner.',
+      'Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs, a principal-led AI transformation and agentic systems studio in New York City. He is an AI strategy consultant, AI architect, and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, BBDO, and Rokkan. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity Computer Implementation Partner.',
   },
   {
     question: 'What is Sav Banerjee\'s professional background?',
@@ -51,7 +51,7 @@ const FAQS = [
   {
     question: 'What is Sav Banerjee certified in?',
     answer:
-      'Sav Banerjee is certified by Anthropic (Claude Code, 2026), Google AI (2025), and OpenAI (2024), and is a winner of the Perplexity AI Business Fellowship. His technical stack includes LangGraph, LangChain, CrewAI, the Model Context Protocol (MCP), the Claude API, retrieval-augmented generation (RAG), and Python. He holds a B.A. in Advertising from the University of Oregon.',
+      'Sav Banerjee is certified by Anthropic (Claude Code, 2026), Google AI (2025), and OpenAI (2024), and is a Perplexity Computer Implementation Partner. His technical stack includes LangGraph, LangChain, CrewAI, the Model Context Protocol (MCP), the Claude API, retrieval-augmented generation (RAG), and Python. He holds a B.A. in Advertising from the University of Oregon.',
   },
   {
     question: 'Is Sav Banerjee available for Head of AI or VP AI Strategy roles?',
@@ -164,8 +164,8 @@ export default function SavBanerjeeBioPage() {
         <div className="prose">
           <p>
             Sav Banerjee is certified by <strong>Anthropic (Claude Code, 2026),
-            Google AI (2025), and OpenAI (2024)</strong>, and is a winner of the
-            Perplexity AI Business Fellowship. He holds a B.A. in Advertising from
+            Google AI (2025), and OpenAI (2024)</strong>, and is a
+            Perplexity Computer Implementation Partner. He holds a B.A. in Advertising from
             the University of Oregon. His areas of depth include AI transformation
             strategy, agentic AI architecture, multi-agent orchestration,
             Model Context Protocol integration, retrieval-augmented generation,
@@ -253,7 +253,7 @@ export default function SavBanerjeeBioPage() {
             <dt><strong>Experience:</strong></dt>
             <dd>15+ years across Google, McCann, Publicis, RAPP, Young &amp; Rubicam, BBDO, Rokkan</dd>
             <dt><strong>Certifications:</strong></dt>
-            <dd>Anthropic (Claude Code), Google AI, OpenAI; Perplexity AI Business Fellowship winner</dd>
+            <dd>Anthropic (Claude Code), Google AI, OpenAI; Perplexity Computer Implementation Partner</dd>
             <dt><strong>Core stack:</strong></dt>
             <dd>LangGraph · Claude API · Model Context Protocol (MCP) · RAG · Python</dd>
             <dt><strong>Open to:</strong></dt>
