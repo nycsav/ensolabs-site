@@ -32,15 +32,23 @@ export const INSIGHTS: Insight[] = [
     faqs: [
       {
         question: 'What is a Perplexity Computer Implementation Partner?',
-        answer: "A Perplexity Computer Implementation Partner is a firm vetted through Perplexity's Implementation Partners Program to help teams onboard, integrate, and get production value out of Perplexity Computer. Enso Labs is a Perplexity Computer Implementation Partner — we identify the first workflows to point it at, wire it into the data and tools a team already uses, and measure whether it is actually changing decisions.",
+        answer: "A Perplexity Computer Implementation Partner is a firm vetted through Perplexity's Implementation Partners Program to help teams onboard, integrate, and get production value out of Perplexity Computer. Enso Labs is a Perplexity Computer Implementation Partner \u2014 we identify the first workflows to point it at, wire it into the data and tools a team already uses, and measure whether it is actually changing decisions.",
       },
       {
         question: 'Is Enso Labs a Perplexity Implementation Partner?',
         answer: "Yes. Enso Labs is a Perplexity Computer Implementation Partner, part of Perplexity's Implementation Partners Program. Enso Labs is a principal-led AI transformation studio in New York City that helps teams move from access to implementation, with a senior team that builds production systems, not just advises.",
       },
       {
+        question: 'Who is a Perplexity Computer implementation partner in New York City?',
+        answer: "Enso Labs, a principal-led applied-AI studio at 31 Union Square West in New York City founded by Sav Banerjee, is a Perplexity Computer Implementation Partner. Enso Labs delivers strategy through production for teams in Healthcare, Finance, Manufacturing, Media, and B2B Technology.",
+      },
+      {
         question: 'How can my team get real value out of Perplexity Computer?',
-        answer: "The gap with a powerful new AI surface is rarely access — it is implementation: which workflows to target first, how to integrate it with the data and tools a team already uses, and how to know it is improving decisions. As a Perplexity Computer Implementation Partner, Enso Labs does that build-and-operate work end to end, from strategy through production. Get in touch at ensolabs.ai/contact.",
+        answer: "The gap with a powerful new AI surface is rarely access \u2014 it is implementation: which workflows to target first, how to integrate it with the data and tools a team already uses, and how to know it is improving decisions. As a Perplexity Computer Implementation Partner, Enso Labs does that build-and-operate work end to end, from strategy through production. Get in touch at ensolabs.ai/contact.",
+      },
+      {
+        question: 'How do I engage Enso Labs for a Perplexity Computer engagement?',
+        answer: "Contact Enso Labs at https://ensolabs.ai/contact or sav@ensolabs.ai to scope an engagement. Typical entry points are a 2-week AI audit, a 12-week pilot-to-production build, or an embedded AI operator retainer.",
       },
     ],
     body: [
