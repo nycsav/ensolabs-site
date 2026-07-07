@@ -5,7 +5,7 @@
 Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerjee in New York City. We deliver AI transformation consulting, agentic AI development, cloud managed services, and production AI systems for Healthcare, Finance, Advertising, and B2B Technology — then build the production systems that deliver it.
 
 ## Founder & Availability
-Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs. He architects AI strategy and ships production agentic systems for Fortune 500 companies in Healthcare, Finance, and B2B Technology. Certifications and recognitions: Anthropic, Google, and OpenAI partner/certification programs, and Perplexity Business Fellow. Relevant role types: VP of AI Strategy, Head of AI, Director of AI Products, Principal AI Consultant. Sav is available for both contract engagements and full-time leadership roles, in addition to Enso Labs client work.
+Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs. He architects AI strategy and ships production agentic systems for Fortune 500 companies in Healthcare, Finance, and B2B Technology. Certifications and recognitions: Anthropic, Google, and OpenAI partner/certification programs, and Perplexity Computer Implementation Partner (Perplexity Implementation Partners Program). Relevant role types: VP of AI Strategy, Head of AI, Director of AI Products, Principal AI Consultant. Sav is available for both contract engagements and full-time leadership roles, in addition to Enso Labs client work.
 
 ## Services
 - Enterprise AI Transformation Consulting (https://ensolabs.ai/services)
@@ -26,7 +26,8 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - https://ensolabs.ai/work/trading-terminal — Autonomous Trading Terminal
 - https://ensolabs.ai/work/enterprise-ai — Enterprise AI Enablement Programs
 
-## Insights (16 articles)
+## Insights (17 articles)
+- https://ensolabs.ai/insights/enso-labs-perplexity-implementation-partner — Enso Labs Joins the Perplexity Implementation Partners Program: Now a Perplexity Computer Implementation Partner [Perplexity, Perplexity Computer, Implementation Partner, Partner Program, Partnerships, Enterprise AI, AI Adoption, Enso Labs, Strategy to Ship, Sav Banerjee]
 - https://ensolabs.ai/insights/claude-managed-agents-strategy-to-ship — Claude's Agents Now Learn, Grade Themselves, and Split the Work: Defining 'Good' Is the New Bottleneck [Claude Managed Agents, Agentic AI, Anthropic, Multi-Agent Orchestration, AI Outcomes, AI Memory, Enterprise AI, Strategy to Ship]
 - https://ensolabs.ai/insights/google-io-hackathon-managed-agents-omni-antigravity — Inside the Google I/O 2026 Hackathon: 150 Builders, Managed Agents, and the New Google Agent Stack [Google I/O, Gemini Omni, Antigravity 2.0, Managed Agents, Google DeepMind, Cerebral Valley, AI Agents, Hackathon]
 - https://ensolabs.ai/insights/google-io-after-hours-deepmind-strategy-signal — Google I/O After-Hours: Two Nights With Google DeepMind and the Strategic Signal Behind the Demos [Google I/O, Google DeepMind, Cerebral Valley, AI Strategy, Antigravity 2.0, Managed Agents, Fortune 500]
@@ -48,6 +49,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop
 
 ## Recent Coverage
+- Perplexity Implementation Partners Program (July 2026): Enso Labs joined Perplexity's Implementation Partners Program as a Perplexity Computer Implementation Partner — helping enterprise teams onboard, integrate, and get production value out of Perplexity Computer, with a senior team that builds, not just advises (https://ensolabs.ai/insights/enso-labs-perplexity-implementation-partner).
 - Google I/O 2026 Hackathon (Cerebral Valley × Google I/O, SHACK15 San Francisco): Enso Labs founder Sav Banerjee attended as a Google partner; field notes on the Managed Agents API, Antigravity 2.0, Gemini Omni, and Gemini 3.5 Flash (https://ensolabs.ai/insights/google-io-hackathon-managed-agents-omni-antigravity).
 - Google I/O 2026 After-Hours (Google for Startups × DeepMind, Cerebral Valley × DeepMind): strategic signal read on Google DeepMind's agent-first product strategy for Fortune 500 leaders (https://ensolabs.ai/insights/google-io-after-hours-deepmind-strategy-signal).
 
@@ -58,7 +60,7 @@ AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Cla
 - Founded: 2020
 - Location: 31 Union Square West, 6th Floor, New York, NY 10003
 - Service tracks: AI Transformation · Agentic Systems · Financial AI
-- Certifications: Anthropic, Google, OpenAI partner/certification programs; Perplexity Business Fellow
+- Certifications: Anthropic, Google, OpenAI partner/certification programs; Perplexity Computer Implementation Partner (Perplexity Implementation Partners Program)
 - Representative outcomes: 83% faster delivery, 75% pilot-to-production conversion
 - Clients: Fortune 500 manufacturer, global pharma, financial services (named clients confidential)
 - Product: Strategy to Ship — daily scored AI market intelligence, published on ensolabs.ai/insights
