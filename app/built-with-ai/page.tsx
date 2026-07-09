@@ -47,7 +47,7 @@ const articleJsonLd = () => ({
   description:
     'The story of building ensolabs.ai using Claude Chat, Claude Design, Claude Code, and Vercel.',
   datePublished: '2026-05-01',
-  dateModified: '2026-06-11',
+  dateModified: '2026-07-09',
   author: { '@id': url('/#sav') },
   publisher: { '@id': url('/#organization') },
   mainEntityOfPage: { '@type': 'WebPage', '@id': url('/built-with-ai') },
