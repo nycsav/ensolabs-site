@@ -659,7 +659,15 @@ footer {
   color: var(--fg-3);
   text-transform: uppercase; letter-spacing: 0.06em;
 }
-.insight-card .meta .pillar { color: var(--teal); }
+.insight-card .meta .pillar {
+  color: var(--teal);
+  min-height: unset;
+  padding: 0;
+  display: inline;
+  flex-direction: unset;
+  gap: 0;
+  background: none;
+}
 .insight-card .ti {
   font-family: var(--display);
   font-weight: 500;
@@ -705,7 +713,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
   gap: 48px;
-  align-items: end;
+  align-items: start;
   min-height: 360px;
   padding: 56px 48px;
   background: var(--bg-2);
