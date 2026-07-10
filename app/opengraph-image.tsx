@@ -65,7 +65,7 @@ export default function OGImage() {
             style={{
               width: '28px',
               height: '28px',
-              border: '1px solid oklch(0.96 0.005 80)',
+              border: '1px solid #f5f4f0',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -77,7 +77,7 @@ export default function OGImage() {
                 width: '10px',
                 height: '10px',
                 borderRadius: '50%',
-                background: 'oklch(0.82 0.13 195)',
+                background: '#5ce0d2',
               }}
             />
           </div>
