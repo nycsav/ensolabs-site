@@ -18,7 +18,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
   description:
-    'Enso Labs is a principal-led applied-AI studio in NYC founded by Sav Banerjee. We turn strategy and research into shipped AI products — AI transformation, agentic systems, custom decision & signal intelligence, and financial AI — for companies across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Consumer.',
+    'Enso Labs is a principal-led AI managed-services studio in NYC founded by Sav Banerjee. We encode your industry expertise into managed agents — then build and operate them in production. Agentic Managed Services across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Growth.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
@@ -107,9 +107,9 @@ export default function HomePage() {
 
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs builds custom AI products that turn disparate data into decision intelligence. From
-              stakeholder research to shipped system — for companies across healthcare, finance, manufacturing,
-              media, and B2B tech.
+              Enso Labs is a principal-led AI managed-services studio. We encode your industry expertise into
+              managed agents — then build and operate them in production. From stakeholder research to a shipped,
+              running system — across healthcare, finance, manufacturing, media, and B2B tech.
             </p>
             <div className="reveal" data-delay="3">
               <div className="hero-cta-row">
