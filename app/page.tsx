@@ -231,6 +231,9 @@ export default function HomePage() {
                 {' '}runs autonomous signal intelligence, multi-agent research, and brokerage execution in production —
                 twenty-four hours a day.
               </p>
+              <p style={{ fontSize: 18, color: 'var(--fg-2)', lineHeight: 1.6 }}>
+                The same encode &rarr; build &rarr; operate we bring to regulated operations, we bring to growth &mdash; segmentation, campaigns, and brand, run as agents.
+              </p>
               <div className="tag-row" style={{ marginTop: 8 }}>
                 <span className="tag teal">LangGraph</span>
                 <span className="tag teal">Claude API</span>
