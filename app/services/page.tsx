@@ -365,6 +365,7 @@ export default function ServicesPage() {
                 <Link className="btn" href="/services/agentic-ai-consulting">Agentic AI →</Link>
                 <Link className="btn" href="/industries/financial-services">Financial AI →</Link>
                 <Link className="btn" href="/industries/healthcare">Healthcare AI →</Link>
+                <Link className="btn" href="/services/ai-growth-marketing">AI Growth →</Link>
               </div>
             </div>
           </div>

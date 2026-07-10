@@ -61,8 +61,9 @@ git add -A && git commit -m "description" && git push origin master
 
 ## Pages
 - app/page.tsx — Home (hero, 3 pillars, proof metrics, Strategy to Ship feed, methodology, clients, CTA)
-- app/services/page.tsx — Services (3 tracks + 6 FAQs with schema)
+- app/services/page.tsx — Services (4 tracks + 6 FAQs with schema)
 - app/services/claude-managed-services/page.tsx — Claude Managed Services offering
+- app/services/ai-growth-marketing/page.tsx — AI Growth & Commercial Systems (Commercial/Growth Core — the Madison Avenue engine; agentic go-to-market, segmentation, brand governance, campaign optimization)
 - app/work/page.tsx — Work overview (4 case study cards)
 - app/work/[slug]/page.tsx — Individual case studies with Article schema + ShareButtons
   - /work/gore — AI Market Intelligence Platform (Fortune 500 manufacturer — CONFIDENTIAL, never name the client)
@@ -122,8 +123,21 @@ git add -A && git commit -m "description" && git push origin master
 - MCP endpoint at /.well-known/mcp.json
 - RSS feed at /feed.xml
 - Sitemap at /sitemap.xml (25 URLs)
-- FAQ schema on /services and /contact
+- FAQ schema on /services, /contact, home, and insight articles (auto-renders when an insight has a `faqs` array)
 - LocalBusiness schema on /contact (geo: 40.7362, -73.9903)
+
+### Priority Content to Surface (SEO / AEO / GEO — keep current)
+Standing rule for every SEO/AEO/GEO scan (daily engine + any manual pass): **surface ALL current content, don't rely on a hardcoded list.** New Insights ship often — auto-discover them, don't wait to be told.
+- **Full-scan directive:** each run, enumerate EVERY article in `lib/insights.ts` (not just a fixed priority set) and confirm each has: FAQ schema (a `faqs` array → auto-renders FAQPage JSON-LD + visible block), Article + Breadcrumb schema, `dateModified` fresh, OG tags (hex only, never oklch), an answer-lead first sentence, and ≥2 internal links (ideally /services + /contact). Fix gaps in place.
+- **New content propagates automatically to:** the home "Live Intelligence" feed (`LATEST` = 3 newest insights by date, `app/page.tsx`), `public/llms.txt` (Insights list + Recent Coverage), `sitemap.ts`, and `feed.xml`. On every scan verify the newest pieces actually appear in llms.txt (both the Insights list AND Recent Coverage) and add them if missing.
+- **Positioning (evolved 2026-07-10):** the studio now leads with **Agentic Managed Services** — we encode domain expertise into **managed agents** and operate them; productized IP = "Cores" (working name, not final). The **Commercial/Growth Core** (`/services/ai-growth-marketing`) is the Madison Avenue engine — growth marketing / marketing engineering / GTM engineering reframed as "a 15-year craft, built as agents." Keep this angle across home + services + llms.txt; do NOT revert to the old "shipped AI products / decision intelligence" framing. (Home H1 still "Strategy to Ship." — swap to "Managed services. Managed agents." pending Sav's explicit call.)
+- **Marquee pieces to keep maximally discoverable (verify each scan):**
+  - Perplexity Implementation Partnership — `/insights/enso-labs-perplexity-implementation-partner` (also a home FAQ + llms.txt Partnerships/Services/Recent Coverage). Keywords: Perplexity Computer, Implementation Partner, Perplexity Implementation Partners Program.
+  - Claude Managed Agents (Strategy to Ship) — `/insights/claude-managed-agents-strategy-to-ship`. Keywords: Claude Managed Agents, outcomes, dreaming, multiagent orchestration, agentic AI.
+  - Google I/O 2026 Part 1 (Hackathon) — `/insights/google-io-hackathon-managed-agents-omni-antigravity`
+  - Google I/O 2026 Part 2 (After-Hours) — `/insights/google-io-after-hours-deepmind-strategy-signal`
+  - AI Growth & Commercial Systems — `/services/ai-growth-marketing` (Commercial/Growth Core, the Madison Avenue engine). Keywords: agentic marketing, marketing engineering, GTM engineering, brand governance agents, AI growth marketing NYC, agentic go-to-market.
+- **When adding a NEW marquee piece:** add its slug to this list, ensure a `faqs` array exists on the article, and add a one-line Recent Coverage entry in `public/llms.txt`.
 
 ## Strategy to Ship (news-intelligence engine)
 - The studio's news-intelligence/publishing brand — renamed June 2026 via Claude Design.
@@ -238,3 +252,62 @@ git add -A && git commit -m "description" && git push origin master
 - Daily signal generation published on ensolabs.ai/insights (the engine's only home)
 - Content flows to: ensolabs.ai/insights, LinkedIn (Mon/Wed/Fri), newsletter
 - No separate deploy — ships with the main site via Vercel auto-deploy
+
+## Event Scan — Standing Preferences (set 2026-07-06)
+Applies to `daily-event-scan`, `weekly-event-board-sweep`, `hackathon-radar-weekly`, and ANY event/digest deliverable or ad-hoc event answer.
+- **Sources:** Luma, Bond AI SF (luma.com/genai-sf), and Cerebral Valley SF are the primary crawl set while in SF. **Eventbrite is REMOVED — do not scan it.**
+- **SF FOCUS WINDOW: Jul 7 → Aug 7, 2026.** Sav is physically in San Francisco; scan SF-proper events only, present all times in **PT**, suppress NYC. (Extends the earlier Aug 3 end date to **Aug 7**. Revert to the NYC scan and delete SF-mode blocks after Aug 7.)
+- **The bar (what to surface):** (1) frontier-lab / marquee-builder events AND (2) workshops that **build on Sav's existing career skills & professional goals** — agent engineering, evals, AI strategy/positioning, GTM, frontier research. A strong skill-building workshop qualifies even if it is not frontier-hosted.
+- **Sav is male (he/him) — NEVER surface women-only / women-in-tech events** (e.g., "Women in AI Breakfast + Panel", women-founder-only dinners/rooms). Exclude them from every scan, digest, table, and ad-hoc recommendation, across all scheduled tasks AND Claude chats. Do not re-surface. (Set 2026-07-10.)
+- **Register → Google Calendar (EVERY registration, standing rule set 2026-07-10):** whenever Claude registers/RSVPs Sav for ANY event — ad-hoc chat request OR scheduled task — immediately add it to Google Calendar via `enso-google` (check first, NEVER duplicate). Color by Enso Fit v2 (🟢 green 8+, 🟡 yellow 6–7.5, ⚪ gray ≤5/pending/waitlist); put 📍location · 🔗link · ⭐score + one-line why in the event. Confirmed/approved → normal color; pending host approval or waitlist → gray ⏳ hold; a PAID event not yet paid → gray ⏳ hold labeled "payment pending" until Sav pays, then promote to its score color. The daily `daily-event-scan` (JOB 1) remains the calendar's steady-state owner and will reconcile, so match its format and dedupe.
+- **MANDATORY TL;DR TABLE — every deliverable and every response.** Lead with a one-line TL;DR, then a clean table. Columns, in this exact order: **Date | Time (PT) | Event | Score | Rationale to attend** (add a Link column when surfacing RSVPs). One tight, complete sentence per rationale cell. Mobile-first: short lines, no bullet stacks where a table works, no walls of text. Sav reads these on his phone while traveling — optimize for a 10-second scan.
+
+## Scheduled Task Rules
+### No event drafts in Gmail (standing rule — set 2026-07-05)
+- Event/digest/briefing scheduled tasks must deliver IN-APP ONLY — the Cowork run output + the in-app completion notification are the ping. NEVER create Gmail drafts or self-emails (to sav@ensopartners.co) for event scans, digests, frontier alerts, or SF-prep briefings. Self-notification drafts were clogging the Drafts folder.
+- Applies to: `daily-event-scan` (Job 2 frontier alert + Job 3 morning digest), `sf-high-frontier-prep` (daily briefing), and any future event/monitor task. Patched 2026-07-05.
+- Exceptions (still allowed): (1) `weekly-event-board-sweep` may create genuine follow-up OUTREACH drafts (relationship engine) — those are intentional, not daily self-notifications; (2) `ai-platforms-partnerships-monitor` review-only reply drafts for real partner emails. Neither should produce daily event-digest self-drafts.
+- Hard line for ALL scheduled tasks: never SEND to third parties, never auto-register, never buy. Deliver reports in the Cowork output; only create a Gmail draft when the task explicitly exists to prepare an outreach/reply draft for Sav to review.
+
+### Keep inboxes & folders as clean as possible (standing rule — set 2026-07-05)
+- Default to tidy: don't leave automated self-notification drafts, duplicate files, or stray artifacts behind. Deliver in-app; if a task must write, write to its canonical file/location, not a new scratch copy.
+- Gmail Drafts: no self-addressed automated drafts (event digests, briefings, radar alerts, canaries). If any accumulate, trash them. Exceptions that MAY stay: genuine outreach/reply drafts Sav asked for, and the intentional labeled deliverables (`daily-ai-terms-lesson` "AI terms" copies, `signal2noise`/`wins-to-profiles` "[S2N]" LinkedIn drafts) — leave those unless Sav says otherwise.
+- Inbox: keep it filed — `events-inbox-filer` labels/archives events daily; other monitors label + archive informational mail and keep only true action items visible.
+- When cleaning is ambiguous (could delete something Sav wants), verify contents first, clear the clearly-automated clutter, and flag the rest for a quick yes/no rather than guessing.
+- Cleanup done 2026-07-05: trashed 8 stale event self-notification drafts (SF-prep briefings + daily event digests + frontier radar alerts, Jun 30–Jul 3).
+
+### Every email carries the signature — UNIVERSAL (standing rule — set 2026-07-05, scope-confirmed 2026-07-06)
+- **EVERY email out of the account carries the signature — no exceptions by task, recipient, or type.** Enso Labs and Enso Partners are the SAME account (sav@ensopartners.co, which also receives sav@ensolabs.ai). Clients, partners, events, vendors, internal, cold outreach — new threads AND replies — all get it. Whenever any email or Gmail draft is composed (by any scheduled task, any skill, or an ad-hoc request), it MUST include the signature.
+- **Why it was missing:** Gmail's saved signature is applied by the Gmail **web UI only**. Every draft/email created through the Gmail **API** — how all automation composes mail — is built WITHOUT it. So it must be appended EXPLICITLY every time; it will never appear on its own.
+- **How:** always pass BOTH `htmlBody` (the clean-anchor HTML block) and `body` (plain-text fallback, no `http://` prefixes). Never end an email on the message body with no sign-off.
+- **Source of truth — ONE place:** `/Users/savbanerjee/Projects/ensolabs-site/EMAIL_SIGNATURE.md`, verified against Sav's live "Enso Labs Jul" Gmail signature (2026-07-06). If the signature changes, edit only that file.
+- **This rule OVERRIDES any older inline sign-off baked into an individual task prompt** (e.g. an `sign "Sav / Enso Labs / sav@ensolabs.ai"` line in `ai-platforms-partnerships-monitor` step 8) — use the canonical block instead. Do NOT hardcode the signature into task prompts; every task reads this rule + the file at runtime, so it applies everywhere automatically without editing each task.
+- **Only true non-exception:** a block of social-post COPY meant for Sav to paste into LinkedIn (the `signal2noise`/`wins-to-profiles` "[S2N]" post text) is pasted content, not an email being sent — don't inject the email signature INTO the post copy itself.
+- This does NOT instruct tasks to start emailing. The in-app-only / no-self-notification-drafts rules stand; this only governs mail that IS composed.
+
+## Automation Program — Zero-Touch Operations (set 2026-07-06)
+**Goal:** cut Sav's daily manual work (the daily Google reconnect + per-run permission clicks) so scheduled tasks run themselves. Claude is the command center across Cowork, Claude Code, and the connector stack — it tracks this and keeps it healthy.
+
+### A. What ALREADY runs without asking Sav (standing authorities — permission-free)
+- **Connector auto-heal** (granted 2026-07-05): `mcp-infrastructure-health-check` auto-fixes/keeps every connector up — retries with backoff, resets Desktop Commander config drift, recreates missing Chrome tab groups — silently, no permission, every 6:45 AM.
+- **Enso Labs site blockers** (granted 2026-06-03): autonomously fix deploy / GSC / sitemap / indexing blockers; report-and-notify, don't ask first.
+- **Free-event auto-register** (2026-06-25): sign Sav up for FREE events via the browser; hard-stop at payment / account creation / CAPTCHA / wallet.
+- **Every enabled scheduled task** already fires non-interactively on its cron — it does NOT need a per-run click today.
+
+### B. The daily Google-login problem — the real fix (enso-google)
+- **Root cause:** the BUILT-IN Google connector's OAuth login expires ~daily (known Cowork bug) → forces a manual reconnect.
+- **Permanent fix, already built + live:** self-hosted **enso-google** MCP (Sav's own Google Cloud OAuth app, Internal / In-Production) → **non-expiring refresh token**, never needs re-auth. Probed GREEN 2026-07-06.
+- **Connector routing rule (so tasks stop breaking on the daily drop):**
+  - CALENDAR read + create/update → use **enso-google** first (full CRUD, never expires).
+  - GMAIL read (search + read message) → use **enso-google** first (never expires).
+  - GMAIL write (create draft, apply label) → still needs the **built-in** Gmail connector (enso-google is read-only for mail). These few write-steps are the ONLY ones a Google drop can still block.
+- **Part D — repoint (next concrete step):** move every calendar + Gmail-read scheduled task onto enso-google via `update_scheduled_task`; keep only Gmail-draft/label steps on the built-in connector. Do this per-task, never a blind flip of an autonomous writer (see the "don't flip autonomous tasks without asking" rule).
+
+### C. The TWO things automation still CANNOT remove (honest hard limits)
+1. **Keep the Claude desktop app open + logged in.** Scheduled tasks only fire while the app is running; no automation can hold it open for you. Leave it open overnight.
+2. **The one-time Google OAuth consent click**, and only IF the built-in connector is needed for a Gmail WRITE and it has dropped. An agent cannot type Google credentials or click a consent screen (security boundary). enso-google avoids this for all reads + calendar; only Gmail-write steps can still hit it.
+- **Unchanged by design, for safety:** sending mail to third parties, purchases, deleting data, granting new OAuth/permissions, and changing account settings ALWAYS need Sav's explicit go. "Act mode" speeds the safe, reversible work — it does not remove these guardrails.
+
+### D. Command-center tracking
+- Daily 6:45 AM `mcp-infrastructure-health-check` is the watchdog: canary → auto-heal → uptime log (`~/Documents/Claude/connector-uptime-log.md`) → report (`~/Documents/Claude/MCP-Health-Report.md`). Review the uptime streak weekly to confirm the daily drop is gone.
+- This section is the source of truth for the automation model; update it here (one place), don't hardcode routing into individual task prompts.
