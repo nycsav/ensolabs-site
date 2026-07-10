@@ -68,8 +68,23 @@ export const INSIGHTS: Insight[] = [
     lens: 'Build',
     sourceCredit: 'Claude Managed Agents',
     date: '2026-06-18',
+    dateModified: '2026-07-10',
     readingMinutes: 6,
     tags: ["Claude Managed Agents", "Agentic AI", "Anthropic", "Multi-Agent Orchestration", "AI Outcomes", "AI Memory", "Enterprise AI", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
+    faqs: [
+      {
+        question: 'What is Claude Managed Agents?',
+        answer: "Claude Managed Agents is Anthropic's hosted runtime for building and running autonomous AI agents in production. On May 6, 2026, Anthropic added dreaming, outcomes, multiagent orchestration, and webhooks — capabilities aimed not at a single better answer but at keeping agents reliable, helping them improve over time, and scaling them across work too large for one context window. It runs on whichever Claude model you choose.",
+      },
+      {
+        question: 'What are outcomes, dreaming, and multiagent orchestration in Claude Managed Agents?',
+        answer: "Outcomes lets you write a rubric for success that a separate grader model scores in its own context window, sending work back until it clears the bar — Anthropic reports up to a 10-point task-success lift. Dreaming is a scheduled process that reviews past sessions and curates what an agent remembers, so it improves between sessions, not just within one. Multiagent orchestration lets a lead agent split a job among specialist subagents with their own models, prompts, and tools, running in parallel on a shared filesystem and fully traceable in the Console.",
+      },
+      {
+        question: 'What does Claude Managed Agents mean for enterprise AI teams?',
+        answer: "It relocates the hard part of building an agent from writing the loop to defining what 'good' looks like. The agent loop is commoditizing; what becomes scarce is the rubric that defines quality, the memory architecture that compounds learning, and the topology that decides which agent owns which decision. That is architecture and consulting work — Enso Labs calls it Strategy-to-Ship — and it is where structured delivery beats raw build speed. Enso Labs is adding Managed Agent deployments to its Agentic Systems track; get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       "Claude Managed Agents is Anthropic's hosted runtime for autonomous agents — and its three newest capabilities quietly relocate the hard part of building an agent from writing the loop to defining what \"good\" looks like.",
       "On May 6, 2026, Anthropic added [dreaming, outcomes, multiagent orchestration, and webhooks](https://claude.com/blog/new-in-claude-managed-agents) to Managed Agents. None of them are about making a single agent answer a single prompt better. All three are about the part that actually breaks in production: keeping an agent reliable, getting it to improve, and scaling it across work too large for one context window.",
@@ -91,7 +106,7 @@ export const INSIGHTS: Insight[] = [
       "- [ ] **Treat memory as architecture, not a feature.** Decide up front what should persist, what dreaming should curate, and who reviews changes before they land — especially in regulated environments.",
       "- [ ] **Decompose before you parallelize.** Map which work is a lead-agent decision and which belongs to a specialist subagent. Most stalled agents are one over-stuffed agent doing four jobs badly.",
       "- [ ] **Build on the harness, not a single model.** Models change weekly and can be withdrawn; the runtime, rubrics, and memory you build around them are what compound.",
-      "We are adding Managed Agent deployments to our Agentic Systems track — the self-improving, self-grading tier of what we build. If your pilots keep stalling just short of production, that gap is a rubric-and-architecture problem, and it is the work we do. [Get in Touch](/contact).",
+      "We are adding Managed Agent deployments to our [Agentic Systems track](/services) — the self-improving, self-grading tier of what we build. If your pilots keep stalling just short of production, that gap is a rubric-and-architecture problem, and it is the work we do. [Get in Touch](/contact).",
       "**Powered by Enso Labs**",
     ],
   },
