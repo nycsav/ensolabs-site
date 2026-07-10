@@ -136,6 +136,23 @@ const TRACKS: Track[] = [
       { ix: '19', ti: 'Compliance-Ready Agent Deployment', de: 'Audit trails, encryption, access controls. Production-grade security for regulated environments.', ta: '4–8 wk' },
     ],
   },
+  {
+    id: 'growth',
+    num: 'TRACK / 04',
+    pill: 'GROWTH',
+    title: 'AI Growth & Commercial Systems.',
+    lede: <>Fifteen years of Madison Avenue craft &mdash; segmentation, insight, campaign planning, and brand &mdash; built as agents. Growth marketing, marketing engineering, and GTM engineering are new names for work we&rsquo;ve done for enterprises since before the buzzwords.</>,
+    tags: [
+      { label: 'Segmentation' }, { label: 'Brand governance' }, { label: 'Campaign ops', teal: true }, { label: 'GTM' }, { label: 'Demand gen' }, { label: 'GA4 / Ads' },
+    ],
+    deliverables: [
+      { ix: '20', ti: 'Agentic Audience & Segmentation', de: 'Real-time ICP and segment modeling on live behavioral and intent data — segmentation that updates itself, not a static deck.', ta: '4–8 wk' },
+      { ix: '21', ti: 'Insight & Discovery Engines', de: 'Agentic voice-of-customer: interviews, reviews, and market signal mined and clustered at scale into decision-ready insight.', ta: '4–8 wk' },
+      { ix: '22', ti: 'Campaign Planning & 24/7 Optimization', de: 'Multi-channel planning agents plus always-on optimization across Google, LinkedIn, and Meta. Budget follows performance, continuously.', ta: '6–12 wk' },
+      { ix: '23', ti: 'Brand Governance Agents', de: 'Your brand book becomes the rubric — agents that keep voice, claims, and compliance on-brand at machine scale.', ta: '4–8 wk' },
+      { ix: '24', ti: 'Full-Funnel Demand Systems', de: 'From first touch to pipeline: an agentic demand engine wired to your CRM and analytics, measured on outcomes not seats.', ta: '8–16 wk' },
+    ],
+  },
 ];
 
 export default function ServicesPage() {
@@ -184,12 +201,12 @@ export default function ServicesPage() {
             <span className="eyebrow"><span className="num">PAGE / 02</span>&nbsp;Services</span>
           </div>
           <h1 className="display reveal" data-delay="1" style={{ fontSize: 'clamp(44px, 7.5vw, 104px)' }}>
-            Three tracks.<br /><em>Principal-led.</em>
+            Four tracks.<br /><em>Principal-led.</em>
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs is an enterprise AI consulting firm offering three integrated service tracks: <b style={{ color: 'var(--fg)' }}>AI Transformation Consulting</b>,
-              {' '}<b style={{ color: 'var(--fg)' }}>Agentic Systems &amp; Products</b>, and <b style={{ color: 'var(--fg)' }}>Financial AI &amp; Trading Intelligence</b>.
+              Enso Labs is an enterprise AI consulting firm offering four integrated service tracks: <b style={{ color: 'var(--fg)' }}>AI Transformation Consulting</b>,
+              {' '}<b style={{ color: 'var(--fg)' }}>Agentic Systems &amp; Products</b>, <b style={{ color: 'var(--fg)' }}>Financial AI &amp; Trading Intelligence</b>, and <b style={{ color: 'var(--fg)' }}>AI Growth &amp; Commercial Systems</b>.
               Pick one, or run them as a single program. Based in New York City.
             </p>
             <div className="reveal" data-delay="3">
@@ -373,7 +390,7 @@ export default function ServicesPage() {
         <div className="shell">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
             <h2 className="display" style={{ fontSize: 'clamp(40px, 6vw, 80px)' }}>
-              Pick a track.<br /><em>Or run all three.</em>
+              Pick a track.<br /><em>Or run all four.</em>
             </h2>
             <div style={{ display: 'grid', gap: 24 }}>
               <p className="lede">Most engagements span two tracks. The Trading Terminal proves a principal-led studio can run consult, build, and ship simultaneously.</p>
