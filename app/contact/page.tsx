@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/JsonLd';
-import { NycClock } from '@/components/NycClock';
 import { ContactForm } from '@/components/ContactForm';
 import { ContactHeroMedia } from '@/components/ContactHeroMedia';
+import { Arrow } from '@/components/Arrow';
 import {
   breadcrumbSchema,
   contactPointSchema,
@@ -15,20 +15,18 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact Enso Labs | AI Consulting Studio NYC',
   description:
-    'Get in touch with Enso Labs. Send a project brief, email the studio directly, or open a thread on LinkedIn.',
+    'Tell us what you’re shipping. Book a 15-min intro, or leave two lines — Sav replies within 24h.',
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact Enso Labs | Get in Touch',
-    description:
-      'Start a project with Enso Labs. 31 Union Square West, NYC.',
+    description: 'Start a project with Enso Labs. 31 Union Square West, NYC.',
     url: 'https://ensolabs.ai/contact',
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Contact Enso Labs — Get in Touch' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Enso Labs | Get in Touch',
-    description:
-      'Start a project with Enso Labs. 31 Union Square West, NYC.',
+    description: 'Start a project with Enso Labs. 31 Union Square West, NYC.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -83,132 +81,81 @@ export default function ContactPage() {
       />
 
       <style>{`
-        .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
-        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
-        form { display: grid; gap: 22px; }
-        .field { display: grid; gap: 10px; }
-        .field label { font-family: var(--mono); font-size: 11px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; display: flex; justify-content: space-between; }
-        .field label .req { color: var(--teal); }
-        .field input, .field textarea, .field select { background: transparent; border: none; border-bottom: 1px solid var(--line-2); color: var(--fg); font-family: var(--display); font-size: 18px; padding: 12px 0; transition: border-color .2s ease; width: 100%; outline: none; }
-        .field textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
-        .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--teal); }
-        .field input::placeholder, .field textarea::placeholder { color: var(--fg-3); }
-        .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-        .chip { font-family: var(--mono); font-size: 12px; padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 999px; color: var(--fg-2); cursor: pointer; transition: border-color .2s, color .2s, background .2s; user-select: none; background: transparent; }
-        .chip:hover { border-color: var(--fg); color: var(--fg); }
-        .chip.is-active { border-color: var(--teal); color: var(--teal); background: color-mix(in oklab, var(--teal) 10%, transparent); }
-        .submit-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
-        .submit-row .note { font-family: var(--mono); font-size: 12px; color: var(--fg-3); }
-        .side { background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; padding: 36px 32px; display: grid; gap: 28px; }
-        .side h3 { font-family: var(--mono); font-size: 11px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
-        .channel { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--line); }
-        .channel:last-child { border-bottom: none; padding-bottom: 0; }
-        .channel .ix { font-family: var(--mono); font-size: 11px; color: var(--teal); width: 32px; padding-top: 4px; }
-        .channel .body { display: grid; gap: 4px; }
-        .channel .body b { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
-        .channel .body a { color: var(--teal); font-family: var(--mono); font-size: 13px; }
-        .channel .body p { color: var(--fg-2); font-size: 14px; line-height: 1.5; }
-        .side-follow { border-top: 1px solid var(--line); padding-top: 20px; }
-        .side-follow a { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-3); text-decoration: none; }
-        .side-follow a .arw { color: var(--teal); }
-.toast { position: fixed; bottom: max(32px, env(safe-area-inset-bottom, 32px)); left: 50%; transform: translateX(-50%) translateY(60px); background: var(--teal); color: var(--bg); padding: 14px 22px; border-radius: 999px; font-family: var(--mono); font-size: 13px; font-weight: 500; box-shadow: 0 12px 40px rgba(0,0,0,0.4); opacity: 0; transition: opacity .3s, transform .3s; z-index: 100; pointer-events: none; display: flex; gap: 10px; align-items: center; max-width: calc(100vw - 32px); }
-        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        /* One centered column — the whole contact "process" on one screen. */
+        .compose { max-width: 600px; margin: 0 auto; }
+        .compose .head h2 { font-family: var(--display); font-weight: 500; letter-spacing: -0.02em; line-height: 1.04; font-size: clamp(30px, 4.4vw, 46px); }
+        .compose .head p { color: var(--fg-2); font-size: clamp(15px, 1.5vw, 17px); margin-top: 12px; max-width: 42ch; }
+
+        /* fast path: one click, zero typing */
+        .book-primary { width: 100%; margin-top: 30px; padding: 18px 24px; font-size: 13.5px; }
+        .book-sub { text-align: center; font-family: var(--mono); font-size: 11.5px; color: var(--fg-3); margin-top: 12px; letter-spacing: 0.02em; }
+
+        .form-or { display: flex; align-items: center; gap: 14px; margin: 30px 0 22px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-3); }
+        .form-or::before, .form-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+        .compose form { display: grid; gap: 24px; }
+        .compose .field { display: grid; gap: 10px; }
+        .compose .field label { font-family: var(--mono); font-size: 11px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; }
+        .compose .field input, .compose .field textarea { background: transparent; border: none; border-bottom: 1px solid var(--line-2); color: var(--fg); font-family: var(--display); font-size: 19px; padding: 12px 0; transition: border-color .2s ease; width: 100%; outline: none; }
+        .compose .field textarea { min-height: 32px; resize: none; overflow: hidden; line-height: 1.5; }
+        .compose .field input:focus, .compose .field textarea:focus { border-color: var(--teal); }
+        .compose .field input.invalid, .compose .field textarea.invalid { border-color: var(--coral); }
+        .compose .field input::placeholder, .compose .field textarea::placeholder { color: var(--fg-3); }
+
+        .form-err { display: flex; align-items: flex-start; gap: 10px; padding: 13px 15px; border: 1px solid color-mix(in oklab, var(--coral) 55%, var(--line-2)); border-radius: 10px; background: color-mix(in oklab, var(--coral) 12%, transparent); color: var(--fg); font-size: 14px; line-height: 1.45; }
+        .form-err b { color: var(--coral); font-weight: 500; }
+
+        .send-btn { width: 100%; padding: 18px 24px; font-size: 13.5px; margin-top: 2px; }
+
+        .trust { margin-top: 26px; text-align: center; font-family: var(--mono); font-size: 12px; line-height: 1.8; color: var(--fg-3); letter-spacing: 0.01em; }
+        .trust a { color: var(--fg-2); }
+        .trust a:hover { color: var(--teal); }
+        .trust .sep { color: var(--line-2); margin: 0 8px; }
+
+        /* success (replaces the form) */
+        .form-success { border: 1px solid color-mix(in oklab, var(--teal) 50%, var(--line)); border-radius: 14px; background: color-mix(in oklab, var(--teal) 8%, var(--bg-2)); padding: 40px 36px; text-align: center; }
+        .form-success .tick { width: 44px; height: 44px; border-radius: 50%; background: var(--teal); color: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 23px; margin: 0 auto 22px; }
+        .form-success h3 { font-family: var(--display); font-weight: 500; font-size: 26px; letter-spacing: -0.015em; }
+        .form-success p { color: var(--fg-2); font-size: 15px; line-height: 1.55; margin: 12px auto 0; max-width: 40ch; }
+        .form-success .book-again { margin-top: 26px; }
+
         details summary { cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; list-style: none; }
         details summary::-webkit-details-marker { display: none; }
       `}</style>
 
-      {/* 01 — Contact hero as full-bleed NYC media band (Ken Burns still + dormant video swap) */}
+      {/* 01 — Contact hero as full-bleed NYC media band */}
       <ContactHeroMedia />
 
-      {/* Intro lede + at-a-glance, preserved from the previous text hero */}
-      <section className="reveal" style={{ paddingTop: 'clamp(40px,5vw,64px)' }}>
+      {/* 02 — The whole contact process, one centered column */}
+      <section data-screen-label="02 Contact" style={{ paddingTop: 'clamp(48px,6vw,80px)' }}>
         <div className="shell">
-          <div className="hero-foot">
-            <p className="lede reveal" data-delay="1">
-              Tell us about the system you&rsquo;re trying to ship. We read every brief personally.
-              If we&rsquo;re a fit, we&rsquo;ll book a 30-minute call to scope a 2-week diagnostic.
-            </p>
-            <div className="reveal" data-delay="2">
-              <div className="mono-sm" style={{ display: 'grid', gap: 8 }}>
-                <div>↳ <span style={{ color: 'var(--fg-2)' }}>NDA</span> on request</div>
-                <div>↳ <span style={{ color: 'var(--fg-2)' }}>Currently</span> {SITE.availability}</div>
-              </div>
+          <div className="compose reveal">
+            <div className="head">
+              <h2>Tell us what you&rsquo;re shipping.</h2>
+              <p>One click to book a call &mdash; or leave two lines and Sav replies within 24h.</p>
             </div>
+
+            {/* FAST PATH: one click, zero typing */}
+            <a
+              className="btn btn-primary book-primary"
+              href={SITE.bookingUrl}
+              target="_blank"
+              rel="noopener"
+              data-booking
+            >
+              Book a 15-min intro
+              <Arrow />
+            </a>
+            <div className="book-sub">Pick a time that works &middot; no form to fill</div>
+
+            <div className="form-or">or send two lines</div>
+
+            <ContactForm source="Website — Contact" />
           </div>
         </div>
       </section>
 
-      <section data-screen-label="02 Brief form" style={{ paddingTop: 'clamp(48px,6vw,80px)' }}>
-        <div className="shell">
-          <div className="contact-grid">
-            <div className="reveal">
-              <div className="divider-label left"><span>SEND A BRIEF</span></div>
-              <ContactForm />
-            </div>
-
-            <div className="reveal" data-delay="1">
-              <div className="side">
-                <div>
-                  <h3>Direct channels</h3>
-                  <div className="channel">
-                    <span className="ix">01</span>
-                    <div className="body">
-                      <b>Email</b>
-                      <a href="mailto:sav@ensolabs.ai">sav@ensolabs.ai</a>
-                      <a href="mailto:sav@ensopartners.co">sav@ensopartners.co</a>
-                      <p>Reaches Sav directly. No CRM, no auto-responder.</p>
-                    </div>
-                  </div>
-                  <div className="channel">
-                    <span className="ix">02</span>
-                    <div className="body">
-                      <b>LinkedIn</b>
-                      <a href="https://www.linkedin.com/in/savbanerjee/" target="_blank" rel="noopener">linkedin.com/in/savbanerjee</a>
-                      <p>For warm intros &amp; connect requests.</p>
-                    </div>
-                  </div>
-                  <div className="channel">
-                    <span className="ix">03</span>
-                    <div className="body">
-                      <b>GitHub</b>
-                      <a href="https://github.com/nycsav" target="_blank" rel="noopener">github.com/nycsav</a>
-                      <p>signal-forge-v2 · public commits.</p>
-                    </div>
-                  </div>
-                  <div className="channel">
-                    <span className="ix">04</span>
-                    <div className="body">
-                      <b>Studio</b>
-                      <address style={{ color: 'var(--fg-2)', fontFamily: 'var(--display)', fontSize: 14, fontStyle: 'normal', lineHeight: 1.5 }}>
-                        {SITE.address.street}<br />
-                        {SITE.address.locality}, {SITE.address.region} {SITE.address.postalCode}
-                      </address>
-                      <p style={{ marginTop: 6 }}>In-person available <NycClock /> ET / by appointment.</p>
-                    </div>
-                  </div>
-                  {SITE.bookingUrl.startsWith('http') && (
-                    <div className="channel">
-                      <span className="ix">05</span>
-                      <div className="body">
-                        <b>Book a call</b>
-                        <a href={SITE.bookingUrl} target="_blank" rel="noopener">Grab a 30-min slot →</a>
-                        <p>Skip the form. Pick a time that works — we&rsquo;ll come prepared.</p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="side-follow">
-                  <a href="https://www.linkedin.com/company/ensopartners-labs" target="_blank" rel="noopener">
-                    Follow Enso Labs on LinkedIn <span className="arw">→</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* 03 — FAQ (unchanged; preserves the page's FAQ JSON-LD + SEO body) */}
       <section data-screen-label="03 FAQ">
         <div className="shell">
           <div className="section-head">

@@ -102,8 +102,11 @@ export function Behavior() {
         track('cta_click', { type: 'email', page_path: path });
         return;
       }
-      // Booking / contact CTAs.
-      if (href === '/contact' || /cal\.com|calendly/.test(href)) {
+      // Booking CTAs only. Fire on the REAL booking link — any element tagged
+      // [data-booking] or a Cal.com/Calendly href. The old `href === '/contact'`
+      // trigger fired booking_intent on every "Get in Touch"/nav click (the ~25
+      // phantom booking clicks) — removed.
+      if (a.hasAttribute('data-booking') || /cal\.com|calendly/.test(href)) {
         track('booking_intent', { page_path: path, target: href });
         return;
       }
