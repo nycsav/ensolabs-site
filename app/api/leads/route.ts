@@ -237,6 +237,38 @@ async function alertEmail(lead: LeadInput, notionUrl: string | null): Promise<vo
   }).catch(() => {});
 }
 
+// Plain-text acknowledgement to the lead. Practitioner voice, no template, no
+// marketing. Sends from the verified domain (LEAD_ALERT_FROM); guarded on
+// RESEND_API_KEY so it no-ops until Resend is wired + the domain is verified.
+async function ackLead(lead: LeadInput): Promise<void> {
+  if (!RESEND_API_KEY) return;
+  const text = [
+    'Thanks — your note reached Sav directly. He replies within 24h.',
+    '',
+    'What you sent:',
+    `"${clip(lead.message, 800)}"`,
+    '',
+    'No CRM, no auto-responder — reply to this email and it comes straight back to us.',
+    '',
+    '— Enso Labs',
+  ].join('\n');
+
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: ALERT_FROM,
+      to: [lead.email],
+      reply_to: ALERT_TO,
+      subject: 'Got your note — Enso Labs',
+      text,
+    }),
+  }).catch(() => {});
+}
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, '&amp;')
@@ -309,8 +341,12 @@ export async function POST(req: Request) {
       await kvPush('leads:deadletter', { lead, stage: 'notion', err: notionError });
     }
 
-    // 3) Alerts are best-effort and never block the response.
-    await Promise.allSettled([alertSlack(lead, notionUrl), alertEmail(lead, notionUrl)]);
+    // 3) Alerts + lead ack are best-effort and never block the response.
+    await Promise.allSettled([
+      alertSlack(lead, notionUrl),
+      alertEmail(lead, notionUrl),
+      ackLead(lead),
+    ]);
 
     // Only report failure if NOTHING captured the lead: Notion failed, no alert
     // channel is configured, AND the KV backstop is off. Otherwise it's a lead.
