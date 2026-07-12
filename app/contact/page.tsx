@@ -132,23 +132,33 @@ export default function ContactPage() {
           <div className="compose reveal">
             <div className="head">
               <h2>Tell us what you&rsquo;re shipping.</h2>
-              <p>One click to book a call &mdash; or leave two lines and Sav replies within 24h.</p>
+              <p>
+                {SITE.bookingUrl.startsWith('http')
+                  ? 'One click to book a call — or leave two lines and Sav replies within 24h.'
+                  : 'Leave two lines — Sav replies within 24h.'}
+              </p>
             </div>
 
-            {/* FAST PATH: one click, zero typing */}
-            <a
-              className="btn btn-primary book-primary"
-              href={SITE.bookingUrl}
-              target="_blank"
-              rel="noopener"
-              data-booking
-            >
-              Book a 15-min intro
-              <Arrow />
-            </a>
-            <div className="book-sub">Pick a time that works &middot; no form to fill</div>
+            {/* FAST PATH: one click, zero typing. Renders only once a real
+                booking URL is configured — never a dead link. */}
+            {SITE.bookingUrl.startsWith('http') && (
+              <>
+                <a
+                  className="btn btn-primary book-primary"
+                  href={SITE.bookingUrl}
+                  target="_blank"
+                  rel="noopener"
+                  data-booking
+                >
+                  Book a 15-min intro
+                  <Arrow />
+                </a>
+                <div className="book-sub">Pick a time that works &middot; no form to fill</div>
 
-            <div className="form-or">or send two lines</div>
+                <div className="form-or">or send two lines</div>
+              </>
+            )}
+            {!SITE.bookingUrl.startsWith('http') && <div style={{ marginTop: 30 }} />}
 
             <ContactForm source="Website — Contact" />
           </div>

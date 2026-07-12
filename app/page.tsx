@@ -113,17 +113,26 @@ export default function HomePage() {
             </p>
             <div className="reveal" data-delay="3">
               <div className="hero-cta-row">
-                <a
-                  className="btn btn-primary"
-                  href={SITE.bookingUrl}
-                  target="_blank"
-                  rel="noopener"
-                  data-booking
-                >
-                  Book a 15-min intro
-                  <Arrow />
-                </a>
-                <Link className="btn" href="/contact">Start a project</Link>
+                {SITE.bookingUrl.startsWith('http') ? (
+                  <>
+                    <a
+                      className="btn btn-primary"
+                      href={SITE.bookingUrl}
+                      target="_blank"
+                      rel="noopener"
+                      data-booking
+                    >
+                      Book a 15-min intro
+                      <Arrow />
+                    </a>
+                    <Link className="btn" href="/contact">Start a project</Link>
+                  </>
+                ) : (
+                  <Link className="btn btn-primary" href="/contact">
+                    Start a project
+                    <Arrow />
+                  </Link>
+                )}
                 <Link className="btn" href="/work">See the work</Link>
               </div>
               <p className="mono-sm" style={{ marginTop: 18 }}>

@@ -130,16 +130,18 @@ export function ContactForm({ source = 'Website — Contact' }: { source?: strin
         <div className="tick" aria-hidden="true">✓</div>
         <h3>Got it — Sav replies within 24h.</h3>
         <p>Your note reached the studio directly. No CRM, no auto-responder.</p>
-        <a
-          className="btn book-again"
-          href={SITE.bookingUrl}
-          target="_blank"
-          rel="noopener"
-          data-booking
-        >
-          Want to talk sooner? Book a 15-min intro
-          <Arrow />
-        </a>
+        {SITE.bookingUrl.startsWith('http') && (
+          <a
+            className="btn book-again"
+            href={SITE.bookingUrl}
+            target="_blank"
+            rel="noopener"
+            data-booking
+          >
+            Want to talk sooner? Book a 15-min intro
+            <Arrow />
+          </a>
+        )}
       </div>
     );
   }

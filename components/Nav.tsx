@@ -107,16 +107,18 @@ export function Nav() {
             ))}
             <SocialLinks className="nav-social" />
 
-            <a
-              href={SITE.bookingUrl}
-              className="nav-cta nav-cta-book"
-              target="_blank"
-              rel="noopener"
-              data-booking
-            >
-              <span className="dot" />
-              Book a call
-            </a>
+            {SITE.bookingUrl.startsWith('http') && (
+              <a
+                href={SITE.bookingUrl}
+                className="nav-cta nav-cta-book"
+                target="_blank"
+                rel="noopener"
+                data-booking
+              >
+                <span className="dot" />
+                Book a call
+              </a>
+            )}
 
             <Link
               href="/contact"
@@ -182,20 +184,22 @@ export function Nav() {
           </ul>
 
           <div className="mobile-menu-foot">
-            <a
-              href={SITE.bookingUrl}
-              className="btn btn-primary mobile-menu-cta"
-              target="_blank"
-              rel="noopener"
-              data-booking
-              onClick={() => setOpen(false)}
-            >
-              <span className="dot" aria-hidden="true" />
-              Book a 15-min intro
-            </a>
+            {SITE.bookingUrl.startsWith('http') && (
+              <a
+                href={SITE.bookingUrl}
+                className="btn btn-primary mobile-menu-cta"
+                target="_blank"
+                rel="noopener"
+                data-booking
+                onClick={() => setOpen(false)}
+              >
+                <span className="dot" aria-hidden="true" />
+                Book a 15-min intro
+              </a>
+            )}
             <Link
               href="/contact"
-              className="btn mobile-menu-cta"
+              className={`btn${SITE.bookingUrl.startsWith('http') ? '' : ' btn-primary'} mobile-menu-cta`}
               onClick={() => setOpen(false)}
             >
               Get in Touch

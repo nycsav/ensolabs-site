@@ -10,9 +10,9 @@ export const SITE = {
   // Default Open Graph image — override per-page via metadata.openGraph.images
   ogImage: process.env.NEXT_PUBLIC_OG_IMAGE || '/og-default.png',
   // Real booking link (Cal.com / Calendly). Set NEXT_PUBLIC_BOOKING_URL in Vercel
-  // to the real slug. Falls back to the Cal.com placeholder — NOT /contact, which
-  // was a dead end that fired phantom booking_intent events on nav clicks.
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || 'https://cal.com/ensolabs/intro',
+  // to go live — until then this is EMPTY and every booking CTA hides itself
+  // (never a dead link, never a phantom booking_intent). No /contact fallback.
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   founder: {
     name: 'Sav Banerjee',
     role: 'Founder & Principal AI Transformation Advisor',
