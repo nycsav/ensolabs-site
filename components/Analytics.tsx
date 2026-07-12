@@ -1,6 +1,7 @@
 'use client';
 
 import Script from 'next/script';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-5N15QMQ962';
 
@@ -19,6 +20,7 @@ export function Analytics() {
           gtag('config', '${GA_ID}');
         `}
       </Script>
+      <VercelAnalytics />
     </>
   );
 }
