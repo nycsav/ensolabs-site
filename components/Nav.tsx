@@ -107,11 +107,23 @@ export function Nav() {
             ))}
             <SocialLinks className="nav-social" />
 
+            {SITE.bookingUrl.startsWith('http') && (
+              <a
+                href={SITE.bookingUrl}
+                className="nav-cta nav-cta-book"
+                target="_blank"
+                rel="noopener"
+                data-booking
+              >
+                <span className="dot" />
+                Book a call
+              </a>
+            )}
+
             <Link
               href="/contact"
               className={`nav-cta${isActive('/contact') ? ' is-active' : ''}`}
             >
-              <span className="dot" />
               Get in Touch
             </Link>
           </div>
@@ -172,12 +184,24 @@ export function Nav() {
           </ul>
 
           <div className="mobile-menu-foot">
+            {SITE.bookingUrl.startsWith('http') && (
+              <a
+                href={SITE.bookingUrl}
+                className="btn btn-primary mobile-menu-cta"
+                target="_blank"
+                rel="noopener"
+                data-booking
+                onClick={() => setOpen(false)}
+              >
+                <span className="dot" aria-hidden="true" />
+                Book a 15-min intro
+              </a>
+            )}
             <Link
               href="/contact"
-              className="btn btn-primary mobile-menu-cta"
+              className={`btn${SITE.bookingUrl.startsWith('http') ? '' : ' btn-primary'} mobile-menu-cta`}
               onClick={() => setOpen(false)}
             >
-              <span className="dot" aria-hidden="true" />
               Get in Touch
             </Link>
             <SocialLinks className="mobile-menu-social" />

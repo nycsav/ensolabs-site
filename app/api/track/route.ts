@@ -30,6 +30,7 @@ const GA_SECRET = process.env.GA4_API_SECRET;
 const ALLOWED = new Set([
   'form_start',
   'form_submit',
+  'generate_lead',
   'scroll_depth',
   'cta_click',
   'engaged_read',

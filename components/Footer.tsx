@@ -65,10 +65,8 @@ export function Footer() {
             <a href="https://linkedin.com/in/savbanerjee" rel="noopener" target="_blank">LinkedIn</a>
             <a href="https://github.com/nycsav" rel="noopener" target="_blank">GitHub</a>
             <a href="https://x.com/nycsav" rel="noopener" target="_blank">X</a>
-            {SITE.bookingUrl.startsWith('http') ? (
-              <a href={SITE.bookingUrl} rel="noopener" target="_blank">Book a call →</a>
-            ) : (
-              <Link href={SITE.bookingUrl}>Schedule call →</Link>
+            {SITE.bookingUrl.startsWith('http') && (
+              <a href={SITE.bookingUrl} rel="noopener" target="_blank" data-booking>Book a call →</a>
             )}
           </div>
           <div className="foot-col">
