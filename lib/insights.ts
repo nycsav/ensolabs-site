@@ -278,9 +278,23 @@ export const INSIGHTS: Insight[] = [
     dek: 'Three days after Notion unveiled Workers, MCP, and an Agent SDK, we were at their first hackathon in San Francisco — building a career intelligence agent that anyone can fork and deploy today.',
     pillar: 'Build',
     date: '2026-05-19',
-    dateModified: '2026-06-02',
+    dateModified: '2026-07-13',
     readingMinutes: 8,
     tags: ['AI Agents', 'Notion', 'Notion Workers', 'MCP', 'Claude', 'Open Source', 'Hackathon', 'TypeScript', 'Career Intelligence', 'Agentic Systems', 'Anthropic', 'Developer Platform'],
+    faqs: [
+      {
+        question: 'What is the open-source Notion career agent?',
+        answer: "It is a career-intelligence agent Enso Labs built and open-sourced at Notion's first Developer Platform Hackathon in May 2026 — five Notion Worker tools in about 487 lines of TypeScript that scan job listings, score them against a career profile, and generate ATS-tailored resumes and cover letters, with a human in the loop for every decision that matters. Fork it at https://github.com/nycsav/notion-career-agent.",
+      },
+      {
+        question: 'What are Notion Workers and Notion MCP?',
+        answer: "Notion Workers are sandboxed TypeScript functions that run on Notion's infrastructure with no servers to manage; Notion MCP lets any MCP-compatible AI assistant read and write Notion data natively. Together they turn a Notion workspace into an AI-agent runtime — the workspace is the interface, the Worker is the runtime, and MCP is the data layer.",
+      },
+      {
+        question: 'How does the career agent route work across Claude models?',
+        answer: "It uses task-criticality routing — Claude Haiku handles high-volume, speed-sensitive work (job scoring, Q&A, classification) while Claude Sonnet handles high-stakes generation (resume and cover-letter tailoring, where quality drives interview conversion). Enso Labs applies the same two-model pattern across client agent builds; get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'On May 13, Notion [launched a developer platform](https://www.notion.com/releases/2026-05-13) that turns every workspace into an AI agent hub — Workers for custom code, MCP for data access, an Agent SDK for external integrations, and a CLI for deployment. [TechCrunch called it](https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/) a move that positions Notion as an orchestration layer where people and agents collaborate across tools and databases. Three days later, we were at Notion HQ in San Francisco for their first-ever Developer Platform Hackathon.',
       'We shipped a career intelligence agent in 24 hours — five Notion Worker tools, 487 lines of TypeScript, a full pipeline from job scanning to AI-tailored resume generation. **The project is open source and ready to fork.** [github.com/nycsav/notion-career-agent](https://github.com/nycsav/notion-career-agent)',
@@ -330,9 +344,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'The gap between a beautiful slide and a running system is where most enterprise AI initiatives quietly die. Here\'s the autopsy from fifteen years inside the room.',
     pillar: 'Consult',
     date: '2026-04-22',
-    dateModified: '2026-05-26',
+    dateModified: '2026-07-13',
     readingMinutes: 7,
     tags: ['AI Consulting', 'Strategy-to-Ship', 'Enterprise AI', 'Production AI', 'AI Transformation'],
+    faqs: [
+      {
+        question: 'Why does deck-only AI consulting fail in production?',
+        answer: "Deck-only consulting fails because it hands the architecture off to an internal team that never participated in the design, then walks away from the production realities — eval harnesses, governance, latency budgets, hallucination guardrails — that decide whether the system actually runs. The failure is structural, not motivational: the engagement ends and the system never ships.",
+      },
+      {
+        question: 'What is the Strategy-to-Ship alternative to deck-only consulting?',
+        answer: "The fix is that the same operator who designs the system also ships it, which collapses the translation layer so architecture decisions are made by the person who has to debug them at 2am. Enso Labs sequences every engagement Diagnose, Design, Build, Scale with the same builder across all four phases — the roadmap and the runtime are the same artifact. See our services at https://ensolabs.ai/services.",
+      },
+    ],
     body: [
       'Most AI consultancies have a wildly successful first ninety days. The deck lands. The roadmap is celebrated. The exec sponsor commits. Then the engagement ends — and the system never ships.',
       'The reason is structural, not motivational. A deck-only consultancy hands off the architecture to an internal team that never participated in the design, then walks away from the production realities — eval harnesses, governance, latency budgets, hallucination guardrails — that determine whether the thing actually runs.',
@@ -346,9 +370,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'A scientist will never trust a black-box relevance score. Here\'s how we built a 9-rule expert lens that scientists could reason about — and turn off — one rule at a time.',
     pillar: 'Build',
     date: '2026-04-15',
-    dateModified: '2026-05-26',
+    dateModified: '2026-07-13',
     readingMinutes: 9,
     tags: ['AI Agents', 'Expert Systems', 'MCP', 'Market Intelligence', 'Enterprise AI', 'Fortune 500'],
+    faqs: [
+      {
+        question: 'What is the Expert Lens in AI market intelligence?',
+        answer: "The Expert Lens is Enso Labs' pattern for encoding a domain expert's decision criteria as explicit, independently toggleable rules instead of an opaque relevance score. On an AI market-intelligence platform for a Fortune 500 manufacturer, it took the form of nine MCP-compatible rules — temperature floor, material class, chemistry scope, PFAS sensitivity, market size, liability exposure, recency, novelty, and a 200°C gap — that the lead scientist could reason about and switch on or off one at a time.",
+      },
+      {
+        question: 'Why encode expert knowledge as toggleable rules?',
+        answer: "Because trust comes from the ability to interrogate a score, not from the score itself. Making every heuristic explicit and inspectable lets an expert A/B their own judgment against the system with each rule on and off, which is what earns adoption in high-stakes domains. Enso Labs applies this wherever expert trust is the acceptance criterion; get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'The AI Market Intelligence Platform had one non-negotiable acceptance criterion: the lead scientist had to trust the relevance ranking. That meant no opaque embeddings-as-relevance, no LLM-as-judge with hidden criteria, no statistical magic.',
       'What worked: encoding the scientist\'s actual decision criteria as nine explicit, MCP-compatible rules. Temperature floor. Material class. Chemistry scope. PFAS sensitivity. Market size. Liability exposure. Recency. Novelty. The 200°C gap.',
@@ -362,9 +396,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'Every legacy SaaS connector — Salesforce, Slack, Notion, Looker — gets a second life as an MCP server. The companies that ship MCP first will own the agent-native enterprise.',
     pillar: 'Build',
     date: '2026-04-08',
-    dateModified: '2026-05-26',
+    dateModified: '2026-07-13',
     readingMinutes: 6,
     tags: ['MCP', 'Model Context Protocol', 'SaaS', 'AI Agents', 'Enterprise Integration', 'Claude', 'Agentic Systems'],
+    faqs: [
+      {
+        question: 'Why are MCP servers the new SaaS integration layer?',
+        answer: "Because the Model Context Protocol changes the unit of integration from the screen to the tool call. An MCP server publishes a typed surface that any agent — Claude, Perplexity Computer, Gemini — can invoke autonomously with structured input and structured output, replacing the brittle Zapier, REST, and iPaaS plumbing that defined the last two decades of enterprise software.",
+      },
+      {
+        question: 'What should B2B SaaS companies do about MCP?',
+        answer: "Reframe every connector you have today as an MCP server, because buyers will ask for it within twelve months and the companies that ship MCP first own the agent-native distribution layer for the next decade. Enso Labs builds these servers — usually two- to six-week engagements depending on auth complexity and surface area. Get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'For two decades, enterprise software lived inside a tab. The unit of work was the screen. Integration meant Zapier, REST, or a poorly-maintained iPaaS connector.',
       'The Model Context Protocol changes the unit. The unit is now the tool call. An MCP server publishes a typed surface that any agent — Claude, Perplexity Computer, Gemini — can invoke autonomously, with structured input and structured output.',
@@ -378,9 +422,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'Teams burn months optimizing chunk sizes, hybrid retrieval, and reranker stacks. Then they ship — and discover they never had a reliable way to know if the answer was right.',
     pillar: 'Build',
     date: '2026-04-01',
-    dateModified: '2026-05-26',
+    dateModified: '2026-07-13',
     readingMinutes: 8,
     tags: ['RAG', 'Eval Harness', 'LLM', 'Production AI', 'Vector Search', 'AI Architecture'],
+    faqs: [
+      {
+        question: 'Why is a RAG problem usually an eval problem, not a vector-store problem?',
+        answer: "Because most struggling RAG systems have a sophisticated retrieval pipeline and no reliable way to know whether an answer is right. Without an eval harness, every change — chunk size up or down, embedding-model swap, hybrid-weight knob — is a vibes-based experiment with no signal on whether it is getting better or worse.",
+      },
+      {
+        question: 'How should teams fix an unreliable RAG system?',
+        answer: "Build the eval first: hand-grade about fifty representative queries with expert ground truth, then score every change against that set. The eval harness is the spec, and the retrieval architecture you converge on will be different — and actually shippable. Enso Labs builds eval harnesses as the foundation for production RAG; get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'Most RAG systems we are asked to rescue have a sophisticated retrieval pipeline and a non-existent eval harness. The team can describe their reranker but cannot tell you the F1 on a held-out set of expert-graded answers.',
       'This is backwards. The eval harness is the spec. Without it, every change is a vibes-based experiment — chunk size up, chunk size down, embedding model swap, hybrid weight knob — with no way to know if you are getting better or worse.',
@@ -393,9 +447,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'The Trading Terminal runs unattended. That is only possible because the risk caps, position sizing, and shut-off logic were designed before the alpha logic — not after.',
     pillar: 'Ship',
     date: '2026-03-25',
-    dateModified: '2026-05-22',
+    dateModified: '2026-07-13',
     readingMinutes: 10,
     tags: ['Financial AI', 'Trading', 'Autonomous Systems', 'Risk Architecture', 'Enso Trading Terminal', 'AI Agents'],
+    faqs: [
+      {
+        question: 'Why is the kill-switch the architecture in autonomous trading?',
+        answer: "Because a system that runs unattended is only safe if the risk caps, position sizing, and shut-off logic are designed before the alpha logic, not bolted on after. In the Enso Trading Terminal the kill-switch came first, risk caps are schemas rather than config, and position sizing is a typed function with property tests — so the system can run without anyone losing sleep.",
+      },
+      {
+        question: 'How does Enso Labs approach risk in autonomous financial systems?',
+        answer: "Strategy code can be wrong; risk code cannot — so the risk surface is treated as the architecture and the strategy as a plug-in. That is the same rule Enso Labs applies to client engagements building autonomous trading. Get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'Most trading systems begin with the strategy: a signal, an indicator, an alpha. The risk layer arrives later, bolted on, and is the first thing to fail under stress.',
       'The Enso Trading Terminal was built backwards on purpose. The kill-switch came first. Risk caps were schemas, not config. Position sizing was a typed function with property tests, not a magic number in a YAML file.',
@@ -409,9 +473,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'Pharma agencies cannot move fast and break things. Medical, Legal, and Regulatory review is non-negotiable. Here\'s how we built a CoE that compresses launches from three months to two weeks anyway.',
     pillar: 'Consult',
     date: '2026-03-18',
-    dateModified: '2026-05-22',
+    dateModified: '2026-07-13',
     readingMinutes: 7,
     tags: ['Pharma AI', 'AI Center of Excellence', 'Compliance', 'MLR', 'Healthcare AI', 'Enterprise AI', 'AI Transformation'],
+    faqs: [
+      {
+        question: 'Can an AI Center of Excellence ship MLR-compliant pharma work?',
+        answer: "Yes. The Heller AI Center of Excellence was designed around MLR/PRC review, FDA fair balance, and brand-voice tolerance rather than despite them — RAG retrieval grounded in five brand knowledge bases that already encode MLR-approved language, with pre-flight scans on every draft. Campaign launches dropped from three months to two weeks while compliance review time barely moved.",
+      },
+      {
+        question: 'How does Enso Labs handle compliance in regulated AI builds?',
+        answer: "By treating compliance as the spec rather than the obstacle — automating the compliance burden instead of bypassing it. Regulated industries are not where AI fails; they are where it has the largest leverage when governance is built in from the start, anchored on NIST AI RMF. Explore our services at https://ensolabs.ai/services.",
+      },
+    ],
     body: [
       'The standard objection to AI in pharma marketing is compliance. MLR/PRC review, FDA fair balance, brand voice tolerance — every shortcut breaks one of them.',
       'The Heller Center of Excellence was designed around the constraint, not despite it. RAG retrieval is grounded in five brand knowledge bases that already encode MLR-approved language. Pre-flight scans run on every draft. The compliance burden is automated, not bypassed.',
@@ -425,9 +499,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'Unusual flow is a hypothesis, not a trade. The Options Lab is built to surface hypotheses, force the human to vet them, and only then route to execution.',
     pillar: 'Ship',
     date: '2026-03-11',
-    dateModified: '2026-05-22',
+    dateModified: '2026-07-13',
     readingMinutes: 5,
     tags: ['Financial AI', 'Options Trading', 'Decision Support', 'Human-in-the-Loop', 'Trading Terminal'],
+    faqs: [
+      {
+        question: 'Is AI options-flow analysis a black box that auto-trades?',
+        answer: "No. The Enso Options Lab is decision support, not an oracle — it surfaces unusual flow, sweeps, and blocks, cross-references them against the news-intelligence feed and the implied-volatility surface, and presents the operator a vetting checklist before any execution route is enabled. Unusual flow is a hypothesis, not a trade.",
+      },
+      {
+        question: 'Why keep a human in the loop on options flow?',
+        answer: "Because the system is good at finding hypotheses and it is the operator's job to kill the bad ones — the operator should have to actively click send on every trade that survives. That human-in-the-loop design is deliberate, not a limitation. Get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'The marketing of "AI-powered options flow" usually implies an oracle — feed it tickers, get trades. That is exactly the model that loses money.',
       'The Options Lab is a decision-support tool. It surfaces unusual flow, sweeps, and blocks; cross-references against the news intelligence feed and the implied volatility surface; and presents the operator with a vetting checklist before any execution route is enabled.',
@@ -440,9 +524,19 @@ export const INSIGHTS: Insight[] = [
     dek: 'Counterintuitive — and structural, not heroic. Six things change when the advisor and the build team work as one unit.',
     pillar: 'Consult',
     date: '2026-03-04',
-    dateModified: '2026-05-22',
+    dateModified: '2026-07-13',
     readingMinutes: 6,
     tags: ['AI Consulting', 'Boutique Studio', 'Strategy-to-Ship', 'Principal-Led', 'Enterprise AI'],
+    faqs: [
+      {
+        question: 'Why does a principal-led studio outperform a 50-person consultancy on shipped systems?',
+        answer: "Because a large bench runs on hand-offs — strategy decided in week 3 reaches engineering in week 9, refracted through three layers of partial context. A principal-led studio collapses that: direct senior access with no account managers, an advisor who is also in the codebase, dogfooded infrastructure, no approval chain, and a fixed pipeline that makes a yes mean yes.",
+      },
+      {
+        question: 'What is the trade-off of a principal-led studio?',
+        answer: "Bandwidth — a principal-led studio runs a small handful of deep engagements at a time, which is the whole point: depth, not portfolio. When the studio is at capacity, prospects hear so directly and get a future date. Get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'The pitch from a 50-person consultancy is depth of bench. The reality is hand-offs. Strategy decided in week 3 reaches engineering in week 9, refracted through three layers of partial context.',
       'A principal-led studio has structural advantages a large bench cannot replicate. Direct senior access — no account managers. Builder credibility — the advisor is also in the codebase. Dogfooding — the studio runs its own infrastructure. Speed — no approval chain. Selectivity — a fixed pipeline forces a yes to mean yes.',
