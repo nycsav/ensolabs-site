@@ -116,6 +116,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'OpenAI\'s Codex now runs GPT-5.5; days later Anthropic shipped Claude Fable 5 — two flagship coding models, neither \'best\' at everything. From inside OpenAI\'s Builder Lounge at NY Tech Week, here is the working rule we use to route between Codex 5.5, Fable 5, Claude Opus 4.8, and Gemini on real builds — and why the right choice now changes almost every week. Forward-deployed, so a 20-person company or a global enterprise gets the frontier without standing up its own AI research bench.',
     pillar: 'Consult',
     date: '2026-06-09',
+    dateModified: '2026-07-13',
     readingMinutes: 8,
     tags: ['Fable 5', 'Claude Opus 4.8', 'GPT-5.5', 'Codex', 'Gemini', 'Frontier Models', 'Forward-Deployed', 'Managed Agents', 'Model Routing', 'Agentic AI', 'AI Adoption', 'SMB AI', 'Enterprise AI', 'OpenAI Builder Lounge', 'NY Tech Week', 'Enso Labs', 'Sav Banerjee'],
     faqs: [
@@ -162,6 +163,7 @@ export const INSIGHTS: Insight[] = [
       '**Measure cost per shipped result, not per token.** A pricier model that finishes in one pass can be cheaper than a cheap one that needs three. Track dollars-per-completed-task across models, not sticker price.',
       '**Buy the operator, not the model.** For most companies the answer is not a bigger AI team — it is a forward-deployed studio that tests, routes, and operates the frontier for you, and keeps the system current as the models change underneath it.',
       'A new frontier model shipped this morning. Another will ship next week, and the week after that. The companies that win the next phase are not the ones who pick the right model today — they are the ones who never have to pick alone. That is the room we live in, and the service we sell.',
+      'This is the core of our [AI transformation services](/services): a governed, forward-deployed routing layer that picks the right model per task and swaps in a new one when it earns its place — operated for you. If your team is standardizing on one model, or has no one testing the frontier the week it ships, [get in touch](/contact).',
       'Powered by Enso Labs',
     ],
   },
@@ -453,9 +455,23 @@ export const INSIGHTS: Insight[] = [
     dek: 'Today Anthropic announced pre-built AI agents for banking and trading — pitchbook builders, credit memo drafters, statement auditors. Enso Labs has been shipping production financial agents since 2025. Here is what this means for the industry and why early movers have a structural advantage.',
     pillar: 'Ship',
     date: '2026-05-05',
-    dateModified: '2026-05-28',
+    dateModified: '2026-07-13',
     readingMinutes: 6,
     tags: ['Financial AI', 'Anthropic', 'Claude', 'AI Agents', 'Trading', 'MCP', 'Enso Trading Terminal'],
+    faqs: [
+      {
+        question: 'What did Anthropic announce for financial services in May 2026?',
+        answer: "On May 5, 2026, Anthropic announced ten pre-built Claude AI agents for financial services — including pitchbook builders, credit memo drafters, portfolio summarizers, and statement auditors — with MCP-connected brokerage and market-data integrations built into the model layer. Enso Labs has been running production financial AI agents, including the Enso Trading Terminal, since 2025.",
+      },
+      {
+        question: 'What structural advantage do early movers have in financial AI agents?',
+        answer: "Firms that shipped financial AI agents in 2025 have roughly a year of production data, eval harnesses, and operational muscle a 2026 cold start cannot replicate. Anthropic's pre-built agents commoditize the basics — memo drafting, reconciliation, summarization; the moat is what you build on top: custom signal intelligence, firm-specific risk models, and compliance layers tuned to your regulatory surface.",
+      },
+      {
+        question: 'Does Enso Labs build production financial AI agents?',
+        answer: "Yes. Enso Labs builds and operates production financial AI agents on Claude and MCP, including the Enso Trading Terminal — news-driven trading algorithms, multi-agent research, options flow analysis, and brokerage API integration running autonomously since 2025. Scope an engagement at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'On May 5, 2026, Anthropic announced ten pre-built AI agents for financial services — pitchbook builders, credit memo drafters, portfolio summarizers, statement auditors. The announcement validates what we have been building at Enso Labs since 2025: production financial AI agents are not a research project. They are an operational layer.',
       'The Enso Trading Terminal has been running autonomously in production for over a year — news-driven trading algorithms, multi-agent research automation, options flow analysis, brokerage API integration via MCP. When Anthropic says Claude can now draft credit memos and audit financial statements, we hear confirmation of a thesis we have already shipped against: **the same reasoning engine that writes prose can manage risk, parse filings, and route orders.**',
@@ -471,9 +487,23 @@ export const INSIGHTS: Insight[] = [
     dek: 'Every brokerage API — Alpaca, Interactive Brokers, Schwab, TradeStation — is becoming an MCP server. This is the integration pattern that makes autonomous financial AI agents practical.',
     pillar: 'Build',
     date: '2026-05-08',
-    dateModified: '2026-05-28',
+    dateModified: '2026-07-13',
     readingMinutes: 8,
     tags: ['MCP', 'Model Context Protocol', 'Brokerage', 'Financial AI', 'Trading', 'AI Agents', 'Alpaca', 'Interactive Brokers'],
+    faqs: [
+      {
+        question: 'What is MCP for brokerage trading?',
+        answer: "MCP (Model Context Protocol) for brokerage is a standardized way to wrap a brokerage API — Alpaca, Interactive Brokers, Schwab, TradeStation — into a typed tool surface that any AI agent can invoke natively. The agent calls a function like submit_order with a typed payload and receives a typed response, so the integration complexity lives in the MCP server, not the agent.",
+      },
+      {
+        question: 'Why does MCP matter for autonomous trading agents?',
+        answer: "MCP collapses bespoke, fragile per-vendor integrations into one typed interface, and lets pre-trade risk controls — position, notional, and order-rate limits — plus full audit logging live at the server layer. That makes autonomous financial AI agents practical and reviewable: every tool call is logged with inputs, outputs, timestamps, and the reasoning context that triggered it.",
+      },
+      {
+        question: 'Does Enso Labs build MCP servers for brokerages?',
+        answer: "Yes. Enso Labs builds and maintains production MCP servers connecting AI agents to Alpaca, Public.com, and crypto exchanges in the Enso Trading Terminal. These are typically two- to six-week engagements depending on auth complexity and surface area. Get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'The Model Context Protocol is the most consequential piece of AI infrastructure that almost no one in financial services is talking about. MCP is a standardized way for AI agents — Claude, Gemini, GPT — to invoke external tools with typed inputs and structured outputs. For trading, that means a single agent can check positions, submit orders, retrieve account data, and monitor fills as part of its reasoning loop.',
       'Before MCP, connecting an AI agent to a brokerage meant building a bespoke integration for every API. Alpaca REST endpoints, Interactive Brokers TWS, Schwab\'s OAuth2 flow, TradeStation\'s streaming WebSocket — each required custom auth, custom error handling, and custom response parsing. The result was fragile plumbing that broke every time a vendor updated their API.',
@@ -489,9 +519,23 @@ export const INSIGHTS: Insight[] = [
     dek: 'Anthropic launched a $100M Claude Partner Network. Accenture, Deloitte, and PwC are in. But for production agentic systems, the structural advantages belong to boutique operators who build what they advise.',
     pillar: 'Consult',
     date: '2026-05-07',
-    dateModified: '2026-05-28',
+    dateModified: '2026-07-13',
     readingMinutes: 7,
     tags: ['Claude', 'Anthropic', 'AI Consulting', 'Partner Network', 'Boutique Studio', 'Enterprise AI', 'Agentic Systems'],
+    faqs: [
+      {
+        question: 'What is the Claude Partner Network?',
+        answer: "The Claude Partner Network is Anthropic's $100M program to accelerate enterprise Claude deployments through certified implementation partners. Launch partners include Accenture, Deloitte, PwC, McKinsey, and BCG. Certification is a floor, not a ceiling — for production agentic systems, the partners who win are the ones who can point to shipped systems.",
+      },
+      {
+        question: 'Why choose a boutique Claude implementation partner over a Big 4 firm?',
+        answer: "Enterprise Claude deployments are agentic systems, not ERP migrations, so the hand-off model that works for SAP fails for Claude. Boutique operators offer direct senior access — the principal who scopes also builds — plus builder credibility from running their own production AI infrastructure, speed (a working prototype in the time a large firm staffs a project), and dogfooding: every recommendation tested on themselves first.",
+      },
+      {
+        question: 'Is Enso Labs a Claude implementation partner?',
+        answer: "Enso Labs is a principal-led AI transformation studio that is Claude-certified and Anthropic-credentialed, running Claude-powered production systems across financial services, healthcare, and B2B technology since 2025. The only credential that matters is the system you shipped. Get in touch at https://ensolabs.ai/contact.",
+      },
+    ],
     body: [
       'Anthropic\'s Claude Partner Network — backed by $100 million in funding — is designed to accelerate enterprise Claude deployments through certified implementation partners. The launch partners include the usual suspects: Accenture, Deloitte, PwC, McKinsey, BCG. The pitch is depth of bench and global reach.',
       'The reality is different. Enterprise Claude deployments are not ERP migrations. They are not lift-and-shift projects that benefit from armies of consultants following a playbook. Agentic AI systems require the person who designed the architecture to also debug the eval harness at 2am. They require the advisor to be in the codebase. The hand-off model that works for SAP does not work for Claude.',
