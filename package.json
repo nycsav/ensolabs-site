@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "smoke:lead": "node scripts/smoke-lead.mjs"
+    "smoke:lead": "node scripts/smoke-lead.mjs",
+    "og:sf-summits": "node scripts/generate-og-sf-summits.js"
   },
   "dependencies": {
     "@vercel/kv": "^3.0.0",
