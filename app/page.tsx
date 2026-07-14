@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
     description:
-      'Principal-led applied-AI studio in NYC. Strategy and research turned into shipped AI products — agentic systems, custom decision & signal intelligence, financial AI — across healthcare, finance, manufacturing, media, B2B tech, and consumer.',
+      'Principal-led AI managed-services studio in NYC. We encode your industry expertise into managed agents — then build and operate them in production. Agentic Managed Services across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Growth.',
     url: SITE.origin,
     images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Enso Labs — AI Consulting & Agentic Systems Studio NYC',
     description:
-      'Principal-led applied-AI studio in NYC. Strategy + research → shipped AI products: agentic systems, decision & signal intelligence, financial AI. Healthcare, finance, manufacturing, media, B2B tech, consumer.',
+      'Principal-led AI managed-services studio in NYC. Encode your expertise into managed agents — we build and operate them in production. Agentic Managed Services: Healthcare, Finance, Manufacturing, Media, B2B Tech, Growth.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
 };
@@ -40,7 +40,7 @@ const HOME_FAQS = [
   {
     question: 'What is Enso Labs?',
     answer:
-      'Enso Labs is a principal-led applied-AI studio based in New York City, founded by Sav Banerjee. We build custom AI products that turn disparate data into decision intelligence — from stakeholder research to shipped system. The work spans AI transformation, agentic workflows, custom decision and signal intelligence, and financial AI, for companies across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Consumer. Every engagement is led by a senior advisor who also builds.',
+      'Enso Labs is a principal-led AI managed-services studio based in New York City, founded by Sav Banerjee. We encode your domain expertise into managed agents, then build and operate them in production — Agentic Managed Services, strategy through production. The work spans AI transformation, agentic systems, and financial AI, for companies across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Growth. Every engagement is led by a senior advisor who also builds.',
   },
   {
     question: 'Who is Sav Banerjee?',
