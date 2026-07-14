@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
-import { blogSchema, breadcrumbSchema } from '@/lib/schema';
+import { blogSchema, breadcrumbSchema, faqSchema, insightsItemListSchema } from '@/lib/schema';
 import { INSIGHTS } from '@/lib/insights';
 
 export const metadata: Metadata = {
@@ -25,6 +25,29 @@ export const metadata: Metadata = {
   },
 };
 
+const INDEX_FAQS = [
+  {
+    question: 'What is Enso Labs Insights?',
+    answer:
+      'Enso Labs Insights is the editorial archive of Enso Labs, a principal-led AI managed-services studio in New York City founded by Sav Banerjee. It publishes technical and strategic essays on AI transformation, agentic systems, and financial AI — written from inside live production engagements.',
+  },
+  {
+    question: 'What is Strategy to Ship?',
+    answer:
+      'Strategy to Ship is the news-intelligence and publishing engine of Enso Labs — daily AI market intelligence, scored and curated, published on the Enso Labs Insights page. It turns the signals that matter for enterprise AI into field notes for Fortune 500 leaders and builders.',
+  },
+  {
+    question: 'How often does Enso Labs publish new insights?',
+    answer:
+      'Enso Labs publishes new essays several times a month, plus a daily Live Intelligence feed. Recent coverage includes Google I/O 2026, the Perplexity Implementation Partners Program, Claude Managed Agents, and frontier-model routing, spanning AI transformation, agentic systems, MCP, RAG, and financial AI.',
+  },
+  {
+    question: 'How do I work with Enso Labs?',
+    answer:
+      'Get in touch at https://ensolabs.ai/contact or email sav@ensolabs.ai. Typical entry points are a two-week AI audit, a twelve-week pilot-to-production build, or an embedded AI operator retainer. Every engagement is led by a senior advisor who also builds.',
+  },
+];
+
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -40,6 +63,8 @@ export default function InsightsIndex() {
       <JsonLd
         schemas={[
           blogSchema(),
+          insightsItemListSchema(INSIGHTS),
+          faqSchema(INDEX_FAQS),
           breadcrumbSchema([
             { name: 'Home', href: '/' },
             { name: 'Insights', href: '/insights' },
@@ -165,6 +190,23 @@ export default function InsightsIndex() {
                   <span className="read">Read →</span>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 0, paddingBottom: 'clamp(56px, 7vw, 100px)' }}>
+        <div className="shell">
+          <span className="eyebrow"><span className="num">FAQ</span>&nbsp;About Enso Labs Insights</span>
+          <h2 className="display" style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', marginTop: 20, marginBottom: 32 }}>
+            Frequently <em>asked</em> <span className="accent">questions.</span>
+          </h2>
+          <div className="faq-list">
+            {INDEX_FAQS.map((faq) => (
+              <details key={faq.question} className="faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
             ))}
           </div>
         </div>

@@ -25,6 +25,7 @@ export const orgSchema = (): JsonLd => ({
   sameAs: [
     SITE.founder.linkedin,
     SITE.founder.github,
+    SITE.founder.x,
     'https://www.crunchbase.com/person/sav-banerjee',
     'https://www.linkedin.com/company/ensopartners-labs',
   ],
@@ -80,6 +81,7 @@ export const personSchema = (): JsonLd => ({
   sameAs: [
     SITE.founder.linkedin,
     SITE.founder.github,
+    SITE.founder.x,
     'https://www.crunchbase.com/person/sav-banerjee',
   ],
 });
@@ -231,6 +233,23 @@ export const blogSchema = (): JsonLd => ({
     'Technical and strategic essays on AI transformation, agentic systems, and financial AI from Sav Banerjee.',
   publisher: { '@id': url('/#organization') },
   author: { '@id': url('/#sav') },
+});
+
+export const insightsItemListSchema = (posts: Insight[]): JsonLd => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': url('/insights#article-list'),
+  name: `${SITE.name} Insights — Articles`,
+  description:
+    'Complete index of Enso Labs Insights essays on AI transformation, agentic systems, and financial AI.',
+  numberOfItems: posts.length,
+  itemListOrder: 'https://schema.org/ItemListOrderDescending',
+  itemListElement: posts.map((post, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: url(`/insights/${post.slug}`),
+    name: post.title,
+  })),
 });
 
 export const articleSchema = (post: Insight): JsonLd => ({
