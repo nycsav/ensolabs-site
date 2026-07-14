@@ -20,6 +20,44 @@ export type Insight = {
 
 export const INSIGHTS: Insight[] = [
   {
+    slug: 'enso-labs-sf-agentic-ai-summits-2026',
+    title: "Enso Labs is heading to the AGI Summit and Berkeley's Agentic AI Summit. Come find us in SF.",
+    dek: "We'll be on the ground at the Bay Area's two marquee agentic-AI summits this summer — the AGI Summit (July 18–19, Palace of Fine Arts) and the Berkeley Agentic AI Summit (August 1–2, UC Berkeley). If you're building or buying agentic AI, let's meet.",
+    pillar: 'Consult',
+    lens: 'Build',
+    date: '2026-07-14',
+    dateModified: '2026-07-14',
+    readingMinutes: 3,
+    tags: ["AGI Summit", "Berkeley Agentic AI Summit", "San Francisco", "Agentic AI", "AI Events", "Agentic Managed Services", "Managed Agents", "Enso Labs", "Sav Banerjee", "UC Berkeley RDI", "SF AI"],
+    faqs: [
+      {
+        question: "Where can I meet Enso Labs in San Francisco this summer?",
+        answer: "Enso Labs will be at the AGI Summit (July 18–19, Palace of Fine Arts, SF) and the Berkeley Agentic AI Summit (August 1–2, UC Berkeley), and available for meetings around SF in between. Book time at https://ensolabs.ai/contact or email sav@ensolabs.ai.",
+      },
+      {
+        question: "What is the AGI Summit 2026?",
+        answer: "The AGI Summit 2026 is a two-day AI conference on July 18–19 at the Palace of Fine Arts in San Francisco, drawing 15,000+ attendees and 200+ speakers from Google DeepMind, OpenAI, Anthropic, Microsoft, and Stanford.",
+      },
+      {
+        question: "What is the Berkeley Agentic AI Summit 2026?",
+        answer: "The Agentic AI Summit 2026 is hosted by UC Berkeley's Center for Responsible, Decentralized Intelligence (RDI) on August 1–2 on the Berkeley campus, with 5,000+ attendees, 200+ speakers, and 4 stages focused on agentic AI.",
+      },
+      {
+        question: "What does Enso Labs do?",
+        answer: "Enso Labs is a principal-led AI managed-services studio in NYC. We encode a company's domain expertise into managed AI agents — then build and operate them in production. Agentic Managed Services, strategy through production.",
+      },
+    ],
+    body: [
+      "![Enso Labs at the AGI Summit and Berkeley Agentic AI Summit — meet us in San Francisco, summer 2026](/og/og-enso-labs-sf-agentic-ai-summits-2026.png)",
+      "Enso Labs is heading west: we'll be on the ground at the Bay Area's two biggest agentic-AI gatherings this summer — the **AGI Summit** (July 18–19, Palace of Fine Arts, San Francisco) and the **Berkeley Agentic AI Summit** (August 1–2, UC Berkeley). If you're building or buying agentic systems, we want to meet you there.",
+      "These two rooms are where agentic AI is actually being decided — Google DeepMind, OpenAI, Anthropic, and Berkeley RDI in one place, 20,000+ builders and buyers across the two events. It's the right place for the conversation we care about most.",
+      "Because the conversation has moved. The demo era is ending; the hard part now is agents that survive production — governed, evaluated, and grounded in real domain expertise. That's the work we do. **Enso Labs is a principal-led AI managed-services studio: we encode your industry's expertise into managed agents, then build and operate them in production.** Strategy through production, led by the person who also builds.",
+      "We'll be comparing notes on the things that actually make agents stick: writing the rubric before the agent, treating memory and governance as architecture, and the shift from \"shipped AI product\" to operated AI. And on the commercial side — the fifteen years of brand and demand craft we now build as agents.",
+      "**If you'll be in San Francisco between July 18 and August 2, let's grab time.** Whether you're a founder putting agents into production, an enterprise team whose pilots keep stalling, or a fellow builder — [get in touch](/contact) or email sav@ensolabs.ai, and let's find 20 minutes in SF.",
+      "**Powered by Enso Labs**",
+    ],
+  },
+  {
     slug: 'enso-labs-perplexity-implementation-partner',
     title: 'Enso Labs joins the Perplexity Implementation Partners Program.',
     dek: "We're now a Perplexity Computer Implementation Partner — helping teams onboard, integrate, and get real value out of Perplexity Computer, with a senior team that builds, not just advises.",
