@@ -119,7 +119,7 @@ export const professionalServiceSchema = (): JsonLd => ({
     'Financial AI & Trading Intelligence',
     'AI for Advertising, Marketing & Media',
     'Custom AI Product Development',
-    'Decision & Signal Intelligence',
+    'Agentic Managed Services',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

@@ -136,7 +136,7 @@ export default function HomePage() {
                 <Link className="btn" href="/work">See the work</Link>
               </div>
               <p className="mono-sm" style={{ marginTop: 18 }}>
-                ↳ decision intelligence, shipped as products
+                ↳ managed agents, built and operated
               </p>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function HomePage() {
           {/* sectors strip */}
           <div className="hero-sectors reveal" data-delay="3">
             <span className="lbl">SECTORS</span>&nbsp;&nbsp;
-            <span className="list">HEALTHCARE · FINANCE · MANUFACTURING · MEDIA · B2B TECH · CONSUMER</span>
+            <span className="list">HEALTHCARE · FINANCE · MANUFACTURING · MEDIA · B2B TECH · GROWTH</span>
           </div>
         </div>
       </section>
