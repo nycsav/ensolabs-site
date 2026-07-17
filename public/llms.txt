@@ -10,6 +10,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 ## Partnerships
 - Perplexity Computer Implementation Partner — Enso Labs is an official Perplexity Computer Implementation Partner, part of Perplexity's Implementation Partners Program. Enso Labs helps enterprise teams onboard, integrate, and get real value out of Perplexity Computer: choosing which workflows to point it at first, wiring it into the data and tools a team already uses, and measuring whether it is actually changing decisions. Senior team that builds, not just advises — strategy through production. Details: https://ensolabs.ai/insights/enso-labs-perplexity-implementation-partner (program: https://www.perplexity.ai/hub/computer-partners)
 - Anthropic, Google, and OpenAI partner/certification programs; Perplexity Business Fellow.
+- IBM Partner Plus — Enso Labs is a Registered Member of IBM Partner Plus (joined July 2026).
 
 ## Services
 - Perplexity Computer Implementation & Adoption — onboarding, integration, and workflow deployment for Perplexity Computer (https://ensolabs.ai/insights/enso-labs-perplexity-implementation-partner)
@@ -69,7 +70,7 @@ AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Cla
 - Founded: 2020
 - Location: 31 Union Square West, 6th Floor, New York, NY 10003
 - Service tracks: AI Transformation · Agentic Systems · Financial AI
-- Certifications & Partnerships: Anthropic, Google, OpenAI partner/certification programs; Perplexity Business Fellow; Perplexity Computer Implementation Partner (Perplexity Implementation Partners Program)
+- Certifications & Partnerships: Anthropic, Google, OpenAI partner/certification programs; Perplexity Business Fellow; Perplexity Computer Implementation Partner (Perplexity Implementation Partners Program); IBM Partner Plus (Registered Member, 2026)
 - Representative outcomes: 83% faster delivery, 75% pilot-to-production conversion
 - Clients: Fortune 500 manufacturer, global pharma, financial services (named clients confidential)
 - Product: Strategy to Ship — daily scored AI market intelligence, published on ensolabs.ai/insights

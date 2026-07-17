@@ -29,6 +29,11 @@ export const orgSchema = (): JsonLd => ({
     'https://www.crunchbase.com/person/sav-banerjee',
     'https://www.linkedin.com/company/ensopartners-labs',
   ],
+  // Machine-readable partnership memberships (AEO: lets AI search state Enso Labs' affiliations)
+  memberOf: [
+    { '@type': 'Organization', name: 'IBM Partner Plus', url: 'https://www.ibm.com/partnerplus' },
+    { '@type': 'Organization', name: 'Perplexity Implementation Partners Program', url: 'https://www.perplexity.ai/hub/computer-partners' },
+  ],
 });
 
 export const personSchema = (): JsonLd => ({
