@@ -177,6 +177,9 @@ const CASE_FAQS: Record<string, { question: string; answer: string }[]> = {
 
 const SLUGS = Object.keys(CASES);
 
+// ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
+export const revalidate = 300;
+
 export function generateStaticParams() {
   return SLUGS.map((slug) => ({ slug }));
 }

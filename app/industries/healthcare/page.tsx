@@ -9,6 +9,9 @@ import {
   professionalServiceSchema,
 } from '@/lib/schema';
 
+// ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: 'AI for Healthcare & Pharma | MLR Compliance AI Consulting — Enso Labs',
   description:

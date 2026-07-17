@@ -12,6 +12,9 @@ import {
 } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
+// ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: 'Contact Enso Labs | AI Consulting Studio NYC',
   description:

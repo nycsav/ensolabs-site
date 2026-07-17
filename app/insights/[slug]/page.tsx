@@ -11,6 +11,9 @@ import {
 import { INSIGHTS, getInsight } from '@/lib/insights';
 import { SITE } from '@/lib/site';
 
+// ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
+export const revalidate = 300;
+
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
