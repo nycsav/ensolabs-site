@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { ContactForm } from '@/components/ContactForm';
 import { ContactHeroMedia } from '@/components/ContactHeroMedia';
@@ -195,6 +196,17 @@ export default function ContactPage() {
               </details>
             ))}
           </div>
+
+          {/* Answer-lead close + in-body internal links (AEO: definition sentence
+              for LLM extraction; SEO: page-body links, not just nav chrome). */}
+          <p className="trust" style={{ maxWidth: '68ch', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.85 }}>
+            Enso Labs is a principal-led AI managed-services studio in New York City. We encode
+            your domain expertise into managed agents, then build and operate them in production.
+            <br />
+            <Link href="/services">See the engagement tracks</Link>
+            <span className="sep">/</span>
+            <Link href="/work">Read the case studies</Link>
+          </p>
         </div>
       </section>
     </>

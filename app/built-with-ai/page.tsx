@@ -5,6 +5,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { articleSchema, breadcrumbSchema, faqSchema, orgSchema } from '@/lib/schema';
 import { SITE, url } from '@/lib/site';
 
+// ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: 'Built with AI — How We Shipped a Production Site in 24 Hours',
   description:
@@ -199,9 +202,13 @@ export default function BuiltWithAiPage() {
           <h2>Why This Matters</h2>
           <p>
             This site is the proof that AI-native delivery is not theoretical.
-            A single senior practitioner with the right AI toolchain can ship
-            production infrastructure that would take a traditional agency team
-            weeks — with better SEO, more structured data, and tighter code.
+            It was architected and shipped by Sav Banerjee, founder and
+            principal AI transformation advisor at Enso Labs — certified by
+            Anthropic, Google, and OpenAI, and a Perplexity Computer
+            Implementation Partner. A single senior practitioner with the right
+            AI toolchain can ship production infrastructure that would take a
+            traditional agency team weeks — with better SEO, more structured
+            data, and tighter code.
           </p>
           <p>
             That&rsquo;s the thesis behind Enso Labs: AI doesn&rsquo;t replace

@@ -81,7 +81,6 @@ export default function FinancialServicesPage() {
           faqSchema(FAQS),
           breadcrumbSchema([
             { name: 'Home', href: '/' },
-            { name: 'Industries', href: '/industries/financial-services' },
             { name: 'Financial Services', href: '/industries/financial-services' },
           ]),
         ]}
