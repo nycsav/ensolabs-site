@@ -52,7 +52,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: 'Enterprise AI Consulting Services NYC | AI Transformation & Agentic Systems',
   description:
-    'Enso Labs is an enterprise AI consulting firm in New York offering AI transformation consulting, agentic systems development, cloud managed services, and financial AI. Principal-led, fixed-fee engagements.',
+    'Enso Labs is an AI consulting firm in New York City: AI transformation, agentic systems, and financial AI. Principal-led, fixed-fee engagements.',
   alternates: { canonical: 'https://ensolabs.ai/services' },
   openGraph: {
     title: 'Enterprise AI Consulting Services — Enso Labs | NYC AI Consulting Firm',

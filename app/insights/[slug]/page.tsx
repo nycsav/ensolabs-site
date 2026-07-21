@@ -29,9 +29,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const post = getInsight(params.slug);
   if (!post) return {};
+  // SEO snippet: Google truncates near 155-160 chars, so prefer the tight
+  // metaDescription when present. OG/Twitter below keep the full dek — those
+  // surfaces render long copy fine and it reads better in-feed.
   return {
     title: post.title,
-    description: post.dek,
+    description: post.metaDescription || post.dek,
     keywords: post.tags,
     alternates: { canonical: `${SITE.origin}/insights/${post.slug}` },
     openGraph: {

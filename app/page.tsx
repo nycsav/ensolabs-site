@@ -18,7 +18,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',
   description:
-    'Enso Labs is a principal-led AI managed-services studio in NYC founded by Sav Banerjee. We encode your industry expertise into managed agents — then build and operate them in production. Agentic Managed Services across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Growth.',
+    'Enso Labs is a principal-led AI managed-services studio in NYC. We encode your industry expertise into managed agents, then build and operate them.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Enso Labs — AI Transformation Consulting & Agentic Systems Studio NYC',

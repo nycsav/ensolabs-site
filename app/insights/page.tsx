@@ -10,7 +10,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: 'AI Transformation Insights | Essays from Production Engagements',
   description:
-    'Technical and strategic essays from Sav Banerjee on AI transformation, agentic systems, and financial AI — pulled from production engagements at Fortune 500 manufacturers, pharma agencies, and the Enso Trading Terminal.',
+    'Essays from inside live AI engagements — agentic systems, model routing, RAG evals, and AI governance. Field notes from Enso Labs and Strategy to Ship.',
   alternates: { canonical: 'https://ensolabs.ai/insights' },
   openGraph: {
     title: 'Insights — Enso Labs | Notes from Shipping Production AI',

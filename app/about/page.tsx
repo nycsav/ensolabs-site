@@ -33,8 +33,10 @@ export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: 'Sav Banerjee | AI Strategy Consultant NYC — AI Transformation Leader & Architect',
+  // ≤160 chars: Google truncates the search snippet near 155-160. The longer
+  // pitch lives in the OG description below, which renders in full on social.
   description:
-    'Sav Banerjee is an AI strategy consultant in NYC and AI transformation leader with 15+ years at Google, McCann, Publicis, RAPP, and BBDO. AI architect certified by Anthropic, Google, and OpenAI. Available for Head of AI and VP AI Strategy roles.',
+    'Sav Banerjee is an AI strategy consultant in NYC and founder of Enso Labs. 15+ years at Google, McCann, Publicis, BBDO. Available for Head of AI roles.',
   alternates: { canonical: 'https://ensolabs.ai/about' },
   openGraph: {
     title: 'Sav Banerjee — AI Strategy Consultant NYC | AI Transformation Leader',
