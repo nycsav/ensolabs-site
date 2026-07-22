@@ -1414,3 +1414,49 @@ body.menu-open { overflow: hidden; }
 .cta-blue .btn-primary svg, .cta-blue .btn-primary .arrow,
 .ground-blue .btn-primary svg, .ground-blue .btn-primary .arrow,
 .ground-coral .btn-primary svg, .ground-coral .btn-primary .arrow { color: oklch(0.30 0.09 250); }
+
+/* ============================================================
+   CONTENT PAGES — hero eyebrow, subhead, prose, inline CTA, FAQ
+   Shared markup classes used across /services/*, /industries/*,
+   /locations/new-york, /about/sav-banerjee, /built-with-ai,
+   /editorial-policy, and work-detail FAQ blocks. These class names
+   appeared in the page markup but were never defined here, so the
+   pages rendered with browser defaults — most visibly the <Arrow/>
+   SVG inside every ".cta" link, which (only ".btn .arrow" is sized)
+   fell back to the ~300×150 default replaced-element box and read as
+   a broken image/icon, overflowing on mobile.
+   ============================================================ */
+.hero .label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 18px; }
+.hero:has(.sub-head) h1 { font-family: var(--display); font-weight: 500; letter-spacing: -0.025em; line-height: 1.03; font-size: clamp(38px, 6vw, 76px); max-width: 20ch; margin-bottom: 26px; }
+.hero .sub-head { font-size: clamp(18px, 1.7vw, 23px); line-height: 1.5; color: var(--fg-2); max-width: 60ch; font-weight: 400; }
+.section:has(> .prose) > h2, .section:has(> .faq-list) > h2, .cta-section > h2 { font-family: var(--display); font-weight: 500; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(28px, 3.4vw, 44px); max-width: 24ch; margin-bottom: 26px; }
+.prose { max-width: 70ch; }
+.prose > p { font-size: 17px; line-height: 1.65; color: var(--fg-2); }
+.prose > p + p { margin-top: 18px; }
+.prose strong { color: var(--fg); font-weight: 500; }
+.prose a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { opacity: 0.8; }
+.prose ul { list-style: none; display: grid; gap: 15px; margin-top: 24px; }
+.prose ul li { position: relative; padding-left: 24px; font-size: 16px; line-height: 1.6; color: var(--fg-2); }
+.prose ul li strong { color: var(--fg); }
+.prose ul li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 6px; height: 6px; background: var(--teal); transform: rotate(45deg); }
+.cta { display: inline-flex; align-items: center; gap: 10px; width: fit-content; margin-top: 40px; padding: 14px 22px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.02em; color: var(--fg); border: 1px solid var(--line-2); border-radius: 999px; transition: background .2s, border-color .2s, color .2s; }
+.cta:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.cta:hover .arrow { transform: translateX(3px); }
+.cta .arrow, .cta svg { width: 15px; height: 15px; flex: none; transition: transform .2s ease; }
+.faq-list { display: grid; border-top: 1px solid var(--line); max-width: 900px; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { list-style: none; cursor: pointer; position: relative; padding: 24px 48px 24px 0; font-family: var(--display); font-size: clamp(17px, 2vw, 21px); font-weight: 500; letter-spacing: -0.01em; line-height: 1.35; color: var(--fg); transition: color .2s ease; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 6px; top: 20px; font-family: var(--mono); font-size: 24px; line-height: 1; color: var(--fg-3); transition: transform .25s ease, color .2s ease; }
+.faq-item[open] summary::after { transform: rotate(45deg); color: var(--teal); }
+.faq-item summary:hover { color: var(--teal); }
+.faq-item p { padding: 0 48px 26px 0; font-size: 16px; line-height: 1.65; color: var(--fg-2); max-width: 74ch; }
+.cta-section p { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; color: var(--fg-2); max-width: 58ch; }
+@media (max-width: 768px) {
+  .hero:has(.sub-head) h1 { font-size: clamp(30px, 8.5vw, 42px) !important; }
+  .prose, .prose ul li, .faq-item p, .cta-section p { max-width: 100% !important; }
+  .cta { width: 100%; justify-content: center; margin-top: 28px; }
+  .faq-item summary { padding-right: 40px; }
+  .faq-item summary::after { top: 22px; }
+}
