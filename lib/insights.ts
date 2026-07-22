@@ -20,6 +20,11 @@ export type Insight = {
   lens?: Lens;
   /** Optional source credit (e.g. "Claude Managed Agents") — shown on the OG card footer. */
   sourceCredit?: string;
+  /** Optional OG image override (absolute URL or root-relative path). Falls back to the
+   *  bespoke static card at /og/og-<slug>.png. Point at the dynamic
+   *  /insights/<slug>/opengraph-image route when no static card has been generated, so the
+   *  social preview is never blank. */
+  ogImage?: string;
   body: string[]; // paragraphs (Markdown-ish: ## h2, **bold**, [links](url), > pull-quote, "- [ ] " checklist, "::stat" callout)
 };
 
@@ -31,6 +36,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     lens: 'Build',
     sourceCredit: 'Strategy to Ship',
+    ogImage: '/insights/distribution-is-the-moat-code-is-free/opengraph-image',
     date: '2026-07-22',
     dateModified: '2026-07-22',
     readingMinutes: 4,

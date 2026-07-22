@@ -32,6 +32,13 @@ export async function generateMetadata({
   // SEO snippet: Google truncates near 155-160 chars, so prefer the tight
   // metaDescription when present. OG/Twitter below keep the full dek — those
   // surfaces render long copy fine and it reads better in-feed.
+  // OG image: prefer a per-article override (e.g. the dynamic /opengraph-image route when no
+  // bespoke static card exists) so a new article never ships a blank social preview.
+  const ogImage = post.ogImage
+    ? post.ogImage.startsWith('http')
+      ? post.ogImage
+      : `${SITE.origin}${post.ogImage}`
+    : `${SITE.origin}/og/og-${post.slug}.png`;
   return {
     title: post.title,
     description: post.metaDescription || post.dek,
@@ -46,13 +53,13 @@ export async function generateMetadata({
       modifiedTime: post.dateModified || post.date,
       authors: ['https://linkedin.com/in/savbanerjee'],
       tags: post.tags,
-      images: [{ url: `${SITE.origin}/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.dek,
-      images: [`https://ensolabs.ai/og/og-${post.slug}.png`],
+      images: [ogImage],
     },
   };
 }
