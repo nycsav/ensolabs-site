@@ -126,7 +126,8 @@ export default function NewYorkLocationPage() {
             <li>
               <strong>Agentic Systems:</strong> Production AI agents built on
               Claude and MCP — multi-agent research pipelines, workflow
-              automation, and decision-support systems.
+              automation, and decision-support systems. See our{' '}
+              <Link href="/services/agentic-ai-consulting">agentic AI consulting in New York</Link>.
             </li>
             <li>
               <strong>Financial AI:</strong> Autonomous trading infrastructure,

@@ -15,7 +15,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 ## Services
 - Perplexity Computer Implementation & Adoption — onboarding, integration, and workflow deployment for Perplexity Computer (https://ensolabs.ai/insights/enso-labs-perplexity-implementation-partner)
 - Enterprise AI Transformation Consulting (https://ensolabs.ai/services)
-- Agentic AI Consulting & AI Agent Development
+- Agentic AI Consulting & AI Agent Development (https://ensolabs.ai/services/agentic-ai-consulting)
 - Claude Managed Services & Cloud AI (https://ensolabs.ai/services/claude-managed-services)
 - Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
 - AI Growth & Commercial Systems — agentic go-to-market, audience segmentation, brand governance, and 24/7 campaign optimization, built on 15 years of Madison Avenue brand and demand craft (https://ensolabs.ai/services)

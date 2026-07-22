@@ -10,9 +10,12 @@ import {
 } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Agentic AI Consulting & AI Agent Development | Enso Labs NYC',
+  title: 'Agentic AI Consulting NYC | AI Agent Development | Enso Labs New York',
+  // ≤160 chars: Google truncates the snippet near 155-160 (this page was 210).
+  // NYC front-loaded — it's the query cluster this page competes on. Full pitch
+  // lives in the OG description below, which renders long copy in full.
   description:
-    'Agentic AI consulting and AI agent development for enterprises. Enso Labs builds production multi-agent systems, MCP servers, and autonomous AI workflows using Claude, LangGraph, and CrewAI. NYC-based, principal-led.',
+    'Agentic AI consulting in NYC: Enso Labs builds production multi-agent systems, MCP servers, and autonomous AI agents on Claude and LangGraph. Principal-led.',
   alternates: { canonical: 'https://ensolabs.ai/services/agentic-ai-consulting' },
   openGraph: {
     title: 'Agentic AI Consulting — Enso Labs | AI Agent Development & MCP Server Consulting',
@@ -28,6 +31,7 @@ export const metadata: Metadata = {
       'Production agentic AI for enterprises. Multi-agent systems, MCP servers, RAG — principal-led studio with shipped systems.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
+  other: { 'article:modified_time': '2026-07-22' },
 };
 
 const FAQS = [
@@ -211,6 +215,29 @@ export default function AgenticAIConsultingPage() {
         <Link href="/services" className="cta">
           See All Service Tracks <Arrow />
         </Link>
+      </section>
+
+      {/* Agentic AI Consulting in New York City */}
+      <section className="section">
+        <h2>Agentic AI Consulting in New York City</h2>
+        <div className="prose">
+          <p>
+            Enso Labs is a New York City agentic AI consulting firm, based in
+            Union Square, Manhattan. We work on-site with NYC teams &mdash; banks
+            and asset managers, healthcare and pharma, media, and B2B technology
+            &mdash; and remotely across the United States. New York&rsquo;s
+            regulated, data-rich enterprises are exactly where autonomous agents
+            pay off, and where governance, auditability, and human-in-the-loop
+            control matter most.
+          </p>
+          <p>
+            If you&rsquo;re evaluating agentic AI consulting in New York, start
+            with our{' '}
+            <Link href="/locations/new-york">New York AI consulting practice</Link>
+            {' '}for local context and pricing, then{' '}
+            <Link href="/contact">get in touch</Link> to scope a 2-week AI Audit.
+          </p>
+        </div>
       </section>
 
       {/* Related Insights */}
