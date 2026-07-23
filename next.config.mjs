@@ -35,6 +35,12 @@ const nextConfig = {
         destination: '/insights/notion-career-agent-open-source-hackathon',
         permanent: true,
       },
+      // Duplicate article removed (same story as agi-summit-2026-code-is-free) — keep old LinkedIn links alive
+      {
+        source: '/insights/distribution-is-the-moat-code-is-free',
+        destination: '/insights/agi-summit-2026-code-is-free',
+        permanent: true,
+      },
       // Client-confidentiality scrub: old "gore" slugs → renamed slugs (permanent)
       {
         source: '/work/gore',
