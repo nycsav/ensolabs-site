@@ -36,6 +36,7 @@ const ALLOWED = new Set([
   'engaged_read',
   'outbound_click',
   'booking_intent',
+  'production_gap_review_click',
 ]);
 
 type Incoming = {

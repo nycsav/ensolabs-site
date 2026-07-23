@@ -106,12 +106,16 @@ export function ContactForm({ source = 'Website — Contact' }: { source?: strin
       if (!res.ok || data?.ok === false) {
         throw new Error(data?.error || `Submit failed (${res.status})`);
       }
-      // generate_lead — fires ONLY now, on a backend-confirmed 200.
+      // generate_lead — fires ONLY now, on a backend-confirmed 200. Carries the
+      // stored (first-touch) campaign so the conversion retains attribution.
       track('generate_lead', {
         event_category: 'lead_gen',
         event_label: 'contact_form',
         page_location: '/contact',
         source,
+        utm_source: attr?.source || '',
+        utm_medium: attr?.medium || '',
+        utm_campaign: attr?.campaign || '',
       });
       setStatus('success');
     } catch (err) {

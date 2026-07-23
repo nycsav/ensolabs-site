@@ -20,6 +20,14 @@ export type Insight = {
   lens?: Lens;
   /** Optional source credit (e.g. "Claude Managed Agents") — shown on the OG card footer. */
   sourceCredit?: string;
+  /** Optional dated post-event note rendered near the top of the article (above the body),
+   *  with a single tracked conversion CTA. Opt-in per article; leaves SEO/body untouched. */
+  postEventUpdate?: {
+    label: string; // mono kicker, e.g. "Post-event update, July 22"
+    body: string; // the update paragraph (plain text)
+    ctaLabel: string; // visible CTA text
+    ctaHref: string; // CTA destination (may carry UTM params)
+  };
   body: string[]; // paragraphs (Markdown-ish: ## h2, **bold**, [links](url), > pull-quote, "- [ ] " checklist, "::stat" callout)
 };
 
@@ -87,14 +95,20 @@ export const INSIGHTS: Insight[] = [
   },
   {
     slug: 'enso-labs-sf-agentic-ai-summits-2026',
-    title: "Enso Labs is heading to the AGI Summit and Berkeley's Agentic AI Summit. Come find us in SF.",
-    dek: "We'll be on the ground at the Bay Area's two marquee agentic-AI summits this summer — the AGI Summit (July 18–19, Palace of Fine Arts) and the Berkeley Agentic AI Summit (August 1–2, UC Berkeley). If you're building or buying agentic AI, let's meet.",
-    metaDescription: "Enso Labs is at the AGI Summit (Jul 18-19, SF) and Berkeley's Agentic AI Summit (Aug 1-2). If you're building or buying agentic AI, let's meet.",
+    title: "After AGI Summit: the production gap we're taking to Berkeley",
+    dek: "AGI Summit made one thing clear: the market has moved past demos. Ahead of Berkeley's Agentic AI Summit on August 1–2, we're opening production-gap reviews for teams shipping agentic AI.",
+    metaDescription: "After AGI Summit, Enso Labs is opening production-gap reviews for teams shipping agentic AI — ahead of Berkeley's Agentic AI Summit, Aug 1–2.",
     pillar: 'Consult',
     lens: 'Build',
     date: '2026-07-14',
-    dateModified: '2026-07-14',
+    dateModified: '2026-07-22',
     readingMinutes: 3,
+    postEventUpdate: {
+      label: 'Post-event update, July 22',
+      body: 'AGI Summit confirmed that the market has moved past “can an agent do this?” The real question is whether the workflow can run with traceable sources, explicit decision rules, permission boundaries, evaluation, and a human escalation path. Enso Labs is offering a small number of 20-minute production-gap reviews before the Berkeley Agentic AI Summit. Bring one working pilot; leave with the highest-risk production bottleneck and the next practical step.',
+      ctaLabel: 'Book a 20-minute production-gap review',
+      ctaHref: '/contact?utm_source=linkedin&utm_medium=organic_social&utm_campaign=agi_summit_followup_2026&utm_content=post_event_review',
+    },
     tags: ["AGI Summit", "Berkeley Agentic AI Summit", "San Francisco", "Agentic AI", "AI Events", "Agentic Managed Services", "Managed Agents", "Enso Labs", "Sav Banerjee", "UC Berkeley RDI", "SF AI"],
     faqs: [
       {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { JsonLd } from '@/components/JsonLd';
 import { ShareButtons } from '@/components/ShareButtons';
+import { PostEventUpdate } from '@/components/PostEventUpdate';
 import {
   articleSchema,
   breadcrumbSchema,
@@ -219,6 +220,16 @@ export default function InsightArticle({ params }: { params: Params }) {
               <span key={tag} className="article-tag">{tag}</span>
             ))}
           </div>
+        )}
+
+        {post.postEventUpdate && (
+          <PostEventUpdate
+            label={post.postEventUpdate.label}
+            body={post.postEventUpdate.body}
+            ctaLabel={post.postEventUpdate.ctaLabel}
+            ctaHref={post.postEventUpdate.ctaHref}
+            slug={post.slug}
+          />
         )}
 
         <div className="body">
