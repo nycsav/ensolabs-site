@@ -596,6 +596,30 @@ footer {
   color: var(--sts-ink);
 }
 
+/* Post-event update — dated note + conversion CTA near the top of an article.
+   Coral left-rule on paper-2, matching the pull-quote/stat-callout system. */
+.theme-sts .article-shell .post-event-update {
+  margin: 28px 0 8px;
+  padding: 22px 26px;
+  background: var(--sts-paper-2);
+  border: 1px solid var(--sts-line);
+  border-left: 4px solid var(--sts-coral);
+  border-radius: 10px;
+}
+.theme-sts .article-shell .post-event-update .peu-kicker {
+  margin: 0 0 10px;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--sts-coral);
+}
+.theme-sts .article-shell .post-event-update .peu-body {
+  margin: 0 0 20px;
+  font-family: var(--sts-sans);
+  font-size: clamp(16px, 1.7vw, 18px); line-height: 1.6;
+  color: var(--sts-ink);
+}
+.theme-sts .article-shell .post-event-update .peu-cta { display: inline-flex; }
+
 /* "What to do" checklist — coral check + bolded imperative. */
 .theme-sts .article-shell .body .todo-item {
   display: flex; gap: 14px; align-items: flex-start;

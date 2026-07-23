@@ -9,6 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "smoke:lead": "node scripts/smoke-lead.mjs",
+    "test:conversion": "node scripts/assert-conversion-update.mjs",
     "og:sf-summits": "node scripts/generate-og-sf-summits.js"
   },
   "dependencies": {
