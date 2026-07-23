@@ -39,6 +39,13 @@ ok(
 );
 ok(insights.includes("dateModified: '2026-07-22'"), 'dateModified bumped to post-event date');
 
+// Above-the-fold reads as current (post-event), not "heading to" the summit.
+ok(
+  insights.includes("After AGI Summit: the production gap we're taking to Berkeley"),
+  'headline reads as post-event',
+);
+ok(!insights.includes('Come find us in SF'), 'pre-event headline phrasing removed');
+
 // 2) The CTA component fires the named GA4 event via the shared track() wrapper.
 const cta = read('components/PostEventUpdate.tsx');
 ok(cta.includes(`track('${EVENT}'`), `${EVENT} fired from the CTA component`);

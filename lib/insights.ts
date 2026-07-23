@@ -143,9 +143,9 @@ export const INSIGHTS: Insight[] = [
   },
   {
     slug: 'enso-labs-sf-agentic-ai-summits-2026',
-    title: "Enso Labs is heading to the AGI Summit and Berkeley's Agentic AI Summit. Come find us in SF.",
-    dek: "We'll be on the ground at the Bay Area's two marquee agentic-AI summits this summer — the AGI Summit (July 18–19, Palace of Fine Arts) and the Berkeley Agentic AI Summit (August 1–2, UC Berkeley). If you're building or buying agentic AI, let's meet.",
-    metaDescription: "Enso Labs is at the AGI Summit (Jul 18-19, SF) and Berkeley's Agentic AI Summit (Aug 1-2). If you're building or buying agentic AI, let's meet.",
+    title: "After AGI Summit: the production gap we're taking to Berkeley",
+    dek: "AGI Summit made one thing clear: the market has moved past demos. Ahead of Berkeley's Agentic AI Summit on August 1–2, we're opening production-gap reviews for teams shipping agentic AI.",
+    metaDescription: "After AGI Summit, Enso Labs is opening production-gap reviews for teams shipping agentic AI — ahead of Berkeley's Agentic AI Summit, Aug 1–2.",
     pillar: 'Consult',
     lens: 'Build',
     date: '2026-07-14',
