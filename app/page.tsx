@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     description:
       'Principal-led AI managed-services studio in NYC. We encode your industry expertise into managed agents — then build and operate them in production. Agentic Managed Services across Healthcare, Finance, Manufacturing, Media, B2B Tech, and Growth.',
     url: SITE.origin,
-    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Enso Labs — Strategy to Ship' }],
+    images: [{ url: 'https://ensolabs.ai/og-home-palace.png?v=1', width: 1200, height: 630, alt: 'Enso Labs — Palace of Fine Arts, San Francisco' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enso Labs — AI Consulting & Agentic Systems Studio NYC',
     description:
       'Principal-led AI managed-services studio in NYC. Encode your expertise into managed agents — we build and operate them in production. Agentic Managed Services: Healthcare, Finance, Manufacturing, Media, B2B Tech, Growth.',
-    images: ['https://ensolabs.ai/og-default.png?v=3'],
+    images: ['https://ensolabs.ai/og-home-palace.png?v=1'],
   },
 };
 
