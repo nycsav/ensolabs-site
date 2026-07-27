@@ -156,8 +156,6 @@ Standing rule for every SEO/AEO/GEO scan (daily engine + any manual pass): **sur
 - Palette: Paper #F7F1E6 · Ink #1E1813 · Ship Coral #F0512E (THE signal — arrow, stamps, ~5-10% max) · Ledger Amber #E0A23C; Enso Teal #5CE0D2 ONLY for "from Enso Labs" links
 - Type: Lora (headlines) · Inter Tight (body/UI) · JetBrains Mono (kickers, datelines, version tags)
 
-## Content Distribution Flow
-
 ## Brand Assets
 - Logo SVG: public/images/logo-white.svg (teal chevron #5ce0d2, white wordmark)
 - Headshot: public/images/sav-banerjee.jpg
@@ -201,47 +199,9 @@ Standing rule for every SEO/AEO/GEO scan (daily engine + any manual pass): **sur
 - DNS: GoDaddy
 - Analytics: GA4
 
-## Session Log — May 7-8, 2026
-### Completed
-- Google Search Console verified for ensolabs.ai
-- Sitemap submitted: https://ensolabs.ai/sitemap.xml (22 URLs)
-- Old Wix URL removals requested for www.ensolabs.ai/*
-- Home page indexing requested in GSC
-- IndexNow submitted (13 URLs, 202 Accepted)
-- Old Wix ensolabs.ai site unpublished
-- Old Wix ensopartners.co site unpublished
-- Vercel redirect configured: ensopartners.co → ensolabs.ai (308)
-- All 15 pages live (including built-with-ai, financial-services, editorial-policy, claude-managed-services)
-- All 12 SEO files live (llms.txt, security.txt, IndexNow, MCP endpoint, etc.)
-- Entity disambiguation schemas (foundingDate 2020, sameAs, knowsAbout)
-- OG image branded and working in iMessage/social sharing
-- GA4 connected (G-5N15QMQ962)
-- GitHub portfolio — 5 public repos with professional READMEs
-- Resume updated (Sav_Banerjee_Resume_2026_FINAL.docx in Google Drive)
-- Perplexity job tracker master prompt saved to Google Drive
-### Pending (immediate)
-- Renew ensolabs.ai domain at GoDaddy (expires June 5, 2026)
-- LinkedIn profile update (copy ready in Google Drive)
-- Strategy to Ship SEO fixes (PlannerAPI repo)
-### Pending (backlog — not yet started)
-- Create /services/agentic-ai-consulting page
-- Create /services/claude-agent-development page
-- Create /locations/new-york page
-- Create /about/sav-banerjee deep bio page
-- Create /comparisons/boutique-vs-big-4 page
-- Fix Strategy to Ship canonical URLs, OG image, robots.txt, sitemap
+## Session History
+Session logs live in `docs/HISTORY.md` (moved 2026-07-27 — CLAUDE.md loads into every run, so history is archived out of the hot path). Append new session logs there, not here.
 
-## Session Log — May 16, 2026
-### Completed
-- Notion Developer Platform Hackathon prep (May 16-17, Notion HQ SF)
-- signal2noise-notion-hackathon repo created (github.com/nycsav/signal2noise-notion-hackathon)
-- askSignal2Noise agent tool built for Notion Workers (Perplexity + Claude pipeline)
-- ensolabs-site .gitignore cleaned — resumes, cover letters, personal files excluded
-- Notion workspace updated — Strategy to Ship HQ page polished with architecture, links, status
-- CLAUDE.md synced — added missing pages, components, libraries
-### Active
-- Notion Hackathon build (May 16-17): porting Strategy to Ship to Notion Developer Platform
-- Worker deployment: askSignal2Noise tool + database sync pending first successful deploy
 ## Two Workflows
 ### Workflow 1: ensolabs.ai Website
 - Daily/weekly content, SEO, AEO, GEO updates via Cowork
@@ -255,6 +215,7 @@ Standing rule for every SEO/AEO/GEO scan (daily engine + any manual pass): **sur
 
 ## Event Scan — Standing Preferences (set 2026-07-06)
 Applies to `daily-event-scan`, `weekly-event-board-sweep`, `hackathon-radar-weekly`, and ANY event/digest deliverable or ad-hoc event answer.
+- **TWO RUNS PER DAY — consolidated (set 2026-07-27, token-lean program).** All daily event work happens in exactly two runs: the **morning run (8:00 AM PT)** — full scan (daily-event-scan Jobs 1–3: calendar reconcile + frontier alert + digest), the SF-prep briefing content, and inbox filing — and the **evening run (5:00 PM PT)** — delta-only scan (new/changed events since morning) + inbox filing. Any daily-event-scan or events-inbox-filer firing OUTSIDE these two slots must no-op immediately (one-line "consolidated into 8a/5p runs" and stop — do not scan). `sf-high-frontier-prep` is absorbed into the morning run and should be paused as a separate task. `hackathon-radar-weekly` folds into `weekly-event-board-sweep` (one weekly sweep, not two). Inbox filing per PR #22's intent (label + archive event emails, keep action items visible) happens inside the two runs, not as separate firings.
 - **Sources:** Luma, Bond AI SF (luma.com/genai-sf), and Cerebral Valley SF are the primary crawl set while in SF. **Eventbrite is REMOVED — do not scan it.**
 - **SF FOCUS WINDOW: Jul 7 → Aug 7, 2026.** Sav is physically in San Francisco; scan SF-proper events only, present all times in **PT**, suppress NYC. (Extends the earlier Aug 3 end date to **Aug 7**. Revert to the NYC scan and delete SF-mode blocks after Aug 7.)
 - **The bar (what to surface):** (1) frontier-lab / marquee-builder events AND (2) workshops that **build on Sav's existing career skills & professional goals** — agent engineering, evals, AI strategy/positioning, GTM, frontier research. A strong skill-building workshop qualifies even if it is not frontier-hosted.
@@ -263,6 +224,15 @@ Applies to `daily-event-scan`, `weekly-event-board-sweep`, `hackathon-radar-week
 - **MANDATORY TL;DR TABLE — every deliverable and every response.** Lead with a one-line TL;DR, then a clean table. Columns, in this exact order: **Date | Time (PT) | Event | Score | Rationale to attend** (add a Link column when surfacing RSVPs). One tight, complete sentence per rationale cell. Mobile-first: short lines, no bullet stacks where a table works, no walls of text. Sav reads these on his phone while traveling — optimize for a 10-second scan.
 
 ## Scheduled Task Rules
+### Token-Lean Operations (standing rule — set 2026-07-27)
+Context: the week of Jul 20 the Claude Max plan hit its usage cap mid-week (a runaway hourly PR check-in loop + 7 event-related firings/day + job scanning on two surfaces at once). These rules cut recurring burn ~30–40% and apply to EVERY scheduled task, Routine, and agent session on this account. Every task reads this section at runtime — cadence rules here override older per-task prompts.
+- **Event ops: two runs/day.** See "Event Scan — Standing Preferences" above. Firings outside the 8a/5p PT slots no-op immediately.
+- **Job scanning: ONE surface.** The cloud Routine `daily-job-scan` (1×/weekday, 9 AM ET) is the sole scanning owner. The Cowork `job-scan-morning` task is PAUSED — if it fires, no-op immediately. `weekly-pipeline-review` stays as the Monday rollup. (The guiliana-career-command-center Vercel crons bill the separate API account, not Max — they are out of scope here.)
+- **SEO engine: daily delta, weekly full scan.** The daily run checks ONLY articles added/changed since the last run plus the marquee list — the full every-article sweep of `lib/insights.ts` runs Mondays only. Batch content pushes to ≤1 push/day (bundle fixes into one commit). Voice lint stays daily (cheap); entity-drift scout stays weekly.
+- **PR watching: webhooks, not clocks.** PR event subscriptions are the primary signal. Self check-ins (send_later) max 2×/day, waking hours only (9 AM / 5 PM PT), NEVER overnight, NEVER hourly chains. Docs-only or held-for-review PRs get zero scheduled check-ins — Sav is the next actor, not the clock.
+- **Model routing for scheduled tasks (per the model-routing-policy skill).** Mechanical tasks (inbox filing, health checks, stand-up digests, labeling) → Haiku 4.5. Scans and content runs (event scan, job scan, SEO engine, monitors) → Sonnet 4.6. Fable 5 / Opus are for interactive strategy, design, and genuinely hard builds ONLY — never for a recurring scan. (Found 2026-07-27: `daily-job-scan` was running on Fable 5 [1m] twice a day.)
+- **No mega-sessions on autopilot.** Multi-repo clone-and-audit sweeps, 31-repo scans, and similar large jobs run only on Sav's explicit request, never as a side effect of another task.
+
 ### No event drafts in Gmail (standing rule — set 2026-07-05)
 - Event/digest/briefing scheduled tasks must deliver IN-APP ONLY — the Cowork run output + the in-app completion notification are the ping. NEVER create Gmail drafts or self-emails (to sav@ensopartners.co) for event scans, digests, frontier alerts, or SF-prep briefings. Self-notification drafts were clogging the Drafts folder.
 - Applies to: `daily-event-scan` (Job 2 frontier alert + Job 3 morning digest), `sf-high-frontier-prep` (daily briefing), and any future event/monitor task. Patched 2026-07-05.
