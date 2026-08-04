@@ -32,6 +32,8 @@ export function Footer() {
         <div className="foot-mark">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/logo-white.svg" alt="Enso Labs" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/logo-ink.svg" alt="" aria-hidden="true" className="foot-logo-ink" />
         </div>
 
         <div className="foot-grid">
