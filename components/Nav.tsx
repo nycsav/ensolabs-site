@@ -5,13 +5,29 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { SITE } from '@/lib/site';
 
+// Desktop bar: the logo is the home link and the CTA is the contact link, so
+// neither gets a duplicate slot. Socials live in the footer only.
 const LINKS = [
-  { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/work', label: 'Work' },
   { href: '/insights', label: 'Insights' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+] as const;
+
+// Mobile menu has no CTA row competing for the tap, so Contact is a listed item.
+const MOBILE_LINKS = [...LINKS, { href: '/contact', label: 'Contact' }] as const;
+
+// Pages that exist, rank, and otherwise have no route in from any menu.
+const SERVICE_CHILDREN = [
+  { href: '/services', label: 'All services' },
+  { href: '/services/agentic-ai-consulting', label: 'Agentic AI Consulting' },
+  { href: '/services/claude-managed-services', label: 'Claude Managed Services' },
+  { href: '/services/ai-growth-marketing', label: 'AI Growth Marketing' },
+] as const;
+
+const INDUSTRY_CHILDREN = [
+  { href: '/industries/financial-services', label: 'Financial Services' },
+  { href: '/industries/healthcare', label: 'Healthcare' },
 ] as const;
 
 function GitHubIcon() {
@@ -92,20 +108,45 @@ export function Nav() {
           <Link className="nav-brand" href="/" onClick={() => setOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo-white.svg" alt="Enso Labs" className="nav-logo" />
-            <span>/ STRATEGY-TO-SHIP</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/logo-ink.svg" alt="" aria-hidden="true" className="nav-logo nav-logo-ink" />
+            <span>/ AI CONSULTING · NYC</span>
           </Link>
 
           <div className="nav-links" role="navigation" aria-label="Primary">
-            {LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={isActive(l.href) ? 'is-active' : ''}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <SocialLinks className="nav-social" />
+            {LINKS.map((l) =>
+              l.href === '/services' ? (
+                <span className="nav-item" key={l.href}>
+                  <Link href={l.href} className={isActive(l.href) ? 'is-active' : ''}>
+                    {l.label}
+                  </Link>
+                  <span className="nav-flyout">
+                    <span className="nav-flyout-card">
+                      <span className="nav-flyout-col">
+                        <span className="nav-flyout-h">Services</span>
+                        {SERVICE_CHILDREN.map((c) => (
+                          <Link key={c.href} href={c.href}>{c.label}</Link>
+                        ))}
+                      </span>
+                      <span className="nav-flyout-col">
+                        <span className="nav-flyout-h">Industries</span>
+                        {INDUSTRY_CHILDREN.map((c) => (
+                          <Link key={c.href} href={c.href}>{c.label}</Link>
+                        ))}
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              ) : (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={isActive(l.href) ? 'is-active' : ''}
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
 
             {SITE.bookingUrl.startsWith('http') && (
               <a
@@ -157,6 +198,8 @@ export function Nav() {
             <Link className="nav-brand" href="/" onClick={() => setOpen(false)}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/logo-white.svg" alt="Enso Labs" className="nav-logo" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/logo-ink.svg" alt="" aria-hidden="true" className="nav-logo nav-logo-ink" />
             </Link>
             <button
               type="button"
@@ -169,7 +212,7 @@ export function Nav() {
           </div>
 
           <ul className="mobile-menu-links">
-            {LINKS.map((l, i) => (
+            {MOBILE_LINKS.map((l, i) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
@@ -179,6 +222,15 @@ export function Nav() {
                   <span className="mobile-menu-num">{String(i + 1).padStart(2, '0')}</span>
                   {l.label}
                 </Link>
+                {l.href === '/services' && (
+                  <ul className="mobile-menu-sub">
+                    {[...SERVICE_CHILDREN.slice(1), ...INDUSTRY_CHILDREN].map((c) => (
+                      <li key={c.href}>
+                        <Link href={c.href} onClick={() => setOpen(false)}>{c.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
