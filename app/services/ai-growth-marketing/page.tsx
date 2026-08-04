@@ -74,14 +74,14 @@ export default function AIGrowthCommercialPage() {
       />
 
       <section className="hero">
-        <p className="label">Service</p>
+        <p className="label">AI Transformation Consulting</p>
         <h1>AI Growth &amp; Commercial Systems</h1>
         <p className="sub-head">
-          Growth marketing, marketing engineering, and GTM engineering are new
-          names for a craft we have run for 15 years on Madison Avenue —
-          segmentation, insight, campaign planning, and brand. Enso Labs builds
-          it as agents: encoded, deployed, and operated in production. The craft
-          is the moat; the agents are the scale.
+          Fifteen years of Madison Avenue strategy and account-management craft,
+          delivered as AI transformation consulting. One strategic process —
+          Audit, Encode, Build, Operate — turns that craft into managed agents
+          that drive business outcomes: new-generation customer acquisition and
+          go-to-market that compounds.
         </p>
       </section>
 
