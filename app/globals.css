@@ -546,9 +546,9 @@ footer {
    which turns the #5CE0D2 glyph maroon. Both variants ship in public/images. */
 .theme-light .nav-logo,
 .theme-light .foot-mark img { display: none; }
-.nav-logo-ink,
+img.nav-logo-ink,
 .foot-mark img.foot-logo-ink { display: none; }
-.theme-light .nav-logo-ink { display: block; }
+.theme-light img.nav-logo-ink { display: block; }
 .theme-light .foot-mark img.foot-logo-ink { display: block; }
 
 .theme-light ::selection { background: var(--teal); color: #f8f6f0; }
@@ -1145,7 +1145,7 @@ footer {
   border-left: 1px solid var(--line);
 }
 .mobile-menu-sub a {
-  display: block; padding: 9px 0;
+  display: block; padding: 12px 0;
   font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.02em;
   color: var(--fg-2);
 }
