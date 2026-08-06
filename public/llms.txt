@@ -1,8 +1,8 @@
 # Enso Labs
-> Enterprise AI consulting firm, agentic systems studio, and financial AI agent lab in New York City.
+> Principal-led AI consultancy in New York City. We advise on where AI belongs, build the systems, and operate them in production — for enterprises and agencies.
 
 ## About
-Enso Labs is a principal-led enterprise AI consulting firm founded by Sav Banerjee in New York City. We deliver AI transformation consulting, agentic AI development, cloud managed services, and production AI systems for Healthcare, Finance, Advertising, and B2B Technology — then build the production systems that deliver it.
+Enso Labs is a principal-led AI consultancy in New York City, founded by Sav Banerjee. We do three things: advise on where AI belongs in your business, build the agentic systems that do the work, and operate them in production. Enso Labs encodes your domain expertise into managed agents, then builds and operates them — Agentic Managed Services across Healthcare, Finance, Manufacturing, Media, B2B Technology, and Growth. Every engagement is led by a senior advisor who also builds; there are no hand-offs to junior teams.
 
 ## Founder & Availability
 Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs. He architects AI strategy and ships production agentic systems for Fortune 500 companies in Healthcare, Finance, and B2B Technology. Certifications and recognitions: Anthropic, Google, and OpenAI partner/certification programs, and Perplexity Computer Implementation Partner (Perplexity Implementation Partners Program). Relevant role types: VP of AI Strategy, Head of AI, Director of AI Products, Principal AI Consultant. Sav is available for both contract engagements and full-time leadership roles, in addition to Enso Labs client work.
@@ -20,7 +20,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
 - AI Growth & Commercial Systems — agentic go-to-market, audience segmentation, brand governance, and 24/7 campaign optimization, built on 15 years of Madison Avenue brand and demand craft (https://ensolabs.ai/services)
 - AI Strategy Consulting in New York City (https://ensolabs.ai/locations/new-york)
-- Healthcare AI & Pharma Compliance
+- Healthcare AI & Pharma Compliance (https://ensolabs.ai/industries/healthcare)
 - AI Advertising & Marketing Automation
 
 ## Products
