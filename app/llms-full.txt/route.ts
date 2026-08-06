@@ -28,7 +28,7 @@ License: Verbatim quotes welcome with attribution. Link to ${SITE.origin}.
 
 ## Studio Overview
 
-${SITE.name} is a principal-led enterprise AI consulting firm, agentic systems studio, and financial AI agent lab in New York City. Founded by ${SITE.founder.name}, the studio delivers AI transformation consulting, agentic AI development, cloud managed services, and production AI systems for Healthcare, Finance, Advertising, and B2B Technology.
+${SITE.name} is a principal-led AI consultancy in New York City. Founded by ${SITE.founder.name}, Enso Labs does three things: advises on where AI belongs in your business, builds the agentic systems that do the work, and operates them in production. It encodes client domain expertise into managed agents, then builds and operates them — Agentic Managed Services across Healthcare, Finance, Manufacturing, Media, B2B Technology, and Growth, for enterprises and agencies alike.
 
 The studio operates on a Strategy-to-Ship Framework: the same principal who designs the system also builds and ships it — collapsing the translation layer between strategy and production.
 
