@@ -302,7 +302,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Codex 5.5 vs Claude Fable 5: how we route between OpenAI, Anthropic, and Gemini on real builds — the working rule, updated as the frontier shifts.",
     pillar: 'Consult',
     date: '2026-06-09',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 8,
     tags: ['Fable 5', 'Claude Opus 4.8', 'GPT-5.5', 'Codex', 'Gemini', 'Frontier Models', 'Forward-Deployed', 'Managed Agents', 'Model Routing', 'Agentic AI', 'AI Adoption', 'SMB AI', 'Enterprise AI', 'OpenAI Builder Lounge', 'NY Tech Week', 'Enso Labs', 'Sav Banerjee'],
     faqs: [
@@ -467,7 +467,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Notion launched a developer platform. We shipped an open-source career agent on day one — what we built, how it works, and what the platform enables.",
     pillar: 'Build',
     date: '2026-05-19',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 8,
     tags: ['AI Agents', 'Notion', 'Notion Workers', 'MCP', 'Claude', 'Open Source', 'Hackathon', 'TypeScript', 'Career Intelligence', 'Agentic Systems', 'Anthropic', 'Developer Platform'],
     faqs: [
@@ -534,7 +534,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Deck-only AI consulting dies on contact with production. Why strategy without a build team stalls, and what a principal-led alternative looks like.",
     pillar: 'Consult',
     date: '2026-04-22',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 7,
     tags: ['AI Consulting', 'Strategy-to-Ship', 'Enterprise AI', 'Production AI', 'AI Transformation'],
     faqs: [
@@ -561,7 +561,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "The Expert Lens: encoding expert knowledge as inspectable, toggleable rules an AI agent applies — so domain experts can audit what the system learns.",
     pillar: 'Build',
     date: '2026-04-15',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 9,
     tags: ['AI Agents', 'Expert Systems', 'MCP', 'Market Intelligence', 'Enterprise AI', 'Fortune 500'],
     faqs: [
@@ -588,7 +588,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "MCP servers are becoming the SaaS integration layer. What Model Context Protocol replaces, why it matters for enterprise AI, and how to adopt it.",
     pillar: 'Build',
     date: '2026-04-08',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 6,
     tags: ['MCP', 'Model Context Protocol', 'SaaS', 'AI Agents', 'Enterprise Integration', 'Claude', 'Agentic Systems'],
     faqs: [
@@ -615,7 +615,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Most RAG problems are eval problems, not vector-store problems. How to build the eval harness that shows what your retrieval is actually doing.",
     pillar: 'Build',
     date: '2026-04-01',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 8,
     tags: ['RAG', 'Eval Harness', 'LLM', 'Production AI', 'Vector Search', 'AI Architecture'],
     faqs: [
@@ -641,7 +641,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "In autonomous trading, the kill-switch is the architecture. How we design risk limits, circuit breakers, and human override into trading agents.",
     pillar: 'Ship',
     date: '2026-03-25',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 10,
     tags: ['Financial AI', 'Trading', 'Autonomous Systems', 'Risk Architecture', 'Enso Trading Terminal', 'AI Agents'],
     faqs: [
@@ -668,7 +668,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "How we built a pharma AI Center of Excellence that ships MLR-compliant work — governance, brand knowledge bases, and the review path it lives inside.",
     pillar: 'Consult',
     date: '2026-03-18',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 7,
     tags: ['Pharma AI', 'AI Center of Excellence', 'Compliance', 'MLR', 'Healthcare AI', 'Enterprise AI', 'AI Transformation'],
     faqs: [
@@ -694,7 +694,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Unusual flow is a hypothesis, not a trade. The Options Lab is built to surface hypotheses, force the human to vet them, and only then route to execution.',
     pillar: 'Ship',
     date: '2026-03-11',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 5,
     tags: ['Financial AI', 'Options Trading', 'Decision Support', 'Human-in-the-Loop', 'Trading Terminal'],
     faqs: [
@@ -719,7 +719,7 @@ export const INSIGHTS: Insight[] = [
     dek: 'Counterintuitive — and structural, not heroic. Six things change when the advisor and the build team work as one unit.',
     pillar: 'Consult',
     date: '2026-03-04',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 6,
     tags: ['AI Consulting', 'Boutique Studio', 'Strategy-to-Ship', 'Principal-Led', 'Enterprise AI'],
     faqs: [
@@ -745,7 +745,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Anthropic launched 10 financial AI agents. We shipped ours a year earlier — what the launch validates, and what it changes for financial services.",
     pillar: 'Ship',
     date: '2026-05-05',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 6,
     tags: ['Financial AI', 'Anthropic', 'Claude', 'AI Agents', 'Trading', 'MCP', 'Enso Trading Terminal'],
     faqs: [
@@ -778,7 +778,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "How Model Context Protocol connects AI agents to brokerage and trading systems — the architecture, the guardrails, and what MCP makes possible.",
     pillar: 'Build',
     date: '2026-05-08',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 8,
     tags: ['MCP', 'Model Context Protocol', 'Brokerage', 'Financial AI', 'Trading', 'AI Agents', 'Alpaca', 'Interactive Brokers'],
     faqs: [
@@ -811,7 +811,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Why a boutique studio is often the right Claude implementation partner: senior access, faster builds, and no handoff between strategy and code.",
     pillar: 'Consult',
     date: '2026-05-07',
-    dateModified: '2026-07-13',
+    dateModified: '2026-08-10',
     readingMinutes: 7,
     tags: ['Claude', 'Anthropic', 'AI Consulting', 'Partner Network', 'Boutique Studio', 'Enterprise AI', 'Agentic Systems'],
     faqs: [
