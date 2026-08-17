@@ -103,7 +103,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Financial',
     sourceCredit: 'Strategy to Ship',
     date: '2026-07-20',
-    dateModified: '2026-07-20',
+    dateModified: '2026-08-17',
     readingMinutes: 5,
     tags: ["AGI Summit", "AI Startup Funding", "Venture Capital", "AI Moats", "Defensibility", "Crunchbase", "Blitzscaling Ventures", "Flywheel", "Network Effects", "Agentic AI", "San Francisco", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [
@@ -163,7 +163,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     lens: 'Build',
     date: '2026-07-14',
-    dateModified: '2026-07-22',
+    dateModified: '2026-08-17',
     readingMinutes: 3,
     postEventUpdate: {
       label: 'Post-event update, July 22',
