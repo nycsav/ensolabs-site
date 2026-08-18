@@ -223,6 +223,101 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <style>{`
+        .mm-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:40px; }
+        .mm-cell { background:var(--bg); padding:28px 26px; min-height:200px; display:flex; flex-direction:column; }
+        .mm-cell.enso { background:color-mix(in oklab, var(--teal) 9%, var(--bg)); }
+        .mm-lbl { font-family:var(--mono); font-size:11px; color:var(--fg-3); letter-spacing:0.05em; text-transform:uppercase; }
+        .mm-sub { font-family:var(--mono); font-size:11px; color:var(--fg-3); margin-top:6px; }
+        .mm-enso-title { color:var(--teal); font-weight:500; font-size:16px; letter-spacing:-0.01em; margin:6px 0 14px; }
+        .mm-list { list-style:none; display:grid; gap:8px; font-size:14px; color:var(--fg-2); }
+        .mm-list li { display:flex; gap:10px; align-items:baseline; line-height:1.4; }
+        .mm-list li::before { content:""; width:5px; height:5px; background:var(--teal); flex-shrink:0; transform:translateY(-2px); }
+        .mm-dots { display:flex; flex-wrap:wrap; gap:6px; max-width:150px; margin:14px 0; }
+        .mm-dot { width:9px; height:9px; border-radius:50%; background:var(--fg-3); }
+        .mm-axis-top, .mm-axis-bottom { text-align:center; font-family:var(--mono); font-size:11px; color:var(--fg-3); letter-spacing:0.05em; text-transform:uppercase; }
+        .mm-axis-top { margin-bottom:12px; } .mm-axis-bottom { margin-top:8px; }
+        .mm-axis-x { display:flex; justify-content:space-between; font-family:var(--mono); font-size:11px; color:var(--fg-3); letter-spacing:0.05em; text-transform:uppercase; margin-top:4px; }
+        .mm-flow { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:44px; }
+        .mm-step { font-family:var(--mono); font-size:12px; color:var(--fg-2); border:1px solid color-mix(in oklab, var(--teal) 40%, var(--line-2)); padding:10px 16px; border-radius:999px; }
+        .mm-arrow { color:var(--fg-3); font-family:var(--mono); }
+        .mm-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:44px; }
+        .mm-stat { background:var(--bg); padding:22px 24px; }
+        .mm-stat .n { font-family:var(--display); font-size:34px; font-weight:500; letter-spacing:-0.02em; color:var(--teal); }
+        .mm-stat .l { font-size:13px; color:var(--fg-2); line-height:1.4; margin-top:8px; }
+        .mm-stat .src { font-family:var(--mono); font-size:10.5px; color:var(--fg-3); text-transform:uppercase; letter-spacing:0.04em; margin-top:6px; }
+        .mm-readmore { display:inline-flex; align-items:baseline; gap:8px; margin-top:28px; font-family:var(--mono); font-size:13px; color:var(--teal); }
+        @media (max-width:640px){ .mm-cell{ min-height:auto; padding:18px 16px; } .mm-enso-title{ font-size:15px; } .mm-list{ font-size:13px; } .mm-stats{ grid-template-columns:1fr; } }
+      `}</style>
+
+      <section data-screen-label="01.5 Market map">
+        <div className="shell">
+          <div className="section-head">
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 01</span>&nbsp;The gap</span></div>
+            <div className="reveal" data-delay="1">
+              <h2 className="h2">The market is solving the supply side.<br />The demand side is where agents die.</h2>
+            </div>
+          </div>
+
+          <div className="reveal" data-delay="1">
+            <p className="lede" style={{ maxWidth: '72ch' }}>
+              The AI market is pouring capital into the supply side — models, infrastructure, and product-stack rebuilds. The demand side — who the agent serves, what it may claim, the brief written before it ships — is where more than 40% of agentic projects fail. Enso Labs works that side: <b style={{ color: 'var(--fg)' }}>foundational AI architecture, planned with your data and your C-suite before a line of production code ships</b>.
+            </p>
+          </div>
+
+          <div className="reveal" data-delay="2">
+            <div className="mm-axis-top">Architect the brief · before deployment</div>
+            <div className="mm-grid" role="img" aria-label="Positioning quadrant: the market clusters in the supply-side, fund-and-rebuild corner (financing and product-stack rebuilds); Enso Labs occupies the underserved demand-side, architect-the-brief quadrant.">
+              <div className="mm-cell">
+                <div className="mm-lbl">Infra &amp; tooling planning</div>
+                <div className="mm-sub">a few platform players</div>
+              </div>
+              <div className="mm-cell enso">
+                <div className="mm-lbl" style={{ color: 'var(--teal)' }}>The white space</div>
+                <div className="mm-enso-title">Enso Labs</div>
+                <ul className="mm-list">
+                  <li>Data-in consulting for the business</li>
+                  <li>Foundational AI architecture</li>
+                  <li>C-suite stakeholder interviews</li>
+                  <li>Workflows built before deployment</li>
+                </ul>
+              </div>
+              <div className="mm-cell">
+                <div className="mm-lbl">Where SF crowds today</div>
+                <div className="mm-dots" aria-hidden="true">
+                  <span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" /><span className="mm-dot" />
+                </div>
+                <div className="mm-sub" style={{ color: 'var(--fg-2)' }}>Financing · product-stack rebuilds</div>
+              </div>
+              <div className="mm-cell">
+                <div className="mm-lbl">Point solutions &amp; pilots</div>
+                <div className="mm-sub">rebuild-first, deploy-later</div>
+              </div>
+            </div>
+            <div className="mm-axis-x"><span>Supply side · models, infra, stacks</span><span>Demand side · customer, segment, brief</span></div>
+            <div className="mm-axis-bottom">Fund &amp; rebuild first · after the decision</div>
+          </div>
+
+          <div className="reveal" data-delay="2">
+            <div className="mm-stats">
+              <div className="mm-stat"><div className="n">40%+</div><div className="l">of agentic AI projects cancelled by 2027</div><div className="src">Gartner, 2025</div></div>
+              <div className="mm-stat"><div className="n">75%</div><div className="l">pilot-to-production conversion on Enso engagements</div><div className="src">Enso Labs · since 2022</div></div>
+              <div className="mm-stat"><div className="n">83%</div><div className="l">faster campaign launches at a pharma AI CoE</div><div className="src">Enso Labs · Heller</div></div>
+            </div>
+            <div className="mm-flow">
+              <span className="mm-step">Business &amp; architecture development</span>
+              <span className="mm-arrow">→</span>
+              <span className="mm-step">Measurement &amp; benchmark · board evals</span>
+              <span className="mm-arrow">→</span>
+              <span className="mm-step">Deployment</span>
+            </div>
+            <div>
+              <Link className="mm-readmore" href="/insights/berkeley-agentic-summit-demand-side-gap">Read the full argument →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {TRACKS.map((t) => (
         <div className="shell" id={t.id} key={t.id}>
           <div className="track">
