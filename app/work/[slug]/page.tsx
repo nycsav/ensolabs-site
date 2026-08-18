@@ -177,6 +177,19 @@ const CASE_FAQS: Record<string, { question: string; answer: string }[]> = {
 
 const SLUGS = Object.keys(CASES);
 
+// Per-case-study OG images. Falls back to og-default.png if slug not mapped.
+const CASE_OG: Record<string, string> = {
+  'ai-market-intelligence': '/og/og-gore-lens-expert-knowledge-encoding.png',
+  heller: '/og/og-ai-coe-pharma-mlr-compliance.png',
+  'trading-terminal': '/og/og-autonomous-trading-risk-as-architecture.png',
+  'enterprise-ai': '/og/og-claude-managed-agents-strategy-to-ship.png',
+};
+
+function ogImageFor(slug: string): string {
+  const rel = CASE_OG[slug];
+  return rel ? `${SITE.origin}${rel}?v=1` : `${SITE.origin}/og-default.png?v=3`;
+}
+
 // ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
 export const revalidate = 300;
 
@@ -196,14 +209,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       description: cs.metaDesc,
       url: `${SITE.origin}/work/${params.slug}`,
       type: 'article',
-      images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: `${cs.title} — Enso Labs Case Study` }],
+      images: [{ url: ogImageFor(params.slug), width: 1200, height: 630, alt: `${cs.title} — Enso Labs Case Study` }],
       authors: ['https://linkedin.com/in/savbanerjee'],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${cs.title} — Enso Labs`,
       description: cs.metaDesc,
-      images: ['https://ensolabs.ai/og-default.png?v=3'],
+      images: [ogImageFor(params.slug)],
     },
   };
 }
@@ -242,7 +255,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           },
           mainEntityOfPage: { '@type': 'WebPage', '@id': shareUrl },
           url: shareUrl,
-          image: `${SITE.origin}/og-default.png`,
+          image: ogImageFor(params.slug),
           articleSection: cs.sectorTag,
         },
         ...(faqs.length > 0 ? [faqSchema(faqs)] : []),
