@@ -210,7 +210,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     lens: 'Build',
     date: '2026-07-05',
-    dateModified: '2026-08-05',
+    dateModified: '2026-08-18',
     readingMinutes: 3,
     tags: ["Perplexity", "Perplexity Computer", "Perplexity Implementation Partner", "Implementation Partner", "Partner Program", "Partnerships", "Enterprise AI", "AI Adoption", "AI Implementation", "Enso Labs", "Strategy to Ship", "Sav Banerjee"],
     faqs: [
@@ -253,7 +253,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Build',
     sourceCredit: 'Claude Managed Agents',
     date: '2026-06-18',
-    dateModified: '2026-08-05',
+    dateModified: '2026-08-18',
     readingMinutes: 6,
     tags: ["Claude Managed Agents", "Agentic AI", "Anthropic", "Multi-Agent Orchestration", "AI Outcomes", "AI Memory", "Enterprise AI", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [
