@@ -3,6 +3,7 @@
  * Mirrors scripts/generate-og-berkeley-demand-side-gap.js conventions. */
 const puppeteer = require('puppeteer');
 const path = require('path');
+const { logoInk, logoWhite } = require('./_fds-logo');
 
 const FONTS = `https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap`;
 
@@ -62,7 +63,7 @@ const heroHtml = `
     <div class="stat"><p class="stat-fig fd">$300–600K</p><p class="stat-label">total comp for the role, and climbing</p><p class="stat-source fm">Recruiting from Scratch · 2026</p></div>
     <div class="stat"><p class="stat-fig fd">2%</p><p class="stat-label">McKinsey revenue growth — the advisory pyramid is contracting</p><p class="stat-source fm">2026</p></div>
   </div>
-  <footer><p class="foot-line">Palantir always sent two. The market only talks about one.</p><p class="foot-fig fm">Fig. 1 — The two seats of forward deployment</p></footer>
+  <footer>${logoInk(46)}<p class="foot-line">Palantir always sent two. The market only talks about one.</p><p class="foot-fig fm">Fig. 1 — The two seats of forward deployment</p></footer>
 </body></html>`;
 
 const ogHtml = `
@@ -85,8 +86,8 @@ const ogHtml = `
   </div>
   <div class="rule"></div>
   <footer>
-    <span class="mark">Strategy <span class="arrow">&rarr;</span> Ship</span>
-    <span class="foot-r fm">Powered by Enso Labs</span>
+    ${logoWhite(42)}
+    <span class="foot-r fm">Strategy &rarr; Ship · Powered by Enso Labs</span>
   </footer>
 </body></html>`;
 

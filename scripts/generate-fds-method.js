@@ -3,6 +3,7 @@
  * Warm Signal brand, 2800x1760. */
 const puppeteer = require('puppeteer');
 const path = require('path');
+const { logoInk } = require('./_fds-logo');
 
 const FONTS = `https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap`;
 
@@ -60,7 +61,7 @@ const html = `
   <header><p class="kicker fm">The Method Never Changed</p><p class="credit fm">Strategy to Ship — Enso Labs</p></header>
   <h1 class="fd">One discovery method. <em>Two eras.</em></h1>
   <div class="grid">${cols}</div>
-  <footer><p class="foot-line">From the creative brief to the <b>system prompt</b> — the strategist's method, applied to AI.</p><p class="foot-fig fm">Fig. 2 — Discovery to deployment</p></footer>
+  <footer>${logoInk(46)}<p class="foot-line">From the creative brief to the <b>system prompt</b> — the strategist's method, applied to AI.</p><p class="foot-fig fm">Fig. 2 — Discovery to deployment</p></footer>
 </body></html>`;
 
 (async () => {

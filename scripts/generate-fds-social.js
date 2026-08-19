@@ -4,6 +4,7 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
+const { logoInk, logoWhite } = require('./_fds-logo');
 
 const FONTS = `https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap`;
 
@@ -27,7 +28,7 @@ const shareCard = (w, h, hSize) => `
     <p class="sub">The market only talks about one of them.</p>
   </div>
   <div class="rule"></div>
-  <footer><span class="mark">Strategy <span class="a">&rarr;</span> Ship</span><span class="fr fm">Powered by Enso Labs</span></footer>
+  <footer>${logoWhite(Math.round(hSize * 0.8))}<span class="fr fm">Powered by Enso Labs</span></footer>
 </body></html>`;
 
 const quoteCard = `
@@ -46,7 +47,7 @@ const quoteCard = `
   <p class="kick fm">The Forward Deployed Strategist</p>
   <p class="q fd">It just wasn't called forward deployment. It was called account planning, digital, CX, and <b>data strategy.</b></p>
   <p class="by">— Sav Banerjee, Enso Labs</p>
-  <footer><span class="mark">Strategy <span class="a">&rarr;</span> Ship</span><span class="fr fm">Powered by Enso Labs</span></footer>
+  <footer>${logoInk(52)}<span class="fr fm">Powered by Enso Labs</span></footer>
 </body></html>`;
 
 (async () => {
