@@ -119,7 +119,7 @@ def og_deck_only():
     {gear_str}
     {crack}
     {pillar_badge("Consult", bg_dark=False)}
-    {title_text("Why deck-only AI consulting dies on contact with production.", 48, 120, 44, NAVY, 580)}
+    {title_text("Why deck-only AI consulting stalls in production.", 48, 120, 44, NAVY, 580)}
     <text x="48" y="540" font-family="monospace" font-size="12" fill="{NAVY}" opacity="0.5">THE AUTOPSY FROM FIFTEEN YEARS INSIDE THE ROOM</text>
     {brand_bar(bg_dark=False)}
     </svg>'''

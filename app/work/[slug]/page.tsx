@@ -105,7 +105,7 @@ const CASES: Record<string, {
     headline: 'Cohorts that actually ship.',
     subtitle: '3-month time-to-first-value, 75% pilot-to-production conversion.',
     definition: 'Enterprise AI Enablement is a cohort-based program from Enso Labs for executive teams that converts AI training into shipped production systems — averaging a 3-month time-to-first-value and 75% pilot-to-production conversion across finance, healthcare, and technology.',
-    challenge: 'Enterprise teams invest in AI training but rarely ship anything to production. The gap between "workshop" and "deployed system" is where most AI initiatives die.',
+    challenge: 'Enterprise teams invest in AI training but rarely ship anything to production. The gap between "workshop" and "deployed system" is where most AI initiatives stall.',
     approach: [
       'Designed cohort-based enablement for 8–15 person executive teams',
       'Hands-on workshops with Claude, Gemini, GPT-4, MCP, and N8N',

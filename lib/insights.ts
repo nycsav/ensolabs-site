@@ -34,7 +34,7 @@ export type Insight = {
 export const INSIGHTS: Insight[] = [
   {
     slug: 'berkeley-agentic-summit-demand-side-gap',
-    title: "Berkeley is solving the supply side. The demand side is where agents die.",
+    title: "Berkeley is solving the supply side. The demand side is where projects succeed or fail.",
     dek: "Across four stages and two days at Berkeley's Agentic AI Summit, not one session title names the customer. The buyer data says that is exactly where agentic projects fail — and it is a segmentation problem, not a model problem.",
     metaDescription: "Berkeley's Agentic AI Summit agenda has zero customer-facing sessions. Gartner, Adobe, and Salesforce data show that's exactly where agentic AI projects fail.",
     pillar: 'Consult',
@@ -529,9 +529,9 @@ export const INSIGHTS: Insight[] = [
   },
   {
     slug: 'why-deck-only-ai-consulting-fails-production',
-    title: 'Why deck-only AI consulting dies on contact with production.',
-    dek: 'The gap between a beautiful slide and a running system is where most enterprise AI initiatives quietly die. Here\'s the autopsy from fifteen years inside the room.',
-    metaDescription: "Deck-only AI consulting dies on contact with production. Why strategy without a build team stalls, and what a principal-led alternative looks like.",
+    title: 'Why deck-only AI consulting stalls in production.',
+    dek: 'The gap between a beautiful slide and a running system is where most enterprise AI initiatives quietly stall. Here\'s the autopsy from fifteen years inside the room.',
+    metaDescription: "Deck-only AI consulting stalls in production. Why strategy without a build team stalls, and what a principal-led alternative looks like.",
     pillar: 'Consult',
     date: '2026-04-22',
     dateModified: '2026-08-10',

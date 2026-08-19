@@ -61,7 +61,7 @@ const path = require('path');
     </div>
 
     <div class="middle">
-      <div class="headline">Berkeley is solving the supply side.<br>The demand side is where <span class="coral">agents die.</span></div>
+      <div class="headline">Berkeley is solving the supply side.<br>The demand side is where <span class="coral">projects succeed or fail.</span></div>
       <div class="subtitle">Four stages, two days, zero sessions on the customer — and the buyer data says that's exactly where agentic projects fail.</div>
     </div>
 
