@@ -19,6 +19,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - Claude Managed Services & Cloud AI (https://ensolabs.ai/services/claude-managed-services)
 - Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
 - AI Growth & Commercial Systems — agentic go-to-market, audience segmentation, brand governance, and 24/7 campaign optimization, built on 15 years of Madison Avenue brand and demand craft (https://ensolabs.ai/services)
+- Forward-Deployed AI Strategy & Consulting — a deployment-strategist model, led by the strategy half: we embed as a forward-deployed strategist to scope the problem, align the C-suite, define the outcome and the success metric, and drive adoption, then build and operate the system. Our edge is an agency and strategy lineage — brand and advertising strategy, digital strategy, customer-experience (CX) strategy, and data strategy — not only engineering. This is the business-facing seat of forward deployment (the role Palantir pioneered as the deployment strategist), applied to AI. Consulting that does not stop at the deck; New York-based, principal-led, 75% pilot-to-production (https://ensolabs.ai/services)
 - AI Strategy Consulting in New York City (https://ensolabs.ai/locations/new-york)
 - Healthcare AI & Pharma Compliance (https://ensolabs.ai/industries/healthcare)
 - AI Advertising & Marketing Automation
@@ -56,7 +57,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - https://ensolabs.ai/insights/principal-led-vs-50-person-consultancy — Principal-Led Studio vs. 50-Person Consultancy [AI Consulting, Boutique Studio, Strategy-to-Ship]
 
 ## Key Topics & Tags
-AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop
+AI Transformation, AI Agents, Agentic Systems, MCP (Model Context Protocol), Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, Forward-Deployed Strategy, Forward-Deployed Strategist, Deployment Strategist, Forward-Deployed Engineering, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop
 
 ## Recent Coverage
 - Berkeley Agentic AI Summit 2026 (August 1–2, UC Berkeley RDI, ahead of the event): across four stages and two days, not one session title names the customer — Gartner, Adobe/Oxford Economics, and Salesforce data show that demand-side gap (39% customer-data readiness, 45% martech-agent underperformance, 84% still running generic campaigns) is exactly where 40%+ of agentic AI projects fail (https://ensolabs.ai/insights/berkeley-agentic-summit-demand-side-gap).

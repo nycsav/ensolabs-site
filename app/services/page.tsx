@@ -44,6 +44,16 @@ const SERVICES_FAQ = [
     answer:
       'We build production AI agents for trading, market intelligence, portfolio management, and financial analysis — using Claude\'s financial services infrastructure with MCP-connected brokerage APIs (Alpaca, Public.com, Interactive Brokers). Our Enso Trading Terminal has been running autonomously in production since 2025, predating Anthropic\'s formal financial services agent launch.',
   },
+  {
+    question: 'Does Enso Labs offer forward-deployed strategy and consulting?',
+    answer:
+      'Yes — and we lead with the strategy half. Forward deployment has two seats: the deployment strategist who embeds to scope the problem, align stakeholders, and define the outcome, and the engineer who ships the system. Enso Labs runs both, but our edge is the strategist seat — drawn from fifteen years of Madison Avenue work across brand and advertising strategy, digital strategy, customer-experience (CX) strategy, and data strategy. We embed with your team, define what the AI is actually for and what it is allowed to claim, then build and operate it. It is consulting that does not stop at the deck.',
+  },
+  {
+    question: 'What is a forward-deployed AI strategist, and how is it different from a consultant?',
+    answer:
+      'A forward-deployed AI strategist is the business-facing half of forward deployment — the role Palantir pioneered as the deployment strategist. They embed inside the organization, translate operational complexity into a plan, align the C-suite, define the outcome and the success metric, drive adoption, and own the engagement end to end — then ship the system that delivers it. A traditional consultant is judged on the recommendation; a forward-deployed strategist is judged on whether it runs in production. Enso Labs brings this from an agency and strategy background — segmentation, brand governance, journey mapping, and data strategy — not only an engineering one, which is why the work lands with the business, not just the IT team. Our pilot-to-production conversion rate is 75%.',
+  },
 ];
 
 // ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
@@ -87,9 +97,9 @@ const TRACKS: Track[] = [
     num: 'TRACK / 01',
     pill: 'CONSULT',
     title: 'AI Transformation Consulting.',
-    lede: <>Strategy, roadmaps, and governance for executive teams turning AI ambition into commercial growth. Built around the <b style={{ color: 'var(--fg)' }}>Strategy-to-Ship Framework</b>.</>,
+    lede: <>Strategy, roadmaps, and governance for executive teams turning AI ambition into commercial growth &mdash; delivered <b style={{ color: 'var(--fg)' }}>forward-deployed</b>, as a deployment strategist embedded in your team rather than an outside adviser. Built around the <b style={{ color: 'var(--fg)' }}>Strategy-to-Ship Framework</b>.</>,
     tags: [
-      { label: 'Strategy' }, { label: 'Roadmapping' }, { label: 'Workshops' }, { label: 'ROI modeling' }, { label: 'Governance' }, { label: 'AI Advertising' },
+      { label: 'Forward-Deployed Strategy', teal: true }, { label: 'Roadmapping' }, { label: 'Workshops' }, { label: 'ROI modeling' }, { label: 'Governance' }, { label: 'AI Advertising' },
     ],
     deliverables: [
       { ix: '01', ti: 'AI Strategy & Roadmapping', de: '12-month commercial AI roadmap rooted in business case, sized by ROI, and sequenced for pilot-to-production conversion.', ta: '6–10 wk' },
@@ -106,9 +116,9 @@ const TRACKS: Track[] = [
     pill: 'BUILD',
     pillTeal: true,
     title: 'Agentic Systems & Products.',
-    lede: <>We architect, build, and ship the production systems your strategy depends on. Same operator, no hand-off from advisor to engineer.</>,
+    lede: <>We architect, build, and ship the production systems your strategy depends on. <b style={{ color: 'var(--fg)' }}>Forward-deployed</b> &mdash; the same operator embedded in your environment from strategy through deployment, with no hand-off from advisor to engineer.</>,
     tags: [
-      { label: 'LangGraph', teal: true }, { label: 'Claude API', teal: true }, { label: 'MCP', teal: true },
+      { label: 'Forward-Deployed', teal: true }, { label: 'LangGraph', teal: true }, { label: 'Claude API', teal: true }, { label: 'MCP', teal: true },
       { label: 'CrewAI' }, { label: 'N8N' }, { label: 'RAG' }, { label: 'Python' },
     ],
     deliverables: [
@@ -401,10 +411,10 @@ export default function ServicesPage() {
             </div>
             <div className="pkg">
               <div className="mono-sm" style={{ color: 'var(--teal)' }}>RETAINER</div>
-              <h3 className="h3" style={{ fontWeight: 500 }}>Embedded AI Operator</h3>
+              <h3 className="h3" style={{ fontWeight: 500 }}>Forward-Deployed AI Operator</h3>
               <div className="price">Quarterly</div>
               <p style={{ color: 'var(--fg-2)', fontSize: 14.5 }}>
-                Senior advisor + builder embedded with your team. Continuous shipping, governance, and CoE stewardship.
+                A senior strategist + builder forward-deployed with your team. Continuous shipping, governance, and CoE stewardship — embedded, not advisory.
               </p>
               <ul>
                 <li>Weekly working sessions</li>
@@ -422,7 +432,7 @@ export default function ServicesPage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;Common questions</span></div>
-            <div className="reveal" data-delay="1"><h2 className="h2">Six answers, asked often.</h2></div>
+            <div className="reveal" data-delay="1"><h2 className="h2">Straight answers, asked often.</h2></div>
           </div>
 
           <div className="reveal" style={{ display: 'grid', gap: 0, borderTop: '1px solid var(--line)' }}>
