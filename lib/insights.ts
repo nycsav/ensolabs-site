@@ -36,14 +36,14 @@ export const INSIGHTS: Insight[] = [
     slug: 'forward-deployed-strategist-agency-lineage',
     title: "The best Forward Deployed Engineers have been forward deployed all along",
     dek: "The hottest role in AI is the Forward Deployed Engineer. But the scarce half of the job isn't the engineering — it's the forward: reading a business, defining what the system is for, and getting an organization to adopt it. That is the deployment strategist seat, and it comes straight from the Madison Avenue strategy disciplines: brand, digital, CX, and data.",
-    metaDescription: "Forward Deployed Engineer is AI's fastest-growing role. The scarce half is the deployment strategist seat — and it comes from brand, digital, CX, and data strategy.",
+    metaDescription: "The Forward Deployed Engineer is AI's fastest-growing role — and from Berkeley's Agentic AI Summit to the field, the scarce half is the deployment strategist seat, drawn from brand, digital, CX, and data strategy.",
     pillar: 'Consult',
     lens: 'Brand',
     sourceCredit: 'Strategy to Ship',
     date: '2026-08-18',
     dateModified: '2026-08-18',
     readingMinutes: 7,
-    tags: ["Forward Deployed Strategist", "Deployment Strategist", "Forward Deployed Engineer", "Agentic AI", "AI Strategy Consulting", "Brand Strategy", "CX Strategy", "Data Strategy", "Agent Harness", "RAG", "MCP", "Enso Labs", "Sav Banerjee", "Strategy to Ship"],
+    tags: ["Forward Deployed Strategist", "Deployment Strategist", "Forward Deployed Engineer", "Agentic AI", "Berkeley RDI", "Agentic AI Summit 2026", "UC Berkeley", "AI Strategy Consulting", "Brand Strategy", "CX Strategy", "Data Strategy", "Agent Harness", "RAG", "MCP", "Enso Labs", "Sav Banerjee", "Strategy to Ship"],
     faqs: [
       {
         question: "What is a forward-deployed AI strategist?",
@@ -64,6 +64,7 @@ export const INSIGHTS: Insight[] = [
     ],
     body: [
       "![Sav Banerjee in the OpenAI Builder Lounge, where frontier AI gets built — Part 1 of The Forward Deployed Strategist](/images/insights/forward-deployed-strategist-hero-photo.png)",
+      "*Field notes, continued from [Berkeley's Agentic AI Summit 2026](/insights/berkeley-agentic-summit-demand-side-gap). Across two days at UC Berkeley's Center for Responsible, Decentralized Intelligence (RDI), one question kept surfacing between the sessions on secure and agentic AI: who actually gets these systems into production? This is the person who has always answered it.*",
       "A Forward Deployed Engineer is the person a software company embeds inside a customer to make the product actually work in the real world. Here is what nobody selling the role will tell you: the hardest part is not the engineering. It is the *forward* — reading a business you did not grow up in, deciding what the system is genuinely for, and getting a skeptical organization to adopt it. The people who have done that their whole careers did not come out of a computer science program. A lot of them came off Madison Avenue.",
       "## The signal",
       "The Forward Deployed Engineer is the fastest-growing role in AI. Palantir invented it; OpenAI, Anthropic, Google, and Scale now hire it by name. Postings are up roughly **10x in eighteen months**, total compensation runs **$300K–$600K+**, and here is the number that should stop any New York strategist mid-scroll: **New York has overtaken San Francisco as the largest forward-deployed hub — about 35% of postings versus SF's 11% — concentrated in fintech and other regulated industries**, exactly where compliance and integration have to be solved in the same breath.",
