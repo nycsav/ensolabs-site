@@ -247,7 +247,7 @@ export default function HomePage() {
                 You work with one senior advisor from the first conversation to production. A vetted specialist network scales with the scope. No hand-offs to a junior bench.
               </p>
               <p style={{ fontSize: 18, color: 'var(--fg-2)', lineHeight: 1.6 }}>
-                We work the way a good agency partner works: inside your team, on your deadlines, accountable for the output — not just the recommendation.
+                We work <b style={{ color: 'var(--fg)' }}>forward-deployed</b> — a deployment strategist who also ships, the way a good agency partner works: embedded inside your team, on your deadlines, accountable for the output, not just the recommendation. It is a discipline that comes as naturally from brand, digital, CX, and data strategy as it does from engineering.
               </p>
               <p style={{ fontSize: 18, color: 'var(--fg-2)', lineHeight: 1.6 }}>
                 And we run what we sell. The <b style={{ color: 'var(--fg)' }}>Enso Trading Terminal</b> runs autonomous research, signal intelligence and brokerage execution in production, twenty-four hours a day.
