@@ -56,7 +56,7 @@ const path = require('path');
     </header>
 
     <div class="headline-row">
-      <h1 class="font-display">Berkeley is solving the supply side.<br><em>The demand side is where agents die.</em></h1>
+      <h1 class="font-display">Berkeley is solving the supply side.<br><em>The demand side is where projects succeed or fail.</em></h1>
       <div class="agenda">
         <p class="agenda-kicker font-mono">Agentic AI Summit 2026 agenda</p>
         <div class="agenda-row">

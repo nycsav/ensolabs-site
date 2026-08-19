@@ -265,7 +265,7 @@ export default function ServicesPage() {
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 01</span>&nbsp;The gap</span></div>
             <div className="reveal" data-delay="1">
-              <h2 className="h2">The market is solving the supply side.<br />The demand side is where agents die.</h2>
+              <h2 className="h2">The market is solving the supply side.<br />The demand side is where projects succeed or fail.</h2>
             </div>
           </div>
 

@@ -474,7 +474,7 @@ export default function HomePage() {
             <div className="reveal" data-delay="1">
               <h2 className="h2">Four phases. One team.</h2>
               <p className="lede" style={{ marginTop: 24 }}>
-                Principal-led delivery, designed so a pilot doesn&rsquo;t die in the lab.
+                Principal-led delivery, designed so a pilot doesn&rsquo;t stall in the lab.
               </p>
             </div>
           </div>
