@@ -1,0 +1,60 @@
+{
+  "slug": "forward-deployed-strategist-agency-lineage",
+  "kicker": "PART 1 · THE FORWARD DEPLOYED STRATEGIST",
+  "sourceCredit": "Strategy to Ship",
+  "cover": {
+    "headline": "Forward deployment always sent two."
+  },
+  "slides": [
+    {
+      "n": 1,
+      "heading": "The fastest-growing role in AI",
+      "body": "The Forward Deployed Engineer is the fastest-growing role in AI. Postings are up roughly 10x in 18 months, and total comp runs $300K–$600K+."
+    },
+    {
+      "n": 2,
+      "heading": "New York overtook San Francisco",
+      "body": "New York now holds about 35% of U.S. forward-deployed postings versus SF's 11% — concentrated in fintech and other regulated industries."
+    },
+    {
+      "n": 3,
+      "heading": "Palantir never sent one person",
+      "body": "It sent two: the Forward Deployed Engineer who writes the code, and the Deployment Strategist who defines the outcome."
+    },
+    {
+      "n": 4,
+      "heading": "The hiring frenzy staffs one seat",
+      "body": "Almost every posting is written as an engineering role. The scarce half of the job isn't the engineering — it's the forward."
+    },
+    {
+      "n": 5,
+      "heading": "Both strategist industries are contracting",
+      "body": "McKinsey's growth slowed to roughly 2% while headcount fell about 10%. WPP's revenue fell 6.6% in Q1 2026 even as worldwide ad spend grew 8.6%."
+    },
+    {
+      "n": 6,
+      "heading": "The method never changed",
+      "body": "Only the medium did. The creative brief becomes the system prompt. The campaign rollout becomes the agent in production. The measurement plan becomes the eval harness."
+    },
+    {
+      "n": 7,
+      "heading": "A demand-side failure, not a modeling one",
+      "body": "Gartner expects more than 40% of agentic AI projects to be cancelled by 2027 — on unclear business value and inadequate controls."
+    },
+    {
+      "n": 8,
+      "heading": "What actually changed",
+      "body": "With Claude, MCP, and modern agent frameworks, the person who understands the business problem can now build and operate the solution."
+    }
+  ],
+  "sources": [
+    { "claim": "10x growth in forward-deployed postings over 18 months; New York ~35% of U.S. postings vs San Francisco's 11%", "source": "Bloomberry / Paraform, 2026" },
+    { "claim": "More than 40% of agentic AI projects expected to be cancelled by 2027", "source": "Gartner" },
+    { "claim": "Revenue growth ~2%, headcount down ~10%", "source": "McKinsey, public reporting" },
+    { "claim": "Revenue −6.6% in Q1 2026 while worldwide ad spend grew 8.6%", "source": "WPP, public reporting" }
+  ],
+  "cta": {
+    "headline": "Agents live, results flat?",
+    "subhead": "We run production-gap reviews. ensolabs.ai/contact"
+  }
+}

@@ -1,6 +1,6 @@
-/* Forward Deployed Strategist — LinkedIn BOOST video creative (1080×1350, 4:5 vertical).
- * One continuous Warm Signal timeline: hook → 35% count-up + bars grow → CTA. Frames -> MP4 (+GIF) via ffmpeg.
- * 4:5 is the max mobile real-estate for LinkedIn feed video. */
+/* Forward Deployed Strategist — LinkedIn BOOST video creative (1080×1350, 4:5 vertical), ~16s.
+ * One continuous Warm Signal timeline: hook → 35% count-up + bars grow → CTA. Frames -> MP4 + GIF via ffmpeg.
+ * 4:5 is the max mobile real-estate for LinkedIn feed video. Output: public/social/fds-part1/. */
 const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
@@ -56,7 +56,7 @@ const html = `
     window.render=function(t){
       // t in 0..1 over the whole clip
       document.getElementById('hook').style.opacity = clamp(t/0.12);
-      var dp = ease(clamp((t-0.18)/0.5));           // data animation window
+      var dp = ease(clamp((t-0.06)/0.5));           // data animation window
       document.getElementById('fig').textContent = Math.round(35*dp)+'%';
       document.getElementById('ny').style.width=(35*dp)+'%';
       document.getElementById('sf').style.width=(11*dp)+'%';
@@ -78,12 +78,21 @@ const html = `
   await pg.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
   await pg.setContent(html, { waitUntil: 'load', timeout: 60000 });
   await new Promise((r) => setTimeout(r, 700));
-  const N = 120, hold = 22; let idx = 0;            // ~8s motion + ~1.5s hold @15fps
+  const FPS = 15;
+  const N = 195, hold = 45; let idx = 0;            // ~13s motion + ~3s hold @15fps = ~16s total
   for (let i = 0; i < N; i++) { const t = i / (N - 1); await pg.evaluate((tt) => window.render(tt), t); await pg.screenshot({ path: path.join(dir, String(idx++).padStart(3, '0') + '.png') }); }
   for (let h = 0; h < hold; h++) { await pg.screenshot({ path: path.join(dir, String(idx++).padStart(3, '0') + '.png') }); }
   await b.close();
-  const out = path.join(__dirname, '..', 'public', 'images', 'strategy-to-ship', 'forward-deployed-strategist');
+  const out = path.join(__dirname, '..', 'public', 'social', 'fds-part1');
   fs.mkdirSync(out, { recursive: true });
-  execSync(`ffmpeg -y -framerate 15 -i ${dir}/%03d.png -c:v libx264 -pix_fmt yuv420p -vf "scale=${W}:${H}" -movflags +faststart ${path.join(out, 'boost-video-4x5.mp4')}`, { stdio: 'ignore' });
-  console.log('boost video -> public/images/strategy-to-ship/forward-deployed-strategist/boost-video-4x5.mp4');
+  const mp4 = path.join(out, 'boost-video-4x5.mp4');
+  const gif = path.join(out, 'boost-video-4x5.gif');
+  const palette = path.join(dir, 'palette.png');
+  execSync(`ffmpeg -y -framerate ${FPS} -i ${dir}/%03d.png -c:v libx264 -pix_fmt yuv420p -vf "scale=${W}:${H}" -movflags +faststart ${mp4}`, { stdio: 'ignore' });
+  // GIF via a two-pass palette for reasonable size/quality at feed dimensions.
+  execSync(`ffmpeg -y -framerate ${FPS} -i ${dir}/%03d.png -vf "scale=${W}:${H},fps=10,palettegen" ${palette}`, { stdio: 'ignore' });
+  execSync(`ffmpeg -y -framerate ${FPS} -i ${dir}/%03d.png -i ${palette} -lavfi "scale=${W}:${H},fps=10 [x]; [x][1:v] paletteuse" ${gif}`, { stdio: 'ignore' });
+  console.log(`boost video -> ${mp4}`);
+  console.log(`boost gif   -> ${gif}`);
+  console.log(`duration    -> ~${((N + hold) / FPS).toFixed(1)}s`);
 })();

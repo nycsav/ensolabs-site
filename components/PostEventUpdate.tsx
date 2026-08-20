@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Arrow } from './Arrow';
 import { track } from '@/lib/gtag';
+import { getAttribution } from '@/lib/attribution';
 
 /**
  * Dated post-event note rendered near the top of an insight article, with a
@@ -35,13 +36,20 @@ export function PostEventUpdate({
       <Link
         className="btn btn-primary peu-cta"
         href={ctaHref}
-        onClick={() =>
+        onClick={() => {
+          // See Behavior.tsx booking_intent comment: server-forwarded events
+          // need the stored first-touch UTM attached explicitly.
+          const attr = getAttribution();
           track('production_gap_review_click', {
             event_category: 'lead_gen',
             event_label: 'production_gap_review',
             page_path: `/insights/${slug}`,
-          })
-        }
+            utm_source: attr?.source || '',
+            utm_medium: attr?.medium || '',
+            utm_campaign: attr?.campaign || '',
+            utm_content: attr?.content || '',
+          });
+        }}
       >
         {ctaLabel}
         <Arrow />

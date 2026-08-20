@@ -54,6 +54,7 @@ type LeadInput = {
   utm_source?: string;
   utm_medium?: string;
   utm_campaign?: string;
+  utm_content?: string;
   landing?: string;
   website?: string; // honeypot
 };
@@ -139,6 +140,7 @@ async function writeToNotion(lead: LeadInput): Promise<string | null> {
   // lead record without needing new Notion columns.
   const attrBits: string[] = [];
   if (lead.attribution) attrBits.push(`Channel: ${lead.attribution}`);
+  if (lead.utm_content) attrBits.push(`Content: ${lead.utm_content}`);
   if (lead.landing) attrBits.push(`Landed on: ${lead.landing}`);
   const attrFooter = attrBits.length ? `\n\n— attribution —\n${attrBits.join('\n')}` : '';
 
@@ -324,6 +326,7 @@ export async function POST(req: Request) {
       utm_source: String(body.utm_source || '').trim() || undefined,
       utm_medium: String(body.utm_medium || '').trim() || undefined,
       utm_campaign: String(body.utm_campaign || '').trim() || undefined,
+      utm_content: String(body.utm_content || '').trim() || undefined,
       landing: String(body.landing || '').trim() || undefined,
     };
 
