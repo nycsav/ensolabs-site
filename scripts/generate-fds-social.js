@@ -45,13 +45,13 @@ const quoteCard = `
   .fr { font-size:22px; text-transform:uppercase; letter-spacing:0.16em; color:#79705F; }
 </style></head><body>
   <p class="kick fm">The Forward Deployed Strategist</p>
-  <p class="q fd">It just wasn't called forward deployment. It was called account planning, digital, CX, and <b>data strategy.</b></p>
-  <p class="by">— Sav Banerjee, Enso Labs</p>
+  <p class="q fd">The industry is racing to teach engineers how to be forward. It might be faster to teach <b>the forward how to engineer</b> — and a lot of us already have.</p>
+  <p class="by">— Sav Banerjee, Founder, Enso Labs</p>
   <footer>${logoInk(52)}<span class="fr fm">Powered by Enso Labs</span></footer>
 </body></html>`;
 
 (async () => {
-  const outDir = path.join(__dirname, '..', 'public', 'images', 'strategy-to-ship', 'forward-deployed-strategist');
+  const outDir = path.join(__dirname, '..', 'public', 'social', 'fds-part1');
   fs.mkdirSync(outDir, { recursive: true });
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   const page = await browser.newPage();

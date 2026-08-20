@@ -96,7 +96,7 @@ const html = `
     page-break-after:always; break-after:page; display:flex; flex-direction:column;
   }
   .slide:last-child { page-break-after:auto; break-after:auto; }
-  .kick { font-size:26px; text-transform:uppercase; letter-spacing:0.22em; color:#F0512E; font-weight:700; }
+  .kick { font-size:26px; text-transform:uppercase; letter-spacing:0.22em; color:#F0512E; font-weight:700; max-width:680px; }
   .top { display:flex; align-items:center; justify-content:space-between; }
   .stamp { align-self:flex-start; font-size:22px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
            color:#F7F1E6; background:#F0512E; padding:10px 18px; border-radius:4px; }
