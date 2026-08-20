@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -14,6 +16,23 @@ import { SITE } from '@/lib/site';
 
 // ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
 export const revalidate = 300;
+
+// An animated GIF in an article can be 5-10x the weight of the same animation as
+// H.264. Where a renderer has already emitted an .mp4 next to the .gif, serve the
+// mp4 and keep the GIF only as the in-<video> fallback for clients that can't play
+// it. Resolved at build time (these routes are statically generated), so a missing
+// sibling silently falls back to the plain <img> path — nothing to keep in sync.
+function mp4SiblingFor(src: string): string | null {
+  if (!src.startsWith('/') || !src.endsWith('.gif')) return null;
+  const mp4 = src.replace(/\.gif$/, '.mp4');
+  try {
+    return fs.existsSync(path.join(process.cwd(), 'public', mp4)) ? mp4 : null;
+  } catch {
+    return null;
+  }
+}
+
+const MEDIA_FIT = { width: '100%', height: 'auto', display: 'block' } as const;
 
 export const dynamicParams = false;
 
@@ -141,11 +160,30 @@ const renderBlock = (block: string, i: number) => {
   }
   const imgMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
   if (imgMatch) {
+    const alt = imgMatch[1];
+    const src = imgMatch[2];
+    const mp4 = mp4SiblingFor(src);
     return (
-      // eslint-disable-next-line @next/next/no-img-element
       <figure key={i} className="article-figure">
-        <img src={imgMatch[2]} alt={imgMatch[1]} />
-        {imgMatch[1] && <figcaption>{imgMatch[1]}</figcaption>}
+        {mp4 ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={alt || undefined}
+            style={MEDIA_FIT}
+          >
+            <source src={mp4} type="video/mp4" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt={alt} style={MEDIA_FIT} />
+          </video>
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={src} alt={alt} />
+        )}
+        {alt && <figcaption>{alt}</figcaption>}
       </figure>
     );
   }

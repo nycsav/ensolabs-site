@@ -8,6 +8,15 @@ Square pull-quote: `pull-quote-square.png`
 All three variants are Sav speaking personally (first person) — this is the one place
 in this kit where "I" is correct, per the studio's own voice rule.
 
+## How to post (do it in this order)
+
+1. Upload `carousel.pdf` as a **document post**. Paste one variant below as the post body.
+   **Leave the link out of the post itself** — LinkedIn suppresses reach on posts with
+   outbound links.
+2. Immediately post the first comment, which carries the tagged link.
+3. Every URL below is already UTM-tagged per `briefs/UTM-REGISTRY.md`. Paste them as-is —
+   an untagged share lands in `(direct)/(none)` and the campaign becomes unmeasurable.
+
 ---
 
 ## Variant A — data hook
@@ -18,14 +27,12 @@ Not in tech headcount overall — in the one role every AI company is fighting t
 
 I spent fifteen years inside the holding companies — McCann, RAPP, DDB, BBDO, Y&R, Rokkan — running strategy for banks, pharma, and Fortune 500 brands. Watching this market from the outside, one thing is obvious: the postings are all written for engineers. But the fastest-growing role in AI has always had two seats, and the scarce one isn't the one getting hired for.
 
-Wrote up what the data says and why New York's edge isn't an accident. Link below.
+Wrote up what the data says and why New York's edge isn't an accident. Link in the comments.
 
 Tags: #ForwardDeployedEngineer #DeploymentStrategist #AgenticAI #AIStrategyConsulting #BrandStrategy
 
-Article: https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage
-
 **First comment (post immediately after publishing):**
-Curious what you're seeing in your own market — is the forward-deployed hiring wave showing up as engineering reqs only, or are companies actually staffing the strategist seat too?
+Curious what you're seeing in your own market — is the forward-deployed hiring wave showing up as engineering reqs only, or are companies actually staffing the strategist seat too? Full piece here: https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage?utm_source=linkedin&utm_medium=social&utm_campaign=fde_part1&utm_content=first_comment
 
 ---
 
@@ -37,14 +44,12 @@ A Forward Deployed Engineer who writes the code, and a Deployment Strategist who
 
 The current hiring frenzy around forward deployment only staffs the first half. I've spent my career in the second seat — it just had different names: account planning, digital strategy, CX strategy, data strategy. Same discipline, new stack.
 
-If your AI deployments are stalling on adoption, not on the model, this is probably why. Full piece below.
+If your AI deployments are stalling on adoption, not on the model, this is probably why. Full piece in the comments.
 
 Tags: #ForwardDeployedEngineer #DeploymentStrategist #AgenticAI #CXStrategy #DataStrategy
 
-Article: https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage
-
 **First comment (post immediately after publishing):**
-Genuine question for anyone hiring for this role right now: are you screening for the "forward" — the business judgment — or just the engineering stack?
+A question for anyone hiring for this role right now: are you screening for the "forward" — the business judgment — or just the engineering stack? Full piece here: https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage?utm_source=linkedin&utm_medium=social&utm_campaign=fde_part1&utm_content=first_comment
 
 ---
 
@@ -56,11 +61,9 @@ The disciplines that ran Madison Avenue for decades — segmentation, the creati
 
 What changed isn't the method. It's that with Claude, MCP, and modern agent frameworks, the person who understands the business problem can now build and operate the solution — not just describe it in a deck.
 
-That's the last two years for me, in one line: a financial AI trading terminal live in production, a pharma AI Center of Excellence with zero compliance incidents, and an intelligence pipeline that surfaced 16 novel commercial signals for a Fortune 500 manufacturer. Full story below.
+That's the last two years for me, in one line: a financial AI trading terminal live in production, a pharma AI Center of Excellence with zero compliance incidents, and an intelligence pipeline that surfaced 16 novel commercial signals for a Fortune 500 manufacturer. Full story in the comments.
 
 Tags: #ForwardDeployedEngineer #AgenticAI #AIStrategyConsulting #EnsoLabs #StrategyToShip
 
-Article: https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage
-
 **First comment (post immediately after publishing):**
-If you came up in agency or consulting strategy and you're now building agents, I'd love to compare notes — what translated cleanly for you, and what didn't?
+If you came up in agency or consulting strategy and you're now building agents, I'd love to compare notes — what translated cleanly for you, and what didn't? Full story here: https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage?utm_source=linkedin&utm_medium=social&utm_campaign=fde_part1&utm_content=first_comment
