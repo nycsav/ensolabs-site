@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { track } from '@/lib/gtag';
-import { captureAttribution } from '@/lib/attribution';
+import { captureAttribution, getAttribution } from '@/lib/attribution';
 
 // ---------------------------------------------------------------------------
 // Enso Labs — site-wide behavior instrumentation (first-party).
@@ -107,7 +107,19 @@ export function Behavior() {
       // trigger fired booking_intent on every "Get in Touch"/nav click (the ~25
       // phantom booking clicks) — removed.
       if (a.hasAttribute('data-booking') || /cal\.com|calendly/.test(href)) {
-        track('booking_intent', { page_path: path, target: href });
+        // Server-forwarded (path 2 of track()) events don't get GA4's automatic
+        // session-campaign join the way client gtag.js pageviews do — so the
+        // stored first-touch UTM has to ride explicitly on the event params,
+        // or this beacon lands in GA4 with no campaign attached at all.
+        const attr = getAttribution();
+        track('booking_intent', {
+          page_path: path,
+          target: href,
+          utm_source: attr?.source || '',
+          utm_medium: attr?.medium || '',
+          utm_campaign: attr?.campaign || '',
+          utm_content: attr?.content || '',
+        });
         return;
       }
       // Outbound (different host).

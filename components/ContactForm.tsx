@@ -92,6 +92,7 @@ export function ContactForm({ source = 'Website — Contact' }: { source?: strin
       utm_source: attr?.source || '',
       utm_medium: attr?.medium || '',
       utm_campaign: attr?.campaign || '',
+      utm_content: attr?.content || '',
       landing: attr?.landing || '',
       website: String(fd.get('website') || ''), // honeypot
     };
@@ -116,6 +117,7 @@ export function ContactForm({ source = 'Website — Contact' }: { source?: strin
         utm_source: attr?.source || '',
         utm_medium: attr?.medium || '',
         utm_campaign: attr?.campaign || '',
+        utm_content: attr?.content || '',
       });
       setStatus('success');
     } catch (err) {
