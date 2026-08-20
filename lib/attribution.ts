@@ -117,9 +117,14 @@ export function getAttribution(): Attribution | null {
   }
 }
 
-/** Compact one-line label for display / Notion, e.g. "linkedin / social / spring-post". */
+/**
+ * Compact one-line label for display / Notion / Slack / email, e.g.
+ * "linkedin / social / spring-post / carousel". Includes utm_content when
+ * present so the placement (not just the campaign) reaches every alert
+ * surface, not only the ones that read the raw Attribution object.
+ */
 export function attributionLabel(a: Attribution | null): string {
   if (!a) return '';
-  const parts = [a.source, a.medium, a.campaign].filter(Boolean);
+  const parts = [a.source, a.medium, a.campaign, a.content].filter(Boolean);
   return parts.join(' / ');
 }
