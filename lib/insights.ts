@@ -435,7 +435,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Field notes from the Google I/O 2026 hackathon: 150 builders, Google's Managed Agents API, Gemini Omni, and Antigravity 2.0 — what actually shipped.",
     pillar: 'Build',
     date: '2026-05-26',
-    dateModified: '2026-08-11',
+    dateModified: '2026-08-24',
     readingMinutes: 8,
     tags: ['Google I/O', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Google DeepMind', 'Cerebral Valley', 'AI Agents', 'Hackathon', 'Agentic Systems', 'Gemini 3.5 Flash', 'Fortune 500', 'AI Strategy', 'AI Transformation', 'Enso Labs', 'Sav Banerjee'],
     faqs: [
@@ -490,7 +490,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: "Two nights with Google DeepMind after I/O 2026 — the strategic signal behind Antigravity 2.0 and Managed Agents, and what it means for enterprise AI.",
     pillar: 'Consult',
     date: '2026-05-26',
-    dateModified: '2026-08-11',
+    dateModified: '2026-08-24',
     readingMinutes: 7,
     tags: ['Google I/O', 'Google DeepMind', 'Cerebral Valley', 'AI Strategy', 'Gemini Omni', 'Antigravity 2.0', 'Managed Agents', 'Pomelli', 'Stitch', 'Fortune 500', 'AI Transformation', 'Thought Leadership', 'AI Agents', 'Hackathon', 'Enso Labs', 'Sav Banerjee'],
     faqs: [
