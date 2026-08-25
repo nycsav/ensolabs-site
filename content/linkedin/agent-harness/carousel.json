@@ -1,0 +1,69 @@
+{
+  "slug": "agent-harness-inputs-outputs",
+  "kicker": "PART 2 · THE FORWARD DEPLOYED STRATEGIST",
+  "sourceCredit": "Strategy to Ship",
+  "cover": {
+    "headline": "89% of AI agents never leave the pilot.",
+    "stamp": "4 INPUTS THAT CHANGE IT"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "heading": "The blocker is not the model",
+      "body": "38% of organizations are piloting agents. 11% have one in production. Leaders blame evaluation gaps, governance friction and reliability — every one of those is a harness problem, not a model problem."
+    },
+    {
+      "n": 2,
+      "heading": "Input 1 — The brief",
+      "body": "Becomes the system prompt and the permission boundary. What this agent is for, and what it may never say or do."
+    },
+    {
+      "n": 3,
+      "heading": "Input 2 — The journey map",
+      "body": "Becomes the tool allowlist and the escalation gate. Where the agent acts unattended, and where a human takes the wheel."
+    },
+    {
+      "n": 4,
+      "heading": "Input 3 — The measurement plan",
+      "body": "Becomes the eval harness and its golden-set CI gates. If it cannot be measured on a golden set, it is not a metric — it is a hope."
+    },
+    {
+      "n": 5,
+      "heading": "Input 4 — The segmentation",
+      "body": "Becomes the retrieval strategy and the recall target. Judge the corpus before you go shopping for models."
+    },
+    {
+      "n": 6,
+      "heading": "The harness moved the number",
+      "body": "Microsoft held the model constant and changed only how the system was allowed to look for evidence. BRIGHT recall@1 went from 27.8% to 49.6% — within two points of being handed the answer outright."
+    },
+    {
+      "n": 7,
+      "heading": "Do this next",
+      "body": "Write the escalation rule this week. Name the one number that proves it worked. Audit your corpus before you audit models."
+    }
+  ],
+  "sources": [
+    {
+      "claim": "38% piloting vs 11% in production",
+      "source": "Deloitte Tech Trends 2026"
+    },
+    {
+      "claim": "40%+ of agentic projects cancelled by 2027",
+      "source": "Gartner, Jun 2025"
+    },
+    {
+      "claim": "BRIGHT recall@1 27.8% to 49.6%",
+      "source": "Microsoft, arXiv 2605.05538"
+    },
+    {
+      "claim": "171% average ROI once in production",
+      "source": "PagerDuty, n=1,000 executives"
+    }
+  ],
+  "cta": {
+    "headline": "Build an agent harness.",
+    "subhead": "Full breakdown → ensolabs.ai/insights"
+  },
+  "theme": "dark"
+}
