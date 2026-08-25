@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const { PALETTE, FONTS, ringCluster } = require('./_sts-geo');
 const { logoInk, logoWhite } = require('./_fds-logo');
+const G = require('./_sts-glyphs');
 
 const W = 1080, H = 1350;
 const OUT = path.join(__dirname, '..', 'out', 'carousels', 'agent-harness');
@@ -74,21 +75,17 @@ const s03 = shell('data', `
   <p class="note fd">Every one is a harness problem — and every harness problem traces back to an input nobody wrote down.</p>
 `, '03 / 10');
 
-/* 04–07 — the four inputs, each with its ring node */
+/* 04–07 — the four inputs, each with its OWN glyph (squares, chevrons, bars, grid) */
 const INPUTS = [
-  ['01', 'The brief', 'System prompt +<br>permission boundary'],
-  ['02', 'The journey map', 'Tool allowlist +<br>escalation gate'],
-  ['03', 'The measurement plan', 'Eval harness +<br>golden-set CI'],
-  ['04', 'The segmentation', 'Retrieval strategy +<br>recall target'],
+  ['01', 'The brief', 'System prompt +<br>permission boundary', G.glyphBrief],
+  ['02', 'The journey map', 'Tool allowlist +<br>escalation gate', G.glyphJourney],
+  ['03', 'The measurement plan', 'Eval harness +<br>golden-set CI', G.glyphMeasure],
+  ['04', 'The segmentation', 'Retrieval strategy +<br>recall target', G.glyphSegment],
 ];
-const inputSlides = INPUTS.map(([n, title, out], i) => shell('data', `
+const inputSlides = (prog = 1) => INPUTS.map(([n, title, out, glyph], i) => shell('data', `
   <p class="kick fm">INPUT ${n} OF 04</p>
   <h2 class="fd">${title}</h2>
-  <div class="figwrap tight">
-    ${rings({ vw: 460, vh: 300, w: 700, h: 456, svg:
-      cluster({ id: 'i' + i, tx: 300, cy: 150, rMax: 132, rMin: 26, count: 9, stroke: PALETTE.paper, width: 2.4 }) +
-      `<circle cx="300" cy="150" r="16" fill="${PALETTE.coral}"/>` })}
-  </div>
+  <div class="figwrap tight">${G.render(glyph(prog), 760, 570)}</div>
   <p class="becomes fm">BECOMES</p>
   <p class="out fd">${out}</p>
 `, `0${i + 4} / 10`));
@@ -135,6 +132,7 @@ const s10 = shell('hero cta', `
   <p class="subhead">Full breakdown, with the animated data blocks →<br><b>ensolabs.ai/insights</b></p>
 `, '10 / 10');
 
+const PROG = Number(process.env.STS_PROG || 1);
 const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><link href="${FONTS}" rel="stylesheet"><style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{background:${PALETTE.ink}}
@@ -192,7 +190,7 @@ const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><link href="${FON
   .pg{position:absolute;top:96px;right:88px;font-size:22px;letter-spacing:0.1em;color:#6E6152}
   .hero .pg{color:#7A3B2A}
 </style></head><body>
-${s01}${s02}${s03}${inputSlides.join('')}${s08}${s09}${s10}
+${s01}${s02}${s03}${inputSlides(PROG).join('')}${s08}${s09}${s10}
 </body></html>`;
 
 (async () => {
