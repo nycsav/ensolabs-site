@@ -46,7 +46,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Build',
     sourceCredit: 'Strategy to Ship',
     // v2 — article was retitled after first share; new URL forces LinkedIn to re-cache.
-    ogImage: '/og/og-agent-harness-inputs-outputs-v3.png',
+    ogImage: '/og/og-agent-harness-inputs-outputs-v4.png',
     date: '2026-08-25',
     dateModified: '2026-08-25',
     readingMinutes: 3,
