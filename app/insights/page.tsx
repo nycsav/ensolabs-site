@@ -138,7 +138,7 @@ export default function InsightsIndex() {
             <Link href={`/insights/${featured.slug}`} className="insight-card featured">
               <div>
                 <img
-                  src={`/og/og-${featured.slug}.png`}
+                  src={featured.ogImage || `/og/og-${featured.slug}.png`}
                   alt={featured.title}
                   className="insight-card-og"
                   loading="eager"
@@ -170,7 +170,7 @@ export default function InsightsIndex() {
             {rest.map((post) => (
               <Link key={post.slug} href={`/insights/${post.slug}`} className="insight-card">
                 <img
-                  src={`/og/og-${post.slug}.png`}
+                  src={post.ogImage || `/og/og-${post.slug}.png`}
                   alt={post.title}
                   className="insight-card-og"
                   loading="lazy"

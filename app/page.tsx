@@ -232,7 +232,7 @@ export default function HomePage() {
               <Link key={p.slug} className="s2s-card" href={`/insights/${p.slug}`}>
                 <span className="s2s-card-img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/og/og-${p.slug}.png`} alt={p.title} loading="lazy" width={1200} height={630} />
+                  <img src={p.ogImage || `/og/og-${p.slug}.png`} alt={p.title} loading="lazy" width={1200} height={630} />
                 </span>
                 <span className="s2s-card-meta">
                   <span className="kind">{p.pillar}</span>
