@@ -6,7 +6,7 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
-const { PALETTE, FONTS, cornerMarks } = require('./_sts-geo');
+const { PALETTE, FONTS, cornerMarks, gradientField } = require('./_sts-geo');
 
 const W = 1200, H = 560;
 const OUTDIR = path.join(__dirname, '..', 'public', 'images', 'insights');
@@ -55,17 +55,17 @@ for (let x = ANCH_L + 26; x <= ANCH_R - 26; x += 26) {
 }
 
 const svgBody = `
-  ${cornerMarks(W, H)}
-  <path id="deck" d="M60 ${DECK} L${W - 60} ${DECK}" fill="none" stroke="${PALETTE.ink}" stroke-width="2.4"/>
-  <path id="deck2" d="M60 ${DECK + 9} L${W - 60} ${DECK + 9}" fill="none" stroke="${PALETTE.ink}" stroke-width="1.2" opacity="0.55"/>
-  <path id="twrL" d="${tower(TWR_L)}" fill="none" stroke="${PALETTE.ink}" stroke-width="2.2"/>
-  <path id="twrR" d="${tower(TWR_R)}" fill="none" stroke="${PALETTE.ink}" stroke-width="2.2"/>
+  ${cornerMarks(W, H, { fill: PALETTE.paper })}
+  <path id="deck" d="M60 ${DECK} L${W - 60} ${DECK}" fill="none" stroke="${PALETTE.paper}" stroke-width="2.4"/>
+  <path id="deck2" d="M60 ${DECK + 9} L${W - 60} ${DECK + 9}" fill="none" stroke="${PALETTE.paper}" stroke-width="1.2" opacity="0.55"/>
+  <path id="twrL" d="${tower(TWR_L)}" fill="none" stroke="${PALETTE.paper}" stroke-width="2.2"/>
+  <path id="twrR" d="${tower(TWR_R)}" fill="none" stroke="${PALETTE.paper}" stroke-width="2.2"/>
   <path id="cable" d="${cablePath}" fill="none" stroke="${PALETTE.coral}" stroke-width="2.6" stroke-linecap="round"/>
   <g id="susp">
     ${suspenders
       .map(
         (s, i) =>
-          `<line id="sp${i}" x1="${s.x}" y1="${s.y.toFixed(1)}" x2="${s.x}" y2="${DECK}" stroke="${PALETTE.ink}" stroke-width="1" opacity="0"/>`
+          `<line id="sp${i}" x1="${s.x}" y1="${s.y.toFixed(1)}" x2="${s.x}" y2="${DECK}" stroke="${PALETTE.paper}" stroke-width="1" opacity="0"/>`
       )
       .join('')}
   </g>
@@ -75,16 +75,17 @@ const svgBody = `
 
 const html = `<!DOCTYPE html><html><head><link href="${FONTS}" rel="stylesheet"><style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{width:${W}px;height:${H}px;background:${PALETTE.paper};overflow:hidden}
+  body{width:${W}px;height:${H}px;background:${PALETTE.ink};overflow:hidden}
   .k{font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:3.2px;fill:${PALETTE.coral};font-weight:700}
-  .hl{font-family:'Lora',Georgia,serif;font-size:36px;fill:${PALETTE.ink}}
+  .hl{font-family:'Lora',Georgia,serif;font-size:36px;fill:${PALETTE.paper}}
   .src{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:1.5px;fill:${PALETTE.mute}}
 </style></head><body>
 <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+  ${gradientField(W, H, 0, true)}
   <text x="60" y="72" class="k">BERKELEY RDI &#183; AGENTIC AI SUMMIT 2026</text>
   <text x="60" y="118" class="hl">Built where the agents are being built.</text>
   ${svgBody}
-  <text x="60" y="${H - 34}" class="src" fill="${PALETTE.ink}">STRATEGY &#8594; SHIP</text>
+  <text x="60" y="${H - 34}" class="src" fill="${PALETTE.paper}">STRATEGY &#8594; SHIP</text>
   <text x="${W - 60}" y="${H - 34}" text-anchor="end" class="src">ENSO LABS &#183; SAN FRANCISCO &#183; NEW YORK</text>
 </svg>
 <script>
