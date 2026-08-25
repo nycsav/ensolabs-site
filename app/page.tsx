@@ -5,6 +5,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Arrow } from '@/components/Arrow';
+import { HomeMotion } from '@/components/HomeMotion';
 import { JsonLd } from '@/components/JsonLd';
 import { NycClock } from '@/components/NycClock';
 import {
@@ -85,10 +86,17 @@ export default function HomePage() {
           breadcrumbSchema([{ name: 'Home', href: '/' }]),
         ]}
       />
+      <HomeMotion />
 
       {/* HERO */}
       <section className="hero" data-screen-label="01 Hero">
         <div className="hero-glow" aria-hidden="true" />
+        <div className="mosaic" data-par="-0.08" aria-hidden="true">
+          <Link className="tile m1" href="/work/ai-market-intelligence"><span className="inner" style={{ ['--dur' as string]: '12s' }} /><span className="ph"><span>Market intelligence</span><span className="code">E/01</span></span></Link>
+          <Link className="tile m2 amber" href="/work/heller"><span className="inner" style={{ ['--dur' as string]: '9s' }} /><span className="ph"><span>Pharma CoE</span><span className="code">E/02</span></span></Link>
+          <Link className="tile m3 blue" href="/work/trading-terminal"><span className="inner" style={{ ['--dur' as string]: '14s' }} /><span className="ph"><span>Trading terminal</span><span className="code">E/03</span></span></Link>
+          <Link className="tile m4 coral" href="/work/enterprise-ai"><span className="inner" style={{ ['--dur' as string]: '10s' }} /><span className="ph"><span>Enablement</span><span className="code">E/04</span></span></Link>
+        </div>
         <div className="shell">
           <div className="hero-meta reveal">
             <span>
@@ -149,6 +157,52 @@ export default function HomePage() {
           <div className="hero-sectors reveal" data-delay="3">
             <span className="lbl">SECTORS</span>&nbsp;&nbsp;
             <span className="list">HEALTHCARE · FINANCE · MANUFACTURING · AGENCIES · MEDIA · B2B TECH</span>
+          </div>
+
+          {/* mobile / tablet expression of the mosaic */}
+          <div className="mosaic-strip" aria-label="Selected work">
+            <div className="row">
+              <Link className="tile" href="/work/ai-market-intelligence"><span className="ph"><span>Market intelligence</span><span className="code">E/01</span></span></Link>
+              <Link className="tile amber" href="/work/heller"><span className="ph"><span>Pharma CoE</span><span className="code">E/02</span></span></Link>
+              <Link className="tile blue" href="/work/trading-terminal"><span className="ph"><span>Trading terminal</span><span className="code">E/03</span></span></Link>
+              <Link className="tile coral" href="/work/enterprise-ai"><span className="ph"><span>Enablement</span><span className="code">E/04</span></span></Link>
+            </div>
+            <p className="strip-hint">Selected work · swipe →</p>
+          </div>
+        </div>
+      </section>
+
+      {/* RUNNING NOW */}
+      <section data-screen-label="02 Running now">
+        <div className="shell">
+          <div className="section-head">
+            <div className="reveal">
+              <span className="eyebrow"><span className="num">§ 01</span>&nbsp;Running now</span>
+            </div>
+            <div className="reveal" data-delay="1">
+              <h2 className="h2">What the systems are doing while you read this.</h2>
+            </div>
+          </div>
+          <div className="run">
+            <div>
+              <div className="term">
+                <div className="term-bar">
+                  <span className="d t" /><span className="d" /><span className="d" />
+                  <span style={{ marginLeft: 8 }}>enso-labs ~ trading-terminal · live</span>
+                  <span style={{ marginLeft: 'auto', color: 'var(--teal)' }}>● online</span>
+                </div>
+                <div className="term-body" id="term" />
+              </div>
+              <p className="run-note">
+                Last pipeline run <b style={{ color: 'var(--fg-2)', fontWeight: 400 }}>{SITE.lastRun}</b> · figures from the April 2026 go/no-go milestone. Replace with a live read when the metrics endpoint is exposed.
+              </p>
+            </div>
+            <div className="plays">
+              <Link className="tile play" href="/work/ai-market-intelligence"><span className="sweep" /><span className="badge">Hover to play</span><span className="ph"><span>Market intelligence</span><span className="code">E/01</span></span></Link>
+              <Link className="tile play amber" href="/work/heller"><span className="sweep" /><span className="badge">Hover to play</span><span className="ph"><span>Pharma CoE</span><span className="code">E/02</span></span></Link>
+              <Link className="tile play blue" href="/work/trading-terminal"><span className="sweep" /><span className="badge">Hover to play</span><span className="ph"><span>Trading terminal</span><span className="code">E/03</span></span></Link>
+              <Link className="tile play coral" href="/work/enterprise-ai"><span className="sweep" /><span className="badge">Hover to play</span><span className="ph"><span>Enablement</span><span className="code">E/04</span></span></Link>
+            </div>
           </div>
         </div>
       </section>
@@ -222,11 +276,11 @@ export default function HomePage() {
       </div>
 
       {/* WHAT WE DO */}
-      <section data-screen-label="02 What we do">
+      <section data-screen-label="03 What we do">
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 01</span>&nbsp;What we do</span>
+              <span className="eyebrow"><span className="num">§ 02</span>&nbsp;What we do</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">
@@ -278,11 +332,11 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section data-screen-label="03 Services">
+      <section data-screen-label="04 Services">
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 02</span>&nbsp;Services</span>
+              <span className="eyebrow"><span className="num">§ 03</span>&nbsp;Services</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">Three services. Buy one, or all three in sequence.</h2>
@@ -292,9 +346,9 @@ export default function HomePage() {
 
         <div className="shell" style={{ paddingLeft: 0, paddingRight: 0, maxWidth: 'none' }}>
           <div className="pillars">
-            <div className="pillar reveal lens-amber">
+            <div className="pillar reveal lens-amber bm">
               <div className="pillar-num">
-                <span>P / 01</span><span className="tag">ADVISORY</span>
+                <span>P / 01</span><span className="tag"><span className="pdot" />ADVISORY</span>
               </div>
               <h3>AI Strategy &amp; Readiness</h3>
               <p>Interviews, data and workflow audits, and a readiness assessment — so you know which decisions AI should touch first, what it will cost, and what will pass review.</p>
@@ -307,9 +361,9 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="pillar reveal lens-blue" data-delay="1">
+            <div className="pillar reveal lens-blue bm" data-delay="1">
               <div className="pillar-num">
-                <span>P / 02</span><span className="tag teal">BUILD</span>
+                <span>P / 02</span><span className="tag teal"><span className="pdot" />BUILD</span>
               </div>
               <h3>Custom AI Systems</h3>
               <p>We build against your real data — agents, retrieval, and integrations into the tools your team already uses — and ship into production, not into a demo.</p>
@@ -322,9 +376,9 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="pillar reveal lens-coral" data-delay="2">
+            <div className="pillar reveal lens-coral bm" data-delay="2">
               <div className="pillar-num">
-                <span>P / 03</span><span className="tag">OPERATE</span>
+                <span>P / 03</span><span className="tag"><span className="pdot" />OPERATE</span>
               </div>
               <h3>Managed AI Operations</h3>
               <p>Then we run it, and it gets better every month. Monitoring, evaluation and tuning, reporting to your leadership, and enablement for the people using it — until your team is ready to take it in-house.</p>
@@ -354,11 +408,11 @@ export default function HomePage() {
       </section>
 
       {/* PROOF */}
-      <section data-screen-label="04 Proof">
+      <section data-screen-label="05 Proof">
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 03</span>&nbsp;Proof</span>
+              <span className="eyebrow"><span className="num">§ 04</span>&nbsp;Proof</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">Numbers that survived production.</h2>
@@ -369,35 +423,35 @@ export default function HomePage() {
           </div>
 
           <div className="proof reveal">
-            <div className="proof-cell fill-coral">
-              <div className="num">75<em>%</em></div>
+            <div className="proof-cell fill-coral bm">
+              <div className="num" data-count="75">75<em>%</em></div>
               <div className="label">Pilot-to-production conversion across enterprise engagements</div>
             </div>
-            <div className="proof-cell">
-              <div className="num">3<em>mo</em></div>
+            <div className="proof-cell bm">
+              <div className="num" data-count="3">3<em>mo</em></div>
               <div className="label">Average time-to-first-value, first workshop to deployed system</div>
             </div>
-            <div className="proof-cell fill-blue">
-              <div className="num">83<em>%</em></div>
+            <div className="proof-cell fill-blue bm">
+              <div className="num" data-count="83">83<em>%</em></div>
               <div className="label">Reduction in pharma campaign launch time · 3mo → 2wk</div>
             </div>
-            <div className="proof-cell">
+            <div className="proof-cell bm">
               <div className="num">$150<em>M+</em></div>
               <div className="label">Enterprise portfolios managed across finance, health &amp; tech</div>
             </div>
-            <div className="proof-cell fill-amber">
-              <div className="num">731</div>
+            <div className="proof-cell fill-amber bm">
+              <div className="num" data-count="731">731</div>
               <div className="label">Documents processed in a single intelligence pipeline run</div>
             </div>
-            <div className="proof-cell">
+            <div className="proof-cell bm">
               <div className="num">15<em>+</em></div>
               <div className="label">Years inside Google, McCann, Publicis, RAPP, Y&amp;R, BBDO</div>
             </div>
-            <div className="proof-cell">
+            <div className="proof-cell bm">
               <div className="num">20<em>+</em></div>
               <div className="label">AI production systems shipped &amp; running</div>
             </div>
-            <div className="proof-cell">
+            <div className="proof-cell bm">
               <div className="num">100<em>%</em></div>
               <div className="label">Principal-led — every engagement, every deliverable</div>
             </div>
@@ -406,7 +460,7 @@ export default function HomePage() {
       </section>
 
       {/* LIVE INTELLIGENCE — slim banner */}
-      <section data-screen-label="04.5 Live intelligence" style={{ paddingTop: 0 }}>
+      <section data-screen-label="05.5 Live intelligence" style={{ paddingTop: 0 }}>
         <div className="shell">
           <Link className="s2n-banner reveal" href="/insights">
             <div>
@@ -420,11 +474,11 @@ export default function HomePage() {
       </section>
 
       {/* SELECTED WORK */}
-      <section data-screen-label="05 Selected work">
+      <section data-screen-label="06 Selected work">
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 04</span>&nbsp;Selected work</span>
+              <span className="eyebrow"><span className="num">§ 05</span>&nbsp;Selected work</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">Four engagements, from first workshop to running system.</h2>
@@ -465,11 +519,11 @@ export default function HomePage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section data-screen-label="06 How we work">
+      <section data-screen-label="07 How we work">
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 05</span>&nbsp;How we work</span>
+              <span className="eyebrow"><span className="num">§ 06</span>&nbsp;How we work</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">Four phases. One team.</h2>
@@ -515,11 +569,11 @@ export default function HomePage() {
       </section>
 
       {/* CLIENTS */}
-      <section data-screen-label="07 Clients">
+      <section data-screen-label="08 Clients">
         <div className="shell">
           <div className="section-head">
             <div className="reveal">
-              <span className="eyebrow"><span className="num">§ 06</span>&nbsp;Selected clients</span>
+              <span className="eyebrow"><span className="num">§ 07</span>&nbsp;Selected clients</span>
             </div>
             <div className="reveal" data-delay="1">
               <h2 className="h2">15 years across the room from C-suite buyers.</h2>
