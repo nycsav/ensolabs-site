@@ -109,7 +109,11 @@ const STACK = ['Build an agent harness.', 'The <tspan fill="' + PALETTE.coral + 
     console.log('-> ' + out.replace(root + '/', ''));
   };
 
+  // In-article hero (site) — 16:9
   await shot(2400, 1350, 2, path.join(root, 'public', 'images', 'insights', `${SLUG}-hero.png`), 1);
+  // og:image — auto-attached to any shared LINK (LinkedIn feed, X, Slack, iMessage)
   await shot(1200, 630, 1, path.join(root, 'public', 'og', `og-${SLUG}-v4.png`), 2);
+  // LinkedIn native ARTICLE cover — a separate manual upload in the Pulse editor, 1920x1080
+  await shot(1920, 1080, 1.6, path.join(root, 'public', 'images', 'insights', `${SLUG}-linkedin-article-cover.png`), 1);
   await b.close();
 })();
