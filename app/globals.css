@@ -252,7 +252,7 @@ section + section { border-top: 1px solid var(--line); }
   filter: blur(20px);
   z-index: 0;
 }
-.hero > *:not(.hero-glow):not(.mosaic) { position: relative; z-index: 1; }
+.hero > *:not(.hero-glow):not(.mosaic) { position: relative; z-index: 2; }
 .hero .hero-glow { position: absolute; z-index: 0; }
 
 .hero-meta {
@@ -1427,6 +1427,23 @@ body.menu-open { overflow: hidden; }
 .hero-sectors .lbl { color: var(--teal); }
 .hero-sectors .list { color: var(--fg-2); }
 
+.hero-kicker {
+  font-family: var(--mono); font-size: clamp(11.5px, 1.1vw, 13px);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
+  margin-bottom: 20px;
+}
+.hero-caps {
+  margin-top: 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; line-height: 1.9;
+  color: var(--fg-3);
+}
+.hero-caps .lbl { color: var(--fg-2); }
+/* >=1101px: hold the hero text to a 60% column so the mosaic band is never crossed */
+@media (min-width: 1101px) {
+  .hero-meta, .hero-sectors, .hero-caps { max-width: 60%; }
+  .hero-foot { grid-template-columns: 1fr; gap: 34px; max-width: 60%; }
+}
+
 /* pillar lens grounds */
 .pillar.lens-amber { background: oklch(0.72 0.15 65); color: oklch(0.20 0.06 70); }
 .pillar.lens-blue  { background: oklch(0.52 0.09 250); color: #fff; }
@@ -1510,10 +1527,10 @@ body.menu-open { overflow: hidden; }
 .mosaic .tile .inner { position: absolute; inset: 0; animation: float var(--dur, 11s) ease-in-out infinite alternate; }
 @keyframes tileIn { from { opacity: 0; transform: translateY(34px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes float { from { transform: translateY(-7px); } to { transform: translateY(9px); } }
-.mosaic .m1 { top: 7%; right: 2%; width: 19%; aspect-ratio: 4/5; animation-delay: 1.9s; }
-.mosaic .m2 { top: 38%; right: 17%; width: 13%; aspect-ratio: 1; animation-delay: 2.2s; }
-.mosaic .m3 { top: 20%; right: 5%; width: 22%; aspect-ratio: 16/10; animation-delay: 2.5s; }
-.mosaic .m4 { top: 9%; right: 25%; width: 10.5%; aspect-ratio: 3/4; animation-delay: 2.8s; }
+.mosaic .m1 { top: 16%; right: 3%; width: 17%; aspect-ratio: 4/5; animation-delay: 1.9s; }
+.mosaic .m2 { top: 15%; right: 22%; width: 9.5%; aspect-ratio: 1; animation-delay: 2.2s; }
+.mosaic .m3 { top: 53%; right: 6%; width: 19%; aspect-ratio: 16/10; animation-delay: 2.5s; }
+.mosaic .m4 { top: 39%; right: 25%; width: 8%; aspect-ratio: 3/4; animation-delay: 2.8s; }
 
 .mosaic-strip { display: none; }
 /* ≤1100px — tiles become a quiet horizontal strip under the sectors line. Do not lower

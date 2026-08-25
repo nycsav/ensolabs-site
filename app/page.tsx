@@ -112,6 +112,8 @@ export default function HomePage() {
             <span>Perplexity Computer Implementation Partner</span>
           </div>
 
+          <p className="hero-kicker reveal" data-delay="1">Forward-deployed AI transformation</p>
+
           <h1 className="display hero-title">
             <span className="w w1">Advise.</span><br />
             <span className="w w2">Build.</span> <span className="w w3 accent">Operate.</span>
@@ -157,6 +159,12 @@ export default function HomePage() {
           <div className="hero-sectors reveal" data-delay="3">
             <span className="lbl">SECTORS</span>&nbsp;&nbsp;
             <span className="list">HEALTHCARE · FINANCE · MANUFACTURING · AGENCIES · MEDIA · B2B TECH</span>
+          </div>
+
+          {/* capabilities strip — real indexable keywords, matched to how buyers search agentic AI */}
+          <div className="hero-caps reveal" data-delay="3">
+            <span className="lbl">CAPABILITIES</span>&nbsp;&nbsp;
+            AGENTIC SYSTEMS · MULTI-AGENT ORCHESTRATION · MCP SERVERS · CONTEXT ENGINEERING · EVALS &amp; OBSERVABILITY · AGENT GOVERNANCE · HUMAN-IN-THE-LOOP
           </div>
 
           {/* mobile / tablet expression of the mosaic */}
