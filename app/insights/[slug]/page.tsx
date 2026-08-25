@@ -52,6 +52,11 @@ export async function generateMetadata({
   // SEO snippet: Google truncates near 155-160 chars, so prefer the tight
   // metaDescription when present. OG/Twitter below keep the full dek — those
   // surfaces render long copy fine and it reads better in-feed.
+  // LinkedIn caches OG images by URL and will keep serving a stale card even after a
+  // re-scrape. When an article's art changes, bump `ogImage` to a versioned filename —
+  // a new URL is the only reliable cache-bust.
+  const ogPath = post.ogImage || `/og/og-${post.slug}.png`;
+
   return {
     title: post.title,
     description: post.metaDescription || post.dek,
@@ -66,13 +71,13 @@ export async function generateMetadata({
       modifiedTime: post.dateModified || post.date,
       authors: ['https://linkedin.com/in/savbanerjee'],
       tags: post.tags,
-      images: [{ url: `${SITE.origin}/og/og-${post.slug}.png`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
+      images: [{ url: `${SITE.origin}${ogPath}`, width: 1200, height: 630, alt: `${post.title} — Enso Labs Insights` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.dek,
-      images: [`https://ensolabs.ai/og/og-${post.slug}.png`],
+      images: [`${SITE.origin}${ogPath}`],
     },
   };
 }
