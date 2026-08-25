@@ -36,7 +36,7 @@ const page = (w, h, hSize) => `
   <div class="ph"></div><div class="sc"></div><div class="sc2"></div>
   <div class="c">
     <p class="k fm">Part 2 · The Forward Deployed Strategist</p>
-    <h1 class="fd">The harness is the product. Here is its <em>input/output spec.</em></h1>
+    <h1 class="fd">Build an agent harness. The <em>4 inputs</em> that get agents into production.</h1>
     <p class="sub">Berkeley RDI · Agentic AI Summit 2026</p>
     <div class="foot">
       <span class="enso">${logoWhite(Math.round(hSize * 0.6))}</span>
