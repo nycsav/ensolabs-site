@@ -31,6 +31,10 @@ export const SITE = {
     country: 'US',
   },
   pages: ['/', '/services', '/work', '/about', '/insights', '/contact'] as const,
+  // Static dateline for the homepage "Running now" terminal — the go/no-go
+  // milestone run, not a live feed. Build-time constant so it can't drift
+  // into implausibility; update when the referenced pipeline run changes.
+  lastRun: 'Apr 2026, go/no-go milestone',
 } as const;
 
 export const url = (path: string) =>
