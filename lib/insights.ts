@@ -20,6 +20,11 @@ export type Insight = {
   lens?: Lens;
   /** Optional source credit (e.g. "Claude Managed Agents") — shown on the OG card footer. */
   sourceCredit?: string;
+  /** Optional OG image path override (e.g. "/og/og-my-slug-v2.png").
+   *  Defaults to /og/og-<slug>.png. Bump to a NEW filename whenever an already-shared
+   *  article's art changes — LinkedIn caches OG images by URL, so a re-scrape alone
+   *  will keep serving the old card. */
+  ogImage?: string;
   /** Optional dated post-event note rendered near the top of the article (above the body),
    *  with a single tracked conversion CTA. Opt-in per article; leaves SEO/body untouched. */
   postEventUpdate?: {
@@ -40,6 +45,8 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     lens: 'Build',
     sourceCredit: 'Strategy to Ship',
+    // v2 — article was retitled after first share; new URL forces LinkedIn to re-cache.
+    ogImage: '/og/og-agent-harness-inputs-outputs-v2.png',
     date: '2026-08-25',
     dateModified: '2026-08-25',
     readingMinutes: 3,
