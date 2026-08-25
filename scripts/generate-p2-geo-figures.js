@@ -13,7 +13,7 @@ const W = 1200, H = 760;
 const OUTDIR = path.join(__dirname, '..', 'public', 'images', 'insights');
 
 /* ---------------- A. The crossing ---------------- */
-const big = ringCluster({ id: 'a', tx: 470, cy: 400, rMax: 178, rMin: 26, count: 17 });
+const big = ringCluster({ id: 'a', tx: 470, cy: 400, rMax: 178, rMin: 26, count: 17, stroke: PALETTE.paper });
 const small = ringCluster({ id: 'b', tx: 880, cy: 400, rMax: 62, rMin: 16, count: 6, stroke: PALETTE.coral, width: 2 });
 
 const crossing = frame(W, H, `
@@ -24,7 +24,7 @@ const crossing = frame(W, H, `
     <line x1="676" y1="400" x2="742" y2="400" stroke="${PALETTE.coral}" stroke-width="2"/>
     <path d="M746 400 l-11 -6 l0 12 z" fill="${PALETTE.coral}"/>
   </g>
-  ${microLabel(292, 638, ['PILOTED', '38% OF ORGANIZATIONS'], { arrow: '↑', anchor: 'middle', id: 'lblA', arrowAbove: true })}
+  ${microLabel(292, 638, ['PILOTED', '38% OF ORGANIZATIONS'], { arrow: '↑', anchor: 'middle', id: 'lblA', arrowAbove: true, color: PALETTE.paper })}
   ${microLabel(880, 220, ['IN PRODUCTION'], { arrow: '↓', anchor: 'middle', id: 'lblB', color: PALETTE.coral })}
   <text id="figA" x="1136" y="600" text-anchor="end" class="big" font-size="124" opacity="0">0%</text>
   <text id="figAc" x="1136" y="638" text-anchor="end" class="src" opacity="0">CROSS INTO PRODUCTION</text>
@@ -32,6 +32,7 @@ const crossing = frame(W, H, `
   kicker: 'THE CROSSING',
   headline: 'Nine in ten agents never leave the pilot.',
   source: 'DELOITTE TECH TRENDS 2026',
+  dark: true,
 });
 
 /* ---------------- B. The input/output spec ---------------- */
@@ -46,12 +47,12 @@ let specInner = '';
 const specIds = [];
 SPEC.forEach((row, i) => {
   const cy = 250 + i * 108;
-  const cl = ringCluster({ id: `s${i}`, tx: 560, cy, rMax: 40, rMin: 11, count: 5, width: 1.7 });
+  const cl = ringCluster({ id: `s${i}`, tx: 560, cy, rMax: 40, rMin: 11, count: 5, width: 1.7, stroke: PALETTE.paper });
   specIds.push(cl.ids);
   specInner += cl.svg;
   specInner += `<text id="si${i}" x="64" y="${cy + 6}" class="lbl" font-size="17" opacity="0">${row[0]}</text>`;
   specInner += `<text id="st${i}" x="600" y="${cy - 6}" class="lbl" font-size="16" fill="${PALETTE.coral}" opacity="0">${row[1]}</text>`;
-  specInner += `<text id="so${i}" x="600" y="${cy + 18}" font-family="'Inter Tight',sans-serif" font-size="19" fill="${PALETTE.ink}" opacity="0">${row[2]}</text>`;
+  specInner += `<text id="so${i}" x="600" y="${cy + 18}" font-family="'Inter Tight',sans-serif" font-size="19" fill="${PALETTE.paper}" opacity="0">${row[2]}</text>`;
 });
 specInner += dashRule(446, 196, 646);
 
@@ -59,25 +60,27 @@ const spec = frame(W, H, specInner, {
   kicker: 'THE INPUT/OUTPUT SPEC',
   headline: 'A deliverable goes in. A number comes out.',
   source: 'ENSO LABS · FORWARD DEPLOYED STRATEGIST',
+  dark: true,
 });
 
 /* ---------------- C. Same model, different harness ---------------- */
 // Clusters sit low so the counting numbers can own the space above them, clear of the arcs.
-const baseCl = ringCluster({ id: 'c1', tx: 410, cy: 470, rMax: 86, rMin: 18, count: 9, stroke: PALETTE.mute, width: 1.6 });
+const baseCl = ringCluster({ id: 'c1', tx: 410, cy: 470, rMax: 86, rMin: 18, count: 9, stroke: '#B7A992', width: 1.7 });
 const agCl = ringCluster({ id: 'c2', tx: 980, cy: 470, rMax: 153, rMin: 24, count: 15, stroke: PALETTE.coral, width: 1.9 });
 
 const bench = frame(W, H, `
   ${baseCl.svg}
   ${agCl.svg}
   ${dashRule(560, 250, 620)}
-  <text id="figC1" x="324" y="330" text-anchor="middle" class="big" font-size="66" fill="${PALETTE.mute}" opacity="0">0%</text>
+  <text id="figC1" x="324" y="330" text-anchor="middle" class="big" font-size="66" fill="#D9CDB8" opacity="0">0%</text>
   <text id="figC2" x="827" y="300" text-anchor="middle" class="big" font-size="104" opacity="0">0%</text>
-  ${microLabel(324, 612, ['EMBEDDING', 'BASELINE'], { arrow: '↑', anchor: 'middle', id: 'lblC1', arrowAbove: true })}
+  ${microLabel(324, 612, ['EMBEDDING', 'BASELINE'], { arrow: '↑', anchor: 'middle', id: 'lblC1', arrowAbove: true, color: PALETTE.paper })}
   ${microLabel(827, 646, ['AGENTIC HARNESS'], { arrow: '↑', anchor: 'middle', id: 'lblC2', color: PALETTE.coral, arrowAbove: true })}
 `, {
   kicker: 'BRIGHT · RECALL@1',
   headline: 'Retrieval strategy beat model choice.',
   source: 'MICROSOFT · ARXIV 2605.05538 · MAY 2026',
+  dark: true,
 });
 
 /* ---------------- animation drivers ---------------- */
