@@ -183,7 +183,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Brand',
     sourceCredit: 'Strategy to Ship',
     date: '2026-07-28',
-    dateModified: '2026-07-28',
+    dateModified: '2026-08-26',
     readingMinutes: 6,
     tags: ["Berkeley RDI", "Agentic AI Summit", "Demand-Side Gap", "Customer Segmentation", "Martech", "Gartner", "Marketing AI", "Agentic AI", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [
