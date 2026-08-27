@@ -277,6 +277,15 @@ Context: the week of Jul 20 the Claude Max plan hit its usage cap mid-week (a ru
 - **MANDATORY POST-RUN INBOX CLEANUP (set 2026-08-04 per Sav): EVERY run — scheduled or ad-hoc — ends with an email hygiene pass before the final report.** For job runs: application confirmations/receipts, rejections, swept alert digests, and job-board promos → "Jobs → Applied" (Label_19) + archive; self-forwarded job/newsletter mail → "Jobs → Forwarded" (Label_23) + archive; items needing Sav → "Jobs → Action" (Label_18), starred, LEFT in inbox; resolved action threads → Label_18 → Label_19 + archive. Other runs file to their own canonical labels (events → Label_8, etc.). Never delete received mail; never touch Heller/client threads. A run that leaves processed mail sitting in the inbox is incomplete.
 - **Re-affirmed + widened 2026-08-06 per Sav: the hygiene pass applies to EVERY surface and EVERY interaction that touches job mail — scheduled runs, ad-hoc chat requests, screenshot-driven asks, and Claude Code sessions alike.** Each processed email moves to its respective folder in the SAME turn it is handled, not at day-end. Routing recap: applied/receipts/rejections/swept digests/recruiter mail assessed-and-declined → Label_19 + archive · Sav's self-forwards → Label_23 + archive · live action items (recruiter threads awaiting Sav, interview logistics, 2-min finishes) → Label_18 + STARRED, kept in inbox · event invites encountered mid-job-run → Label_8 + archive. Every application outcome (submitted, staged, held, excluded) must ALSO be registered as a Notion Career Command Center row in the same turn — inbox filed + tracker recorded = the definition of done.
 - **STALE ACTION ITEMS surface EVERY run (set 2026-08-06 per Sav, after Jefferies/Epsilon/Pluto sat silent in Jobs → Action):** every job-run report MUST end with a "WAITING ON SAV" list — every "Jobs → Action" (Label_18) thread older than 48h, each with its ONE-step finish (e.g. "type OTP", "log into iCIMS", "call Pluto"). Parking an email in Label_18 is triage, not completion — an action item nobody re-surfaces is a dropped ball. If a Label_18 item ages past 7 days, escalate it to the TOP of the report with a decision ask (finish or archive).
+- **UNSENT DRAFTS ARE A DROPPED BALL — check Drafts EVERY run (set 2026-08-25 per Sav, after the Accenture near-miss).** On 2026-08-21 Sav wrote two excellent post-interview follow-ups (Zaryab Abbasi + a note for Raj) and never hit Send; both sat in Drafts for 4 days while the run report described them as "sent." Root cause: the sweep read the Sent folder loosely and treated a composed message as a delivered one. **Every run must now list every Gmail DRAFT addressed to a THIRD PARTY that is older than 24h, at the TOP of the report under "NOT SENT — needs your click."** Verify delivery against the Sent folder or the thread's message list — a draft ID returns "caller does not have permission" on `get_thread`, which is the tell. Consolidate multi-part drafts into ONE addressed, signed, ready-to-send message and trash the stale versions, so the remaining action is a single click. Claude still never sends to third parties; the click stays Sav's.
+- **SAY WHERE THINGS ARE SAVED, WITH A FULL PATH (set 2026-08-25 per Sav).** Sav is dyslexic and runs dozens of parallel projects — "staged," "recorded," or "saved" with no location is worse than useless, it creates stress and he cannot verify the work exists. Every report that claims something was written must give the exact path or destination (`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/<file>.md`, a named calendar hold, a Gmail label, a Notion row). Never describe a rule as "added" when it was only *proposed* — either write it to this file in the same turn or say plainly that it is a suggestion awaiting his go.
+- **APPLY ON SIGHT, EVERY MORNING, FASTEST-FIRST (set 2026-08-25 per Sav — four rules given together).**
+  1. **When Sav sends a list or screenshot of roles, open each one on LinkedIn and apply.** Not "surface," not "recommend" — open the posting, verify it, and submit. A list handed over is an instruction to apply, and the ≥9.0 approval gate is considered pre-released for any role Sav personally sent.
+  2. **Be proactive every morning and get applications IN ASAP.** Speed is the edge: "Be an early applicant" and "top applicant" windows close within hours. The morning run submits, it does not stage for later.
+  3. **Mine the interview pattern, then go find more of it.** Every run studies which roles are actually converting to interviews (as of Aug 2026: Cresta Forward Deployed PM · Auquan AI Applied Engineer · Accenture AWS Agentic Delivery Lead · Horizon Media SVP Product Experience · Mitchell Martin VP AI Transformation → the through-line is **forward-deployed / applied-AI delivery leadership at AI-native companies**), runs fresh searches against that pattern, and submits. Don't wait to be handed a list.
+  4. **Never duplicate an application.** STEP 4.5 stays mandatory and is now enforced per-company AND per-role-title: search BOTH inboxes including Sent for the company name and the role title before every submit. Same company + different role is allowed only when there is no rejection on file in the last 30 days and fewer than 3 live applications there.
+- **RESUME ATTACHMENT — the Greenhouse/MyGreenhouse autofill trap (found 2026-08-25).** Greenhouse autofill silently attaches `Sav_Banerjee_Master.pdf` from Sav's MyGreenhouse profile. That file is the SUPERSEDED July-14 version (no Berkeley RDI, no Forward Deployed Strategist series). **On every Greenhouse application: remove the autofilled resume and attach the correct Aug-19 archetype by hand.** Root fix pending: swap the default at https://my.greenhouse.io/profile to `Sav_Banerjee_ForwardDeployed_v4.pdf`.
+- **KNOWN BLOCKER — browser file upload (found 2026-08-25).** `mcp__claude-in-chrome__file_upload` is disabled in Cowork sessions; it rejects `paths` outright and instructs not to retry. Consequence: **any ATS requiring a resume file attachment cannot be submitted from Cowork.** Those roles must be prepped (every other field completed, correct posting open in a tab) and handed to Sav as an attach-and-submit, OR the run must move to Claude Code, where local file access works. Never report such a role as "applied."
 
 ### Every email carries the signature — UNIVERSAL (standing rule — set 2026-07-05, scope-confirmed 2026-07-06)
 - **EVERY email out of the account carries the signature — no exceptions by task, recipient, or type.** Enso Labs and Enso Partners are the SAME account (sav@ensopartners.co, which also receives sav@ensolabs.ai). Clients, partners, events, vendors, internal, cold outreach — new threads AND replies — all get it. Whenever any email or Gmail draft is composed (by any scheduled task, any skill, or an ad-hoc request), it MUST include the signature.
@@ -313,3 +322,56 @@ Context: the week of Jul 20 the Claude Max plan hit its usage cap mid-week (a ru
 ### D. Command-center tracking
 - Daily 6:45 AM `mcp-infrastructure-health-check` is the watchdog: canary → auto-heal → uptime log (`~/Documents/Claude/connector-uptime-log.md`) → report (`~/Documents/Claude/MCP-Health-Report.md`). Review the uptime streak weekly to confirm the daily drop is gone.
 - This section is the source of truth for the automation model; update it here (one place), don't hardcode routing into individual task prompts.
+
+### E. KNOWN-BROKEN SURFACES — read before reporting any blocker (set 2026-08-25)
+Sav's words, 2026-08-25: *"I cannot keep track of these broken MCP connectors every single time, every single day."*
+These are DIAGNOSED. Do not re-diagnose them, do not re-surface them as news, do not stall on them.
+Use the stated workaround, note it in one line, keep going.
+
+**1. CHROME — canonical browser is Profile 10 / `sav@ensopartners.co`.**
+Root cause of the recurring "which browser?" prompt and of tabs vanishing: the Claude extension
+(`fcoeoabgfenejglbffodgkkbkcdhcgfn`) is installed in THREE places —
+Chrome `Default` (sav.banerjee@gmail.com), Chrome `Profile 10` (sav@ensopartners.co), and **Comet**.
+Each registers as a separate "Browser" on the account, so Claude binds to whichever wins the race.
+- **CANONICAL deviceId: `4bde578f-c14b-442a-b028-c7cee39e3fbc` ("Browser 1") = Chrome Profile 10 = sav@ensopartners.co.**
+  Verified 2026-08-25 by loading myaccount.google.com in it. This is where his LinkedIn / Gmail / ATS
+  sessions live. It already matches `pairedDeviceId` in `claude_desktop_config.json`.
+- **Every run: call `select_browser` with that deviceId. Never ask Sav which browser** (standing rule since 8/13).
+- PERMANENT FIX (needs Sav, 2 min, once): remove the Claude extension from Chrome `Default` and from
+  Comet, keeping it ONLY in Profile 10. Until he does, `select_browser` on the canonical ID is the workaround.
+
+**2. RESUME FILE UPLOAD IS IMPOSSIBLE FROM COWORK — this is why applications stall one click short.**
+- `mcp__claude-in-chrome__file_upload` is DISABLED in Cowork sessions. Tested and confirmed 2026-08-25;
+  it rejects `paths` outright. Do not retry it, do not report it as a surprise.
+- The osascript → native macOS file-picker workaround ALSO fails: osascript lacks Accessibility
+  (assistive access) permission. `System Events` returns error -25211.
+- **UNBLOCK (needs Sav, once):** System Settings → Privacy & Security → Accessibility → enable **Terminal**.
+- Until then: any ATS needing a file attachment must be driven to the final screen, with every other field
+  completed, and handed over as an attach-and-submit. Reveal the correct resume in Finder (`open -R`) and
+  put its full path on the clipboard (`pbcopy`) so the handoff is a drag, not a hunt. Never call it "applied".
+
+**3. STALE RESUMES PRE-ATTACHED BY ATS PROFILES — check EVERY time, on every ATS.**
+Known bad autofills on Sav's existing candidate accounts:
+- **Greenhouse / MyGreenhouse** → `Sav_Banerjee_Master.pdf` (superseded July-14 version)
+- **JPMorganChase / Oracle HCM** → `SavBanerjee_Jan2023.pdf` (three years stale — found 2026-08-25)
+Always REMOVE the autofilled file and attach the correct Aug-19 archetype. Assume every ATS with a saved
+profile has a stale resume on it until proven otherwise.
+
+**4. NOTION "Career Command Center" — query quota.**
+The workspace hits Notion's Query Data Source usage limit. When it does, dedupe cannot be verified, so
+**write nothing to Notion** (the never-duplicate rule wins) and log the run to
+`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/RUN-LOG-<date>.md` instead. Say so in the report.
+
+**5. DESKTOP COMMANDER flaps.** It disconnected/reconnected 3× in one session on 2026-08-25. It is a
+Cowork *plugin* with an app-managed lifecycle — it is NOT in `claude_desktop_config.json` and must not be
+added there (that would create a duplicate server). Treat a drop as transient: wait, re-run `ToolSearch`,
+retry once. Do not report it as a blocker unless it fails twice in a row.
+
+**6. UNUSED PLUGIN BUNDLES generate the daily "needs authentication" noise.**
+`marketing:*` (ahrefs, amplitude, amplitude-eu, canva, figma, klaviyo, similarweb, supermetrics, hubspot)
+and `productivity:*` (asana, atlassian, clickup, linear, monday) have never been authorized and never will be.
+Recommend Sav uninstall those two plugin bundles in the Cowork plugin manager. Keep Notion + Slack.
+Until removed: ignore their auth warnings silently — never surface them to Sav as an issue.
+
+**Standing rule:** a blocker listed in this section is ALREADY KNOWN. Report it at most once, in one line,
+inside the run's blocked-sources list. Never lead a report with it, and never ask Sav to re-diagnose it.

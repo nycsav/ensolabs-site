@@ -1,0 +1,2 @@
+# Runtime dependency for the watsonx.data-backed Scout tool.
+trino>=0.328
