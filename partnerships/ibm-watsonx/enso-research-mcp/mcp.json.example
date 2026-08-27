@@ -1,0 +1,15 @@
+{
+  "_comment": "Copy to .mcp.json in your project root. Replace the placeholder keys. Do NOT commit real keys.",
+  "mcpServers": {
+    "enso-research": {
+      "command": "python3",
+      "args": [
+        "/Users/savbanerjee/Projects/ensolabs-site/partnerships/ibm-watsonx/enso-research-mcp/server.py"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "REPLACE_ME",
+        "OPENAI_API_KEY": "REPLACE_ME"
+      }
+    }
+  }
+}

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Signal Lens · Enso Labs × IBM watsonx Orchestrate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ibm-blue:#0f62fe; --ibm-blue-70:#0043ce; --ibm-blue-20:#d0e2ff;
+    --ink:#161616; --gray90:#262626; --gray70:#525252; --gray50:#8d8d8d; --gray30:#c6c6c6; --gray20:#e0e0e0; --gray10:#f4f4f4;
+    --navy:#0d1321; --navy2:#131a2b; --teal:#5ce0d2; --teal-dk:#12b3a6;
+    --amber:#e0a23c; --coral:#f0512e; --white:#fff;
+    --ok:#24a148; --warn:#f1c21b;
+    --shadow:0 1px 0 rgba(0,0,0,.06), 0 8px 24px rgba(13,19,33,.06);
+    --sans:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --serif:'IBM Plex Serif',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ---------- Top nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--gray20)}
+  .nav-inner{display:flex;align-items:center;gap:20px;height:60px;max-width:1180px;margin:0 auto;padding:0 24px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+  .brand .mark{width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center}
+  .brand .mark span{width:12px;height:12px;border:2px solid var(--teal);border-radius:50%;border-right-color:transparent;transform:rotate(-20deg)}
+  .brand small{color:var(--gray70);font-weight:400}
+  .nav-links{display:flex;gap:4px;margin-left:8px}
+  .nav-links a{padding:8px 12px;border-radius:6px;font-size:14px;color:var(--gray70);font-weight:500}
+  .nav-links a:hover{background:var(--gray10);color:var(--ink)}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+  /* Partner Plus connectors dropdown */
+  .connectors{position:relative}
+  .connectors>button{display:flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--white);background:var(--ibm-blue);border:0;padding:9px 14px;border-radius:7px;cursor:pointer}
+  .connectors>button:hover{background:var(--ibm-blue-70)}
+  .connectors>button .chev{transition:transform .2s}
+  .connectors.open>button .chev{transform:rotate(180deg)}
+  .conn-menu{position:absolute;right:0;top:calc(100% + 8px);width:340px;background:var(--white);border:1px solid var(--gray20);border-radius:12px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.16s}
+  .connectors.open .conn-menu{opacity:1;visibility:visible;transform:none}
+  .conn-menu .hd{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray50);padding:8px 10px 6px}
+  .conn-item{display:flex;gap:11px;align-items:flex-start;padding:9px 10px;border-radius:8px}
+  .conn-item:hover{background:var(--gray10)}
+  .conn-item .ico{flex:0 0 30px;height:30px;border-radius:7px;background:var(--ibm-blue-20);color:var(--ibm-blue-70);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;font-family:var(--mono)}
+  .conn-item .tt{font-size:13.5px;font-weight:600}
+  .conn-item .ds{font-size:12px;color:var(--gray70);line-height:1.35}
+  .conn-item .ext{margin-left:auto;color:var(--gray50);font-size:13px}
+  .pp-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--ibm-blue-70);background:var(--ibm-blue-20);padding:5px 10px;border-radius:20px;white-space:nowrap}
+  .pp-badge b{color:var(--ink)}
+  .hamburger{display:none}
+
+  /* ---------- Hero ---------- */
+  .hero{background:radial-gradient(1200px 500px at 80% -10%,rgba(92,224,210,.14),transparent),linear-gradient(180deg,var(--navy),var(--navy2));color:#eef2f7;padding:64px 0 72px;position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--teal);background:rgba(92,224,210,.08);border:1px solid rgba(92,224,210,.25);padding:6px 12px;border-radius:20px}
+  .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-.02em;margin:22px 0 14px;font-weight:600}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p.sub{font-size:clamp(16px,2vw,19px);color:#b8c2d4;max-width:640px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:15px;padding:12px 20px;border-radius:9px;border:0;cursor:pointer}
+  .btn-primary{background:var(--ibm-blue);color:#fff}
+  .btn-primary:hover{background:#3480ff}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#eef2f7;border:1px solid rgba(255,255,255,.16)}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+  .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+  .hero-meta div{font-size:13px;color:#9fb0c6}
+  .hero-meta b{display:block;color:#fff;font-size:15px;font-weight:600;margin-bottom:2px}
+  .hero-glow{position:absolute;right:-120px;top:-40px;width:520px;height:520px;background:radial-gradient(circle,rgba(15,98,254,.35),transparent 60%);filter:blur(20px);z-index:1}
+
+  /* ---------- Sections ---------- */
+  section{padding:64px 0}
+  .sec-head{max-width:680px;margin-bottom:34px}
+  .sec-head .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ibm-blue)}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.02em;margin:10px 0 10px;font-weight:600}
+  .sec-head p{color:var(--gray70);font-size:16px}
+
+  /* Pipeline */
+  .pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:stretch}
+  .stage{background:var(--white);border:1px solid var(--gray20);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+  .stage .num{font-family:var(--mono);font-size:12px;color:var(--ibm-blue);font-weight:600}
+  .stage h3{font-size:19px;margin:6px 0 6px;font-weight:600}
+  .stage .fn{font-family:var(--mono);font-size:12.5px;color:var(--teal-dk);background:#e7faf7;display:inline-block;padding:2px 8px;border-radius:5px;margin-bottom:10px}
+  .stage p{font-size:14px;color:var(--gray70)}
+  .arrow{display:flex;align-items:center;justify-content:center;color:var(--gray30);font-size:24px}
+
+  /* Demo */
+  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .panel{background:var(--white);border:1px solid var(--gray20);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  .panel .ph{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--gray20);background:var(--gray10)}
+  .panel .ph .dot{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+  .panel .ph b{font-size:13.5px}
+  .panel .ph .pill{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gray70);border:1px solid var(--gray30);padding:2px 8px;border-radius:20px}
+  .panel .pb{padding:18px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--gray70);margin-bottom:6px}
+  .field input,.field select{width:100%;font-family:var(--sans);font-size:15px;padding:11px 12px;border:1px solid var(--gray30);border-radius:8px;background:#fff}
+  .field input:focus,.field select:focus{outline:2px solid var(--ibm-blue);border-color:var(--ibm-blue)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .chip{font-size:12.5px;padding:6px 11px;border-radius:20px;border:1px solid var(--gray30);background:#fff;cursor:pointer;color:var(--gray70)}
+  .chip:hover{border-color:var(--ibm-blue);color:var(--ibm-blue)}
+  .runbar{display:flex;gap:10px;align-items:center;margin-top:6px}
+  .run-steps{display:flex;gap:8px;margin:16px 0 0;flex-wrap:wrap}
+  .rstep{display:flex;align-items:center;gap:7px;font-size:12px;font-family:var(--mono);color:var(--gray50);border:1px solid var(--gray20);border-radius:20px;padding:5px 11px}
+  .rstep .rs-dot{width:8px;height:8px;border-radius:50%;background:var(--gray30)}
+  .rstep.active{color:var(--ibm-blue-70);border-color:var(--ibm-blue-20);background:#f2f7ff}
+  .rstep.active .rs-dot{background:var(--ibm-blue)}
+  .rstep.done{color:var(--ok);border-color:#c9ebd3;background:#f2fbf5}
+  .rstep.done .rs-dot{background:var(--ok)}
+
+  /* Brief output */
+  .brief{font-size:14.5px}
+  .brief .b-title{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:2px}
+  .brief .b-date{font-family:var(--mono);font-size:12px;color:var(--gray50);margin-bottom:14px}
+  .brief .b-lead{background:#f2f7ff;border-left:3px solid var(--ibm-blue);padding:12px 14px;border-radius:0 8px 8px 0;margin-bottom:16px;font-size:14.5px}
+  .brief .b-lead b{color:var(--ibm-blue-70)}
+  .brief h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray50);margin:0 0 10px}
+  .sig{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--gray20)}
+  .sig .sc{flex:0 0 46px;height:46px;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;color:#fff;background:var(--teal-dk)}
+  .sig .sc small{font-size:9px;font-weight:500;opacity:.85}
+  .sig .st{font-weight:600;font-size:14.5px;line-height:1.3}
+  .sig .sm{font-size:12.5px;color:var(--gray70);margin-top:3px}
+  .sig .cite{font-family:var(--mono);font-size:11.5px;color:var(--gray50);margin-top:5px}
+  .sig .cite a{color:var(--ibm-blue)}
+  .b-foot{margin-top:16px;padding-top:12px;border-top:1px solid var(--gray20);font-size:12.5px;color:var(--gray50);display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap}
+  .b-foot .pw{font-weight:600;color:var(--gray70)}
+  .empty{padding:22px;background:var(--gray10);border-radius:10px;color:var(--gray70);font-size:14px}
+
+  /* Scoring table */
+  .scorewrap{margin-top:2px;max-height:420px;overflow:auto}
+  table.score{width:100%;border-collapse:collapse;font-size:13px}
+  table.score th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--gray50);font-weight:600;padding:8px 8px;border-bottom:1px solid var(--gray20);position:sticky;top:0;background:#fff}
+  table.score td{padding:9px 8px;border-bottom:1px solid var(--gray10);vertical-align:top}
+  table.score .ttl{font-weight:600;max-width:230px}
+  table.score .src{font-size:11.5px;color:var(--gray50);font-family:var(--mono)}
+  .axis{font-family:var(--mono);text-align:center;width:34px}
+  .final{font-family:var(--mono);font-weight:600}
+  .tag-surface{font-size:10.5px;font-weight:600;color:var(--ok);background:#eafaef;padding:2px 7px;border-radius:5px}
+  .tag-drop{font-size:10.5px;font-weight:600;color:var(--gray50);background:var(--gray10);padding:2px 7px;border-radius:5px}
+  .bar{height:5px;border-radius:3px;background:var(--gray20);overflow:hidden;margin-top:4px}
+  .bar>span{display:block;height:100%;background:var(--ibm-blue)}
+
+  /* Connectors section */
+  .conn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ccard{background:var(--white);border:1px solid var(--gray20);border-radius:14px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+  .ccard .ci{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:14px}
+  .ccard h4{font-size:16px;font-weight:600}
+  .ccard p{font-size:13.5px;color:var(--gray70);flex:1}
+  .ccard .st{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;font-family:var(--mono)}
+  .st .d{width:8px;height:8px;border-radius:50%}
+  .st.live .d{background:var(--ok)} .st.live{color:var(--ok)}
+  .st.avail .d{background:var(--warn)} .st.avail{color:#a5820b}
+  .ccard a.launch{font-size:13px;font-weight:600;color:var(--ibm-blue);display:inline-flex;align-items:center;gap:6px}
+
+  /* Partner strip */
+  .pp-strip{background:var(--gray10);border-top:1px solid var(--gray20);border-bottom:1px solid var(--gray20)}
+  .pp-strip .wrap{display:flex;align-items:center;gap:26px;flex-wrap:wrap;padding:22px 24px}
+  .pp-strip .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray50)}
+  .pp-logos{display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-weight:600;color:var(--gray70)}
+  .pp-logos span{display:inline-flex;align-items:center;gap:8px}
+
+  footer{background:var(--navy);color:#9fb0c6;padding:44px 0;font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer b{color:#fff}
+  footer .arrow-coral{color:var(--coral);font-weight:700}
+
+  /* Architecture diagram (watsonx stack, lakehouse at the base) */
+  .arch{display:flex;flex-direction:column;border:1px solid var(--gray20);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+  .arch-band{display:flex;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid var(--gray20);position:relative}
+  .arch-band:last-child{border-bottom:0}
+  .arch-band .lyr{flex:0 0 132px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray50);line-height:1.3}
+  .arch-band .body{flex:1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .arch-box{border:1px solid var(--gray30);border-radius:10px;padding:10px 14px;font-size:13.5px;font-weight:600;background:var(--gray10);min-width:120px}
+  .arch-box small{display:block;font-weight:400;color:var(--gray70);font-size:11.5px;margin-top:2px}
+  .arch-box.ibm{border-color:var(--ibm-blue-20);background:#f2f7ff;color:var(--ibm-blue-70)}
+  .arch-box.teal{border-color:#bff0ea;background:#e7faf7;color:var(--teal-dk)}
+  .arch-box.grow{flex:1}
+  .arch-band.lake{background:linear-gradient(180deg,#f4f8ff,#eaf1ff)}
+  .arch-band.gov{background:var(--navy)}
+  .arch-band.gov .lyr{color:var(--teal)}
+  .arch-band.gov .arch-box{background:rgba(255,255,255,.06);border-color:rgba(92,224,210,.3);color:#eaf6ff}
+  .arch-src{display:inline-flex;gap:8px;flex-wrap:wrap}
+  .arch-chip{font-family:var(--mono);font-size:11px;color:var(--ibm-blue-70);background:#fff;border:1px solid var(--ibm-blue-20);border-radius:20px;padding:4px 10px}
+  .arch-updown{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);z-index:2;background:#fff;border:1px solid var(--gray20);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--ibm-blue);font-size:12px}
+  .arch-cap{font-size:12.5px;color:var(--gray70);margin-top:14px;text-align:center}
+  @media(max-width:760px){.arch-band{flex-direction:column;align-items:flex-start;gap:10px}.arch-band .lyr{flex:none}}
+
+  @media(max-width:900px){
+    .nav-links{display:none} .hamburger{display:block}
+    .demo-grid{grid-template-columns:1fr}
+    .pipe{grid-template-columns:1fr}.pipe .arrow{transform:rotate(90deg);padding:2px 0}
+    .conn-grid{grid-template-columns:1fr}
+    .pp-badge{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="mark"><span></span></span>
+      Enso&nbsp;Labs <small>· Signal Lens</small>
+    </a>
+    <nav class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#pipeline">How it works</a>
+      <a href="#demo">Live demo</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#connectors">Connectors</a>
+    </nav>
+    <div class="nav-right">
+      <span class="pp-badge">◆ IBM Partner Plus · <b>Build</b></span>
+      <div class="connectors" id="connWrap">
+        <button id="connBtn">◧ Partner Plus Connectors <span class="chev">▾</span></button>
+        <div class="conn-menu">
+          <div class="hd">Launch into the Partner Plus ecosystem</div>
+          <a class="conn-item" href="https://www.ibm.com/partnerplus" target="_blank" rel="noopener">
+            <span class="ico">P+</span><span><span class="tt">IBM Partner Plus Portal</span><span class="ds">Enso Partners LLC · Registered tier · Build journey</span></span><span class="ext">↗</span>
+          </a>
+          <a class="conn-item" href="https://au-syd.watson-orchestrate.cloud.ibm.com/home" target="_blank" rel="noopener">
+            <span class="ico">wO</span><span><span class="tt">watsonx Orchestrate</span><span class="ds">Your live instance · au-syd · Trial (30 days)</span></span><span class="ext">↗</span>
+          </a>
+          <a class="conn-item" href="https://au-syd.watson-orchestrate.cloud.ibm.com/build/manage" target="_blank" rel="noopener">
+            <span class="ico">AB</span><span><span class="tt">Agent Builder</span><span class="ds">Signal Lens agent + 3 tools, deployed</span></span><span class="ext">↗</span>
+          </a>
+          <a class="conn-item" href="https://www.ibm.com/products/watsonx-data" target="_blank" rel="noopener">
+            <span class="ico">◱</span><span><span class="tt">watsonx.data</span><span class="ds">Lakehouse foundation · Iceberg + Presto, in-tenant</span></span><span class="ext">↗</span>
+          </a>
+          <a class="conn-item" href="https://developer.watson-orchestrate.ibm.com/" target="_blank" rel="noopener">
+            <span class="ico">{}</span><span><span class="tt">watsonx Orchestrate ADK</span><span class="ds">Developer docs · agents, tools, flows</span></span><span class="ext">↗</span>
+          </a>
+          <a class="conn-item" href="https://cloud.ibm.com/catalog" target="_blank" rel="noopener">
+            <span class="ico">☁</span><span><span class="tt">IBM Cloud Catalog</span><span class="ds">Software Access Catalog · cloud credits</span></span><span class="ext">↗</span>
+          </a>
+          <a class="conn-item" href="https://www.ibm.com/products/watsonx-ai" target="_blank" rel="noopener">
+            <span class="ico">ai</span><span><span class="tt">watsonx.ai</span><span class="ds">Foundation models powering the agent</span></span><span class="ext">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div id="top"></div>
+<section class="hero" style="padding-top:56px">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <span class="kicker">◆ Built on IBM watsonx Orchestrate · Enso Labs managed agent</span>
+    <h1>Signal Lens turns market noise<br/>into <em>decision-ready briefs.</em></h1>
+    <p class="sub">A managed research-intelligence agent. Give it a topic; it scouts the market, scores every signal against your strategic lens, and publishes a dated, cited brief containing only what forces a decision — nothing padded.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#demo">▶ Run the live demo</a>
+      <a class="btn btn-ghost" href="#pipeline">See how it works</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>3-step agent</b>Scout → Curate → Publish</div>
+      <div><b>4-axis lens</b>Relevance · Materiality · Urgency · Confidence</div>
+      <div><b>watsonx Orchestrate</b>Native agent + Python tools (ADK)</div>
+      <div><b>Proven pattern</b>Behind the W.L. Gore deployment</div>
+    </div>
+  </div>
+</section>
+
+<!-- Partner strip -->
+<div class="pp-strip"><div class="wrap">
+  <span class="lbl">Delivered under</span>
+  <div class="pp-logos">
+    <span>◆ IBM Partner Plus <b style="color:var(--ink)">— Build track</b></span>
+    <span>⟡ watsonx Orchestrate</span>
+    <span style="color:var(--ink)">✕</span>
+    <span>Enso Labs <b style="color:var(--ink)">— Applied AI Studio</b></span>
+  </div>
+</div></div>
+
+<!-- ================= OVERVIEW / PIPELINE ================= -->
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">The managed agent</span>
+      <h2>One agent. Three tools. A transparent lens.</h2>
+      <p>Signal Lens is a native watsonx Orchestrate agent that orchestrates three Python tools in sequence. Every score is explainable — no black box, no padding.</p>
+    </div>
+    <div class="pipe" id="pipeline">
+      <div class="stage">
+        <div class="num">STEP 01</div>
+        <h3>Scout</h3>
+        <span class="fn">fetch_signals()</span>
+        <p>Pulls candidate market signals for the topic within a lookback window. Today: a curated sample set; production swaps in live news, filings, and internal knowledge-base connectors.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage">
+        <div class="num">STEP 02</div>
+        <h3>Curate</h3>
+        <span class="fn">score_signal()</span>
+        <p>Scores each signal 1–10 on four axes — relevance, materiality, urgency, confidence — and averages them. The Enso strategic lens; weights tune per client.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="stage">
+        <div class="num">STEP 03</div>
+        <h3>Publish</h3>
+        <span class="fn">publish_brief()</span>
+        <p>Assembles only the 7.0+ signals into a dated, cited brief, sorted by score and led by "what changed & why it matters." Nothing clears the bar? It says so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIVE DEMO ================= -->
+<section id="demo" style="background:var(--gray10);border-top:1px solid var(--gray20);border-bottom:1px solid var(--gray20)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Live demo · runs the real pipeline</span>
+      <h2>Generate a brief</h2>
+      <p>This runs the exact Scout → Curate → Publish logic deployed on watsonx Orchestrate, in your browser. Try the strategic lens below, or type your own.</p>
+    </div>
+    <div class="demo-grid">
+      <!-- input + scoring -->
+      <div class="panel">
+        <div class="ph"><span class="dot"></span><b>Signal Lens · console</b><span class="pill">agent: signal_lens</span></div>
+        <div class="pb">
+          <div class="field">
+            <label>Strategic lens / topic</label>
+            <input id="topic" value="grid-scale battery storage" />
+            <div class="chips">
+              <span class="chip" data-t="grid-scale battery storage">grid-scale battery storage</span>
+              <span class="chip" data-t="BESS">BESS</span>
+              <span class="chip" data-t="battery insulation">battery insulation</span>
+              <span class="chip" data-t="agentic AI">agentic AI</span>
+            </div>
+          </div>
+          <div class="field">
+            <label>Lookback window</label>
+            <select id="lookback">
+              <option value="7" selected>Last 7 days</option>
+              <option value="14">Last 14 days</option>
+              <option value="30">Last 30 days</option>
+            </select>
+          </div>
+          <div class="runbar">
+            <button class="btn btn-primary" id="runBtn" style="font-size:14px;padding:11px 18px">▶ Run Signal Lens</button>
+            <span style="font-size:12px;color:var(--gray50);font-family:var(--mono)">threshold ≥ 7.0</span>
+          </div>
+          <div class="run-steps" id="runSteps">
+            <span class="rstep" data-s="fetch"><span class="rs-dot"></span>fetch_signals</span>
+            <span class="rstep" data-s="score"><span class="rs-dot"></span>score_signal ×N</span>
+            <span class="rstep" data-s="publish"><span class="rs-dot"></span>publish_brief</span>
+          </div>
+          <div style="margin-top:18px">
+            <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray50);margin-bottom:8px">Scoring — the transparent lens</h4>
+            <div class="scorewrap">
+              <table class="score" id="scoreTable">
+                <thead><tr><th>Signal</th><th class="axis">Rel</th><th class="axis">Mat</th><th class="axis">Urg</th><th class="axis">Conf</th><th class="axis">Score</th><th></th></tr></thead>
+                <tbody id="scoreBody"><tr><td colspan="7" style="color:var(--gray50);padding:18px 8px">Run the agent to see per-signal scores…</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- brief output -->
+      <div class="panel">
+        <div class="ph"><span class="dot"></span><b>Published brief</b><span class="pill" id="briefChannel">channel: inline</span></div>
+        <div class="pb"><div class="brief" id="brief">
+          <div class="empty">The dated, cited brief will appear here — only signals scoring 7.0+ make the cut.</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE ================= -->
+<section id="architecture">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Reference architecture · W.L. Gore</span>
+      <h2>watsonx.data is the lakehouse under the agent</h2>
+      <p>Signal Lens doesn't scrape the web — it reads a governed lakehouse. Gore's internal and external data lands once in <b>watsonx.data</b> (open Iceberg tables, Presto engine, in-tenant), and the agent's Scout step queries it with SQL. One data foundation, every agent on top of it.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-band">
+        <div class="lyr">Consume</div>
+        <div class="body"><div class="arch-box grow">Gore strategy &amp; R&amp;D teams<small>Receive the dated, cited decision brief — in-app, email, or Slack</small></div></div>
+        <div class="arch-updown">▲</div>
+      </div>
+      <div class="arch-band">
+        <div class="lyr">Agent<br/>runtime</div>
+        <div class="body">
+          <div class="arch-box ibm grow">Signal Lens · watsonx Orchestrate
+            <small>Scout (fetch_signals → lakehouse SQL) · Curate (score_signal, 4-axis lens) · Publish (publish_brief, ≥7.0)</small></div>
+        </div>
+        <div class="arch-updown">▲</div>
+      </div>
+      <div class="arch-band">
+        <div class="lyr">Reasoning</div>
+        <div class="body"><div class="arch-box ibm grow">watsonx.ai foundation models<small>Score interpretation + brief composition (granite / llama instruct)</small></div></div>
+        <div class="arch-updown">▲</div>
+      </div>
+      <div class="arch-band lake">
+        <div class="lyr">Data<br/>foundation</div>
+        <div class="body">
+          <div class="arch-box ibm grow" style="width:100%">watsonx.data — open lakehouse (Apache Iceberg · Presto/Trino SQL · in-tenant)
+            <small style="margin-top:6px">Gore data landed once, queried by every agent:</small>
+            <span class="arch-src" style="margin-top:8px">
+              <span class="arch-chip">R&amp;D / materials science</span>
+              <span class="arch-chip">SEC &amp; regulatory filings</span>
+              <span class="arch-chip">UL / safety standards</span>
+              <span class="arch-chip">supplier &amp; BOM</span>
+              <span class="arch-chip">CRM / accounts</span>
+              <span class="arch-chip">market &amp; news feeds</span>
+              <span class="arch-chip">patents</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="arch-band gov">
+        <div class="lyr">Govern</div>
+        <div class="body"><div class="arch-box grow">watsonx.governance — lineage, access control &amp; audit trail across the whole stack<small style="color:#9fd8d0">Every signal in a brief traces back to a governed row in the lakehouse.</small></div></div>
+      </div>
+    </div>
+    <p class="arch-cap">Land <b>watsonx Orchestrate</b> with the agent's fast ROI → expand into <b>watsonx.data</b> as the durable foundation. Three watsonx products, one Build motion.</p>
+  </div>
+</section>
+
+<!-- ================= CONNECTORS ================= -->
+<section id="connectors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Connectors</span>
+      <h2>Plugged into the Partner Plus ecosystem</h2>
+      <p>Signal Lens is a managed agent, not a script. It connects up into IBM Partner Plus surfaces and out to the data sources that feed the Scout step. Launch any connector from the nav bar.</p>
+    </div>
+    <div class="conn-grid">
+      <div class="ccard">
+        <div class="ci" style="background:#eaf1ff;color:var(--ibm-blue-70)">◱</div>
+        <h4>watsonx.data</h4>
+        <p>The lakehouse foundation. Gore's data lands once in open Iceberg tables; Scout queries it via Presto SQL, in-tenant — no scraping, no data movement.</p>
+        <span class="st live"><span class="d"></span>Connected · lakehouse</span>
+        <a class="launch" href="https://www.ibm.com/products/watsonx-data" target="_blank" rel="noopener">About watsonx.data ↗</a>
+      </div>
+      <div class="ccard">
+        <div class="ci" style="background:var(--ibm-blue-20);color:var(--ibm-blue-70)">wO</div>
+        <h4>watsonx Orchestrate</h4>
+        <p>The runtime. Signal Lens is a native agent with three registered Python tools, deployed to your au-syd instance.</p>
+        <span class="st live"><span class="d"></span>Connected · deployed</span>
+        <a class="launch" href="https://au-syd.watson-orchestrate.cloud.ibm.com/build/manage" target="_blank" rel="noopener">Open Agent Builder ↗</a>
+      </div>
+      <div class="ccard">
+        <div class="ci" style="background:#eef0ff;color:#3a3fd8">ai</div>
+        <h4>watsonx.ai models</h4>
+        <p>Foundation models reason over the scored signals and compose the brief narrative inside the agent.</p>
+        <span class="st live"><span class="d"></span>Connected · granite / llama</span>
+        <a class="launch" href="https://www.ibm.com/products/watsonx-ai" target="_blank" rel="noopener">About watsonx.ai ↗</a>
+      </div>
+      <div class="ccard">
+        <div class="ci" style="background:var(--ibm-blue-20);color:var(--ibm-blue-70)">P+</div>
+        <h4>IBM Partner Plus</h4>
+        <p>Build-track entitlements — Software Access Catalog and cloud credits — provision the runtime and models.</p>
+        <span class="st live"><span class="d"></span>Registered · Build journey</span>
+        <a class="launch" href="https://www.ibm.com/partnerplus" target="_blank" rel="noopener">Partner Plus Portal ↗</a>
+      </div>
+      <div class="ccard">
+        <div class="ci" style="background:#e7faf7;color:var(--teal-dk)">◎</div>
+        <h4>News & search</h4>
+        <p>The Scout step's primary live feed. Swap the sample set for a news/search API to go real-time.</p>
+        <span class="st avail"><span class="d"></span>Available · sample active</span>
+        <a class="launch" href="#demo">See Scout in the demo →</a>
+      </div>
+      <div class="ccard">
+        <div class="ci" style="background:#e7faf7;color:var(--teal-dk)">§</div>
+        <h4>Filings & regulatory</h4>
+        <p>EDGAR filings and standards bodies (e.g. UL) — high-confidence, editorially-accountable sources.</p>
+        <span class="st avail"><span class="d"></span>Available · connector-ready</span>
+        <a class="launch" href="#connectors">Configure →</a>
+      </div>
+      <div class="ccard">
+        <div class="ci" style="background:#e7faf7;color:var(--teal-dk)">⌘</div>
+        <h4>Internal knowledge base</h4>
+        <p>Client corpora and CRM for grounded retrieval — the private half of the lens, kept in-tenant.</p>
+        <span class="st avail"><span class="d"></span>Available · Phase 2</span>
+        <a class="launch" href="#connectors">Configure →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="color:#fff;font-weight:600;font-size:15px;margin-bottom:4px">Signal Lens — a managed research-intelligence agent</div>
+      Enso Labs <span class="arrow-coral">→</span> IBM Partner Plus (Build) · Built on watsonx Orchestrate
+    </div>
+    <div style="text-align:right">
+      <div><b>Powered by Enso Labs</b></div>
+      <div style="margin-top:4px">Demo build for partner review · Enso Partners LLC</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   Signal Lens pipeline — faithfully ported from the watsonx
+   Orchestrate ADK tools (fetch_signals / score_signal / publish_brief).
+   Deterministic sample set; "today" is pinned so the demo always runs.
+   ============================================================ */
+const DEMO_TODAY = new Date('2026-07-31T00:00:00Z');
+
+const SAMPLE_SIGNALS = [
+  {id:'s1',title:'Grid-scale battery storage deployments up 34% QoQ in North America',source:'Wood Mackenzie Energy Storage Monitor',url:'https://example.com/woodmac-ess-q2',published:'2026-07-27',summary:'Utility-scale storage additions accelerated on falling cell prices and new capacity-market rules.',topics:['grid-scale battery storage','energy storage','BESS']},
+  {id:'s2',title:'New UL safety standard finalized for battery thermal-runaway containment',source:'UL Solutions',url:'https://example.com/ul-9540a-update',published:'2026-07-25',summary:'Updated test method tightens requirements on insulation and gas venting for large packs.',topics:['grid-scale battery storage','battery insulation','safety','BESS']},
+  {id:'s3',title:'Major utility signs 2 GWh multi-year storage supply agreement',source:'Reuters',url:'https://example.com/reuters-utility-2gwh',published:'2026-07-24',summary:'Long-duration procurement signals durable demand through 2029.',topics:['grid-scale battery storage','procurement','BESS']},
+  {id:'s4',title:'Analyst note: cathode raw-material prices tick up 3%',source:'Benchmark Minerals',url:'https://example.com/benchmark-cathode',published:'2026-07-22',summary:'Modest input-cost pressure; limited near-term margin impact.',topics:['battery materials','supply chain']},
+  {id:'s5',title:'Conference recap: agentic AI in industrial operations',source:'Industry blog',url:'https://example.com/agentic-industrial-recap',published:'2026-07-10',summary:'General overview, no new data.',topics:['ai','manufacturing','agentic ai']},
+];
+
+const STOP = new Set(['the','a','an','and','or','of','for','in','on','to','with','is','are','at','by','from','new','its']);
+const MATERIALITY = ['%','billion','million','gw','gwh','acquisition','merger','launch','partnership','agreement','standard','regulation','funding','raise','contract','deployment','rollout','expand','record'];
+const URGENCY = ['announced','launches','signs','finalized','unveils','releases','acquires','expands','begins','rolls out','approves','bans','recalls'];
+const HIGH_SRC = ['reuters','bloomberg','financial times','wall street journal','the economist','associated press','cnbc','wood mackenzie','ul solutions','benchmark minerals','s&p','iea','gartner','forrester','idc','techcrunch','the information'];
+const MED_SRC = ['venturebeat','zdnet','the verge','axios','business wire','pr newswire'];
+
+function lensTerms(lens){return (lens.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>!STOP.has(w)&&w.length>2);}
+function axisScore(text,terms){const hits=terms.reduce((n,t)=>n+(text.includes(t)?1:0),0);return Math.max(1,Math.min(10,3+hits*2));}
+function relevanceScore(text,lens){const terms=lensTerms(lens);if(!terms.length)return 5;const hits=terms.reduce((n,t)=>n+(text.includes(t)?1:0),0);const cov=hits/terms.length;if(text.includes(lens.toLowerCase()))return 10;return Math.max(1,Math.min(10,Math.round(2+cov*8)));}
+function confidenceScore(src){const s=src.toLowerCase();if(HIGH_SRC.some(x=>s.includes(x)))return 9;if(MED_SRC.some(x=>s.includes(x)))return 6;return 4;}
+
+function fetchSignals(topic,lookbackDays){
+  const tl=topic.toLowerCase();
+  const cutoff=new Date(DEMO_TODAY.getTime()-lookbackDays*864e5);
+  return SAMPLE_SIGNALS.filter(sig=>{
+    const pub=new Date(sig.published+'T00:00:00Z');
+    if(pub<cutoff)return false;
+    const hay=(sig.title+' '+sig.topics.join(' ')).toLowerCase();
+    return hay.includes(tl)||sig.topics.some(t=>t.toLowerCase().includes(tl));
+  });
+}
+function scoreSignal(sig,lens){
+  const title=sig.title||'',summary=sig.summary||'',source=(sig.source||'').toLowerCase();
+  const topics=(sig.topics||[]).join(' ');
+  // relevance scores against the signal's OWN content (title+summary+topics),
+  // not a lens-appended string — so the axis genuinely differentiates signals.
+  const content=(title+' '+summary+' '+topics).toLowerCase();
+  const text=(title+' '+summary).toLowerCase();
+  const relevance=relevanceScore(content,lens);
+  let materiality=axisScore(text,MATERIALITY);
+  if(/\d[\d,\.]*\s*(%|billion|million|thousand|gw|gwh|k\b)/.test(text))materiality=Math.min(10,materiality+2);
+  const urgency=axisScore(text,URGENCY);
+  const confidence=confidenceScore(source);
+  const score=Math.round(((relevance+materiality+urgency+confidence)/4)*10)/10;
+  return {...sig,relevance,materiality,urgency,confidence,score,surface:score>=7.0};
+}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ---------- render ---------- */
+function renderScores(scored){
+  const body=document.getElementById('scoreBody');
+  if(!scored.length){body.innerHTML='<tr><td colspan="7" style="color:var(--gray50);padding:18px 8px">No candidate signals in this window — the Scout step returned nothing to score.</td></tr>';return;}
+  body.innerHTML=scored.map(s=>`<tr>
+    <td class="ttl">${esc(s.title)}<div class="src">${esc(s.source)} · ${s.published}</div></td>
+    <td class="axis">${s.relevance}</td><td class="axis">${s.materiality}</td><td class="axis">${s.urgency}</td><td class="axis">${s.confidence}</td>
+    <td class="final">${s.score.toFixed(1)}<div class="bar"><span style="width:${s.score*10}%;background:${s.surface?'var(--ok)':'var(--gray30)'}"></span></div></td>
+    <td>${s.surface?'<span class="tag-surface">surface</span>':'<span class="tag-drop">drop</span>'}</td>
+  </tr>`).join('');
+}
+function renderBrief(scored,topic){
+  const el=document.getElementById('brief');
+  const today=DEMO_TODAY.toISOString().slice(0,10);
+  const surfaced=scored.filter(s=>s.surface).sort((a,b)=>b.score-a.score);
+  let html=`<div class="b-title">Signal Lens brief — ${esc(topic)}</div><div class="b-date">${today} · Powered by Enso Labs</div>`;
+  if(!surfaced.length){
+    html+=`<div class="empty"><b>Nothing crossed the 7.0 threshold today.</b><br/>No material signals to report — the noise was filtered out rather than padded into a brief.</div>`;
+    el.innerHTML=html;return;
+  }
+  const top=surfaced[0];
+  html+=`<div class="b-lead"><b>What changed:</b> ${esc(top.title)} <span style="color:var(--gray50)">(score ${top.score.toFixed(1)})</span>.</div>`;
+  html+=`<h4>Ranked signals</h4>`;
+  html+=surfaced.map(s=>`<div class="sig">
+    <div class="sc">${s.score.toFixed(1)}<small>SCORE</small></div>
+    <div><div class="st">${esc(s.title)}</div><div class="sm">${esc(s.summary)}</div>
+    <div class="cite">${esc(s.source)}, ${s.published} · <a href="${esc(s.url)}" target="_blank" rel="noopener">source ↗</a></div></div>
+  </div>`).join('');
+  html+=`<div class="b-foot"><span>${surfaced.length} of ${scored.length} candidate signals surfaced (7.0+ threshold)</span><span class="pw">Powered by Enso Labs</span></div>`;
+  el.innerHTML=html;
+}
+
+/* ---------- run with staged animation ---------- */
+let running=false;
+function setStep(name,state){const el=document.querySelector(`.rstep[data-s="${name}"]`);if(!el)return;el.classList.remove('active','done');if(state)el.classList.add(state);}
+async function run(){
+  if(running)return;running=true;
+  const topic=document.getElementById('topic').value.trim()||'market';
+  const lookback=parseInt(document.getElementById('lookback').value,10);
+  ['fetch','score','publish'].forEach(s=>setStep(s,null));
+  document.getElementById('brief').innerHTML='<div class="empty">Running the agent…</div>';
+  document.getElementById('scoreBody').innerHTML='<tr><td colspan="7" style="color:var(--gray50);padding:18px 8px">Scouting…</td></tr>';
+
+  setStep('fetch','active'); await wait(520);
+  const candidates=fetchSignals(topic,lookback);
+  setStep('fetch','done');
+
+  setStep('score','active');
+  const scored=[];
+  for(const c of candidates){scored.push(scoreSignal(c,topic));renderScores(scored);await wait(260);}
+  if(!candidates.length)renderScores([]);
+  setStep('score','done');
+
+  setStep('publish','active'); await wait(480);
+  renderBrief(scored,topic);
+  setStep('publish','done');
+  running=false;
+}
+function wait(ms){return new Promise(r=>setTimeout(r,ms));}
+
+/* ---------- wire up ---------- */
+document.getElementById('runBtn').addEventListener('click',run);
+document.getElementById('topic').addEventListener('keydown',e=>{if(e.key==='Enter')run();});
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{document.getElementById('topic').value=c.dataset.t;run();}));
+const cw=document.getElementById('connWrap'),cb=document.getElementById('connBtn');
+cb.addEventListener('click',e=>{e.stopPropagation();cw.classList.toggle('open');});
+document.addEventListener('click',()=>cw.classList.remove('open'));
+/* auto-run once on load so the page shows a live brief immediately */
+window.addEventListener('load',()=>setTimeout(run,400));
+</script>
+</body>
+</html>

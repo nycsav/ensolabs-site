@@ -1,0 +1,3 @@
+# Only dependency: a CA bundle, so TLS verification works identically on
+# Vercel's runtime and on local macOS Python builds. Everything else is stdlib.
+certifi
