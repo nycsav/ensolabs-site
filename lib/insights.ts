@@ -142,7 +142,7 @@ export const INSIGHTS: Insight[] = [
       "- [ ] **The blocker is not the model.** Leaders name evaluation gaps, governance friction and reliability — all three are harness problems, all three trace to a missing input.",
       "- [ ] **Four strategy artefacts are the input spec.** The brief, the journey map, the measurement plan, the segmentation. Each maps to exactly one harness component.",
       "- [ ] **Write them before the build, not after.** Reverse the order and you join the 89% that never ship.",
-      "![The Campanile at UC Berkeley at dusk with San Francisco and the Bay beyond — Part 2 of The Forward Deployed Strategist, on building an agent harness](/images/insights/agent-harness-inputs-outputs-hero.png)",
+      "![Ring clusters crossing a suspension bridge, shrinking as they go — 38% of organizations piloting AI agents narrowing to the 11% that reach production. Part 2 of The Forward Deployed Strategist, on building an agent harness](/images/insights/agent-harness-inputs-outputs-hero.png)",
       "An agent harness is everything in an agent that is not the model — prompt construction, tools, memory, permission boundaries, validators, and the loop that decides whether any of it worked. [Part 1](https://ensolabs.ai/insights/forward-deployed-strategist-agency-lineage) argued the scarce half of forward deployment is the strategist seat. This is what that seat actually hands over.",
       "## Why agents stall at the pilot",
       "![The crossing, animated — 38% of organizations piloting AI agents against only 11% with one running in production](/images/insights/geo-crossing.gif)",
