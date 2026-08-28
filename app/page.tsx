@@ -110,6 +110,7 @@ export default function HomePage() {
               Certified · <b>Anthropic</b> · <b>Google</b> · <b>OpenAI</b>
             </span>
             <span>Perplexity Computer Implementation Partner</span>
+            <span>IBM Partner Plus</span>
           </div>
 
           <p className="hero-kicker reveal" data-delay="1">Forward-deployed AI transformation</p>
