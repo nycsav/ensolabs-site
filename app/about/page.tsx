@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     description:
       'AI strategy consultant in New York. 15+ years at Google, McCann, Publicis, BBDO. AI architect certified by Anthropic, Google, OpenAI. Head of AI candidate.',
     url: 'https://ensolabs.ai/about',
-    images: [{ url: 'https://ensolabs.ai/og-default.png?v=3', width: 1200, height: 630, alt: 'Sav Banerjee — AI Strategy Consultant NYC' }],
+    images: [{ url: 'https://ensolabs.ai/images/sav-banerjee.jpg', width: 1200, height: 1200, alt: 'Sav Banerjee — Founder, Enso Labs | AI Strategy Consultant NYC' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sav Banerjee — AI Strategy Consultant NYC | AI Transformation Leader',
     description:
       'AI strategy consultant in New York. 15+ years at Google, McCann, Publicis, BBDO. AI architect certified by Anthropic, Google, OpenAI. Head of AI candidate.',
-    images: ['https://ensolabs.ai/og-default.png?v=3'],
+    images: ['https://ensolabs.ai/images/sav-banerjee.jpg'],
   },
 };
 
