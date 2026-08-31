@@ -62,3 +62,26 @@ session logs to this file — do not add them back to CLAUDE.md.
 ### Active
 - Notion Hackathon build (May 16-17): porting Strategy to Ship to Notion Developer Platform
 - Worker deployment: askSignal2Noise tool + database sync pending first successful deploy
+
+---
+## 2026-08-31 — Monday SEO Engine Run (ensolabs-seo-audit)
+
+**Vercel:** READY — commit 974894e "feat: FDE Part 4 — code patterns, case studies, animations (#74)" + e32af18 llms.txt fix deployed.
+
+**Weekly full scan (all 24 articles):** All articles confirmed with `faqs` arrays (AEO schema complete). No missing FAQs.
+
+**Monday rotation pages (/, /contact, /industries/financial-services, /built-with-ai):** All have FAQ schema, ISR revalidate=300, proper OG tags. Canonical URLs are relative but correct — `metadataBase` in layout.tsx resolves them absolutely.
+
+**Fix deployed:** `public/llms.txt` — FDE Part 4 (`frontier-deployment-code-models-case-studies`, 2026-08-31) was missing from Insights list and Recent Coverage. Added both. Count updated 23→24 articles.
+
+**Voice lint (7 violations, not auto-fixed):**
+- `app/insights/page.tsx:48` — FAQ Q: "How do I work with Enso Labs?" (user voice, borderline)
+- `app/nytw/page.tsx:197` — "I'd love to compare notes" (genuine studio "I" violation — fix when touching nytw page)
+- `app/nytw/page.tsx:146,168` — "Enso Labs is..." entity/I' in HTML (nytw event page)
+- `app/nytw-ops/page.tsx:19,40` — "mine" in event data notes (data annotation, low priority)
+- `app/page.tsx:66` — FAQ Q: "How do I start a project?" (user voice, borderline)
+- REVIEW lines (insight field notes): 18 — intentional first-person, no action needed.
+
+**Search visibility queries:** Not run this session (context constraint — workspace bash unavailable).
+
+**Commit:** e32af18 — pushed to master, Vercel auto-deploy triggered.
