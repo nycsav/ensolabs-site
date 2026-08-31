@@ -59,6 +59,7 @@ export function Footer() {
             <Link href="/locations/new-york">AI Consulting · NYC</Link>
             <Link href="/built-with-ai">Built with AI</Link>
             <Link href="/editorial-policy">Editorial Policy</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </div>
           <div className="foot-col">
             <h4>Connect</h4>
