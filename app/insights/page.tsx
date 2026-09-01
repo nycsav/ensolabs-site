@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { JsonLd } from '@/components/JsonLd';
 import { blogSchema, breadcrumbSchema, faqSchema, insightsItemListSchema } from '@/lib/schema';
 import { INSIGHTS } from '@/lib/insights';
+import { LeadConversionTracker } from '@/components/LeadConversionTracker';
 
 // ISR: self-heal edge-cached HTML within ~5 min of a content change (matches home).
 export const revalidate = 300;
@@ -63,6 +65,10 @@ export default function InsightsIndex() {
 
   return (
     <>
+      {/* Fire GA4 generate_lead when arriving from LinkedIn paid lead-gen */}
+      <Suspense fallback={null}>
+        <LeadConversionTracker />
+      </Suspense>
       <JsonLd
         schemas={[
           blogSchema(),
