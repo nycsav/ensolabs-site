@@ -4,6 +4,25 @@ Archived from CLAUDE.md (2026-07-27, token-lean program): CLAUDE.md loads into e
 Claude session and scheduled run, so historical logs live here instead. Append new
 session logs to this file — do not add them back to CLAUDE.md.
 
+## Session Log — 2026-09-01 (Tue SEO Audit)
+### Completed
+- Full-scan all 24 articles: all have `faqs` arrays ✅, all dateModified ≥ 2026-08-10 (≤22 days) ✅
+- Priority content (Google I/O Part 1 & 2): dateModified 2026-08-24 (8 days) ✅; cross-links Part 1↔Part 2 + /services + /contact all present ✅
+- Perplexity Implementation Partner + Claude Managed Agents: fresh, cross-linked ✅
+- llms.txt: 24 articles listed, Recent Coverage complete ✅
+- /services page: answer-lead FAQ, revalidate=300, proper OG ✅
+- /about page: recruiter FAQ ("available for Head of AI"), revalidate=300 ✅
+- OG images confirmed for all 3 post-Aug-19 articles (FDE Parts 2/3/4) ✅
+- Vercel production: READY ✅
+- Voice lint: 9 flagged; FAQ "How do I…" lines are visitor-perspective false positives; nytw/page.tsx first-person is contextually appropriate (Sav's personal event schedule page, past event)
+- No code fixes required; no deploy needed
+
+### Manual Action Required (Sav)
+**LinkedIn Post Inspector pre-warm — 3 articles published after Aug 19 need cache-bust BEFORE next LinkedIn share:**
+- `https://www.linkedin.com/post-inspector/inspect/https%3A%2F%2Fensolabs.ai%2Finsights%2Fagent-harness-inputs-outputs`
+- `https://www.linkedin.com/post-inspector/inspect/https%3A%2F%2Fensolabs.ai%2Finsights%2Ffrontier-labs-fde-platform-theory`
+- `https://www.linkedin.com/post-inspector/inspect/https%3A%2F%2Fensolabs.ai%2Finsights%2Ffrontier-deployment-code-models-case-studies`
+
 ## Session Log — 2026-08-26 (Wed SEO Audit)
 ### Completed
 - Full-scan all 22 articles in lib/insights.ts: all have `faqs` arrays ✅, all dateModified within threshold
