@@ -839,14 +839,27 @@ img.nav-logo-ink,
   display: flex; flex-wrap: wrap; gap: 5px;
   margin-top: 8px;
 }
+.article-og-hero-figure {
+  margin: 0 0 48px;
+}
 .article-og-hero {
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--line);
-  margin-bottom: 48px;
+  /* Matches the "documentary" grade in scripts/lib/photo-og-template.js so the
+     in-article hero and the shared OG/social card read as the same photo treatment. */
+  filter: sepia(0.18) saturate(1.08) contrast(1.12) brightness(0.92);
+}
+.article-og-hero-credit {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-3);
 }
 .article-shell .body p {
   font-size: 18px;

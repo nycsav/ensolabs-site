@@ -25,6 +25,15 @@ export type Insight = {
    *  article's art changes — LinkedIn caches OG images by URL, so a re-scrape alone
    *  will keep serving the old card. */
   ogImage?: string;
+  /** Optional in-article hero image — rendered at the top of the article, below the dek.
+   *  Distinct from `ogImage`: this should be the RAW photo with no headline/kicker baked
+   *  in (the OG card duplicates that text for social previews; the in-article hero doesn't
+   *  need to, since the page's own <h1> is right above it). Gets the same warm photo
+   *  treatment as the OG system via CSS (see .hero-photo in globals.css). */
+  heroImage?: string;
+  heroImageAlt?: string;
+  /** Optional small credit line under the hero image (e.g. photographer/source attribution). */
+  heroImageCredit?: string;
   /** Optional dated post-event note rendered near the top of the article (above the body),
    *  with a single tracked conversion CTA. Opt-in per article; leaves SEO/body untouched. */
   postEventUpdate?: {
@@ -107,6 +116,8 @@ export const INSIGHTS: Insight[] = [
     date: '2026-08-27',
     dateModified: '2026-08-27',
     ogImage: '/og/og-frontier-labs-fde-platform-theory-photo.jpg',
+    heroImage: '/images/photography/fde-part3-engineer-code-warm.jpg',
+    heroImageAlt: 'An engineer at a dual-monitor desk, warm lamp light, working through a codebase — the forward-deployed reality behind lab theory.',
     readingMinutes: 3,
     tags: ["Forward Deployed Strategist", "Forward Deployed Engineer", "Agentic AI", "Anthropic", "OpenAI", "Perplexity", "MCP", "Model Context Protocol", "Enterprise Managed Authorization", "Frontier Models", "Enterprise AI", "AI Governance", "Claude Managed Agents", "Perplexity Implementation Partner", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [

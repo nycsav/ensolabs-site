@@ -257,6 +257,19 @@ export default function InsightArticle({ params }: { params: Params }) {
         <h1>{post.title}</h1>
         <p className="dek">{post.dek}</p>
 
+        {post.heroImage && (
+          <figure className="article-og-hero-figure">
+            <img
+              className="article-og-hero"
+              src={post.heroImage}
+              alt={post.heroImageAlt || `${post.title} — Enso Labs Insights`}
+            />
+            {post.heroImageCredit && (
+              <figcaption className="article-og-hero-credit">{post.heroImageCredit}</figcaption>
+            )}
+          </figure>
+        )}
+
         {post.tags.length > 0 && (
           <div className="article-tags">
             {post.tags.map((tag) => (
