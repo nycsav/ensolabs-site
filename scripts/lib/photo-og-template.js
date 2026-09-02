@@ -16,7 +16,32 @@ const path = require('path');
 
 const FONTS = `https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap`;
 
-function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height }) {
+const GRADES = {
+  // Default: brand-principles.md §9 — slight warm grade, deep contrast, paper-toned.
+  documentary: {
+    filter: 'sepia(0.18) saturate(1.08) contrast(1.12) brightness(0.92)',
+    scrim: `linear-gradient(180deg,
+           rgba(20,15,10,0.12) 0%,
+           rgba(20,15,10,0.20) 38%,
+           rgba(17,13,10,0.72) 72%,
+           rgba(13,10,8,0.93) 100%)`,
+    vignette: 'none',
+  },
+  // Cinematic: deeper shadow, stronger amber push, vignette — for atmospheric/
+  // silhouette shots (mood over documentation). Same type system, heavier grade.
+  cinematic: {
+    filter: 'sepia(0.32) saturate(1.15) contrast(1.28) brightness(0.72)',
+    scrim: `linear-gradient(180deg,
+           rgba(15,9,4,0.30) 0%,
+           rgba(15,9,4,0.18) 35%,
+           rgba(13,8,4,0.62) 68%,
+           rgba(10,6,3,0.94) 100%)`,
+    vignette: 'radial-gradient(ellipse at center, transparent 45%, rgba(8,5,2,0.55) 100%)',
+  },
+};
+
+function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, grade = 'documentary' }) {
+  const g = GRADES[grade] || GRADES.documentary;
   return `
 <!DOCTYPE html><html><head><link href="${FONTS}" rel="stylesheet"><style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -24,15 +49,12 @@ function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height }) 
        font-family:'Inter Tight',sans-serif;background:#0D1321}
   .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
          object-position:center 35%;
-         filter:sepia(0.18) saturate(1.08) contrast(1.12) brightness(0.92);}
+         filter:${g.filter};}
   .grain{position:absolute;inset:0;
          background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px);}
+  .vignette{position:absolute;inset:0;background:${g.vignette};}
   .scrim{position:absolute;inset:0;
-         background:linear-gradient(180deg,
-           rgba(20,15,10,0.12) 0%,
-           rgba(20,15,10,0.20) 38%,
-           rgba(17,13,10,0.72) 72%,
-           rgba(13,10,8,0.93) 100%);}
+         background:${g.scrim};}
   .content{position:absolute;left:0;right:0;bottom:0;padding:48px 56px 44px;}
   .kicker{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;
           text-transform:uppercase;letter-spacing:0.18em;color:#F0512E;margin-bottom:16px}
@@ -45,6 +67,7 @@ function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height }) 
 </style></head><body>
   <img class="photo" src="${photoDataUri}">
   <div class="grain"></div>
+  <div class="vignette"></div>
   <div class="scrim"></div>
   <div class="brand">STRATEGY <span class="arrow">&rarr;</span> SHIP</div>
   <div class="content">
@@ -55,11 +78,11 @@ function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height }) 
 </body></html>`;
 }
 
-async function renderPhotoOg({ photoPath, kicker, headlineLines, dek, outPath, width = 1200, height = 630 }) {
+async function renderPhotoOg({ photoPath, kicker, headlineLines, dek, outPath, width = 1200, height = 630, grade = 'documentary' }) {
   const photoBuffer = fs.readFileSync(photoPath);
   const ext = path.extname(photoPath).slice(1).replace('jpg', 'jpeg');
   const photoDataUri = `data:image/${ext};base64,${photoBuffer.toString('base64')}`;
-  const html = buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height });
+  const html = buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, grade });
 
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
