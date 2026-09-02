@@ -106,7 +106,7 @@ export const INSIGHTS: Insight[] = [
     sourceCredit: 'Strategy to Ship',
     date: '2026-08-27',
     dateModified: '2026-08-27',
-    ogImage: '/og/og-frontier-labs-fde-platform-theory.png',
+    ogImage: '/og/og-frontier-labs-fde-platform-theory-v2.png',
     readingMinutes: 3,
     tags: ["Forward Deployed Strategist", "Forward Deployed Engineer", "Agentic AI", "Anthropic", "OpenAI", "Perplexity", "MCP", "Model Context Protocol", "Enterprise Managed Authorization", "Frontier Models", "Enterprise AI", "AI Governance", "Claude Managed Agents", "Perplexity Implementation Partner", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [
