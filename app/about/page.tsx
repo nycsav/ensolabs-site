@@ -14,12 +14,17 @@ const ABOUT_FAQ = [
   {
     question: 'Who is Sav Banerjee?',
     answer:
-      'Sav Banerjee is an AI strategy consultant in NYC and the founder of Enso Labs, an AI transformation consulting firm in New York City. He is an AI architect and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity Computer Implementation Partner.',
+      'Sav Banerjee is an AI strategy consultant in NYC and the founder of Enso Labs, an AI transformation consulting firm in New York City. He is an AI architect and AI transformation leader with 15+ years of experience at Google, McCann, Publicis, RAPP, Young & Rubicam, and BBDO. He is certified by Anthropic (Claude Code), Google AI, and OpenAI, and is a Perplexity Computer Implementation Partner and IBM Partner Plus.',
   },
   {
     question: 'What is Sav Banerjee\'s background?',
     answer:
       'Sav started in advertising strategy, managing $150MM+ portfolios across finance, healthcare, and technology at agencies including Google, McCann, Publicis, RAPP, Y&R, BBDO, and Rokkan. His advertising background includes AI-powered campaign strategy, data-driven media planning, CRM automation, and digital transformation for Fortune 500 brands. In 2020 he founded Enso Partners to combine AI strategy advisory with production agentic systems development — the same operator who designs the system also ships it.',
+  },
+  {
+    question: 'Is Sav Banerjee active in the agentic AI community?',
+    answer:
+      'Yes. Sav attended the Agentic AI Summit 2026 at UC Berkeley and competed at the Google I/O 2026 open hackathon with a managed-agents orchestration system. He maintains practitioner credentials with Perplexity (Implementation Partner) and IBM (Partner Plus), and is embedded in both the NYC and San Francisco agentic AI ecosystems. His work spans enterprise deployment on the East Coast and frontier research and product relationships on the West Coast.',
   },
   {
     question: 'Is Sav Banerjee available for Head of AI or VP AI Strategy roles?',
@@ -36,8 +41,9 @@ export const metadata: Metadata = {
   // ≤160 chars: Google truncates the search snippet near 155-160. The longer
   // pitch lives in the OG description below, which renders in full on social.
   description:
-    'Sav Banerjee is an AI strategy consultant in NYC and founder of Enso Labs. 15+ years at Google, McCann, Publicis, BBDO. Available for Head of AI roles.',
+    'Sav Banerjee is an AI strategy consultant in NYC and founder of Enso Labs. 15+ years at Google, McCann, Publicis, BBDO. IBM Partner Plus, Perplexity Implementation Partner. Available for Head of AI roles.',
   alternates: { canonical: 'https://ensolabs.ai/about' },
+  other: { 'article:modified_time': '2026-09-03' },
   openGraph: {
     title: 'Sav Banerjee — AI Strategy Consultant NYC | AI Transformation Leader',
     description:
@@ -56,7 +62,7 @@ export const metadata: Metadata = {
 
 const TIMELINE = [
   { yr: '2020 → present', role: 'Enso Partners + Labs', sub: 'Founder & Principal AI Transformation Advisor', det: 'Enterprise AI advisory + agentic build practice. Clients: Fortune 500 manufacturers, Citi, JPMorgan, AmEx, Google, Microsoft, T-Mobile.', tag: 'CURRENT' },
-  { yr: '2022 → present', role: 'Heller Agency', sub: 'AI Solutions & Deployment Consultant', det: 'AI Center of Excellence for full-service pharma. 5 brand KBs · 8 automations · 6 concurrent campaigns.', tag: 'ACTIVE' },
+  { yr: '2022 → present', role: 'Heller Agency', sub: 'AI Solutions & Deployment Consultant', det: 'AI Center of Excellence · Pharma. MLR-compliant knowledge bases, N8N automation suite, RAG retrieval grounded in FDA-approved brand copy. Campaign launches: 3 months → 2 weeks. Zero compliance incidents across 6 concurrent brands.', tag: 'ACTIVE' },
   { yr: 'Freelance', role: 'McCann New York', sub: 'VP, Data & Experience Strategy', det: 'Healthcare CX including XDEMVY ophthalmology campaign.', tag: 'VP' },
   { yr: '—', role: 'RAPP', sub: 'Director, Experience Strategy', det: 'CRM, SEO, SEM across retail, e-commerce, finance, healthcare.', tag: 'DIR' },
   { yr: '—', role: 'Young & Rubicam Group', sub: 'Director of Strategy', det: 'Brand & CX strategy across Y&R network accounts.', tag: 'DIR' },
@@ -72,7 +78,8 @@ const ADVANTAGES = [
   { ix: '03', ti: 'Production proof', de: 'Enso Labs runs its own agentic infrastructure: the Trading Terminal, automated lead gen, scheduled research, N8N workflows. We run what we build.' },
   { ix: '04', ti: 'Agency-trained in AI advertising', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO — managing AI advertising strategy, marketing automation, and data-driven campaigns for Fortune 500 brands. The studio has sat across the room from your CFO, CMO, and General Counsel.' },
   { ix: '05', ti: 'Speed', de: 'No bloated team, no approval chain. A scope decided on Monday is in a sprint on Tuesday. The 3-month time-to-first-value is structural.' },
-  { ix: '06', ti: 'Selective', de: 'A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you’ve saved $200k.' },
+  { ix: ‘06’, ti: ‘Selective’, de: ‘A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you’ve saved $200k.’ },
+  { ix: ‘07’, ti: ‘Frontier-connected’, de: ‘The studio competes at open AI hackathons, attends AGI summits, and maintains active research relationships in the Bay Area. Every architecture recommendation reflects what\’s shipping at the frontier labs — not what was current 18 months ago.’ },
 ];
 
 export default function AboutPage() {
@@ -133,6 +140,8 @@ export default function AboutPage() {
         .adv .de { color: var(--fg-2); font-size: 15px; line-height: 1.55; }
         .cred-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
         @media (max-width: 900px) { .cred-grid { grid-template-columns: 1fr; gap: 32px; } }
+        .field-grid { display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: start; }
+        @media (max-width: 900px) { .field-grid { grid-template-columns: 1fr; gap: 32px; } }
         .cred h4 { font-family: var(--mono); font-size: 11px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; font-weight: 500; }
         .cred ul { list-style:none; display:grid; gap: 8px; }
         .cred ul li { font-size: 14.5px; color: var(--fg-2); padding: 6px 0; border-bottom: 1px dashed var(--line); display:flex; justify-content: space-between; gap: 12px; }
@@ -158,8 +167,11 @@ export default function AboutPage() {
             <div className="reveal" data-delay="3">
               <div className="mono-sm" style={{ display: 'grid', gap: 8 }}>
                 <div>↳ Founder &amp; Principal · Enso Labs</div>
-                <div>↳ Manhattan, NYC</div>
+                <div>↳ Manhattan, NYC — Bay Area–connected</div>
                 <div>↳ Perplexity Computer Implementation Partner</div>
+                <div>↳ IBM Partner Plus</div>
+                <div>↳ Agentic AI Summit 2026 · UC Berkeley</div>
+                <div>↳ Google I/O 2026 Hackathon · managed agents</div>
                 <div>↳ Available for contract and full-time engagements</div>
               </div>
             </div>
@@ -189,6 +201,9 @@ export default function AboutPage() {
               <p>
                 Today, Enso Labs is three things in one studio: <strong>consult, build, and ship</strong>. The Trading Terminal proves the model — the studio runs autonomous signal intelligence, news-driven algos, and brokerage execution as a production product, not a demo.
               </p>
+              <p>
+                In 2026, Sav began competing at the frontier. At <strong>Google I/O 2026</strong>, the studio entered the open hackathon with a managed-agents orchestration system — connecting live news, options flow, and brokerage execution in a single agentic pipeline. He attended the <strong>Agentic AI Summit</strong> at UC Berkeley and spent time embedded in the San Francisco agentic AI ecosystem — from Cerebral Valley to Bond AI — building the Bay Area product and research relationships that inform how the studio designs enterprise deployments. He holds credentials as an <strong>IBM Partner Plus</strong> and <strong>Perplexity Computer Implementation Partner</strong>.
+              </p>
               <p>The advisor and the build team work as one unit. That&rsquo;s the whole bet.</p>
               <p style={{ fontSize: 15, color: 'var(--fg-3)', marginTop: 8 }}>
                 More on the practice:{' '}
@@ -211,10 +226,42 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section data-screen-label="02b Field work">
+        <div className="shell">
+          <div className="section-head">
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 02</span>&nbsp;In the field</span></div>
+            <div className="reveal" data-delay="1"><h2 className="h2">NYC enterprise + Bay Area frontier — in the same practice.</h2></div>
+          </div>
+          <div className="field-grid reveal">
+            <div className="portrait" style={{ maxWidth: 320 }}>
+              <Image
+                src="/images/photography/agentic-ai-summit-2026-sav-ethan.jpg"
+                alt="Sav Banerjee at the Agentic AI Summit 2026, UC Berkeley"
+                width={320}
+                height={420}
+                style={{ objectFit: 'cover', objectPosition: 'top' }}
+              />
+              <span className="corner">Agentic AI Summit · Berkeley</span>
+            </div>
+            <div style={{ display: 'grid', gap: 24, paddingTop: 8 }}>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg-2)' }}>
+                The studio competes at frontier AI events, not just enterprise boardrooms. At the <strong style={{ color: 'var(--fg)' }}>Agentic AI Summit 2026</strong> at UC Berkeley — with Plenary and VIP access — Sav connected with frontier lab researchers, product leads, and enterprise practitioners navigating the same translation gap: what the labs are shipping vs. what enterprise teams can actually deploy.
+              </p>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg-2)' }}>
+                At <strong style={{ color: 'var(--fg)' }}>Google I/O 2026</strong>, the studio competed in the open hackathon with a managed-agents orchestration system — multi-agent coordination connecting live market data, news analysis, and brokerage execution in a single production pipeline. That build now runs in the Enso Trading Terminal.
+              </p>
+              <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg-2)' }}>
+                The Bay Area relationships inform every enterprise deployment. The NYC enterprise relationships inform how we scope for what actually ships. That loop — frontier to production — is the studio&rsquo;s structural edge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section data-screen-label="03 Studio advantage">
         <div className="shell">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="num">§ 02</span>&nbsp;The studio advantage</span></div>
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 03</span>&nbsp;The studio advantage</span></div>
             <div className="reveal" data-delay="1"><h2 className="h2">Why a principal-led studio outperforms a 50-person consultancy.</h2></div>
           </div>
 
@@ -233,7 +280,7 @@ export default function AboutPage() {
       <section data-screen-label="04 Career">
         <div className="shell">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="num">§ 03</span>&nbsp;Career</span></div>
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 04</span>&nbsp;Career</span></div>
             <div className="reveal" data-delay="1"><h2 className="h2">Strategist · Director · VP · Founder.</h2></div>
           </div>
 
@@ -255,7 +302,7 @@ export default function AboutPage() {
       <section data-screen-label="05 Credentials">
         <div className="shell">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="num">§ 04</span>&nbsp;Credentials</span></div>
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;Credentials</span></div>
             <div className="reveal" data-delay="1"><h2 className="h2">Certified, fellowed, and shipped.</h2></div>
           </div>
 
@@ -272,7 +319,10 @@ export default function AboutPage() {
               <h4>Recognition</h4>
               <ul>
                 <li><b>Perplexity Computer Implementation Partner</b><span className="yr">2026</span></li>
-                <li><b>Ad Age Top 10 Agency</b><span className="yr">Rokkan ’12</span></li>
+                <li><b>IBM Partner Plus</b><span className="yr">2026</span></li>
+                <li><b>Agentic AI Summit · UC Berkeley</b><span className="yr">2026</span></li>
+                <li><b>Google I/O Hackathon · managed agents</b><span className="yr">2026</span></li>
+                <li><b>Ad Age Top 10 Agency</b><span className="yr">Rokkan ‘12</span></li>
               </ul>
             </div>
             <div className="cred">
@@ -304,7 +354,7 @@ export default function AboutPage() {
       <section data-screen-label="05b FAQ">
         <div className="shell">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;FAQ</span></div>
+            <div className="reveal"><span className="eyebrow"><span className="num">§ 06</span>&nbsp;FAQ</span></div>
             <div className="reveal" data-delay="1"><h2 className="h2">Frequently Asked Questions</h2></div>
           </div>
           <div className="faq-list reveal">

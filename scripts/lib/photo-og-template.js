@@ -40,7 +40,7 @@ const GRADES = {
   },
 };
 
-function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, grade = 'documentary' }) {
+function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, grade = 'documentary', objectPosition = 'center 35%' }) {
   const g = GRADES[grade] || GRADES.documentary;
   return `
 <!DOCTYPE html><html><head><link href="${FONTS}" rel="stylesheet"><style>
@@ -48,7 +48,7 @@ function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, gr
   body{width:${width}px;height:${height}px;position:relative;overflow:hidden;
        font-family:'Inter Tight',sans-serif;background:#0D1321}
   .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-         object-position:center 35%;
+         object-position:${objectPosition};
          filter:${g.filter};}
   .grain{position:absolute;inset:0;
          background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px);}
@@ -78,11 +78,11 @@ function buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, gr
 </body></html>`;
 }
 
-async function renderPhotoOg({ photoPath, kicker, headlineLines, dek, outPath, width = 1200, height = 630, grade = 'documentary' }) {
+async function renderPhotoOg({ photoPath, kicker, headlineLines, dek, outPath, width = 1200, height = 630, grade = 'documentary', objectPosition }) {
   const photoBuffer = fs.readFileSync(photoPath);
   const ext = path.extname(photoPath).slice(1).replace('jpg', 'jpeg');
   const photoDataUri = `data:image/${ext};base64,${photoBuffer.toString('base64')}`;
-  const html = buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, grade });
+  const html = buildHtml({ photoDataUri, kicker, headlineLines, dek, width, height, grade, ...(objectPosition ? { objectPosition } : {}) });
 
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
