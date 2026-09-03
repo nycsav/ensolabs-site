@@ -68,18 +68,18 @@ const TIMELINE = [
   { yr: '—', role: 'Young & Rubicam Group', sub: 'Director of Strategy', det: 'Brand & CX strategy across Y&R network accounts.', tag: 'DIR' },
   { yr: '—', role: 'Organic / Omnicom', sub: 'Director of Strategy', det: 'Digital strategy across Omnicom-network accounts.', tag: 'DIR' },
   { yr: '—', role: 'Rokkan / Publicis', sub: 'Executive Director, Digital Strategy', det: 'American Express (50% social growth), Google+ launch strategy. Ad Age Top 10 Agency 2012.', tag: 'EXEC DIR' },
-  { yr: '—', role: 'BBDO Worldwide', sub: 'Strategist', det: 'AT&T “It Can Wait” — 5MM+ pledges.', tag: 'STRAT' },
+  { yr: '—', role: 'BBDO Worldwide', sub: 'Strategist', det: "AT&T \"It Can Wait\" — 5MM+ pledges.", tag: 'STRAT' },
   { yr: 'Freelance', role: 'Google', sub: 'Strategy Director', det: 'Strategy direction on Google network programs.', tag: 'DIR' },
 ];
 
 const ADVANTAGES = [
   { ix: '01', ti: 'Direct senior access', de: 'Every engagement is led by a senior advisor who also builds — no junior analysts running point. The person scoping your roadmap is in the codebase the next week.' },
-  { ix: '02', ti: 'Builder credibility', de: 'The advisor and the build team work as one unit. Architecture decisions don’t get lost in translation between strategy and engineering.' },
+  { ix: '02', ti: 'Builder credibility', de: "The advisor and the build team work as one unit. Architecture decisions don't get lost in translation between strategy and engineering." },
   { ix: '03', ti: 'Production proof', de: 'Enso Labs runs its own agentic infrastructure: the Trading Terminal, automated lead gen, scheduled research, N8N workflows. We run what we build.' },
   { ix: '04', ti: 'Agency-trained in AI advertising', de: '15+ years inside Google, McCann, Publicis, RAPP, Y&R, BBDO — managing AI advertising strategy, marketing automation, and data-driven campaigns for Fortune 500 brands. The studio has sat across the room from your CFO, CMO, and General Counsel.' },
   { ix: '05', ti: 'Speed', de: 'No bloated team, no approval chain. A scope decided on Monday is in a sprint on Tuesday. The 3-month time-to-first-value is structural.' },
-  { ix: ‘06’, ti: ‘Selective’, de: ‘A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you’ve saved $200k.’ },
-  { ix: ‘07’, ti: ‘Frontier-connected’, de: ‘The studio competes at open AI hackathons, attends AGI summits, and maintains active research relationships in the Bay Area. Every architecture recommendation reflects what\’s shipping at the frontier labs — not what was current 18 months ago.’ },
+  { ix: '06', ti: 'Selective', de: "A fixed pipeline of deep engagements per year. If we say yes, we mean it — and if we say no, you've saved $200k." },
+  { ix: '07', ti: 'Frontier-connected', de: 'The studio competes at open AI hackathons, attends AGI summits, and maintains active research relationships in the Bay Area. Every architecture recommendation reflects what\'s shipping at the frontier labs — not what was current 18 months ago.' },
 ];
 
 export default function AboutPage() {
@@ -322,7 +322,7 @@ export default function AboutPage() {
                 <li><b>IBM Partner Plus</b><span className="yr">2026</span></li>
                 <li><b>Agentic AI Summit · UC Berkeley</b><span className="yr">2026</span></li>
                 <li><b>Google I/O Hackathon · managed agents</b><span className="yr">2026</span></li>
-                <li><b>Ad Age Top 10 Agency</b><span className="yr">Rokkan ‘12</span></li>
+                <li><b>Ad Age Top 10 Agency</b><span className="yr">Rokkan &apos;12</span></li>
               </ul>
             </div>
             <div className="cred">
