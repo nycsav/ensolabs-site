@@ -65,3 +65,8 @@ drafts/
 
 # local deploy runbook (not for production)
 deploy/
+
+# NOTE: .published/ (LinkedIn publisher idempotency receipts,
+# scripts/publish-linkedin.js) is intentionally NOT ignored — it is committed
+# so the double-post guard holds across machines (Sav runs this from more
+# than one). Contains only slug/postUrn/timestamps, no token or member URN.
