@@ -47,6 +47,52 @@ export type Insight = {
 
 export const INSIGHTS: Insight[] = [
   {
+    slug: 'agency-orchestration-gap-36-points',
+    title: "The 36-Point Gap in Advertising Is a Workflow Problem",
+    dek: "81% of marketers want an integrated AI partner. 45% have one. The gap is structural, not technical — and it's where the next budget dollar goes.",
+    metaDescription: "81% of marketers want an integrated AI partner. 45% have one. Enso Labs explains the gap and how managed AI agents for advertising close it.",
+    pillar: 'Consult',
+    lens: 'Brand',
+    sourceCredit: 'Strategy to Ship',
+    date: '2026-09-08',
+    dateModified: '2026-09-08',
+    readingMinutes: 4,
+    tags: ["Managed AI Agents", "Advertising", "Agency AI", "AI Marketing", "Workflow Automation", "Enso Labs", "Google BCG", "Marketing Intelligence", "Agentic AI", "Commercial Core", "Strategy to Ship"],
+    faqs: [
+      {
+        question: "What is the 36-point gap in advertising?",
+        answer: "The 36-point gap is the difference between the 81% of marketers who want one integrated AI partner across creative, media, commerce, and earned channels and the 45% who actually have one. Identified in a Google/BCG survey of 387 marketers conducted in January 2026, it represents the largest single opportunity in advertising today.",
+      },
+      {
+        question: "What are managed AI agents for advertising?",
+        answer: "Managed AI agents for advertising are purpose-built agent systems that carry four shared inputs — the brief, the journey map, the measurement plan, and the segmentation — across every advertising channel simultaneously. Unlike channel-specialist tools, they operate as an orchestration layer that holds cross-channel context and reports budget reallocation in dollars, channels, days, and leads.",
+      },
+      {
+        question: "How do advertisers fund AI innovation?",
+        answer: "According to the Google/BCG survey (N=387, Jan. 2026), only 21% of marketers fund AI innovation with new budget. The majority reallocate existing spend: 45% pull from paid media, 35% from brand marketing budgets. The buyer is moving money, not adding it — and the partner that shows where the dollar went wins the reallocation.",
+      },
+      {
+        question: "What is the Publicis L'Oréal AI example?",
+        answer: "Publicis used Gemini-powered AI to decode the intent behind consumers' complex beauty queries, delivering personalized skincare recommendations directly within search. The result was 2× conversions compared to the baseline, piloted in Chile and now scaling globally. It is the benchmark proof case for what integrated AI orchestration produces in advertising.",
+      },
+    ],
+    body: [
+      "81% of marketers want one partner that orchestrates creative, media, commerce and earned. 45% have one. That 36-point gap is from Google and BCG's January 2026 survey of 387 marketers, published by Paul Limbrey in June. It is the largest open opportunity in advertising, and the diagnosis in the piece is the right one: the unit of transformation is the workflow.",
+      "## Why the gap exists",
+      "Procurement still issues RFPs by channel, so fragmentation is bought before any work starts. Agency ground teams stay channel specialists. And 'AI transformation' has mostly meant each silo adopting its own tool. Faster silos, not fewer.",
+      "## Where the money is",
+      "Only 21% of marketers fund AI innovation with new budget. 45% pull it from paid media, 35% from brand. The buyer is not adding spend — they are moving it. 97% say they would increase spend with a partner who can show where a reallocated dollar went and what it returned.",
+      "## What 'integrated' means in production",
+      "One system carries four inputs across every channel: the brief, the journey map, the measurement plan, the segmentation. Channel specialists never write these down because they live between channels. A managed agent does — that is the orchestration layer the survey is describing. It doesn't replace the creative or media teams; it carries their shared inputs and reports the reallocation in media dollars, channels, days and leads.",
+      "## The proof standard",
+      "Google's own example: Publicis × L'Oréal, Gemini-powered intent decoding inside search, 2× conversions, piloted in Chile and scaling globally. A measured lift in a live account, attributable to a workflow change. That is the bar we hold Enso Labs' Commercial Core — our managed-agent suite for advertising — to: benchmark on the left, the client's measured number on the right.",
+      "## Your move",
+      "At the next agency review, ask every partner: which of my four inputs do you hold, and which channels does it travel across? One channel — you have a specialist. All of them — you have an orchestrator, and that is where 97% of your peers say the next dollar goes.",
+      "Enso Labs builds [managed AI agents for advertising](/services/ai-growth-marketing) and data analytics teams, from New York.",
+      "*Source: Google/BCG, The New Era of Marketing Partnerships: Marketer Survey, N=387, Jan. 2026. [Read the original →](https://business.google.com/us/think/ai-excellence/ai-expansion-for-agency-evolution/)*",
+    ],
+  },
+  {
     slug: 'frontier-deployment-code-models-case-studies',
     title: "The Code That Ships. The Models That Run It. What Forward Deployment Actually Looks Like Inside Motion, Anthropic, OpenAI, and Perplexity.",
     dek: "Most AI strategy decks end at the architecture diagram. This one starts there. Four companies. Four deployment patterns. The actual code, models, and engineering decisions that determine whether an AI system survives contact with production.",
