@@ -52,7 +52,7 @@ const INDEX_FAQS = [
 ];
 
 const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString('en-US', {
+  new Date(iso).toLocaleDateString('en-US', { timeZone: 'UTC',
     year: 'numeric',
     month: 'short',
     day: 'numeric',

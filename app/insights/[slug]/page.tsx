@@ -87,6 +87,7 @@ const formatDate = (iso: string) =>
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 
 // Inline markdown — supports **bold**, [links](url), and **text with [links](url) inside**.
