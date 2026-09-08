@@ -57,6 +57,9 @@ export const INSIGHTS: Insight[] = [
     date: '2026-09-08',
     dateModified: '2026-09-08',
     readingMinutes: 5,
+    heroImage: '/images/insights/agency-gap-hero.png',
+    heroImageAlt: 'Every ad channel has AI now. Almost none of them talk to each other.',
+    heroImageCredit: 'Strategy → Ship · Enso Labs',
     tags: ["Managed AI Agents", "Advertising", "Agency AI", "AI Marketing", "Workflow Automation", "Enso Labs", "Google BCG", "Marketing Intelligence", "Agentic AI", "Commercial Core", "Strategy to Ship"],
     faqs: [
       {
@@ -79,11 +82,13 @@ export const INSIGHTS: Insight[] = [
     body: [
       "Your paid search team has an AI. Your social team has one too. So does programmatic. So does email. And yet the campaign brief still gets rewritten four times — once when it leaves strategy, once when it hits creative, once when media buys it, once when it hits the platform. Nothing carries it across.",
       "Google and BCG surveyed 387 marketers in January 2026 to find out how widespread this is. The answer: nearly universal. **81% of marketers want one integrated AI partner** across creative, media, commerce, and earned channels. **Only 45% have one.** That 36-point spread is not a technology gap — it's a workflow gap. And it is the largest single addressable opportunity in advertising right now.",
+      "![The 81% vs 45% integration gap — Google/BCG survey of 387 marketers, Jan 2026](/images/insights/agency-gap-stat-gap.png)",
       "## Why fragmentation wins by default",
       "The problem starts before the campaign does. Procurement issues RFPs by channel. Agencies hire and staff by channel. Platform AI tools are designed for their platform. When everyone does their job correctly, the brief still doesn't make it from channel to channel — because no one's job is to carry it.",
       "AI has made this worse, not better. Each silo now has a faster AI tool. The fragmentation between silos is unchanged. Marketers end up running five tools in five tabs, reconciling five dashboards manually at the end of the week. Faster, not fewer.",
       "## Where the money is moving",
       "The budget signal is already there. Only **21% of marketers fund AI innovation with new budget**. The majority are reallocating existing spend: **45% pulling from paid media**, **35% from brand**. The buyer is not adding spend — they are moving it.",
+      "![Budget reallocation: 45% from paid media, 35% from brand, 21% new budget — Google/BCG](/images/insights/agency-gap-stat-budget.png)",
       "**97% say they would increase spend with a partner who can show where a reallocated dollar went and what it returned.** That number is the market thesis. The partner who can close the measurement loop across channels — not just within one — is where the budget moves.",
       "## What 'integrated' actually means in production",
       "The word 'integrated' has been in every agency deck for five years. Here's what it means in practice: one system carrying four inputs across every channel simultaneously.",
