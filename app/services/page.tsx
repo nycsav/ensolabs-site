@@ -470,9 +470,9 @@ export default function ServicesPage() {
               </p>
               <div className="hero-cta-row">
                 <Link className="btn btn-primary" href="/services/claude-managed-services">Learn More <Arrow /></Link>
-                <Link className="btn" href="/services/agentic-ai-consulting">Agentic AI →</Link>
+                <Link className="btn" href="/services#build">Agentic AI →</Link>
                 <Link className="btn" href="/industries/financial-services">Financial AI →</Link>
-                <Link className="btn" href="/industries/healthcare">Healthcare AI →</Link>
+                <Link className="btn" href="/work/heller">Healthcare AI →</Link>
                 <Link className="btn" href="/services/ai-growth-marketing">AI Growth →</Link>
               </div>
             </div>
