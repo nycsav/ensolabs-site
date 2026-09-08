@@ -58,7 +58,7 @@ export async function generateMetadata({
   const ogPath = post.ogImage || `/og/og-${post.slug}.png`;
 
   return {
-    title: post.title,
+    title: post.metaTitle ? { absolute: post.metaTitle } : post.title,
     description: post.metaDescription || post.dek,
     keywords: post.tags,
     alternates: { canonical: `${SITE.origin}/insights/${post.slug}` },
