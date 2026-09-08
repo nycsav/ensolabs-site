@@ -9,6 +9,7 @@ import { RevealMount } from '@/components/Reveal';
 import { ThemeMount } from '@/components/ThemeMount';
 import { JsonLd } from '@/components/JsonLd';
 import { Analytics } from '@/components/Analytics';
+import { LinkedInInsight } from '@/components/LinkedInInsight';
 import { Behavior } from '@/components/Behavior';
 import { orgSchema, personSchema, websiteSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
@@ -141,6 +142,7 @@ export default function RootLayout({
       <body>
         <JsonLd schemas={[orgSchema(), personSchema(), websiteSchema()]} />
         <Analytics />
+        <LinkedInInsight />
         <Behavior />
         <RevealMount />
         <ThemeMount />
