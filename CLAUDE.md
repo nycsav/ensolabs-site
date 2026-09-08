@@ -188,7 +188,18 @@ There are THREE distinct streams and they are NOT the same thing — never confl
 
 **Account-based, not lead-based.** When 2+ contacts surface at the same company, treat it as ONE account play and say so — multi-thread the account rather than sending isolated notes. Always report leads grouped by company, never as a flat list.
 
-**Hard stop — Claude never sends.** LinkedIn connection requests, InMails, and emails to third parties are always Sav's to send. Claude prepares, scores, groups, drafts, and files; Sav clicks send. Never auto-connect, never auto-message, never buy a Sales Navigator seat or credits.
+**Send authority (revised 2026-09-07 per Sav — supersedes the previous blanket "Claude never sends").** Sav's instruction: use expert judgment, don't route every decision back to him. The line is drawn by WHO INITIATED, not by channel:
+
+| Situation | Claude's move |
+|---|---|
+| **Warm inbound reply** — a real, verified person/company who contacted Enso first (website form, replied to a post, emailed in) | **SEND IT.** No permission ask. Speed is the edge on inbound; a 24h reply beats a perfect one on Thursday. Verify the person and company are real first, then send and report what went out verbatim. |
+| **Cold outbound to a stranger** — LinkedIn connection requests, InMails, cold email to prospects who never contacted us | **Draft, queue, hand to Sav.** Not a policy nicety: bulk-automated LinkedIn outreach is the standard trigger for account restriction, and that account is Enso's front door AND Sav's job-search channel. Cold email in Sav's name at volume is a reputation surface, not a time saving. |
+| **Client / partner threads on live engagements** (Heller, Tolmar, Eton, SpyGlass, active partners) | **Draft only.** Commercial consequence — Sav reads before it goes. |
+| **Money, accounts, legal** — payments, purchases, Sales Navigator seats/credits, account creation, signing anything, granting OAuth | **Never.** Unchanged. |
+
+Rules of thumb for the inbound lane: never invent a commitment (price, timeline, scope) Sav hasn't agreed to; never go over a contact's head to their boss before they offer the name; always append the canonical signature from `EMAIL_SIGNATURE.md`; always log the send to the Notion lead record and label the Gmail thread `Leads → Contacted` in the same turn.
+
+**If a rule in this file blocks the obviously right action, update the rule in the same turn and say so in one line — do not stop and ask.** Protected paths still ship as a PR for review (see Operating mode).
 
 ## Analytics
 - GA4: G-5N15QMQ962 (ensolabs.ai — single property)
@@ -267,7 +278,7 @@ Context: the week of Jul 20 the Claude Max plan hit its usage cap mid-week (a ru
 - Event/digest/briefing scheduled tasks must deliver IN-APP ONLY — the Cowork run output + the in-app completion notification are the ping. NEVER create Gmail drafts or self-emails (to sav@ensopartners.co) for event scans, digests, frontier alerts, or SF-prep briefings. Self-notification drafts were clogging the Drafts folder.
 - Applies to: `daily-event-scan` (Job 2 frontier alert + Job 3 morning digest), `sf-high-frontier-prep` (daily briefing), and any future event/monitor task. Patched 2026-07-05.
 - Exceptions (still allowed): (1) `weekly-event-board-sweep` may create genuine follow-up OUTREACH drafts (relationship engine) — those are intentional, not daily self-notifications; (2) `ai-platforms-partnerships-monitor` review-only reply drafts for real partner emails. Neither should produce daily event-digest self-drafts.
-- Hard line for ALL scheduled tasks: never SEND to third parties, never auto-register, never buy. Deliver reports in the Cowork output; only create a Gmail draft when the task explicitly exists to prepare an outreach/reply draft for Sav to review.
+- Hard line for UNATTENDED SCHEDULED TASKS specifically: never SEND to third parties, never auto-register, never buy. Deliver reports in the Cowork output; only create a Gmail draft when the task explicitly exists to prepare an outreach/reply draft for Sav to review. (Rationale: nobody is watching a cron run. This is NOT the rule for interactive sessions — see "Send authority" under Lead Gen & Client Development, where warm inbound replies are Claude's to send.)
 
 ### Event-mail inbox hygiene is NON-SKIPPABLE (reinforced 2026-09-04 per Sav)
 Found 2026-09-04: Job 4 (event-mail inbox filing, part of `daily-event-scan`) had lapsed for months — 37+ read, resolved event emails (Cerebral Valley hackathon threads, Serial Marketers/David Berkowitz digests back to Jul 2025, Marketecture Media, AI with ALLIE, old Eventbrite confirmations) were sitting unfiled in the inbox. Root cause: the every-run Job 4 step was being treated as optional/skippable under token-lean pressure.
@@ -275,6 +286,15 @@ Found 2026-09-04: Job 4 (event-mail inbox filing, part of `daily-event-scan`) ha
 - If a run reports "no changes" on Jobs 1/2/2.5, it must still show the Job 4 filing tally (even if 0 items) — a run that skips reporting Job 4 is incomplete, per the existing "every run ends with an in-chat table" rule.
 - Do a periodic BACKLOG SWEEP (not just the rolling ~4-day window) at least monthly, searching `in:inbox is:read` across all known event senders (luma-mail.com, cerebralvalley.ai, eventbrite.com, beehiiv.com event/marketing digests, zoom webinars) with no date floor, to catch anything that slipped through — this is what surfaced the 2026-09-04 backlog.
 - Never mistake "digest delivered" for "inbox filed" — they are two separate deliverables and both are required every run.
+
+#### FILE-ON-EVERY-SEARCH — the rule that closes the loophole (set 2026-09-07 per Sav)
+Found again 2026-09-07, three days after the last "reinforcement": **89 event emails were sitting in the inbox, the oldest from April 2024.** The run that morning had reported "0 filed — all recent event mail is unread," which was technically true for a 4-day window and completely useless as hygiene. That is the loophole. Closing it:
+- **Filing is triggered by the ACT OF SEARCHING, not by the calendar.** Any time Claude searches for events, scores events, registers for an event, or adds an event to the calendar — scheduled run OR ad-hoc chat request OR a one-off "what's on this week" — it MUST run the event-mail filing pass in the SAME turn, before the final report. Search or add content → file the inbox. No exceptions, no "I'll get it next run."
+- **The read/unread test is DEAD for registration mail.** Registration confirmations, approvals, pending-approval notices, waitlist notices, reminders, recaps, and event invites are informational: the calendar is the source of truth for status, so they get `Events` (Label_8) + archive **regardless of read state**. Only these stay in the inbox: a real person's 1:1 invite awaiting Sav's yes/no, an unpaid paid-event ticket, or a message asking Sav a direct question.
+- **Never scope the search to a rolling window.** Every filing pass searches `in:inbox` with NO date floor. A 4-day window is what let a 2024 backlog survive 18 months of "clean" runs.
+- **Search beyond Luma.** The 2026-09-07 backlog was over half non-Luma: AICamp, ClickHouse, Zoom Events/Webinars, ElevenLabs/sequel.io, OpenAI Forum, Dataiku, Search Atlas, Cloudera, Anthropic Webinars, Daytona, Articuler, Meetup.com, Oracle AI Events, Campfire, Vapi, WeAreDevelopers, Devpost. Run BOTH passes every time: (1) known event senders, (2) subject-based — `registration|you're registered|you're in|waitlist|RSVP|invited to|is starting|thanks for joining|webinar|meetup|summit|hackathon`.
+- **Route non-event strays correctly rather than dumping them in Events:** event-sourced perks/credits → `Partnerships → Perks & Credits` (Label_21) · partner invitations → `Partnerships → Active` (Label_20) · job/recruiter mail → Label_18/19/23 per the job rules. Vendor sales threads, GitHub/Vercel bot mail, and client threads are NEVER touched.
+- **Report the tally with a number and a location, every time** — "N filed to Events (Label_8), M left in inbox and why." "Inbox hygiene done" with no count is not a report. A turn that searched or registered and does not end with a filing tally is incomplete.
 
 ### Keep inboxes & folders as clean as possible (standing rule — set 2026-07-05)
 - Default to tidy: don't leave automated self-notification drafts, duplicate files, or stray artifacts behind. Deliver in-app; if a task must write, write to its canonical file/location, not a new scratch copy.
