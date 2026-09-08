@@ -52,7 +52,7 @@ export const INSIGHTS: Insight[] = [
     slug: 'agency-orchestration-gap-36-points',
     title: 'The 36-point gap in advertising is a workflow problem.',
     metaTitle: 'The 36-Point Gap in Advertising Is a Workflow Problem | Enso Labs',
-    dek: '81% of marketers want one AI partner across creative, media, commerce and earned. 45% have one. What fills the gap is not another tool per channel. It is a managed agent that carries four shared inputs across all of them.',
+    dek: '81% of marketers want one AI partner across creative, media, commerce and earned. 45% have one. What closes the gap is not another tool per channel. It is a managed agent that carries the brief, the journey map, the measurement plan and the segmentation across every channel. Enso Labs builds that harness: the strategic conduit between your channels, reporting every reallocated dollar in media dollars, channels, days and leads.',
     metaDescription: '81% of marketers want one integrated AI partner; 45% have one. Enso Labs on the managed AI agents for advertising that close the 36-point gap.',
     pillar: 'Ship',
     lens: 'Brand',
