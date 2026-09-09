@@ -41,6 +41,12 @@ const nextConfig = {
         destination: '/insights/agi-summit-2026-code-is-free',
         permanent: true,
       },
+      // Unpublished 2026-09-09: newer pharma CoE article retired (same Heller story as ai-coe-pharma-mlr-compliance)
+      {
+        source: '/insights/ai-center-of-excellence-pharma-agency-compliance',
+        destination: '/insights/ai-coe-pharma-mlr-compliance',
+        permanent: true,
+      },
       // Client-confidentiality scrub: old "gore" slugs → renamed slugs (permanent)
       {
         source: '/work/gore',
