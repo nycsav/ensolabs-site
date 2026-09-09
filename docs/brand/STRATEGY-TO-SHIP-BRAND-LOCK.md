@@ -5,9 +5,10 @@
 If any other file, the live site, or a past chat disagrees with this document, **this document wins** —
 fix the other thing. Do not re-derive these from memory or chat history ever again.
 
-> ⚠️ Known drift to correct (these do NOT match the lock and must be fixed):
-> - The live site OG generator (`components/OgFrame.tsx` in ensolabs-site) uses **Lora** + a ring circle. WRONG → should be Space Mono + swept ribbon.
-> - The `Content Engine.dc.html` (this project) used Lora + a "S→S" coral circle. WRONG → rebuild on the lock.
+> ✅ Drift corrected 2026-09-09 (PR "design/s2s-card-system"): `OgFrame.tsx`, `scripts/lib/photo-og-template.js`,
+> `scripts/render-carousel.js`, `scripts/generate-x-card.js`, `brand/strategy-to-ship/tokens.{css,ts}`, the kickoff
+> prompt and the content-ops templates all render the §8 card system. Lora survives only as a legacy token for
+> long-form pull-quotes.
 
 ---
 
@@ -44,7 +45,10 @@ Wordmark inline example:
 
 ## 3. ENDORSEMENT LOCKUP (relationship to the lab)
 - Strategy▸Ship **never floats free** of the parent. Pair the wordmark with **FROM ENSO LABS**:
-  JetBrains Mono, ~10px, `letter-spacing:.16em`, slate `#79705F`, after a short hairline `#DDD2BC`.
+  JetBrains Mono 13px (at 1200×630; scales with the card), `letter-spacing:.16em`, **Enso Teal `#5CE0D2`**
+  (this is the one sanctioned teal use), after an 18×1px slate `#79705F` hairline. Right-aligned partner:
+  `ENSOLABS.AI/INSIGHTS`, JetBrains Mono 13px `.14em`, `#9B8F78`. *(Updated 2026-09-09 to match the
+  shipped 36-point-gap card — the earlier "slate ~10px" note is superseded.)*
 - On the studio (Enso) side the relationship reads "/ STRATEGY-TO-SHIP".
 
 ## 4. COLOR (exact hex)
@@ -103,3 +107,25 @@ The locked Brand System says **Space Mono** for headlines, but the **live websit
 publication in Lora**. Two readings: (a) Space Mono is canonical and the site drifted — fix the site; or
 (b) Lora was a deliberate later choice for on-site reading. **Confirm which**, and I'll align everything
 to one answer. Everything else above is unambiguous and locked.
+
+## 8. THE CARD SYSTEM (locked 2026-09-09 — the shipped 36-point-gap card is the reference)
+Reference: `public/og/og-agency-orchestration-gap-36-points-v1.png`; Claude Design source kept verbatim at
+`brand/strategy-to-ship/reference/36-point-gap-modules.dc.html` (`#og`). Renderer: `scripts/lib/s2s-card-template.js`
+(`renderCard`) — **every** OG, LinkedIn cover, X card and carousel cover goes through it. Tokens: `STS_CARD` in
+`brand/strategy-to-ship/tokens.ts` / `--sts-card-*` in `tokens.css`. `components/OgFrame.tsx` (dynamic OG) mirrors it.
+
+Master frame 1200×630 (other formats scale proportionally: LinkedIn cover 1200×627, X 1600×900 ×1.33, carousel
+cover 1080×1350 ×1.15 portrait):
+- **Ground:** Ink-deep `#16110B` + full-bleed warm documentary photo (real people, real rooms — brand-principles §9).
+  Overlay `linear-gradient(90deg, rgba(22,17,11,0) 25%, .6 50%, .94 70%)` — photo breathes left, type sits right.
+  Portrait: `180deg` 18% / 42% / 60%, photo on top, type at the bottom.
+- **Frame:** padding `64px 72px`; column; `space-between`; content aligned `flex-end`; type column **560px**; gap **22px**.
+- **Kicker (top-right):** 12px Ledger Amber `#E0A23C` ■ + JetBrains Mono **17px**, `.16em`, uppercase, Paper.
+  Pattern `SECTION × TOPIC · PART N OF M`. Never repeat the wordmark in the kicker.
+- **Headline:** Space Mono **700 / 76px / lh 1.0 / -.035em**, Paper, sentence case, ends with a period, ≤2 lines.
+- **Dek:** Inter Tight **500 / 26px / lh 1.32**, `#CFC3A7`. One sentence, ideally a stat.
+- **Footer:** 1px rule `rgba(247,241,230,.22)`, padding-top 20px. Left = wordmark (Space Mono 700 22px, ribbon) →
+  18×1px slate hairline → `FROM ENSO LABS` (teal, §3). Right = `ENSOLABS.AI/INSIGHTS`.
+- **Coral budget:** the ribbon, a stamp, one CTA. Never a coral flood (the old carousel cover/CTA is retired).
+- **Carousel content slides:** Ink-deep or Paper ground, Space Mono 700 heading (-.035em), Inter Tight body,
+  JetBrains Mono slide number; same footer lockup on every slide; close on "Powered by Enso Labs".
