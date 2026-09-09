@@ -22,7 +22,10 @@
   --sts-line-on-dark:  #2c2419;
 
   /* --- Type --- */
-  --sts-serif: var(--font-lora), "Lora", Georgia, "Times New Roman", serif;        /* display / headlines — human, editorial */
+  /* LOCKED 2026-09-09 (docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md §5, §8): display = Space Mono 700.
+     Canonical reference: the 36-point-gap card, brand/strategy-to-ship/reference/36-point-gap-modules.dc.html */
+  --sts-display: var(--font-space-mono), "Space Mono", ui-monospace, Menlo, monospace; /* headlines / masthead / wordmark — "a mono voice on a clean frame" */
+  --sts-serif: var(--font-lora), "Lora", Georgia, "Times New Roman", serif;        /* LEGACY — long-form pull-quotes only; never headlines, never the wordmark */
   --sts-sans:  var(--font-inter-tight), "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* body / UI — shared w/ Enso */
   --sts-mono:  var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, Menlo, monospace; /* metadata / the machine signal */
 
@@ -33,9 +36,25 @@
   --sts-fs-h3:     26px;
   --sts-fs-h2:     34px;
   --sts-fs-h1:     clamp(40px, 5.5vw, 68px);
-  --sts-lh-tight:  1.08;   /* serif headlines */
+  --sts-lh-tight:  1.0;    /* Space Mono headlines (card spec: line-height 1.0) */
   --sts-lh-body:   1.62;
-  --sts-ls-mono:   0.08em; /* mono letter-spacing */
+  --sts-ls-mono:   0.16em; /* mono kicker letter-spacing (card spec; lock §5 allows .12–.16em) */
+  --sts-ls-display: -0.035em; /* Space Mono display tracking */
+
+  /* --- Card system (the 36-point-gap card, locked 2026-09-09) ---
+     Master frame 1200×630; other formats scale these values (see scripts/lib/s2s-card-template.js). */
+  --sts-card-pad-y:   64px;
+  --sts-card-pad-x:   72px;
+  --sts-card-col:     560px;   /* type column width (landscape) */
+  --sts-card-gap:     22px;    /* headline → dek → footer */
+  --sts-card-kicker:  17px;    /* JetBrains Mono, .16em, amber ■ 12px before it */
+  --sts-card-h1:      76px;    /* Space Mono 700, lh 1.0, -.035em */
+  --sts-card-dek:     26px;    /* Inter Tight 500, lh 1.32 */
+  --sts-card-dek-fg:  #CFC3A7;
+  --sts-card-meta:    13px;    /* footer mono */
+  --sts-card-rule:    rgba(247,241,230,.22);
+  --sts-card-overlay: linear-gradient(90deg, rgba(22,17,11,0) 25%, rgba(22,17,11,.6) 50%, rgba(22,17,11,.94) 70%);
+  --sts-card-overlay-portrait: linear-gradient(180deg, rgba(22,17,11,0) 18%, rgba(22,17,11,.6) 42%, rgba(22,17,11,.94) 60%);
 
   /* --- Space / shape --- */
   --sts-radius:    10px;
@@ -67,10 +86,10 @@
   color: var(--sts-slate);
 }
 .sts-headline {
-  font-family: var(--sts-serif);
-  font-weight: 600;
+  font-family: var(--sts-display);
+  font-weight: 700;
   line-height: var(--sts-lh-tight);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--sts-ls-display);
 }
 .sts-arrow { color: var(--sts-coral); }   /* the → is always coral */
 
