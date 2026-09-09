@@ -63,7 +63,7 @@ const HOME_FAQS = [
       'Yes. Enso Labs is a Perplexity Computer Implementation Partner, part of Perplexity\'s Implementation Partners Program. We help enterprise teams onboard, integrate, and get production value out of Perplexity Computer — choosing which workflows to point it at first, wiring it into the data and tools a team already uses, and measuring whether it is actually changing decisions. Strategy through production, led by the person who also does the build.',
   },
   {
-    question: 'How do I start a project with Enso Labs?',
+    question: 'How does a project with Enso Labs start?',
     answer:
       'Start with a 2-week AI Audit — a fixed-fee diagnostic engagement that delivers a written roadmap, prioritized opportunity backlog, ROI model, governance gap-map, and a working agentic prototype against your real data. Send a brief through the contact form or email sav@ensolabs.ai, and we respond personally.',
   },

@@ -33,7 +33,7 @@ const FAQS = [
       'We collect information you voluntarily provide through our contact form or through lead generation forms on advertising platforms (such as LinkedIn) — typically name, email address, job title, and company name. We also collect standard web analytics (pages visited, referral source, approximate location) via Google Analytics.',
   },
   {
-    question: 'How is my information used?',
+    question: 'How is your information used?',
     answer:
       'Information submitted through a form is used solely to respond to your inquiry and, if you engage us, to deliver the work. We do not sell personal information to third parties. Analytics data is used in aggregate to understand site usage and improve content.',
   },
@@ -43,7 +43,7 @@ const FAQS = [
       'We use Google Analytics (GA4) to understand aggregate site traffic. Advertising platforms we run campaigns on (such as LinkedIn) may set their own cookies or pixels on your device when you interact with an Enso Labs ad; those platforms’ own privacy policies govern that data.',
   },
   {
-    question: 'How do I request my data be deleted?',
+    question: 'How can data deletion be requested?',
     answer:
       'Email sav@ensolabs.ai with the subject line "Data deletion request" and we will remove your information from our systems within 30 days, except where we are required to retain it by law.',
   },

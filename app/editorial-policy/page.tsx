@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const revalidate = 300;
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbSchema, faqSchema, orgSchema } from '@/lib/schema';
 

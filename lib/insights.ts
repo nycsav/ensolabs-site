@@ -287,7 +287,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Brand',
     sourceCredit: 'Strategy to Ship',
     date: '2026-08-18',
-    dateModified: '2026-08-18',
+    dateModified: '2026-09-09',
     readingMinutes: 7,
     tags: ["Forward Deployed Strategist", "Deployment Strategist", "Forward Deployed Engineer", "Agentic AI", "Berkeley RDI", "Agentic AI Summit 2026", "UC Berkeley", "AI Strategy Consulting", "Brand Strategy", "CX Strategy", "Data Strategy", "Agent Harness", "RAG", "MCP", "IBM Partner Plus", "IBM watsonx", "Enso Labs", "Sav Banerjee", "Strategy to Ship"],
     faqs: [
@@ -424,7 +424,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Financial',
     sourceCredit: 'Strategy to Ship',
     date: '2026-07-20',
-    dateModified: '2026-08-17',
+    dateModified: '2026-09-09',
     readingMinutes: 5,
     tags: ["AGI Summit", "AI Startup Funding", "Venture Capital", "AI Moats", "Defensibility", "Crunchbase", "Blitzscaling Ventures", "Flywheel", "Network Effects", "Agentic AI", "San Francisco", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [
@@ -484,7 +484,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Consult',
     lens: 'Build',
     date: '2026-07-14',
-    dateModified: '2026-08-17',
+    dateModified: '2026-09-09',
     readingMinutes: 3,
     postEventUpdate: {
       label: 'Post-event update, July 22',
@@ -531,7 +531,7 @@ export const INSIGHTS: Insight[] = [
     pillar: 'Build',
     lens: 'Build',
     date: '2026-07-05',
-    dateModified: '2026-08-18',
+    dateModified: '2026-09-09',
     readingMinutes: 3,
     tags: ["Perplexity", "Perplexity Computer", "Perplexity Implementation Partner", "Implementation Partner", "Partner Program", "Partnerships", "Enterprise AI", "AI Adoption", "AI Implementation", "Enso Labs", "Strategy to Ship", "Sav Banerjee"],
     faqs: [
@@ -574,7 +574,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Build',
     sourceCredit: 'Claude Managed Agents',
     date: '2026-06-18',
-    dateModified: '2026-08-18',
+    dateModified: '2026-09-09',
     readingMinutes: 6,
     tags: ["Claude Managed Agents", "Agentic AI", "Anthropic", "Multi-Agent Orchestration", "AI Outcomes", "AI Memory", "Enterprise AI", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [

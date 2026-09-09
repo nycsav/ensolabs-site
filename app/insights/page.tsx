@@ -45,7 +45,7 @@ const INDEX_FAQS = [
       'Enso Labs publishes new essays several times a month, plus a daily Live Intelligence feed. Recent coverage includes Google I/O 2026, the Perplexity Implementation Partners Program, Claude Managed Agents, and frontier-model routing, spanning AI transformation, agentic systems, MCP, RAG, and financial AI.',
   },
   {
-    question: 'How do I work with Enso Labs?',
+    question: 'How does working with Enso Labs work?',
     answer:
       'Get in touch at https://ensolabs.ai/contact or email sav@ensolabs.ai. Typical entry points are a two-week AI audit, a twelve-week pilot-to-production build, or an embedded AI operator retainer. Every engagement is led by a senior advisor who also builds.',
   },
