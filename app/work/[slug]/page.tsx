@@ -378,6 +378,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </Link>
               </li>
             ))}
+            {params.slug === 'heller' && (
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
+                <span style={{ color: 'var(--teal)', fontFamily: 'var(--mono)', flexShrink: 0 }}>›</span>
+                <Link href="/services/regulated-industries" style={{ color: 'var(--fg-2)', fontSize: '16px', lineHeight: '1.55' }}>
+                  See our full regulated industries practice →
+                </Link>
+              </li>
+            )}
             <li style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
               <span style={{ color: 'var(--teal)', fontFamily: 'var(--mono)', flexShrink: 0 }}>›</span>
               <Link href="/services" style={{ color: 'var(--fg-2)', fontSize: '16px', lineHeight: '1.55' }}>
