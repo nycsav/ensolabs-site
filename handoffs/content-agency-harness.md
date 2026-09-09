@@ -48,6 +48,16 @@ Each agent reads `state.json`, does its work, writes its output file, updates `s
 
 ## Visual Design System (canonical — all agents enforce)
 
+> **Correction, installed 2026-09-09 (with PR #94):** the visual spec below was written before the brand lock and
+> contains approximations that are now WRONG. The agents installed from this handoff enforce the LOCKED card system
+> instead — `docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md` §8, renderer `scripts/lib/s2s-card-template.js`, reference
+> `public/og/og-agency-orchestration-gap-36-points-v1.png`. Differences: ground is Ink-Deep **#16110B** (not navy #0d1321);
+> kicker is an **amber ■ + JetBrains Mono, top-RIGHT** (not teal, not top-left); the wordmark is Space Mono 700 with the
+> **coral swept ribbon** (never a "→" character); "FROM ENSO LABS" is teal, "ENSOLABS.AI/INSIGHTS" slate; display type is
+> **Space Mono 700 — Lora is retired**; `lib/insights.ts` uses `pillar / lens / readingMinutes / body: string[]`, not
+> `kicker / readTime / body: string`. "System B" track colors do not exist in `app/services/page.tsx`; carousels use the
+> card system (`scripts/render-carousel.js`). Where this document and the brand lock disagree, the brand lock wins.
+
 Two design languages are active at Enso Labs. Every article, carousel, strategy sheet, and LinkedIn post must use one or both.
 
 ---
