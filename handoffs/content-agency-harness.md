@@ -4,6 +4,23 @@
 
 ---
 
+## ⚡ How to install (read this first)
+
+**Repo:** `nycsav/ensolabs-site` — this file lives at `handoffs/content-agency-harness.md`. This is the SAME repo as the Enso Labs website. Do NOT create a new repo.
+
+**To install in Claude Code:**
+1. Open Claude Code in `~/Projects/ensolabs-site` (or `cd ~/Projects/ensolabs-site` in terminal first)
+2. Run: `/ship-handoff content-agency-harness`
+3. Claude Code will branch off master, execute Steps 1–3 below, run `npm run build`, and open a PR
+
+**Protected paths note:** Steps 1 and 2 write to `.claude/agents/` and `.claude/commands/` — these are protected paths. Claude Code will hold the PR for Sav's review before merging (it will NOT auto-merge). That's correct — you review and approve once.
+
+**After the PR merges:** restart Claude Code in `~/Projects/ensolabs-site` so the new agents load, then test with `/content-agency "your brief here"`.
+
+**Subsequent use (every article):** `/content-agency "<brief>"` — no re-installation needed.
+
+---
+
 ## Architecture Overview
 
 ```
