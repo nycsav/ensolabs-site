@@ -1,0 +1,54 @@
+{
+  "slug": "s2s-36pt-gap",
+  "kicker": "STRATEGY → SHIP · ADVERTISING × AI",
+  "sourceCredit": "BCG × Google Think, Jan 2026 · ~1,000 marketers globally",
+  "cover": {
+    "headline": "81% of marketers want integrated AI. Only 45% get it.",
+    "stamp": "THE 36-POINT GAP"
+  },
+  "slides": [
+    {
+      "n": 1,
+      "heading": "The integration gap is the agency gap",
+      "body": "81% of marketers want AI capabilities integrated across creative, media, commerce and earned. Only 45% say their current partners deliver it. That 36-point gap is not a technology problem — it is an orchestration problem."
+    },
+    {
+      "n": 2,
+      "heading": "Close the gap, capture the budget",
+      "body": "97% of marketers say they would increase spend with a partner who actually closes the cross-channel AI gap. The opportunity is sitting in front of every agency and consultancy that can unify the workflow."
+    },
+    {
+      "n": 3,
+      "heading": "Agentic AI is where the next two years go",
+      "body": "74% of marketers plan to increase investment in agentic AI channels over the next two years. Only 21% fund this from new budget — 45% reallocate from paid media, 35% from brand budgets. The money is already moving."
+    },
+    {
+      "n": 4,
+      "heading": "The unit of transformation is the workflow",
+      "body": "BCG and Google's conclusion is not 'adopt more tools.' It is: agencies that use AI to unify fragmented operations into a single orchestration layer win. That is what we build — the Madison Avenue playbook, encoded as agents."
+    }
+  ],
+  "sources": [
+    {
+      "claim": "81% want integrated capabilities / 45% get it",
+      "source": "BCG × Google Think, 'The Expansionary Moment,' Jan 2026"
+    },
+    {
+      "claim": "97% would increase spend with a partner who closes the gap",
+      "source": "BCG × Google Think, Jan 2026"
+    },
+    {
+      "claim": "74% increasing agentic AI investment over next 2 years",
+      "source": "BCG × Google Think, Jan 2026"
+    },
+    {
+      "claim": "45% reallocating from paid media to fund AI innovation",
+      "source": "BCG × Google Think, Jan 2026"
+    }
+  ],
+  "cta": {
+    "headline": "The orchestration gap is the opportunity.",
+    "subhead": "Full breakdown → ensolabs.ai/insights"
+  },
+  "theme": "dark"
+}
