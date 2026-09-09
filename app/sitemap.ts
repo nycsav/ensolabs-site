@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.origin}/locations/new-york`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE.origin}/services/agentic-ai-consulting`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE.origin}/about/sav-banerjee`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE.origin}/services/regulated-industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   const insightRoutes: MetadataRoute.Sitemap = INSIGHTS.map((p) => ({
