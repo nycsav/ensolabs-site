@@ -160,7 +160,7 @@ const TRACKS: Track[] = [
     ],
     deliverables: [
       { ix: '20', ti: 'Agentic Audience & Segmentation', de: 'Real-time ICP and segment modeling on live behavioral and intent data — segmentation that updates itself, not a static deck.', ta: '4–8 wk' },
-      { ix: '21', ti: 'Insight & Discovery Engines', de: 'Agentic voice-of-customer: interviews, reviews, and market signal mined and clustered at scale into decision-ready insight.', ta: '4–8 wk' },
+      { ix: '21', ti: 'Research & Intelligence Agents', de: 'Agentic research harnesses that go broad and deep: competitive intelligence, consumer insights, category analysis, and discovery sprints. Six-week agency discovery in six days.', ta: '4–8 wk' },
       { ix: '22', ti: 'Campaign Planning & 24/7 Optimization', de: 'Multi-channel planning agents plus always-on optimization across Google, LinkedIn, and Meta. Budget follows performance, continuously.', ta: '6–12 wk' },
       { ix: '23', ti: 'Brand Governance Agents', de: 'Your brand book becomes the rubric — agents that keep voice, claims, and compliance on-brand at machine scale.', ta: '4–8 wk' },
       { ix: '24', ti: 'Full-Funnel Demand Systems', de: 'From first touch to pipeline: an agentic demand engine wired to your CRM and analytics, measured on outcomes not seats.', ta: '8–16 wk' },
@@ -475,6 +475,7 @@ export default function ServicesPage() {
                 <Link className="btn" href="/work/heller">Healthcare AI →</Link>
                 <Link className="btn" href="/services/regulated-industries">Regulated Industries →</Link>
                 <Link className="btn" href="/services/ai-growth-marketing">AI Growth →</Link>
+                <Link className="btn" href="/services/ai-research-intelligence">Research &amp; Intelligence →</Link>
               </div>
             </div>
           </div>
