@@ -43,7 +43,7 @@ Enso Labs is *Systematic Resonance* — mission control at midnight. Strategy to
 
 ## 3. Logotype
 
-- **Primary wordmark:** `Strategy → Ship` set in **Lora** (medium/semibold), with the **→ in Ship Coral**. The arrow is the only colored element — it is the signal.
+- **Primary wordmark:** `Strategy` + coral swept ribbon + `Ship` set in **Space Mono 700** (-.035em); small-format fallback `Strategy▸Ship`. The arrow is the only colored element — it is the signal.
 - **Lowercase handle:** `strategy → ship` — for social handles, URLs, casual placements (mirrors the old `Strategy to Ship` lowercase ease).
 - **Monogram:** **`S→S`** — a compact mark for avatars, favicons, stamps. The arrow stays coral.
 - **Endorsement lockup:** wordmark + a hairline + mono `FROM ENSO LABS`.
@@ -76,11 +76,11 @@ A warm, paper-and-ink editorial palette with one decisive accent. Distinct from 
 
 A three-voice system: a human serif, a modern sans, a machine mono.
 
-- **Display / headlines — Lora.** A warm, contemporary serif with real character. This is the "human + media" voice. Use for article titles, OG headlines, pull-quotes. Weights 500–700, tight leading (1.05–1.15), generous size (the headline is the art).
+- **Display / headlines — Space Mono 700.** "A mono voice on a clean frame." Use for article titles, OG headlines, the wordmark. Leading 1.0, tracking -.035em, generous size (the headline is the art). Locked 2026-09-09 — see docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md §8. (Lora: legacy, pull-quotes only.)
 - **Body / UI — Inter Tight.** Shared with Enso (family DNA), modern and clean. Article body, captions, buttons, navigation. 400–500.
 - **Metadata / signal — JetBrains Mono.** The machine voice. Kickers, datelines, version tags, source labels, the engine's confidence notes. 11–14px, uppercase, letter-spaced. This is where the "AI" reads.
 
-**Hierarchy:** mono kicker (small, spaced) → Lora headline (large) → Inter Tight body. The jump from tiny mono to large serif is the signature contrast — machine annotation locating a human story.
+**Hierarchy:** mono kicker (small, .16em, amber ■) → Space Mono 700 headline (large) → Inter Tight dek/body. The jump from tiny tracked mono to large bold mono is the signature contrast — machine annotation locating a human story.
 
 ---
 
@@ -109,9 +109,9 @@ One DNA, every surface. Each template is specified in the style guide.
 
 | Format | Size | Notes |
 |---|---|---|
-| **OG / social card — dark** | 1200×630 | Ink Deep ground, Lora headline, mono dateline, release ledger or stamp, `S→S · from Enso Labs` masthead |
+| **OG / social card — dark** | 1200×630 | Ink Deep ground + documentary photo (90° gradient), amber ■ mono kicker top-right, Space Mono 700 headline, Inter Tight dek, footer wordmark + `FROM ENSO LABS` (teal) + `ENSOLABS.AI/INSIGHTS` — the card system (brand lock §8) |
 | **OG / social card — light** | 1200×630 | Paper ground, photo or stamp, editorial register |
-| **LinkedIn carousel** | 1080×1350 | Cover (Lora headline + stamp) → atomic slides (one stat/idea each) → CTA. Highest-engagement format. |
+| **LinkedIn carousel** | 1080×1350 | Cover (card system: Ink-Deep, amber ■ kicker, Space Mono 700 headline, stamp) → atomic slides (one stat/idea each) → CTA. Highest-engagement format. |
 | **Square post** | 1080×1080 | LinkedIn/X; headline + arrow device |
 | **Newsletter header** | 1200×400 | Masthead + issue number (`v—` / `№`) + date |
 | **/insights article** | responsive | Paper theme, Lora h1, mono meta, photo hero, coral links |

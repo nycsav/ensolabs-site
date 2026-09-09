@@ -70,8 +70,141 @@ export async function renderOg({ eyebrow, title, subtitle, strap, theme = 'studi
       }
     : { bg: OG_COLORS.bg, fg: OG_COLORS.fg, fg2: OG_COLORS.fg2, fg3: OG_COLORS.fg3, accent: OG_COLORS.teal };
 
-  const ensoLogo = pub ? dataUri('../public/images/logo-white.svg', 'image/svg+xml') : null;
   const claudeIcon = pub && sourceCredit ? dataUri('../public/og/claude-icon.png', 'image/png') : null;
+
+  if (pub) {
+    // CANONICAL Strategy → Ship card (locked 2026-09-09, brand lock §8). Mirrors
+    // scripts/lib/s2s-card-template.js minus the photo: ink-deep ground, amber ■ kicker
+    // top-right, Space Mono 700 headline, Inter Tight dek, endorsement footer.
+    const C = STS.card;
+    const K = STS.color;
+    const longTitle = title.length > 44;
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            background: K.inkDeep,
+            color: K.paper,
+            padding: `${C.padY}px ${C.padX}px`,
+            fontFamily: 'Inter Tight',
+          }}
+        >
+          {/* Kicker — amber square + mono, top-right */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              fontFamily: 'JetBrains Mono',
+              fontSize: C.kicker.size,
+              letterSpacing: C.kicker.ls,
+              textTransform: 'uppercase',
+              color: K.paper,
+            }}
+          >
+            <div style={{ width: C.kicker.square, height: C.kicker.square, background: K.amber }} />
+            <span>{eyebrow}</span>
+          </div>
+
+          {/* Column — headline, dek, footer */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: C.gap, width: longTitle ? 860 : C.colW }}>
+            <div
+              style={{
+                fontFamily: 'Space Mono',
+                fontWeight: 700,
+                fontSize: longTitle ? 50 : C.headline.size,
+                lineHeight: C.headline.lh,
+                letterSpacing: C.headline.ls,
+              }}
+            >
+              {title}
+            </div>
+            {subtitle ? (
+              <div style={{ fontSize: C.dek.size, lineHeight: C.dek.lh, fontWeight: 500, color: C.dek.color }}>
+                {subtitle}
+              </div>
+            ) : null}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                borderTop: `1px solid ${C.footer.rule}`,
+                paddingTop: C.footer.padTop,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    fontFamily: 'Space Mono',
+                    fontWeight: 700,
+                    fontSize: C.footer.wordmark,
+                    letterSpacing: '-0.035em',
+                  }}
+                >
+                  <span>Strategy</span>
+                  <svg width="20" height="13" viewBox="0 0 50 32">
+                    <path d={RIBBON_PATH} fill={K.coral} />
+                  </svg>
+                  <span>Ship</span>
+                </div>
+                <div style={{ width: C.footer.hairline, height: 1, background: K.slate }} />
+                <span
+                  style={{
+                    fontFamily: 'JetBrains Mono',
+                    fontSize: C.footer.meta,
+                    letterSpacing: C.footer.metaLs,
+                    color: K.ensoTeal,
+                  }}
+                >
+                  FROM ENSO LABS
+                </span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                {claudeIcon ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={claudeIcon} alt="" width={16} height={16} />
+                    <span
+                      style={{
+                        fontFamily: 'JetBrains Mono',
+                        fontSize: C.footer.meta,
+                        letterSpacing: C.footer.urlLs,
+                        color: K.slateOnDark,
+                        textTransform: 'uppercase',
+                      }}
+                    >
+                      {sourceCredit} ·
+                    </span>
+                  </>
+                ) : null}
+                <span
+                  style={{
+                    fontFamily: 'JetBrains Mono',
+                    fontSize: C.footer.meta,
+                    letterSpacing: C.footer.urlLs,
+                    color: K.slateOnDark,
+                  }}
+                >
+                  ENSOLABS.AI/INSIGHTS
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      { ...OG_SIZE, fonts },
+    );
+  }
 
   return new ImageResponse(
     (
@@ -184,7 +317,7 @@ export async function renderOg({ eyebrow, title, subtitle, strap, theme = 'studi
             {/* Left — Enso Labs logo + hairline + insights URL */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={ensoLogo!} alt="Enso Labs" width={96} height={24} />
+              <img src={dataUri('../public/images/logo-white.svg', 'image/svg+xml')} alt="Enso Labs" width={96} height={24} />
               <div style={{ width: 1, height: 22, background: STS.color.lineOnDark }} />
               <span
                 style={{

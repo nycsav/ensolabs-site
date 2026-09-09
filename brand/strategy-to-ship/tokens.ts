@@ -24,9 +24,24 @@ export const STS_COLOR = {
 } as const;
 
 export const STS_FONT = {
-  serif: 'Lora',          // display / headlines
+  display: 'Space Mono',  // headlines / masthead / wordmark — LOCKED 2026-09-09 (brand lock §5, §8), weight 700
+  serif: 'Lora',          // LEGACY — long-form pull-quotes only; never headlines, never the wordmark
   sans: 'Inter Tight',    // body / UI
   mono: 'JetBrains Mono', // metadata / the machine signal
+} as const;
+
+/** The card system — the 36-point-gap card, locked 2026-09-09. Master frame 1200×630; other
+ *  formats scale proportionally (scripts/lib/s2s-card-template.js is the renderer). */
+export const STS_CARD = {
+  padY: 64, padX: 72, colW: 560, gap: 22,
+  kicker: { size: 17, ls: '0.16em', square: 12 },        // JetBrains Mono + amber ■ before it
+  headline: { size: 76, lh: 1.0, ls: '-0.035em', weight: 700 }, // Space Mono
+  dek: { size: 26, lh: 1.32, weight: 500, color: '#CFC3A7' },   // Inter Tight
+  footer: { wordmark: 22, meta: 13, metaLs: '0.16em', urlLs: '0.14em', rule: 'rgba(247,241,230,0.22)', padTop: 20, hairline: 18 },
+  overlay: 'linear-gradient(90deg, rgba(22,17,11,0) 25%, rgba(22,17,11,0.6) 50%, rgba(22,17,11,0.94) 70%)',
+  overlayPortrait: 'linear-gradient(180deg, rgba(22,17,11,0) 18%, rgba(22,17,11,0.6) 42%, rgba(22,17,11,0.94) 60%)',
+  ribbonPath: 'M6 23 C 18 21 28 14 38 4 C 35 15 36 23 39 28 C 29 24 17 23 6 23 Z',
+  formats: { og: [1200, 630], linkedinCover: [1200, 627], x: [1600, 900], carouselCover: [1080, 1350] },
 } as const;
 
 export const STS_TYPE = {
@@ -35,9 +50,10 @@ export const STS_TYPE = {
   fsDek: 22,
   fsH3: 26,
   fsH2: 34,
-  lhTight: 1.08,          // serif headlines
+  lhTight: 1.0,           // Space Mono headlines
   lhBody: 1.62,
-  lsMono: '0.08em',
+  lsMono: '0.16em',
+  lsDisplay: '-0.035em',
 } as const;
 
 export const STS_SHAPE = {
@@ -46,5 +62,5 @@ export const STS_SHAPE = {
   maxRead: '64ch',
 } as const;
 
-export const STS = { color: STS_COLOR, font: STS_FONT, type: STS_TYPE, shape: STS_SHAPE } as const;
+export const STS = { color: STS_COLOR, font: STS_FONT, type: STS_TYPE, shape: STS_SHAPE, card: STS_CARD } as const;
 export default STS;

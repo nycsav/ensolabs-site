@@ -14,7 +14,7 @@ const PALETTE = {
 };
 
 const FONTS =
-  'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap';
+  'https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Lora:ital,wght@0,400;0,500;0,600;0,700&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap';
 
 /** Corner registration marks — the small square dot grids from the reference. */
 function cornerMarks(w, h, { pad = 34, cell = 9, dot = 4, fill = PALETTE.ink } = {}) {

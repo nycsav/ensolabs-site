@@ -17,7 +17,7 @@ const html = `<!DOCTYPE html><html><head><link href="${FONTS}" rel="stylesheet">
   ${cornerMarks(W, H, { fill: PALETTE.paper })}
   <text x="76" y="106" font-family="'JetBrains Mono',monospace" font-size="24"
     letter-spacing="4" fill="${PALETTE.coral}" font-weight="700">THE CROSSING</text>
-  <text x="76" y="182" font-family="'Lora',Georgia,serif" font-size="62" fill="#FFF">Nine in ten agents never leave the pilot.</text>
+  <text x="76" y="182" font-family="'Space Mono',monospace" font-weight="700" letter-spacing="-2" font-size="58" fill="#F7F1E6">Nine in ten agents never leave the pilot.</text>
 
   ${draw({ id: 'a', tx: 470, cy: 530, rMax: 172, rMin: 26, count: 17, stroke: PALETTE.paper, width: 2.2 })}
   ${draw({ id: 'b', tx: 900, cy: 530, rMax: 62, rMin: 16, count: 6, stroke: PALETTE.coral, width: 2.6 })}
@@ -29,7 +29,7 @@ const html = `<!DOCTYPE html><html><head><link href="${FONTS}" rel="stylesheet">
   <text x="900" y="392" text-anchor="middle" font-family="'JetBrains Mono',monospace"
     font-size="22" letter-spacing="2" fill="${PALETTE.coral}">IN PRODUCTION · 11%</text>
 
-  <text x="1524" y="700" text-anchor="end" font-family="'Lora',Georgia,serif"
+  <text x="1524" y="700" text-anchor="end" font-family="'Space Mono',monospace" font-weight="700" letter-spacing="-5"
     font-size="150" fill="${PALETTE.coral}">11%</text>
   <text x="1524" y="742" text-anchor="end" font-family="'JetBrains Mono',monospace"
     font-size="20" letter-spacing="2" fill="#8E8069">CROSS INTO PRODUCTION</text>

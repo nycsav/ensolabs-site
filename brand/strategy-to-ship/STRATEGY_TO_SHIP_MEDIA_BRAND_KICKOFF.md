@@ -85,14 +85,22 @@ LOCKED BRAND FACTS (carry these in exactly — do NOT contradict):
     Enso Teal #5CE0D2 ONLY for the "from Enso Labs" endorsement link — never a headline accent.
   • Ship Coral is THE signal, not a fill: ~5–10% of any composition MAX (the arrow, a
     stamp, one highlighted word, a CTA). Never tint a large field coral.
-  • Type: Lora (serif headlines — human/editorial, 500–700, leading 1.05–1.15) ·
-    Inter Tight (body/UI, 400–500) · JetBrains Mono (kickers, datelines, version tags,
-    confidence notes — the machine signal; 11–14px, uppercase, letter-spaced ~0.08em).
-  • The glyph is the arrow → ("strategy TO ship"). The arrow is ALWAYS Ship Coral and is
-    NEVER recolored, glowed, or animated into anything but an arrow. It is the logotype's
-    hinge and the recurring device between states (strategy → ship, draft → live, signal → story).
-  • Wordmark "Strategy → Ship" (Lora). Monogram "S→S". Lowercase handle "strategy → ship"
+  • Type: Space Mono 700 (headlines / masthead / wordmark — "a mono voice on a clean
+    frame"; leading 1.0, tracking -.035em) · Inter Tight (body/dek, 400–500) · JetBrains
+    Mono (kickers, datelines, version tags — the machine signal; uppercase, .16em).
+    Lora is RETIRED for headlines and the wordmark (legacy pull-quotes only).
+  • The glyph is the coral SWEPT RIBBON ("strategy TO ship") — SVG viewBox 0 0 50 32, path
+    "M6 23 C 18 21 28 14 38 4 C 35 15 36 23 39 28 C 29 24 17 23 6 23 Z". ALWAYS Ship Coral,
+    never recolored, glowed, or morphed. Small-format fallback: ▸ (U+25B8). NEVER a "→"
+    character, NEVER an "S→S" monogram, NEVER Lora.
+  • Wordmark: Space Mono 700 "Strategy" + ribbon + "Ship". Lowercase handle "strategy ▸ ship"
     allowed for social handles/URLs only.
+  • THE CARD (locked 2026-09-09; docs/brand/STRATEGY-TO-SHIP-BRAND-LOCK.md §8; renderer
+    scripts/lib/s2s-card-template.js; reference brand/strategy-to-ship/reference/
+    36-point-gap-modules.dc.html): Ink-Deep ground + warm documentary photo, 90° gradient
+    (photo left, type right), padding 64/72, amber ■ + mono 17px kicker top-right, Space Mono
+    76px headline, Inter Tight 26px dek #CFC3A7, footer rule + wordmark + hairline +
+    teal "FROM ENSO LABS" + "ENSOLABS.AI/INSIGHTS". Every OG, cover, X card, carousel.
   • Endorsement: "Powered by Enso Labs" appears on ALL Strategy to Ship content. The
     endorsement lockup is wordmark + hairline + mono "FROM ENSO LABS".
   • Voice: practitioner-editorial, advertising-sharp, AI-honest. Studio "we", never "I".
@@ -100,8 +108,8 @@ LOCKED BRAND FACTS (carry these in exactly — do NOT contradict):
     (revolutionary, game-changing, paradigm shift, transformative). Name the human-in-the-loop.
   • Signature device: the inked coral rubber-STAMP (SHIPPED · IN PRODUCTION · LIVE · v5),
     rotated ~−4°, slightly distressed — human craft meeting machine output. Most ownable mark.
-  • Layout signature: mono kicker (tiny) → Lora headline (large, the art) → Inter Tight
-    body. The jump from tiny mono to large serif is the brand's contrast signature.
+  • Layout signature: mono kicker (tiny, amber ■) → Space Mono headline (large, the art) →
+    Inter Tight dek/body. The jump from tiny tracked mono to large bold mono is the signature.
   • Editorial, NOT an ad: lead with the headline/idea, not a logo lockup or a value-prop tagline.
 
 # DELIVERABLES
