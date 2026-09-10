@@ -36,7 +36,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - https://ensolabs.ai/work/trading-terminal — Autonomous Trading Terminal
 - https://ensolabs.ai/work/enterprise-ai — Enterprise AI Enablement Programs
 
-## Insights (26 articles)
+## Insights (25 articles)
 - https://ensolabs.ai/insights/agency-orchestration-gap-36-points — The 36-Point Gap in Advertising Is a Workflow Problem [Strategy to Ship, Enso Labs, Sav Banerjee, Advertising, Managed AI agents, Agency orchestration, Google/BCG]
 - https://ensolabs.ai/insights/frontier-deployment-code-models-case-studies — The Code That Ships. The Models That Run It. What Forward Deployment Actually Looks Like Inside Motion, Anthropic, OpenAI, and Perplexity. [Forward Deployed Strategist, Forward Deployed Engineer, Agentic AI, Anthropic, OpenAI, Perplexity, Motion, MCP, Model Context Protocol, Tool Use, RAG, Evals, Enterprise AI, Claude Managed Agents, Production AI, Strategy to Ship]
 - https://ensolabs.ai/insights/frontier-labs-fde-platform-theory — The Labs Behind the Frontier: Anthropic, OpenAI, and Perplexity Are Not Interchangeable [Forward Deployed Strategist, Forward Deployed Engineer, Anthropic, OpenAI, Perplexity, MCP, Enterprise Managed Authorization, Claude Managed Agents, Perplexity Implementation Partner, Frontier Models, Enterprise AI, AI Governance, Agentic AI, Strategy to Ship, Enso Labs, Sav Banerjee]
