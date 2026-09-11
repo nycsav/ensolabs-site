@@ -873,6 +873,7 @@ export const INSIGHTS: Insight[] = [
       'The reason is structural, not motivational. A deck-only consultancy hands off the architecture to an internal team that never participated in the design, then walks away from the production realities — eval harnesses, governance, latency budgets, hallucination guardrails — that determine whether the thing actually runs.',
       'The fix is not better decks. The fix is **the same operator who designs the system also ships it.** That collapses the translation layer. Architecture decisions get made by the person who has to debug them at 2am.',
       'This is why the Strategy-to-Ship Framework is sequenced the way it is: Diagnose, Design, Build, Scale — with the same builder across every phase. The roadmap and the runtime are the same artifact.',
+      'For AI initiatives that keep stalling between strategy and production, [explore our services](/services) or [get in touch](/contact) — we ship the system, not just the deck.',
     ],
   },
   {
@@ -900,6 +901,7 @@ export const INSIGHTS: Insight[] = [
       'What worked: encoding the scientist\'s actual decision criteria as nine explicit, MCP-compatible rules. Temperature floor. Material class. Chemistry scope. PFAS sensitivity. Market size. Liability exposure. Recency. Novelty. The 200°C gap.',
       'Each rule is independently toggleable. The dashboard shows the score with the rule on and off. The scientist can A/B their own expertise against the system. That\'s where trust comes from — not from the score, but from the ability to interrogate it.',
       'The pattern generalizes: **wherever you need expert trust, encode the expert\'s heuristics explicitly, and make every one of them inspectable.**',
+      'Enso Labs applies the Expert Lens pattern in manufacturing, pharma, and financial AI — wherever domain trust is the acceptance criterion. [Explore our services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -926,7 +928,7 @@ export const INSIGHTS: Insight[] = [
       'For two decades, enterprise software lived inside a tab. The unit of work was the screen. Integration meant Zapier, REST, or a poorly-maintained iPaaS connector.',
       'The Model Context Protocol changes the unit. The unit is now the tool call. An MCP server publishes a typed surface that any agent — Claude, Perplexity Computer, Gemini — can invoke autonomously, with structured input and structured output.',
       'The implication for B2B SaaS: every connector you have today should be reframed as an MCP server. The buyer will ask for it within twelve months. The companies that ship first own the agent-native distribution layer for the next decade.',
-      'We build these. They are usually two- to six-week engagements, depending on auth complexity and surface area.',
+      'We build these — typically two- to six-week engagements depending on auth complexity and surface area. [Explore our services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -953,6 +955,7 @@ export const INSIGHTS: Insight[] = [
       'Most RAG systems we are asked to rescue have a sophisticated retrieval pipeline and a non-existent eval harness. The team can describe their reranker but cannot tell you the F1 on a held-out set of expert-graded answers.',
       'This is backwards. The eval harness is the spec. Without it, every change is a vibes-based experiment — chunk size up, chunk size down, embedding model swap, hybrid weight knob — with no way to know if you are getting better or worse.',
       'Build the eval first. Hand-grade fifty representative queries with expert ground truth. Score every change against that set. The retrieval architecture you end up with will be different — and shippable.',
+      'Enso Labs builds eval harnesses as the foundation for every production RAG system we deliver. [Explore our services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -979,7 +982,7 @@ export const INSIGHTS: Insight[] = [
       'Most trading systems begin with the strategy: a signal, an indicator, an alpha. The risk layer arrives later, bolted on, and is the first thing to fail under stress.',
       'The Enso Trading Terminal was built backwards on purpose. The kill-switch came first. Risk caps were schemas, not config. Position sizing was a typed function with property tests, not a magic number in a YAML file.',
       'The result is a system that can run unattended without anyone losing sleep. Strategy code can be wrong. Risk code cannot.',
-      'For client engagements building autonomous trading, the rule is the same: the risk surface is the architecture. Strategy is a plug-in.',
+      'For client engagements building autonomous trading, the rule is the same: the risk surface is the architecture. Strategy is a plug-in. [Explore our services](/services) or [get in touch](/contact).',
     ],
   },
   {
@@ -1007,12 +1010,14 @@ export const INSIGHTS: Insight[] = [
       'The Heller Center of Excellence was designed around the constraint, not despite it. RAG retrieval is grounded in five brand knowledge bases that already encode MLR-approved language. Pre-flight scans run on every draft. The compliance burden is automated, not bypassed.',
       'The metric that matters: campaign launches dropped from three months to two weeks. Compliance review time barely moved — what compressed was everything before it.',
       'The lesson: regulated industries are not where AI fails. They are where it has the largest leverage, **if you treat compliance as the spec rather than the obstacle.**',
+      'Enso Labs builds AI Centers of Excellence for regulated industries — from pharma MLR compliance to financial audit trails. [Explore our services](/services) or [get in touch](/contact).',
     ],
   },
   {
     slug: 'options-flow-decision-support-not-black-box',
     title: 'Options flow analytics: decision support, not black box.',
     dek: 'Unusual flow is a hypothesis, not a trade. The Options Lab is built to surface hypotheses, force the human to vet them, and only then route to execution.',
+    metaDescription: "Options flow analytics is decision support, not a black box. How the Enso Trading Terminal surfaces unusual flow — sweep detection, IV cross-reference, and a vetting checklist before any trade executes.",
     pillar: 'Ship',
     date: '2026-03-11',
     dateModified: '2026-09-07',
@@ -1032,6 +1037,7 @@ export const INSIGHTS: Insight[] = [
       'The marketing of "AI-powered options flow" usually implies an oracle — feed it tickers, get trades. That is exactly the model that loses money.',
       'The Options Lab is a decision-support tool. It surfaces unusual flow, sweeps, and blocks; cross-references against the news intelligence feed and the implied volatility surface; and presents the operator with a vetting checklist before any execution route is enabled.',
       'The human is in the loop on purpose. The system is good at finding hypotheses. It is the operator\'s job to kill the bad ones — and the operator should have to actively click "send" on every one that survives.',
+      'The same human-in-the-loop design applies across every financial AI system we build and operate. [Explore our services](/services) or [get in touch](/contact).',
     ],
   },
   {
