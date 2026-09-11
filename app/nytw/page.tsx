@@ -143,7 +143,7 @@ export default function NytwPage() {
         Enso Labs at NY Tech Week 2026
       </h1>
       <p style={{ color: 'var(--fg-2)', fontSize: 17, maxWidth: 560, margin: '0 0 14px' }}>
-        Enso Labs is a principal-led <Link href="/services" style={{ color: 'var(--teal)' }}>AI transformation consulting firm</Link> based in NYC. I&rsquo;m Sav Banerjee, the founder — here&rsquo;s my confirmed NY Tech Week schedule. If any of these overlap with yours, come say hi.
+        Enso Labs is a principal-led <Link href="/services" style={{ color: 'var(--teal)' }}>AI transformation consulting firm</Link> based in NYC. Sav Banerjee, the founder, is in town for NY Tech Week — here&rsquo;s the confirmed schedule. If any of these overlap with yours, come say hi.
       </p>
       <p style={{ color: 'var(--fg-3)', fontSize: 14.5, borderLeft: '2px solid var(--teal-dim)', paddingLeft: 14, maxWidth: 560, margin: '0 0 22px' }}>
         We build production agentic systems and AI strategy for Fortune 500 companies — proven inside a <Link href="/work/ai-market-intelligence" style={{ color: 'var(--teal)' }}>Fortune 500 manufacturer</Link> and a <Link href="/work/heller" style={{ color: 'var(--teal)' }}>pharma agency</Link>. Certified by Anthropic, Google AI, and OpenAI.
@@ -165,7 +165,7 @@ export default function NytwPage() {
       <div style={{ background: 'var(--bg-2)', border: '1px solid var(--teal-dim)', borderRadius: 12, padding: '13px 16px', marginBottom: 4, fontSize: 14, color: 'var(--fg-2)' }}>
         <span style={{ color: 'var(--teal)' }}>★ Best bets to catch me in person:</span> the Profound Marketing Engineering Hackathon (Sat), the Marketing Engineer Meetup at WorkOS (Tue Jun 9), and the Arize Builders Meetup (Wed Jun 10).
       </div>
-      <p style={{ fontFamily: mono, fontSize: 11, color: 'var(--fg-3)', margin: '8px 0 0' }}>★ = best chance to meet · &ldquo;virtual&rdquo; = I&rsquo;m tuning in remotely</p>
+      <p style={{ fontFamily: mono, fontSize: 11, color: 'var(--fg-3)', margin: '8px 0 0' }}>★ = best chance to meet · &ldquo;virtual&rdquo; = attending remotely</p>
 
       {days.map((d) => (
         <section key={d}>
@@ -194,7 +194,7 @@ export default function NytwPage() {
 
       <div style={{ marginTop: 30, borderTop: '1px solid var(--line)', paddingTop: 20 }}>
         <p style={{ fontSize: 13.5, color: 'var(--fg-3)', maxWidth: 560, margin: '0 0 16px' }}>
-          Building something in AI intelligence, agents, or financial services? I&rsquo;d love to compare notes — reach out at{' '}
+          Building something in AI intelligence, agents, or financial services? We&rsquo;d love to compare notes — reach out at{' '}
           <a href="mailto:sav@ensopartners.co" style={{ color: 'var(--teal)' }}>sav@ensopartners.co</a>.
         </p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', fontFamily: mono, fontSize: 12 }}>
