@@ -4,6 +4,41 @@ Archived from CLAUDE.md (2026-07-27, token-lean program): CLAUDE.md loads into e
 Claude session and scheduled run, so historical logs live here instead. Append new
 session logs to this file — do not add them back to CLAUDE.md.
 
+## Session Log — 2026-09-11 (Fri Full-Scan SEO Audit)
+### Completed
+- **Full-scan all 25 articles in lib/insights.ts** — all have `faqs` arrays ✅, all dateModified 2026-09-02 → 2026-09-10 (within 30 days) ✅
+- **robots.ts** — verified comprehensive AI crawler allowlist (GPTBot, ClaudeBot, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, CCBot, Applebot, Applebot-Extended, meta-externalagent, Bytespider, OAI-SearchBot, ChatGPT-User, DuckDuckBot, YandexBot, LinkedInBot, facebookexternalhit, Amazonbot, Twitterbot) ✅
+- **sitemap.ts** — fully dynamic, all 25 articles + all static/service/location/case-study routes ✅
+- **⚡ Fixed — 7 short-body articles missing ≥2 internal links**: added `/services` + `/contact` CTAs to:
+  - `why-deck-only-ai-consulting-fails-production`
+  - `expert-lens-knowledge-encoding`
+  - `mcp-servers-new-saas-integration`
+  - `rag-eval-harness-not-vector-store`
+  - `autonomous-trading-risk-as-architecture`
+  - `ai-coe-pharma-mlr-compliance`
+  - `options-flow-decision-support-not-black-box`
+- **⚡ Fixed — `options-flow-decision-support-not-black-box` missing metaDescription** — added
+- **Voice lint** — 5 violations found; 3 public ones fixed in `app/nytw/page.tsx`:
+  - "I'm Sav Banerjee…" → "Sav Banerjee, the founder, is in town…"
+  - `"virtual" = I'm tuning in remotely` → `"virtual" = attending remotely`
+  - "I'd love to compare notes" → "We'd love to compare notes"
+- 2 remaining violations at `app/nytw-ops/page.tsx` lines 19/40 (`[mine]` pattern in internal ops data) — skipped; internal page, non-public-facing
+- Vercel production: 2 commits deployed READY ✅
+  - `9fa3eb6`: "seo: add internal links + metaDescription to 7 short insight articles"
+  - `3ca79e8`: "voice: fix 3 first-person violations in nytw page (I → we/third-person)"
+
+### Not Completed (token budget)
+- AEO live page schema verification (priority content pages) — skipped
+- lib/schema.ts entity consistency check (sameAs array) — skipped
+- "agentic AI studio" search query (4th SERP query) — skipped
+- nytw-ops voice lint fix (low priority, internal page)
+
+### Blockers
+- Bash sandbox unavailable (RPC useradd error) — used Desktop Commander + built-in Read/Write/Edit tools throughout
+
+### Manual Action Required (Sav)
+**LinkedIn Post Inspector pre-warm** — any article whose OG hasn't been pre-warmed should be run through Post Inspector before first LinkedIn share. No new articles shipped this run.
+
 ## Session Log — 2026-09-01 (Tue SEO Audit)
 ### Completed
 - Full-scan all 24 articles: all have `faqs` arrays ✅, all dateModified ≥ 2026-08-10 (≤22 days) ✅
