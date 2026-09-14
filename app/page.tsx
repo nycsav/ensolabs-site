@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: 'Enso Labs — AI Consulting for Enterprises & Agencies | NYC',
   description:
     'Principal-led AI consultancy in New York. We advise on where AI belongs, build the systems, and operate them in production — for enterprises and agencies across healthcare, finance, manufacturing, media and B2B tech.',
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://ensolabs.ai' },
   openGraph: {
     title: 'Enso Labs — AI Consulting for Enterprises & Agencies | NYC',
     description:
