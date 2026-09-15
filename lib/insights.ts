@@ -107,7 +107,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Build',
     sourceCredit: 'Strategy to Ship',
     date: '2026-08-31',
-    dateModified: '2026-08-31',
+    dateModified: '2026-09-15',
     readingMinutes: 7,
     tags: ["Forward Deployed Strategist", "Forward Deployed Engineer", "Agentic AI", "Anthropic", "OpenAI", "Perplexity", "Motion", "MCP", "Model Context Protocol", "Tool Use", "RAG", "Evals", "Enterprise AI", "Claude Managed Agents", "Production AI", "Strategy to Ship"],
     faqs: [
@@ -166,7 +166,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Build',
     sourceCredit: 'Strategy to Ship',
     date: '2026-08-27',
-    dateModified: '2026-08-27',
+    dateModified: '2026-09-15',
     ogImage: '/og/og-frontier-labs-fde-platform-theory-photo.jpg',
     heroImage: '/images/photography/fde-part3-engineer-code-warm.jpg',
     heroImageAlt: 'An engineer at a dual-monitor desk, warm lamp light, working through a codebase — the forward-deployed reality behind lab theory.',
@@ -227,7 +227,7 @@ export const INSIGHTS: Insight[] = [
     // v2 — article was retitled after first share; new URL forces LinkedIn to re-cache.
     ogImage: '/og/og-agent-harness-inputs-outputs-v4.png',
     date: '2026-08-25',
-    dateModified: '2026-08-25',
+    dateModified: '2026-09-15',
     readingMinutes: 3,
     tags: ["Agent Harness", "Forward Deployed Strategist", "Forward Deployed Engineer", "Eval Harness", "Agentic AI", "Berkeley RDI", "Agentic AI Summit 2026", "RAG", "MCP", "AI Governance", "Regulated Industries", "CX Strategy", "Data Strategy", "Measurement", "Enso Labs", "Strategy to Ship"],
     faqs: [
@@ -362,7 +362,7 @@ export const INSIGHTS: Insight[] = [
     lens: 'Brand',
     sourceCredit: 'Strategy to Ship',
     date: '2026-07-28',
-    dateModified: '2026-08-26',
+    dateModified: '2026-09-15',
     readingMinutes: 6,
     tags: ["Berkeley RDI", "Agentic AI Summit", "Demand-Side Gap", "Customer Segmentation", "Martech", "Gartner", "Marketing AI", "Agentic AI", "Strategy to Ship", "Enso Labs", "Sav Banerjee"],
     faqs: [
