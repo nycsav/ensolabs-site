@@ -10,7 +10,11 @@
     "type-check": "tsc --noEmit",
     "smoke:lead": "node scripts/smoke-lead.mjs",
     "test:conversion": "node scripts/assert-conversion-update.mjs",
-    "og:sf-summits": "node scripts/generate-og-sf-summits.js"
+    "og:sf-summits": "node scripts/generate-og-sf-summits.js",
+    "li:whoami": "node scripts/publish-linkedin.js --whoami",
+    "li:dry": "node scripts/publish-linkedin.js --dry-run",
+    "li:post": "node scripts/publish-linkedin.js",
+    "li:single": "node scripts/publish-linkedin.js --single"
   },
   "dependencies": {
     "@vercel/kv": "^3.0.0",
