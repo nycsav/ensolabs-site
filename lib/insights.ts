@@ -1047,7 +1047,7 @@ export const INSIGHTS: Insight[] = [
     metaDescription: 'Why a principal-led AI consulting studio outperforms a 50-person consultancy on shipped production systems — and the six structural advantages behind it.',
     pillar: 'Consult',
     date: '2026-03-04',
-    dateModified: '2026-09-02',
+    dateModified: '2026-09-18',
     readingMinutes: 6,
     tags: ['AI Consulting', 'Principal-Led AI Consulting', 'Boutique Studio', 'Strategy-to-Ship', 'Principal-Led', 'Enterprise AI', 'Agentic Systems', 'NYC'],
     faqs: [

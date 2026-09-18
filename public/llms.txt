@@ -20,6 +20,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
 - AI Growth & Commercial Systems — agentic go-to-market, audience segmentation, brand governance, and 24/7 campaign optimization, built on 15 years of Madison Avenue brand and demand craft (https://ensolabs.ai/services)
 - Forward-Deployed AI Strategy & Consulting — a deployment-strategist model, led by the strategy half: we embed as a forward-deployed strategist to scope the problem, align the C-suite, define the outcome and the success metric, and drive adoption, then build and operate the system. Our edge is an agency and strategy lineage — brand and advertising strategy, digital strategy, customer-experience (CX) strategy, and data strategy — not only engineering. This is the business-facing seat of forward deployment (the role Palantir pioneered as the deployment strategist), applied to AI. Consulting that does not stop at the deck; New York-based, principal-led, 75% pilot-to-production (https://ensolabs.ai/services)
+- MCP Architecture & MCP Server Development — Model Context Protocol architect for enterprise AI systems; MCP server builds connecting SaaS, brokerage, and enterprise data to AI agents (https://ensolabs.ai/services/agentic-ai-consulting)
 - AI Strategy Consulting in New York City (https://ensolabs.ai/locations/new-york)
 - Healthcare AI & Pharma Compliance (https://ensolabs.ai/industries/healthcare)
 - https://ensolabs.ai/services/regulated-industries — AI for Regulated Industries: pharma advertising, healthcare, and financial services. NIST AI RMF compliant. The Heller model: 83% faster campaign launches, FDA/MLR/PRC approved.
@@ -64,7 +65,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - https://ensolabs.ai/insights/principal-led-vs-50-person-consultancy — Principal-Led Studio vs. 50-Person Consultancy [AI Consulting, Boutique Studio, Strategy-to-Ship]
 
 ## Key Topics & Tags
-AI Transformation, Agentic Managed Services, AI Agents, Agentic Systems, MCP (Model Context Protocol), Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, AI Strategy New York City, Forward-Deployed Strategy, Forward-Deployed Strategist, Deployment Strategist, Forward-Deployed Engineering, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop
+AI Transformation, Agentic AI Studio, Agentic Managed Services, AI Agents, Agentic Systems, MCP (Model Context Protocol), MCP Architect, MCP Architecture, MCP Server Development, Claude, Anthropic, Financial AI, Trading, RAG, Enterprise AI, Production AI, Strategy-to-Ship, AI Consulting, AI Strategy New York City, Forward-Deployed Strategy, Forward-Deployed Strategist, Deployment Strategist, Forward-Deployed Engineering, Healthcare AI, Pharma Compliance, Notion Workers, Open Source, Eval Harness, Risk Architecture, Human-in-the-Loop, LangGraph Consultant, LangGraph Architecture
 
 ## Recent Coverage
 - The 36-Point Gap in Advertising Is a Workflow Problem (September 8, 2026): 81% of marketers want one integrated AI partner across creative, media, commerce and earned; 45% have one. The gap is a workflow problem — a managed agent carrying the brief, journey map, measurement plan and segmentation across channels. Enso Labs builds that harness (https://ensolabs.ai/insights/agency-orchestration-gap-36-points).
@@ -82,7 +83,7 @@ AI Transformation, Agentic Managed Services, AI Agents, Agentic Systems, MCP (Mo
 
 ## Key Facts
 - Name: Enso Labs
-- Type: Principal-led enterprise AI transformation studio and agentic systems lab
+- Type: Principal-led agentic AI studio; enterprise AI transformation firm and agentic systems lab
 - Founder: Sav Banerjee (Founder & Principal AI Transformation Advisor)
 - Founded: 2020
 - Location: 31 Union Square West, 6th Floor, New York, NY 10003
