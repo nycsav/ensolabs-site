@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'AI Agents for Financial Services | Enso Labs',
   description:
     'Production financial AI agents for banks, asset managers, and fintech. Claude + MCP + brokerage API integration. Enso Labs builds autonomous trading systems and market intelligence platforms.',
-  alternates: { canonical: '/industries/financial-services' },
+  alternates: { canonical: 'https://ensolabs.ai/industries/financial-services' },
   openGraph: {
     title: 'AI Agents for Financial Services — Enso Labs',
     description:

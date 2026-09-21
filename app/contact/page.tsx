@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: 'Contact Enso Labs | AI Consulting Studio NYC',
   description:
     'Tell us what you’re shipping. Book a 15-min intro, or leave two lines — Sav replies within 24h.',
-  alternates: { canonical: '/contact' },
+  alternates: { canonical: 'https://ensolabs.ai/contact' },
   openGraph: {
     title: 'Contact Enso Labs | Get in Touch',
     description: 'Start a project with Enso Labs. 31 Union Square West, NYC.',
