@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   description:
     'Sav Banerjee is an AI strategy consultant in NYC and founder of Enso Labs. 15+ years at Google, McCann, Publicis, BBDO. IBM Partner Plus, Perplexity Implementation Partner. Available for Head of AI roles.',
   alternates: { canonical: 'https://ensolabs.ai/about' },
-  other: { 'article:modified_time': '2026-09-03' },
+  other: { 'article:modified_time': '2026-09-23' },
   openGraph: {
     title: 'Sav Banerjee — AI Strategy Consultant NYC | AI Transformation Leader',
     description:

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       'Agentic go-to-market built on 15 years of brand and demand craft. Segmentation, campaigns, and brand governance — run as agents.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
-  other: { 'article:modified_time': '2026-07-10' },
+  other: { 'article:modified_time': '2026-09-23' },
 };
 
 const FAQS = [

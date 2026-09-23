@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       'Production agentic AI for enterprises. Multi-agent systems, MCP servers, RAG — principal-led studio with shipped systems.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
-  other: { 'article:modified_time': '2026-07-22' },
+  other: { 'article:modified_time': '2026-09-23' },
 };
 
 const FAQS = [

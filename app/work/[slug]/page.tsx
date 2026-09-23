@@ -204,6 +204,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `${cs.title} — Case Study`,
     description: cs.metaDesc,
     alternates: { canonical: `${SITE.origin}/work/${params.slug}` },
+    other: { 'article:modified_time': '2026-09-23' },
     openGraph: {
       title: `${cs.title} — Enso Labs Case Study`,
       description: cs.metaDesc,
