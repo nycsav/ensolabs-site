@@ -129,6 +129,8 @@ export default function AIForAgenciesPage() {
         .afa-stat .n { font-family:var(--display); font-size:64px; font-weight:500; letter-spacing:-0.02em; color:var(--teal); line-height:1; }
         .afa-stat .l { font-size:15px; color:var(--fg); margin-top:12px; font-weight:500; }
         .afa-stat .s { font-family:var(--mono); font-size:11px; color:var(--fg-3); margin-top:6px; letter-spacing:0.03em; }
+        /* page-local fix: globals .cta-blue .btn (#fff) overrides .cta-blue .btn-primary text color */
+        .cta-blue .afa-cta .btn-primary { color:oklch(0.30 0.09 250); }
         .afa-cta { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:end; }
         @media (max-width:1100px){ .afa-grid.five { grid-template-columns:repeat(3,1fr); } }
         @media (max-width:900px){ .afa-grid, .afa-grid.five, .afa-deliv { grid-template-columns:1fr 1fr; } .afa-spot, .afa-cta { grid-template-columns:1fr; gap:32px; } }
