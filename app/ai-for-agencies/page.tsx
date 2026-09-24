@@ -147,7 +147,7 @@ const KPIS: Kpi[] = [
   {
     ix: 'K / 04', tag: 'RESEARCH', tone: 'blue', pre: '~', count: 70, post: '%',
     label: 'Less manual research and analysis',
-    built: 'Agentic research workflows.',
+    built: 'Research agents that take over manual research and analysis cycles.',
     bullets: ['Manual research and analysis cycles cut by ~70%', 'Same pattern as the intelligence-brief use case'],
     more: 'See the research and pitch workflows in the use-case gallery →',
     chip: 'Agentic research workflows · institutional clients',
