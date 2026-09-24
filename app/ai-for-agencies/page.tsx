@@ -109,6 +109,7 @@ type Kpi = {
   count: number;
   post: string;
   label: string;
+  chip?: string;
   built: string;
   bullets: string[];
   more: string;
@@ -137,17 +138,19 @@ const KPIS: Kpi[] = [
   {
     ix: 'K / 03', tag: 'RESEARCH', tone: 'amber', count: 731, post: ' → 16',
     label: 'Documents → novel commercial signals',
-    built: 'An intelligence pipeline for a Fortune 500 advanced-materials manufacturer.',
+    built: 'An AI market-intelligence pipeline.',
     bullets: ['731 documents processed', '16 novel commercial signals', 'Validated by the lead scientist'],
-    more: 'The same pattern powers the intelligence-brief use case →',
-    href: '#use-cases', viz: 'funnel', span: 'third',
+    chip: 'Fortune 500 advanced-materials manufacturer',
+    more: 'Read the AI Market Intelligence Platform case →',
+    href: '/work/ai-market-intelligence', viz: 'funnel', span: 'third',
   },
   {
     ix: 'K / 04', tag: 'RESEARCH', tone: 'blue', pre: '~', count: 70, post: '%',
     label: 'Less manual research and analysis',
     built: 'Agentic research workflows.',
-    bullets: ['Agentic research workflows', 'Manual research and analysis cycles cut by ~70%'],
+    bullets: ['Manual research and analysis cycles cut by ~70%', 'Same pattern as the intelligence-brief use case'],
     more: 'See the research and pitch workflows in the use-case gallery →',
+    chip: 'Agentic research workflows · institutional clients',
     href: '#use-cases', viz: 'research', span: 'half',
   },
   {
@@ -575,6 +578,7 @@ export default function AIForAgenciesPage() {
         .afa-k-tag { display:inline-flex; align-items:center; border:1px solid currentColor; border-radius:999px; padding:4px 10px; font-size:10.5px; letter-spacing:0.08em; }
         .afa-k-num { font-family:var(--display); font-weight:500; font-size:clamp(52px,5.4vw,76px); letter-spacing:-0.03em; line-height:0.95; margin-top:6px; white-space:nowrap; }
         .afa-k-label { font-size:18px; font-weight:500; letter-spacing:-0.01em; line-height:1.25; }
+        .afa-k-chip { align-self:flex-start; font-family:var(--mono); font-size:11.5px; letter-spacing:0.02em; line-height:1.35; border:1px solid currentColor; border-radius:999px; padding:4px 11px; }
         .afa-k-built { font-size:14.5px; line-height:1.5; }
         .afa-k-viz { display:block; height:auto; max-width:360px; margin-top:4px; }
         .afa-k-list { list-style:none; padding:14px 0 0; margin-top:auto; display:grid; gap:7px; font-family:var(--mono); font-size:12px; line-height:1.45; border-top:1px solid color-mix(in oklab, currentColor 35%, transparent); }
@@ -825,6 +829,7 @@ export default function AIForAgenciesPage() {
                   {k.pre}<span data-afa-count={k.count}>{k.count}</span>{k.post}
                 </div>
                 <div className="afa-k-label">{k.label}</div>
+                {k.chip && <span className="afa-k-chip">{k.chip}</span>}
                 <p className="afa-k-built">{k.built}</p>
                 <KpiViz kind={k.viz} />
                 <ul className="afa-k-list">
@@ -836,7 +841,7 @@ export default function AIForAgenciesPage() {
           </div>
           <KpiCountUp />
           <p className="afa-foot reveal">
-            Anonymized results from individual engagements. Each figure describes the program named on its tile; your results depend on your workflows and data. Visuals are schematic.
+            Results from individual engagements. Your results depend on your workflows and data. Visuals are schematic.
           </p>
         </div>
       </section>
