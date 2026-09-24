@@ -74,7 +74,7 @@ nothing to rotate
 
 ## PR
 
-PR_URL_PLACEHOLDER — not merged; Sav reviews.
+https://github.com/nycsav/ensolabs-site/pull/96 — not merged; Sav reviews.
 
 ## Enable-state table (STEP 6) — the one remaining human action
 
