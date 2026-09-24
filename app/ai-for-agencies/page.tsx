@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { Arrow } from '@/components/Arrow';
 import { JsonLd } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
+import { KpiCountUp } from './KpiCountUp';
 import {
   breadcrumbSchema,
   faqSchema,
@@ -100,13 +101,120 @@ function BookCta({ className = 'btn btn-primary' }: { className?: string }) {
 
 /* ───────────────────────── Content ───────────────────────── */
 
-const KPIS = [
-  { n: '75%', l: 'Pilot-to-production conversion', s: 'One regulated-marketing agency case — not an average', hero: true },
-  { n: '83%', l: 'Faster campaign launch: 3 months → 2 weeks', s: 'Regulated-marketing agency' },
-  { n: '~70%', l: 'Less manual research and analysis', s: 'Agentic research workflows' },
-  { n: '731 → 16', l: 'Documents → novel commercial signals, validated by the lead scientist', s: 'Fortune 500 advanced-materials manufacturer' },
-  { n: '~3 mo', l: 'Average time to first value', s: 'Enterprise AI enablement programs' },
+type Kpi = {
+  ix: string;
+  tag: string;
+  tone: 'coral' | 'blue' | 'amber';
+  pre?: string;
+  count: number;
+  post: string;
+  label: string;
+  built: string;
+  bullets: string[];
+  more: string;
+  href: string;
+  viz: 'meter' | 'launch' | 'funnel' | 'research' | 'timeline';
+  span: 'third' | 'half';
+};
+
+const KPIS: Kpi[] = [
+  {
+    ix: 'K / 01', tag: 'CASE', tone: 'coral', count: 75, post: '%',
+    label: 'Pilot-to-production conversion',
+    built: 'An AI operating model for a regulated-marketing agency.',
+    bullets: ['One agency case, not an average', 'Governance and deployment playbooks', 'Reusable research, reporting and campaign-ops workflows'],
+    more: 'Documented in that agency’s AI operating model. See the case example →',
+    href: '#case', viz: 'meter', span: 'third',
+  },
+  {
+    ix: 'K / 02', tag: 'CASE', tone: 'blue', count: 83, post: '%',
+    label: 'Faster campaign launch',
+    built: 'An AI center of excellence inside a regulated-marketing agency.',
+    bullets: ['3 months → 2 weeks', 'Human approval on regulated claims', 'Same agency as K / 01'],
+    more: 'Launch time fell without removing review. See the before/after chart →',
+    href: '#case', viz: 'launch', span: 'third',
+  },
+  {
+    ix: 'K / 03', tag: 'RESEARCH', tone: 'amber', count: 731, post: ' → 16',
+    label: 'Documents → novel commercial signals',
+    built: 'An intelligence pipeline for a Fortune 500 advanced-materials manufacturer.',
+    bullets: ['731 documents processed', '16 novel commercial signals', 'Validated by the lead scientist'],
+    more: 'The same pattern powers the intelligence-brief use case →',
+    href: '#use-cases', viz: 'funnel', span: 'third',
+  },
+  {
+    ix: 'K / 04', tag: 'RESEARCH', tone: 'blue', pre: '~', count: 70, post: '%',
+    label: 'Less manual research and analysis',
+    built: 'Agentic research workflows.',
+    bullets: ['Agentic research workflows', 'Manual research and analysis cycles cut by ~70%'],
+    more: 'See the research and pitch workflows in the use-case gallery →',
+    href: '#use-cases', viz: 'research', span: 'half',
+  },
+  {
+    ix: 'K / 05', tag: 'ENABLEMENT', tone: 'coral', pre: '~', count: 3, post: ' mo',
+    label: 'Average time to first value',
+    built: 'Enterprise AI enablement programs.',
+    bullets: ['Enterprise AI enablement programs', 'Average across programs, ~3 months'],
+    more: 'The engagement ladder starts small so value lands early. See the engagements →',
+    href: '#engagements', viz: 'timeline', span: 'half',
+  },
 ];
+
+/* Tiny per-tile visuals. currentColor = the tile's text color; tracks are the same color at low opacity. */
+function KpiViz({ kind }: { kind: Kpi['viz'] }) {
+  const common = { width: '100%', viewBox: '0 0 240 56', fill: 'none', 'aria-hidden': true as const, focusable: 'false' as const, className: 'afa-k-viz' };
+  const t = { fill: 'currentColor', fontSize: 10, fontFamily: 'var(--mono)' } as const;
+  switch (kind) {
+    case 'meter':
+      return (
+        <svg {...common}>
+          <rect x="0" y="14" width="240" height="10" rx="5" fill="currentColor" opacity="0.28" />
+          <rect x="0" y="14" width="180" height="10" rx="5" fill="currentColor" />
+          <text x="0" y="46" {...t}>PILOTS</text>
+          <text x="180" y="46" textAnchor="end" {...t}>IN PRODUCTION</text>
+        </svg>
+      );
+    case 'launch':
+      return (
+        <svg {...common}>
+          <text x="0" y="10" {...t}>BEFORE · 3 MONTHS</text>
+          <rect x="0" y="14" width="240" height="10" rx="3" fill="currentColor" opacity="0.32" />
+          <text x="0" y="40" {...t}>AFTER · 2 WEEKS</text>
+          <rect x="0" y="44" width="40" height="10" rx="3" fill="currentColor" />
+        </svg>
+      );
+    case 'funnel':
+      return (
+        <svg {...common}>
+          <path d="M0 6 H240 L150 22 V34 H90 V22 Z" fill="currentColor" opacity="0.28" />
+          <rect x="108" y="36" width="24" height="8" rx="2" fill="currentColor" />
+          <text x="0" y="52" {...t}>731 DOCS</text>
+          <text x="240" y="52" textAnchor="end" {...t}>16 SIGNALS</text>
+        </svg>
+      );
+    case 'research':
+      return (
+        <svg {...common}>
+          <text x="0" y="10" {...t}>MANUAL RESEARCH · BEFORE</text>
+          <rect x="0" y="14" width="240" height="10" rx="3" fill="currentColor" opacity="0.32" />
+          <text x="0" y="40" {...t}>AFTER · ~70% LESS</text>
+          <rect x="0" y="44" width="72" height="10" rx="3" fill="currentColor" />
+        </svg>
+      );
+    case 'timeline':
+    default:
+      return (
+        <svg {...common}>
+          <line x1="6" y1="18" x2="234" y2="18" stroke="currentColor" strokeWidth="2" opacity="0.4" />
+          <circle cx="6" cy="18" r="5" fill="currentColor" />
+          <circle cx="234" cy="18" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
+          <circle cx="234" cy="18" r="3" fill="currentColor" />
+          <text x="0" y="46" {...t}>KICKOFF</text>
+          <text x="240" y="46" textAnchor="end" {...t}>FIRST VALUE</text>
+        </svg>
+      );
+  }
+}
 
 const COSTS = [
   'Pilots that impress in a demo and never reach a client',
@@ -451,13 +559,32 @@ export default function AIForAgenciesPage() {
         .afa-flow-note { font-family:var(--mono); font-size:11.5px; color:var(--fg-3); margin-top:12px; letter-spacing:0.02em; }
         .afa-flow-note span { color:var(--teal); }
 
-        /* KPI band */
-        .afa-kpis { display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-        .afa-kpi { background:var(--bg); padding:28px 22px; display:flex; flex-direction:column; gap:10px; min-width:0; }
-        .afa-kpi .n { font-family:var(--display); font-size:clamp(34px,3.4vw,46px); font-weight:500; letter-spacing:-0.02em; line-height:1; color:var(--fg); white-space:nowrap; }
-        .afa-kpi.lead .n { font-size:clamp(52px,5.6vw,76px); color:var(--teal); }
-        .afa-kpi .l { font-size:14.5px; color:var(--fg); line-height:1.4; }
-        .afa-kpi .s { font-family:var(--mono); font-size:11px; color:var(--fg-3); letter-spacing:0.03em; line-height:1.5; margin-top:auto; }
+        /* KPI band — colored blocks in the homepage pillar palette (same tokens as .pillar.lens-*) */
+        .afa-kgrid { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+        .afa-k { grid-column:span 2; display:flex; flex-direction:column; gap:14px; padding:28px 26px 26px; border-radius:2px; text-decoration:none; transition:transform .35s cubic-bezier(.16,.84,.3,1), box-shadow .35s, background .2s; min-width:0; }
+        .afa-k-half { grid-column:span 3; }
+        .afa-k-coral { background:oklch(0.64 0.19 33); color:oklch(0.20 0.06 70); }
+        .afa-k-blue { background:oklch(0.52 0.09 250); color:#fff; }
+        .afa-k-amber { background:oklch(0.72 0.15 65); color:oklch(0.20 0.06 70); }
+        .afa-k-coral:hover { background:oklch(0.66 0.19 33); }
+        .afa-k-blue:hover { background:oklch(0.49 0.09 250); }
+        .afa-k-amber:hover { background:oklch(0.74 0.15 65); }
+        .afa-k:hover, .afa-k:focus-visible { transform:translateY(-5px); box-shadow:0 18px 36px -18px rgba(0,0,0,.8); }
+        .afa-k:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
+        .afa-k-top { display:flex; justify-content:space-between; align-items:center; gap:12px; font-family:var(--mono); font-size:11px; letter-spacing:0.06em; }
+        .afa-k-tag { display:inline-flex; align-items:center; border:1px solid currentColor; border-radius:999px; padding:4px 10px; font-size:10.5px; letter-spacing:0.08em; }
+        .afa-k-num { font-family:var(--display); font-weight:500; font-size:clamp(52px,5.4vw,76px); letter-spacing:-0.03em; line-height:0.95; margin-top:6px; white-space:nowrap; }
+        .afa-k-label { font-size:18px; font-weight:500; letter-spacing:-0.01em; line-height:1.25; }
+        .afa-k-built { font-size:14.5px; line-height:1.5; }
+        .afa-k-viz { display:block; height:auto; max-width:360px; margin-top:4px; }
+        .afa-k-list { list-style:none; padding:14px 0 0; margin-top:auto; display:grid; gap:7px; font-family:var(--mono); font-size:12px; line-height:1.45; border-top:1px solid color-mix(in oklab, currentColor 35%, transparent); }
+        .afa-k-list li { display:flex; gap:10px; align-items:baseline; }
+        .afa-k-list li { padding-left:15px; position:relative; }
+        .afa-k-list li { background:linear-gradient(currentColor,currentColor) 0 0.45em / 5px 5px no-repeat; }
+        .afa-k-more { font-family:var(--mono); font-size:12px; line-height:1.5; max-height:0; opacity:0; overflow:hidden; transition:max-height .35s ease, opacity .3s ease; }
+        .afa-k:hover .afa-k-more, .afa-k:focus-visible .afa-k-more { max-height:80px; opacity:1; }
+        @media (hover:none), (max-width:900px) { .afa-k-more { max-height:none; opacity:1; } }
+        @media (prefers-reduced-motion: reduce) { .afa-k, .afa-k-more { transition:none; } .afa-k:hover, .afa-k:focus-visible { transform:none; } }
         .afa-foot { font-family:var(--mono); font-size:11px; color:var(--fg-3); margin-top:14px; letter-spacing:0.02em; line-height:1.6; }
 
         /* thesis */
@@ -602,8 +729,9 @@ export default function AIForAgenciesPage() {
         .afa-start li span { font-family:var(--mono); font-size:12px; color:rgba(255,255,255,.85); flex:none; }
 
         @media (max-width:1100px){
-          .afa-kpis { grid-template-columns:repeat(2,1fr); }
-          .afa-kpi.lead { grid-column:1 / -1; }
+          .afa-kgrid { grid-template-columns:repeat(2,1fr); }
+          .afa-k, .afa-k-half { grid-column:span 1; }
+          .afa-k:first-child { grid-column:1 / -1; }
           .afa-grid, .afa-caps, .afa-qs ol { grid-template-columns:repeat(2,1fr); }
           .afa-caps .afa-card:last-child { grid-column:1 / -1; }
         }
@@ -627,9 +755,11 @@ export default function AIForAgenciesPage() {
           .afa-table td::before { content:attr(data-l); display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--fg-3); margin-bottom:4px; }
         }
         @media (max-width:560px){
-          .afa-grid, .afa-kpis, .afa-phases, .afa-vs, .afa-caps, .afa-qs ol { grid-template-columns:1fr; }
+          .afa-grid, .afa-kgrid, .afa-phases, .afa-vs, .afa-caps, .afa-qs ol { grid-template-columns:1fr; }
           .afa-qs { padding:16px; }
           .afa-flow { grid-template-columns:1fr; }
+          .afa-k, .afa-k-half, .afa-k:first-child { grid-column:1 / -1; }
+          .afa-k { padding:24px 20px; }
           .afa-flow li, .afa-flow li:nth-child(odd) { border-right:0; }
           .afa-mx-key { grid-template-columns:1fr; }
           .afa-layer { grid-template-columns:1fr; gap:4px; }
@@ -684,17 +814,29 @@ export default function AIForAgenciesPage() {
       <section data-screen-label="02 Proof" style={{ paddingTop: 0 }}>
         <div className="shell">
           <h2 className="afa-sr">Results from Enso Labs engagements</h2>
-          <div className="afa-kpis reveal">
+          <div className="afa-kgrid">
             {KPIS.map((k) => (
-              <div key={k.n} className={`afa-kpi${k.hero ? ' lead' : ''}`}>
-                <div className="n">{k.n}</div>
-                <div className="l">{k.l}</div>
-                <div className="s">{k.s}</div>
-              </div>
+              <a key={k.ix} href={k.href} className={`afa-k afa-k-${k.tone} afa-k-${k.span} reveal`}>
+                <div className="afa-k-top">
+                  <span>{k.ix}</span>
+                  <span className="afa-k-tag"><span className="pdot" />{k.tag}</span>
+                </div>
+                <div className="afa-k-num">
+                  {k.pre}<span data-afa-count={k.count}>{k.count}</span>{k.post}
+                </div>
+                <div className="afa-k-label">{k.label}</div>
+                <p className="afa-k-built">{k.built}</p>
+                <KpiViz kind={k.viz} />
+                <ul className="afa-k-list">
+                  {k.bullets.map((x) => <li key={x}>{x}</li>)}
+                </ul>
+                <p className="afa-k-more">{k.more}</p>
+              </a>
             ))}
           </div>
+          <KpiCountUp />
           <p className="afa-foot reveal">
-            Anonymized results from individual engagements. Each figure describes the program named beneath it; your results depend on your workflows and data.
+            Anonymized results from individual engagements. Each figure describes the program named on its tile; your results depend on your workflows and data. Visuals are schematic.
           </p>
         </div>
       </section>
@@ -742,7 +884,7 @@ export default function AIForAgenciesPage() {
       </section>
 
       {/* ── Use-case gallery ── */}
-      <section data-screen-label="04 Use cases">
+      <section id="use-cases" data-screen-label="04 Use cases">
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 02</span>&nbsp;Use cases</span></div>
@@ -955,7 +1097,7 @@ export default function AIForAgenciesPage() {
       </section>
 
       {/* ── Offer ladder ── */}
-      <section data-screen-label="09 Engagements">
+      <section id="engagements" data-screen-label="09 Engagements">
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 07</span>&nbsp;Engagements</span></div>
@@ -983,7 +1125,7 @@ export default function AIForAgenciesPage() {
       </section>
 
       {/* ── Case example ── */}
-      <section data-screen-label="10 Case example">
+      <section id="case" data-screen-label="10 Case example">
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 08</span>&nbsp;Case example</span></div>
