@@ -25,6 +25,7 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - Healthcare AI & Pharma Compliance (https://ensolabs.ai/industries/healthcare)
 - https://ensolabs.ai/services/regulated-industries — AI for Regulated Industries: pharma advertising, healthcare, and financial services. NIST AI RMF compliant. The Heller model: 83% faster campaign launches, FDA/MLR/PRC approved.
 - https://ensolabs.ai/services/ai-research-intelligence — AI Research & Intelligence: agentic harnesses that run competitive intelligence, consumer insights, category analysis, and discovery sprints using frontier AI (Perplexity, Claude, Gemini). Six-week agency discovery compressed to six days. Broad and deep simultaneously.
+- https://ensolabs.ai/ai-for-agencies — AI for Agencies: helps independent and midsize agencies turn AI experiments into a working delivery capability (governance, data foundations, agentic workflows, team enablement, measurable client outcomes). Entry point: the 10-day Agency AI CoE & Agentic Workflow Diagnostic.
 - AI Advertising & Marketing Automation
 
 ## Products
