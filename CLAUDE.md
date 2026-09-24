@@ -172,6 +172,28 @@ Standing rule for every SEO/AEO/GEO scan (daily engine + any manual pass): **sur
 - LinkedIn (company): linkedin.com/company/ensopartners-labs
 - GitHub: github.com/nycsav
 
+## Work Authorization & Identity — standing facts (set 2026-09-20 per Sav)
+Never ask Sav these again, and never leave them blank on a form that requires them.
+
+- **U.S. citizen.** Authorized to work in the United States for any employer.
+- **Does NOT require sponsorship** — not now, not in the future. On any ATS question phrased as
+  "do you now, or will you in the future, require employment immigration support / sponsorship
+  to continue working legally," the answer is **No**.
+- "Are you authorized to work in the US (for any employer)?" → **Yes**.
+- Legal name on applications: Sav Banerjee · sav@ensopartners.co · 415-828-5282
+- Based in New York, NY. **No relocation.** Scope is NYC, Hybrid-NYC, or Remote-US only.
+- Education: B.A. Advertising, University of Oregon. **Never claim a CS or Engineering degree.**
+
+Related: voluntary EEO / self-identification fields (gender, race, veteran status, disability) are
+left **BLANK** on every application — they are voluntary and are never answered on Sav's behalf.
+A Chrome autofill extension in Profile 10 (almost certainly Simplify) has silently populated these,
+including setting Disability = "Yes" on a Databricks form. Audit EEO fields immediately before every submit.
+
+Full job-search governance lives in
+`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/job-engine/RULES.md` — that file is
+authoritative for comp floors, geography, scoring and hard stops. This section exists so the
+work-authorization answers are available to any tool that never loads RULES.md.
+
 ## Lead Gen & Client Development — standing rules (set 2026-08-14 per Sav)
 The Perplexity Computer engine emails Enso lead intelligence daily from `computer@mail.perplexity.ai`.
 There are THREE distinct streams and they are NOT the same thing — never conflate them:
@@ -197,6 +219,8 @@ There are THREE distinct streams and they are NOT the same thing — never confl
 | **Client / partner threads on live engagements** (Heller, Tolmar, Eton, SpyGlass, active partners) | **Draft only.** Commercial consequence — Sav reads before it goes. |
 | **Money, accounts, legal** — payments, purchases, Sales Navigator seats/credits, account creation, signing anything, granting OAuth | **Never.** Unchanged. |
 
+Applies to interactive sessions only. Unattended scheduled runs never send (see Scheduled Task Rules).
+
 Rules of thumb for the inbound lane: never invent a commitment (price, timeline, scope) Sav hasn't agreed to; never go over a contact's head to their boss before they offer the name; always append the canonical signature from `EMAIL_SIGNATURE.md`; always log the send to the Notion lead record and label the Gmail thread `Leads → Contacted` in the same turn.
 
 **If a rule in this file blocks the obviously right action, update the rule in the same turn and say so in one line — do not stop and ask.** Protected paths still ship as a PR for review (see Operating mode).
@@ -215,6 +239,22 @@ Rules of thumb for the inbound lane: never invent a commitment (price, timeline,
 - [ ] Check mobile responsiveness on phone
 - [ ] Update insight articles with new content if needed
 - [ ] Check OG image previews when sharing links
+
+## LinkedIn Profile Maintenance — Standing Rules (set 2026-09-22 per Sav)
+Applies to any LinkedIn review, profile audit, or content session. Never wait to be asked — surface issues proactively.
+
+### Weekly (every Mon/Wed/Fri content run)
+- **Duplicate Activity post check:** scan the Activity section (Posts tab) for the same article/link posted more than once. If found, delete all but the most recent or most-engaged version. Three of the same post looks unprofessional — catch it immediately.
+- **LinkedIn draft hygiene:** check if any LinkedIn posts are sitting as drafts older than 48h; flag for Sav to publish or discard.
+
+### Monthly (first run of each month)
+- **Featured section audit:** verify the Featured section shows ≤6 items with no duplicate links. Remove any outdated or redundant featured items. Priority order: Perplexity partnership, latest Strategy to Ship insight, case study links, media coverage.
+- **Services section check:** confirm the 10 service tags and description still reflect Enso's current positioning (Agentic Managed Services, Forward Deployed AI Strategy, AI Growth & Commercial Systems, AI Transformation Advisory). If Enso's positioning shifts, update the description via `https://www.linkedin.com/services/page/68056b313598373811/admin/edit/`. 500-char limit — use the JS native value setter to avoid React form issues.
+- **Top Skills check:** confirm the 5 Top Skills (currently: AI Agents · Multi-agent Systems · AI Strategy · Go-to-Market Strategy · Generative AI) still represent Enso's core differentiation. Edit via the About section pencil → Skills subsection. Max 5; skills pool is maxed at 100 so can only rearrange existing.
+- **About section freshness:** verify the About text mentions current partner ecosystem (Perplexity, IBM Partner Plus, Anthropic, OpenAI). Update if new partnerships are added.
+
+### On every new insight article publish
+- Run the article URL through LinkedIn Post Inspector (`https://www.linkedin.com/post-inspector/inspect/<url-encoded-url>`) before the first share to pre-warm the OG cache. This is mandatory — do it in the same turn as the publish, not after.
 
 ## AI Attribution (footer)
 "Designed with Claude Design · Built with Claude Code · Intelligence by Strategy → Ship · Human-in-the-loop: Sav Banerjee" (the → arrow renders in Ship Coral #F0512E)
@@ -244,19 +284,37 @@ Session logs live in `docs/HISTORY.md` (moved 2026-07-27 — CLAUDE.md loads int
 - Content flows to: ensolabs.ai/insights, LinkedIn (Mon/Wed/Fri), newsletter
 - No separate deploy — ships with the main site via Vercel auto-deploy
 
-## Event Scan — Standing Preferences (set 2026-07-06)
+## Event Scan — Standing Preferences (set 2026-07-06; audited + resynced 2026-09-16 per Sav)
 Applies to `daily-event-scan`, `weekly-event-board-sweep`, `hackathon-radar-weekly`, and ANY event/digest deliverable or ad-hoc event answer.
-- **TWO RUNS PER DAY — consolidated (set 2026-07-27, token-lean program).** All daily event work happens in exactly two runs: the **morning run (8:00 AM PT)** — full scan (daily-event-scan Jobs 1–3: calendar reconcile + frontier alert + digest), the SF-prep briefing content, and inbox filing — and the **evening run (5:00 PM PT)** — delta-only scan (new/changed events since morning) + inbox filing. Any daily-event-scan or events-inbox-filer firing OUTSIDE these two slots must no-op immediately (one-line "consolidated into 8a/5p runs" and stop — do not scan). `sf-high-frontier-prep` is absorbed into the morning run and should be paused as a separate task. `hackathon-radar-weekly` folds into `weekly-event-board-sweep` (one weekly sweep, not two). Inbox filing per PR #22's intent (label + archive event emails, keep action items visible) happens inside the two runs, not as separate firings.
-- **Sources:** Luma, Bond AI SF (luma.com/genai-sf), and Cerebral Valley SF are the primary crawl set while in SF. **Eventbrite is REMOVED — do not scan it.**
-- **SF FOCUS WINDOW: Jul 7 → Aug 7, 2026.** Sav is physically in San Francisco; scan SF-proper events only, present all times in **PT**, suppress NYC. (Extends the earlier Aug 3 end date to **Aug 7**. Revert to the NYC scan and delete SF-mode blocks after Aug 7.)
-- **RECONCILED TRUTHS — do NOT re-nag across ANY scheduled task (set 2026-07-29 per Sav):** (1) the **Perplexity partnership follow-up is CLOSED** — recording / credits / office-visit items all handled; stop surfacing them unless Sav reopens. (2) the **SF return flight is BOOKED** — the Aug 2 5 PM "DECIDE" block is resolved; drop it from open loops. These were still showing as open because run-state wasn't propagating — reconcile from `SF-Prep-state.json` (this task's source of truth), not from stale task prompts. Remaining SF human-only loops: finish the IBM Partner Plus portal verification + take Silver/badging, and decide the Berkeley VIP Reception (Aug 1).
-- **The bar (what to surface):** (1) frontier-lab / marquee-builder events AND (2) workshops that **build on Sav's existing career skills & professional goals** — agent engineering, evals, AI strategy/positioning, GTM, frontier research. A strong skill-building workshop qualifies even if it is not frontier-hosted.
-- **Sav is male (he/him) — NEVER surface women-only / women-in-tech events** (e.g., "Women in AI Breakfast + Panel", women-founder-only dinners/rooms). Exclude them from every scan, digest, table, and ad-hoc recommendation, across all scheduled tasks AND Claude chats. Do not re-surface. (Set 2026-07-10.)
-- **Register → Google Calendar (EVERY registration, standing rule set 2026-07-10):** whenever Claude registers/RSVPs Sav for ANY event — ad-hoc chat request OR scheduled task — immediately add it to Google Calendar via `enso-google` (check first, NEVER duplicate). Color by Enso Fit v2 (🟢 green 8+, 🟡 yellow 6–7.5, ⚪ gray ≤5/pending/waitlist); put 📍location · 🔗link · ⭐score + one-line why in the event. Confirmed/approved → normal color; pending host approval or waitlist → gray ⏳ hold; a PAID event not yet paid → gray ⏳ hold labeled "payment pending" until Sav pays, then promote to its score color. The daily `daily-event-scan` (JOB 1) remains the calendar's steady-state owner and will reconcile, so match its format and dedupe.
-- **AUTO-APPLY REGISTRATION at composite ≥7.5 — non-discretionary + JOIN WAITLISTS WHEN FULL (set 2026-08-11 per Sav; supersedes the old >7 threshold).** For any FREE, simple-RSVP NYC-proper room scoring ≥7.5 that Sav isn't already registered/pending for, REGISTER him ON SIGHT the same run it's found (Claude in Chrome, his logged-in Luma) — never surface a qualifying room as "your call" and wait. **If a qualifying room is SOLD OUT / FULL, JOIN THE WAITLIST (don't skip)** — this is THE fix for "events fill fast and we keep missing rooms / never even hit the waitlist"; join even if it time-conflicts with a staged event, and note the conflict for Sav. Rooms scoring 7.0–7.49 are surfaced with a 1-click RSVP link + recommendation, NOT auto-registered (never silently dropped). Hard-stops unchanged (never auto-submit → skip + flag): payment / ticket purchase, account creation, CAPTCHA, crypto wallet, private/sensitive fields (ARR / funding stage / phone), substantive freeform application essays, network referrals. Never pay / buy / send. Applies to `daily-event-scan` JOB 2.5 AND any ad-hoc event request in chat.
-- **MANDATORY TL;DR TABLE — every deliverable and every response.** Lead with a one-line TL;DR, then a clean table. Columns, in this exact order: **Date | Time (PT) | Event | Score | Rationale to attend** (add a Link column when surfacing RSVPs). One tight, complete sentence per rationale cell. Mobile-first: short lines, no bullet stacks where a table works, no walls of text. Sav reads these on his phone while traveling — optimize for a 10-second scan.
+
+> **WHY THIS SECTION GOT REWRITTEN (2026-09-16):** Sav flagged a week of weak event output. Root cause on audit: this file had drifted out of sync with the live `daily-event-scan` scheduled-task prompt — it still carried the expired SF window (Jul 7–Aug 7), the old ≥7.5 auto-register bar, PT times, and no Career-ROI lens, while the scheduled task itself had already moved to NYC/ET, a >8 bar, and Career-ROI scoring on 2026-09-09. Different surfaces reading different rules from this file vs. the task prompt is a real bug, not just a documentation gap — fixed by resyncing below. Second real gap: research passes were leaning on public aggregators (GarysGuide, WebSearch) instead of Sav's own logged-in Luma feed, which under-counts real candidates against an already-strict >8 bar. Both are fixed below. **This file is the standing source of truth — if a scheduled-task prompt ever disagrees with it again, this file wins for whichever is dated more recently; flag the conflict in one line and keep going, don't silently pick one.**
+
+- **TWO RUNS PER WEEKDAY (Mon/Wed/Fri), ET, NYC home base (SF window CLOSED 2026-08-07 — do not resurrect PT or SF scope without Sav saying he's traveling again).** Morning run (~8 AM ET): full scan (calendar reconcile + frontier/ROI alert + digest) + inbox filing. Evening run (~5 PM ET): delta-only scan + inbox filing, no digest. Firings outside these slots no-op immediately. `sf-high-frontier-prep` stays paused.
+- **Sources — public AND logged-in, every run that might report "nothing":** Luma NYC, GarysGuide NYC, the NYC B2B beehiiv digest, This Week in Fintech NYC, and the Anthropic/OpenAI/DeepMind/Perplexity NYC Luma calendars. **A public-web pass alone (GarysGuide/WebSearch/web_fetch) is not sufficient before concluding nothing clears the bar** — it lags and can carry wrong details (caught 2026-09-16: GarysGuide listed Regal Rise at 10:30am, Luma's own confirmation said 11am–3pm; treat Luma/the host platform as the tiebreak on any conflict). Also check Sav's own logged-in Luma "for you"/NYC AI feed via Claude in Chrome on the canonical browser before reporting a null result, and name which sources were actually checked — a "nothing above 8" line with no source list is incomplete. Eventbrite stays removed.
+- **THE BAR: STRICTLY ABOVE 8 (raised 2026-09-09 per Sav — supersedes any older ≥7.5 / 7.0–7.49 / "frontier-lab or skill-building" language below it in task prompts; this is the current standard).** Sav's words: "Only find events that score above an 8 ... extremely selective." Composite must be >8.0 (8.25+, not a flat 8.0) to trigger a frontier/ROI alert, trigger auto-register/waitlist-join, or appear in a "missed opportunities" table. Do not pad output with 6–8 "just in case" rows — if nothing clears >8, say so in one line, but only after the full source list above was actually checked.
+- **SCORING LENS — Career-ROI, Enso Fit is the tiebreak (set 2026-09-09).** Score every candidate 0–10 on: buyer density (decision-makers/clients/referrers in the room), GTM/Growth fit (advances Sav's growth-marketing/GTM-engineering positioning), career leverage (contract, warm intro, job-lead potential), skill-to-sell (packageable into an Enso offer). Weight toward fintech/finance, regulated industries, marketing/advertising, GTM/growth; bump anything Perplexity (target employer) or frontier-lab/NY-marquee-builder hosted. Generic mixers/happy hours/socials need a genuinely marquee buyer list to clear >8 — most won't.
+- **PAID EVENT CLEARS >8 → RESEARCH SCHOLARSHIP/COMP ROUTES BEFORE FLAGGING "SKIP, PAID" (new 2026-09-16, codified from the GTM2026 pass).** For any event scoring >8 gated by a paid ticket: (1) check the organizer's own site for a startup/scholarship/founder rate — confirm it doesn't exist rather than assume; (2) test a media/content-partner angle — Sav has an actual publishing platform (Strategy to Ship) to trade for coverage; (3) shortlist 3–4 smaller/growth-stage sponsors (not the full sponsor list) who'd plausibly trade a comp pass for a warm intro. Draft the outreach ready to send; don't send it — cold outreach to organizers/sponsors queues for Sav same as any other cold outreach (see Send authority below). Present the routes and drafts, never just "your call, it's paid" with nothing else tried.
+- **Sav is male (he/him) — NEVER surface women-only / women-in-tech events** (e.g., "Women in AI Breakfast + Panel," a "Women's Capital Summit," women-founder-only dinners/rooms). Exclude from every scan, digest, table, and ad-hoc recommendation, across all scheduled tasks AND Claude chats. Do not re-surface. (Set 2026-07-10.)
+- **Register → Google Calendar (EVERY registration, standing rule set 2026-07-10).** Whenever Claude registers/RSVPs Sav for ANY event — ad-hoc chat request OR scheduled task — add it to Google Calendar via `enso-google` immediately (check first, NEVER duplicate). Color by the Career-ROI composite: 🟢 green >8, 🟡 yellow 6–8, ⚪ gray ≤5/pending/waitlist. Put 📍location · 🔗link · ⭐score + one-line why in the event. Pending host approval or waitlist → gray ⏳ hold; a PAID event not yet paid → gray ⏳ hold labeled "payment pending" until Sav pays. **When Sav tells Claude directly that he registered somewhere, update the calendar to confirmed in that SAME turn** — don't leave a stale "REGISTRATION NOT FINISHED" hold sitting (caught 2026-09-16: Regal Rise sat stuck for a day because a prior attempt hit a registration flow that required emailing the host directly; that should have been flagged to Sav as an action item immediately, not silently retried or left stale).
+- **AUTO-REGISTER, NON-DISCRETIONARY, AT >8 ONLY (bar raised 2026-09-09 — supersedes the old ≥7.5 / 7.0–7.49 two-tier system).** For any FREE, simple-RSVP NYC-proper room scoring STRICTLY >8 that Sav isn't already registered/pending for, REGISTER him ON SIGHT the same run (Claude in Chrome, his logged-in Luma) — never surface as "your call" and wait. If a qualifying room is FULL, JOIN THE WAITLIST (don't skip), even if it conflicts with a staged event — note the conflict. Rooms scoring 6–8 are NOT surfaced at all (this silently retires the old 7.0–7.49 "surface with 1-click RSVP" tier, per the "extremely selective" directive). Hard-stops unchanged (skip + flag, never auto-submit): payment/ticket purchase, account creation, CAPTCHA, crypto wallet, private/sensitive fields (ARR/funding stage/phone), substantive freeform application essays, network referrals, or a flow that requires emailing the host directly (that's a Sav action — flag it, don't retry it silently).
+- **MANDATORY TL;DR TABLE — every deliverable and every response.** Lead with a one-line TL;DR, then a clean table. Columns, in this exact order: **Date | Time (ET) | Event | Score | Rationale to attend** (add a Link column when surfacing RSVPs). One tight, complete sentence per rationale cell. Mobile-first: short lines, no bullet stacks where a table works, no walls of text. Sav reads these on his phone while traveling — optimize for a 10-second scan.
 
 ## Scheduled Task Rules
+## Scheduled-run gates (2026-09-24)
+Every `~/Claude/Scheduled/*/SKILL.md` carries this block right after its frontmatter (backups in `~/Claude/Scheduled/_backup-2026-09-24/`). It overrides anything older in the prompt or in this file. Full incident review: `docs/INCIDENT-REVIEW-2026-09-24.md`.
+
+1. TOOLS: never call `mcp__workspace__bash` (dead — useradd exit 12). Shell = Desktop Commander `start_process`. Files = Read/Write/Edit/Grep. Gmail read+write = `mcp__enso-google__*`. If enso-google errors, do READS only and report "writes deferred" — never fall back to the built-in Gmail connector for labels/archives (built-in is for threaded drafts only).
+2. DUPLICATE-FIRE GUARD (first action): Grep `/Users/savbanerjee/Documents/Claude/Heller/Tasks/active-tasks.md` for today's ET date AND this task's name. If today's entry for this lane already exists, write one line `DUPLICATE FIRE — no-op` and stop. Note: the launchd twin and the claude.ai cloud copies were retired 2026-09-24; this Cowork task is the only runner.
+3. LATE FIRE: if now is >60 min after the scheduled slot, say so in line 1, run delta-only, and never call `update_scheduled_task` on yourself or any other task.
+4. READ CAPS: never Read `active-tasks.md`, `email-log.md`, `deliverables-owed.md`, `client-question-bank.md`, `insights.ts`, `state.json` or any `*ARCHIVE*` file whole. Grep for the date / ID / thread / slug you need, or Read with limit=150. Autocompact thrash killed 8 runs this month.
+5. RECEIPTS: any "sent / posted / filed / created / registered / deployed" claim must quote the return id from THIS run (message id from `in:sent`, draft id, Slack ts, event id, commit sha + curl output). No id → write "NOT DONE".
+6. NO DATE WINDOWS on discovery searches (`newer_than:` banned) — use dates only to sort.
+7. UNATTENDED = NEVER SEND. No `send_message`, `reply`, `forward`, invoice-send, form submit or purchase from this run (hub Section 0.4). Client text = draft only, and only when Section 0.5 allows a draft. Writes to any Heller Google Ads account: ONLY `heller-keyword-harvester` may write (keywords only). Every other task that wants an account change writes it to the approval queue.
+8. CONFIDENTIAL: never reproduce the Fortune 500 manufacturer's real name (the /work/gore client), even when flagging that a source used it — write "[confidential client]". Never name one client's brand/code to another client.
+9. CLOSE-OUT ORDER: (a) the Slack post if this prompt asks for one, (b) file/label, (c) log, (d) report. If context is running low, do (a) first and say what was skipped.
+
+Housekeeping that keeps the gates true: `scripts/ops/rotate-logs.sh` (monthly, from the health check) keeps the two Heller shared logs under 200 KB; `scripts/ops/seo-run.sh` is the SEO task's only deploy path (branch → build → PR, never master).
+
 ### Google Calendar = single source of truth for deadlines & tasks (standing rule — set 2026-08-10 per Sav)
 Every run that surfaces a dated deadline OR a task Sav owes writes it to Google Calendar via `enso-google` — not just event RSVPs. Applies to the `ai-platforms-partnerships-monitor`, event scans, job runs, and any ad-hoc digest.
 - **Scope:** (1) hard deadlines (credit/voucher expiries, migration cutoffs, course due-dates, program lapses) AND (2) open action items Sav owes (partner follow-ups, onboarding steps, "claim this perk," "reply to X"). If the digest lists it under NEEDS ATTENTION / THIS WEEK / a roster's "unclaimed," it belongs on the calendar.
@@ -267,11 +325,11 @@ Every run that surfaces a dated deadline OR a task Sav owes writes it to Google 
 
 ### Token-Lean Operations (standing rule — set 2026-07-27)
 Context: the week of Jul 20 the Claude Max plan hit its usage cap mid-week (a runaway hourly PR check-in loop + 7 event-related firings/day + job scanning on two surfaces at once). These rules cut recurring burn ~30–40% and apply to EVERY scheduled task, Routine, and agent session on this account. Every task reads this section at runtime — cadence rules here override older per-task prompts.
-- **Event ops: two runs/day.** See "Event Scan — Standing Preferences" above. Firings outside the 8a/5p PT slots no-op immediately.
-- **Job scanning: ONE surface.** The cloud Routine `daily-job-scan` (1×/weekday, 9 AM ET) is the sole scanning owner. The Cowork `job-scan-morning` task is PAUSED — if it fires, no-op immediately. `weekly-pipeline-review` stays as the Monday rollup. (The guiliana-career-command-center Vercel crons bill the separate API account, not Max — they are out of scope here.)
+- **Event ops: two runs/day.** See "Event Scan — Standing Preferences" above. Firings outside the 8a/5p ET slots no-op immediately.
+- **Job scanning: ONE owner (revised 2026-09-16).** `job-apply` (Claude Code, 9:00a + 2:00p) is the sole sourcing-and-submission owner; Cowork's Job Triage (7:45a) owns the inbox and nothing else. **RETIRE all three predecessors:** the cloud Routine `daily-job-scan` (it would race job-apply at the identical 9 AM slot), `weekly-pipeline-review` (it reads the dead "Sav Job Tracker 2026" Sheet and produced the false "pipeline has gone dark" headlines), and `job-scan-morning` (already paused — delete it; its SKILL.md is still invocable by name). See the JOB ENGINE section below. (The guiliana-career-command-center Vercel crons bill the separate API account, not Max — out of scope here.)
 - **SEO engine: daily delta, weekly full scan.** The daily run checks ONLY articles added/changed since the last run plus the marquee list — the full every-article sweep of `lib/insights.ts` runs Mondays only. Batch content pushes to ≤1 push/day (bundle fixes into one commit). Voice lint stays daily (cheap); entity-drift scout stays weekly.
 - **PR watching: webhooks, not clocks.** PR event subscriptions are the primary signal. Self check-ins (send_later) max 2×/day, waking hours only (9 AM / 5 PM PT), NEVER overnight, NEVER hourly chains. Docs-only or held-for-review PRs get zero scheduled check-ins — Sav is the next actor, not the clock.
-- **Model routing for scheduled tasks (per the model-routing-policy skill).** Mechanical tasks (inbox filing, health checks, stand-up digests, labeling) → Haiku 4.5. Scans and content runs (event scan, job scan, SEO engine, monitors) → Sonnet 4.6. Fable 5 / Opus are for interactive strategy, design, and genuinely hard builds ONLY — never for a recurring scan. (Found 2026-07-27: `daily-job-scan` was running on Fable 5 [1m] twice a day.)
+- **Model routing for scheduled tasks (per the model-routing-policy skill; set in each task's SKILL.md frontmatter `model:` line, 2026-09-24).** Haiku 4.5 → filing (inbox cleanup, lead processor, job sweep, billing prep, monthly reminder, health check). Sonnet 4.6 → every scan, monitor and content run. Opus / Fable → interactive sessions ONLY, never a recurring task. (Found 2026-07-27: `daily-job-scan` was running on Fable 5 [1m] twice a day; found 2026-09-24: 24 prompts still said Opus 4.8.)
 - **No mega-sessions on autopilot.** Multi-repo clone-and-audit sweeps, 31-repo scans, and similar large jobs run only on Sav's explicit request, never as a side effect of another task.
 
 ### No event drafts in Gmail (standing rule — set 2026-07-05)
@@ -299,21 +357,92 @@ Found again 2026-09-07, three days after the last "reinforcement": **89 event em
 ### Keep inboxes & folders as clean as possible (standing rule — set 2026-07-05)
 - Default to tidy: don't leave automated self-notification drafts, duplicate files, or stray artifacts behind. Deliver in-app; if a task must write, write to its canonical file/location, not a new scratch copy.
 - Gmail Drafts: no self-addressed automated drafts (event digests, briefings, radar alerts, canaries). If any accumulate, trash them. Exceptions that MAY stay: genuine outreach/reply drafts Sav asked for, and the intentional labeled deliverables (`daily-ai-terms-lesson` "AI terms" copies, `signal2noise`/`wins-to-profiles` "[S2N]" LinkedIn drafts) — leave those unless Sav says otherwise.
-- Inbox: keep it filed — `events-inbox-filer` labels/archives events daily; other monitors label + archive informational mail and keep only true action items visible.
+- Inbox: keep it filed. **Ownership map (corrected 2026-09-19 — `events-inbox-filer` was named here but has been DISABLED since 2026-08-13; do not cite it again):** `daily-inbox-cleanup` (6:00 AM daily) owns the general noise sweep + priority surface · `daily-event-scan` JOB 4 (Mon/Wed/Fri 8a/5p) owns event mail → Label_8 · `job-sweep-daily` (7:45 AM M–F) owns job mail → Label_18/19/23 · `linkedin-lead-processor` (10:00 AM M–F) owns lead mail → Label_28/29/30/31 · `ai-platforms-partnerships-monitor` (7:30 AM + 3:30 PM M–F) owns partner/perk mail → Label_20/21. Scheduled coverage is therefore COMPLETE — do not create another recurring inbox task. What crons cannot cover is an ad-hoc chat session, which is what the POST-RUN rule below and FILE-ON-EVERY-SEARCH above exist for: any interactive session that searches, scores, registers, or files must run its own hygiene pass in the same turn and report a tally.
 - When cleaning is ambiguous (could delete something Sav wants), verify contents first, clear the clearly-automated clutter, and flag the rest for a quick yes/no rather than guessing.
 - Cleanup done 2026-07-05: trashed 8 stale event self-notification drafts (SF-prep briefings + daily event digests + frontier radar alerts, Jun 30–Jul 3).
 - **MANDATORY POST-RUN INBOX CLEANUP (set 2026-08-04 per Sav): EVERY run — scheduled or ad-hoc — ends with an email hygiene pass before the final report.** For job runs: application confirmations/receipts, rejections, swept alert digests, and job-board promos → "Jobs → Applied" (Label_19) + archive; self-forwarded job/newsletter mail → "Jobs → Forwarded" (Label_23) + archive; items needing Sav → "Jobs → Action" (Label_18), starred, LEFT in inbox; resolved action threads → Label_18 → Label_19 + archive. Other runs file to their own canonical labels (events → Label_8, etc.). Never delete received mail; never touch Heller/client threads. A run that leaves processed mail sitting in the inbox is incomplete.
-- **Re-affirmed + widened 2026-08-06 per Sav: the hygiene pass applies to EVERY surface and EVERY interaction that touches job mail — scheduled runs, ad-hoc chat requests, screenshot-driven asks, and Claude Code sessions alike.** Each processed email moves to its respective folder in the SAME turn it is handled, not at day-end. Routing recap: applied/receipts/rejections/swept digests/recruiter mail assessed-and-declined → Label_19 + archive · Sav's self-forwards → Label_23 + archive · live action items (recruiter threads awaiting Sav, interview logistics, 2-min finishes) → Label_18 + STARRED, kept in inbox · event invites encountered mid-job-run → Label_8 + archive. Every application outcome (submitted, staged, held, excluded) must ALSO be registered as a Notion Career Command Center row in the same turn — inbox filed + tracker recorded = the definition of done.
+- **Re-affirmed + widened 2026-08-06 per Sav: the hygiene pass applies to EVERY surface and EVERY interaction that touches job mail — scheduled runs, ad-hoc chat requests, screenshot-driven asks, and Claude Code sessions alike.** Each processed email moves to its respective folder in the SAME turn it is handled, not at day-end. Routing recap: applied/receipts/rejections/swept digests/recruiter mail assessed-and-declined → Label_19 + archive · Sav's self-forwards → Label_23 + archive · live action items (recruiter threads awaiting Sav, interview logistics, 2-min finishes) → Label_18 + STARRED, kept in inbox · event invites encountered mid-job-run → Label_8 + archive. Every application outcome (submitted, staged, held, excluded) must be registered in `job-engine/state.json` in the same turn — inbox filed + state recorded = the definition of done. (Revised 2026-09-16: `state.json` replaced Notion as the source of truth. Notion is now a best-effort mirror written by `job-apply`; its query quota must never block or delay a submission.)
 - **STALE ACTION ITEMS surface EVERY run (set 2026-08-06 per Sav, after Jefferies/Epsilon/Pluto sat silent in Jobs → Action):** every job-run report MUST end with a "WAITING ON SAV" list — every "Jobs → Action" (Label_18) thread older than 48h, each with its ONE-step finish (e.g. "type OTP", "log into iCIMS", "call Pluto"). Parking an email in Label_18 is triage, not completion — an action item nobody re-surfaces is a dropped ball. If a Label_18 item ages past 7 days, escalate it to the TOP of the report with a decision ask (finish or archive).
-- **UNSENT DRAFTS ARE A DROPPED BALL — check Drafts EVERY run (set 2026-08-25 per Sav, after the Accenture near-miss).** On 2026-08-21 Sav wrote two excellent post-interview follow-ups (Zaryab Abbasi + a note for Raj) and never hit Send; both sat in Drafts for 4 days while the run report described them as "sent." Root cause: the sweep read the Sent folder loosely and treated a composed message as a delivered one. **Every run must now list every Gmail DRAFT addressed to a THIRD PARTY that is older than 24h, at the TOP of the report under "NOT SENT — needs your click."** Verify delivery against the Sent folder or the thread's message list — a draft ID returns "caller does not have permission" on `get_thread`, which is the tell. Consolidate multi-part drafts into ONE addressed, signed, ready-to-send message and trash the stale versions, so the remaining action is a single click. Claude still never sends to third parties; the click stays Sav's.
+- **UNSENT DRAFTS ARE A DROPPED BALL — check Drafts EVERY run (set 2026-08-25 per Sav, after the Accenture near-miss).** On 2026-08-21 Sav wrote two excellent post-interview follow-ups (Zaryab Abbasi + a note for Raj) and never hit Send; both sat in Drafts for 4 days while the run report described them as "sent." Root cause: the sweep read the Sent folder loosely and treated a composed message as a delivered one. **Every run must now list every Gmail DRAFT addressed to a THIRD PARTY that is older than 24h, at the TOP of the report under "NOT SENT — needs your click."** Verify delivery against the Sent folder or the thread's message list — a draft ID returns "caller does not have permission" on `get_thread`, which is the tell. Consolidate multi-part drafts into ONE addressed, signed, ready-to-send message and trash the stale versions, so the remaining action is a single click. Sending follows **Send authority (revised 2026-09-07)** in the Leads section; recruiter/employer mail additionally needs `outbound_gate.py` PASS and Sav's approval of the exact text for first contact or corrections (job-engine/RULES.md → OUTBOUND GATE). (Contradiction with the old 'never sends' line resolved 2026-09-24.)
 - **SAY WHERE THINGS ARE SAVED, WITH A FULL PATH (set 2026-08-25 per Sav).** Sav is dyslexic and runs dozens of parallel projects — "staged," "recorded," or "saved" with no location is worse than useless, it creates stress and he cannot verify the work exists. Every report that claims something was written must give the exact path or destination (`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/<file>.md`, a named calendar hold, a Gmail label, a Notion row). Never describe a rule as "added" when it was only *proposed* — either write it to this file in the same turn or say plainly that it is a suggestion awaiting his go.
 - **APPLY ON SIGHT, EVERY MORNING, FASTEST-FIRST (set 2026-08-25 per Sav — four rules given together).**
-  1. **When Sav sends a list or screenshot of roles, open each one on LinkedIn and apply.** Not "surface," not "recommend" — open the posting, verify it, and submit. A list handed over is an instruction to apply, and the ≥9.0 approval gate is considered pre-released for any role Sav personally sent.
+  1. **When Sav sends a list or screenshot of roles, open each one on LinkedIn and apply.** Not "surface," not "recommend" — open the posting, verify it, and submit. A list handed over is an instruction to apply. (The ≥9.0 approval gate this line used to pre-release was **removed entirely on 2026-09-16** — see the JOB ENGINE section below. Submit anything scoring ≥7.01 and report after.)
   2. **Be proactive every morning and get applications IN ASAP.** Speed is the edge: "Be an early applicant" and "top applicant" windows close within hours. The morning run submits, it does not stage for later.
   3. **Mine the interview pattern, then go find more of it.** Every run studies which roles are actually converting to interviews (as of Aug 2026: Cresta Forward Deployed PM · Auquan AI Applied Engineer · Accenture AWS Agentic Delivery Lead · Horizon Media SVP Product Experience · Mitchell Martin VP AI Transformation → the through-line is **forward-deployed / applied-AI delivery leadership at AI-native companies**), runs fresh searches against that pattern, and submits. Don't wait to be handed a list.
   4. **Never duplicate an application.** STEP 4.5 stays mandatory and is now enforced per-company AND per-role-title: search BOTH inboxes including Sent for the company name and the role title before every submit. Same company + different role is allowed only when there is no rejection on file in the last 30 days and fewer than 3 live applications there.
+- **SELF-FORWARDED JOB MAIL IS AN INSTRUCTION TO APPLY — NO DATE FLOOR, EVER (set 2026-09-15 per Sav).**
+  Found 2026-09-15: the morning run scoped its sweep to `newer_than:3d` and reported clean. A no-date-floor
+  search then surfaced **10 job-relevant self-forwards sitting unactioned in the inbox, the oldest from
+  Jun 27** — a Decagon LinkedIn job link (Aug 27), an MSFT jobs link (Aug 27), a Goldman Sachs VP /
+  Office of Transformation alert (Jul 22), a Jack & Jill "Citi MD and IDC VP" note (Jul 27), a Jobright
+  GTM Engineer invite (Jul 14), and an Arc growth role forwarded the same morning. Sav's words: *"Every
+  email should be scanned and added for review and application submission every day. You have to be
+  proactive. I keep telling you that."* This is the third time a rolling window has hidden a backlog —
+  the same failure the event rules closed on 2026-09-07. Closing it for job mail now:
+  - **When Sav forwards himself a job link, a job alert, or a posting — from ANY address — that IS the
+    instruction to open it, score it, and apply.** It is not an FYI. It ranks with a list or screenshot
+    he hands over directly (same as the APPLY ON SIGHT rule above; the ≥9.0 gate it referenced was
+    removed 2026-09-16). A bare URL with no body counts. A subject line that is only a `lnkd.in` link counts.
+  - **NEVER scope a job sweep to a rolling window.** `newer_than:` is BANNED on the discovery pass.
+    Every run searches `in:inbox` with NO date floor. A 3-day window is exactly what let a June backlog
+    survive. The window may only be used to *sort* results, never to *limit* them.
+  - **RUN THIS EXACT QUERY SET EVERY RUN — copy it, do not improvise a narrower one.** A run that did
+    not execute all eight is incomplete and must say so:
+    1. `in:inbox from:sav.banerjee@gmail.com`
+    2. `in:inbox from:sav@ensopartners.co`
+    3. `in:inbox (linkedin.com/jobs OR lnkd.in OR jobs.ashbyhq OR greenhouse.io OR lever.co OR myworkdayjobs)`
+    4. `in:inbox subject:(Fwd OR FW) (job OR jobs OR role OR hiring OR apply OR opening OR career)`
+    5. `in:inbox (from:indeed.com OR from:linkedin.com OR from:jobright OR from:arc.dev OR from:jackandjill.ai OR from:theladders.com OR from:simplify.jobs OR from:builtin.com OR from:dice.com OR from:wellfound OR from:otta)`
+    6. `label:Label_18` (Jobs → Action — the stale-item check)
+    7. `label:Label_23` (Jobs → Forwarded — confirm nothing was parked and forgotten)
+    8. `in:draft` (the unsent-draft check, per the 2026-08-25 rule)
+  - **Every hit gets a disposition IN THAT RUN — applied, staged, held by STEP 4.5, or filtered with a
+    written reason.** "Reviewed" is not a disposition. Nothing may stay in the inbox unresolved, and a
+    self-forward may not be archived without either an application or a one-line reason it failed a
+    hard filter.
+  - **The report must carry a SELF-FORWARDED line with a count every run, even when the count is zero.**
+    A run that omits it is incomplete. Same standard as the event-mail filing tally.
+  - Honest constraint, so nobody promises otherwise: **Gmail is not reachable from the bash sandbox**,
+    so this cannot be handed to a script — the MCP connector is the only path. The determinism comes
+    from the fixed query list above being executed verbatim, not from code.
+### ⚙️ JOB ENGINE — rebuilt 2026-09-16. Read this before acting on anything job-related.
+
+The job rules in this file accreted for months into a 4,000-word prompt that silently dropped a third of its own steps every run. They have been replaced by a three-job system with one responsibility each.
+
+**Precedence:** the surviving job material in this file — the eight-query set, the Greenhouse autofill trap, the file-upload mechanics, apply-on-sight, the hygiene routing — stays live and is mirrored into `RULES.md`. **Where the two disagree, `RULES.md` wins and this file gets corrected in the same edit.** Do not treat anything here as a second rulebook.
+
+- **`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/job-engine/RULES.md`** — the only rules file any job run loads. It owns every value and threshold: comp floor, geography, score gate, caps, label IDs, draft age, hard stops. **If a job rule here conflicts with RULES.md, RULES.md wins.** Fix it there, never fork it.
+- **`job-engine/state.json`** — single source of truth for the pipeline. Notion is a mirror; the "Sav Job Tracker 2026" Sheet is DEAD and must never be read as evidence of pipeline health (it produced the false "the pipeline has gone dark" headlines on Sep 7 and Sep 14 while LinkedIn showed 324 applied).
+- **`job-engine/RUNS.md`** — append-only run log. Replaces the loose `RUN-LOG-<date>.md` convention referenced elsewhere in this file.
+
+| Job | Surface | When | Success |
+|---|---|---|---|
+| Job Triage (task id `job-sweep-daily`) | Cowork | 7:45a M–F | every job email dispositioned |
+| `job-apply` | Claude Code | 9:00a + 2:00p M–F | **≥5 submitted per run** |
+| `job-retro` | Claude Code | Fri 4:30p | one calibration change landed |
+
+**Changed 2026-09-16, with Sav's approval:** the ≥9.0 approval gate is **removed** — submit anything ≥7.01 and report after (it held Cursor's Forward Deployed Strategist, a 9.0, for seven weeks). Sourcing and submission move to Claude Code for the persistent Chrome session. Setup: `job-engine/SETUP.md`.
+
 - **RESUME ATTACHMENT — the Greenhouse/MyGreenhouse autofill trap (found 2026-08-25).** Greenhouse autofill silently attaches `Sav_Banerjee_Master.pdf` from Sav's MyGreenhouse profile. That file is the SUPERSEDED July-14 version (no Berkeley RDI, no Forward Deployed Strategist series). **On every Greenhouse application: remove the autofilled resume and attach the correct Aug-19 archetype by hand.** Root fix pending: swap the default at https://my.greenhouse.io/profile to `Sav_Banerjee_ForwardDeployed_v4.pdf`.
-- **KNOWN BLOCKER — browser file upload (found 2026-08-25).** `mcp__claude-in-chrome__file_upload` is disabled in Cowork sessions; it rejects `paths` outright and instructs not to retry. Consequence: **any ATS requiring a resume file attachment cannot be submitted from Cowork.** Those roles must be prepped (every other field completed, correct posting open in a tab) and handed to Sav as an attach-and-submit, OR the run must move to Claude Code, where local file access works. Never report such a role as "applied."
+- **~~KNOWN BLOCKER — browser file upload~~ RESOLVED 2026-09-15. FILE UPLOAD WORKS FROM COWORK.**
+  The Aug-25 note said `mcp__claude-in-chrome__file_upload` was disabled and that external ATS
+  applications were impossible from Cowork. **That is no longer true and it was costing real
+  applications.** Tested and confirmed 2026-09-15 on Cursor's Ashby-backed form: passing an absolute
+  path from the connected `Professional: Jobs & Resumes` folder uploaded `Sav_Banerjee_ForwardDeployed_v4.pdf`
+  (83 KB) successfully, and the application submitted end-to-end ("Application submitted successfully").
+  - **The tool now accepts `paths` for any file in a CONNECTED FOLDER**, the session working dir,
+    outputs, or uploads. The Jobs & Resumes folder qualifies. Use the full absolute path.
+  - **Mechanics that matter:** locate the file input with `find` (query "Resume" or "Upload file") —
+    do NOT click it, clicking opens a native picker you cannot see. Pages often render TWO matching
+    refs; the hidden decoy accepts the upload silently while the real form input stays empty. **After
+    uploading, always verify with `document.querySelector('input[name=...resume...]').files.length`
+    — if it is 0, you hit the decoy; retry against the other ref.**
+  - **Set React-controlled text fields via the native value setter** + dispatch `input` and `change`
+    events, then screenshot to confirm the values actually rendered. A programmatic `.value =` alone
+    is silently discarded by React forms.
+  - **No run may report an external-ATS role as un-submittable again without testing first.** A stale
+    blocker note that nobody re-tested sat in this file for three weeks and turned every Greenhouse /
+    Ashby / Workday role into a hand-off. Re-test before declaring any capability dead.
 
 ### Every email carries the signature — UNIVERSAL (standing rule — set 2026-07-05, scope-confirmed 2026-07-06)
 - **EVERY email out of the account carries the signature — no exceptions by task, recipient, or type.** Enso Labs and Enso Partners are the SAME account (sav@ensopartners.co, which also receives sav@ensolabs.ai). Clients, partners, events, vendors, internal, cold outreach — new threads AND replies — all get it. Whenever any email or Gmail draft is composed (by any scheduled task, any skill, or an ad-hoc request), it MUST include the signature.
@@ -339,7 +468,7 @@ Found again 2026-09-07, three days after the last "reinforcement": **89 event em
 - **Connector routing rule (so tasks stop breaking on the daily drop):**
   - CALENDAR read + create/update → use **enso-google** first (full CRUD, never expires).
   - GMAIL read (search + read message) → use **enso-google** first (never expires).
-  - GMAIL write (create draft, apply label) → still needs the **built-in** Gmail connector (enso-google is read-only for mail). These few write-steps are the ONLY ones a Google drop can still block.
+  - GMAIL write (create draft, apply label, archive) → **enso-google also does writes.** Corrected 2026-09-16: it exposes `gmail_create_draft`, `gmail_modify_labels` and `gmail_create_label`, verified live. The older "read-only for mail" note here was wrong and was routing write-steps onto the connector that drops daily. Use enso-google for mail writes too; nothing in the job or event engines depends on the built-in connector any more.
 - **Part D — repoint (next concrete step):** move every calendar + Gmail-read scheduled task onto enso-google via `update_scheduled_task`; keep only Gmail-draft/label steps on the built-in connector. Do this per-task, never a blind flip of an autonomous writer (see the "don't flip autonomous tasks without asking" rule).
 
 ### C. The TWO things automation still CANNOT remove (honest hard limits)
@@ -368,15 +497,19 @@ Each registers as a separate "Browser" on the account, so Claude binds to whiche
 - PERMANENT FIX (needs Sav, 2 min, once): remove the Claude extension from Chrome `Default` and from
   Comet, keeping it ONLY in Profile 10. Until he does, `select_browser` on the canonical ID is the workaround.
 
-**2. RESUME FILE UPLOAD IS IMPOSSIBLE FROM COWORK — this is why applications stall one click short.**
-- `mcp__claude-in-chrome__file_upload` is DISABLED in Cowork sessions. Tested and confirmed 2026-08-25;
-  it rejects `paths` outright. Do not retry it, do not report it as a surprise.
-- The osascript → native macOS file-picker workaround ALSO fails: osascript lacks Accessibility
-  (assistive access) permission. `System Events` returns error -25211.
-- **UNBLOCK (needs Sav, once):** System Settings → Privacy & Security → Accessibility → enable **Terminal**.
-- Until then: any ATS needing a file attachment must be driven to the final screen, with every other field
-  completed, and handed over as an attach-and-submit. Reveal the correct resume in Finder (`open -R`) and
-  put its full path on the clipboard (`pbcopy`) so the handoff is a drag, not a hunt. Never call it "applied".
+**2. ~~RESUME FILE UPLOAD IS IMPOSSIBLE FROM COWORK~~ — FIXED 2026-09-15. THIS ENTRY WAS WRONG.**
+- `mcp__claude-in-chrome__file_upload` **WORKS** from Cowork. Re-tested 2026-09-15 against Cursor's
+  Ashby form: uploaded `Sav_Banerjee_ForwardDeployed_v4.pdf` from the connected Jobs & Resumes folder
+  and submitted the application successfully. The tool spec now explicitly accepts paths from
+  "folders the user has connected."
+- Terminal IS enabled under Privacy & Security → Accessibility (Sav confirmed 2026-09-15 by screenshot),
+  so the osascript note was also stale.
+- **Full working mechanics are documented under the job rules above** ("FILE UPLOAD WORKS FROM COWORK") —
+  find the input, watch for duplicate/decoy refs, verify `files.length`, use the native value setter
+  for React fields.
+- **Standing lesson:** this stale entry sat here for three weeks and turned every Greenhouse / Ashby /
+  Workday role into a hand-off instead of an application. **Before declaring ANY capability in this
+  section dead, re-test it once.** A blocker that nobody re-verifies becomes a self-inflicted ceiling.
 
 **3. STALE RESUMES PRE-ATTACHED BY ATS PROFILES — check EVERY time, on every ATS.**
 Known bad autofills on Sav's existing candidate accounts:
@@ -388,7 +521,7 @@ profile has a stale resume on it until proven otherwise.
 **4. NOTION "Career Command Center" — query quota.**
 The workspace hits Notion's Query Data Source usage limit. When it does, dedupe cannot be verified, so
 **write nothing to Notion** (the never-duplicate rule wins) and log the run to
-`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/RUN-LOG-<date>.md` instead. Say so in the report.
+`/Users/savbanerjee/Projects/Professional: Jobs & Resumes/job-engine/RUNS.md` instead (updated 2026-09-16 — the loose `RUN-LOG-<date>.md` convention is retired). Say so in the report.
 
 **5. DESKTOP COMMANDER flaps.** It disconnected/reconnected 3× in one session on 2026-08-25. It is a
 Cowork *plugin* with an app-managed lifecycle — it is NOT in `claude_desktop_config.json` and must not be
@@ -400,6 +533,12 @@ retry once. Do not report it as a blocker unless it fails twice in a row.
 and `productivity:*` (asana, atlassian, clickup, linear, monday) have never been authorized and never will be.
 Recommend Sav uninstall those two plugin bundles in the Cowork plugin manager. Keep Notion + Slack.
 Until removed: ignore their auth warnings silently — never surface them to Sav as an issue.
+
+**7. `mcp__workspace__bash` — dead (useradd exit 12) since at least 2026-09-15; use Desktop Commander `start_process`.**
+Never call it, probe it, or retry it. Six September runs died on it (incident review 2026-09-24).
+
+**8. claude.ai cloud copies of local tasks — a second runner; keep every task local-only.**
+A task that exists both in Cowork → Scheduled and at claude.ai/scheduled-task fires twice (Sep 23: harvester ×3, approval-queue ×2). The daily health check flags any name active in both places; the cloud copy is the one to pause.
 
 **Standing rule:** a blocker listed in this section is ALREADY KNOWN. Report it at most once, in one line,
 inside the run's blocked-sources list. Never lead a report with it, and never ask Sav to re-diagnose it.
