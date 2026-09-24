@@ -343,7 +343,7 @@ const LADDER = [
       'Managed agents operated and improved in production',
       'New workflows added from the roadmap',
       'Governance and eval reviews',
-      'Team enablement and office hours',
+      'Team enablement and ongoing coaching',
       'Quarterly value report for leadership',
     ],
   },
