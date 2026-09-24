@@ -14,7 +14,7 @@ export const revalidate = 300;
 const CTA_LABEL = 'Book a 20-minute Agency AI Operating Review';
 
 export const metadata: Metadata = {
-  title: 'AI for Agencies — Agency AI CoE & Agentic Workflows | Enso Labs',
+  title: 'AI for Agencies — Agency AI CoE & Agentic Workflows',
   description:
     'Enso Labs helps independent and midsize agencies turn AI experiments into a working delivery capability: governance, data, agentic workflows, and enablement.',
   alternates: { canonical: 'https://ensolabs.ai/ai-for-agencies' },
@@ -122,7 +122,7 @@ export default function AIForAgenciesPage() {
         .afa-card p { color:var(--fg-2); font-size:15px; line-height:1.55; }
         .afa-deliv { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:24px; list-style:none; padding:0; }
         .afa-deliv li { background:var(--bg); padding:20px 24px; font-size:15px; color:var(--fg); line-height:1.4; display:flex; gap:12px; align-items:baseline; }
-        .afa-deliv li::before { content:'■'; color:var(--teal); font-size:10px; }
+        .afa-deliv .dot { color:var(--teal); font-size:10px; }
         .afa-sub { font-family:var(--mono); font-size:12px; color:var(--fg-3); letter-spacing:0.05em; text-transform:uppercase; margin-top:48px; }
         .afa-spot { display:grid; grid-template-columns:1fr 1.4fr; gap:64px; align-items:start; }
         .afa-stat { border:1px solid var(--line); padding:32px 28px; }
@@ -207,7 +207,7 @@ export default function AIForAgenciesPage() {
           <p className="afa-sub reveal">Deliverables</p>
           <ul className="afa-deliv reveal" data-delay="1">
             {DELIVERABLES.map((d) => (
-              <li key={d}>{d}</li>
+              <li key={d}><span className="dot" aria-hidden="true">■</span>{d}</li>
             ))}
           </ul>
         </div>
