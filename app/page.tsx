@@ -326,9 +326,8 @@ export default function HomePage() {
                 <div><span className="prompt">$</span> <span className="out">enso run --pipeline market-intel --rules on</span></div>
                 <div className="comment">› init 8-stage LangGraph pipeline …</div>
                 <div className="comment">› fetchers: 4 parallel · ReAct agents: 3</div>
-                <div>  <span className="out">documents</span>      <span className="amber">731</span></div>
-                <div>  <span className="out">sources curated</span> <span className="amber">111</span></div>
-                <div>  <span className="out">signals surfaced</span> <span className="amber">16</span></div>
+                <div>  <span className="out">corpus</span>           <span className="amber">technical + market docs</span></div>
+                <div>  <span className="out">signals surfaced</span> <span className="amber">ranked for review</span></div>
                 <div>  <span className="out">RWW score ≥ 0.78</span> &nbsp;<span className="comment">{'// real / win / worth'}</span></div>
                 <div><span className="prompt">$</span> <span className="out">enso ship --target prod --review lead-scientist</span></div>
                 <div className="comment">› validated · go/no-go milestone delivered</div>
@@ -444,12 +443,12 @@ export default function HomePage() {
               <div className="label">Reduction in pharma campaign launch time · 3mo → 2wk</div>
             </div>
             <div className="proof-cell bm">
-              <div className="num">$150<em>M+</em></div>
-              <div className="label">Enterprise portfolios managed across finance, health &amp; tech</div>
+              <div className="num">23</div>
+              <div className="label">Scheduled agent workflows in production across 37 repos</div>
             </div>
             <div className="proof-cell fill-amber bm">
-              <div className="num" data-count="731">731</div>
-              <div className="label">Documents processed in a single intelligence pipeline run</div>
+              <div className="num">$110<em>K+</em></div>
+              <div className="label">Managed search spend run by 9 agent workflows for a pharma agency</div>
             </div>
             <div className="proof-cell bm">
               <div className="num">15<em>+</em></div>
@@ -504,7 +503,7 @@ export default function HomePage() {
             <Link className="case-row reveal" href="/work/heller" role="listitem">
               <span className="case-no">CS / 02</span>
               <span className="case-title">AI Center of Excellence — Pharma</span>
-              <span className="case-desc">5 brand knowledge bases, 8 active automations, NIST + FDA/MLR/PRC compliant. 83% faster campaign launches, 35% time savings.</span>
+              <span className="case-desc">9 scheduled agent workflows running paid search and analytics across 3 Google Ads accounts. Governance aligned to NIST AI RMF and FDA/MLR/PRC review.</span>
               <span className="case-tag">Heller Agency<br />Healthcare</span>
               <span className="case-arrow">→</span>
             </Link>
@@ -518,7 +517,7 @@ export default function HomePage() {
             <Link className="case-row reveal" href="/work/enterprise-ai" role="listitem">
               <span className="case-no">CS / 04</span>
               <span className="case-title">Enterprise AI Enablement Programs</span>
-              <span className="case-desc">Cohort-based enablement across finance, healthcare, and tech. 3-month time-to-first-value, 75% pilot-to-production.</span>
+              <span className="case-desc">Cohort-based AI enablement across finance, healthcare, and tech: deployment playbooks, governance, and adoption.</span>
               <span className="case-tag">Cross-industry<br />Enterprise</span>
               <span className="case-arrow">→</span>
             </Link>
