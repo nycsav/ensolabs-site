@@ -33,17 +33,18 @@ https://business.google.com/us/think/ai-excellence/ai-expansion-for-agency-evolu
 
 ---
 
-## Tracked links (run /linkedin-post s2s-36pt-gap in Claude Code to auto-generate)
+## Tracked links (auto-generated 2026-09-09)
 
-**Organic post** *(paste in post body — never in comments)*
+**Organic post** *(paste this in the post body — never in comments)*
 ```
 https://ensolabs.ai/insights?utm_source=linkedin&utm_medium=organic&utm_campaign=s2s-36pt-gap&utm_content=carousel
 ```
 
-**Boosted post** *(use when setting up Campaign Manager boost)*
+**Boosted post** *(use this when setting up Campaign Manager boost)*
 ```
 https://ensolabs.ai/insights?utm_source=linkedin&utm_medium=paid-social&utm_campaign=s2s-36pt-gap-boost&utm_content=carousel
 ```
+
 
 ---
 

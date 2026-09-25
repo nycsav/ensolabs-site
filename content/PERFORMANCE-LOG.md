@@ -47,3 +47,122 @@ That's peers and micro-agencies, not buyers. Fixed in all subsequent boosts.
 ---
 
 <!-- New entries appended below by linkedin-checklist.js -->
+
+---
+
+## s2s-36pt-gap — Posted 2026-09-09
+
+| Field | Value |
+|---|---|
+| Slug | `s2s-36pt-gap` |
+| Article URL | https://ensolabs.ai/insights |
+| Post date | 2026-09-09 |
+| OG pre-warm | ☐ LinkedIn Post Inspector run |
+| Calendar: 24h check | 2026-09-09 +1 day @ 9am ET |
+| Calendar: 7d boost review | 2026-09-16 @ 9am ET |
+
+### UTM links
+- **Organic:** `https://ensolabs.ai/insights?utm_source=linkedin&utm_medium=organic&utm_campaign=s2s-36pt-gap&utm_content=carousel`
+- **Paid:** `https://ensolabs.ai/insights?utm_source=linkedin&utm_medium=paid-social&utm_campaign=s2s-36pt-gap-boost&utm_content=carousel`
+
+### Boost audience spec
+- Seniority: Director, VP, C-Suite, Partner, Owner
+- Company size: 201–5,000 employees
+- Industries: Financial Services, Pharmaceuticals, Manufacturing, Retail, Consumer Goods, Technology
+- Exclude: Advertising Services / Marketing & Advertising (1–50 employees)
+- Geography: United States
+- Budget: $50–75 / 7 days
+- Objective: Engagement
+- Campaign Manager account ID: 510047438
+
+### Performance (fill in at 24h and 7d)
+
+Post URN: `urn:li:activity:7503465533850329091`
+
+| Metric | 24h | 7d (pulled 2026-09-14, day 5 — **SUPERSEDED**) | Final (pulled 2026-09-21, day 12) |
+|---|---|---|---|
+| Impressions | | ~~2,266 (account aggregate — wrong)~~ | **1,389** (per-post, total incl. boosted) |
+| Reactions | | 8 | 7 |
+| Comments | | 5 | 1 |
+| Reposts | | 1 | 1 |
+| Saves / Sends | | | 0 / 0 |
+| Profile views from post | | Not shown | **1** |
+| Followers gained from post | | ~51 account-wide (not post-attributed) | **5** |
+| GA4 sessions (UTM) | | Unknown | **0** — no `s2s-36pt-gap` row in the Sep 21 digest |
+| Boosted? | | ~~N — organic only~~ | **Y — boosted from 2026-09-09, boost has ended** |
+| Spend | | | Unknown — no matching ad set in Campaign Manager |
+
+**Two corrections to the 2026-09-14 pull (both were wrong):**
+1. The 2,266 figure was the *account* 14-day impression aggregate, not this post's. The real per-post number is **1,389**. Three posts were live in that window (Sep 08 ×2, Sep 09), not one.
+2. The post was recorded as organic. It was **boosted starting 9/9** — LinkedIn's activity feed carries a "This post was boosted from 9/9/2026 and has ended" banner directly above it. So 1,389 is boosted + organic combined; true organic reach is lower and is not separable in the UI.
+
+Engagement rate = 9 / 1,389 = **0.65%**.
+
+### Notes
+- **Boost decision: MOOT / DO NOT RE-BOOST.** The 7d review (cal hold 2026-09-16) was written against the assumption the post was organic. It wasn't — the boost already ran and ended. Post-hoc against the threshold (impressions >500 ✅ · profile views >5 ❌ (1) · engagement rate >1% ❌ (0.65%)) it would have been a HOLD. Paid delivered 1,389 impressions → 1 profile view and 5 followers. Do not re-boost this creative.
+- **UTM = 0 sessions. Root cause is link-in-comments — the exact failure from the Boost #1 post-mortem, repeated.** The post body ends "Full take → link in comments," and the Sep 08 single-image post says "Full piece in the comments." The Sep 21 GA4 digest shows named campaigns `company-page 4, fde_part3 2, fds-part2 2, fde-series 1` — **no `s2s-36pt-gap` row at all**, and `linkedin/social` = 5 sessions untagged. The Sep 08 LinkedIn-article post independently confirms it: "Visits to links from this post: **0**."
+- **Campaign Manager is no longer 2FA-gated** (account 510047438 loaded fine on 2026-09-21). But the 9/9 boost does not appear as an ad set and every spend/impression column renders empty, so CPE is still unknown — a different blocker than the one logged in August. Update the standing note.
+- Content observation: 1,389 impressions on a boost, 0.65% engagement, is worse than the agent-harness boost (1,309 impressions / 1.2%). Second consecutive boost under the 1% bar. The 36-point-gap creative is not converting attention at paid scale.
+
+---
+
+## 36-point gap — LinkedIn article share — Posted 2026-09-08
+
+| Field | Value |
+|---|---|
+| Post URN | `urn:li:activity:7503148356571910144` |
+| Format | LinkedIn-native article — "The 36-Point Gap in Advertising Is a Workflow Problem" |
+| Boosted | No |
+
+| Metric | Final (pulled 2026-09-21) |
+|---|---|
+| Impressions | 184 |
+| Article views | 9 |
+| Reactions / Comments / Reposts | 1 / 1 / 0 |
+| Engagement rate | 1.09% |
+| Profile views from post | 1 |
+| Followers gained | 0 |
+| Link engagements | 1 (Premium custom button) |
+| **Visits to links from this post** | **0** |
+
+**Decision: HOLD.** Impressions 184 (<500) — organic reach far too thin for paid amplification.
+
+---
+
+## 36-point gap — single image — Posted 2026-09-08
+
+| Field | Value |
+|---|---|
+| Post URN | `urn:li:activity:7503136805379112961` |
+| Format | Single image — "The 36-point gap is a workflow problem." |
+| Boosted | No |
+
+| Metric | Final (pulled 2026-09-21) |
+|---|---|
+| Impressions | 153 |
+| Reactions / Comments / Reposts | 0 / 1 / 0 |
+| Engagement rate | 0.65% |
+| Profile views from post | 0 |
+| Followers gained | 1 |
+
+**Decision: HOLD.** Impressions 153 (<500), zero reactions. Link again routed to comments.
+
+---
+
+## Cadence gap — 2026-09-09 → 2026-09-21
+
+**Nothing published for 12 days.** Last post is the Sep 09 carousel. The Sep 09 post publicly promised "Part 2 drops September 15: the reallocation ledger" — that post was never published. CLAUDE.md cadence is Mon/Wed/Fri; actual is 0 posts in 12 days.
+
+Impression trend, account level: 1,899 over the past 14 days (+41% vs prior 14d) — the lift is entirely the Sep 09 boost, not organic momentum.
+
+---
+
+## Standing fixes owed (carried forward until closed)
+
+| # | Fix | Status |
+|---|---|---|
+| 1 | Link in post BODY, never comments — with UTM | ❌ **Violated again on both Sep 08 and Sep 09 posts.** Third occurrence. |
+| 2 | Pre-warm OG via LinkedIn Post Inspector before first share | ☐ Unverified for s2s-36pt-gap |
+| 3 | Campaign Manager spend visibility | ⚠️ 2FA no longer blocking; boost ad sets simply don't surface. Needs a different route. |
+| 4 | Publish Part 2 (reallocation ledger) — promised publicly for Sep 15 | ❌ Overdue 6 days |
+
