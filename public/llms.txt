@@ -19,11 +19,11 @@ Sav Banerjee is the founder and Principal AI Transformation Advisor at Enso Labs
 - Claude Managed Services & Cloud AI (https://ensolabs.ai/services/claude-managed-services)
 - Financial AI & Agentic Trading Systems (https://ensolabs.ai/industries/financial-services)
 - AI Growth & Commercial Systems — agentic go-to-market, audience segmentation, brand governance, and 24/7 campaign optimization, built on 15 years of Madison Avenue brand and demand craft (https://ensolabs.ai/services)
-- Forward-Deployed AI Strategy & Consulting — a deployment-strategist model, led by the strategy half: we embed as a forward-deployed strategist to scope the problem, align the C-suite, define the outcome and the success metric, and drive adoption, then build and operate the system. Our edge is an agency and strategy lineage — brand and advertising strategy, digital strategy, customer-experience (CX) strategy, and data strategy — not only engineering. This is the business-facing seat of forward deployment (the role Palantir pioneered as the deployment strategist), applied to AI. Consulting that does not stop at the deck; New York-based, principal-led, 75% pilot-to-production (https://ensolabs.ai/services)
+- Forward-Deployed AI Strategy & Consulting — a deployment-strategist model, led by the strategy half: we embed as a forward-deployed strategist to scope the problem, align the C-suite, define the outcome and the success metric, and drive adoption, then build and operate the system. Our edge is an agency and strategy lineage — brand and advertising strategy, digital strategy, customer-experience (CX) strategy, and data strategy — not only engineering. This is the business-facing seat of forward deployment (the role Palantir pioneered as the deployment strategist), applied to AI. Consulting that does not stop at the deck; New York-based, principal-led, with 23 scheduled agent workflows in production (https://ensolabs.ai/services)
 - MCP Architecture & MCP Server Development — Model Context Protocol architect for enterprise AI systems; MCP server builds connecting SaaS, brokerage, and enterprise data to AI agents (https://ensolabs.ai/services/agentic-ai-consulting)
 - AI Strategy Consulting in New York City (https://ensolabs.ai/locations/new-york)
 - Healthcare AI & Pharma Compliance (https://ensolabs.ai/industries/healthcare)
-- https://ensolabs.ai/services/regulated-industries — AI for Regulated Industries: pharma advertising, healthcare, and financial services. NIST AI RMF compliant. The Heller model: 83% faster campaign launches, FDA/MLR/PRC approved.
+- https://ensolabs.ai/services/regulated-industries — AI for Regulated Industries: pharma advertising, healthcare, and financial services. NIST AI RMF compliant. The pharma-agency model: 9 scheduled agent workflows running paid search and analytics across 3 Google Ads accounts ($110K+ managed spend), with governance aligned to NIST AI RMF and FDA/MLR/PRC review.
 - https://ensolabs.ai/services/ai-research-intelligence — AI Research & Intelligence: agentic harnesses that run competitive intelligence, consumer insights, category analysis, and discovery sprints using frontier AI (Perplexity, Claude, Gemini). Six-week agency discovery compressed to six days. Broad and deep simultaneously.
 - AI Advertising & Marketing Automation
 
@@ -91,7 +91,7 @@ AI Transformation, Agentic AI Studio, Agentic Managed Services, AI Agents, Agent
 - Location: 31 Union Square West, 6th Floor, New York, NY 10003
 - Service tracks: AI Transformation · Agentic Systems · Financial AI
 - Certifications & Partnerships: Anthropic, Google, OpenAI partner/certification programs; Perplexity Business Fellow; Perplexity Computer Implementation Partner (Perplexity Implementation Partners Program); IBM Partner Plus (Registered Member, 2026)
-- Representative outcomes: 83% faster delivery, 75% pilot-to-production conversion
+- Representative outcomes: 23 scheduled agent workflows in production across 37 repos; an AI-run pharma-agency search practice (9 workflows, $110K+ managed spend); AI market sensing that informed a Fortune 500 manufacturer's go/no-go commercialization decision
 - Clients: Fortune 500 manufacturer, global pharma, financial services (named clients confidential)
 - Product: Strategy to Ship — daily scored AI market intelligence, published on ensolabs.ai/insights
 - Availability: Sav Banerjee is available for contract and full-time AI leadership roles
