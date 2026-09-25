@@ -23,7 +23,7 @@ const BOOKING_HREF = BOOKING_EXTERNAL ? SITE.bookingUrl : '/contact';
 export const metadata: Metadata = {
   title: 'AI Consulting for Agencies — Agency AI Transformation & CoE',
   description:
-    'AI consulting for agencies: a 10-day agency AI audit, then Enso Labs builds and runs your first agentic workflow in production — Salesforce AI integration, HubSpot AI workflows, marketing operations automation and paid media optimization agents.',
+    'AI consulting for agencies: a 10-day agency AI audit, then Enso Labs builds and runs your first agentic workflow in production. We run 23 scheduled agent workflows today.',
   alternates: { canonical: 'https://ensolabs.ai/ai-for-agencies' },
   openGraph: {
     title: 'AI Consulting for Agencies — From AI Tools to an AI Delivery Capability | Enso Labs',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       'Your agency has AI tools. Enso Labs builds the AI delivery capability: a 10-day diagnostic, then your first agentic workflow in production.',
     images: ['https://ensolabs.ai/og-default.png?v=3'],
   },
-  other: { 'article:modified_time': '2026-09-24' },
+  other: { 'article:modified_time': '2026-09-25' },
 };
 
 /* ───────────────────────── Line-art icons (inline SVG, currentColor) ───────────────────────── */
@@ -106,114 +106,129 @@ type Kpi = {
   tag: string;
   tone: 'coral' | 'blue' | 'amber';
   pre?: string;
-  count: number;
-  post: string;
+  /** Real, verified number to count up to. Omit for a text headline. */
+  count?: number;
+  /** Headline text used when there is no count. */
+  text?: string;
+  post?: string;
   label: string;
   chip?: string;
   built: string;
   bullets: string[];
   more: string;
   href: string;
-  viz: 'meter' | 'launch' | 'funnel' | 'research' | 'timeline';
+  viz: 'workflows' | 'scope' | 'fleet' | 'pipeline' | 'governance';
   span: 'third' | 'half';
 };
 
+// Verified facts only (claims reset 2026-09-25). No client names.
 const KPIS: Kpi[] = [
   {
-    ix: 'K / 01', tag: 'CASE', tone: 'coral', count: 75, post: '%',
-    label: 'Pilot-to-production conversion',
-    built: 'An AI operating model for a regulated-marketing agency.',
-    bullets: ['One agency case, not an average', 'Governance and deployment playbooks', 'Reusable research, reporting and campaign-ops workflows'],
-    more: 'Documented in that agency’s AI operating model. See the case example →',
-    href: '#case', viz: 'meter', span: 'third',
+    ix: 'K / 01', tag: 'AGENCY', tone: 'coral', count: 9,
+    label: 'Scheduled agent workflows running one agency’s search practice',
+    chip: 'Pharma agency · paid search & analytics',
+    built: 'An AI-run paid-search and analytics practice we built and operate for a pharma agency.',
+    bullets: ['Daily ad-account health checks', 'Keyword harvesting and approval queues', 'Billing prep and status reporting'],
+    more: 'See how the practice runs in the case example →',
+    href: '#case', viz: 'workflows', span: 'third',
   },
   {
-    ix: 'K / 02', tag: 'CASE', tone: 'blue', count: 83, post: '%',
-    label: 'Faster campaign launch',
-    built: 'An AI center of excellence inside a regulated-marketing agency.',
-    bullets: ['3 months → 2 weeks', 'Human approval on regulated claims', 'Same agency as K / 01'],
-    more: 'Launch time fell without removing review. See the before/after chart →',
-    href: '#case', viz: 'launch', span: 'third',
+    ix: 'K / 02', tag: 'AGENCY', tone: 'blue', pre: '$', count: 110, post: 'K+',
+    label: 'Managed search spend, Jan 2025 – Sep 2026',
+    built: 'The same practice, across the agency’s pharma search accounts.',
+    bullets: ['3 Google Ads accounts', 'Multiple brands across 2 manufacturers', 'Jan 2025 – Sep 2026'],
+    more: 'Same agency as K / 01. See the case example →',
+    href: '#case', viz: 'scope', span: 'third',
   },
   {
-    ix: 'K / 03', tag: 'RESEARCH', tone: 'amber', count: 731, post: ' → 16',
-    label: 'Documents → novel commercial signals',
-    built: 'An AI market-intelligence pipeline.',
-    bullets: ['731 documents processed', '16 novel commercial signals', 'Validated by the lead scientist'],
-    chip: 'Fortune 500 advanced-materials manufacturer',
+    ix: 'K / 03', tag: 'STUDIO', tone: 'amber', count: 23,
+    label: 'Scheduled agent workflows in production',
+    chip: 'Across 37 GitHub repos · Enso Labs, 2026',
+    built: 'Our own operations run on the managed agents we build for clients.',
+    bullets: ['23 scheduled agent workflows', '37 GitHub repos', 'Enso Labs, 2026'],
+    more: 'The engagement ladder ends in managed agents like these. See the engagements →',
+    href: '#engagements', viz: 'fleet', span: 'third',
+  },
+  {
+    ix: 'K / 04', tag: 'RESEARCH', tone: 'blue', text: 'Go / no-go',
+    label: 'A commercialization decision informed by AI market sensing',
+    chip: 'Fortune 500 manufacturer · April 2026',
+    built: 'An LLM pipeline over technical and market documents.',
+    bullets: ['Signals validated by the client’s lead scientist', 'Informed an April 2026 go / no-go decision'],
     more: 'Read the AI Market Intelligence Platform case →',
-    href: '/work/ai-market-intelligence', viz: 'funnel', span: 'third',
+    href: '/work/ai-market-intelligence', viz: 'pipeline', span: 'half',
   },
   {
-    ix: 'K / 04', tag: 'RESEARCH', tone: 'blue', pre: '~', count: 70, post: '%',
-    label: 'Less manual research and analysis',
-    built: 'Research agents that take over manual research and analysis cycles.',
-    bullets: ['Manual research and analysis cycles cut by ~70%', 'Same pattern as the intelligence-brief use case'],
-    more: 'See the research and pitch workflows in the use-case gallery →',
-    chip: 'Agentic research workflows · institutional clients',
-    href: '#use-cases', viz: 'research', span: 'half',
-  },
-  {
-    ix: 'K / 05', tag: 'ENABLEMENT', tone: 'coral', pre: '~', count: 3, post: ' mo',
-    label: 'Average time to first value',
-    built: 'Enterprise AI enablement programs.',
-    bullets: ['Enterprise AI enablement programs', 'Average across programs, ~3 months'],
-    more: 'The engagement ladder starts small so value lands early. See the engagements →',
-    href: '#engagements', viz: 'timeline', span: 'half',
+    ix: 'K / 05', tag: 'GOVERNANCE', tone: 'coral', count: 15, post: '+ yrs',
+    label: 'In agency brand, CX and data strategy',
+    chip: 'Anthropic Claude Certified Architect · 2026',
+    built: 'An AI Center of Excellence design for a pharma agency.',
+    bullets: ['Deployment playbooks', 'AI governance aligned to NIST AI RMF', 'Built around FDA / MLR / PRC review'],
+    more: 'See governance by risk tier →',
+    href: '#governance', viz: 'governance', span: 'half',
   },
 ];
 
-/* Tiny per-tile visuals. currentColor = the tile's text color; tracks are the same color at low opacity. */
+/* Tiny per-tile schematics. They show scope and structure, never an invented before/after.
+   currentColor = the tile's text color; tracks are the same color at low opacity. */
 function KpiViz({ kind }: { kind: Kpi['viz'] }) {
   const common = { width: '100%', viewBox: '0 0 240 56', fill: 'none', 'aria-hidden': true as const, focusable: 'false' as const, className: 'afa-k-viz' };
   const t = { fill: 'currentColor', fontSize: 10, fontFamily: 'var(--mono)' } as const;
   switch (kind) {
-    case 'meter':
+    case 'workflows':
       return (
         <svg {...common}>
-          <rect x="0" y="14" width="240" height="10" rx="5" fill="currentColor" opacity="0.28" />
-          <rect x="0" y="14" width="180" height="10" rx="5" fill="currentColor" />
-          <text x="0" y="46" {...t}>PILOTS</text>
-          <text x="180" y="46" textAnchor="end" {...t}>IN PRODUCTION</text>
+          {Array.from({ length: 9 }, (_, i) => (
+            <rect key={i} x={i * 26.9} y="12" width="22" height="16" rx="2" fill="currentColor" />
+          ))}
+          <text x="0" y="48" {...t}>9 WORKFLOWS</text>
+          <text x="240" y="48" textAnchor="end" {...t}>SCHEDULED</text>
         </svg>
       );
-    case 'launch':
+    case 'scope':
       return (
         <svg {...common}>
-          <text x="0" y="10" {...t}>BEFORE · 3 MONTHS</text>
-          <rect x="0" y="14" width="240" height="10" rx="3" fill="currentColor" opacity="0.32" />
-          <text x="0" y="40" {...t}>AFTER · 2 WEEKS</text>
-          <rect x="0" y="44" width="40" height="10" rx="3" fill="currentColor" />
+          {[0, 1, 2].map((i) => (
+            <rect key={i} x={i * 82} y="6" width="76" height="12" rx="2" fill="currentColor" opacity={0.85} />
+          ))}
+          <text x="0" y="31" {...t}>3 GOOGLE ADS ACCOUNTS</text>
+          <line x1="4" y1="42" x2="236" y2="42" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+          <circle cx="4" cy="42" r="3" fill="currentColor" />
+          <circle cx="236" cy="42" r="3" fill="currentColor" />
+          <text x="0" y="55" {...t}>JAN 2025</text>
+          <text x="240" y="55" textAnchor="end" {...t}>SEP 2026</text>
         </svg>
       );
-    case 'funnel':
+    case 'fleet':
       return (
         <svg {...common}>
-          <path d="M0 6 H240 L150 22 V34 H90 V22 Z" fill="currentColor" opacity="0.28" />
-          <rect x="108" y="36" width="24" height="8" rx="2" fill="currentColor" />
-          <text x="0" y="52" {...t}>731 DOCS</text>
-          <text x="240" y="52" textAnchor="end" {...t}>16 SIGNALS</text>
+          {Array.from({ length: 23 }, (_, i) => (
+            <rect key={i} x={(i % 12) * 20} y={i < 12 ? 4 : 20} width="14" height="12" rx="2" fill="currentColor" />
+          ))}
+          <text x="0" y="50" {...t}>23 WORKFLOWS</text>
+          <text x="240" y="50" textAnchor="end" {...t}>37 REPOS</text>
         </svg>
       );
-    case 'research':
+    case 'pipeline':
       return (
         <svg {...common}>
-          <text x="0" y="10" {...t}>MANUAL RESEARCH · BEFORE</text>
-          <rect x="0" y="14" width="240" height="10" rx="3" fill="currentColor" opacity="0.32" />
-          <text x="0" y="40" {...t}>AFTER · ~70% LESS</text>
-          <rect x="0" y="44" width="72" height="10" rx="3" fill="currentColor" />
+          <path d="M0 6 H120 L90 20 V28 H30 V20 Z" fill="currentColor" opacity="0.35" />
+          <path d="M126 17 H146 M140 12 L146 17 L140 22" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="152" y="8" width="88" height="18" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="164" cy="17" r="3" fill="currentColor" />
+          <text x="0" y="48" {...t}>DOCUMENTS · LLM PIPELINE</text>
+          <text x="240" y="48" textAnchor="end" {...t}>GO / NO-GO</text>
         </svg>
       );
-    case 'timeline':
+    case 'governance':
     default:
       return (
         <svg {...common}>
-          <line x1="6" y1="18" x2="234" y2="18" stroke="currentColor" strokeWidth="2" opacity="0.4" />
-          <circle cx="6" cy="18" r="5" fill="currentColor" />
-          <circle cx="234" cy="18" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="234" cy="18" r="3" fill="currentColor" />
-          <text x="0" y="46" {...t}>KICKOFF</text>
-          <text x="240" y="46" textAnchor="end" {...t}>FIRST VALUE</text>
+          <rect x="0" y="4" width="240" height="8" rx="2" fill="currentColor" />
+          <rect x="0" y="16" width="160" height="8" rx="2" fill="currentColor" opacity="0.6" />
+          <rect x="0" y="28" width="80" height="8" rx="2" fill="currentColor" opacity="0.35" />
+          <text x="0" y="52" {...t}>NIST AI RMF</text>
+          <text x="240" y="52" textAnchor="end" {...t}>FDA · MLR · PRC</text>
         </svg>
       );
   }
@@ -239,20 +254,19 @@ const USE_CASES = [
     title: 'Client & competitive intelligence briefs',
     body: 'An agent watches the sources you name and drafts a cited weekly brief for each account team.',
     moves: 'Time to insight',
-    proof: '~70% less manual research in agentic research workflows',
   },
   {
     icon: 'report',
     title: 'Performance reporting & anomaly alerts',
     body: 'A metric dictionary per client, drafted commentary, and alerts when a number moves outside its normal range.',
     moves: 'Reporting cycle time · errors caught before the client sees them',
+    proof: 'Live for a pharma agency: scheduled status reporting',
   },
   {
     icon: 'qa',
     title: 'Campaign QA & launch checklists',
     body: 'Automated checks on links, tags, naming, specs and approvals before anything goes live.',
     moves: 'Launch cycle time · defects at launch',
-    proof: 'See the case: campaign launch 3 months → 2 weeks',
   },
   {
     icon: 'shield',
@@ -271,6 +285,7 @@ const USE_CASES = [
     title: 'Measurement & tracking health checks',
     body: 'Scheduled checks that catch broken tags, missing conversions and taxonomy drift across client properties.',
     moves: 'Data gaps found before reporting day',
+    proof: 'Live for a pharma agency: daily ad-account health checks across 3 Google Ads accounts',
   },
   {
     icon: 'search',
@@ -344,7 +359,7 @@ const PHASES = [
   {
     days: 'Day 10',
     title: 'Readout',
-    body: 'Executive readout with the 90-day roadmap, operating model and business case.',
+    body: 'Executive readout with the phased roadmap, operating model and business case.',
     outcome: 'A go / no-go decision on the pilot-to-production sprint.',
   },
 ];
@@ -354,7 +369,7 @@ const DELIVERABLES = [
   'Opportunity matrix (value × feasibility × risk)',
   'Governance tiers and operating-model recommendation',
   'First agentic workflow blueprint',
-  '90-day roadmap with owners and KPIs',
+  'Phased roadmap with owners and KPIs',
   'Executive readout',
 ];
 
@@ -428,7 +443,7 @@ const LADDER = [
       'Workflow assessment and opportunity matrix',
       'Governance tiers for your client work',
       'First agentic workflow blueprint',
-      '90-day roadmap and business case',
+      'Phased roadmap and business case',
       'Executive readout',
     ],
   },
@@ -495,7 +510,7 @@ const FAQ = [
   {
     question: 'What happens after the diagnostic?',
     answer:
-      'You get a go / no-go decision on a pilot-to-production sprint for the top workflow. Many agencies then move to an AI center of excellence retainer, where Enso operates managed agents and adds workflows from the roadmap. There is no obligation to continue.',
+      'You get a go / no-go decision on a pilot-to-production sprint for the top workflow. Agencies can then move to an AI center of excellence retainer, where Enso operates managed agents and adds workflows from the roadmap. There is no obligation to continue.',
   },
   {
     question: 'Who is this for, and who is it not for?',
@@ -503,11 +518,54 @@ const FAQ = [
       'It is for independent and midsize agencies and in-house marketing teams that already use AI tools informally and want a governed, measurable delivery capability. It is not for teams looking only for prompt training or a tool license, or without a leader willing to own a workflow.',
   },
   {
+    question: 'What have you built for agencies?',
+    answer:
+      'For a pharma agency, we built and operate an AI-run paid-search and analytics practice: 9 scheduled agent workflows (daily ad-account health checks, keyword harvesting, approval queues, billing prep and status reporting) across 3 Google Ads accounts and multiple brands for 2 manufacturers, with $110K+ in managed search spend from January 2025 to September 2026. We also designed that agency’s AI Center of Excellence, with governance aligned to NIST AI RMF and FDA/MLR/PRC review. Enso Labs itself runs 23 scheduled agent workflows in production across 37 GitHub repos.',
+  },
+  {
     question: 'How is this different from AI training or a one-week AI audit?',
     answer:
       'Training changes skills and audits produce recommendations. Enso ends the diagnostic with a build-ready workflow blueprint, then builds and runs that first workflow in production with you, measured against a baseline.',
   },
 ];
+
+const CASE_WORKFLOWS = [
+  { icon: 'gauge', k: 'Health checks', v: 'Daily, per ad account' },
+  { icon: 'search', k: 'Keyword harvesting', v: 'New terms surfaced for review' },
+  { icon: 'shield', k: 'Approval queues', v: 'People approve before changes ship' },
+  { icon: 'dash', k: 'Billing prep', v: 'Prepared for the agency’s billing cycle' },
+  { icon: 'report', k: 'Status reporting', v: 'Drafted for the account team' },
+];
+
+const CASE_SCOPE = [
+  { k: 'Workflows', v: '9 scheduled' },
+  { k: 'Ad accounts', v: '3 Google Ads' },
+  { k: 'Manufacturers', v: '2, multiple brands' },
+  { k: 'Managed spend', v: '$110K+ (Jan 2025 – Sep 2026)' },
+];
+
+const SERVICE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://ensolabs.ai/ai-for-agencies#service',
+  name: 'AI Consulting for Agencies',
+  serviceType: 'Agency AI transformation consulting',
+  url: 'https://ensolabs.ai/ai-for-agencies',
+  description:
+    'AI consulting for independent and midsize agencies: a 10-day Agency AI CoE & Agentic Workflow Diagnostic, a pilot-to-production sprint, and an AI center of excellence with managed agentic workflows. Enso Labs runs 23 scheduled agent workflows in production across 37 GitHub repos.',
+  provider: { '@type': 'Organization', name: 'Enso Labs', url: 'https://ensolabs.ai' },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  audience: { '@type': 'BusinessAudience', audienceType: 'Independent and midsize marketing agencies' },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Agency AI engagements',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Agency AI Diagnostic (10 business days)' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pilot-to-production sprint (4–8 weeks)' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI CoE & managed agents (monthly retainer)' } },
+    ],
+  },
+};
 
 const START = [
   'Name one workflow that eats your team’s week',
@@ -535,6 +593,7 @@ export default function AIForAgenciesPage() {
             { name: 'AI for Agencies', href: '/ai-for-agencies' },
           ]),
           faqSchema(FAQ),
+          SERVICE_SCHEMA,
         ]}
       />
 
@@ -581,7 +640,7 @@ export default function AIForAgenciesPage() {
         .afa-k-chip { align-self:flex-start; font-family:var(--mono); font-size:11.5px; letter-spacing:0.02em; line-height:1.35; border:1px solid currentColor; border-radius:999px; padding:4px 11px; }
         .afa-k-built { font-size:14.5px; line-height:1.5; }
         .afa-k-viz { display:block; height:auto; max-width:360px; margin-top:4px; }
-        .afa-k-list { list-style:none; padding:14px 0 0; margin-top:auto; display:grid; gap:7px; font-family:var(--mono); font-size:12px; line-height:1.45; border-top:1px solid color-mix(in oklab, currentColor 35%, transparent); }
+        .afa-k-list { list-style:none; padding:14px 0 0; margin-top:auto; display:grid; gap:7px; font-family:var(--mono); font-size:12px; line-height:1.45; border-top:1px solid color-mix(in oklab, currentColor 36%, transparent); }
         .afa-k-list li { display:flex; gap:10px; align-items:baseline; }
         .afa-k-list li { padding-left:15px; position:relative; }
         .afa-k-list li { background:linear-gradient(currentColor,currentColor) 0 0.45em / 5px 5px no-repeat; }
@@ -690,18 +749,15 @@ export default function AIForAgenciesPage() {
         .afa-bignum-s { font-family:var(--mono); font-size:11px; color:var(--fg-3); margin-top:6px; letter-spacing:0.03em; line-height:1.5; }
         .afa-chart h3 { font-size:16px; font-weight:500; color:var(--fg); }
         .afa-chart .cap { font-family:var(--mono); font-size:11px; color:var(--fg-3); margin-top:4px; letter-spacing:0.02em; }
-        .afa-bars { margin-top:22px; display:grid; gap:16px; }
-        .afa-brow { display:grid; grid-template-columns:64px 1fr; gap:14px; align-items:center; }
-        .afa-brow .k { font-family:var(--mono); font-size:11.5px; color:var(--fg-2); letter-spacing:0.04em; text-transform:uppercase; }
-        .afa-brow .trk { position:relative; height:28px; border-left:1px solid var(--line-2); }
-        .afa-brow .fill { height:100%; border-radius:0 4px 4px 0; }
-        .afa-brow .fill.before { width:100%; background:#646a70; }
-        .afa-brow .fill.after { width:16.7%; min-width:8px; background:#12a7a7; }
-        .afa-brow .val { font-size:14px; color:var(--fg); white-space:nowrap; }
-        .afa-brow .in { position:absolute; top:0; bottom:0; display:flex; align-items:center; }
-        .afa-brow .in.inside { left:12px; }
-        .afa-brow .in.outside { left:calc(16.7% + 10px); }
-        .afa-delta { margin-top:18px; font-family:var(--mono); font-size:12px; color:var(--teal); letter-spacing:0.02em; }
+        .afa-wf { list-style:none; padding:0; margin-top:20px; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); }
+        .afa-wf li { background:var(--bg); padding:12px 16px; display:grid; grid-template-columns:22px 150px 1fr; gap:12px; align-items:center; }
+        .afa-wf .ic { color:var(--teal); display:flex; }
+        .afa-wf .k { font-family:var(--mono); font-size:11.5px; color:var(--fg); letter-spacing:0.04em; text-transform:uppercase; }
+        .afa-wf .v { font-size:14px; color:var(--fg-2); line-height:1.45; }
+        .afa-scope { margin-top:16px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+        .afa-scope div { background:var(--bg-2); padding:12px 14px; min-width:0; }
+        .afa-scope dt { font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--fg-3); }
+        .afa-scope dd { margin:4px 0 0; font-size:14px; color:var(--fg); line-height:1.35; }
 
         /* loop */
         .afa-loop { display:grid; grid-template-columns:1fr 40px 1fr 40px 1fr; align-items:stretch; margin-top:40px; }
@@ -766,6 +822,9 @@ export default function AIForAgenciesPage() {
           .afa-k { padding:24px 20px; }
           .afa-flow li, .afa-flow li:nth-child(odd) { border-right:0; }
           .afa-mx-key { grid-template-columns:1fr; }
+          .afa-scope { grid-template-columns:1fr 1fr; }
+          .afa-wf li { grid-template-columns:22px 1fr; }
+          .afa-wf .v { grid-column:2; }
           .afa-layer { grid-template-columns:1fr; gap:4px; }
           .afa-matrix { padding:14px; }
         }
@@ -783,7 +842,7 @@ export default function AIForAgenciesPage() {
           </h1>
           <div className="hero-foot">
             <p className="lede reveal" data-delay="2">
-              Enso Labs helps independent and midsize agencies turn scattered AI experiments into governed, measurable client delivery. <b style={{ color: 'var(--fg)' }}>We start with a 10-day diagnostic, then build and run your first agentic workflow in production — not just a roadmap.</b>
+              Enso Labs is an AI consultancy that helps independent and midsize agencies turn scattered AI experiments into governed, measurable client delivery. <b style={{ color: 'var(--fg)' }}>We start with a 10-day diagnostic, then build and run your first agentic workflow in production — not just a roadmap.</b>
             </p>
             <div className="reveal" data-delay="3">
               <div className="hero-cta-row">
@@ -817,7 +876,7 @@ export default function AIForAgenciesPage() {
       {/* ── KPI band ── */}
       <section data-screen-label="02 Proof" style={{ paddingTop: 0 }}>
         <div className="shell">
-          <h2 className="afa-sr">Results from Enso Labs engagements</h2>
+          <h2 className="afa-sr">Proof from Enso Labs engagements and operations</h2>
           <div className="afa-kgrid">
             {KPIS.map((k) => (
               <a key={k.ix} href={k.href} className={`afa-k afa-k-${k.tone} afa-k-${k.span} reveal`}>
@@ -826,7 +885,11 @@ export default function AIForAgenciesPage() {
                   <span className="afa-k-tag"><span className="pdot" />{k.tag}</span>
                 </div>
                 <div className="afa-k-num">
-                  {k.pre}<span data-afa-count={k.count}>{k.count}</span>{k.post}
+                  {k.count !== undefined ? (
+                    <>{k.pre}<span data-afa-count={k.count}>{k.count}</span>{k.post}</>
+                  ) : (
+                    k.text
+                  )}
                 </div>
                 <div className="afa-k-label">{k.label}</div>
                 {k.chip && <span className="afa-k-chip">{k.chip}</span>}
@@ -841,7 +904,7 @@ export default function AIForAgenciesPage() {
           </div>
           <KpiCountUp />
           <p className="afa-foot reveal">
-            Results from individual engagements. Your results depend on your workflows and data. Visuals are schematic.
+            Facts from individual engagements and our own operations, 2025–2026. Client names withheld. Your results depend on your workflows and data. Visuals are schematic.
           </p>
         </div>
       </section>
@@ -1042,7 +1105,7 @@ export default function AIForAgenciesPage() {
       </section>
 
       {/* ── Governance by risk tier ── */}
-      <section data-screen-label="07 Governance">
+      <section id="governance" data-screen-label="07 Governance">
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 05</span>&nbsp;AI governance for agencies</span></div>
@@ -1134,61 +1197,51 @@ export default function AIForAgenciesPage() {
         <div className="shell">
           <div className="section-head">
             <div className="reveal"><span className="eyebrow"><span className="num">§ 08</span>&nbsp;Case example</span></div>
-            <div className="reveal" data-delay="1"><h2 className="h2">From AI pilot to production in a regulated-marketing agency.</h2></div>
+            <div className="reveal" data-delay="1"><h2 className="h2">An AI-run paid-search and analytics practice inside a pharma agency.</h2></div>
           </div>
           <div className="afa-chips reveal" aria-label="Case profile">
-            <span>Full-service regulated-marketing agency</span>
+            <span>Full-service pharma agency</span>
             <span>Healthcare / pharma</span>
+            <span>Jan 2025 – Sep 2026</span>
             <span>Anonymized</span>
           </div>
           <div className="afa-story reveal" data-delay="1">
             <div>
               <b>Challenge</b>
-              <p>Introduce AI across research, reporting and campaign operations without adding compliance, evidence or client-delivery risk.</p>
+              <p>Run paid search for multiple pharma brands across two manufacturers with daily rigor — while every change stays inside regulated review.</p>
             </div>
             <div>
               <b>Approach</b>
-              <p>Governance and deployment playbooks, analytics and data foundations, cross-functional training, and reusable workflows built into the agency’s delivery process.</p>
+              <p>We built nine scheduled agent workflows for the agency’s search practice, and designed its AI Center of Excellence: deployment playbooks and AI governance aligned to NIST AI RMF and FDA/MLR/PRC review.</p>
             </div>
             <div>
               <b>Result</b>
-              <p>Pilots moved into production under a documented operating model, and campaign launch time dropped from months to weeks.</p>
+              <p>The practice runs on agents every day: health checks, keyword harvesting, approval queues, billing prep and status reporting across 3 Google Ads accounts and $110K+ in managed search spend (Jan 2025 – Sep 2026).</p>
             </div>
           </div>
           <div className="afa-case-res reveal" data-delay="2">
             <div className="cell">
-              <div className="afa-bignum">75%</div>
-              <div className="afa-bignum-l">Pilot-to-production conversion</div>
-              <div className="afa-bignum-s">This agency case · documented · not an average across clients</div>
+              <div className="afa-bignum">9</div>
+              <div className="afa-bignum-l">Scheduled agent workflows in production</div>
+              <div className="afa-bignum-s">3 Google Ads accounts · $110K+ managed search spend · Jan 2025 – Sep 2026</div>
             </div>
             <figure className="afa-chart cell">
-              <h3>Campaign launch time</h3>
-              <p className="cap">Before vs after the AI operating model · same agency</p>
-              <div className="afa-bars" role="img" aria-label="Campaign launch time fell from 3 months before to 2 weeks after, 83% faster">
-                <div className="afa-brow">
-                  <span className="k">Before</span>
-                  <div className="trk" title="Before: 3 months">
-                    <div className="fill before" />
-                    <span className="in inside"><span className="val">3 months</span></span>
-                  </div>
-                </div>
-                <div className="afa-brow">
-                  <span className="k">After</span>
-                  <div className="trk" title="After: 2 weeks">
-                    <div className="fill after" />
-                    <span className="in outside"><span className="val">2 weeks</span></span>
-                  </div>
-                </div>
-              </div>
-              <p className="afa-delta">83% faster campaign launch</p>
-              <div className="afa-sr"><table>
-                <caption>Campaign launch time, regulated-marketing agency case</caption>
-                <thead><tr><th scope="col">Period</th><th scope="col">Launch time</th></tr></thead>
-                <tbody>
-                  <tr><td>Before</td><td>3 months</td></tr>
-                  <tr><td>After</td><td>2 weeks</td></tr>
-                </tbody>
-              </table></div>
+              <h3>What the agents run</h3>
+              <p className="cap">Scope of the practice · one pharma agency · schematic</p>
+              <ul className="afa-wf" aria-label="Workflow types run by the nine scheduled agent workflows">
+                {CASE_WORKFLOWS.map((w) => (
+                  <li key={w.k}>
+                    <span className="ic"><Icon name={w.icon} size={20} /></span>
+                    <span className="k">{w.k}</span>
+                    <span className="v">{w.v}</span>
+                  </li>
+                ))}
+              </ul>
+              <dl className="afa-scope">
+                {CASE_SCOPE.map((c) => (
+                  <div key={c.k}><dt>{c.k}</dt><dd>{c.v}</dd></div>
+                ))}
+              </dl>
             </figure>
           </div>
         </div>
@@ -1231,11 +1284,12 @@ export default function AIForAgenciesPage() {
           </div>
           <div className="reveal" data-delay="1">
             <p className="lede" style={{ maxWidth: '72ch' }}>
-              Sav Banerjee spent 15+ years in VP and Director strategy roles across major holding-company agency networks, and now builds agentic AI and data systems for agency and enterprise teams.
+              Sav Banerjee brings 15+ years in agency brand, CX and data strategy, and is an Anthropic Claude Certified Architect (2026). Today we run 23 scheduled agent workflows in production across 37 GitHub repos — the same managed-agent practice we build for agencies.
             </p>
             <div className="hero-cta-row" style={{ marginTop: 28 }}>
               <Link className="btn" href="/about/sav-banerjee">About Sav Banerjee →</Link>
               <Link className="btn" href="/services">All services →</Link>
+              <Link className="btn" href="/contact">Contact us →</Link>
             </div>
           </div>
         </div>

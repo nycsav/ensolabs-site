@@ -14,6 +14,8 @@ export async function GET() {
     '/work/heller',
     '/work/trading-terminal',
     '/work/enterprise-ai',
+    '/services/ai-growth-marketing',
+    '/ai-for-agencies',
   ].map((p) => 'https://ensolabs.ai' + p);
 
   try {

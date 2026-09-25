@@ -139,6 +139,7 @@ Standing rule for every SEO/AEO/GEO scan (daily engine + any manual pass): **sur
   - Google I/O 2026 Part 1 (Hackathon) — `/insights/google-io-hackathon-managed-agents-omni-antigravity`
   - Google I/O 2026 Part 2 (After-Hours) — `/insights/google-io-after-hours-deepmind-strategy-signal`
   - AI Growth & Commercial Systems — `/services/ai-growth-marketing` (Commercial/Growth Core, the Madison Avenue engine). Keywords: agentic marketing, marketing engineering, GTM engineering, brand governance agents, AI growth marketing NYC, agentic go-to-market.
+  - AI for Agencies — `/ai-for-agencies` (capabilities page; verified claims only, reset 2026-09-25). Keywords: AI consulting for agencies, agency AI transformation, AI audit for agencies, AI center of excellence for agencies, agentic workflows for marketing agencies.
 - **When adding a NEW marquee piece:** add its slug to this list, ensure a `faqs` array exists on the article, and add a one-line Recent Coverage entry in `public/llms.txt`.
 
 ## Strategy to Ship (news-intelligence engine)
