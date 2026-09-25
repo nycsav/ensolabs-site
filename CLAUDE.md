@@ -210,7 +210,14 @@ There are THREE distinct streams and they are NOT the same thing — never confl
 
 **Account-based, not lead-based.** When 2+ contacts surface at the same company, treat it as ONE account play and say so — multi-thread the account rather than sending isolated notes. Always report leads grouped by company, never as a flat list.
 
-**Send authority (revised 2026-09-07 per Sav — supersedes the previous blanket "Claude never sends").** Sav's instruction: use expert judgment, don't route every decision back to him. The line is drawn by WHO INITIATED, not by channel:
+**⛔ SUPERSEDED 2026-09-24 per Sav — RESEARCH → PRIORITIZE → RECOMMEND, NEVER ACT.** Sav's words: *"Please don't respond or schedule meetings without my approval. Prioritize the top leads and potential jobs or clients after conducting research on them."* This overrides the send-authority table below on every surface (interactive AND scheduled):
+1. **No autonomous actions toward people.** Never send/reply on LinkedIn or email, never connect, never book/propose/accept a meeting, never create a calendar hold for an unconfirmed meeting, never click a booking link. Draft only; Sav clicks.
+2. **Research every party first** — who they are, company, seniority, whether they can buy, refer, hire, or partner.
+3. **Prioritize by importance** to Enso Labs revenue, Enso partnerships, and Sav's career (job search is urgent; $250K+ target). Max 3 priorities, rest under "later".
+4. **Lead with a recommendation** per item + a ready-to-paste draft. 
+Daily owner: scheduled task `linkedin-inbox-sweep` ("Inbound Radar", 9:30 AM ET every day). Examples that set this rule: the 9/24 run auto-replied to three LinkedIn contacts and put a tentative coffee hold on the calendar — all without approval (hold deleted 9/24).
+
+**Send authority (revised 2026-09-07 per Sav — superseded 2026-09-24 by the block above; kept for history).** Sav's instruction: use expert judgment, don't route every decision back to him. The line is drawn by WHO INITIATED, not by channel:
 
 | Situation | Claude's move |
 |---|---|
