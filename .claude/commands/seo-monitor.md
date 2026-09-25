@@ -24,6 +24,8 @@ Run these WebSearch queries and record whether ensolabs.ai appears in the top 10
 - "Claude implementation partner"
 - "Sav Banerjee AI strategy" (brand/recruiter term)
 - "Cerebral Valley hackathon 2026" (priority-content term)
+- "AI consulting for agencies" (/ai-for-agencies)
+- "agency AI transformation consultant" (/ai-for-agencies)
 
 For each gap (we're absent but a competitor ranks), propose the smallest fix: a new page, a section on an existing page, or an insight article. Cross-check against the backlog in CLAUDE.md (e.g. /locations/new-york shipped; /services/agentic-ai-consulting, /comparisons/boutique-vs-big-4 still open) so you don't re-suggest done work.
 

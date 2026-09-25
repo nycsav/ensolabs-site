@@ -476,6 +476,7 @@ export default function ServicesPage() {
                 <Link className="btn" href="/services/regulated-industries">Regulated Industries →</Link>
                 <Link className="btn" href="/services/ai-growth-marketing">AI Growth →</Link>
                 <Link className="btn" href="/services/ai-research-intelligence">Research &amp; Intelligence →</Link>
+                <Link className="btn" href="/ai-for-agencies">AI for Agencies →</Link>
               </div>
             </div>
           </div>
